@@ -7,7 +7,7 @@ import type { ContentIndex } from "../content/index.ts";
 import { seedRng } from "./rng.ts";
 import { grantGear } from "./inventory.ts";
 
-export const STATE_VERSION = 1;
+export const STATE_VERSION = 2;
 
 export const GearInstanceSchema = z.object({
   base: z.string(), rarity: z.string(), ilvl: z.number().int(), enhance: z.number().int().min(0).max(15),
@@ -92,7 +92,7 @@ export const GameStateSchema = z.object({
     achievements: z.record(z.string(), z.number()),             // id → unlockedAt
     storySeen: z.record(z.string(), z.number()),
     storyChoices: z.record(z.string(), z.string()),
-    regions: z.record(z.string(), z.object({ discoveredAt: z.number(), nodes: z.record(z.string(), z.object({ clears: z.number().int(), firstClearAt: z.number().optional(), revealed: z.boolean().optional() })) })),
+    regions: z.record(z.string(), z.object({ discoveredAt: z.number(), nodes: z.record(z.string(), z.object({ clears: z.number().int(), firstClearAt: z.number().optional(), revealed: z.boolean().optional(), lastAt: z.number().optional() })) })),
     dungeons: z.record(z.string(), z.object({ clears: z.number().int(), firstClearAt: z.number().optional(), bestFloor: z.number().int().optional() })),
     trialsCleared: z.record(z.string(), z.number()),            // boss/dungeon/tournament/tribulation id → at
     tournaments: z.record(z.string(), z.object({ round: z.number().int(), wins: z.number().int(), lastAt: z.number().optional() })),
@@ -105,6 +105,12 @@ export const GameStateSchema = z.object({
     unlocks: z.array(z.string()),
   }),
   daily: z.object({ day: z.string(), counters: z.record(z.string(), z.number().int()) }),
+  combat: z.object({
+    presets: z.array(z.object({ name: z.string().min(1), rules: z.array(z.object({ slot: z.string(), when: z.string(), value: z.number().optional(), target: z.string() })) })).min(1),
+    active: z.number().int().min(0),
+    manual: z.boolean(),
+    speed: z.number().int().min(1).max(3),
+  }),
   rng: z.object({ a: z.number().int(), b: z.number().int() }),
 });
 
@@ -112,6 +118,11 @@ export type GameState = z.infer<typeof GameStateSchema>;
 export type GearInstance = z.infer<typeof GearInstanceSchema>;
 export type Buff = z.infer<typeof BuffSchema>;
 export type BeastInstance = z.infer<typeof BeastInstanceSchema>;
+
+export const defaultCombat = (content: ContentIndex): GameState["combat"] => ({
+  presets: [{ name: "Balanced", rules: content.combat.auto_default.map((r) => ({ slot: r.slot, when: r.when, target: r.target, ...(r.value !== undefined ? { value: r.value } : {}) })) }],
+  active: 0, manual: false, speed: 1,
+});
 
 export const dayKey = (now: number) => new Date(now).toISOString().slice(0, 10);
 
@@ -139,6 +150,7 @@ export function newGameState(content: ContentIndex, now: number, opts: { name?: 
       recipes: [], shopPurchases: {}, counters: {}, realmsEntered: [s.realm.id], unlocks: [],
     },
     daily: { day: dayKey(now), counters: {} },
+    combat: defaultCombat(content),
     rng: seedRng(opts.seed ?? (now >>> 0)),
   };
   for (const q of s.inventory) state.inventory.stacks[q.id] = (state.inventory.stacks[q.id] ?? 0) + q.qty;

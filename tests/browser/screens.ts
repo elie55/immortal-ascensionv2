@@ -104,9 +104,46 @@ await shot("sect-location");
 await page.getByText("Cultivate here").click();
 check(await page.evaluate(() => (window as any).__ia.game.state.character.location) === "sectloc.meditation_waterfall", "Cultivate here moves cultivation to the waterfall");
 
-// adventure
+// adventure → region map → first battle (auto), victory panel, then a manual turn
 await page.locator(".nav button", { hasText: "Adventure" }).click();
 await shot("adventure");
+await page.locator(".region-card").first().click();
+await page.waitForSelector(".node-map");
+await shot("region-map");
+await page.locator(".node-pin").first().click();
+await page.waitForSelector(".node-card");
+await shot("node-card");
+await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.combat.manual = false; ia.game.state.combat.speed = 3; ia.app.router.refresh(); });
+await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.combat.speed = 1; });
+await page.locator(".node-card .btn.gold").click();
+await page.waitForSelector(".battle");
+await page.waitForTimeout(1500);
+await shot("battle");
+/** Finish a battle: click through wave dialogs until the result panel shows. */
+const untilResult = async () => { for (let i = 0; i < 12; i++) { const r = await Promise.race([page.waitForSelector(".modal.victory, .modal.defeat", { timeout: 60000 }).then(() => "end"), page.waitForSelector(".modal .btn:has-text('Next wave')", { timeout: 60000 }).then(() => "wave")]); if (r === "end") return; await page.locator(".modal .btn", { hasText: "Next wave" }).click(); await page.waitForTimeout(300); } };
+await untilResult();
+const won = (await page.locator(".modal.victory").count()) === 1;
+check(true, `battle finished (${won ? "victory" : "defeat"})`);
+await shot(won ? "victory" : "defeat");
+const cleared = await page.evaluate(() => { const s = (window as any).__ia.game.state; const reg = Object.values(s.progress.regions)[0] as any; return Object.values(reg.nodes).some((n: any) => n.clears > 0); });
+check(cleared === won, "node cleared iff won");
+await page.locator(".modal .btn", { hasText: /Map/ }).click();
+await page.waitForSelector(".node-map");
+// manual mode: start the same node, wait for input, pick a technique
+await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.combat.manual = true; ia.game.state.resources.energy.value = 100; ia.app.router.refresh(); });
+await page.locator(".node-pin").first().click();
+await page.locator(".node-card .btn.gold").click();
+await page.waitForSelector(".bt-skill.ready", { timeout: 20000 });
+await shot("battle-manual");
+const readyName = await page.locator(".bt-skill.ready").first().locator(".sk-name").innerText();
+await page.locator(".bt-skill.ready").first().click();
+await page.waitForTimeout(600);
+check(await page.evaluate(() => (window as any).__ia.game.state.combat.manual) === true, `manual turn accepted (${readyName})`);
+await page.locator(".bt-controls .seg button", { hasText: "Auto" }).click();
+await untilResult();
+await page.locator(".modal .btn", { hasText: /Map/ }).click();
+await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.combat.manual = false; });
+await page.locator(".back").click();
 
 // settings + save slots from Cultivate
 await page.locator(".nav button", { hasText: "Cultivate" }).click();

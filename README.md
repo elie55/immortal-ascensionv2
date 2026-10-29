@@ -6,6 +6,7 @@ its **schemas** and the **validator**; the game client is built on top of it.
 - `docs/DATABASE.md` — the design contract: entity types, ID conventions, art blocks, interconnection rules.
 - `docs/GEAR.md` — the gear system: bases, item level, rarity ladders, random affixes, refinement/reforge.
 - `docs/ARCHITECTURE.md` — the client: stack, layers, game state, cultivation math, save system, game loop.
+- `docs/COMBAT.md` — the combat engine and encounters.
 - `docs/ART.md` — the art pipeline (ComfyUI / Qwen-Image-Edit) and asset conventions.
 - `src/` — the game client: `content/` (typed index), `engine/` (pure rules), `save/`, `ui/`, `app.ts`.
 - `schema/` — zod schemas (also the TypeScript types the game imports).

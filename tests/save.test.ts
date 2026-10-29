@@ -44,18 +44,21 @@ test("decode rejects garbage, foreign envelopes, newer versions and invalid stat
 });
 
 test("migrations run in sequence from an old version", () => {
-  // Simulate a v1 file loaded by a client whose current version is 2 by temporarily registering a 1→2 step
-  // and asking decode to target version 2.
+  // A real v1 file (no combat block, no unlocks) upgrades through migrations[1] to the current version.
   const s = newGameState(content, T0, { seed: 1 });
   const raw = JSON.parse(encode(s, 0, T0));
-  delete raw.state.daily; raw.checksum = fnv1a(canonical(raw.state));
-  migrations[1] = (st) => ({ ...st, daily: { day: "2026-01-01", counters: {} } });
+  raw.v = 1; raw.state.meta.version = 1; delete raw.state.combat; delete raw.state.progress.unlocks; raw.checksum = fnv1a(canonical(raw.state));
+  const r = decode(JSON.stringify(raw));
+  assert.ok(r.ok && r.migratedFrom === 1 && r.state.meta.version === STATE_VERSION && r.state.combat.presets.length === 1 && Array.isArray(r.state.progress.unlocks));
+  // A chain: simulate a future version with a temporary extra step.
+  const next = STATE_VERSION;
+  migrations[next] = (st) => ({ ...st, daily: { ...st.daily, day: "2099-01-01" } });
   try {
-    const r = decode(JSON.stringify(raw), 2);
-    assert.ok(r.ok && r.migratedFrom === 1 && r.state.meta.version === 2 && r.state.daily.day === "2026-01-01");
-    const same = decode(encode(s, 0, T0), 1);
+    const r2 = decode(JSON.stringify(raw), next + 1);
+    assert.ok(r2.ok && r2.state.meta.version === next + 1 && r2.state.daily.day === "2099-01-01");
+    const same = decode(encode(s, 0, T0));
     assert.ok(same.ok && same.migratedFrom === undefined);
-  } finally { delete migrations[1]; }
+  } finally { delete migrations[next]; }
 });
 
 test("SaveManager: save, index summary, load, delete, copy", async () => {

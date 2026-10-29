@@ -39,7 +39,12 @@ export function fnv1a(text: string): string {
  * Keep them pure and additive; never delete a migration once shipped.
  */
 export const migrations: Record<number, (raw: any) => any> = {
-  // 1 → 2 example (none yet)
+  // 1 → 2: combat presets and the unlock list
+  1: (st) => ({
+    ...st,
+    progress: { ...st.progress, unlocks: st.progress?.unlocks ?? [] },
+    combat: st.combat ?? { presets: [{ name: "Balanced", rules: [{ slot: "ultimate", when: "always", target: "default" }, { slot: "heal", when: "hp_below", value: 50, target: "default" }, { slot: "shield", when: "no_shield", target: "default" }, { slot: "damage", when: "always", target: "lowest_hp" }, { slot: "basic", when: "always", target: "default" }] }], active: 0, manual: false, speed: 1 },
+  }),
 };
 
 export function encode(state: GameState, slot: number, savedAt: number): string {

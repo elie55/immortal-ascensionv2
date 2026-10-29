@@ -13,6 +13,13 @@ export type DomainEvent =
   | { type: "currency"; currency: string; delta: number }
   | { type: "offline"; elapsedMs: number; creditedMs: number; qi: number; clockMovedBack: boolean }
   | { type: "energy_spent"; amount: number }
-  | { type: "mastery"; id: string; xp: number; level: number };
+  | { type: "mastery"; id: string; xp: number; level: number }
+  | { type: "enemy_defeated"; id: string; boss: boolean }
+  | { type: "battle_won"; source: string }
+  | { type: "battle_lost"; source: string }
+  | { type: "node_cleared"; node: string; region: string; first: boolean }
+  | { type: "dungeon_cleared"; dungeon: string; first: boolean }
+  | { type: "tribulation_passed"; tribulation: string }
+  | { type: "tribulation_failed"; tribulation: string };
 
 export type EventSink = (e: DomainEvent) => void;

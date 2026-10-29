@@ -8,6 +8,7 @@ import type { DomainEvent } from "./events.ts";
 import type { Result } from "./inventory.ts";
 import { hasItems, removeItems } from "./inventory.ts";
 import { chance } from "./rng.ts";
+import { computeStats } from "./stats.ts";
 
 // ---------- Qi requirements ----------
 
@@ -112,6 +113,11 @@ export function tick(s: GameState, content: ContentIndex, dtMs: number, now: num
   // Integrate buff boundaries roughly: use the rate at `now - dt` end? One-second ticks make this negligible.
   const rate = qiRate(s, content, now).perSecond;
   s.character.qi = Math.min(qiBankCap(s, content), s.character.qi + rate * dt);
+  if (s.character.hp !== undefined) {
+    const maxHp = computeStats(s, content).total.hp ?? 1;
+    s.character.hp = Math.min(maxHp, s.character.hp + maxHp * content.combat.recovery.hp_pct_per_min / 100 * (dt / 60));
+    if (s.character.hp >= maxHp) s.character.hp = undefined;
+  }
   s.meta.playtimeMs += dtMs;
   s.meta.lastTickAt = now;
   expireBuffs(s, now, out);

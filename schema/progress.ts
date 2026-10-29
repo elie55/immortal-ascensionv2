@@ -197,3 +197,33 @@ export const UiArt = Named.extend({
   screen: z.string().min(1),
   art: artBlock([]),
 }).refine((u) => Object.keys(u.art).length > 0, "ui entry needs at least one art asset");
+
+// ---------- Combat rules (singleton) ----------
+
+export const AutoRule = z.object({
+  /** A loadout slot (active index 0-3 as "a0".."a3", "ultimate", "beast") or a role ("heal", "shield", "damage", "basic"). */
+  slot: z.string().min(1),
+  when: z.enum(["always", "hp_below", "sp_above", "boss_only", "no_shield", "enemies_at_least", "never"]).default("always"),
+  value: z.number().optional(),
+  target: z.enum(["default", "lowest_hp", "highest_cp", "weakest", "strongest"]).default("default"),
+});
+export type AutoRule = z.infer<typeof AutoRule>;
+
+export const CombatRules = z.object({
+  turn: z.object({ gauge_threshold: z.number().positive(), min_speed: z.number().positive(), max_rounds: z.number().int().positive(), max_enemies: z.number().int().positive() }),
+  damage: z.object({
+    basic_power: z.number().positive(), sp_power_weight: z.number().min(0), def_factor: z.number().positive(), variance: z.number().min(0).max(0.5),
+    min_damage: z.number().min(0), crit_dmg_default: z.number().positive(), hit_floor: z.number().min(0).max(1),
+    element_advantage: z.number().min(0), boss_weakness_bonus: z.number().min(0), charged_attack_mult: z.number().positive(),
+  }),
+  spirit_energy: z.object({ regen_pct_per_turn: z.number().min(0), basic_attack_restore: z.number().min(0) }),
+  ultimate: z.object({ gain_per_action: z.number().min(0), gain_per_damage_taken_pct: z.number().min(0), gain_per_kill: z.number().min(0) }),
+  status: z.object({ default_reflect_pct: z.number().min(0), shield_from_status_pct: z.number().min(0), control_resist_cap: z.number().min(0).max(1) }),
+  companions: z.object({ beast_level_stat_pct: z.number().min(0), beast_active_cooldown: z.number().int().min(0) }),
+  defeat: z.object({ hp_pct_after_defeat: z.number().min(0).max(100), energy_refund_pct: z.number().min(0).max(100) }),
+  tribulation: z.object({ turns_per_wave: z.number().int().positive(), bolt_power: z.number().positive() }),
+  recovery: z.object({ hp_pct_per_min: z.number().min(0) }),
+  mastery: z.object({ method_share: z.number().min(0), active_share: z.number().min(0) }),
+  auto_default: z.array(AutoRule).min(1),
+});
+export type CombatRules = z.infer<typeof CombatRules>;

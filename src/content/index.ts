@@ -9,7 +9,7 @@ import type { Enemy as EnemyS, Boss as BossS, Beast as BeastS, Npc as NpcS } fro
 import type { Region as RegionS, Node as NodeS, Dungeon as DungeonS, Tribulation as TribS, SectLocation as SectLocS, Rank as RankS, Event as EventS } from "../../schema/places.ts";
 import type { Shop as ShopS, LootTable as LootS, AlchemyRecipe as AlchS, ForgeRecipe as ForgeS, Furnace as FurnaceS } from "../../schema/economy.ts";
 import type { GearRules as GearRulesS } from "../../schema/gear-math.ts";
-import type { Quest as QuestS, Achievement as AchS, Tournament as TournS, StoryScene as StoryS, StartingState as StartS, CultivationRules as CultRulesS } from "../../schema/progress.ts";
+import type { Quest as QuestS, Achievement as AchS, Tournament as TournS, StoryScene as StoryS, StartingState as StartS, CultivationRules as CultRulesS, CombatRules as CombatRulesS, AutoRule as AutoRuleS } from "../../schema/progress.ts";
 import type { Prefix } from "../../schema/ids.ts";
 
 export type Realm = z.infer<typeof RealmS>; export type Element = z.infer<typeof ElementS>; export type Root = z.infer<typeof RootS>;
@@ -23,7 +23,7 @@ export type Region = z.infer<typeof RegionS>; export type MapNode = z.infer<type
 export type SectLocation = z.infer<typeof SectLocS>; export type Rank = z.infer<typeof RankS>; export type GameEvent = z.infer<typeof EventS>; export type Shop = z.infer<typeof ShopS>;
 export type LootTable = z.infer<typeof LootS>; export type AlchemyRecipe = z.infer<typeof AlchS>; export type ForgeRecipe = z.infer<typeof ForgeS>; export type Furnace = z.infer<typeof FurnaceS>;
 export type GearRules = z.infer<typeof GearRulesS>; export type Quest = z.infer<typeof QuestS>; export type Achievement = z.infer<typeof AchS>; export type Tournament = z.infer<typeof TournS>;
-export type StoryScene = z.infer<typeof StoryS>; export type StartingState = z.infer<typeof StartS>; export type CultivationRules = z.infer<typeof CultRulesS>;
+export type StoryScene = z.infer<typeof StoryS>; export type StartingState = z.infer<typeof StartS>; export type CultivationRules = z.infer<typeof CultRulesS>; export type CombatRules = z.infer<typeof CombatRulesS>; export type AutoRule = z.infer<typeof AutoRuleS>;
 
 /** Any item a stack in the inventory can hold. */
 export type AnyItem = Material | Consumable | Gift | Book | Blueprint | QuestItem | Egg | BeastFood | Junk;
@@ -34,7 +34,7 @@ export interface ContentBundle {
   entities: Record<string, any>;
   singletons: {
     gear_rules: GearRules; enhancement: EnhancementTable; refinement: RefinementTable; reforge: ReforgeTable;
-    furnaces: Furnace[]; starting_state: StartingState; content_targets: unknown; cultivation_rules: CultivationRules;
+    furnaces: Furnace[]; starting_state: StartingState; content_targets: unknown; cultivation_rules: CultivationRules; combat_rules: CombatRules;
   };
 }
 
@@ -74,6 +74,7 @@ export class ContentIndex {
   nextRealm(id: string): Realm | undefined { return this.realm(this.get<Realm>(id).order + 1); }
 
   get rules(): CultivationRules { return this.singletons.cultivation_rules; }
+  get combat(): CombatRules { return this.singletons.combat_rules; }
   get gearRules(): GearRules { return this.singletons.gear_rules; }
   get starting(): StartingState { return this.singletons.starting_state; }
 

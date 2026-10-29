@@ -1,0 +1,77 @@
+{
+  "turn": {
+    "gauge_threshold": 100,
+    "min_speed": 1,
+    "max_rounds": 60,
+    "max_enemies": 5
+  },
+  "damage": {
+    "basic_power": 100,
+    "sp_power_weight": 0.5,
+    "def_factor": 0.9,
+    "variance": 0.08,
+    "min_damage": 1,
+    "crit_dmg_default": 150,
+    "hit_floor": 0.1,
+    "element_advantage": 0.25,
+    "boss_weakness_bonus": 0.3,
+    "charged_attack_mult": 2.0
+  },
+  "spirit_energy": {
+    "regen_pct_per_turn": 8,
+    "basic_attack_restore": 6
+  },
+  "ultimate": {
+    "gain_per_action": 12,
+    "gain_per_damage_taken_pct": 40,
+    "gain_per_kill": 20
+  },
+  "status": {
+    "default_reflect_pct": 20,
+    "shield_from_status_pct": 15,
+    "control_resist_cap": 0.75
+  },
+  "companions": {
+    "beast_level_stat_pct": 2.5,
+    "beast_active_cooldown": 3
+  },
+  "defeat": {
+    "hp_pct_after_defeat": 30,
+    "energy_refund_pct": 0
+  },
+  "tribulation": {
+    "turns_per_wave": 3,
+    "bolt_power": 90
+  },
+  "auto_default": [
+    {
+      "slot": "ultimate",
+      "when": "always"
+    },
+    {
+      "slot": "heal",
+      "when": "hp_below",
+      "value": 50
+    },
+    {
+      "slot": "shield",
+      "when": "no_shield"
+    },
+    {
+      "slot": "damage",
+      "when": "always",
+      "target": "lowest_hp"
+    },
+    {
+      "slot": "basic",
+      "when": "always"
+    }
+  ],
+  "recovery": {
+    "hp_pct_per_min": 4
+  },
+  "mastery": {
+    "method_share": 1.0,
+    "active_share": 0.5
+  }
+}
