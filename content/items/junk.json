@@ -1,0 +1,54 @@
+[
+  {
+    "id": "junk.cheap_junk_loot",
+    "name": "Cheap Junk Loot",
+    "description": "a jumble of bent nails, torn cloth and a cracked cup",
+    "name_cn": "破烂",
+    "rarity": "common",
+    "sell_value": 3,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/junk/cheap_junk_loot.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a jumble of bent nails, torn cloth and a cracked cup, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "junk.broken_blade",
+    "name": "Broken Blade",
+    "description": "a snapped rusty saber blade",
+    "name_cn": "断刃",
+    "rarity": "common",
+    "sell_value": 6,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/junk/broken_blade.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a snapped rusty saber blade, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

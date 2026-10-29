@@ -1,0 +1,80 @@
+[
+  {
+    "id": "gear.reed_hat",
+    "name": "Reed Hat",
+    "description": "A wide woven reed hat worn by travelling disciples.",
+    "name_cn": "苇笠",
+    "slot": "helmet",
+    "requirements": {},
+    "rarities": {
+      "common": {
+        "name": "Reed Hat",
+        "description": "A wide woven reed hat worn by travelling disciples. (Common grade.)",
+        "stats": {
+          "hp": 30,
+          "def": 5
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 62,
+        "sell_value": 10,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/helmet/reed_hat_common.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a wide conical hat woven from pale reeds with a blue ribbon, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "uncommon": {
+        "name": "Reed Hat (Tempered)",
+        "description": "A wide woven reed hat worn by travelling disciples. (Uncommon grade.)",
+        "stats": {
+          "hp": 48.0,
+          "def": 8.0
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 94,
+        "sell_value": 30,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/helmet/reed_hat_uncommon.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a wide conical hat woven from pale reeds with a blue ribbon, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    }
+  }
+]

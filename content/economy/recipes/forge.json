@@ -1,0 +1,152 @@
+[
+  {
+    "id": "forge.azure_iron_sword",
+    "name": "Azure Iron Sword",
+    "description": "A refined-grade Azure Iron Sword forged from spirit iron.",
+    "name_cn": "苍铁剑",
+    "output": "gear.azure_iron_sword.rare",
+    "ingredients": [
+      {
+        "id": "mat.spirit_iron_ore",
+        "qty": 5
+      },
+      {
+        "id": "mat.wolf_fang",
+        "qty": 2
+      },
+      {
+        "id": "mat.boar_tusk",
+        "qty": 1
+      },
+      {
+        "id": "mat.river_pebble",
+        "qty": 3
+      }
+    ],
+    "cost_stones": 400,
+    "fame_required": 0,
+    "unlock": {
+      "type": "known"
+    }
+  },
+  {
+    "id": "forge.rimeglass_spear",
+    "name": "Rimeglass Spear",
+    "description": "Blueprint required. Glacier iron, rime crystal and a Frost Wyrm heart-core.",
+    "name_cn": "霜玻璃枪",
+    "output": "gear.rimeglass_spear.epic",
+    "ingredients": [
+      {
+        "id": "mat.glacier_iron_ore",
+        "qty": 3
+      },
+      {
+        "id": "mat.frost_wyrm_heart_core",
+        "qty": 1
+      },
+      {
+        "id": "mat.rime_crystal",
+        "qty": 2
+      },
+      {
+        "id": "mat.jade_bamboo_segment",
+        "qty": 6
+      }
+    ],
+    "cost_stones": 3000,
+    "fame_required": 1500,
+    "unlock": {
+      "type": "blueprint",
+      "id": "blueprint.rimeglass_spear"
+    }
+  },
+  {
+    "id": "forge.rimeglass_robe",
+    "name": "Rimeglass Robe",
+    "description": "Frost-silk robe threaded with rime crystal.",
+    "name_cn": "霜玻璃袍",
+    "output": "gear.rimeglass_robe.epic",
+    "ingredients": [
+      {
+        "id": "mat.cloud_silk_bolt",
+        "qty": 4
+      },
+      {
+        "id": "mat.rime_crystal",
+        "qty": 3
+      },
+      {
+        "id": "mat.azure_wolf_pelt",
+        "qty": 4
+      }
+    ],
+    "cost_stones": 2600,
+    "fame_required": 1500,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 1500
+    }
+  },
+  {
+    "id": "forge.rimeglass_boots",
+    "name": "Rimeglass Boots",
+    "description": "Boots soled with frost-glass.",
+    "name_cn": "霜玻璃靴",
+    "output": "gear.rimeglass_boots.epic",
+    "ingredients": [
+      {
+        "id": "mat.glacier_iron_ore",
+        "qty": 2
+      },
+      {
+        "id": "mat.rime_crystal",
+        "qty": 2
+      },
+      {
+        "id": "mat.bamboo_dragon_scale",
+        "qty": 1
+      },
+      {
+        "id": "mat.azure_wolf_pelt",
+        "qty": 2
+      }
+    ],
+    "cost_stones": 2200,
+    "fame_required": 1500,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 1500
+    }
+  },
+  {
+    "id": "forge.demonbane_fan",
+    "name": "Demonbane Fan",
+    "description": "Blueprint required. Feathers from the Abyss and a serpent's fang.",
+    "name_cn": "斩魔扇",
+    "output": "gear.demonbane_fan.legendary",
+    "ingredients": [
+      {
+        "id": "mat.abyss_serpent_fang",
+        "qty": 1
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "qty": 1
+      },
+      {
+        "id": "mat.glacier_iron_ore",
+        "qty": 10
+      },
+      {
+        "id": "mat.cloud_silk_bolt",
+        "qty": 6
+      }
+    ],
+    "cost_stones": 20000,
+    "fame_required": 4000,
+    "unlock": {
+      "type": "blueprint",
+      "id": "blueprint.demonbane_fan"
+    }
+  }
+]

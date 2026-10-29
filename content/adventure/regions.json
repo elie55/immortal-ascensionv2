@@ -1,0 +1,136 @@
+[
+  {
+    "id": "region.mortal_plains",
+    "name": "Mortal Plains",
+    "description": "Rolling farmland and dirt roads at the foot of the sect mountains. Bandits, boars and the first steps of every disciple.",
+    "name_cn": "凡尘平原",
+    "order": 1,
+    "realm_range": {
+      "min": "realm.qi_condensation",
+      "max": "realm.qi_condensation"
+    },
+    "unlock": {},
+    "entry_node": "node.mortal_plains.village_road",
+    "boss": "boss.plains_bandit_chief",
+    "signature_materials": [
+      "mat.spirit_grass",
+      "mat.wolf_fang",
+      "mat.boar_tusk"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/mortal_plains_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: golden wheat fields, a dirt road, a distant windmill and village under a soft sunset sky. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/mortal_plains_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of golden wheat fields, a dirt road, a distant windmill and village under a soft sunset sky, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/mortal_plains_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside golden wheat fields, a dirt road, a distant windmill and village under a soft sunset sky, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.azure_bamboo_forest",
+    "name": "Azure Bamboo Forest",
+    "description": "A vast forest of blue-green bamboo threaded with mist, streams and hidden shrines. The Thousand-Node Bamboo Dragon sleeps at its heart.",
+    "name_cn": "苍竹林",
+    "order": 2,
+    "realm_range": {
+      "min": "realm.qi_condensation",
+      "max": "realm.qi_condensation"
+    },
+    "unlock": {
+      "regions": [
+        "region.mortal_plains"
+      ],
+      "quests": [
+        "quest.main.bandit_chief"
+      ]
+    },
+    "entry_node": "node.azure_bamboo_forest.forest_edge",
+    "boss": "boss.thousand_node_bamboo_dragon",
+    "signature_materials": [
+      "mat.jade_bamboo_segment",
+      "mat.frost_beast_core",
+      "mat.cloud_silk_bolt",
+      "mat.spirit_iron_ore"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/azure_bamboo_forest_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: a dense misty forest of towering blue-green bamboo with shafts of light, a moonlit pool and mossy stones. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/azure_bamboo_forest_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of a dense misty forest of towering blue-green bamboo with shafts of light, a moonlit pool and mossy stones, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/azure_bamboo_forest_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a dense misty forest of towering blue-green bamboo with shafts of light, a moonlit pool and mossy stones, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

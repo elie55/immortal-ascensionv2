@@ -1,0 +1,194 @@
+{
+  "levels": [
+    {
+      "level": 1,
+      "stat_mult": 1.08,
+      "stones_base": 50,
+      "materials": [
+        {
+          "id": "mat.lesser_enhancement_stone",
+          "qty": 1
+        }
+      ],
+      "success": 1.0
+    },
+    {
+      "level": 2,
+      "stat_mult": 1.16,
+      "stones_base": 200,
+      "materials": [
+        {
+          "id": "mat.lesser_enhancement_stone",
+          "qty": 2
+        }
+      ],
+      "success": 1.0
+    },
+    {
+      "level": 3,
+      "stat_mult": 1.24,
+      "stones_base": 450,
+      "materials": [
+        {
+          "id": "mat.lesser_enhancement_stone",
+          "qty": 3
+        }
+      ],
+      "success": 1.0
+    },
+    {
+      "level": 4,
+      "stat_mult": 1.32,
+      "stones_base": 800,
+      "materials": [
+        {
+          "id": "mat.lesser_enhancement_stone",
+          "qty": 4
+        }
+      ],
+      "success": 1.0
+    },
+    {
+      "level": 5,
+      "stat_mult": 1.4,
+      "stones_base": 1250,
+      "materials": [
+        {
+          "id": "mat.lesser_enhancement_stone",
+          "qty": 5
+        }
+      ],
+      "success": 1.0
+    },
+    {
+      "level": 6,
+      "stat_mult": 1.48,
+      "stones_base": 1800,
+      "materials": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ],
+      "success": 1.0
+    },
+    {
+      "level": 7,
+      "stat_mult": 1.56,
+      "stones_base": 2450,
+      "materials": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 3
+        }
+      ],
+      "success": 1.0
+    },
+    {
+      "level": 8,
+      "stat_mult": 1.64,
+      "stones_base": 3200,
+      "materials": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 4
+        }
+      ],
+      "success": 1.0
+    },
+    {
+      "level": 9,
+      "stat_mult": 1.72,
+      "stones_base": 4050,
+      "materials": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 5
+        }
+      ],
+      "success": 1.0
+    },
+    {
+      "level": 10,
+      "stat_mult": 1.8,
+      "stones_base": 5000,
+      "materials": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 6
+        }
+      ],
+      "success": 0.9
+    },
+    {
+      "level": 11,
+      "stat_mult": 1.88,
+      "stones_base": 6050,
+      "materials": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 7
+        }
+      ],
+      "success": 0.8
+    },
+    {
+      "level": 12,
+      "stat_mult": 1.96,
+      "stones_base": 7200,
+      "materials": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 8
+        }
+      ],
+      "success": 0.7
+    },
+    {
+      "level": 13,
+      "stat_mult": 2.04,
+      "stones_base": 8450,
+      "materials": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 9
+        }
+      ],
+      "success": 0.6
+    },
+    {
+      "level": 14,
+      "stat_mult": 2.12,
+      "stones_base": 9800,
+      "materials": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 10
+        }
+      ],
+      "success": 0.5
+    },
+    {
+      "level": 15,
+      "stat_mult": 2.2,
+      "stones_base": 11250,
+      "materials": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 11
+        }
+      ],
+      "success": 0.4
+    }
+  ],
+  "rarity_cost_mult": {
+    "common": 1,
+    "uncommon": 1.6,
+    "rare": 2.6,
+    "epic": 4.2,
+    "legendary": 7,
+    "mythic": 11,
+    "immortal": 18,
+    "divine": 30
+  }
+}

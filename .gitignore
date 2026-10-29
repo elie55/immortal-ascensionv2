@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.tmp/
+*.log
+# mockup boards & crops are added from the owner's PC (binary); see tools/make-refs.py
+refs/originals/

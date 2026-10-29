@@ -1,0 +1,115 @@
+[
+  {
+    "id": "gear.azure_iron_war_ring",
+    "name": "Azure Iron War Ring",
+    "description": "A heavy iron ring stamped with the sect seal.",
+    "name_cn": "苍铁战戒",
+    "slot": "ring",
+    "requirements": {},
+    "rarities": {
+      "common": {
+        "name": "Azure Iron War Ring",
+        "description": "A heavy iron ring stamped with the sect seal. (Common grade.)",
+        "stats": {
+          "atk": 4,
+          "hp": 20
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 46,
+        "sell_value": 10,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/ring/azure_iron_war_ring_common.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a thick blue-black iron ring stamped with a small cloud seal, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "uncommon": {
+        "name": "Azure Iron War Ring (Tempered)",
+        "description": "A heavy iron ring stamped with the sect seal. (Uncommon grade.)",
+        "stats": {
+          "atk": 6.4,
+          "hp": 32.0
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 67,
+        "sell_value": 30,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/ring/azure_iron_war_ring_uncommon.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a thick blue-black iron ring stamped with a small cloud seal, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "rare": {
+        "name": "Azure Iron War Ring (Refined)",
+        "description": "A heavy iron ring stamped with the sect seal. (Rare grade.)",
+        "stats": {
+          "atk": 10.4,
+          "hp": 52.0
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 103,
+        "sell_value": 90,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/ring/azure_iron_war_ring_rare.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a thick blue-black iron ring stamped with a small cloud seal, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "element": "elem.metal"
+  }
+]

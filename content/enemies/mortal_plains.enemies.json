@@ -1,0 +1,263 @@
+[
+  {
+    "id": "enemy.field_bandit",
+    "name": "Field Bandit",
+    "description": "A desperate mortal turned bandit, armed with a chipped saber.",
+    "name_cn": "野匪",
+    "kind": "human",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 1
+    },
+    "stats": {
+      "hp": 320,
+      "atk": 38,
+      "def": 18,
+      "spd": 10,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 110,
+    "techniques": [
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.field_bandit",
+    "mastery_xp": 12,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/mortal_plains/field_bandit_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a scruffy bandit in patched brown leathers and a red headscarf holding a chipped saber. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/mortal_plains/field_bandit_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a scruffy bandit in patched brown leathers and a red headscarf holding a chipped saber, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.wild_boar",
+    "name": "Wild Boar",
+    "description": "A thick-skulled boar that charges anything that moves.",
+    "name_cn": "野猪",
+    "kind": "beast",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 1
+    },
+    "stats": {
+      "hp": 420,
+      "atk": 34,
+      "def": 28,
+      "spd": 7,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 120,
+    "techniques": [
+      "tech.active.stone_shell",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.wild_boar",
+    "mastery_xp": 12,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/mortal_plains/wild_boar_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a large bristly brown wild boar with yellow tusks and glowing orange eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/mortal_plains/wild_boar_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a large bristly brown wild boar with yellow tusks and glowing orange eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.spirit_monkey",
+    "name": "Spirit Monkey",
+    "description": "A silver-furred monkey that has tasted spirit fruit and learned to throw wind.",
+    "name_cn": "灵猴",
+    "kind": "beast",
+    "element": "elem.wood",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 300,
+      "atk": 44,
+      "def": 14,
+      "spd": 16,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 15,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 150,
+    "techniques": [
+      "tech.active.crescent_wind_blade"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.spirit_monkey",
+    "mastery_xp": 13,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/mortal_plains/spirit_monkey_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a nimble silver-grey monkey with jade-green eyes crouched on a branch, wind swirling around its paws. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/mortal_plains/spirit_monkey_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a nimble silver-grey monkey with jade-green eyes crouched on a branch, wind swirling around its paws, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.grey_wolf",
+    "name": "Grey Plains Wolf",
+    "description": "Hunts in threes across the plains at dusk.",
+    "name_cn": "灰狼",
+    "kind": "beast",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 380,
+      "atk": 48,
+      "def": 20,
+      "spd": 14,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 170,
+    "techniques": [
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.grey_wolf",
+    "mastery_xp": 13,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/mortal_plains/grey_wolf_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a lean grey wolf with pale yellow eyes and bared fangs, mid-snarl. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/mortal_plains/grey_wolf_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a lean grey wolf with pale yellow eyes and bared fangs, mid-snarl, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

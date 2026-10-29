@@ -1,0 +1,35 @@
+{
+  "character": "npc.lin_xueyao",
+  "realm": {
+    "id": "realm.qi_condensation",
+    "stage": 1
+  },
+  "root": "root.faint_mortal",
+  "rank": "rank.outer_disciple",
+  "region": "region.mortal_plains",
+  "method": "method.azure_cloud_breathing",
+  "techniques": [
+    "tech.active.azure_strike"
+  ],
+  "inventory": [
+    {
+      "id": "cons.qi_gathering_pill",
+      "qty": 3
+    },
+    {
+      "id": "egg.cloud_fox",
+      "qty": 1
+    },
+    {
+      "id": "mat.lesser_enhancement_stone",
+      "qty": 5
+    }
+  ],
+  "equipped": {
+    "weapon": "gear.bamboo_sword.common",
+    "armor": "gear.bamboo_robe.common",
+    "ring_1": "gear.azure_iron_war_ring.common"
+  },
+  "spirit_stones": 340,
+  "sect_fame": 120
+}

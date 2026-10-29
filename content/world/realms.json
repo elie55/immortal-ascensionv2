@@ -1,0 +1,784 @@
+[
+  {
+    "id": "realm.qi_condensation",
+    "name": "Qi Condensation",
+    "description": "Qi Condensation, the first great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "炼气",
+    "order": 1,
+    "stages": 9,
+    "qi": {
+      "base": 120,
+      "stage_growth": 1.35
+    },
+    "stage_growth": {
+      "hp": 40,
+      "atk": 6,
+      "def": 4,
+      "spd": 1,
+      "sp_power": 8,
+      "sp_energy": 5
+    },
+    "realm_bonus": {
+      "hp": 200,
+      "atk": 30,
+      "def": 20,
+      "crit": 0.5
+    },
+    "major_breakthrough": {
+      "requirements": [],
+      "success_base": 1.0,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/qi_condensation_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a young cultivator seated in lotus pose on a mossy stone above a misty waterfall, pale jade qi rising in soft spirals, cherry petals drifting. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.foundation_establishment",
+    "name": "Foundation Establishment",
+    "description": "Foundation Establishment, the second great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "筑基",
+    "order": 2,
+    "stages": 9,
+    "qi": {
+      "base": 4000,
+      "stage_growth": 1.32
+    },
+    "stage_growth": {
+      "hp": 160,
+      "atk": 24,
+      "def": 16,
+      "spd": 1,
+      "sp_power": 32,
+      "sp_energy": 10
+    },
+    "realm_bonus": {
+      "hp": 800,
+      "atk": 120,
+      "def": 80,
+      "crit": 1.0
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "cons.foundation_pill",
+          "qty": 1
+        }
+      ],
+      "success_base": 1.0,
+      "unlocks": [
+        "sectloc.inner_sect_peak"
+      ]
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/foundation_establishment_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a cultivator meditating on a floating stone platform as golden foundation runes lock into a circle beneath her, dawn clouds. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.core_formation",
+    "name": "Core Formation",
+    "description": "Core Formation, the third great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "金丹",
+    "order": 3,
+    "stages": 9,
+    "qi": {
+      "base": 60000,
+      "stage_growth": 1.3
+    },
+    "stage_growth": {
+      "hp": 360,
+      "atk": 54,
+      "def": 36,
+      "spd": 2,
+      "sp_power": 72,
+      "sp_energy": 15
+    },
+    "realm_bonus": {
+      "hp": 1800,
+      "atk": 270,
+      "def": 180,
+      "crit": 1.5
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "cons.core_condensing_pill",
+          "qty": 1
+        },
+        {
+          "id": "mat.bamboo_dragon_scale",
+          "qty": 3
+        }
+      ],
+      "success_base": 0.9,
+      "unlocks": [],
+      "tribulation": "tribulation.core_formation"
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/core_formation_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a golden core igniting like a small sun inside swirling cyan qi, storm clouds parting above mountain peaks. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.nascent_soul",
+    "name": "Nascent Soul",
+    "description": "Nascent Soul, the fourth great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "元婴",
+    "order": 4,
+    "stages": 9,
+    "qi": {
+      "base": 900000,
+      "stage_growth": 1.28
+    },
+    "stage_growth": {
+      "hp": 640,
+      "atk": 96,
+      "def": 64,
+      "spd": 2,
+      "sp_power": 128,
+      "sp_energy": 20
+    },
+    "realm_bonus": {
+      "hp": 3200,
+      "atk": 480,
+      "def": 320,
+      "crit": 2.0
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 2
+        }
+      ],
+      "success_base": 0.85,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/nascent_soul_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a translucent infant soul of light hovering above a meditating cultivator, nebula-coloured sky, lotus blooms. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.soul_transformation",
+    "name": "Soul Transformation",
+    "description": "Soul Transformation, the fifth great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "化神",
+    "order": 5,
+    "stages": 9,
+    "qi": {
+      "base": 12000000.0,
+      "stage_growth": 1.27
+    },
+    "stage_growth": {
+      "hp": 1000,
+      "atk": 150,
+      "def": 100,
+      "spd": 2,
+      "sp_power": 200,
+      "sp_energy": 25
+    },
+    "realm_bonus": {
+      "hp": 5000,
+      "atk": 750,
+      "def": 500,
+      "crit": 2.5
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 3
+        }
+      ],
+      "success_base": 0.85,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/soul_transformation_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a cultivator dissolving into motes of starlight above an ancient altar, galaxy reflections on still water. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.spirit_severing",
+    "name": "Spirit Severing",
+    "description": "Spirit Severing, the sixth great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "炼虚",
+    "order": 6,
+    "stages": 9,
+    "qi": {
+      "base": 150000000.0,
+      "stage_growth": 1.26
+    },
+    "stage_growth": {
+      "hp": 1440,
+      "atk": 216,
+      "def": 144,
+      "spd": 3,
+      "sp_power": 288,
+      "sp_energy": 30
+    },
+    "realm_bonus": {
+      "hp": 7200,
+      "atk": 1080,
+      "def": 720,
+      "crit": 3.0
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 4
+        }
+      ],
+      "success_base": 0.85,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/spirit_severing_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: sword-like light severing chains of mist around a cultivator, void-dark sky with silver cracks. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.dao_integration",
+    "name": "Dao Integration",
+    "description": "Dao Integration, the seventh great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "合体",
+    "order": 7,
+    "stages": 9,
+    "qi": {
+      "base": 1800000000.0,
+      "stage_growth": 1.25
+    },
+    "stage_growth": {
+      "hp": 1960,
+      "atk": 294,
+      "def": 196,
+      "spd": 3,
+      "sp_power": 392,
+      "sp_energy": 35
+    },
+    "realm_bonus": {
+      "hp": 9800,
+      "atk": 1470,
+      "def": 980,
+      "crit": 3.5
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 5
+        }
+      ],
+      "success_base": 0.85,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/dao_integration_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a cultivator merging with a towering phantom of her own form made of clouds and dao script. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.tribulation_transcendence",
+    "name": "Tribulation Transcendence",
+    "description": "Tribulation Transcendence, the eighth great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "渡劫",
+    "order": 8,
+    "stages": 9,
+    "qi": {
+      "base": 20000000000.0,
+      "stage_growth": 1.25
+    },
+    "stage_growth": {
+      "hp": 2560,
+      "atk": 384,
+      "def": 256,
+      "spd": 3,
+      "sp_power": 512,
+      "sp_energy": 40
+    },
+    "realm_bonus": {
+      "hp": 12800,
+      "atk": 1920,
+      "def": 1280,
+      "crit": 4.0
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 6
+        }
+      ],
+      "success_base": 0.85,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/tribulation_transcendence_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: nine layers of purple lightning spiralling down from a vortex sky toward a lone figure on a peak. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.mahayana",
+    "name": "Mahayana",
+    "description": "Mahayana, the ninth great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "大乘",
+    "order": 9,
+    "stages": 9,
+    "qi": {
+      "base": 220000000000.0,
+      "stage_growth": 1.24
+    },
+    "stage_growth": {
+      "hp": 3240,
+      "atk": 486,
+      "def": 324,
+      "spd": 4,
+      "sp_power": 648,
+      "sp_energy": 45
+    },
+    "realm_bonus": {
+      "hp": 16200,
+      "atk": 2430,
+      "def": 1620,
+      "crit": 4.5
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 7
+        }
+      ],
+      "success_base": 0.85,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/mahayana_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a vast calm sea of clouds under a golden sun, a cultivator standing on a lotus of light. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.immortal_ascension",
+    "name": "Immortal Ascension",
+    "description": "Immortal Ascension, the tenth great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "飞升",
+    "order": 10,
+    "stages": 9,
+    "qi": {
+      "base": 2400000000000.0,
+      "stage_growth": 1.24
+    },
+    "stage_growth": {
+      "hp": 4000,
+      "atk": 600,
+      "def": 400,
+      "spd": 4,
+      "sp_power": 800,
+      "sp_energy": 50
+    },
+    "realm_bonus": {
+      "hp": 20000,
+      "atk": 3000,
+      "def": 2000,
+      "crit": 5.0
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 8
+        }
+      ],
+      "success_base": 0.85,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/immortal_ascension_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a stairway of light climbing from a mountaintop into a rift of white radiance, phoenix silhouettes. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.earth_immortal",
+    "name": "Earth Immortal",
+    "description": "Earth Immortal, the eleventh great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "地仙",
+    "order": 11,
+    "stages": 9,
+    "qi": {
+      "base": 26000000000000.0,
+      "stage_growth": 1.23
+    },
+    "stage_growth": {
+      "hp": 4840,
+      "atk": 726,
+      "def": 484,
+      "spd": 4,
+      "sp_power": 968,
+      "sp_energy": 55
+    },
+    "realm_bonus": {
+      "hp": 24200,
+      "atk": 3630,
+      "def": 2420,
+      "crit": 5.5
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 9
+        }
+      ],
+      "success_base": 0.85,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/earth_immortal_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a serene immortal realm of floating jade islands and waterfalls flowing upward. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.heavenly_immortal",
+    "name": "Heavenly Immortal",
+    "description": "Heavenly Immortal, the twelfth great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "天仙",
+    "order": 12,
+    "stages": 9,
+    "qi": {
+      "base": 280000000000000.0,
+      "stage_growth": 1.23
+    },
+    "stage_growth": {
+      "hp": 5760,
+      "atk": 864,
+      "def": 576,
+      "spd": 5,
+      "sp_power": 1152,
+      "sp_energy": 60
+    },
+    "realm_bonus": {
+      "hp": 28800,
+      "atk": 4320,
+      "def": 2880,
+      "crit": 6.0
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 10
+        }
+      ],
+      "success_base": 0.85,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/heavenly_immortal_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: celestial palaces among aurora clouds, cranes in flight, soft white-gold light. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.golden_immortal",
+    "name": "Golden Immortal",
+    "description": "Golden Immortal, the thirteenth great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "金仙",
+    "order": 13,
+    "stages": 9,
+    "qi": {
+      "base": 3000000000000000.0,
+      "stage_growth": 1.22
+    },
+    "stage_growth": {
+      "hp": 6760,
+      "atk": 1014,
+      "def": 676,
+      "spd": 5,
+      "sp_power": 1352,
+      "sp_energy": 65
+    },
+    "realm_bonus": {
+      "hp": 33800,
+      "atk": 5070,
+      "def": 3380,
+      "crit": 6.5
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 11
+        }
+      ],
+      "success_base": 0.85,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/golden_immortal_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a figure wreathed in golden flame standing before a cosmic wheel of law. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.immortal_king",
+    "name": "Immortal King",
+    "description": "Immortal King, the fourteenth great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "仙王",
+    "order": 14,
+    "stages": 9,
+    "qi": {
+      "base": 3.2e+16,
+      "stage_growth": 1.22
+    },
+    "stage_growth": {
+      "hp": 7840,
+      "atk": 1176,
+      "def": 784,
+      "spd": 5,
+      "sp_power": 1568,
+      "sp_energy": 70
+    },
+    "realm_bonus": {
+      "hp": 39200,
+      "atk": 5880,
+      "def": 3920,
+      "crit": 7.0
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 12
+        }
+      ],
+      "success_base": 0.85,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/immortal_king_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a throne of clouds and starlight above endless realms, azure dragons coiling. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "realm.immortal_emperor",
+    "name": "Immortal Emperor",
+    "description": "Immortal Emperor, the fifteenth great realm. Nine stages; each stage demands more Qi and grants greater power.",
+    "name_cn": "仙帝",
+    "order": 15,
+    "stages": 9,
+    "qi": {
+      "base": 3.4e+17,
+      "stage_growth": 1.21
+    },
+    "stage_growth": {
+      "hp": 9000,
+      "atk": 1350,
+      "def": 900,
+      "spd": 6,
+      "sp_power": 1800,
+      "sp_energy": 75
+    },
+    "realm_bonus": {
+      "hp": 45000,
+      "atk": 6750,
+      "def": 4500,
+      "crit": 7.5
+    },
+    "major_breakthrough": {
+      "requirements": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 13
+        }
+      ],
+      "success_base": 0.85,
+      "unlocks": []
+    },
+    "art": {
+      "breakthrough_bg": {
+        "file": "assets/realms/immortal_emperor_breakthrough.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: an emperor of light at the apex of heaven, all five elements orbiting as rings. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

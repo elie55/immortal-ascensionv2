@@ -1,0 +1,84 @@
+[
+  {
+    "id": "gear.rimeglass_boots",
+    "name": "Rimeglass Boots",
+    "description": "Boots soled with frost-glass that leaves no footprint.",
+    "name_cn": "霜玻璃靴",
+    "slot": "boots",
+    "requirements": {
+      "realm": "realm.foundation_establishment"
+    },
+    "rarities": {
+      "epic": {
+        "name": "Rimeglass Boots of the Azure Cloud",
+        "description": "Boots soled with frost-glass that leaves no footprint. (Epic grade.)",
+        "stats": {
+          "spd": 12.6,
+          "eva": 4.2
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 35,
+        "sell_value": 300,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/rimeglass_boots_epic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of tall pale-blue boots with translucent crystal soles and silver clasps, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "legendary": {
+        "name": "Rimeglass Boots of Nine Heavens",
+        "description": "Boots soled with frost-glass that leaves no footprint. (Legendary grade.)",
+        "stats": {
+          "spd": 21,
+          "eva": 7
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 52,
+        "sell_value": 1000,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/rimeglass_boots_legendary.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of tall pale-blue boots with translucent crystal soles and silver clasps, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "element": "elem.water",
+    "set": "set.rimeglass"
+  }
+]

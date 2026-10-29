@@ -1,0 +1,20 @@
+{
+  "strict": false,
+  "targets": {
+    "realms": 15,
+    "regions": 15,
+    "dungeons": 20,
+    "mega_dungeons": 5,
+    "encounters": 150,
+    "bosses": 40,
+    "active_techniques": 30,
+    "passive_techniques": 20,
+    "methods": 20,
+    "gear_items": 150,
+    "enemies": 60,
+    "beasts": 20,
+    "quests": 100,
+    "tournaments": 3,
+    "secret_realms": 3
+  }
+}

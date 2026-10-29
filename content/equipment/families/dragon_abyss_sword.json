@@ -1,0 +1,62 @@
+[
+  {
+    "id": "gear.dragon_abyss_sword",
+    "name": "Dragon Abyss Sword",
+    "description": "Drawn from the Abyss of the Nine Heavens. The sea itself bows to it.",
+    "name_cn": "龙渊剑",
+    "slot": "weapon",
+    "requirements": {
+      "realm": "realm.nascent_soul"
+    },
+    "rarities": {
+      "divine": {
+        "name": "Dragon Abyss Sword · Divine",
+        "description": "Drawn from the Abyss of the Nine Heavens. The sea itself bows to it. (Divine grade.)",
+        "stats": {
+          "atk": 300,
+          "crit": 90
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [
+          {
+            "kind": "on_hit_apply",
+            "description": "Hits Freeze and Slow.",
+            "status": "status.freeze",
+            "chance": 0.35
+          },
+          {
+            "kind": "sp_restore",
+            "description": "Restore 10 SP per hit.",
+            "value": 10
+          }
+        ],
+        "item_cp": 595,
+        "sell_value": 30000,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/dragon_abyss_sword_divine.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a magnificent greatsword with a blade of dark blue water-crystal, an azure dragon coiled around the hilt, prismatic light, prismatic dragon-pearl light, azure dragon motifs, rainbow halo, overwhelming divine aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "weapon_type": "sword",
+    "element": "elem.water"
+  }
+]

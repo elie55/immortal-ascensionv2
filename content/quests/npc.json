@@ -1,0 +1,230 @@
+[
+  {
+    "id": "quest.npc.tangs_ledger",
+    "name": "Tang's Missing Ledger",
+    "description": "Tang's caravan manifest went missing in the forest. Find it in the Hollow Shrine and bring it back.",
+    "name_cn": "唐家失账",
+    "type": "npc",
+    "giver": "npc.tang_xiaoman",
+    "turn_in": "npc.tang_xiaoman",
+    "prereqs": {
+      "affinity": [
+        {
+          "npc": "npc.tang_xiaoman",
+          "level": 1
+        }
+      ],
+      "regions": [
+        "region.azure_bamboo_forest"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "qitem.caravan_manifest",
+        "count": 1,
+        "to": "npc.tang_xiaoman"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 100,
+      "techniques": [
+        "tech.active.golden_coin_barrage"
+      ],
+      "affinity": [
+        {
+          "npc": "npc.tang_xiaoman",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 2,
+    "hint": "Azure Bamboo Forest · Hollow Shrine → Merchant Pavilion",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_tangs_ledger.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Tang's Missing Ledger': Tang's caravan manifest went missing in the forest. Find it in the Hollow Shrine and bring it back., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.frost_sword_lesson",
+    "name": "The Frost Sword Lesson",
+    "description": "Bai will teach the Frost Blossom Slash once you reach Stage 3 and win a friendly spar against Tang.",
+    "name_cn": "霜剑课",
+    "type": "npc",
+    "giver": "npc.bai_lingshuang",
+    "turn_in": "npc.bai_lingshuang",
+    "prereqs": {
+      "affinity": [
+        {
+          "npc": "npc.bai_lingshuang",
+          "level": 1
+        }
+      ]
+    },
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.qi_condensation",
+        "stage": 3
+      },
+      {
+        "type": "win_duel",
+        "npc": "npc.tang_xiaoman",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "techniques": [
+        "tech.active.frost_blossom_slash"
+      ],
+      "items": [
+        {
+          "id": "book.ripple_mending_scroll",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.bai_lingshuang",
+          "delta": 30
+        }
+      ]
+    },
+    "difficulty": 2,
+    "hint": "Sect · Merchant Pavilion · Duel Tang, then Sword Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_frost_sword_lesson.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'The Frost Sword Lesson': Bai will teach the Frost Blossom Slash once you reach Stage 3 and win a friendly spar against Tang., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.qins_first_companion",
+    "name": "A First Companion",
+    "description": "Qin hands you a warm cloud-fox egg. Hatch it in the Spirit Beast Garden.",
+    "name_cn": "初伴",
+    "type": "npc",
+    "giver": "npc.qin",
+    "turn_in": "npc.qin",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "hatch",
+        "beast": "beast.yunyun"
+      }
+    ],
+    "rewards": {
+      "items": [
+        {
+          "id": "bfood.spirit_fruit",
+          "qty": 5
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.qin",
+          "delta": 20
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Sect · Spirit Beast Garden",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_qins_first_companion.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'A First Companion': Qin hands you a warm cloud-fox egg. Hatch it in the Spirit Beast Garden., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.beast.evolve_yunyun"
+  },
+  {
+    "id": "quest.beast.evolve_yunyun",
+    "name": "YunYun Grows Up",
+    "description": "Raise YunYun to level 10 and evolve her into a Cloud Fox.",
+    "name_cn": "云云长大",
+    "type": "beast",
+    "giver": "npc.qin",
+    "turn_in": "npc.qin",
+    "prereqs": {
+      "quests": [
+        "quest.npc.qins_first_companion"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "evolve",
+        "beast": "beast.yunyun",
+        "stage": "juvenile"
+      }
+    ],
+    "rewards": {
+      "items": [
+        {
+          "id": "bfood.dried_fish",
+          "qty": 5
+        },
+        {
+          "id": "gift.beast_bell",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.qin",
+          "delta": 30
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Sect · Spirit Beast Garden · YunYun",
+    "art": {
+      "icon": {
+        "file": "assets/quests/beast_evolve_yunyun.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'YunYun Grows Up': Raise YunYun to level 10 and evolve her into a Cloud Fox., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

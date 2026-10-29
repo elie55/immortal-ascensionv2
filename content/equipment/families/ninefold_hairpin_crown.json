@@ -1,0 +1,55 @@
+[
+  {
+    "id": "gear.ninefold_hairpin_crown",
+    "name": "Ninefold Hairpin Crown",
+    "description": "Nine hairpins of celestial gold arranged as a crown.",
+    "name_cn": "九重钗冠",
+    "slot": "helmet",
+    "requirements": {
+      "realm": "realm.core_formation"
+    },
+    "rarities": {
+      "immortal": {
+        "name": "Ninefold Hairpin Crown · Celestial",
+        "description": "Nine hairpins of celestial gold arranged as a crown. (Immortal grade.)",
+        "stats": {
+          "hp": 540,
+          "def": 90
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [
+          {
+            "kind": "heal_on_turn",
+            "description": "Heal 3% max HP each turn.",
+            "value": 3
+          }
+        ],
+        "item_cp": 955,
+        "sell_value": 9000,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/helmet/ninefold_hairpin_crown_immortal.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate crown made of nine golden phoenix hairpins radiating white-gold light, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "element": "elem.fire"
+  }
+]

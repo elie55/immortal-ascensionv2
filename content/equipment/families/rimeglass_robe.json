@@ -1,0 +1,97 @@
+[
+  {
+    "id": "gear.rimeglass_robe",
+    "name": "Rimeglass Robe",
+    "description": "A layered robe of frost-silk threaded with rime crystal.",
+    "name_cn": "霜玻璃袍",
+    "slot": "armor",
+    "requirements": {
+      "realm": "realm.foundation_establishment"
+    },
+    "rarities": {
+      "epic": {
+        "name": "Rimeglass Robe of the Azure Cloud",
+        "description": "A layered robe of frost-silk threaded with rime crystal. (Epic grade.)",
+        "stats": {
+          "hp": 252.0,
+          "def": 33.6
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [
+          {
+            "kind": "shield_on_battle_start",
+            "description": "Start battle with a shield of 10% max HP.",
+            "value": 10
+          }
+        ],
+        "item_cp": 438,
+        "sell_value": 300,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/armor/rimeglass_robe_epic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an elegant layered robe of pale blue frost-silk with crystal-threaded hems and white fur collar, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "legendary": {
+        "name": "Rimeglass Robe of Nine Heavens",
+        "description": "A layered robe of frost-silk threaded with rime crystal. (Legendary grade.)",
+        "stats": {
+          "hp": 420,
+          "def": 56
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [
+          {
+            "kind": "shield_on_battle_start",
+            "description": "Start battle with a shield of 10% max HP.",
+            "value": 10
+          }
+        ],
+        "item_cp": 724,
+        "sell_value": 1000,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/armor/rimeglass_robe_legendary.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an elegant layered robe of pale blue frost-silk with crystal-threaded hems and white fur collar, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "armor_type": "mystic",
+    "element": "elem.water",
+    "set": "set.rimeglass"
+  }
+]

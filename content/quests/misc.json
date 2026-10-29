@@ -1,0 +1,283 @@
+[
+  {
+    "id": "quest.cultivation.qi_condensation_five",
+    "name": "Halfway Up the Mountain",
+    "description": "Reach Qi Condensation Stage 5.",
+    "name_cn": "炼气五层",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.qi_condensation",
+        "stage": 5
+      }
+    ],
+    "rewards": {
+      "sect_fame": 50,
+      "items": [
+        {
+          "id": "cons.spirit_condensing_pill",
+          "qty": 2
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Cultivate tab",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_qi_condensation_five.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Halfway Up the Mountain': Reach Qi Condensation Stage 5., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.alchemy.first_pill",
+    "name": "First Pill",
+    "description": "Refine a Qi Gathering Pill in the Alchemy Hall.",
+    "name_cn": "第一炉丹",
+    "type": "alchemy",
+    "giver": "sectloc.alchemy_hall",
+    "turn_in": "sectloc.alchemy_hall",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "refine",
+        "recipe": "alchemy.qi_gathering_pill",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 50,
+      "items": [
+        {
+          "id": "mat.spirit_grass",
+          "qty": 4
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Sect · Alchemy Hall",
+    "art": {
+      "icon": {
+        "file": "assets/quests/alchemy_first_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'First Pill': Refine a Qi Gathering Pill in the Alchemy Hall., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.forge.first_enhancement",
+    "name": "Sharper Than Yesterday",
+    "description": "Enhance any piece of equipment to +3 at the Spirit Forge.",
+    "name_cn": "更利一分",
+    "type": "forge",
+    "giver": "npc.master_gu",
+    "turn_in": "npc.master_gu",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "enhance",
+        "level": 3
+      }
+    ],
+    "rewards": {
+      "items": [
+        {
+          "id": "mat.lesser_enhancement_stone",
+          "qty": 5
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.master_gu",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Sect · Spirit Forge · Enhance",
+    "art": {
+      "icon": {
+        "file": "assets/quests/forge_first_enhancement.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Sharper Than Yesterday': Enhance any piece of equipment to +3 at the Spirit Forge., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.green_labyrinth_trial",
+    "name": "Trial of the Green Labyrinth",
+    "description": "Elder Feng challenges you to clear the Green Labyrinth.",
+    "name_cn": "青翠试炼",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 6
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.green_labyrinth",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "sect_fame": 150,
+      "spirit_stones": 500,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 20
+        }
+      ]
+    },
+    "difficulty": 3,
+    "hint": "Adventure · Dungeons · The Green Labyrinth",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_green_labyrinth_trial.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Trial of the Green Labyrinth': Elder Feng challenges you to clear the Green Labyrinth., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "rec_cp": 480
+  },
+  {
+    "id": "quest.combat.tower_five",
+    "name": "Five Floors",
+    "description": "Climb to floor 5 of the Heaven-Piercing Tower.",
+    "name_cn": "五层",
+    "type": "combat",
+    "giver": "sectloc.proving_arena",
+    "turn_in": "auto",
+    "prereqs": {
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "tower_floor",
+        "dungeon": "dungeon.heaven_piercing_tower",
+        "floor": 5
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 200,
+      "sect_fame": 30
+    },
+    "difficulty": 2,
+    "hint": "Adventure · Dungeons · Heaven-Piercing Tower",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_tower_five.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Five Floors': Climb to floor 5 of the Heaven-Piercing Tower., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "rec_cp": 400
+  },
+  {
+    "id": "quest.hidden.heart_of_the_grove",
+    "name": "Heart of the Grove",
+    "description": "Find the hidden clearing and face the Frost Hermit's trial.",
+    "name_cn": "林心",
+    "type": "hidden",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "regions": [
+        "region.azure_bamboo_forest"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "node.azure_bamboo_forest.heart_of_the_grove",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "items": [
+        {
+          "id": "gift.rare_treasure_map",
+          "qty": 1
+        }
+      ],
+      "sect_fame": 40
+    },
+    "difficulty": 3,
+    "hint": "Azure Bamboo Forest · ???",
+    "art": {
+      "icon": {
+        "file": "assets/quests/hidden_heart_of_the_grove.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Heart of the Grove': Find the hidden clearing and face the Frost Hermit's trial., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "rec_cp": 520
+  }
+]

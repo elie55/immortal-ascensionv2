@@ -1,0 +1,97 @@
+[
+  {
+    "id": "tournament.outer_sect",
+    "name": "Outer Sect Tournament",
+    "description": "Four rounds in the Proving Arena. Win all four to become an Inner Disciple. Lose any round: −200 Fame; re-enter at 1,000 Fame.",
+    "name_cn": "内门大比",
+    "entry": {
+      "rank": "rank.outer_disciple",
+      "sect_fame": 1000,
+      "realm": {
+        "id": "realm.foundation_establishment",
+        "stage": 1
+      }
+    },
+    "rounds": [
+      {
+        "opponent": "npc.zhao_lie",
+        "cp": 980,
+        "rewards": {
+          "spirit_stones": 200,
+          "items": [
+            {
+              "id": "mat.sword_rain_fragment",
+              "qty": 3
+            }
+          ]
+        }
+      },
+      {
+        "opponent": "npc.shen_qingxue",
+        "cp": 1010,
+        "rewards": {
+          "spirit_stones": 300,
+          "items": [
+            {
+              "id": "mat.sword_rain_fragment",
+              "qty": 3
+            }
+          ]
+        }
+      },
+      {
+        "opponent": "npc.tie_shanhe",
+        "cp": 1560,
+        "rewards": {
+          "spirit_stones": 400,
+          "items": [
+            {
+              "id": "mat.sword_rain_fragment",
+              "qty": 2
+            },
+            {
+              "id": "gift.fine_ledger_book",
+              "qty": 1
+            }
+          ]
+        }
+      },
+      {
+        "opponent": "npc.mo_lianjue",
+        "cp": 1700,
+        "rewards": {
+          "spirit_stones": 600,
+          "items": [
+            {
+              "id": "mat.sword_rain_fragment",
+              "qty": 2
+            }
+          ]
+        }
+      }
+    ],
+    "champion_rewards": {
+      "spirit_stones": 3000,
+      "sect_fame": 500,
+      "items": [
+        {
+          "id": "cons.foundation_pill",
+          "qty": 2
+        }
+      ],
+      "techniques": [
+        "tech.ult.heavenly_sword_rain"
+      ],
+      "titles": [
+        "title.outer_sect_champion"
+      ]
+    },
+    "loss": {
+      "sect_fame": -200
+    },
+    "reentry": {
+      "sect_fame_required": 1000
+    },
+    "repeatable": true
+  }
+]

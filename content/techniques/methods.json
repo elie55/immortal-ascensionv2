@@ -1,0 +1,157 @@
+[
+  {
+    "id": "method.azure_cloud_breathing",
+    "name": "Azure Cloud Breathing",
+    "description": "The Azure Cloud Sect's foundation breathing art. Steady, safe, and endlessly refinable.",
+    "name_cn": "青云吐纳",
+    "rarity": "uncommon",
+    "grade": "earth",
+    "qi_mult": 1.0,
+    "bonuses": {
+      "sp_energy": 10
+    },
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/azure_cloud_breathing.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Azure Cloud Breathing': The Azure Cloud Sect's foundation breathing art. Steady, safe, and endlessly refinable., polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.nine_yang_scripture",
+    "name": "Nine Yang Scripture",
+    "description": "Nine suns circulate through the meridians. Cultivation burns hot and fast.",
+    "name_cn": "九阳真经",
+    "rarity": "rare",
+    "grade": "earth",
+    "element": "elem.fire",
+    "qi_mult": 1.35,
+    "bonuses": {
+      "elem_dmg.fire": 10,
+      "hp": 300
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 5
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/nine_yang_scripture.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Nine Yang Scripture': Nine suns circulate through the meridians. Cultivation burns hot and fast., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.heavenly_dragon_art",
+    "name": "Heavenly Dragon Art",
+    "description": "Qi coils like a dragon through the body. Favoured by the sect's elites.",
+    "name_cn": "天龙诀",
+    "rarity": "epic",
+    "grade": "heaven",
+    "element": "elem.water",
+    "qi_mult": 1.8,
+    "bonuses": {
+      "sp_power": 200,
+      "elem_dmg.water": 12
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.foundation_establishment"
+      },
+      "rank": "rank.inner_disciple"
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/heavenly_dragon_art.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Heavenly Dragon Art': Qi coils like a dragon through the body. Favoured by the sect's elites., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.primordial_chaos_scripture",
+    "name": "Primordial Chaos Scripture",
+    "description": "A scripture older than the sect. Draws Qi from chaos itself.",
+    "name_cn": "混沌经",
+    "rarity": "legendary",
+    "grade": "immortal",
+    "qi_mult": 2.6,
+    "bonuses": {
+      "sp_power": 600,
+      "crit": 4
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.core_formation"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/primordial_chaos_scripture.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Primordial Chaos Scripture': A scripture older than the sect. Draws Qi from chaos itself., golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

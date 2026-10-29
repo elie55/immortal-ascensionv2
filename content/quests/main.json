@@ -1,0 +1,351 @@
+[
+  {
+    "id": "quest.main.the_path_begins",
+    "name": "The Path Begins",
+    "description": "Climb the Thousand Steps and pass the Elder's Trial.",
+    "name_cn": "仙途伊始",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "story",
+        "scene": "story.prologue.senior_sister"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 100,
+      "sect_fame": 20
+    },
+    "difficulty": 1,
+    "hint": "Prologue · follow the story",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_the_path_begins.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'The Path Begins': Climb the Thousand Steps and pass the Elder's Trial., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.senior_sister"
+  },
+  {
+    "id": "quest.main.senior_sister",
+    "name": "Senior Sister",
+    "description": "Present Elder Wen's token to Bai Lingshuang at the Sword Grounds.",
+    "name_cn": "师姐",
+    "type": "main",
+    "giver": "npc.bai_lingshuang",
+    "turn_in": "npc.bai_lingshuang",
+    "prereqs": {
+      "quests": [
+        "quest.main.the_path_begins"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "qitem.elder_wen_token",
+        "count": 1,
+        "to": "npc.bai_lingshuang"
+      }
+    ],
+    "rewards": {
+      "sect_fame": 20,
+      "items": [
+        {
+          "id": "cons.blossom_healing_pill",
+          "qty": 2
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.bai_lingshuang",
+          "delta": 20
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Sect · Sword Grounds · Bai Lingshuang",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_senior_sister.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Senior Sister': Present Elder Wen's token to Bai Lingshuang at the Sword Grounds., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.first_breath"
+  },
+  {
+    "id": "quest.main.first_breath",
+    "name": "First Breath",
+    "description": "Cultivate Azure Cloud Breathing until you reach Qi Condensation Stage 2.",
+    "name_cn": "初次吐纳",
+    "type": "main",
+    "giver": "npc.bai_lingshuang",
+    "turn_in": "npc.bai_lingshuang",
+    "prereqs": {
+      "quests": [
+        "quest.main.senior_sister"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.qi_condensation",
+        "stage": 2
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 150,
+      "items": [
+        {
+          "id": "cons.qi_gathering_pill",
+          "qty": 3
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Cultivate tab · Break through to Stage 2",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_first_breath.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'First Breath': Cultivate Azure Cloud Breathing until you reach Qi Condensation Stage 2., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.first_hunt"
+  },
+  {
+    "id": "quest.main.first_hunt",
+    "name": "First Hunt",
+    "description": "Prove your blade on the Mortal Plains: defeat three Wild Boars.",
+    "name_cn": "初猎",
+    "type": "main",
+    "giver": "npc.bai_lingshuang",
+    "turn_in": "npc.bai_lingshuang",
+    "prereqs": {
+      "quests": [
+        "quest.main.first_breath"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.wild_boar",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 200,
+      "sect_fame": 30,
+      "items": [
+        {
+          "id": "mat.lesser_enhancement_stone",
+          "qty": 3
+        }
+      ]
+    },
+    "difficulty": 2,
+    "hint": "Adventure · Mortal Plains · Boar Thicket",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_first_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'First Hunt': Prove your blade on the Mortal Plains: defeat three Wild Boars., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.bandit_chief",
+    "rec_cp": 130
+  },
+  {
+    "id": "quest.main.bandit_chief",
+    "name": "The Bandit Chief",
+    "description": "Chief Hu has been robbing sect caravans. End it.",
+    "name_cn": "匪首",
+    "type": "main",
+    "giver": "npc.bai_lingshuang",
+    "turn_in": "npc.bai_lingshuang",
+    "prereqs": {
+      "quests": [
+        "quest.main.first_hunt"
+      ],
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.plains_bandit_chief",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 300,
+      "sect_fame": 60,
+      "techniques": [
+        "tech.active.earth_guardian"
+      ]
+    },
+    "difficulty": 3,
+    "hint": "Adventure · Mortal Plains · Bandit Camp",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_bandit_chief.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'The Bandit Chief': Chief Hu has been robbing sect caravans. End it., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.into_the_bamboo",
+    "rec_cp": 480
+  },
+  {
+    "id": "quest.main.into_the_bamboo",
+    "name": "Into the Bamboo",
+    "description": "The Azure Bamboo Forest is open to you. Explore three of its nodes.",
+    "name_cn": "入竹林",
+    "type": "main",
+    "giver": "npc.bai_lingshuang",
+    "turn_in": "npc.bai_lingshuang",
+    "prereqs": {
+      "quests": [
+        "quest.main.bandit_chief"
+      ],
+      "regions": [
+        "region.azure_bamboo_forest"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.azure_bamboo_forest",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 250,
+      "sect_fame": 40
+    },
+    "difficulty": 2,
+    "hint": "Adventure · Azure Bamboo Forest",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_into_the_bamboo.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Into the Bamboo': The Azure Bamboo Forest is open to you. Explore three of its nodes., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.bamboo_sovereign",
+    "rec_cp": 300
+  },
+  {
+    "id": "quest.main.bamboo_sovereign",
+    "name": "The Bamboo Sovereign",
+    "description": "Something ancient stirs at the heart of the forest. Defeat the Thousand-Node Bamboo Dragon.",
+    "name_cn": "竹龙",
+    "type": "main",
+    "giver": "npc.bai_lingshuang",
+    "turn_in": "npc.bai_lingshuang",
+    "prereqs": {
+      "quests": [
+        "quest.main.into_the_bamboo"
+      ],
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 7
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.thousand_node_bamboo_dragon",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 800,
+      "sect_fame": 200,
+      "items": [
+        {
+          "id": "cons.foundation_pill",
+          "qty": 1
+        }
+      ]
+    },
+    "difficulty": 4,
+    "hint": "Adventure · Azure Bamboo Forest · Ancient Bamboo Sovereign",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_bamboo_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'The Bamboo Sovereign': Something ancient stirs at the heart of the forest. Defeat the Thousand-Node Bamboo Dragon., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "rec_cp": 1100
+  }
+]

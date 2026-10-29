@@ -1,0 +1,1524 @@
+[
+  {
+    "id": "npc.lin_xueyao",
+    "name": "Lin Xueyao",
+    "description": "A village girl with a faint mortal root who climbed the Thousand Steps anyway. She enters the Azure Cloud Sect as an Outer Disciple and sets her eyes on the pat…",
+    "name_cn": "林雪瑶",
+    "role": "protagonist",
+    "personality": "Kind, persistent, graceful, quietly determined.",
+    "backstory": "A village girl with a faint mortal root who climbed the Thousand Steps anyway. She enters the Azure Cloud Sect as an Outer Disciple and sets her eyes on the path to immortality.",
+    "elements": [
+      "elem.wood",
+      "elem.water"
+    ],
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 1
+    },
+    "cp": 120,
+    "expressions": [
+      "neutral",
+      "smile",
+      "determined",
+      "surprised",
+      "sad"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/lin_xueyao/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, calm gentle face, wearing a white hanfu with pale jade-green layered robes, translucent flowing sleeves and a pink sash, a long sword at her side, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/character_screen.png",
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/lin_xueyao/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, calm gentle face, wearing a white hanfu with pale jade-green layered robes, translucent flowing sleeves and a pink sash, a long sword at her side, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/character_screen.png",
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/lin_xueyao/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, calm gentle face, wearing a white hanfu with pale jade-green layered robes, translucent flowing sleeves and a pink sash, a long sword at her side, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/character_screen.png",
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      },
+      "expression_smile": {
+        "file": "assets/npcs/lin_xueyao/expression_smile.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, calm gentle face, wearing a white hanfu with pale jade-green layered robes, translucent flowing sleeves and a pink sash, a long sword at her side, smile expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/character_screen.png",
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      },
+      "expression_determined": {
+        "file": "assets/npcs/lin_xueyao/expression_determined.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, calm gentle face, wearing a white hanfu with pale jade-green layered robes, translucent flowing sleeves and a pink sash, a long sword at her side, determined expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/character_screen.png",
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      },
+      "expression_surprised": {
+        "file": "assets/npcs/lin_xueyao/expression_surprised.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, calm gentle face, wearing a white hanfu with pale jade-green layered robes, translucent flowing sleeves and a pink sash, a long sword at her side, surprised expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/character_screen.png",
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      },
+      "expression_sad": {
+        "file": "assets/npcs/lin_xueyao/expression_sad.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, calm gentle face, wearing a white hanfu with pale jade-green layered robes, translucent flowing sleeves and a pink sash, a long sword at her side, sad expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/character_screen.png",
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "dao_companion": {
+      "eligible": false
+    }
+  },
+  {
+    "id": "npc.bai_lingshuang",
+    "name": "Bai Lingshuang",
+    "description": "An Inner Disciple who teaches the Frost Sword at the Sword Grounds. She took Lin Xueyao under her wing on the day of the trial, though she would never say why.",
+    "name_cn": "白凌霜",
+    "role": "senior",
+    "title": "Senior Sister · Frost Sword Instructor",
+    "location": "sectloc.sword_grounds",
+    "personality": "Disciplined, elegant, reserved, highly talented. Softens slowly.",
+    "backstory": "An Inner Disciple who teaches the Frost Sword at the Sword Grounds. She took Lin Xueyao under her wing on the day of the trial, though she would never say why.",
+    "elements": [
+      "elem.water",
+      "elem.metal"
+    ],
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 4
+    },
+    "cp": 1700,
+    "expressions": [
+      "neutral",
+      "stern",
+      "faint_smile",
+      "surprised"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/bai_lingshuang/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Bai Lingshuang, a tall elegant young woman with long silver-white hair in a high ponytail, cool blue eyes, pale skin, wearing white and ice-blue layered robes with silver frost embroidery, holding a slender crystal-blue sword, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue_bai.png"
+        ],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/bai_lingshuang/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Bai Lingshuang, a tall elegant young woman with long silver-white hair in a high ponytail, cool blue eyes, pale skin, wearing white and ice-blue layered robes with silver frost embroidery, holding a slender crystal-blue sword, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue_bai.png"
+        ],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/bai_lingshuang/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Bai Lingshuang, a tall elegant young woman with long silver-white hair in a high ponytail, cool blue eyes, pale skin, wearing white and ice-blue layered robes with silver frost embroidery, holding a slender crystal-blue sword, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue_bai.png"
+        ],
+        "status": "planned"
+      },
+      "expression_stern": {
+        "file": "assets/npcs/bai_lingshuang/expression_stern.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Bai Lingshuang, a tall elegant young woman with long silver-white hair in a high ponytail, cool blue eyes, pale skin, wearing white and ice-blue layered robes with silver frost embroidery, holding a slender crystal-blue sword, stern expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue_bai.png"
+        ],
+        "status": "planned"
+      },
+      "expression_faint_smile": {
+        "file": "assets/npcs/bai_lingshuang/expression_faint_smile.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Bai Lingshuang, a tall elegant young woman with long silver-white hair in a high ponytail, cool blue eyes, pale skin, wearing white and ice-blue layered robes with silver frost embroidery, holding a slender crystal-blue sword, faint smile expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue_bai.png"
+        ],
+        "status": "planned"
+      },
+      "expression_surprised": {
+        "file": "assets/npcs/bai_lingshuang/expression_surprised.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Bai Lingshuang, a tall elegant young woman with long silver-white hair in a high ponytail, cool blue eyes, pale skin, wearing white and ice-blue layered robes with silver frost embroidery, holding a slender crystal-blue sword, surprised expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue_bai.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/npcs/bai_lingshuang/battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of Bai Lingshuang in combat stance, same design as the reference, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue_bai.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "gifts": {
+      "loved": [
+        {
+          "id": "gift.frost_plum_wine",
+          "affinity": 40
+        }
+      ],
+      "liked": [
+        {
+          "id": "gift.sword_polish_cloth",
+          "affinity": 15
+        },
+        {
+          "id": "gift.osmanthus_cake",
+          "affinity": 12
+        },
+        {
+          "id": "cons.spirit_tea",
+          "affinity": 8
+        }
+      ],
+      "disliked": [
+        {
+          "id": "gift.counterfeit_coin",
+          "affinity": -20
+        }
+      ],
+      "loved_tags": [
+        "frost"
+      ],
+      "liked_tags": [
+        "sword_care",
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "frost_sword",
+        "title": "The Frost Sword",
+        "summary": "Why she chose the sword of ice.",
+        "unlock": {},
+        "answer": "Ice does not hesitate. Neither should a blade."
+      },
+      {
+        "id": "the_trial",
+        "title": "The day of the trial",
+        "summary": "Why she noticed you.",
+        "unlock": {
+          "affinity": 300
+        },
+        "answer": "You gave the water to the fox first. Most do not even see the fox."
+      },
+      {
+        "id": "frozen_lotus_valley",
+        "title": "Frozen Lotus Valley",
+        "summary": "The valley where she trained.",
+        "unlock": {
+          "affinity": 600
+        },
+        "answer": "There is a lotus there that blooms once a decade. I was born the year it last bloomed."
+      }
+    ],
+    "quests": [
+      "quest.main.senior_sister",
+      "quest.main.first_breath",
+      "quest.main.first_hunt",
+      "quest.main.bandit_chief",
+      "quest.main.into_the_bamboo",
+      "quest.main.bamboo_sovereign",
+      "quest.npc.frost_sword_lesson"
+    ],
+    "duel": {
+      "enabled": true,
+      "loadout": [
+        "tech.active.frost_blossom_slash",
+        "tech.active.azure_strike",
+        "tech.active.frozen_lotus",
+        "tech.passive.sword_mastery"
+      ],
+      "strategy": "aggressive",
+      "win": {
+        "affinity": [],
+        "mastery_xp": 40
+      },
+      "lose": {
+        "mastery_xp": 15
+      },
+      "cooldown_min": 60
+    },
+    "dao_companion": {
+      "eligible": true,
+      "role": "dps",
+      "stats": {
+        "hp": 5200,
+        "atk": 420,
+        "def": 180,
+        "spd": 22,
+        "crit": 18,
+        "crit_dmg": 150,
+        "acc": 90,
+        "eva": 5,
+        "sp_power": 300,
+        "sp_energy": 100
+      },
+      "techniques": [
+        "tech.active.frost_blossom_slash",
+        "tech.active.frozen_lotus",
+        "tech.active.swallow_return_sword"
+      ]
+    }
+  },
+  {
+    "id": "npc.tang_xiaoman",
+    "name": "Tang Xiaoman",
+    "description": "Runs the Merchant Pavilion and a caravan that travels the Azure Bamboo Forest. She has a metal root and a sharper tongue. She needs money for a reason she alway…",
+    "name_cn": "唐小蛮",
+    "role": "merchant",
+    "title": "Travelling Merchant",
+    "location": "sectloc.merchant_pavilion",
+    "personality": "Cheerful, lively, clever, obsessed with profitable transactions.",
+    "backstory": "Runs the Merchant Pavilion and a caravan that travels the Azure Bamboo Forest. She has a metal root and a sharper tongue. She needs money for a reason she always laughs off.",
+    "elements": [
+      "elem.metal",
+      "elem.earth"
+    ],
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 6
+    },
+    "cp": 420,
+    "expressions": [
+      "neutral",
+      "grin",
+      "wink",
+      "pout",
+      "shocked"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/tang_xiaoman/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Tang Xiaoman, a cheerful young merchant girl with short wavy chestnut hair, large amber eyes, a wide grin, wearing a cream and red merchant hanfu with a coin-patterned sash, a bronze abacus and coin pouches at her belt, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tang_talk.png",
+          "refs/mockups/merchant_pavilion.png"
+        ],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/tang_xiaoman/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Tang Xiaoman, a cheerful young merchant girl with short wavy chestnut hair, large amber eyes, a wide grin, wearing a cream and red merchant hanfu with a coin-patterned sash, a bronze abacus and coin pouches at her belt, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tang_talk.png",
+          "refs/mockups/merchant_pavilion.png"
+        ],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/tang_xiaoman/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Tang Xiaoman, a cheerful young merchant girl with short wavy chestnut hair, large amber eyes, a wide grin, wearing a cream and red merchant hanfu with a coin-patterned sash, a bronze abacus and coin pouches at her belt, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tang_talk.png",
+          "refs/mockups/merchant_pavilion.png"
+        ],
+        "status": "planned"
+      },
+      "expression_grin": {
+        "file": "assets/npcs/tang_xiaoman/expression_grin.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Tang Xiaoman, a cheerful young merchant girl with short wavy chestnut hair, large amber eyes, a wide grin, wearing a cream and red merchant hanfu with a coin-patterned sash, a bronze abacus and coin pouches at her belt, grin expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tang_talk.png",
+          "refs/mockups/merchant_pavilion.png"
+        ],
+        "status": "planned"
+      },
+      "expression_wink": {
+        "file": "assets/npcs/tang_xiaoman/expression_wink.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Tang Xiaoman, a cheerful young merchant girl with short wavy chestnut hair, large amber eyes, a wide grin, wearing a cream and red merchant hanfu with a coin-patterned sash, a bronze abacus and coin pouches at her belt, wink expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tang_talk.png",
+          "refs/mockups/merchant_pavilion.png"
+        ],
+        "status": "planned"
+      },
+      "expression_pout": {
+        "file": "assets/npcs/tang_xiaoman/expression_pout.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Tang Xiaoman, a cheerful young merchant girl with short wavy chestnut hair, large amber eyes, a wide grin, wearing a cream and red merchant hanfu with a coin-patterned sash, a bronze abacus and coin pouches at her belt, pout expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tang_talk.png",
+          "refs/mockups/merchant_pavilion.png"
+        ],
+        "status": "planned"
+      },
+      "expression_shocked": {
+        "file": "assets/npcs/tang_xiaoman/expression_shocked.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Tang Xiaoman, a cheerful young merchant girl with short wavy chestnut hair, large amber eyes, a wide grin, wearing a cream and red merchant hanfu with a coin-patterned sash, a bronze abacus and coin pouches at her belt, shocked expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tang_talk.png",
+          "refs/mockups/merchant_pavilion.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/npcs/tang_xiaoman/battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of Tang Xiaoman in combat stance, same design as the reference, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tang_talk.png",
+          "refs/mockups/merchant_pavilion.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "gifts": {
+      "loved": [
+        {
+          "id": "gift.ancient_spirit_coin",
+          "affinity": 40
+        }
+      ],
+      "liked": [
+        {
+          "id": "gift.rare_treasure_map",
+          "affinity": 15
+        },
+        {
+          "id": "gift.spirit_stone_pouch",
+          "affinity": 15
+        },
+        {
+          "id": "gift.fine_ledger_book",
+          "affinity": 15
+        },
+        {
+          "id": "gift.candied_hawthorn",
+          "affinity": 15
+        },
+        {
+          "id": "gift.osmanthus_cake",
+          "affinity": 10
+        }
+      ],
+      "disliked": [
+        {
+          "id": "gift.counterfeit_coin",
+          "affinity": -20
+        },
+        {
+          "id": "gift.bitter_medicine",
+          "affinity": -20
+        },
+        {
+          "id": "junk.cheap_junk_loot",
+          "affinity": -20
+        }
+      ],
+      "loved_tags": [
+        "antique"
+      ],
+      "liked_tags": [
+        "coin",
+        "ledger",
+        "map",
+        "snack"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "her_stall",
+        "title": "Her stall",
+        "summary": "What sells, what doesn't, and why.",
+        "unlock": {},
+        "answer": "Pills sell. Hope sells better. I sell pills."
+      },
+      {
+        "id": "prices_caravans",
+        "title": "Prices & caravans",
+        "summary": "Why goods from Blazing Mountain cost more.",
+        "unlock": {},
+        "answer": "Every caravan that crosses the Blazing Mountain loses a cart. You pay for the cart."
+      },
+      {
+        "id": "haggling",
+        "title": "Haggling tips",
+        "summary": "How to get a better price out of her.",
+        "unlock": {
+          "affinity": 50
+        },
+        "answer": "Raise your Sect Fame. I give discounts to people who can protect my caravans."
+      },
+      {
+        "id": "sect_rumours",
+        "title": "Sect rumours",
+        "summary": "Harmless gossip about everyone in the sect.",
+        "unlock": {
+          "affinity": 300
+        },
+        "answer": "Senior Sister Bai polishes her sword at midnight. Every midnight. Make of that what you will."
+      },
+      {
+        "id": "mortal_plains",
+        "title": "Life on the Mortal Plains",
+        "summary": "Where she grew up.",
+        "unlock": {
+          "affinity": 300
+        },
+        "answer": "Three sisters, one goat, no money. The goat was the smart one."
+      },
+      {
+        "id": "why_money",
+        "title": "Why she needs so much money",
+        "summary": "The question she always laughs off.",
+        "unlock": {
+          "affinity": 600,
+          "quest": "quest.npc.tangs_ledger"
+        },
+        "answer": "…My sisters are still on the plains. Foundation Pills are expensive. Don't tell anyone."
+      },
+      {
+        "id": "lucky_coin",
+        "title": "Her lucky coin",
+        "summary": "The first coin she ever stole—earned.",
+        "unlock": {
+          "affinity": 1000
+        },
+        "answer": "I earned it. Mostly. Here—hold it. No, you can keep it."
+      }
+    ],
+    "quests": [
+      "quest.mission.goods_for_the_caravan",
+      "quest.npc.tangs_ledger"
+    ],
+    "duel": {
+      "enabled": true,
+      "loadout": [
+        "tech.active.golden_coin_barrage",
+        "tech.active.abacus_reckoning",
+        "tech.ult.ten_thousand_gold_rain"
+      ],
+      "strategy": "trickster",
+      "win": {
+        "affinity": [],
+        "mastery_xp": 40
+      },
+      "lose": {
+        "mastery_xp": 15
+      },
+      "cooldown_min": 60
+    },
+    "shop": "shop.merchant_pavilion",
+    "dao_companion": {
+      "eligible": true,
+      "role": "support",
+      "stats": {
+        "hp": 4200,
+        "atk": 300,
+        "def": 150,
+        "spd": 20,
+        "crit": 5,
+        "crit_dmg": 150,
+        "acc": 90,
+        "eva": 5,
+        "sp_power": 380,
+        "sp_energy": 100
+      },
+      "techniques": [
+        "tech.active.golden_coin_barrage",
+        "tech.active.abacus_reckoning",
+        "tech.ult.ten_thousand_gold_rain"
+      ]
+    }
+  },
+  {
+    "id": "npc.elder_wen",
+    "name": "Elder Wen",
+    "description": "Keeper of the Entrance Gate for forty years. Every disciple remembers her trial; she remembers every answer.",
+    "name_cn": "温长老",
+    "role": "elder",
+    "title": "Gate Elder",
+    "location": "sectloc.your_quarters",
+    "personality": "Wise, compassionate, patient; asks questions instead of giving answers.",
+    "backstory": "Keeper of the Entrance Gate for forty years. Every disciple remembers her trial; she remembers every answer.",
+    "elements": [
+      "elem.earth",
+      "elem.wood"
+    ],
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 7
+    },
+    "cp": 9000,
+    "expressions": [
+      "neutral",
+      "warm_smile",
+      "thoughtful"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/elder_wen/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Elder Wen, a kind elderly woman with silver hair in a bun, gentle wrinkles, warm brown eyes, wearing pale blue and white elder robes with a cloud-embroidered shawl, holding a wooden staff, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue_elder_wen.png"
+        ],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/elder_wen/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Elder Wen, a kind elderly woman with silver hair in a bun, gentle wrinkles, warm brown eyes, wearing pale blue and white elder robes with a cloud-embroidered shawl, holding a wooden staff, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue_elder_wen.png"
+        ],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/elder_wen/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Elder Wen, a kind elderly woman with silver hair in a bun, gentle wrinkles, warm brown eyes, wearing pale blue and white elder robes with a cloud-embroidered shawl, holding a wooden staff, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue_elder_wen.png"
+        ],
+        "status": "planned"
+      },
+      "expression_warm_smile": {
+        "file": "assets/npcs/elder_wen/expression_warm_smile.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Elder Wen, a kind elderly woman with silver hair in a bun, gentle wrinkles, warm brown eyes, wearing pale blue and white elder robes with a cloud-embroidered shawl, holding a wooden staff, warm smile expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue_elder_wen.png"
+        ],
+        "status": "planned"
+      },
+      "expression_thoughtful": {
+        "file": "assets/npcs/elder_wen/expression_thoughtful.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Elder Wen, a kind elderly woman with silver hair in a bun, gentle wrinkles, warm brown eyes, wearing pale blue and white elder robes with a cloud-embroidered shawl, holding a wooden staff, thoughtful expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue_elder_wen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "quests": [
+      "quest.main.the_path_begins"
+    ],
+    "gifts": {
+      "liked": [
+        {
+          "id": "cons.spirit_tea",
+          "affinity": 10
+        },
+        {
+          "id": "gift.osmanthus_cake",
+          "affinity": 10
+        }
+      ],
+      "liked_tags": [
+        "refined"
+      ]
+    }
+  },
+  {
+    "id": "npc.elder_feng",
+    "name": "Elder Feng Wanqiu",
+    "description": "Guards the sect's manuals and decides who is worthy to read them. Issues advancement challenges to promising disciples.",
+    "name_cn": "冯万秋长老",
+    "role": "elder",
+    "title": "Keeper of the Scripture Pavilion",
+    "location": "sectloc.scripture_pavilion",
+    "personality": "Authoritative, exacting, secretly proud of diligent students.",
+    "backstory": "Guards the sect's manuals and decides who is worthy to read them. Issues advancement challenges to promising disciples.",
+    "elements": [
+      "elem.metal"
+    ],
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 3
+    },
+    "cp": 7000,
+    "expressions": [
+      "neutral",
+      "stern",
+      "approving"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/elder_feng/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Elder Feng, a stern middle-aged man with a long black beard streaked grey, sharp eyes, wearing dark navy scholar robes with gold trim, holding a scroll, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/elder_feng/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Elder Feng, a stern middle-aged man with a long black beard streaked grey, sharp eyes, wearing dark navy scholar robes with gold trim, holding a scroll, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/elder_feng/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Elder Feng, a stern middle-aged man with a long black beard streaked grey, sharp eyes, wearing dark navy scholar robes with gold trim, holding a scroll, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_stern": {
+        "file": "assets/npcs/elder_feng/expression_stern.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Elder Feng, a stern middle-aged man with a long black beard streaked grey, sharp eyes, wearing dark navy scholar robes with gold trim, holding a scroll, stern expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_approving": {
+        "file": "assets/npcs/elder_feng/expression_approving.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Elder Feng, a stern middle-aged man with a long black beard streaked grey, sharp eyes, wearing dark navy scholar robes with gold trim, holding a scroll, approving expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    },
+    "quests": [
+      "quest.dungeon.green_labyrinth_trial"
+    ],
+    "gifts": {
+      "liked": [
+        {
+          "id": "gift.fine_ledger_book",
+          "affinity": 10
+        }
+      ],
+      "liked_tags": [
+        "ledger",
+        "antique"
+      ]
+    }
+  },
+  {
+    "id": "npc.qin",
+    "name": "Qin",
+    "description": "Tends the Spirit Beast Garden. Nobody knows Qin's family name or realm; the beasts obey without a word.",
+    "name_cn": "秦",
+    "role": "beast_keeper",
+    "title": "Keeper of the Spirit Beast Garden",
+    "location": "sectloc.spirit_beast_garden",
+    "personality": "Calm, mysterious, speaks more to beasts than people.",
+    "backstory": "Tends the Spirit Beast Garden. Nobody knows Qin's family name or realm; the beasts obey without a word.",
+    "elements": [
+      "elem.wood",
+      "elem.earth"
+    ],
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 9
+    },
+    "cp": 2600,
+    "expressions": [
+      "neutral",
+      "soft_smile"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/qin/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Qin, a calm androgynous young cultivator with long dark green hair tied low, half-lidded grey eyes, wearing earthy green robes with leaf patterns, a small fox resting on their shoulder, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/qin/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Qin, a calm androgynous young cultivator with long dark green hair tied low, half-lidded grey eyes, wearing earthy green robes with leaf patterns, a small fox resting on their shoulder, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/qin/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Qin, a calm androgynous young cultivator with long dark green hair tied low, half-lidded grey eyes, wearing earthy green robes with leaf patterns, a small fox resting on their shoulder, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_soft_smile": {
+        "file": "assets/npcs/qin/expression_soft_smile.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Qin, a calm androgynous young cultivator with long dark green hair tied low, half-lidded grey eyes, wearing earthy green robes with leaf patterns, a small fox resting on their shoulder, soft smile expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    },
+    "quests": [
+      "quest.npc.qins_first_companion",
+      "quest.beast.evolve_yunyun"
+    ],
+    "shop": "shop.beast_garden",
+    "gifts": {
+      "loved": [
+        {
+          "id": "gift.beast_bell",
+          "affinity": 40
+        }
+      ],
+      "liked": [
+        {
+          "id": "bfood.spirit_fruit",
+          "affinity": 8
+        },
+        {
+          "id": "bfood.dried_fish",
+          "affinity": 8
+        }
+      ],
+      "loved_tags": [
+        "beast"
+      ],
+      "liked_tags": []
+    }
+  },
+  {
+    "id": "npc.master_gu",
+    "name": "Master Gu",
+    "description": "Has run the Spirit Forge since before most elders were disciples. Refuses to forge anything he considers ugly.",
+    "name_cn": "顾师傅",
+    "role": "instructor",
+    "title": "Master Smith of the Spirit Forge",
+    "location": "sectloc.spirit_forge",
+    "personality": "Gruff, practical, honest to a fault; respects anyone who brings good ore.",
+    "backstory": "Has run the Spirit Forge since before most elders were disciples. Refuses to forge anything he considers ugly.",
+    "elements": [
+      "elem.fire",
+      "elem.metal"
+    ],
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 7
+    },
+    "cp": 2400,
+    "expressions": [
+      "neutral",
+      "grumble",
+      "pleased"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/master_gu/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Master Gu, a broad bald blacksmith with a grey goatee, burn-scarred forearms, leather apron over brown robes, a glowing hammer at his belt, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/master_gu/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Master Gu, a broad bald blacksmith with a grey goatee, burn-scarred forearms, leather apron over brown robes, a glowing hammer at his belt, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/master_gu/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Master Gu, a broad bald blacksmith with a grey goatee, burn-scarred forearms, leather apron over brown robes, a glowing hammer at his belt, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_grumble": {
+        "file": "assets/npcs/master_gu/expression_grumble.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Master Gu, a broad bald blacksmith with a grey goatee, burn-scarred forearms, leather apron over brown robes, a glowing hammer at his belt, grumble expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_pleased": {
+        "file": "assets/npcs/master_gu/expression_pleased.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Master Gu, a broad bald blacksmith with a grey goatee, burn-scarred forearms, leather apron over brown robes, a glowing hammer at his belt, pleased expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    },
+    "quests": [
+      "quest.mission.ore_for_the_armory",
+      "quest.forge.first_enhancement"
+    ],
+    "gifts": {
+      "liked": [
+        {
+          "id": "mat.spirit_iron_ore",
+          "affinity": 6
+        },
+        {
+          "id": "mat.glacier_iron_ore",
+          "affinity": 12
+        }
+      ],
+      "liked_tags": [
+        "practical"
+      ]
+    }
+  },
+  {
+    "id": "npc.zhao_lie",
+    "name": "Zhao Lie",
+    "description": "An outer disciple famous for a fire root and a louder voice. First round of every tournament.",
+    "name_cn": "赵烈",
+    "role": "opponent",
+    "title": "Blazing Fist · Outer Disciple",
+    "personality": "Loud, hot-headed, generous in defeat.",
+    "backstory": "An outer disciple famous for a fire root and a louder voice. First round of every tournament.",
+    "elements": [
+      "elem.fire"
+    ],
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 2
+    },
+    "cp": 980,
+    "expressions": [
+      "neutral",
+      "fierce"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/zhao_lie/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Zhao Lie, a muscular young man with spiky red-brown hair and a headband, bare arms wrapped in bandages, orange and black martial robes, fists wreathed in flame, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/zhao_lie/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Zhao Lie, a muscular young man with spiky red-brown hair and a headband, bare arms wrapped in bandages, orange and black martial robes, fists wreathed in flame, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/zhao_lie/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Zhao Lie, a muscular young man with spiky red-brown hair and a headband, bare arms wrapped in bandages, orange and black martial robes, fists wreathed in flame, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_fierce": {
+        "file": "assets/npcs/zhao_lie/expression_fierce.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Zhao Lie, a muscular young man with spiky red-brown hair and a headband, bare arms wrapped in bandages, orange and black martial robes, fists wreathed in flame, fierce expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/npcs/zhao_lie/battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of Zhao Lie in combat stance, same design as the reference, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    },
+    "duel": {
+      "enabled": true,
+      "loadout": [
+        "tech.active.flame_palm",
+        "tech.active.thunder_palm"
+      ],
+      "strategy": "berserker",
+      "win": {
+        "affinity": [],
+        "mastery_xp": 40
+      },
+      "lose": {
+        "mastery_xp": 15
+      },
+      "cooldown_min": 60
+    }
+  },
+  {
+    "id": "npc.shen_qingxue",
+    "name": "Shen Qingxue",
+    "description": "A spear user who studied the Frost Sword from afar and adapted it to the spear.",
+    "name_cn": "沈清雪",
+    "role": "opponent",
+    "title": "Frost Spear · Outer Disciple",
+    "personality": "Quiet, precise, admires Bai Lingshuang.",
+    "backstory": "A spear user who studied the Frost Sword from afar and adapted it to the spear.",
+    "elements": [
+      "elem.water"
+    ],
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 3
+    },
+    "cp": 1010,
+    "expressions": [
+      "neutral",
+      "focused"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/shen_qingxue/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Shen Qingxue, a slender young woman with blue-black hair in twin loops, pale blue eyes, light blue and white robes, holding a long ice-crystal spear, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/shen_qingxue/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Shen Qingxue, a slender young woman with blue-black hair in twin loops, pale blue eyes, light blue and white robes, holding a long ice-crystal spear, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/shen_qingxue/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Shen Qingxue, a slender young woman with blue-black hair in twin loops, pale blue eyes, light blue and white robes, holding a long ice-crystal spear, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_focused": {
+        "file": "assets/npcs/shen_qingxue/expression_focused.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Shen Qingxue, a slender young woman with blue-black hair in twin loops, pale blue eyes, light blue and white robes, holding a long ice-crystal spear, focused expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/npcs/shen_qingxue/battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of Shen Qingxue in combat stance, same design as the reference, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    },
+    "duel": {
+      "enabled": true,
+      "loadout": [
+        "tech.active.frozen_lotus",
+        "tech.active.azure_strike",
+        "tech.passive.spiritual_regeneration"
+      ],
+      "strategy": "caster",
+      "win": {
+        "affinity": [],
+        "mastery_xp": 40
+      },
+      "lose": {
+        "mastery_xp": 15
+      },
+      "cooldown_min": 60
+    }
+  },
+  {
+    "id": "npc.tie_shanhe",
+    "name": "Tie Shanhe",
+    "description": "A former temple monk whose Iron Body has never been broken in the Proving Arena.",
+    "name_cn": "铁山河",
+    "role": "opponent",
+    "title": "Iron Body Monk · Outer Disciple",
+    "personality": "Serene, immovable, speaks in proverbs.",
+    "backstory": "A former temple monk whose Iron Body has never been broken in the Proving Arena.",
+    "elements": [
+      "elem.earth"
+    ],
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 4
+    },
+    "cp": 1560,
+    "expressions": [
+      "neutral",
+      "serene"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/tie_shanhe/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Tie Shanhe, a bald broad-shouldered monk with prayer beads, grey and saffron robes, stone-like skin glowing with earthy runes, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/tie_shanhe/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Tie Shanhe, a bald broad-shouldered monk with prayer beads, grey and saffron robes, stone-like skin glowing with earthy runes, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/tie_shanhe/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Tie Shanhe, a bald broad-shouldered monk with prayer beads, grey and saffron robes, stone-like skin glowing with earthy runes, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_serene": {
+        "file": "assets/npcs/tie_shanhe/expression_serene.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Tie Shanhe, a bald broad-shouldered monk with prayer beads, grey and saffron robes, stone-like skin glowing with earthy runes, serene expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/npcs/tie_shanhe/battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of Tie Shanhe in combat stance, same design as the reference, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    },
+    "duel": {
+      "enabled": true,
+      "loadout": [
+        "tech.active.earth_guardian",
+        "tech.active.iron_wall_stance",
+        "tech.passive.iron_body"
+      ],
+      "strategy": "defensive",
+      "win": {
+        "affinity": [],
+        "mastery_xp": 40
+      },
+      "lose": {
+        "mastery_xp": 15
+      },
+      "cooldown_min": 60
+    }
+  },
+  {
+    "id": "npc.mo_lianjue",
+    "name": "Mo Lianjue",
+    "description": "The strongest outer disciple of his generation. Expects to become an Inner Disciple this year; you are in his way.",
+    "name_cn": "墨连珏",
+    "role": "opponent",
+    "title": "Top Outer Disciple",
+    "personality": "Cold, ambitious, condescending until proven wrong.",
+    "backstory": "The strongest outer disciple of his generation. Expects to become an Inner Disciple this year; you are in his way.",
+    "elements": [
+      "elem.metal"
+    ],
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 6
+    },
+    "cp": 1700,
+    "expressions": [
+      "neutral",
+      "disdain",
+      "respect"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/mo_lianjue/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Mo Lianjue, a handsome young man with long black hair tied with a silver ribbon, dark eyes, black and silver robes, a sleek black sword floating behind him, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/mo_lianjue/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Mo Lianjue, a handsome young man with long black hair tied with a silver ribbon, dark eyes, black and silver robes, a sleek black sword floating behind him, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/mo_lianjue/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Mo Lianjue, a handsome young man with long black hair tied with a silver ribbon, dark eyes, black and silver robes, a sleek black sword floating behind him, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_disdain": {
+        "file": "assets/npcs/mo_lianjue/expression_disdain.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Mo Lianjue, a handsome young man with long black hair tied with a silver ribbon, dark eyes, black and silver robes, a sleek black sword floating behind him, disdain expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_respect": {
+        "file": "assets/npcs/mo_lianjue/expression_respect.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Mo Lianjue, a handsome young man with long black hair tied with a silver ribbon, dark eyes, black and silver robes, a sleek black sword floating behind him, respect expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/npcs/mo_lianjue/battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of Mo Lianjue in combat stance, same design as the reference, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    },
+    "duel": {
+      "enabled": true,
+      "loadout": [
+        "tech.active.swallow_return_sword",
+        "tech.active.azure_strike",
+        "tech.passive.critical_insight",
+        "tech.passive.sword_mastery"
+      ],
+      "strategy": "aggressive",
+      "win": {
+        "affinity": [],
+        "mastery_xp": 40
+      },
+      "lose": {
+        "mastery_xp": 15
+      },
+      "cooldown_min": 60
+    }
+  }
+]

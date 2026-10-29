@@ -1,0 +1,296 @@
+[
+  {
+    "id": "ach.cultivation.foundation_laid",
+    "name": "Foundation Laid",
+    "description": "Reach Foundation Establishment.",
+    "name_cn": "筑基",
+    "category": "cultivation",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "reach_realm",
+        "realm": "realm.foundation_establishment",
+        "stage": 1
+      }
+    },
+    "rewards": {
+      "spirit_stones": 500,
+      "titles": [
+        "title.path_of_the_cultivator"
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/cultivation_foundation_laid.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal for 'Foundation Laid': Reach Foundation Establishment., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.mortal_plains_charted",
+    "name": "Mortal Plains Charted",
+    "description": "Clear every node in the Mortal Plains.",
+    "name_cn": "踏遍平原",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.mortal_plains",
+        "nodes": 10
+      }
+    },
+    "rewards": {
+      "spirit_stones": 300,
+      "items": [
+        {
+          "id": "mat.refining_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_mortal_plains_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal for 'Mortal Plains Charted': Clear every node in the Mortal Plains., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.combat.hundred_victories",
+    "name": "Hundred Victories",
+    "description": "Defeat 100 enemies.",
+    "name_cn": "百胜",
+    "category": "combat",
+    "condition": {
+      "type": "counter",
+      "metric": "enemies_defeated",
+      "target": 100
+    },
+    "rewards": {
+      "spirit_stones": 400,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/combat_hundred_victories.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal for 'Hundred Victories': Defeat 100 enemies., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.combat.boss_hunter_i",
+    "name": "Boss Hunter I",
+    "description": "Defeat 5 bosses.",
+    "name_cn": "猎首",
+    "category": "combat",
+    "condition": {
+      "type": "counter",
+      "metric": "bosses_defeated",
+      "target": 5
+    },
+    "rewards": {
+      "spirit_stones": 600
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/combat_boss_hunter_i.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal for 'Boss Hunter I': Defeat 5 bosses., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.hidden_paths",
+    "name": "Hidden Paths",
+    "description": "Discover 3 hidden encounters.",
+    "name_cn": "隐径",
+    "category": "exploration",
+    "condition": {
+      "type": "counter",
+      "metric": "hidden_found",
+      "target": 3
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "gift.rare_treasure_map",
+          "qty": 1
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_hidden_paths.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal for 'Hidden Paths': Discover 3 hidden encounters., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.beasts.beast_friend",
+    "name": "Beast Friend",
+    "description": "Hatch your first spirit beast.",
+    "name_cn": "兽友",
+    "category": "beasts",
+    "condition": {
+      "type": "counter",
+      "metric": "beasts_hatched",
+      "target": 1
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "bfood.spirit_fruit",
+          "qty": 5
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/beasts_beast_friend.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal for 'Beast Friend': Hatch your first spirit beast., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.sect.inner_disciple",
+    "name": "Inner Disciple",
+    "description": "Win the Outer Sect Tournament and rise to Inner Disciple.",
+    "name_cn": "内门",
+    "category": "sect",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "rank",
+        "rank": "rank.inner_disciple"
+      }
+    },
+    "rewards": {
+      "spirit_stones": 1000
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/sect_inner_disciple.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal for 'Inner Disciple': Win the Outer Sect Tournament and rise to Inner Disciple., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.hidden.untouched",
+    "name": "Untouched",
+    "description": "Reach floor 10 of the Heaven-Piercing Tower.",
+    "name_cn": "无伤",
+    "category": "hidden",
+    "condition": {
+      "type": "counter",
+      "metric": "tower_floor",
+      "target": 10
+    },
+    "rewards": {
+      "items": [
+        {
+          "id": "mat.sword_rain_fragment",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": true,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/hidden_untouched.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal for 'Untouched': Reach floor 10 of the Heaven-Piercing Tower., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

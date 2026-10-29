@@ -1,0 +1,83 @@
+[
+  {
+    "id": "blueprint.rimeglass_spear",
+    "name": "Blueprint: Rimeglass Spear",
+    "description": "a frost-blue blueprint scroll showing a crystal spear",
+    "name_cn": "霜玻璃枪图纸",
+    "rarity": "epic",
+    "sell_value": 500,
+    "stack_limit": 1,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/blueprints/rimeglass_spear.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a frost-blue blueprint scroll showing a crystal spear, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "unlocks": "forge.rimeglass_spear"
+  },
+  {
+    "id": "blueprint.frost_heart_elixir",
+    "name": "Recipe: Frost Heart Elixir",
+    "description": "an icy recipe slip with a heart-shaped seal",
+    "name_cn": "冰心露方",
+    "rarity": "epic",
+    "sell_value": 400,
+    "stack_limit": 1,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/blueprints/frost_heart_elixir.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an icy recipe slip with a heart-shaped seal, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "unlocks": "alchemy.frost_heart_elixir"
+  },
+  {
+    "id": "blueprint.demonbane_fan",
+    "name": "Blueprint: Demonbane Fan",
+    "description": "a crimson blueprint scroll edged with black feathers",
+    "name_cn": "斩魔扇图纸",
+    "rarity": "legendary",
+    "sell_value": 2000,
+    "stack_limit": 1,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/blueprints/demonbane_fan.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a crimson blueprint scroll edged with black feathers, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "unlocks": "forge.demonbane_fan"
+  }
+]

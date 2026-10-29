@@ -1,0 +1,114 @@
+[
+  {
+    "id": "gear.cloudstep_boots",
+    "name": "Cloudstep Boots",
+    "description": "Soft boots stitched with a cloud pattern; the feet feel lighter.",
+    "name_cn": "踏云靴",
+    "slot": "boots",
+    "requirements": {},
+    "rarities": {
+      "common": {
+        "name": "Cloudstep Boots",
+        "description": "Soft boots stitched with a cloud pattern; the feet feel lighter. (Common grade.)",
+        "stats": {
+          "spd": 3,
+          "eva": 1
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 16,
+        "sell_value": 10,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/cloudstep_boots_common.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of soft white and blue cloth boots embroidered with cloud swirls, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "uncommon": {
+        "name": "Cloudstep Boots (Tempered)",
+        "description": "Soft boots stitched with a cloud pattern; the feet feel lighter. (Uncommon grade.)",
+        "stats": {
+          "spd": 4.8,
+          "eva": 1.6
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 19,
+        "sell_value": 30,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/cloudstep_boots_uncommon.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of soft white and blue cloth boots embroidered with cloud swirls, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "rare": {
+        "name": "Cloudstep Boots (Refined)",
+        "description": "Soft boots stitched with a cloud pattern; the feet feel lighter. (Rare grade.)",
+        "stats": {
+          "spd": 7.8,
+          "eva": 2.6
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 25,
+        "sell_value": 90,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/cloudstep_boots_rare.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of soft white and blue cloth boots embroidered with cloud swirls, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    }
+  }
+]

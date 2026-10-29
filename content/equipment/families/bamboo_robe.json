@@ -1,0 +1,115 @@
+[
+  {
+    "id": "gear.bamboo_robe",
+    "name": "Bamboo Robe",
+    "description": "A plain disciple's robe of bamboo cloth.",
+    "name_cn": "竹布袍",
+    "slot": "armor",
+    "requirements": {},
+    "rarities": {
+      "common": {
+        "name": "Bamboo Robe",
+        "description": "A plain disciple's robe of bamboo cloth. (Common grade.)",
+        "stats": {
+          "hp": 60,
+          "def": 8
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 112,
+        "sell_value": 10,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/armor/bamboo_robe_common.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a simple folded pale-green and white disciple robe with a cloth belt, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "uncommon": {
+        "name": "Bamboo Robe (Tempered)",
+        "description": "A plain disciple's robe of bamboo cloth. (Uncommon grade.)",
+        "stats": {
+          "hp": 96.0,
+          "def": 12.8
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 173,
+        "sell_value": 30,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/armor/bamboo_robe_uncommon.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a simple folded pale-green and white disciple robe with a cloth belt, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "rare": {
+        "name": "Bamboo Robe (Refined)",
+        "description": "A plain disciple's robe of bamboo cloth. (Rare grade.)",
+        "stats": {
+          "hp": 156.0,
+          "def": 20.8
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 275,
+        "sell_value": 90,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/armor/bamboo_robe_rare.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a simple folded pale-green and white disciple robe with a cloth belt, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "armor_type": "robe"
+  }
+]

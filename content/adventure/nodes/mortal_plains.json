@@ -1,0 +1,305 @@
+[
+  {
+    "id": "node.mortal_plains.village_road",
+    "name": "Village Road",
+    "description": "Bandits shake down travellers on the road to the sect.",
+    "region": "region.mortal_plains",
+    "kind": "battle",
+    "position": [
+      0.2,
+      0.9
+    ],
+    "connections": [
+      "node.mortal_plains.herb_meadow",
+      "node.mortal_plains.boar_thicket"
+    ],
+    "rec_cp": 110,
+    "first_clear": {
+      "spirit_stones": 40
+    },
+    "replayable": true,
+    "energy_cost": 5,
+    "waves": [
+      [
+        "enemy.field_bandit"
+      ],
+      [
+        "enemy.field_bandit",
+        "enemy.field_bandit"
+      ]
+    ]
+  },
+  {
+    "id": "node.mortal_plains.herb_meadow",
+    "name": "Herb Meadow",
+    "description": "Spirit grass and peach trees grow wild here.",
+    "region": "region.mortal_plains",
+    "kind": "gather",
+    "position": [
+      0.4,
+      0.8
+    ],
+    "connections": [
+      "node.mortal_plains.village_road",
+      "node.mortal_plains.river_crossing",
+      "node.mortal_plains.monkey_grove"
+    ],
+    "rec_cp": 100,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 5,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.spirit_grass",
+          "qty": 3
+        },
+        {
+          "id": "mat.peach_blossom",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 4,
+      "cooldown_min": 30
+    }
+  },
+  {
+    "id": "node.mortal_plains.river_crossing",
+    "name": "River Crossing",
+    "description": "Smooth pebbles line the ford.",
+    "region": "region.mortal_plains",
+    "kind": "gather",
+    "position": [
+      0.6,
+      0.85
+    ],
+    "connections": [
+      "node.mortal_plains.herb_meadow",
+      "node.mortal_plains.crane_nest"
+    ],
+    "rec_cp": 100,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 5,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.river_pebble",
+          "qty": 4
+        }
+      ],
+      "energy_cost": 3,
+      "cooldown_min": 20
+    }
+  },
+  {
+    "id": "node.mortal_plains.boar_thicket",
+    "name": "Boar Thicket",
+    "description": "Something large snorts in the brambles.",
+    "region": "region.mortal_plains",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.6
+    ],
+    "connections": [
+      "node.mortal_plains.village_road",
+      "node.mortal_plains.monkey_grove",
+      "node.mortal_plains.wolf_den"
+    ],
+    "rec_cp": 130,
+    "first_clear": {
+      "spirit_stones": 60,
+      "items": [
+        {
+          "id": "mat.lesser_enhancement_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 5,
+    "waves": [
+      [
+        "enemy.wild_boar"
+      ],
+      [
+        "enemy.wild_boar",
+        "enemy.wild_boar"
+      ]
+    ]
+  },
+  {
+    "id": "node.mortal_plains.crane_nest",
+    "name": "Crane Nest",
+    "description": "White cranes roost on the cliff; feathers drift down.",
+    "region": "region.mortal_plains",
+    "kind": "gather",
+    "position": [
+      0.75,
+      0.65
+    ],
+    "connections": [
+      "node.mortal_plains.river_crossing",
+      "node.mortal_plains.roadside_cache",
+      "node.mortal_plains.old_shrine"
+    ],
+    "rec_cp": 120,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 5,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.crane_feather",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 4,
+      "cooldown_min": 40
+    }
+  },
+  {
+    "id": "node.mortal_plains.monkey_grove",
+    "name": "Monkey Grove",
+    "description": "Spirit monkeys pelt intruders with wind.",
+    "region": "region.mortal_plains",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.5
+    ],
+    "connections": [
+      "node.mortal_plains.boar_thicket",
+      "node.mortal_plains.herb_meadow",
+      "node.mortal_plains.roadside_cache"
+    ],
+    "rec_cp": 160,
+    "first_clear": {
+      "spirit_stones": 80
+    },
+    "replayable": true,
+    "energy_cost": 5,
+    "waves": [
+      [
+        "enemy.spirit_monkey",
+        "enemy.spirit_monkey"
+      ]
+    ]
+  },
+  {
+    "id": "node.mortal_plains.roadside_cache",
+    "name": "Roadside Cache",
+    "description": "A bandit stash hidden under a milestone.",
+    "region": "region.mortal_plains",
+    "kind": "chest",
+    "position": [
+      0.65,
+      0.4
+    ],
+    "connections": [
+      "node.mortal_plains.monkey_grove",
+      "node.mortal_plains.crane_nest",
+      "node.mortal_plains.bandit_camp"
+    ],
+    "rec_cp": 150,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 5,
+    "chest": "loot.chest.plains_cache"
+  },
+  {
+    "id": "node.mortal_plains.wolf_den",
+    "name": "Wolf Den",
+    "description": "Three grey wolves and a lot of bones.",
+    "region": "region.mortal_plains",
+    "kind": "elite",
+    "position": [
+      0.25,
+      0.35
+    ],
+    "connections": [
+      "node.mortal_plains.boar_thicket",
+      "node.mortal_plains.bandit_camp"
+    ],
+    "rec_cp": 220,
+    "first_clear": {
+      "spirit_stones": 120,
+      "items": [
+        {
+          "id": "mat.wolf_fang",
+          "qty": 2
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 5,
+    "waves": [
+      [
+        "enemy.grey_wolf",
+        "enemy.grey_wolf",
+        "enemy.grey_wolf"
+      ]
+    ]
+  },
+  {
+    "id": "node.mortal_plains.old_shrine",
+    "name": "Old Shrine",
+    "description": "A collapsed shrine to a fire god, warm to the touch.",
+    "region": "region.mortal_plains",
+    "kind": "hidden",
+    "position": [
+      0.85,
+      0.3
+    ],
+    "connections": [
+      "node.mortal_plains.crane_nest"
+    ],
+    "rec_cp": 200,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 5,
+    "event": "event.blazing_shrine",
+    "hidden": {
+      "condition": "clear wolf_den and crane_nest",
+      "reveal_chance": 0.35
+    }
+  },
+  {
+    "id": "node.mortal_plains.bandit_camp",
+    "name": "Bandit Camp",
+    "description": "Chief Hu's camp. Smoke, drums and stolen sect banners.",
+    "region": "region.mortal_plains",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.15
+    ],
+    "connections": [
+      "node.mortal_plains.wolf_den",
+      "node.mortal_plains.roadside_cache"
+    ],
+    "rec_cp": 480,
+    "first_clear": {
+      "spirit_stones": 300,
+      "sect_fame": 60,
+      "items": [
+        {
+          "id": "gift.ancient_spirit_coin",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 5,
+    "waves": [
+      [
+        "enemy.field_bandit",
+        "enemy.field_bandit"
+      ],
+      [
+        "boss.plains_bandit_chief"
+      ]
+    ]
+  }
+]

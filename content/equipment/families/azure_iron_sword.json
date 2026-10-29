@@ -1,0 +1,130 @@
+[
+  {
+    "id": "gear.azure_iron_sword",
+    "name": "Azure Iron Sword",
+    "description": "Forged from spirit iron, the standard blade of outer disciples.",
+    "name_cn": "苍铁剑",
+    "slot": "weapon",
+    "requirements": {},
+    "rarities": {
+      "uncommon": {
+        "name": "Azure Iron Sword (Tempered)",
+        "description": "Forged from spirit iron, the standard blade of outer disciples. (Uncommon grade.)",
+        "stats": {
+          "atk": 16.0,
+          "crit": 1.6
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 36,
+        "sell_value": 30,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/azure_iron_sword_uncommon.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a straight double-edged sword of blue-black iron with a cloud-shaped guard, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "rare": {
+        "name": "Azure Iron Sword (Refined)",
+        "description": "Forged from spirit iron, the standard blade of outer disciples. (Rare grade.)",
+        "stats": {
+          "atk": 26.0,
+          "crit": 2.6
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [
+          {
+            "kind": "stat_mult",
+            "description": "Sword techniques +5% damage.",
+            "attribute": "elem_dmg.metal",
+            "value": 5
+          }
+        ],
+        "item_cp": 52,
+        "sell_value": 90,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/azure_iron_sword_rare.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a straight double-edged sword of blue-black iron with a cloud-shaped guard, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "epic": {
+        "name": "Azure Iron Sword of the Azure Cloud",
+        "description": "Forged from spirit iron, the standard blade of outer disciples. (Epic grade.)",
+        "stats": {
+          "atk": 42.0,
+          "crit": 4.2
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [
+          {
+            "kind": "stat_mult",
+            "description": "Sword techniques +5% damage.",
+            "attribute": "elem_dmg.metal",
+            "value": 5
+          }
+        ],
+        "item_cp": 79,
+        "sell_value": 300,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/azure_iron_sword_epic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a straight double-edged sword of blue-black iron with a cloud-shaped guard, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "weapon_type": "sword",
+    "element": "elem.metal"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "stones_base": 112,
+  "materials": [
+    {
+      "id": "mat.reforging_sand",
+      "qty": 2
+    }
+  ],
+  "lock_cost_per_stat": [
+    {
+      "id": "mat.reforging_sand",
+      "qty": 1
+    }
+  ],
+  "max_secondary_stats": 3
+}

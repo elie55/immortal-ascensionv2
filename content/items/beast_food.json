@@ -1,0 +1,66 @@
+[
+  {
+    "id": "bfood.spirit_fruit",
+    "name": "Verdant Spirit Fruit",
+    "description": "a plump pale-green fruit glowing with gentle qi",
+    "name_cn": "翠灵果",
+    "rarity": "common",
+    "sell_value": 6,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/beast_food/spirit_fruit.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a plump pale-green fruit glowing with gentle qi, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "xp": 40,
+    "bond": 1,
+    "preferred_elements": [
+      "elem.wood",
+      "elem.water"
+    ]
+  },
+  {
+    "id": "bfood.dried_fish",
+    "name": "Dried Spirit Fish",
+    "description": "a bundle of small silver dried fish tied with straw",
+    "name_cn": "灵鱼干",
+    "rarity": "common",
+    "sell_value": 5,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/beast_food/dried_fish.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a bundle of small silver dried fish tied with straw, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "xp": 35,
+    "bond": 1,
+    "preferred_elements": [
+      "elem.water",
+      "elem.fire"
+    ]
+  }
+]

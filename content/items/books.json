@@ -1,0 +1,137 @@
+[
+  {
+    "id": "book.crescent_wind_blade_manual",
+    "name": "Crescent Wind Blade Manual",
+    "description": "a green silk-bound manual with a crescent moon on the cover",
+    "name_cn": "新月风刃秘籍",
+    "rarity": "epic",
+    "sell_value": 300,
+    "stack_limit": 5,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/books/crescent_wind_blade_manual.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a green silk-bound manual with a crescent moon on the cover, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "teaches": "tech.active.crescent_wind_blade"
+  },
+  {
+    "id": "book.ripple_mending_scroll",
+    "name": "Ripple Mending Scroll",
+    "description": "a water-blue scroll tied with a white ribbon",
+    "name_cn": "涟漪回春卷",
+    "rarity": "rare",
+    "sell_value": 150,
+    "stack_limit": 5,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/books/ripple_mending_scroll.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a water-blue scroll tied with a white ribbon, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "teaches": "tech.active.ripple_mending"
+  },
+  {
+    "id": "book.nine_yang_scripture",
+    "name": "Nine Yang Scripture",
+    "description": "a red lacquered book edged in gold with nine suns on the cover",
+    "name_cn": "九阳真经",
+    "rarity": "rare",
+    "sell_value": 400,
+    "stack_limit": 5,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/books/nine_yang_scripture.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a red lacquered book edged in gold with nine suns on the cover, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "teaches": "method.nine_yang_scripture"
+  },
+  {
+    "id": "book.verdant_vine_bind_manual",
+    "name": "Verdant Vine Bind Manual",
+    "description": "a manual bound in living vine with a thorn clasp",
+    "name_cn": "青藤缚秘籍",
+    "rarity": "rare",
+    "sell_value": 200,
+    "stack_limit": 5,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/books/verdant_vine_bind_manual.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a manual bound in living vine with a thorn clasp, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "teaches": "tech.active.verdant_vine_bind"
+  },
+  {
+    "id": "book.iron_wall_stance_manual",
+    "name": "Iron Wall Stance Manual",
+    "description": "a heavy stone-slab book bound with iron rings",
+    "name_cn": "铁壁式秘籍",
+    "rarity": "epic",
+    "sell_value": 500,
+    "stack_limit": 5,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/books/iron_wall_stance_manual.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a heavy stone-slab book bound with iron rings, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "teaches": "tech.active.iron_wall_stance"
+  }
+]

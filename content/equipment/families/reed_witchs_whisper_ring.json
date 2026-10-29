@@ -1,0 +1,55 @@
+[
+  {
+    "id": "gear.reed_witchs_whisper_ring",
+    "name": "Reed Witch's Whisper Ring",
+    "description": "The ring whispers when danger is near. Taken from the Whispering Reed Witch.",
+    "name_cn": "苇巫低语戒",
+    "slot": "ring",
+    "requirements": {},
+    "rarities": {
+      "epic": {
+        "name": "Reed Witch's Whisper Ring of the Azure Cloud",
+        "description": "The ring whispers when danger is near. Taken from the Whispering Reed Witch. (Epic grade.)",
+        "stats": {
+          "atk": 16.8,
+          "hp": 33.6,
+          "crit": 8.4
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [
+          {
+            "kind": "stat_mult",
+            "description": "+4% chance to dodge a telegraphed attack.",
+            "attribute": "eva",
+            "value": 4
+          }
+        ],
+        "item_cp": 98,
+        "sell_value": 300,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/ring/reed_witchs_whisper_ring_epic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a slim ring of green-black reed wood with a glowing teal gem and a tiny bell, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "element": "elem.water"
+  }
+]

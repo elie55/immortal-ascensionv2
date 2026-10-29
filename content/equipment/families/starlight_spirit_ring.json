@@ -1,0 +1,55 @@
+[
+  {
+    "id": "gear.starlight_spirit_ring",
+    "name": "Starlight Spirit Ring",
+    "description": "A ring that holds a fallen star. Found only at the tower's heights.",
+    "name_cn": "星辉灵戒",
+    "slot": "ring",
+    "requirements": {},
+    "rarities": {
+      "mythic": {
+        "name": "Starlight Spirit Ring · Starfall",
+        "description": "A ring that holds a fallen star. Found only at the tower's heights. (Mythic grade.)",
+        "stats": {
+          "atk": 44,
+          "hp": 220,
+          "crit": 44,
+          "sp_power": 440
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [
+          {
+            "kind": "cooldown_reduction",
+            "description": "Technique cooldowns −1 every 4th turn.",
+            "value": 1
+          }
+        ],
+        "item_cp": 1132,
+        "sell_value": 3000,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/ring/starlight_spirit_ring_mythic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a dark silver ring set with a swirling star-filled gem trailing stardust, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "element": "elem.metal"
+  }
+]

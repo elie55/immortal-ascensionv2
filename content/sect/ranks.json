@@ -1,0 +1,93 @@
+[
+  {
+    "id": "rank.outer_disciple",
+    "name": "Outer Disciple",
+    "description": "The first rank of the Azure Cloud Sect.",
+    "name_cn": "外门弟子",
+    "order": 1,
+    "fame_required": 0,
+    "promotion": {},
+    "benefits": {}
+  },
+  {
+    "id": "rank.inner_disciple",
+    "name": "Inner Disciple",
+    "description": "Granted to tournament champions. Opens the Inner Sect Peak and higher-tier stock.",
+    "name_cn": "内门弟子",
+    "order": 2,
+    "fame_required": 1500,
+    "promotion": {
+      "quests": [
+        "quest.main.bamboo_sovereign"
+      ],
+      "trial": "tournament.outer_sect"
+    },
+    "benefits": {
+      "unlocks": [
+        "sectloc.inner_sect_peak"
+      ],
+      "qi_mult": 1.1,
+      "shop_tier": 2,
+      "rewards": {
+        "spirit_stones": 3000
+      }
+    }
+  },
+  {
+    "id": "rank.core_disciple",
+    "name": "Core Disciple",
+    "description": "Clear the Green Labyrinth to prove your core.",
+    "name_cn": "核心弟子",
+    "order": 3,
+    "fame_required": 4000,
+    "promotion": {
+      "trial": "dungeon.green_labyrinth"
+    },
+    "benefits": {
+      "qi_mult": 1.2,
+      "shop_tier": 3,
+      "rewards": {
+        "spirit_stones": 10000
+      }
+    }
+  },
+  {
+    "id": "rank.direct_disciple",
+    "name": "Direct Disciple",
+    "description": "Taken as a direct student of an elder.",
+    "name_cn": "亲传弟子",
+    "order": 4,
+    "fame_required": 9000,
+    "promotion": {},
+    "benefits": {
+      "qi_mult": 1.3,
+      "shop_tier": 4
+    }
+  },
+  {
+    "id": "rank.elder",
+    "name": "Elder",
+    "description": "A seat on the elders' council.",
+    "name_cn": "长老",
+    "order": 5,
+    "fame_required": 20000,
+    "promotion": {},
+    "benefits": {
+      "qi_mult": 1.45,
+      "shop_tier": 5
+    }
+  },
+  {
+    "id": "rank.grand_elder",
+    "name": "Grand Elder",
+    "description": "Second only to the Sect Master.",
+    "name_cn": "太上长老",
+    "order": 6,
+    "fame_required": 50000,
+    "promotion": {},
+    "benefits": {
+      "qi_mult": 1.6,
+      "shop_tier": 6
+    }
+  }
+]

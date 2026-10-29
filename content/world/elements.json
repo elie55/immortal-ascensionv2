@@ -1,0 +1,75 @@
+[
+  {
+    "id": "elem.wood",
+    "name": "Wood",
+    "description": "The Wood element governs healing, regeneration, poison, nature, vines.",
+    "name_cn": "木",
+    "overcomes": "elem.earth",
+    "generates": "elem.fire",
+    "color": "#5fd38a",
+    "themes": [
+      "healing",
+      "regeneration",
+      "poison",
+      "nature",
+      "vines"
+    ]
+  },
+  {
+    "id": "elem.fire",
+    "name": "Fire",
+    "description": "The Fire element governs burst damage, burning, destruction.",
+    "name_cn": "火",
+    "overcomes": "elem.metal",
+    "generates": "elem.earth",
+    "color": "#ff7a45",
+    "themes": [
+      "burst damage",
+      "burning",
+      "destruction"
+    ]
+  },
+  {
+    "id": "elem.earth",
+    "name": "Earth",
+    "description": "The Earth element governs defense, shields, resilience.",
+    "name_cn": "土",
+    "overcomes": "elem.water",
+    "generates": "elem.metal",
+    "color": "#d9a441",
+    "themes": [
+      "defense",
+      "shields",
+      "resilience"
+    ]
+  },
+  {
+    "id": "elem.metal",
+    "name": "Metal",
+    "description": "The Metal element governs sword damage, precision, critical strikes.",
+    "name_cn": "金",
+    "overcomes": "elem.wood",
+    "generates": "elem.water",
+    "color": "#c9d6e3",
+    "themes": [
+      "sword damage",
+      "precision",
+      "critical strikes"
+    ]
+  },
+  {
+    "id": "elem.water",
+    "name": "Water",
+    "description": "The Water element governs control, recovery, freezing, spiritual energy.",
+    "name_cn": "水",
+    "overcomes": "elem.fire",
+    "generates": "elem.wood",
+    "color": "#5bb8ff",
+    "themes": [
+      "control",
+      "recovery",
+      "freezing",
+      "spiritual energy"
+    ]
+  }
+]

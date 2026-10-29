@@ -1,0 +1,270 @@
+[
+  {
+    "id": "loot.boss.plains_bandit_chief",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "gift.ancient_spirit_coin",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "gift.spirit_stone_pouch",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "chance": 0.8,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "gear.azure_iron_war_ring.uncommon",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      120,
+      200
+    ],
+    "sect_fame": 20,
+    "mastery_xp": 40
+  },
+  {
+    "id": "loot.boss.thousand_node_bamboo_dragon",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.bamboo_dragon_scale",
+        "chance": 0.6,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "blueprint.rimeglass_spear",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "book.verdant_vine_bind_manual",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "gear.cloud_veil_crown.rare",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.03,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      400,
+      700
+    ],
+    "sect_fame": 50,
+    "mastery_xp": 120
+  },
+  {
+    "id": "loot.boss.guardian_of_the_origin",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.frost_wyrm_heart_core",
+        "chance": 0.5,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "gift.rare_treasure_map",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.glacier_iron_ore",
+        "chance": 0.9,
+        "qty": [
+          3,
+          6
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      900,
+      1400
+    ],
+    "sect_fame": 80,
+    "mastery_xp": 200
+  },
+  {
+    "id": "loot.boss.tribulation_thunder_spirit",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.5,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 1.0,
+        "qty": [
+          5,
+          8
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      2000,
+      3000
+    ],
+    "sect_fame": 200,
+    "mastery_xp": 400
+  },
+  {
+    "id": "loot.boss.nine_headed_abyss_serpent",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.abyss_serpent_fang",
+        "chance": 0.7,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.5,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.8,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "tech.ult.soul_devouring_art",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      8000,
+      12000
+    ],
+    "sect_fame": 500,
+    "mastery_xp": 1200
+  },
+  {
+    "id": "loot.boss.tower_warden",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 1.0,
+        "qty": [
+          3,
+          5
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.sword_rain_fragment",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      600,
+      1000
+    ],
+    "sect_fame": 40,
+    "mastery_xp": 150
+  }
+]

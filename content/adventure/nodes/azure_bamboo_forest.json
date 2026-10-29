@@ -1,0 +1,393 @@
+[
+  {
+    "id": "node.azure_bamboo_forest.forest_edge",
+    "name": "Forest Edge",
+    "description": "Where the plains end and the blue bamboo begins.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.92
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.herb_patch",
+      "node.azure_bamboo_forest.moon_pool_spring",
+      "node.azure_bamboo_forest.silk_strung_grove"
+    ],
+    "rec_cp": 280,
+    "first_clear": {
+      "spirit_stones": 100
+    },
+    "replayable": true,
+    "energy_cost": 5,
+    "waves": [
+      [
+        "enemy.azure_bamboo_wolf"
+      ],
+      [
+        "enemy.azure_bamboo_wolf",
+        "enemy.azure_bamboo_wolf"
+      ]
+    ]
+  },
+  {
+    "id": "node.azure_bamboo_forest.herb_patch",
+    "name": "Herb Patch",
+    "description": "Tender shoots and spirit fruit under the bamboo.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "gather",
+    "position": [
+      0.25,
+      0.8
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.forest_edge",
+      "node.azure_bamboo_forest.viper_hollow"
+    ],
+    "rec_cp": 260,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 5,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.bamboo_spirit_shoot",
+          "qty": 3
+        },
+        {
+          "id": "mat.jade_bamboo_segment",
+          "qty": 2
+        },
+        {
+          "id": "bfood.spirit_fruit",
+          "qty": 1
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 40
+    }
+  },
+  {
+    "id": "node.azure_bamboo_forest.moon_pool_spring",
+    "name": "Moon-Pool Spring",
+    "description": "Sit by the spring while the moon is up; Qi flows faster.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "cultivation",
+    "position": [
+      0.75,
+      0.8
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.forest_edge",
+      "node.azure_bamboo_forest.ore_vein"
+    ],
+    "rec_cp": 260,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 5,
+    "cultivation": {
+      "qi_mult": 1.5,
+      "minutes": 30,
+      "energy_cost": 6
+    }
+  },
+  {
+    "id": "node.azure_bamboo_forest.viper_hollow",
+    "name": "Viper Hollow",
+    "description": "Green vipers nest in the hollow logs.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "battle",
+    "position": [
+      0.2,
+      0.62
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.herb_patch",
+      "node.azure_bamboo_forest.frost_lynx_den"
+    ],
+    "rec_cp": 300,
+    "first_clear": {
+      "spirit_stones": 120
+    },
+    "replayable": true,
+    "energy_cost": 5,
+    "waves": [
+      [
+        "enemy.green_viper",
+        "enemy.green_viper"
+      ]
+    ]
+  },
+  {
+    "id": "node.azure_bamboo_forest.ore_vein",
+    "name": "Spirit Iron Vein",
+    "description": "A vein of spirit iron exposed by a fallen giant bamboo.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "gather",
+    "position": [
+      0.8,
+      0.62
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.moon_pool_spring"
+    ],
+    "rec_cp": 280,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 5,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.spirit_iron_ore",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 6,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.azure_bamboo_forest.silk_strung_grove",
+    "name": "Silk-Strung Grove",
+    "description": "Node 10. Cloud silk hangs between every stalk.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.68
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.forest_edge",
+      "node.azure_bamboo_forest.caravan_rest",
+      "node.azure_bamboo_forest.hollow_shrine"
+    ],
+    "rec_cp": 340,
+    "first_clear": {
+      "spirit_stones": 150,
+      "items": [
+        {
+          "id": "mat.cloud_silk_bolt",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 5,
+    "waves": [
+      [
+        "enemy.cloud_silk_spider"
+      ],
+      [
+        "enemy.cloud_silk_spider",
+        "enemy.bamboo_spirit_sprite"
+      ]
+    ]
+  },
+  {
+    "id": "node.azure_bamboo_forest.caravan_rest",
+    "name": "Caravan Rest",
+    "description": "Tang Xiaoman's caravan camps here between runs.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "merchant",
+    "position": [
+      0.65,
+      0.5
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.silk_strung_grove",
+      "node.azure_bamboo_forest.reed_marsh"
+    ],
+    "rec_cp": 300,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 5,
+    "shop": "shop.tang_caravan"
+  },
+  {
+    "id": "node.azure_bamboo_forest.hollow_shrine",
+    "name": "Hollow Shrine",
+    "description": "A shrine hollowed into a bamboo giant. Someone left crates here.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "chest",
+    "position": [
+      0.35,
+      0.5
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.silk_strung_grove",
+      "node.azure_bamboo_forest.whispering_bend"
+    ],
+    "rec_cp": 320,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 5,
+    "chest": "loot.chest.forest_hollow"
+  },
+  {
+    "id": "node.azure_bamboo_forest.frost_lynx_den",
+    "name": "Frost Lynx Den",
+    "description": "Rime crusts the bamboo. The lynx is watching.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "elite",
+    "position": [
+      0.15,
+      0.4
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.viper_hollow",
+      "node.azure_bamboo_forest.heart_of_the_grove"
+    ],
+    "rec_cp": 480,
+    "first_clear": {
+      "spirit_stones": 200,
+      "items": [
+        {
+          "id": "mat.frost_beast_core",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 5,
+    "waves": [
+      [
+        "enemy.rime_bamboo_lynx"
+      ]
+    ]
+  },
+  {
+    "id": "node.azure_bamboo_forest.whispering_bend",
+    "name": "Whispering Bend",
+    "description": "You hear singing in the reeds.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "hidden",
+    "position": [
+      0.5,
+      0.42
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.hollow_shrine",
+      "node.azure_bamboo_forest.heart_of_the_grove",
+      "node.azure_bamboo_forest.ancient_sovereign"
+    ],
+    "rec_cp": 400,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 5,
+    "event": "event.hidden_whisper",
+    "hidden": {
+      "condition": "clear silk_strung_grove",
+      "reveal_chance": 0.4
+    }
+  },
+  {
+    "id": "node.azure_bamboo_forest.reed_marsh",
+    "name": "Reed Marsh",
+    "description": "The Whispering Reed Witch's marsh.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "elite",
+    "position": [
+      0.8,
+      0.35
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.caravan_rest",
+      "node.azure_bamboo_forest.origin_rift"
+    ],
+    "rec_cp": 560,
+    "first_clear": {
+      "spirit_stones": 260,
+      "sect_fame": 10
+    },
+    "replayable": true,
+    "energy_cost": 5,
+    "waves": [
+      [
+        "enemy.whispering_reed_witch"
+      ]
+    ]
+  },
+  {
+    "id": "node.azure_bamboo_forest.heart_of_the_grove",
+    "name": "Heart of the Grove",
+    "description": "A clearing of silver bamboo and an old hermit's hut.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "hidden",
+    "position": [
+      0.3,
+      0.25
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.frost_lynx_den",
+      "node.azure_bamboo_forest.whispering_bend",
+      "node.azure_bamboo_forest.ancient_sovereign"
+    ],
+    "rec_cp": 520,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 5,
+    "event": "event.frost_hermit_trial",
+    "hidden": {
+      "condition": "hidden node, 2 of 3 found",
+      "reveal_chance": 0.25
+    }
+  },
+  {
+    "id": "node.azure_bamboo_forest.origin_rift",
+    "name": "Origin Rift",
+    "description": "A seam of light between two ancient stalks. The Origin Secret Realm lies beyond.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "secret_realm",
+    "position": [
+      0.65,
+      0.2
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.reed_marsh",
+      "node.azure_bamboo_forest.ancient_sovereign"
+    ],
+    "rec_cp": 1800,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 5,
+    "secret_realm": "dungeon.origin_secret_realm"
+  },
+  {
+    "id": "node.azure_bamboo_forest.ancient_sovereign",
+    "name": "Ancient Bamboo Sovereign",
+    "description": "The dragon's grove. The bamboo here is older than the sect.",
+    "region": "region.azure_bamboo_forest",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.08
+    ],
+    "connections": [
+      "node.azure_bamboo_forest.heart_of_the_grove",
+      "node.azure_bamboo_forest.origin_rift",
+      "node.azure_bamboo_forest.whispering_bend"
+    ],
+    "rec_cp": 1100,
+    "first_clear": {
+      "spirit_stones": 800,
+      "sect_fame": 200,
+      "items": [
+        {
+          "id": "mat.bamboo_dragon_scale",
+          "qty": 2
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 5,
+    "waves": [
+      [
+        "enemy.bamboo_spirit_sprite",
+        "enemy.bamboo_spirit_sprite"
+      ],
+      [
+        "boss.thousand_node_bamboo_dragon"
+      ]
+    ]
+  }
+]

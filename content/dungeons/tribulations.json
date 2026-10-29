@@ -1,0 +1,49 @@
+[
+  {
+    "id": "tribulation.core_formation",
+    "name": "Core Formation Tribulation",
+    "description": "Three waves of heavenly lightning test those who would form a Golden Core. Earth resists it; Water conducts it.",
+    "name_cn": "结丹天劫",
+    "realm": "realm.core_formation",
+    "spirit": "boss.tribulation_thunder_spirit",
+    "waves": [
+      {
+        "bolts": 3,
+        "dmg_mult": 1.0,
+        "element": "elem.metal"
+      },
+      {
+        "bolts": 4,
+        "dmg_mult": 1.4,
+        "element": "elem.metal"
+      },
+      {
+        "bolts": 5,
+        "dmg_mult": 2.0,
+        "element": "elem.metal"
+      }
+    ],
+    "modifiers": [],
+    "failure": {
+      "qi_loss_pct": 0.3,
+      "retry_cooldown_min": 120
+    },
+    "rewards": "loot.tribulation.core_formation",
+    "art": {
+      "battle_bg": {
+        "file": "assets/tribulations/core_formation_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a mountain peak under a vortex of purple storm clouds with lightning tearing down, golden sunset rim. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tribulation.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

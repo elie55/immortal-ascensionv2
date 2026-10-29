@@ -1,0 +1,92 @@
+[
+  {
+    "id": "gear.dragonbone_pendant",
+    "name": "Dragonbone Pendant",
+    "description": "A pendant of ancient dragon bone that hums near spirit energy.",
+    "name_cn": "龙骨坠",
+    "slot": "necklace",
+    "requirements": {},
+    "rarities": {
+      "epic": {
+        "name": "Dragonbone Pendant of the Azure Cloud",
+        "description": "A pendant of ancient dragon bone that hums near spirit energy. (Epic grade.)",
+        "stats": {
+          "sp_power": 84.0,
+          "sp_energy": 42.0
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [
+          {
+            "kind": "sp_restore",
+            "description": "Restore 5 SP per turn.",
+            "value": 5
+          }
+        ],
+        "item_cp": 199,
+        "sell_value": 300,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/necklace/dragonbone_pendant_epic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ivory-white carved dragon-bone pendant with gold caps on a black cord, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "legendary": {
+        "name": "Dragonbone Pendant of Nine Heavens",
+        "description": "A pendant of ancient dragon bone that hums near spirit energy. (Legendary grade.)",
+        "stats": {
+          "sp_power": 140,
+          "sp_energy": 70
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [
+          {
+            "kind": "sp_restore",
+            "description": "Restore 5 SP per turn.",
+            "value": 5
+          }
+        ],
+        "item_cp": 325,
+        "sell_value": 1000,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/necklace/dragonbone_pendant_legendary.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ivory-white carved dragon-bone pendant with gold caps on a black cord, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    }
+  }
+]

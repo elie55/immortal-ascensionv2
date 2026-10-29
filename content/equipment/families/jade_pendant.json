@@ -1,0 +1,114 @@
+[
+  {
+    "id": "gear.jade_pendant",
+    "name": "Jade Pendant",
+    "description": "A small jade disc on a red cord, carved with the sect's cloud.",
+    "name_cn": "玉佩",
+    "slot": "necklace",
+    "requirements": {},
+    "rarities": {
+      "common": {
+        "name": "Jade Pendant",
+        "description": "A small jade disc on a red cord, carved with the sect's cloud. (Common grade.)",
+        "stats": {
+          "sp_power": 20,
+          "sp_energy": 10
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 55,
+        "sell_value": 10,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/necklace/jade_pendant_common.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a round pale-green jade pendant with a carved cloud on a red silk cord, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "uncommon": {
+        "name": "Jade Pendant (Tempered)",
+        "description": "A small jade disc on a red cord, carved with the sect's cloud. (Uncommon grade.)",
+        "stats": {
+          "sp_power": 32.0,
+          "sp_energy": 16.0
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 82,
+        "sell_value": 30,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/necklace/jade_pendant_uncommon.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a round pale-green jade pendant with a carved cloud on a red silk cord, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "rare": {
+        "name": "Jade Pendant (Refined)",
+        "description": "A small jade disc on a red cord, carved with the sect's cloud. (Rare grade.)",
+        "stats": {
+          "sp_power": 52.0,
+          "sp_energy": 26.0
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 127,
+        "sell_value": 90,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/necklace/jade_pendant_rare.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a round pale-green jade pendant with a carved cloud on a red silk cord, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    }
+  }
+]

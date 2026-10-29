@@ -1,0 +1,185 @@
+[
+  {
+    "id": "root.faint_mortal",
+    "name": "Faint Mortal Root",
+    "description": "A thin, unremarkable root. Many start here; few stay.",
+    "name_cn": "凡根",
+    "tier": "single",
+    "elements": [
+      "elem.wood"
+    ],
+    "qi_mult": 0.95,
+    "bonuses": {},
+    "upgrade_to": [
+      "root.wood_water_dual"
+    ],
+    "transform_sources": [],
+    "art": {
+      "illustration": {
+        "file": "assets/roots/faint_mortal.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Circular spiritual-root emblem: A thin, unremarkable root. Many start here; few stay. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_root.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "root.wood_water_dual",
+    "name": "Wood-Water Dual Root",
+    "description": "Wood feeds on water; healing and control flow together. Awakened at Qi Condensation 3.",
+    "name_cn": "木水双灵根",
+    "tier": "dual",
+    "elements": [
+      "elem.wood",
+      "elem.water"
+    ],
+    "qi_mult": 1.4,
+    "bonuses": {
+      "elem_dmg.wood": 8,
+      "elem_dmg.water": 8,
+      "heal_bonus": 5
+    },
+    "upgrade_to": [
+      "root.five_elements"
+    ],
+    "transform_sources": [],
+    "art": {
+      "illustration": {
+        "file": "assets/roots/wood_water_dual.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Circular spiritual-root emblem: Wood feeds on water; healing and control flow together. Awakened at Qi Condensation 3. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_root.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "root.fire_earth_dual",
+    "name": "Fire-Earth Dual Root",
+    "description": "Burning resolve on unshakable ground. Burst damage with heavy shields.",
+    "name_cn": "火土双灵根",
+    "tier": "dual",
+    "elements": [
+      "elem.fire",
+      "elem.earth"
+    ],
+    "qi_mult": 1.4,
+    "bonuses": {
+      "elem_dmg.fire": 8,
+      "elem_res.fire": 8,
+      "def": 30
+    },
+    "upgrade_to": [
+      "root.five_elements"
+    ],
+    "transform_sources": [],
+    "art": {
+      "illustration": {
+        "file": "assets/roots/fire_earth_dual.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Circular spiritual-root emblem: Burning resolve on unshakable ground. Burst damage with heavy shields. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_root.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "root.metal_water_dual",
+    "name": "Metal-Water Dual Root",
+    "description": "Sword edge tempered by ice. Precision and freezing control.",
+    "name_cn": "金水双灵根",
+    "tier": "dual",
+    "elements": [
+      "elem.metal",
+      "elem.water"
+    ],
+    "qi_mult": 1.4,
+    "bonuses": {
+      "elem_dmg.metal": 8,
+      "crit": 3,
+      "sp_energy": 20
+    },
+    "upgrade_to": [
+      "root.five_elements"
+    ],
+    "transform_sources": [],
+    "art": {
+      "illustration": {
+        "file": "assets/roots/metal_water_dual.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Circular spiritual-root emblem: Sword edge tempered by ice. Precision and freezing control. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_root.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "root.five_elements",
+    "name": "Five Elements Root",
+    "description": "All five elements in harmony. A root spoken of only in legends.",
+    "name_cn": "五行灵根",
+    "tier": "five",
+    "elements": [
+      "elem.wood",
+      "elem.fire",
+      "elem.earth",
+      "elem.metal",
+      "elem.water"
+    ],
+    "qi_mult": 2.0,
+    "bonuses": {
+      "elem_dmg.wood": 6,
+      "elem_dmg.fire": 6,
+      "elem_dmg.earth": 6,
+      "elem_dmg.metal": 6,
+      "elem_dmg.water": 6
+    },
+    "upgrade_to": [],
+    "transform_sources": [],
+    "art": {
+      "illustration": {
+        "file": "assets/roots/five_elements.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Circular spiritual-root emblem: All five elements in harmony. A root spoken of only in legends. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_root.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

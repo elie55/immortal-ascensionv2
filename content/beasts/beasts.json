@@ -1,0 +1,362 @@
+[
+  {
+    "id": "beast.yunyun",
+    "name": "YunYun",
+    "description": "A small cloud fox and the player's first companion. Curious, loyal, fond of spirit fruit.",
+    "name_cn": "云云",
+    "rarity": "uncommon",
+    "element": "elem.water",
+    "species": "Cloud Fox",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Cloud Kit",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 120,
+          "atk": 10,
+          "def": 8,
+          "spd": 6
+        },
+        "active": "btech.yunyun.cloud_veil",
+        "passive": "btech.yunyun.nimble_spirit"
+      },
+      {
+        "key": "juvenile",
+        "name": "Cloud Fox",
+        "level_required": 10,
+        "evolve_materials": [
+          {
+            "id": "mat.spirit_monkey_fur",
+            "qty": 5
+          },
+          {
+            "id": "mat.spirit_grass",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 500,
+        "stats": {
+          "hp": 400,
+          "atk": 30,
+          "def": 20,
+          "spd": 10
+        },
+        "active": "btech.yunyun.cloud_veil",
+        "passive": "btech.yunyun.nimble_spirit"
+      },
+      {
+        "key": "adult",
+        "name": "Cloud Fox Guardian",
+        "level_required": 25,
+        "evolve_materials": [
+          {
+            "id": "mat.jade_bamboo_segment",
+            "qty": 8
+          },
+          {
+            "id": "mat.cloud_silk_bolt",
+            "qty": 2
+          }
+        ],
+        "evolve_cost_stones": 3000,
+        "stats": {
+          "hp": 1200,
+          "atk": 80,
+          "def": 55,
+          "spd": 16
+        },
+        "active": "btech.yunyun.cloud_veil",
+        "passive": "btech.yunyun.nimble_spirit"
+      },
+      {
+        "key": "sovereign",
+        "name": "Cloud Sovereign Fox",
+        "level_required": 45,
+        "evolve_materials": [
+          {
+            "id": "mat.bamboo_dragon_scale",
+            "qty": 2
+          },
+          {
+            "id": "mat.rime_crystal",
+            "qty": 5
+          }
+        ],
+        "evolve_cost_stones": 15000,
+        "stats": {
+          "hp": 4000,
+          "atk": 220,
+          "def": 150,
+          "spd": 24
+        },
+        "active": "btech.yunyun.cloud_veil",
+        "passive": "btech.yunyun.nimble_spirit"
+      }
+    ],
+    "food": [
+      "bfood.spirit_fruit",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 50
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 15
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.05,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/yunyun_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/yunyun_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, Cloud Kit form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/yunyun_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, Cloud Fox form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/yunyun_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, Cloud Fox Guardian form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_sovereign": {
+        "file": "assets/beasts/yunyun_sovereign.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, Cloud Sovereign Fox form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.flame_fox",
+    "name": "Flame Fox",
+    "description": "A fox whose tail burns with fox-fire. Hatched from an egg found in the Origin Secret Realm.",
+    "name_cn": "焰狐",
+    "rarity": "rare",
+    "element": "elem.fire",
+    "species": "Flame Fox",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Ember Kit",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 110,
+          "atk": 14,
+          "def": 6,
+          "spd": 8
+        },
+        "active": "btech.flame_fox.fox_fire",
+        "passive": "btech.flame_fox.ember_heart"
+      },
+      {
+        "key": "juvenile",
+        "name": "Flame Fox",
+        "level_required": 12,
+        "evolve_materials": [
+          {
+            "id": "mat.flame_lotus",
+            "qty": 1
+          },
+          {
+            "id": "mat.green_viper_venom",
+            "qty": 4
+          }
+        ],
+        "evolve_cost_stones": 800,
+        "stats": {
+          "hp": 380,
+          "atk": 42,
+          "def": 16,
+          "spd": 13
+        },
+        "active": "btech.flame_fox.fox_fire",
+        "passive": "btech.flame_fox.ember_heart"
+      },
+      {
+        "key": "adult",
+        "name": "Blaze Fox",
+        "level_required": 28,
+        "evolve_materials": [
+          {
+            "id": "mat.bamboo_dragon_scale",
+            "qty": 1
+          },
+          {
+            "id": "mat.glacier_iron_ore",
+            "qty": 6
+          }
+        ],
+        "evolve_cost_stones": 4000,
+        "stats": {
+          "hp": 1150,
+          "atk": 110,
+          "def": 45,
+          "spd": 20
+        },
+        "active": "btech.flame_fox.fox_fire",
+        "passive": "btech.flame_fox.ember_heart"
+      }
+    ],
+    "food": [
+      "bfood.dried_fish",
+      "bfood.spirit_fruit"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 50
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 15
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.04,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/flame_fox_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a sleek orange-red fox with a flaming tail, golden eyes and ember marks on its fur, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/flame_fox_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek orange-red fox with a flaming tail, golden eyes and ember marks on its fur, Ember Kit form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/flame_fox_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek orange-red fox with a flaming tail, golden eyes and ember marks on its fur, Flame Fox form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/flame_fox_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek orange-red fox with a flaming tail, golden eyes and ember marks on its fur, Blaze Fox form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

@@ -1,0 +1,1180 @@
+[
+  {
+    "id": "tech.active.azure_strike",
+    "name": "Azure Strike",
+    "description": "A swift sword cut wrapped in azure qi. Deals 120% ATK.",
+    "name_cn": "青云斩",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.metal",
+    "weapon_affinity": "sword",
+    "targeting": "single",
+    "power": 120,
+    "hits": 1,
+    "sp_cost": 12,
+    "cooldown": 1,
+    "applies": [],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/azure_strike.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Azure Strike' (metal element): A swift sword cut wrapped in azure qi. Deals 120% ATK., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.flame_palm",
+    "name": "Flame Palm",
+    "description": "Gather Qi into the palm and release it as a roaring flame. 180% ATK, may Burn.",
+    "name_cn": "烈焰掌",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.fire",
+    "weapon_affinity": "palm",
+    "targeting": "single",
+    "power": 180,
+    "hits": 1,
+    "sp_cost": 20,
+    "cooldown": 3,
+    "applies": [
+      {
+        "status": "status.burning",
+        "chance": 0.3,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 1
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/flame_palm.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Flame Palm' (fire element): Gather Qi into the palm and release it as a roaring flame. 180% ATK, may Burn., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.earth_guardian",
+    "name": "Earth Guardian",
+    "description": "A stone shield rises to absorb 25% of max HP in damage.",
+    "name_cn": "厚土护体",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.earth",
+    "weapon_affinity": "any",
+    "targeting": "self",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 18,
+    "cooldown": 4,
+    "applies": [
+      {
+        "status": "status.shield",
+        "chance": 1,
+        "turns": 3
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/earth_guardian.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Earth Guardian' (earth element): A stone shield rises to absorb 25% of max HP in damage., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "shield_pct_max_hp": 25
+  },
+  {
+    "id": "tech.active.thunder_palm",
+    "name": "Thunder Palm",
+    "description": "A crackling palm strike. 200% ATK with a 30% chance to Stun.",
+    "name_cn": "雷掌",
+    "kind": "active",
+    "rarity": "epic",
+    "element": "elem.metal",
+    "weapon_affinity": "palm",
+    "targeting": "single",
+    "power": 200,
+    "hits": 1,
+    "sp_cost": 24,
+    "cooldown": 3,
+    "applies": [
+      {
+        "status": "status.stun",
+        "chance": 0.3,
+        "turns": 1
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 6
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/thunder_palm.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Thunder Palm' (metal element): A crackling palm strike. 200% ATK with a 30% chance to Stun., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.crescent_wind_blade",
+    "name": "Crescent Wind Blade",
+    "description": "Two crescent blades of wind slash every enemy. 110% ATK ×2, may cause Bleeding.",
+    "name_cn": "新月风刃",
+    "kind": "active",
+    "rarity": "epic",
+    "element": "elem.wood",
+    "weapon_affinity": "any",
+    "targeting": "all_enemies",
+    "power": 110,
+    "hits": 2,
+    "sp_cost": 26,
+    "cooldown": 3,
+    "applies": [
+      {
+        "status": "status.bleeding",
+        "chance": 0.4,
+        "turns": 3
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/crescent_wind_blade.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Crescent Wind Blade' (wood element): Two crescent blades of wind slash every enemy. 110% ATK ×2, may cause Bleeding., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.frozen_lotus",
+    "name": "Frozen Lotus",
+    "description": "A lotus of frost blooms beneath the target. 150% ATK, Slows, 25% chance to Freeze.",
+    "name_cn": "冰莲绽放",
+    "kind": "active",
+    "rarity": "epic",
+    "element": "elem.water",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 150,
+    "hits": 1,
+    "sp_cost": 28,
+    "cooldown": 4,
+    "applies": [
+      {
+        "status": "status.slow",
+        "chance": 1,
+        "turns": 2
+      },
+      {
+        "status": "status.freeze",
+        "chance": 0.25,
+        "turns": 1
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 4
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/frozen_lotus.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Frozen Lotus' (water element): A lotus of frost blooms beneath the target. 150% ATK, Slows, 25% chance to Freeze., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.ripple_mending",
+    "name": "Ripple Mending",
+    "description": "Soothing water ripples restore 25% max HP and grant Regeneration.",
+    "name_cn": "涟漪回春",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.water",
+    "weapon_affinity": "any",
+    "targeting": "self",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 22,
+    "cooldown": 4,
+    "applies": [
+      {
+        "status": "status.regen",
+        "chance": 1,
+        "turns": 3
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/ripple_mending.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Ripple Mending' (water element): Soothing water ripples restore 25% max HP and grant Regeneration., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "heal_pct": 25
+  },
+  {
+    "id": "tech.active.verdant_vine_bind",
+    "name": "Verdant Vine Bind",
+    "description": "Vines erupt and bind the target. 90% ATK, Poison and Silence.",
+    "name_cn": "青藤缚",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.wood",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 90,
+    "hits": 1,
+    "sp_cost": 20,
+    "cooldown": 4,
+    "applies": [
+      {
+        "status": "status.poison",
+        "chance": 0.8,
+        "turns": 3
+      },
+      {
+        "status": "status.silence",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/verdant_vine_bind.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Verdant Vine Bind' (wood element): Vines erupt and bind the target. 90% ATK, Poison and Silence., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.swallow_return_sword",
+    "name": "Swallow-Return Sword",
+    "description": "A returning sword arc strikes twice. 95% ATK ×2.",
+    "name_cn": "燕返剑",
+    "kind": "active",
+    "rarity": "epic",
+    "element": "elem.metal",
+    "weapon_affinity": "sword",
+    "targeting": "single",
+    "power": 95,
+    "hits": 2,
+    "sp_cost": 22,
+    "cooldown": 2,
+    "applies": [],
+    "passive_bonuses": {},
+    "requirements": {
+      "techniques": [
+        "tech.active.azure_strike"
+      ]
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/swallow_return_sword.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Swallow-Return Sword' (metal element): A returning sword arc strikes twice. 95% ATK ×2., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.frost_blossom_slash",
+    "name": "Frost Blossom Slash",
+    "description": "Bai Lingshuang's signature cut: a bloom of frost along the edge. 170% ATK, may Freeze.",
+    "name_cn": "霜华斩",
+    "kind": "active",
+    "rarity": "epic",
+    "element": "elem.water",
+    "weapon_affinity": "sword",
+    "targeting": "single",
+    "power": 170,
+    "hits": 1,
+    "sp_cost": 26,
+    "cooldown": 3,
+    "applies": [
+      {
+        "status": "status.freeze",
+        "chance": 0.2,
+        "turns": 1
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 5
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/frost_blossom_slash.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Frost Blossom Slash' (water element): Bai Lingshuang's signature cut: a bloom of frost along the edge. 170% ATK, may Freeze., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.golden_coin_barrage",
+    "name": "Golden Coin Barrage",
+    "description": "A fan of spirit coins pelts the target. 70% ATK ×3, lowers Defense.",
+    "name_cn": "金钱雨",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.metal",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 70,
+    "hits": 3,
+    "sp_cost": 18,
+    "cooldown": 2,
+    "applies": [
+      {
+        "status": "status.def_down",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/golden_coin_barrage.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Golden Coin Barrage' (metal element): A fan of spirit coins pelts the target. 70% ATK ×3, lowers Defense., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.abacus_reckoning",
+    "name": "Abacus Reckoning",
+    "description": "Every debt is counted. 130% ATK, lowers Attack.",
+    "name_cn": "算盘清账",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.earth",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 130,
+    "hits": 1,
+    "sp_cost": 20,
+    "cooldown": 3,
+    "applies": [
+      {
+        "status": "status.atk_down",
+        "chance": 0.6,
+        "turns": 3
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/abacus_reckoning.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Abacus Reckoning' (earth element): Every debt is counted. 130% ATK, lowers Attack., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.iron_wall_stance",
+    "name": "Iron Wall Stance",
+    "description": "Plant your feet; nothing passes. Invulnerable for one turn.",
+    "name_cn": "铁壁式",
+    "kind": "active",
+    "rarity": "epic",
+    "element": "elem.earth",
+    "weapon_affinity": "any",
+    "targeting": "self",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 30,
+    "cooldown": 6,
+    "applies": [
+      {
+        "status": "status.invuln",
+        "chance": 1,
+        "turns": 1
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {
+      "realm": {
+        "id": "realm.foundation_establishment"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/iron_wall_stance.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Iron Wall Stance' (earth element): Plant your feet; nothing passes. Invulnerable for one turn., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.bamboo_spike",
+    "name": "Bamboo Spike",
+    "description": "Sharpened bamboo erupts from the ground.",
+    "name_cn": "竹刺",
+    "kind": "active",
+    "rarity": "common",
+    "element": "elem.wood",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 110,
+    "hits": 1,
+    "sp_cost": 10,
+    "cooldown": 2,
+    "applies": [
+      {
+        "status": "status.bleeding",
+        "chance": 0.3,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/bamboo_spike.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Bamboo Spike' (wood element): Sharpened bamboo erupts from the ground., plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.reed_whisper_curse",
+    "name": "Reed Whisper Curse",
+    "description": "A whisper that steals the voice.",
+    "name_cn": "苇语咒",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.water",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 100,
+    "hits": 1,
+    "sp_cost": 15,
+    "cooldown": 3,
+    "applies": [
+      {
+        "status": "status.silence",
+        "chance": 0.6,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/reed_whisper_curse.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Reed Whisper Curse' (water element): A whisper that steals the voice., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.venom_fang",
+    "name": "Venom Fang",
+    "description": "A poisonous bite.",
+    "name_cn": "毒牙",
+    "kind": "active",
+    "rarity": "common",
+    "element": "elem.wood",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 100,
+    "hits": 1,
+    "sp_cost": 8,
+    "cooldown": 2,
+    "applies": [
+      {
+        "status": "status.poison",
+        "chance": 0.7,
+        "turns": 3
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/venom_fang.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Venom Fang' (wood element): A poisonous bite., plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.heavenly_bolt",
+    "name": "Heavenly Bolt",
+    "description": "A bolt of tribulation lightning.",
+    "name_cn": "天雷",
+    "kind": "active",
+    "rarity": "epic",
+    "element": "elem.metal",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 220,
+    "hits": 1,
+    "sp_cost": 0,
+    "cooldown": 1,
+    "applies": [
+      {
+        "status": "status.stun",
+        "chance": 0.3,
+        "turns": 1
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/heavenly_bolt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Heavenly Bolt' (metal element): A bolt of tribulation lightning., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.thunder_judgment",
+    "name": "Thunder Judgment",
+    "description": "The sky passes judgment on all below.",
+    "name_cn": "雷罚",
+    "kind": "active",
+    "rarity": "legendary",
+    "element": "elem.metal",
+    "weapon_affinity": "any",
+    "targeting": "all_enemies",
+    "power": 300,
+    "hits": 1,
+    "sp_cost": 0,
+    "cooldown": 4,
+    "applies": [
+      {
+        "status": "status.def_down",
+        "chance": 1,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/thunder_judgment.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Thunder Judgment' (metal element): The sky passes judgment on all below., golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.abyssal_torrent",
+    "name": "Abyssal Torrent",
+    "description": "The nine heads breathe a flood of black water.",
+    "name_cn": "渊潮",
+    "kind": "active",
+    "rarity": "mythic",
+    "element": "elem.water",
+    "weapon_affinity": "any",
+    "targeting": "all_enemies",
+    "power": 280,
+    "hits": 1,
+    "sp_cost": 0,
+    "cooldown": 3,
+    "applies": [
+      {
+        "status": "status.slow",
+        "chance": 1,
+        "turns": 2
+      },
+      {
+        "status": "status.freeze",
+        "chance": 0.3,
+        "turns": 1
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/abyssal_torrent.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Abyssal Torrent' (water element): The nine heads breathe a flood of black water., crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.bandit_slash",
+    "name": "Bandit Slash",
+    "description": "A crude but heavy saber swing.",
+    "name_cn": "匪刀",
+    "kind": "active",
+    "rarity": "common",
+    "element": "elem.metal",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 115,
+    "hits": 1,
+    "sp_cost": 8,
+    "cooldown": 1,
+    "applies": [],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/bandit_slash.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Bandit Slash' (metal element): A crude but heavy saber swing., plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.savage_bite",
+    "name": "Savage Bite",
+    "description": "A tearing bite that leaves a bleeding wound.",
+    "name_cn": "撕咬",
+    "kind": "active",
+    "rarity": "common",
+    "element": "elem.metal",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 105,
+    "hits": 1,
+    "sp_cost": 6,
+    "cooldown": 1,
+    "applies": [
+      {
+        "status": "status.bleeding",
+        "chance": 0.4,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/savage_bite.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Savage Bite' (metal element): A tearing bite that leaves a bleeding wound., plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.stone_shell",
+    "name": "Stone Shell",
+    "description": "The creature hardens its hide.",
+    "name_cn": "石甲",
+    "kind": "active",
+    "rarity": "uncommon",
+    "element": "elem.earth",
+    "weapon_affinity": "any",
+    "targeting": "self",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 10,
+    "cooldown": 4,
+    "applies": [
+      {
+        "status": "status.shield",
+        "chance": 1,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/stone_shell.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Stone Shell' (earth element): The creature hardens its hide., polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "shield_pct_max_hp": 20
+  },
+  {
+    "id": "tech.active.frost_breath",
+    "name": "Frost Breath",
+    "description": "A cone of freezing breath.",
+    "name_cn": "霜息",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.water",
+    "weapon_affinity": "any",
+    "targeting": "all_enemies",
+    "power": 140,
+    "hits": 1,
+    "sp_cost": 12,
+    "cooldown": 3,
+    "applies": [
+      {
+        "status": "status.freeze",
+        "chance": 0.3,
+        "turns": 1
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/frost_breath.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Frost Breath' (water element): A cone of freezing breath., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.web_snare",
+    "name": "Web Snare",
+    "description": "Sticky silk slows the prey.",
+    "name_cn": "丝缚",
+    "kind": "active",
+    "rarity": "uncommon",
+    "element": "elem.wood",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 80,
+    "hits": 1,
+    "sp_cost": 8,
+    "cooldown": 2,
+    "applies": [
+      {
+        "status": "status.slow",
+        "chance": 0.8,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/web_snare.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Web Snare' (wood element): Sticky silk slows the prey., polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.active.mirror_scale",
+    "name": "Mirror Scale",
+    "description": "Scales turn to mirrors, reflecting harm.",
+    "name_cn": "镜鳞",
+    "kind": "active",
+    "rarity": "epic",
+    "element": "elem.metal",
+    "weapon_affinity": "any",
+    "targeting": "self",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 15,
+    "cooldown": 5,
+    "applies": [
+      {
+        "status": "status.reflect",
+        "chance": 1,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/mirror_scale.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Mirror Scale' (metal element): Scales turn to mirrors, reflecting harm., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

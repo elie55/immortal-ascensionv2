@@ -1,0 +1,148 @@
+[
+  {
+    "id": "tech.ult.heavenly_sword_rain",
+    "name": "Heavenly Sword Rain",
+    "description": "A thousand sword lights fall from the sky. 320% ATK to all enemies, lowers Defense.",
+    "name_cn": "天剑雨",
+    "kind": "ultimate",
+    "rarity": "epic",
+    "element": "elem.metal",
+    "weapon_affinity": "sword",
+    "targeting": "all_enemies",
+    "power": 320,
+    "hits": 1,
+    "sp_cost": 0,
+    "cooldown": 0,
+    "applies": [
+      {
+        "status": "status.def_down",
+        "chance": 1,
+        "turns": 3
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/ult/heavenly_sword_rain.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Heavenly Sword Rain' (metal element): A thousand sword lights fall from the sky. 320% ATK to all enemies, lowers Defense., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "ult_charge": 100
+  },
+  {
+    "id": "tech.ult.soul_devouring_art",
+    "name": "Soul Devouring Art",
+    "description": "Drain the target's spirit. 280% ATK, heals 30% of damage dealt, Silences.",
+    "name_cn": "噬魂术",
+    "kind": "ultimate",
+    "rarity": "legendary",
+    "element": "elem.water",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 280,
+    "hits": 1,
+    "sp_cost": 0,
+    "cooldown": 0,
+    "applies": [
+      {
+        "status": "status.silence",
+        "chance": 1,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {
+      "realm": {
+        "id": "realm.foundation_establishment",
+        "stage": 3
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/ult/soul_devouring_art.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Soul Devouring Art' (water element): Drain the target's spirit. 280% ATK, heals 30% of damage dealt, Silences., golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "ult_charge": 100
+  },
+  {
+    "id": "tech.ult.ten_thousand_gold_rain",
+    "name": "Ten Thousand Gold Rain",
+    "description": "Tang Xiaoman's ultimate: a deluge of coins buries the field. 260% ATK to all, Stun chance.",
+    "name_cn": "万金雨",
+    "kind": "ultimate",
+    "rarity": "epic",
+    "element": "elem.metal",
+    "weapon_affinity": "any",
+    "targeting": "all_enemies",
+    "power": 260,
+    "hits": 1,
+    "sp_cost": 0,
+    "cooldown": 0,
+    "applies": [
+      {
+        "status": "status.stun",
+        "chance": 0.4,
+        "turns": 1
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/ult/ten_thousand_gold_rain.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Ten Thousand Gold Rain' (metal element): Tang Xiaoman's ultimate: a deluge of coins buries the field. 260% ATK to all, Stun chance., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "ult_charge": 100
+  }
+]

@@ -1,0 +1,250 @@
+[
+  {
+    "id": "alchemy.qi_gathering_pill",
+    "name": "Qi Gathering Pill",
+    "description": "Restores focus and grants +600 Qi. A staple of every outer disciple.",
+    "name_cn": "聚气丹",
+    "output": {
+      "id": "cons.qi_gathering_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.spirit_grass",
+        "qty": 2
+      },
+      {
+        "id": "mat.peach_blossom",
+        "qty": 1
+      },
+      {
+        "id": "mat.crane_feather",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 10,
+    "grade": 1,
+    "success_base": 0.7,
+    "furnace_min": 1,
+    "proficiency_min": 0,
+    "proficiency_xp": 20,
+    "unlock": {
+      "type": "known"
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.blossom_healing_pill",
+    "name": "Blossom Healing Pill",
+    "description": "Heals 40% HP. Sweet, and faintly floral.",
+    "name_cn": "桃花疗伤丹",
+    "output": {
+      "id": "cons.blossom_healing_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.peach_blossom",
+        "qty": 3
+      },
+      {
+        "id": "mat.spirit_grass",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 12,
+    "grade": 1,
+    "success_base": 0.75,
+    "furnace_min": 1,
+    "proficiency_min": 0,
+    "proficiency_xp": 20,
+    "unlock": {
+      "type": "known"
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.spirit_condensing_pill",
+    "name": "Spirit Condensing Pill",
+    "description": "Grade II. Condenses spirit energy and quickens cultivation for an hour.",
+    "name_cn": "凝神丹",
+    "output": {
+      "id": "cons.spirit_condensing_pill",
+      "qty": [
+        1,
+        1
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.bamboo_spirit_shoot",
+        "qty": 3
+      },
+      {
+        "id": "mat.spirit_grass",
+        "qty": 4
+      },
+      {
+        "id": "mat.frost_beast_core",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 40,
+    "grade": 2,
+    "success_base": 0.6,
+    "furnace_min": 1,
+    "proficiency_min": 50,
+    "proficiency_xp": 45,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 300
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.foundation_pill",
+    "name": "Foundation Pill",
+    "description": "Grade III. Required to establish a Foundation. Unlocked at 500 Sect Fame.",
+    "name_cn": "筑基丹",
+    "output": {
+      "id": "cons.foundation_pill",
+      "qty": [
+        1,
+        1
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.spirit_grass",
+        "qty": 10
+      },
+      {
+        "id": "mat.jade_bamboo_segment",
+        "qty": 4
+      },
+      {
+        "id": "mat.frost_beast_core",
+        "qty": 2
+      },
+      {
+        "id": "mat.boar_tusk",
+        "qty": 2
+      }
+    ],
+    "cost_stones": 200,
+    "grade": 3,
+    "success_base": 0.45,
+    "furnace_min": 2,
+    "proficiency_min": 150,
+    "proficiency_xp": 120,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 500
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.frost_heart_elixir",
+    "name": "Frost Heart Elixir",
+    "description": "Grade IV. Permanently raises water resistance and spiritual energy.",
+    "name_cn": "冰心露",
+    "output": {
+      "id": "cons.frost_heart_elixir",
+      "qty": [
+        1,
+        1
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.frost_beast_core",
+        "qty": 3
+      },
+      {
+        "id": "mat.rime_crystal",
+        "qty": 2
+      },
+      {
+        "id": "mat.peach_blossom",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 350,
+    "grade": 4,
+    "success_base": 0.5,
+    "furnace_min": 2,
+    "proficiency_min": 300,
+    "proficiency_xp": 200,
+    "unlock": {
+      "type": "blueprint",
+      "id": "blueprint.frost_heart_elixir"
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.core_condensing_pill",
+    "name": "Core Condensing Pill",
+    "description": "Grade V. Needed to form a Golden Core.",
+    "name_cn": "结丹丹",
+    "output": {
+      "id": "cons.core_condensing_pill",
+      "qty": [
+        1,
+        1
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.flame_lotus",
+        "qty": 1
+      },
+      {
+        "id": "mat.green_viper_venom",
+        "qty": 5
+      },
+      {
+        "id": "mat.bamboo_dragon_scale",
+        "qty": 1
+      },
+      {
+        "id": "mat.jade_bamboo_segment",
+        "qty": 10
+      }
+    ],
+    "cost_stones": 1500,
+    "grade": 5,
+    "success_base": 0.4,
+    "furnace_min": 3,
+    "proficiency_min": 600,
+    "proficiency_xp": 500,
+    "unlock": {
+      "type": "rank",
+      "id": "rank.inner_disciple"
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  }
+]

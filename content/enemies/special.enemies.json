@@ -1,0 +1,133 @@
+[
+  {
+    "id": "enemy.abyss_spawn",
+    "name": "Abyss Spawn",
+    "description": "A serpent-headed thing birthed by the Abyss.",
+    "name_cn": "渊裔",
+    "kind": "demonic",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 4200,
+      "atk": 260,
+      "def": 120,
+      "spd": 22,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 1800,
+    "techniques": [
+      "tech.active.frost_breath",
+      "tech.active.venom_fang"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.abyss_spawn",
+    "mastery_xp": 46,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/special/abyss_spawn_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a hunched black-scaled humanoid with a serpent head, dark water dripping from its claws. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/special/abyss_spawn_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a hunched black-scaled humanoid with a serpent head, dark water dripping from its claws, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.thunder_wisp",
+    "name": "Thunder Wisp",
+    "description": "A fragment of tribulation lightning given form.",
+    "name_cn": "雷灵",
+    "kind": "celestial",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 2600,
+      "atk": 300,
+      "def": 80,
+      "spd": 30,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 20,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 1700,
+    "techniques": [
+      "tech.active.heavenly_bolt"
+    ],
+    "ai": {
+      "strategy": "caster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.thunder_wisp",
+    "mastery_xp": 44,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/special/thunder_wisp_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a crackling violet-white wisp of lightning shaped like a small floating spirit with a crown of sparks. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/special/thunder_wisp_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a crackling violet-white wisp of lightning shaped like a small floating spirit with a crown of sparks, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

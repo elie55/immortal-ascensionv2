@@ -1,0 +1,396 @@
+[
+  {
+    "id": "sectloc.sword_grounds",
+    "name": "Sword Grounds",
+    "description": "Open training terraces where Bai Lingshuang drills the Frost Sword. Friendly duels and technique practice.",
+    "name_cn": "剑场",
+    "unlock": {},
+    "features": [
+      "duels"
+    ],
+    "npcs": [
+      "npc.bai_lingshuang"
+    ],
+    "map_position": [
+      0.25,
+      0.4
+    ],
+    "art": {
+      "background": {
+        "file": "assets/sect/sword_grounds.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: sunlit stone training terraces with sword racks and cherry trees above clouds. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/sect_locations.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "sectloc.mission_hall",
+    "name": "Mission Hall",
+    "description": "Request board of masters and seniors. Deliver materials, earn Sect Fame.",
+    "name_cn": "任务堂",
+    "unlock": {},
+    "features": [
+      "missions"
+    ],
+    "npcs": [],
+    "map_position": [
+      0.55,
+      0.38
+    ],
+    "art": {
+      "background": {
+        "file": "assets/sect/mission_hall.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a grand hall with a tall request board covered in paper slips, red lanterns. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/sect_locations.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "sectloc.scripture_pavilion",
+    "name": "Scripture Pavilion",
+    "description": "Five floors of manuals guarded by Elder Feng. Buy techniques and methods with Spirit Stones and Fame.",
+    "name_cn": "藏经阁",
+    "unlock": {},
+    "features": [
+      "pavilion"
+    ],
+    "npcs": [
+      "npc.elder_feng"
+    ],
+    "shop": "shop.scripture_pavilion",
+    "map_position": [
+      0.75,
+      0.52
+    ],
+    "art": {
+      "background": {
+        "file": "assets/sect/scripture_pavilion.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a towering pagoda library with endless shelves of scrolls and floating lanterns. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/sect_locations.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "sectloc.meditation_waterfall",
+    "name": "Meditation Waterfall",
+    "description": "Sit beneath the falls for a temporary cultivation boost.",
+    "name_cn": "静心瀑",
+    "unlock": {},
+    "features": [
+      "meditation"
+    ],
+    "npcs": [],
+    "map_position": [
+      0.5,
+      0.58
+    ],
+    "art": {
+      "background": {
+        "file": "assets/sect/meditation_waterfall.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a tall misty waterfall with a flat meditation stone and a rainbow in the spray. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/sect_locations.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "sectloc.merchant_pavilion",
+    "name": "Merchant Pavilion",
+    "description": "Tang Xiaoman's shop. Pills, materials, gear and gossip.",
+    "name_cn": "百宝阁",
+    "unlock": {},
+    "features": [
+      "merchant"
+    ],
+    "npcs": [
+      "npc.tang_xiaoman"
+    ],
+    "shop": "shop.merchant_pavilion",
+    "map_position": [
+      0.78,
+      0.7
+    ],
+    "art": {
+      "background": {
+        "file": "assets/sect/merchant_pavilion.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a cosy merchant shop crammed with jars, scrolls, pill bottles and hanging lanterns. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/sect_locations.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "sectloc.alchemy_hall",
+    "name": "Alchemy Hall",
+    "description": "Refine pills from gathered herbs in the sect furnaces.",
+    "name_cn": "丹药房",
+    "unlock": {},
+    "features": [
+      "alchemy"
+    ],
+    "npcs": [],
+    "map_position": [
+      0.55,
+      0.78
+    ],
+    "art": {
+      "background": {
+        "file": "assets/sect/alchemy_hall.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: an alchemy hall with a huge bronze cauldron glowing green, shelves of herbs and pills. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/sect_locations.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "sectloc.spirit_forge",
+    "name": "Spirit Forge",
+    "description": "Master Gu's forge. Enhance, refine, reforge, awaken and craft equipment.",
+    "name_cn": "炼器坊",
+    "unlock": {},
+    "features": [
+      "forge"
+    ],
+    "npcs": [
+      "npc.master_gu"
+    ],
+    "map_position": [
+      0.25,
+      0.65
+    ],
+    "art": {
+      "background": {
+        "file": "assets/sect/spirit_forge.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a mountain forge with a glowing anvil, hanging weapons and molten light. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/sect_locations.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "sectloc.spirit_beast_garden",
+    "name": "Spirit Beast Garden",
+    "description": "Qin's garden. Hatch eggs, feed, train and evolve spirit beasts.",
+    "name_cn": "灵兽园",
+    "unlock": {},
+    "features": [
+      "beasts"
+    ],
+    "npcs": [
+      "npc.qin"
+    ],
+    "shop": "shop.beast_garden",
+    "map_position": [
+      0.22,
+      0.86
+    ],
+    "art": {
+      "background": {
+        "file": "assets/sect/spirit_beast_garden.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a lush garden with glowing flowers, small ponds and nests under a giant willow. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/sect_locations.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "sectloc.your_quarters",
+    "name": "Your Quarters",
+    "description": "Rest, store items and receive visitors.",
+    "name_cn": "居所",
+    "unlock": {},
+    "features": [
+      "quarters",
+      "storage",
+      "rest"
+    ],
+    "npcs": [
+      "npc.elder_wen"
+    ],
+    "map_position": [
+      0.3,
+      0.92
+    ],
+    "art": {
+      "background": {
+        "file": "assets/sect/your_quarters.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a modest wooden disciple's room with a window onto clouds, a bed, a desk and a tea set. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/sect_locations.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "sectloc.proving_arena",
+    "name": "Proving Arena",
+    "description": "Sect tournaments are held on this floating stage.",
+    "name_cn": "演武台",
+    "unlock": {},
+    "features": [
+      "tournament"
+    ],
+    "npcs": [],
+    "map_position": [
+      0.6,
+      0.6
+    ],
+    "art": {
+      "background": {
+        "file": "assets/sect/proving_arena.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a circular stone arena floating among clouds with banners and spectator stands. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/sect_locations.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "sectloc.inner_sect_peak",
+    "name": "Inner Sect Peak",
+    "description": "The inner sect's cloud peak. Requires Inner Disciple rank.",
+    "name_cn": "内门峰",
+    "unlock": {
+      "rank": "rank.inner_disciple"
+    },
+    "features": [
+      "meditation",
+      "rest"
+    ],
+    "npcs": [],
+    "map_position": [
+      0.5,
+      0.15
+    ],
+    "art": {
+      "background": {
+        "file": "assets/sect/inner_sect_peak.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a high peak with elegant pavilions above a sea of clouds at dawn. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/sect_locations.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "sectloc.frozen_lotus_valley",
+    "name": "Frozen Lotus Valley",
+    "description": "A frozen valley where ice lotuses bloom; advanced cultivation grounds. Requires 800 Sect Fame.",
+    "name_cn": "冰莲谷",
+    "unlock": {
+      "sect_fame": 800
+    },
+    "features": [
+      "meditation"
+    ],
+    "npcs": [],
+    "map_position": [
+      0.8,
+      0.22
+    ],
+    "art": {
+      "background": {
+        "file": "assets/sect/frozen_lotus_valley.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a snowy valley with a frozen lake and glowing blue ice lotus flowers. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/sect_locations.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

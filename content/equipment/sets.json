@@ -1,0 +1,33 @@
+[
+  {
+    "id": "set.rimeglass",
+    "name": "Rimeglass Set",
+    "description": "Frost-glass armaments forged for the Frozen Lotus Valley.",
+    "name_cn": "霜玻璃套装",
+    "pieces": [
+      "gear.rimeglass_spear",
+      "gear.rimeglass_robe",
+      "gear.rimeglass_boots"
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "stats": {
+          "elem_dmg.water": 10
+        }
+      },
+      {
+        "pieces": 3,
+        "stats": {
+          "def": 60
+        },
+        "effect": {
+          "kind": "on_hit_apply",
+          "status": "status.freeze",
+          "chance": 0.15,
+          "description": "Hits have a 15% chance to Freeze."
+        }
+      }
+    ]
+  }
+]

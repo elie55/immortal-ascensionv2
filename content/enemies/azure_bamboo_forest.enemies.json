@@ -1,0 +1,397 @@
+[
+  {
+    "id": "enemy.azure_bamboo_wolf",
+    "name": "Azure Bamboo Wolf",
+    "description": "A blue-grey wolf whose fur grows bamboo-leaf patterns.",
+    "name_cn": "苍竹狼",
+    "kind": "beast",
+    "element": "elem.wood",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 620,
+      "atk": 66,
+      "def": 30,
+      "spd": 16,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 280,
+    "techniques": [
+      "tech.active.savage_bite",
+      "tech.active.bamboo_spike"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.azure_bamboo_wolf",
+    "mastery_xp": 15,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/azure_bamboo_forest/azure_bamboo_wolf_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a sleek blue-grey wolf with bamboo-leaf markings and a white ruff, jade light in its eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/azure_bamboo_forest/azure_bamboo_wolf_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek blue-grey wolf with bamboo-leaf markings and a white ruff, jade light in its eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.bamboo_spirit_sprite",
+    "name": "Bamboo Spirit Sprite",
+    "description": "A knot of living bamboo animated by forest qi.",
+    "name_cn": "竹灵",
+    "kind": "construct",
+    "element": "elem.wood",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 500,
+      "atk": 58,
+      "def": 40,
+      "spd": 12,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 260,
+    "techniques": [
+      "tech.active.bamboo_spike",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "defensive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.bamboo_spirit_sprite",
+    "mastery_xp": 15,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/azure_bamboo_forest/bamboo_spirit_sprite_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a small humanoid figure made of green bamboo segments and leaves with glowing hollow eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/azure_bamboo_forest/bamboo_spirit_sprite_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small humanoid figure made of green bamboo segments and leaves with glowing hollow eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.green_viper",
+    "name": "Green Viper",
+    "description": "A bright green viper whose bite rots the meridians.",
+    "name_cn": "青蛇",
+    "kind": "beast",
+    "element": "elem.wood",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 540,
+      "atk": 72,
+      "def": 24,
+      "spd": 18,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 12,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 300,
+    "techniques": [
+      "tech.active.venom_fang"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.green_viper",
+    "mastery_xp": 16,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/azure_bamboo_forest/green_viper_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a coiled bright green viper with golden eyes and dripping fangs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/azure_bamboo_forest/green_viper_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a coiled bright green viper with golden eyes and dripping fangs, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.cloud_silk_spider",
+    "name": "Cloud Silk Spider",
+    "description": "Spins silk as white as cloud and twice as strong.",
+    "name_cn": "云丝蛛",
+    "kind": "beast",
+    "element": "elem.wood",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 700,
+      "atk": 70,
+      "def": 36,
+      "spd": 11,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 340,
+    "techniques": [
+      "tech.active.web_snare",
+      "tech.active.venom_fang"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.cloud_silk_spider",
+    "mastery_xp": 16,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/azure_bamboo_forest/cloud_silk_spider_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a large pale-white spider with cloud-like silk and blue markings on its back. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/azure_bamboo_forest/cloud_silk_spider_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a large pale-white spider with cloud-like silk and blue markings on its back, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.rime_bamboo_lynx",
+    "name": "Rime Bamboo Lynx",
+    "description": "An elite lynx of the deep forest; frost crackles along its fur.",
+    "name_cn": "霜竹猞猁",
+    "kind": "beast",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 900,
+      "atk": 92,
+      "def": 44,
+      "spd": 20,
+      "crit": 12,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 480,
+    "techniques": [
+      "tech.active.frost_breath",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.rime_bamboo_lynx",
+    "mastery_xp": 19,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/azure_bamboo_forest/rime_bamboo_lynx_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a powerful pale-blue lynx with frost-crystal fur tufts and icy breath, tufted ears. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/azure_bamboo_forest/rime_bamboo_lynx_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a powerful pale-blue lynx with frost-crystal fur tufts and icy breath, tufted ears, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.whispering_reed_witch",
+    "name": "Whispering Reed Witch",
+    "description": "A demonic cultivator who hides among the reeds and sings travellers to sleep.",
+    "name_cn": "苇巫",
+    "kind": "demonic",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 7
+    },
+    "stats": {
+      "hp": 1100,
+      "atk": 98,
+      "def": 40,
+      "spd": 17,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 120,
+      "sp_energy": 100
+    },
+    "cp": 560,
+    "techniques": [
+      "tech.active.reed_whisper_curse",
+      "tech.active.frozen_lotus"
+    ],
+    "ai": {
+      "strategy": "caster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.whispering_reed_witch",
+    "mastery_xp": 21,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/azure_bamboo_forest/whispering_reed_witch_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a gaunt pale woman in tattered green-black robes woven from reeds, long wet hair, holding a reed flute, eerie teal glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/azure_bamboo_forest/whispering_reed_witch_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a gaunt pale woman in tattered green-black robes woven from reeds, long wet hair, holding a reed flute, eerie teal glow, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

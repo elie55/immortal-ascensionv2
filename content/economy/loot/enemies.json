@@ -1,0 +1,442 @@
+[
+  {
+    "id": "loot.enemy.field_bandit",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "junk.cheap_junk_loot",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "gift.counterfeit_coin",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "junk.broken_blade",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      8,
+      16
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.wild_boar",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.boar_tusk",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.spirit_grass",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      6,
+      12
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.spirit_monkey",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.spirit_monkey_fur",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.spirit_grass",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.peach_blossom",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      8,
+      14
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.grey_wolf",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.wolf_fang",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "chance": 0.12,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      10,
+      18
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.azure_bamboo_wolf",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.wolf_fang",
+        "chance": 0.5,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.azure_wolf_pelt",
+        "chance": 0.35,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      14,
+      24
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.bamboo_spirit_sprite",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.jade_bamboo_segment",
+        "chance": 0.5,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.bamboo_spirit_shoot",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      12,
+      22
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.green_viper",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.green_viper_venom",
+        "chance": 0.5,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.spirit_grass",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      14,
+      24
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.cloud_silk_spider",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.cloud_silk_bolt",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      16,
+      28
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.rime_bamboo_lynx",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.frost_beast_core",
+        "chance": 0.55,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.glacier_iron_ore",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.rime_crystal",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      40,
+      70
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.whispering_reed_witch",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "gear.reed_witchs_whisper_ring.epic",
+        "chance": 0.08,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "gear.whispering_reed_flute.rare",
+        "chance": 0.12,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "book.crescent_wind_blade_manual",
+        "chance": 0.05,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.cloud_silk_bolt",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.frost_beast_core",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      60,
+      100
+    ],
+    "sect_fame": 10,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.abyss_spawn",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      120,
+      200
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.thunder_wisp",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.sword_rain_fragment",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      100,
+      160
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  }
+]

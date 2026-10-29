@@ -1,0 +1,346 @@
+[
+  {
+    "id": "gift.candied_hawthorn",
+    "name": "Candied Hawthorn",
+    "description": "a skewer of glossy red candied hawthorns",
+    "name_cn": "糖葫芦",
+    "rarity": "common",
+    "sell_value": 5,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/gifts/candied_hawthorn.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a skewer of glossy red candied hawthorns, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "base_affinity": 5,
+    "gift_tags": [
+      "snack",
+      "sweet"
+    ]
+  },
+  {
+    "id": "gift.osmanthus_cake",
+    "name": "Osmanthus Cake",
+    "description": "a square of pale yellow osmanthus cake on a leaf",
+    "name_cn": "桂花糕",
+    "rarity": "common",
+    "sell_value": 8,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/gifts/osmanthus_cake.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square of pale yellow osmanthus cake on a leaf, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "base_affinity": 6,
+    "gift_tags": [
+      "snack",
+      "sweet",
+      "refined"
+    ]
+  },
+  {
+    "id": "gift.ancient_spirit_coin",
+    "name": "Ancient Spirit Coin",
+    "description": "a large square-holed bronze coin engraved with a cloud dragon",
+    "name_cn": "古灵钱",
+    "rarity": "rare",
+    "sell_value": 60,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/gifts/ancient_spirit_coin.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a large square-holed bronze coin engraved with a cloud dragon, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "base_affinity": 10,
+    "gift_tags": [
+      "coin",
+      "antique",
+      "treasure"
+    ]
+  },
+  {
+    "id": "gift.rare_treasure_map",
+    "name": "Rare Treasure Map",
+    "description": "a rolled yellowed map with a red-inked route",
+    "name_cn": "藏宝图",
+    "rarity": "rare",
+    "sell_value": 80,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/gifts/rare_treasure_map.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a rolled yellowed map with a red-inked route, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "base_affinity": 10,
+    "gift_tags": [
+      "map",
+      "treasure"
+    ]
+  },
+  {
+    "id": "gift.spirit_stone_pouch",
+    "name": "Spirit Stone Pouch",
+    "description": "a small embroidered pouch bulging with spirit stones",
+    "name_cn": "灵石袋",
+    "rarity": "uncommon",
+    "sell_value": 50,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/gifts/spirit_stone_pouch.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a small embroidered pouch bulging with spirit stones, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "base_affinity": 8,
+    "gift_tags": [
+      "coin",
+      "treasure"
+    ]
+  },
+  {
+    "id": "gift.fine_ledger_book",
+    "name": "Fine Ledger Book",
+    "description": "a leather-bound ledger with gilded edges",
+    "name_cn": "精装账本",
+    "rarity": "uncommon",
+    "sell_value": 40,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/gifts/fine_ledger_book.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a leather-bound ledger with gilded edges, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "base_affinity": 8,
+    "gift_tags": [
+      "ledger",
+      "refined"
+    ]
+  },
+  {
+    "id": "gift.counterfeit_coin",
+    "name": "Counterfeit Coin",
+    "description": "a cheap tin coin badly stamped to imitate a spirit coin",
+    "name_cn": "假币",
+    "rarity": "common",
+    "sell_value": 1,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/gifts/counterfeit_coin.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cheap tin coin badly stamped to imitate a spirit coin, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "base_affinity": -5,
+    "gift_tags": [
+      "fake",
+      "junk_gift"
+    ]
+  },
+  {
+    "id": "gift.bitter_medicine",
+    "name": "Bitter Medicine",
+    "description": "a bowl of black, bitter herbal medicine",
+    "name_cn": "苦药",
+    "rarity": "common",
+    "sell_value": 2,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/gifts/bitter_medicine.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a bowl of black, bitter herbal medicine, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "base_affinity": -3,
+    "gift_tags": [
+      "medicine",
+      "bitter"
+    ]
+  },
+  {
+    "id": "gift.frost_plum_wine",
+    "name": "Frost Plum Wine",
+    "description": "a frosted blue porcelain bottle of plum wine",
+    "name_cn": "霜梅酒",
+    "rarity": "rare",
+    "sell_value": 90,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/gifts/frost_plum_wine.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a frosted blue porcelain bottle of plum wine, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "base_affinity": 10,
+    "gift_tags": [
+      "wine",
+      "refined",
+      "frost"
+    ]
+  },
+  {
+    "id": "gift.sword_polish_cloth",
+    "name": "Sword Polish Cloth",
+    "description": "a folded white silk cloth with a whetstone and oil vial",
+    "name_cn": "拭剑布",
+    "rarity": "uncommon",
+    "sell_value": 25,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/gifts/sword_polish_cloth.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a folded white silk cloth with a whetstone and oil vial, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "base_affinity": 6,
+    "gift_tags": [
+      "sword_care",
+      "practical"
+    ]
+  },
+  {
+    "id": "gift.beast_bell",
+    "name": "Beast Bell",
+    "description": "a small golden bell on a red tassel that spirit beasts adore",
+    "name_cn": "兽铃",
+    "rarity": "uncommon",
+    "sell_value": 35,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/gifts/beast_bell.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a small golden bell on a red tassel that spirit beasts adore, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "base_affinity": 8,
+    "gift_tags": [
+      "beast",
+      "practical"
+    ]
+  }
+]

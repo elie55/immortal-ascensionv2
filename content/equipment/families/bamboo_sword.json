@@ -1,0 +1,116 @@
+[
+  {
+    "id": "gear.bamboo_sword",
+    "name": "Bamboo Sword",
+    "description": "A practice sword cut from sect bamboo. Light, humble, dependable.",
+    "name_cn": "竹剑",
+    "slot": "weapon",
+    "requirements": {},
+    "rarities": {
+      "common": {
+        "name": "Bamboo Sword",
+        "description": "A practice sword cut from sect bamboo. Light, humble, dependable. (Common grade.)",
+        "stats": {
+          "atk": 10,
+          "crit": 1
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 26,
+        "sell_value": 10,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/bamboo_sword_common.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a slender straight sword carved from pale green bamboo with a cord-wrapped grip, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "uncommon": {
+        "name": "Bamboo Sword (Tempered)",
+        "description": "A practice sword cut from sect bamboo. Light, humble, dependable. (Uncommon grade.)",
+        "stats": {
+          "atk": 16.0,
+          "crit": 1.6
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 36,
+        "sell_value": 30,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/bamboo_sword_uncommon.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a slender straight sword carved from pale green bamboo with a cord-wrapped grip, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "rare": {
+        "name": "Bamboo Sword (Refined)",
+        "description": "A practice sword cut from sect bamboo. Light, humble, dependable. (Rare grade.)",
+        "stats": {
+          "atk": 26.0,
+          "crit": 2.6
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "hp"
+        ],
+        "effects": [],
+        "item_cp": 52,
+        "sell_value": 90,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/bamboo_sword_rare.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a slender straight sword carved from pale green bamboo with a cord-wrapped grip, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "weapon_type": "sword",
+    "element": "elem.wood"
+  }
+]

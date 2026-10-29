@@ -1,0 +1,60 @@
+[
+  {
+    "id": "egg.cloud_fox",
+    "name": "Cloud Fox Egg",
+    "description": "a round white egg wrapped in soft cloud wisps, faintly warm",
+    "name_cn": "云狐蛋",
+    "rarity": "uncommon",
+    "sell_value": 100,
+    "stack_limit": 5,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/cloud_fox.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a round white egg wrapped in soft cloud wisps, faintly warm, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "hatches_into": "beast.yunyun",
+    "hatch_minutes": 30,
+    "hatch_requirements": {}
+  },
+  {
+    "id": "egg.flame_fox",
+    "name": "Flame Fox Egg",
+    "description": "a red-orange egg with ember cracks glowing along its shell",
+    "name_cn": "焰狐蛋",
+    "rarity": "rare",
+    "sell_value": 400,
+    "stack_limit": 5,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/flame_fox.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a red-orange egg with ember cracks glowing along its shell, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "hatches_into": "beast.flame_fox",
+    "hatch_minutes": 120,
+    "hatch_requirements": {}
+  }
+]

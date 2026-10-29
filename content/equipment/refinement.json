@@ -1,0 +1,59 @@
+{
+  "steps": [
+    {
+      "from": "common",
+      "chance": 0.8,
+      "stones": 200,
+      "materials": [
+        {
+          "id": "mat.refining_stone",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "from": "uncommon",
+      "chance": 0.6,
+      "stones": 320,
+      "materials": [
+        {
+          "id": "mat.refining_stone",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "from": "rare",
+      "chance": 0.4,
+      "stones": 520,
+      "materials": [
+        {
+          "id": "mat.refining_stone",
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "from": "epic",
+      "chance": 0.25,
+      "stones": 840,
+      "materials": [
+        {
+          "id": "mat.refining_stone",
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "from": "legendary",
+      "chance": 0.1,
+      "stones": 1400,
+      "materials": [
+        {
+          "id": "mat.refining_stone",
+          "qty": 10
+        }
+      ]
+    }
+  ]
+}

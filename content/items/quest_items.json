@@ -1,0 +1,54 @@
+[
+  {
+    "id": "qitem.caravan_manifest",
+    "name": "Caravan Manifest",
+    "description": "a water-stained caravan manifest listing missing crates",
+    "name_cn": "商队货单",
+    "rarity": "uncommon",
+    "sell_value": 0,
+    "stack_limit": 1,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/quest/caravan_manifest.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a water-stained caravan manifest listing missing crates, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "qitem.elder_wen_token",
+    "name": "Elder Wen's Token",
+    "description": "a small jade token carved with a cloud, proof of passing the Elder's Trial",
+    "name_cn": "温长老令牌",
+    "rarity": "uncommon",
+    "sell_value": 0,
+    "stack_limit": 1,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/quest/elder_wen_token.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a small jade token carved with a cloud, proof of passing the Elder's Trial, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

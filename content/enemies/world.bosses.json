@@ -1,0 +1,691 @@
+[
+  {
+    "id": "boss.plains_bandit_chief",
+    "name": "Bandit Chief Hu",
+    "description": "Leader of the plains bandits. Once a failed sect applicant.",
+    "name_cn": "匪首胡",
+    "kind": "region",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 1800,
+      "atk": 90,
+      "def": 40,
+      "spd": 13,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 480,
+    "techniques": [
+      "tech.active.bandit_slash",
+      "tech.active.swallow_return_sword"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.boss.plains_bandit_chief",
+    "mastery_xp": 52,
+    "phases": [
+      {
+        "name": "Bluster",
+        "hp_threshold": 1.0,
+        "techniques": [
+          "tech.active.bandit_slash"
+        ],
+        "summons": []
+      },
+      {
+        "name": "Cornered",
+        "hp_threshold": 0.5,
+        "techniques": [
+          "tech.active.swallow_return_sword",
+          "tech.active.bandit_slash"
+        ],
+        "summons": [
+          {
+            "enemy": "enemy.field_bandit",
+            "count": 2
+          }
+        ],
+        "enrage": {
+          "atk_mult": 1.3,
+          "spd_mult": 1.1
+        }
+      }
+    ],
+    "weaknesses": [
+      "elem.wood"
+    ],
+    "art": {
+      "icon": {
+        "file": "assets/bosses/mortal_plains/plains_bandit_chief_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head of a burly scarred bandit chief in a fur-collared coat with two sabers, gold tooth, torn sect robe beneath. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/bosses/mortal_plains/plains_bandit_chief_battle.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a burly scarred bandit chief in a fur-collared coat with two sabers, gold tooth, torn sect robe beneath, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "intro": {
+        "file": "assets/bosses/mortal_plains/plains_bandit_chief_intro.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dramatic boss introduction splash of a burly scarred bandit chief in a fur-collared coat with two sabers, gold tooth, torn sect robe beneath, low angle, swirling elemental energy, dark vignette, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "boss.thousand_node_bamboo_dragon",
+    "name": "Thousand-Node Bamboo Dragon",
+    "description": "The ancient dragon-shaped bamboo at the heart of the forest. Its scales are living leaves; it is weak to Metal.",
+    "name_cn": "千节竹龙",
+    "kind": "region",
+    "element": "elem.wood",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 9
+    },
+    "stats": {
+      "hp": 6000,
+      "atk": 150,
+      "def": 70,
+      "spd": 15,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 1100,
+    "techniques": [
+      "tech.active.bamboo_spike",
+      "tech.active.verdant_vine_bind",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "guardian",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.boss.thousand_node_bamboo_dragon",
+    "mastery_xp": 67,
+    "phases": [
+      {
+        "name": "Rooted",
+        "hp_threshold": 1.0,
+        "techniques": [
+          "tech.active.bamboo_spike",
+          "tech.active.stone_shell"
+        ],
+        "summons": []
+      },
+      {
+        "name": "Grove Awakens",
+        "hp_threshold": 0.6,
+        "techniques": [
+          "tech.active.verdant_vine_bind",
+          "tech.active.bamboo_spike"
+        ],
+        "summons": [
+          {
+            "enemy": "enemy.bamboo_spirit_sprite",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "Thousand Nodes",
+        "hp_threshold": 0.25,
+        "techniques": [
+          "tech.active.bamboo_spike"
+        ],
+        "summons": [],
+        "enrage": {
+          "atk_mult": 1.5,
+          "spd_mult": 1.3
+        }
+      }
+    ],
+    "weaknesses": [
+      "elem.metal"
+    ],
+    "art": {
+      "icon": {
+        "file": "assets/bosses/azure_bamboo_forest/thousand_node_bamboo_dragon_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head of an enormous serpentine dragon made of jade-green bamboo segments and leaves, with glowing amber eyes and moss antlers. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/bosses/azure_bamboo_forest/thousand_node_bamboo_dragon_battle.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an enormous serpentine dragon made of jade-green bamboo segments and leaves, with glowing amber eyes and moss antlers, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "intro": {
+        "file": "assets/bosses/azure_bamboo_forest/thousand_node_bamboo_dragon_intro.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dramatic boss introduction splash of an enormous serpentine dragon made of jade-green bamboo segments and leaves, with glowing amber eyes and moss antlers, low angle, swirling elemental energy, dark vignette, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "boss.guardian_of_the_origin",
+    "name": "Guardian of the Origin",
+    "description": "A stone sentinel that has guarded the Origin Secret Realm since before the sect.",
+    "name_cn": "本源守卫",
+    "kind": "secret_realm",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 9000,
+      "atk": 210,
+      "def": 140,
+      "spd": 12,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 1900,
+    "techniques": [
+      "tech.active.stone_shell",
+      "tech.active.thunder_palm",
+      "tech.active.mirror_scale"
+    ],
+    "ai": {
+      "strategy": "guardian",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.boss.guardian_of_the_origin",
+    "mastery_xp": 87,
+    "phases": [
+      {
+        "name": "Sentinel",
+        "hp_threshold": 1.0,
+        "techniques": [
+          "tech.active.stone_shell",
+          "tech.active.thunder_palm"
+        ],
+        "summons": []
+      },
+      {
+        "name": "Mirror Form",
+        "hp_threshold": 0.5,
+        "techniques": [
+          "tech.active.mirror_scale",
+          "tech.active.thunder_palm"
+        ],
+        "summons": [],
+        "shield_pct": 20
+      }
+    ],
+    "weaknesses": [
+      "elem.wood"
+    ],
+    "art": {
+      "icon": {
+        "file": "assets/bosses/special/guardian_of_the_origin_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head of a towering stone golem carved with ancient runes, moss and gold cracks glowing, mirror-like plates on its arms. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/bosses/special/guardian_of_the_origin_battle.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a towering stone golem carved with ancient runes, moss and gold cracks glowing, mirror-like plates on its arms, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "intro": {
+        "file": "assets/bosses/special/guardian_of_the_origin_intro.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dramatic boss introduction splash of a towering stone golem carved with ancient runes, moss and gold cracks glowing, mirror-like plates on its arms, low angle, swirling elemental energy, dark vignette, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "boss.tribulation_thunder_spirit",
+    "name": "Tribulation Thunder Spirit",
+    "description": "The will of heaven given a crackling violet form. Survive it to form your core.",
+    "name_cn": "劫雷之灵",
+    "kind": "tribulation",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 1
+    },
+    "stats": {
+      "hp": 14000,
+      "atk": 320,
+      "def": 150,
+      "spd": 25,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 3400,
+    "techniques": [
+      "tech.active.heavenly_bolt",
+      "tech.active.thunder_judgment"
+    ],
+    "ai": {
+      "strategy": "caster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.boss.tribulation_thunder_spirit",
+    "mastery_xp": 125,
+    "phases": [
+      {
+        "name": "Wave I",
+        "hp_threshold": 1.0,
+        "techniques": [
+          "tech.active.heavenly_bolt"
+        ],
+        "summons": []
+      },
+      {
+        "name": "Wave II",
+        "hp_threshold": 0.7,
+        "techniques": [
+          "tech.active.heavenly_bolt"
+        ],
+        "summons": [
+          {
+            "enemy": "enemy.thunder_wisp",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "name": "Wave III",
+        "hp_threshold": 0.4,
+        "techniques": [
+          "tech.active.thunder_judgment",
+          "tech.active.heavenly_bolt"
+        ],
+        "summons": [],
+        "enrage": {
+          "atk_mult": 1.4,
+          "spd_mult": 1.2
+        },
+        "charged_attack": {
+          "tech": "tech.active.thunder_judgment",
+          "turns_to_charge": 2
+        }
+      }
+    ],
+    "weaknesses": [
+      "elem.earth"
+    ],
+    "art": {
+      "icon": {
+        "file": "assets/bosses/special/tribulation_thunder_spirit_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head of a colossal humanoid spirit of violet lightning with a crown of thunderclouds and eyes of white fire. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/bosses/special/tribulation_thunder_spirit_battle.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a colossal humanoid spirit of violet lightning with a crown of thunderclouds and eyes of white fire, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "intro": {
+        "file": "assets/bosses/special/tribulation_thunder_spirit_intro.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dramatic boss introduction splash of a colossal humanoid spirit of violet lightning with a crown of thunderclouds and eyes of white fire, low angle, swirling elemental energy, dark vignette, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "boss.nine_headed_abyss_serpent",
+    "name": "Nine-Headed Abyss Serpent",
+    "description": "Lord of the Abyss of the Nine Heavens. Only Dao Companions standing together have ever returned.",
+    "name_cn": "九首渊蛇",
+    "kind": "mega",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 9
+    },
+    "stats": {
+      "hp": 96000,
+      "atk": 900,
+      "def": 400,
+      "spd": 24,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 18000,
+    "techniques": [
+      "tech.active.abyssal_torrent",
+      "tech.active.frost_breath",
+      "tech.active.venom_fang"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.boss.nine_headed_abyss_serpent",
+    "mastery_xp": 490,
+    "phases": [
+      {
+        "name": "Rising Tide",
+        "hp_threshold": 1.0,
+        "techniques": [
+          "tech.active.frost_breath",
+          "tech.active.venom_fang"
+        ],
+        "summons": []
+      },
+      {
+        "name": "Nine Mouths",
+        "hp_threshold": 0.66,
+        "techniques": [
+          "tech.active.abyssal_torrent",
+          "tech.active.venom_fang"
+        ],
+        "summons": [
+          {
+            "enemy": "enemy.abyss_spawn",
+            "count": 3
+          }
+        ],
+        "shield_pct": 15
+      },
+      {
+        "name": "Abyssal Fury",
+        "hp_threshold": 0.33,
+        "techniques": [
+          "tech.active.abyssal_torrent",
+          "tech.active.frost_breath"
+        ],
+        "summons": [],
+        "enrage": {
+          "atk_mult": 1.6,
+          "spd_mult": 1.3
+        },
+        "charged_attack": {
+          "tech": "tech.active.abyssal_torrent",
+          "turns_to_charge": 2
+        }
+      }
+    ],
+    "weaknesses": [
+      "elem.wood"
+    ],
+    "art": {
+      "icon": {
+        "file": "assets/bosses/special/nine_headed_abyss_serpent_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head of a gigantic nine-headed black-blue sea serpent rising from dark water, each head crowned with coral and lightning. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/bosses/special/nine_headed_abyss_serpent_battle.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a gigantic nine-headed black-blue sea serpent rising from dark water, each head crowned with coral and lightning, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "intro": {
+        "file": "assets/bosses/special/nine_headed_abyss_serpent_intro.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dramatic boss introduction splash of a gigantic nine-headed black-blue sea serpent rising from dark water, each head crowned with coral and lightning, low angle, swirling elemental energy, dark vignette, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "boss.tower_warden",
+    "name": "Warden of the Heaven-Piercing Tower",
+    "description": "An armoured spirit bound to guard every tenth floor of the tower.",
+    "name_cn": "通天塔守",
+    "kind": "dungeon",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 12000,
+      "atk": 300,
+      "def": 160,
+      "spd": 20,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 3000,
+    "techniques": [
+      "tech.active.swallow_return_sword",
+      "tech.active.mirror_scale"
+    ],
+    "ai": {
+      "strategy": "defensive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.boss.tower_warden",
+    "mastery_xp": 115,
+    "phases": [
+      {
+        "name": "Vigil",
+        "hp_threshold": 1.0,
+        "techniques": [
+          "tech.active.swallow_return_sword"
+        ],
+        "summons": []
+      },
+      {
+        "name": "Mirror Vigil",
+        "hp_threshold": 0.5,
+        "techniques": [
+          "tech.active.mirror_scale",
+          "tech.active.swallow_return_sword"
+        ],
+        "summons": []
+      }
+    ],
+    "weaknesses": [
+      "elem.fire"
+    ],
+    "art": {
+      "icon": {
+        "file": "assets/bosses/special/tower_warden_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head of a tall armoured spirit knight in silver-white plate with a mirrored visor and a floating sword, surrounded by rings of light. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/bosses/special/tower_warden_battle.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a tall armoured spirit knight in silver-white plate with a mirrored visor and a floating sword, surrounded by rings of light, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "intro": {
+        "file": "assets/bosses/special/tower_warden_intro.png",
+        "size": [
+          1080,
+          1350
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dramatic boss introduction splash of a tall armoured spirit knight in silver-white plate with a mirrored visor and a floating sword, surrounded by rings of light, low angle, swirling elemental energy, dark vignette, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

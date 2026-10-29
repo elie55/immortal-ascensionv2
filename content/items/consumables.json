@@ -1,0 +1,247 @@
+[
+  {
+    "id": "cons.qi_gathering_pill",
+    "name": "Qi Gathering Pill",
+    "description": "a small round pale-green pill in a wisp of qi",
+    "name_cn": "聚气丹",
+    "rarity": "uncommon",
+    "sell_value": 15,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/qi_gathering_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a small round pale-green pill in a wisp of qi, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "subtype": "pill",
+    "grade": 1,
+    "effects": {
+      "qi": 600
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0
+  },
+  {
+    "id": "cons.blossom_healing_pill",
+    "name": "Blossom Healing Pill",
+    "description": "a pink pill shaped like a closed peach blossom",
+    "name_cn": "桃花疗伤丹",
+    "rarity": "uncommon",
+    "sell_value": 20,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/blossom_healing_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pink pill shaped like a closed peach blossom, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "subtype": "pill",
+    "grade": 1,
+    "effects": {
+      "hp_pct": 40
+    },
+    "usable_in_battle": true,
+    "cooldown_min": 0
+  },
+  {
+    "id": "cons.spirit_condensing_pill",
+    "name": "Spirit Condensing Pill",
+    "description": "a golden pill with a swirl of white cloud inside",
+    "name_cn": "凝神丹",
+    "rarity": "rare",
+    "sell_value": 45,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/spirit_condensing_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a golden pill with a swirl of white cloud inside, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "subtype": "pill",
+    "grade": 2,
+    "effects": {
+      "qi": 2500,
+      "cultivation_boost": {
+        "mult": 1.2,
+        "minutes": 60
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0
+  },
+  {
+    "id": "cons.foundation_pill",
+    "name": "Foundation Pill",
+    "description": "a heavy amber pill wrapped in golden runes",
+    "name_cn": "筑基丹",
+    "rarity": "epic",
+    "sell_value": 200,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/foundation_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a heavy amber pill wrapped in golden runes, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "subtype": "pill",
+    "grade": 3,
+    "effects": {
+      "breakthrough_chance_bonus": 0.1,
+      "qi": 8000
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0
+  },
+  {
+    "id": "cons.frost_heart_elixir",
+    "name": "Frost Heart Elixir",
+    "description": "a slender vial of pale blue elixir frosting over",
+    "name_cn": "冰心露",
+    "rarity": "epic",
+    "sell_value": 260,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/frost_heart_elixir.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a slender vial of pale blue elixir frosting over, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "subtype": "elixir",
+    "grade": 4,
+    "effects": {
+      "permanent": {
+        "elem_res.water": 3,
+        "sp_energy": 10
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0
+  },
+  {
+    "id": "cons.core_condensing_pill",
+    "name": "Core Condensing Pill",
+    "description": "a white pill with a golden core visible through it",
+    "name_cn": "结丹丹",
+    "rarity": "legendary",
+    "sell_value": 900,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/core_condensing_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a white pill with a golden core visible through it, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "subtype": "pill",
+    "grade": 5,
+    "effects": {
+      "breakthrough_chance_bonus": 0.15,
+      "qi": 40000
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0
+  },
+  {
+    "id": "cons.spirit_tea",
+    "name": "Spirit Tea",
+    "description": "a steaming cup of jade-green tea on a bamboo saucer",
+    "name_cn": "灵茶",
+    "rarity": "common",
+    "sell_value": 8,
+    "stack_limit": 999,
+    "tags": [],
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/spirit_tea.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a steaming cup of jade-green tea on a bamboo saucer, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "subtype": "food",
+    "grade": 1,
+    "effects": {
+      "sp_pct": 30,
+      "buff": {
+        "status": "status.regen",
+        "chance": 1,
+        "turns": 3
+      }
+    },
+    "usable_in_battle": true,
+    "cooldown_min": 0
+  }
+]

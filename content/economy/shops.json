@@ -1,0 +1,364 @@
+[
+  {
+    "id": "shop.merchant_pavilion",
+    "name": "Merchant Pavilion",
+    "description": "Tang Xiaoman's stock. Better goods with higher Sect Fame.",
+    "name_cn": "百宝阁",
+    "owner": "npc.tang_xiaoman",
+    "restock": "daily",
+    "affinity_discount": {
+      "npc": "npc.tang_xiaoman",
+      "pct_per_level": 3
+    },
+    "fame_discount_pct_per_500": 5,
+    "buys_items": true,
+    "stock": [
+      {
+        "id": "cons.qi_gathering_pill",
+        "price": 38,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "cons.blossom_healing_pill",
+        "price": 55,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "cons.spirit_condensing_pill",
+        "price": 114,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 500
+        }
+      },
+      {
+        "id": "cons.spirit_tea",
+        "price": 25,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "mat.spirit_grass",
+        "price": 5,
+        "currency": "spirit_stones",
+        "qty": 20,
+        "unlock": {}
+      },
+      {
+        "id": "mat.spirit_iron_ore",
+        "price": 57,
+        "currency": "spirit_stones",
+        "qty": 10,
+        "unlock": {}
+      },
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "price": 30,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "mat.refining_stone",
+        "price": 200,
+        "currency": "spirit_stones",
+        "qty": 5,
+        "unlock": {
+          "sect_fame": 500
+        }
+      },
+      {
+        "id": "mat.reforging_sand",
+        "price": 150,
+        "currency": "spirit_stones",
+        "qty": 10,
+        "unlock": {
+          "sect_fame": 500
+        }
+      },
+      {
+        "id": "gear.bamboo_sword.common",
+        "price": 60,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "gear.bamboo_robe.common",
+        "price": 80,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "gear.reed_hat.common",
+        "price": 50,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "gear.cloudstep_boots.common",
+        "price": 143,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "gear.jade_pendant.common",
+        "price": 90,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "gear.azure_iron_war_ring.common",
+        "price": 70,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "gear.azure_iron_sword.uncommon",
+        "price": 171,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 300
+        }
+      },
+      {
+        "id": "gift.candied_hawthorn",
+        "price": 15,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "gift.osmanthus_cake",
+        "price": 20,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "gift.sword_polish_cloth",
+        "price": 40,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "gift.fine_ledger_book",
+        "price": 120,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 500
+        }
+      }
+    ]
+  },
+  {
+    "id": "shop.scripture_pavilion",
+    "name": "Scripture Pavilion",
+    "description": "Techniques and methods, floor by floor. Higher floors need Fame and rank.",
+    "name_cn": "藏经阁",
+    "owner": "npc.elder_feng",
+    "restock": "none",
+    "buys_items": false,
+    "stock": [
+      {
+        "id": "tech.active.flame_palm",
+        "price": 260,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "tech.active.earth_guardian",
+        "price": 380,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "tech.passive.sword_mastery",
+        "price": 300,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "tech.passive.iron_body",
+        "price": 300,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "tech.passive.spiritual_regeneration",
+        "price": 300,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "tech.active.frozen_lotus",
+        "price": 700,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 1000
+        }
+      },
+      {
+        "id": "tech.active.thunder_palm",
+        "price": 900,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 1000
+        }
+      },
+      {
+        "id": "tech.active.swallow_return_sword",
+        "price": 1200,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 2000,
+          "rank": "rank.inner_disciple"
+        }
+      },
+      {
+        "id": "tech.passive.critical_insight",
+        "price": 1500,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 2000
+        }
+      },
+      {
+        "id": "tech.passive.elemental_harmony",
+        "price": 1500,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 2000
+        }
+      },
+      {
+        "id": "method.heavenly_dragon_art",
+        "price": 3000,
+        "currency": "spirit_stones",
+        "unlock": {
+          "rank": "rank.inner_disciple"
+        }
+      },
+      {
+        "id": "method.primordial_chaos_scripture",
+        "price": 8000,
+        "currency": "spirit_stones",
+        "unlock": {
+          "rank": "rank.core_disciple"
+        }
+      }
+    ]
+  },
+  {
+    "id": "shop.tang_caravan",
+    "name": "Tang's Caravan",
+    "description": "A smaller stock on the road, with a few forest specialities.",
+    "name_cn": "唐家商队",
+    "owner": "npc.tang_xiaoman",
+    "restock": "per_visit",
+    "buys_items": true,
+    "stock": [
+      {
+        "id": "cons.qi_gathering_pill",
+        "price": 42,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "cons.blossom_healing_pill",
+        "price": 60,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "price": 32,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "bfood.spirit_fruit",
+        "price": 8,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "bfood.dried_fish",
+        "price": 7,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "gift.candied_hawthorn",
+        "price": 15,
+        "currency": "spirit_stones",
+        "unlock": {}
+      }
+    ]
+  },
+  {
+    "id": "shop.beast_garden",
+    "name": "Beast Garden Supplies",
+    "description": "Food and trinkets for spirit beasts.",
+    "name_cn": "灵兽园",
+    "owner": "npc.qin",
+    "restock": "daily",
+    "buys_items": false,
+    "stock": [
+      {
+        "id": "bfood.spirit_fruit",
+        "price": 6,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "bfood.dried_fish",
+        "price": 5,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "gift.beast_bell",
+        "price": 35,
+        "currency": "spirit_stones",
+        "unlock": {}
+      }
+    ]
+  },
+  {
+    "id": "shop.origin_realm_merchant",
+    "name": "Hidden Merchant of the Origin",
+    "description": "A masked trader who appears only inside the Origin Secret Realm.",
+    "name_cn": "本源隐商",
+    "restock": "per_visit",
+    "buys_items": false,
+    "stock": [
+      {
+        "id": "gift.frost_plum_wine",
+        "price": 300,
+        "currency": "spirit_stones",
+        "qty": 1,
+        "unlock": {}
+      },
+      {
+        "id": "mat.glacier_iron_ore",
+        "price": 120,
+        "currency": "spirit_stones",
+        "qty": 6,
+        "unlock": {}
+      },
+      {
+        "id": "mat.rime_crystal",
+        "price": 150,
+        "currency": "spirit_stones",
+        "qty": 4,
+        "unlock": {}
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "price": 180,
+        "currency": "spirit_stones",
+        "qty": 3,
+        "unlock": {}
+      }
+    ]
+  }
+]

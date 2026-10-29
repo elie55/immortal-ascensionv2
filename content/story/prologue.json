@@ -1,0 +1,216 @@
+[
+  {
+    "id": "story.prologue.entrance_gate",
+    "name": "The Entrance Gate",
+    "description": "Lin Xueyao climbs the Thousand Steps.",
+    "name_cn": "入门",
+    "chapter": "prologue",
+    "trigger": {
+      "on": "new_game"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "Hundreds climb the Thousand Steps each spring. Few pass the gate."
+      },
+      {
+        "speaker": "narration",
+        "text": "Today, Lin Xueyao climbs among them."
+      },
+      {
+        "speaker": "player",
+        "text": "…One more step."
+      }
+    ],
+    "unlocks": [],
+    "next": "story.prologue.elders_trial",
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/prologue_entrance_gate.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a vast stone staircase climbing into clouds toward a red-and-gold sect gate, floating mountains, waterfalls, cherry blossoms, crowds of hopeful applicants. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.prologue.elders_trial",
+    "name": "The Elder's Trial",
+    "description": "Elder Wen asks a question with no wrong answer.",
+    "name_cn": "考验",
+    "chapter": "prologue",
+    "trigger": {
+      "on": "chained"
+    },
+    "lines": [
+      {
+        "speaker": "npc.elder_wen",
+        "text": "A thirsty villager and a wounded fox both reach for your last waterskin. What do you do?",
+        "expression": "thoughtful"
+      }
+    ],
+    "choices": [
+      {
+        "text": "Give it to the villager. A person's life comes first.",
+        "effects": {
+          "affinity": [
+            {
+              "npc": "npc.elder_wen",
+              "delta": 10
+            }
+          ]
+        }
+      },
+      {
+        "text": "Share it. Half for each, and we search for a stream together.",
+        "effects": {
+          "affinity": [
+            {
+              "npc": "npc.elder_wen",
+              "delta": 15
+            },
+            {
+              "npc": "npc.bai_lingshuang",
+              "delta": 5
+            }
+          ]
+        }
+      },
+      {
+        "text": "Bind the fox's wound first, then give the water to whoever needs it most.",
+        "effects": {
+          "affinity": [
+            {
+              "npc": "npc.bai_lingshuang",
+              "delta": 15
+            },
+            {
+              "npc": "npc.qin",
+              "delta": 10
+            }
+          ]
+        }
+      }
+    ],
+    "unlocks": [],
+    "next": "story.prologue.welcome",
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/prologue_elders_trial.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a serene elder's study with scrolls, a wooden staff and morning light through paper windows, cherry branches. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.prologue.welcome",
+    "name": "Welcome to the Azure Cloud Sect",
+    "description": "Lin Xueyao is granted the rank of Outer Disciple.",
+    "name_cn": "青云宗",
+    "chapter": "prologue",
+    "trigger": {
+      "on": "chained"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "Lin Xueyao has passed the Elder's Trial."
+      },
+      {
+        "speaker": "npc.elder_wen",
+        "text": "Rank granted: Outer Disciple. Take this token to the Sword Grounds. Someone is waiting.",
+        "expression": "warm_smile"
+      },
+      {
+        "speaker": "narration",
+        "text": "New area: Sword Grounds. Method granted: Azure Cloud Breathing."
+      }
+    ],
+    "unlocks": [
+      "sectloc.sword_grounds",
+      "method.azure_cloud_breathing",
+      "qitem.elder_wen_token"
+    ],
+    "next": "story.prologue.senior_sister",
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/prologue_welcome.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a breathtaking view of the Azure Cloud Sect: floating islands, pagodas, bridges and waterfalls in golden morning light. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.prologue.senior_sister",
+    "name": "Senior Sister",
+    "description": "Bai Lingshuang introduces herself.",
+    "name_cn": "师姐",
+    "chapter": "prologue",
+    "trigger": {
+      "on": "chained"
+    },
+    "lines": [
+      {
+        "speaker": "npc.bai_lingshuang",
+        "text": "Lin Xueyao. I am Bai Lingshuang. From today, you train under me.",
+        "expression": "stern"
+      },
+      {
+        "speaker": "npc.bai_lingshuang",
+        "text": "Straighten your back, breathe when I say, and do not waste my time.",
+        "expression": "neutral"
+      },
+      {
+        "speaker": "player",
+        "text": "Yes, Senior Sister."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/prologue_senior_sister.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: sunlit sword-training terraces above clouds with frost-blue banners and a single plum tree. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

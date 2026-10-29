@@ -1,0 +1,219 @@
+[
+  {
+    "id": "tech.passive.sword_mastery",
+    "name": "Sword Mastery",
+    "description": "Sword techniques deal 15% more damage.",
+    "name_cn": "剑道精通",
+    "kind": "passive",
+    "rarity": "rare",
+    "element": "elem.metal",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 0,
+    "cooldown": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.metal": 15,
+      "crit": 2
+    },
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/passive/sword_mastery.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Sword Mastery' (metal element): Sword techniques deal 15% more damage., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.passive.iron_body",
+    "name": "Iron Body",
+    "description": "Defense +12%, damage taken reduced by 5%.",
+    "name_cn": "铁布衫",
+    "kind": "passive",
+    "rarity": "rare",
+    "element": "elem.earth",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 0,
+    "cooldown": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "def": 12,
+      "dmg_red": 5
+    },
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/passive/iron_body.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Iron Body' (earth element): Defense +12%, damage taken reduced by 5%., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.passive.spiritual_regeneration",
+    "name": "Spiritual Regeneration",
+    "description": "Recover 6 Spiritual Energy at the start of each turn.",
+    "name_cn": "灵息回元",
+    "kind": "passive",
+    "rarity": "rare",
+    "element": "elem.water",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 0,
+    "cooldown": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "sp_energy": 30
+    },
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/passive/spiritual_regeneration.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Spiritual Regeneration' (water element): Recover 6 Spiritual Energy at the start of each turn., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.passive.critical_insight",
+    "name": "Critical Insight",
+    "description": "Critical chance +6%, critical damage +20%.",
+    "name_cn": "破绽洞察",
+    "kind": "passive",
+    "rarity": "epic",
+    "element": "elem.metal",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 0,
+    "cooldown": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "crit": 6,
+      "crit_dmg": 20
+    },
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/passive/critical_insight.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Critical Insight' (metal element): Critical chance +6%, critical damage +20%., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tech.passive.elemental_harmony",
+    "name": "Elemental Harmony",
+    "description": "All elemental resistances +8%.",
+    "name_cn": "五行调和",
+    "kind": "passive",
+    "rarity": "epic",
+    "element": "elem.wood",
+    "weapon_affinity": "any",
+    "targeting": "single",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 0,
+    "cooldown": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_res.wood": 8,
+      "elem_res.fire": 8,
+      "elem_res.earth": 8,
+      "elem_res.metal": 8,
+      "elem_res.water": 8
+    },
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/passive/elemental_harmony.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Elemental Harmony' (wood element): All elemental resistances +8%., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

@@ -1,0 +1,362 @@
+[
+  {
+    "id": "status.burning",
+    "name": "Burning",
+    "description": "Takes fire damage each turn.",
+    "kind": "dot",
+    "stacking": "stack",
+    "max_stacks": 3,
+    "default_turns": 2,
+    "modifiers": {},
+    "tick": {
+      "pct_atk": 30
+    },
+    "art": {
+      "icon": {
+        "file": "assets/status/burning.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Burning': Takes fire damage each turn. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.poison",
+    "name": "Poison",
+    "description": "Takes nature damage each turn and heals less.",
+    "kind": "dot",
+    "stacking": "stack",
+    "max_stacks": 5,
+    "default_turns": 3,
+    "modifiers": {
+      "heal_bonus": -30
+    },
+    "tick": {
+      "pct_atk": 20
+    },
+    "art": {
+      "icon": {
+        "file": "assets/status/poison.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Poison': Takes nature damage each turn and heals less. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.bleeding",
+    "name": "Bleeding",
+    "description": "Loses a portion of max HP each turn.",
+    "kind": "dot",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 3,
+    "modifiers": {},
+    "tick": {
+      "pct_max_hp": 4
+    },
+    "art": {
+      "icon": {
+        "file": "assets/status/bleeding.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Bleeding': Loses a portion of max HP each turn. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.freeze",
+    "name": "Freeze",
+    "description": "Cannot act. Fire damage breaks the ice.",
+    "kind": "control",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 1,
+    "modifiers": {
+      "spd": -100
+    },
+    "art": {
+      "icon": {
+        "file": "assets/status/freeze.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Freeze': Cannot act. Fire damage breaks the ice. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.stun",
+    "name": "Stun",
+    "description": "Skips the next turn.",
+    "kind": "control",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 1,
+    "modifiers": {},
+    "art": {
+      "icon": {
+        "file": "assets/status/stun.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Stun': Skips the next turn. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.silence",
+    "name": "Silence",
+    "description": "Cannot use techniques; basic attacks only.",
+    "kind": "control",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 2,
+    "modifiers": {},
+    "art": {
+      "icon": {
+        "file": "assets/status/silence.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Silence': Cannot use techniques; basic attacks only. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.slow",
+    "name": "Slow",
+    "description": "Speed reduced.",
+    "kind": "debuff",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 2,
+    "modifiers": {
+      "spd": -30
+    },
+    "art": {
+      "icon": {
+        "file": "assets/status/slow.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Slow': Speed reduced. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.def_down",
+    "name": "Defense Down",
+    "description": "Defense reduced.",
+    "kind": "debuff",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 3,
+    "modifiers": {
+      "def": -25
+    },
+    "art": {
+      "icon": {
+        "file": "assets/status/def_down.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Defense Down': Defense reduced. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.atk_down",
+    "name": "Attack Down",
+    "description": "Attack reduced.",
+    "kind": "debuff",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 3,
+    "modifiers": {
+      "atk": -20
+    },
+    "art": {
+      "icon": {
+        "file": "assets/status/atk_down.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Attack Down': Attack reduced. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.shield",
+    "name": "Shield",
+    "description": "Absorbs damage until depleted.",
+    "kind": "shield",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 3,
+    "modifiers": {},
+    "art": {
+      "icon": {
+        "file": "assets/status/shield.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Shield': Absorbs damage until depleted. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.regen",
+    "name": "Regeneration",
+    "description": "Restores HP each turn.",
+    "kind": "buff",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 3,
+    "modifiers": {},
+    "tick": {
+      "pct_max_hp": -5
+    },
+    "art": {
+      "icon": {
+        "file": "assets/status/regen.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Regeneration': Restores HP each turn. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.reflect",
+    "name": "Damage Reflection",
+    "description": "Returns part of the damage taken to the attacker.",
+    "kind": "buff",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 2,
+    "modifiers": {},
+    "art": {
+      "icon": {
+        "file": "assets/status/reflect.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Damage Reflection': Returns part of the damage taken to the attacker. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.invuln",
+    "name": "Invulnerable",
+    "description": "Immune to all damage this turn.",
+    "kind": "buff",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 1,
+    "modifiers": {},
+    "art": {
+      "icon": {
+        "file": "assets/status/invuln.png",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Invulnerable': Immune to all damage this turn. Bold readable symbol, glowing rim, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

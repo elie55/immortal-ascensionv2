@@ -1,0 +1,484 @@
+[
+  {
+    "id": "loot.chest.plains_cache",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "gift.counterfeit_coin",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "qty": 3
+      },
+      {
+        "id": "cons.qi_gathering_pill",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      80,
+      120
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.chest.forest_hollow",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "gift.rare_treasure_map",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "qitem.caravan_manifest",
+        "qty": 1
+      },
+      {
+        "id": "mat.spirit_iron_ore",
+        "qty": 4
+      },
+      {
+        "id": "gift.ancient_spirit_coin",
+        "qty": 1
+      }
+    ],
+    "spirit_stones": [
+      150,
+      250
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.chest.origin_vault",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "egg.flame_fox",
+        "chance": 0.5,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "gift.rare_treasure_map",
+        "chance": 0.5,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.flame_lotus",
+        "qty": 1
+      },
+      {
+        "id": "mat.glacier_iron_ore",
+        "qty": 5
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      500,
+      800
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.granary_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      30,
+      50
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.granary_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "gift.spirit_stone_pouch",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "cons.qi_gathering_pill",
+        "chance": 0.5,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      200,
+      300
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.mine_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "chance": 0.5,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      40,
+      60
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.mine_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.5,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.reforging_sand",
+        "qty": 2
+      },
+      {
+        "id": "mat.spirit_iron_ore",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      300,
+      450
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.labyrinth_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.jade_bamboo_segment",
+        "chance": 0.5,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.cloud_silk_bolt",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      60,
+      90
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.labyrinth_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.rime_crystal",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "gear.dragonbone_pendant.epic",
+        "chance": 0.05,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      400,
+      600
+    ],
+    "sect_fame": 20,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.tower_floor",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "chance": 0.5,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      50,
+      90
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.origin_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.frost_wyrm_heart_core",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.rime_crystal",
+        "chance": 0.8,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "gift.frost_plum_wine",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1200,
+      1800
+    ],
+    "sect_fame": 50,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.abyss_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.8,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.5,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      500,
+      800
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.abyss_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "gear.dragon_abyss_sword.divine",
+        "chance": 0.02,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "gear.demonbane_fan.immortal",
+        "chance": 0.05,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "gear.ninefold_hairpin_crown.immortal",
+        "chance": 0.05,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 1.0,
+        "qty": [
+          3,
+          5
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      15000,
+      25000
+    ],
+    "sect_fame": 300,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.tribulation.core_formation",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "qty": 5
+      }
+    ],
+    "spirit_stones": [
+      3000,
+      5000
+    ],
+    "sect_fame": 300,
+    "mastery_xp": 0
+  }
+]

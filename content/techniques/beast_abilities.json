@@ -1,0 +1,130 @@
+[
+  {
+    "id": "btech.yunyun.cloud_veil",
+    "beast": "beast.yunyun",
+    "name": "Cloud Veil",
+    "description": "YunYun wraps the party in soft cloud, granting a small shield.",
+    "kind": "active",
+    "element": "elem.water",
+    "power": 0,
+    "applies": [
+      {
+        "status": "status.shield",
+        "chance": 1,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/yunyun_cloud_veil.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square spirit-beast ability icon for 'Cloud Veil': YunYun wraps the party in soft cloud, granting a small shield., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.yunyun.nimble_spirit",
+    "beast": "beast.yunyun",
+    "name": "Nimble Spirit",
+    "description": "Evasion +5%.",
+    "kind": "passive",
+    "element": "elem.water",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "eva": 5
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/yunyun_nimble_spirit.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square spirit-beast ability icon for 'Nimble Spirit': Evasion +5%., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.flame_fox.fox_fire",
+    "beast": "beast.flame_fox",
+    "name": "Fox Fire",
+    "description": "A burst of fox-fire scorches the target. 90% ATK, may Burn.",
+    "kind": "active",
+    "element": "elem.fire",
+    "power": 90,
+    "applies": [
+      {
+        "status": "status.burning",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/flame_fox_fox_fire.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square spirit-beast ability icon for 'Fox Fire': A burst of fox-fire scorches the target. 90% ATK, may Burn., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.flame_fox.ember_heart",
+    "beast": "beast.flame_fox",
+    "name": "Ember Heart",
+    "description": "Fire damage +6%.",
+    "kind": "passive",
+    "element": "elem.fire",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.fire": 6
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/flame_fox_ember_heart.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square spirit-beast ability icon for 'Ember Heart': Fire damage +6%., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

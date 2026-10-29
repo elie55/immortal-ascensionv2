@@ -1,0 +1,209 @@
+[
+  {
+    "id": "event.blazing_shrine",
+    "name": "The Blazing Shrine",
+    "description": "A collapsed fire shrine still warm with old qi.",
+    "name_cn": "焚祠",
+    "text": "Embers glow in the cracked altar. A warmth presses against your meridians, asking a question.",
+    "choices": [
+      {
+        "text": "Press your palm to the altar.",
+        "outcomes": [
+          {
+            "chance": 0.1,
+            "text": "Fire and Earth answer. Your root transforms!",
+            "root_transform": "root.fire_earth_dual"
+          },
+          {
+            "chance": 0.5,
+            "text": "Warmth floods your meridians.",
+            "rewards": {
+              "spirit_stones": 150
+            }
+          },
+          {
+            "chance": 0.4,
+            "text": "The heat burns you.",
+            "status": "status.burning"
+          }
+        ]
+      },
+      {
+        "text": "Search the rubble.",
+        "outcomes": [
+          {
+            "chance": 0.7,
+            "text": "You find an old offering box.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "gift.ancient_spirit_coin",
+                  "qty": 1
+                }
+              ]
+            }
+          },
+          {
+            "chance": 0.3,
+            "text": "A boar was sleeping here.",
+            "battle": [
+              "enemy.wild_boar"
+            ]
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/blazing_shrine.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a half-collapsed red shrine in golden grass, embers glowing in a cracked altar at sunset. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.frost_hermit_trial",
+    "name": "The Frost Hermit's Trial",
+    "description": "An old hermit of ice offers a test of the blade.",
+    "name_cn": "霜隐士之试",
+    "text": "The hermit does not look up. 'Cut the falling leaf without touching the frost on it.'",
+    "choices": [
+      {
+        "text": "Attempt the cut.",
+        "outcomes": [
+          {
+            "chance": 0.15,
+            "text": "The leaf parts; the frost holds. Metal and Water awaken in you.",
+            "root_transform": "root.metal_water_dual"
+          },
+          {
+            "chance": 0.55,
+            "text": "'Close.' He gives you a bottle.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "gift.frost_plum_wine",
+                  "qty": 1
+                }
+              ]
+            }
+          },
+          {
+            "chance": 0.3,
+            "text": "The frost shatters. He sighs and feeds you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "cons.spirit_tea",
+                  "qty": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "text": "Bow and leave.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "He nods once. The clearing is quiet.",
+            "rewards": {
+              "sect_fame": 5
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/frost_hermit_trial.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a clearing of silver bamboo with a small snow-dusted hut and an old man in white meditating on a stone. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.hidden_whisper",
+    "name": "Whisper in the Reeds",
+    "description": "Someone is singing in the reeds. Something is listening.",
+    "name_cn": "苇间低语",
+    "text": "A low song drifts through the reeds. The water is very still.",
+    "choices": [
+      {
+        "text": "Follow the song.",
+        "outcomes": [
+          {
+            "chance": 0.6,
+            "text": "The Reed Witch!",
+            "battle": [
+              "enemy.whispering_reed_witch"
+            ]
+          },
+          {
+            "chance": 0.4,
+            "text": "You find a drowned traveller's pack.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.cloud_silk_bolt",
+                  "qty": 1
+                },
+                {
+                  "id": "gift.spirit_stone_pouch",
+                  "qty": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "text": "Plug your ears and back away.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "The song fades. You keep your wits.",
+            "rewards": {
+              "spirit_stones": 30
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/hidden_whisper.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a misty reed marsh at night with teal lights under the water and a shadowy figure among the reeds. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

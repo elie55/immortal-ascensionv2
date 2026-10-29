@@ -1,0 +1,20 @@
+[
+  {
+    "id": "title.path_of_the_cultivator",
+    "name": "Path of the Cultivator",
+    "description": "Granted on completing Foundation Establishment.",
+    "name_cn": "修行之路",
+    "bonuses": {
+      "sp_energy": 10
+    }
+  },
+  {
+    "id": "title.outer_sect_champion",
+    "name": "Outer Sect Champion",
+    "description": "Victor of the Outer Sect Tournament.",
+    "name_cn": "外门魁首",
+    "bonuses": {
+      "atk": 20
+    }
+  }
+]

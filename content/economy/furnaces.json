@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Bronze Furnace",
+    "description": "The Alchemy Hall's starter furnace.",
+    "name_cn": "青铜炉",
+    "grade": 1,
+    "success_bonus": 0.05,
+    "upgrade": {
+      "materials": [
+        {
+          "id": "mat.spirit_iron_ore",
+          "qty": 20
+        }
+      ],
+      "stones": 2000
+    }
+  },
+  {
+    "name": "Iron Furnace",
+    "description": "Holds heat evenly; fewer wasted herbs.",
+    "name_cn": "铁炉",
+    "grade": 2,
+    "success_bonus": 0.1,
+    "yield_bonus": 0.05,
+    "upgrade": {
+      "materials": [
+        {
+          "id": "mat.rime_crystal",
+          "qty": 5
+        },
+        {
+          "id": "mat.glacier_iron_ore",
+          "qty": 10
+        }
+      ],
+      "stones": 12000
+    }
+  },
+  {
+    "name": "Jade Furnace",
+    "description": "A furnace of spirit jade used by inner-sect alchemists.",
+    "name_cn": "玉炉",
+    "grade": 3,
+    "success_bonus": 0.18,
+    "yield_bonus": 0.1
+  }
+]

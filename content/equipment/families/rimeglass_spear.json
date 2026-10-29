@@ -1,0 +1,178 @@
+[
+  {
+    "id": "gear.rimeglass_spear",
+    "name": "Rimeglass Spear",
+    "description": "A spear of translucent frost-glass that never melts.",
+    "name_cn": "霜玻璃枪",
+    "slot": "weapon",
+    "requirements": {
+      "realm": "realm.foundation_establishment"
+    },
+    "rarities": {
+      "epic": {
+        "name": "Rimeglass Spear of the Azure Cloud",
+        "description": "A spear of translucent frost-glass that never melts. (Epic grade.)",
+        "stats": {
+          "atk": 16.8,
+          "crit": 4.2
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "elem_dmg.water"
+        ],
+        "effects": [
+          {
+            "kind": "on_crit_apply",
+            "description": "Critical hits Slow the target.",
+            "status": "status.slow",
+            "chance": 0.5
+          }
+        ],
+        "item_cp": 41,
+        "sell_value": 300,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/rimeglass_spear_epic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a long spear with a translucent pale-blue crystal blade and a dark jade shaft wrapped in white silk, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "legendary": {
+        "name": "Rimeglass Spear of Nine Heavens",
+        "description": "A spear of translucent frost-glass that never melts. (Legendary grade.)",
+        "stats": {
+          "atk": 28,
+          "crit": 7
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "elem_dmg.water"
+        ],
+        "effects": [
+          {
+            "kind": "on_crit_apply",
+            "description": "Critical hits Slow the target.",
+            "status": "status.slow",
+            "chance": 0.5
+          }
+        ],
+        "item_cp": 62,
+        "sell_value": 1000,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/rimeglass_spear_legendary.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a long spear with a translucent pale-blue crystal blade and a dark jade shaft wrapped in white silk, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        },
+        "awakening": {
+          "effect": {
+            "kind": "on_hit_apply",
+            "description": "Hits have a 20% chance to Freeze.",
+            "status": "status.freeze",
+            "chance": 0.2
+          },
+          "materials": [
+            {
+              "id": "mat.awakening_crystal",
+              "qty": 1
+            },
+            {
+              "id": "mat.frost_wyrm_heart_core",
+              "qty": 1
+            }
+          ],
+          "cost_stones": 5000
+        }
+      },
+      "mythic": {
+        "name": "Rimeglass Spear · Starfall",
+        "description": "A spear of translucent frost-glass that never melts. (Mythic grade.)",
+        "stats": {
+          "atk": 44,
+          "crit": 11
+        },
+        "secondary_pool": [
+          "crit",
+          "acc",
+          "spd",
+          "elem_dmg.water"
+        ],
+        "effects": [
+          {
+            "kind": "on_crit_apply",
+            "description": "Critical hits Slow the target.",
+            "status": "status.slow",
+            "chance": 0.5
+          }
+        ],
+        "item_cp": 92,
+        "sell_value": 3000,
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/rimeglass_spear_mythic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a long spear with a translucent pale-blue crystal blade and a dark jade shaft wrapped in white silk, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        },
+        "awakening": {
+          "effect": {
+            "kind": "on_hit_apply",
+            "description": "Hits have a 20% chance to Freeze.",
+            "status": "status.freeze",
+            "chance": 0.2
+          },
+          "materials": [
+            {
+              "id": "mat.awakening_crystal",
+              "qty": 1
+            },
+            {
+              "id": "mat.frost_wyrm_heart_core",
+              "qty": 1
+            }
+          ],
+          "cost_stones": 5000
+        }
+      }
+    },
+    "weapon_type": "spear",
+    "element": "elem.water",
+    "set": "set.rimeglass"
+  }
+]
