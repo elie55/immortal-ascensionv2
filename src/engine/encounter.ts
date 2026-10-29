@@ -15,7 +15,9 @@ import { addMasteryXp, grantRewards } from "./actions.ts";
 import { rollTable, grantDrops, mergeDrops, type Drops } from "./loot.ts";
 import { Battle } from "./combat/battle.ts";
 import { revealHidden, discoverRegions, finishEventBattle } from "./nodes.ts";
-import { buildPlayer, buildBeast, buildEnemy, buildEnemyFrom, resetUids } from "./combat/build.ts";
+import { buildPlayer, buildBeast, buildEnemy, buildEnemyFrom, buildCompanion, resetUids } from "./combat/build.ts";
+import { companionSlots } from "./companions.ts";
+import { beastsAfterVictory } from "./beasts.ts";
 import type { Combatant, BattleOptions, BattleSummary, AutoRuleResolved } from "./combat/types.ts";
 
 export type EncounterSource =
@@ -123,6 +125,7 @@ export class Encounter {
     const units: Combatant[] = [buildPlayer(this.s, this.c, this.carry)];
     const beast = buildBeast(this.s, this.c);
     if (beast) units.push(beast);
+    for (const npc of this.s.companions.active.slice(0, companionSlots(this.c, this.src))) units.push(buildCompanion(this.s, this.c, npc));
     for (const id of this.waves[this.wave]!) {
       if (id.startsWith("npc.")) units.push(buildDuelist(this.c, id, this.src.kind === "tournament" ? this.c.get<Tournament>(this.src.id).rounds[this.s.progress.tournaments[this.src.id]?.round ?? 0]!.cp : (this.src as any).cp));
       else units.push(buildEnemy(this.c, id, { hpMult: this.opts.enemyHpMult }));
@@ -230,6 +233,7 @@ export class Encounter {
         addMasteryXp(s, c, s.character.method, Math.round(masteryXp * c.combat.mastery.method_share), this.events);
         for (const t of s.techniques.actives) if (t) addMasteryXp(s, c, t, Math.round(masteryXp * c.combat.mastery.active_share), this.events);
       }
+      if (this.src.kind === "node" || this.src.kind === "event" || this.src.kind === "dungeon") beastsAfterVictory(s, c, masteryXp, this.events);
       s.progress.counters.battles_won = (s.progress.counters.battles_won ?? 0) + 1;
       this.events.push({ type: "battle_won", source: srcId(this.src) });
     } else {

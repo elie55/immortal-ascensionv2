@@ -47,6 +47,12 @@ export const migrations: Record<number, (raw: any) => any> = {
   }),
   // 2 → 3: crafting (furnace, proficiency) and shop restock periods
   2: (st) => ({ ...st, progress: { ...st.progress, crafting: st.progress?.crafting ?? { furnace: 1, proficiency: 0 }, shopPeriods: st.progress?.shopPeriods ?? {} } }),
+  // 3 → 4: egg incubators, beast uids, Dao companions
+  3: (st) => {
+    const owned = st.beasts?.owned ?? {};
+    const maxUid = Math.max(0, ...Object.values(owned).map((b: any) => b.uid ?? 0));
+    return { ...st, beasts: { owned, active: st.beasts?.active ?? null, incubating: st.beasts?.incubating ?? [], nextUid: st.beasts?.nextUid ?? maxUid + 1 }, companions: st.companions ?? { bonded: [], active: [] } };
+  },
 };
 
 export function encode(state: GameState, slot: number, savedAt: number): string {

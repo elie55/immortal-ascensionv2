@@ -184,6 +184,22 @@ export const CultivationRules = z.object({
   /** Subtracted before weighting so a default value adds no CP (crit 5, crit_dmg 150, acc 90). */
   cp_baseline: z.record(z.string(), z.number()).default({}),
   mastery_bonus_per_level: z.number().default(0.03),
+  /** Spirit beasts: XP curve (xp to next level = xp_base · level^xp_exp), bond, incubators, activities. */
+  beasts: z.object({
+    xp_base: z.number().positive(), xp_exp: z.number().positive(),
+    max_level: z.number().int().positive(),
+    /** Bond points for bond level L → L+1 = bond_per_level · (L+1). */
+    bond_per_level: z.number().int().positive(),
+    incubators: z.number().int().positive(),
+    preferred_food_mult: z.number().positive(),
+    battle_xp_share: z.number().min(0),
+    battle_bond: z.number().int().min(0),
+    play: z.object({ bond: z.number().int().positive(), cooldown_min: z.number().int().positive() }),
+    /** Training spends adventure energy for a share (%) of the XP to the next level. */
+    train: z.object({ energy: z.number().int().positive(), xp_pct: z.number().positive() }),
+  }),
+  /** Dao companions: affinity level index required, qi bonus while bonded, stat scaling against the player. */
+  dao: z.object({ affinity_level: z.number().int().min(1), qi_mult: z.number().min(1), stat_scale: z.number().positive() }),
   /** Equipment slots that open at a realm (slot key → realm id). */
   slot_unlocks: z.record(z.string(), ref("realm")).default({}),
 });

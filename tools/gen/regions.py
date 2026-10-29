@@ -198,7 +198,7 @@ def region(rd, prev):
         for s in keys: b["art"][f"battle_{s}"] = beast_stage(f"beasts/{bk2}_{s}", look, s, stage_names[s])
         out["beasts"].append(b)
         egg = {"id": f"egg.{bk2}", **named(f"{bn} Egg", f"An egg that will hatch into a {bn}.", None), "rarity": brar, "sell_value": 100 * n * (ri + 1), "stack_limit": 5, "tags": [key],
-               "hatches_into": f"beast.{bk2}", "hatch_minutes": 30 * (ri + 1), "hatch_requirements": {"realm": realm_id(rmin)},
+               "hatches_into": f"beast.{bk2}", "hatch_wins": max(3, round(30 * (ri + 1) / 8)), "hatch_requirements": {"realm": realm_id(rmin)},
                "art": {"icon": icon(f"items/eggs/{bk2}", f"a spirit-beast egg of the {bn}: {bel2}-themed shell with markings hinting at {look}", brar)}}
         out["eggs"].append(egg)
         is_secret = rd.get("secret_realm") and bk2 == rd["secret_realm"][5][0]

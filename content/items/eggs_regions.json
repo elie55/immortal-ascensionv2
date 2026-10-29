@@ -10,7 +10,7 @@
       "blazing_mountain"
     ],
     "hatches_into": "beast.ember_salamander_pup",
-    "hatch_minutes": 60,
+    "hatch_wins": 8,
     "hatch_requirements": {
       "realm": "realm.foundation_establishment"
     },
@@ -42,7 +42,7 @@
       "blazing_mountain"
     ],
     "hatches_into": "beast.azure_wolf",
-    "hatch_minutes": 60,
+    "hatch_wins": 8,
     "hatch_requirements": {
       "realm": "realm.foundation_establishment"
     },
@@ -74,7 +74,7 @@
       "frozen_lotus_valley"
     ],
     "hatches_into": "beast.snow_crane",
-    "hatch_minutes": 90,
+    "hatch_wins": 11,
     "hatch_requirements": {
       "realm": "realm.foundation_establishment"
     },
@@ -106,7 +106,7 @@
       "frozen_lotus_valley"
     ],
     "hatches_into": "beast.frost_otter",
-    "hatch_minutes": 60,
+    "hatch_wins": 8,
     "hatch_requirements": {
       "realm": "realm.foundation_establishment"
     },
@@ -138,7 +138,7 @@
       "ancient_sword_tomb"
     ],
     "hatches_into": "beast.jade_serpent",
-    "hatch_minutes": 90,
+    "hatch_wins": 11,
     "hatch_requirements": {
       "realm": "realm.core_formation"
     },
@@ -170,7 +170,7 @@
       "demon_territory"
     ],
     "hatches_into": "beast.blood_moon_wolf",
-    "hatch_minutes": 90,
+    "hatch_wins": 11,
     "hatch_requirements": {
       "realm": "realm.nascent_soul"
     },
@@ -202,7 +202,7 @@
       "demon_territory"
     ],
     "hatches_into": "beast.ghost_lantern_moth",
-    "hatch_minutes": 90,
+    "hatch_wins": 11,
     "hatch_requirements": {
       "realm": "realm.nascent_soul"
     },
@@ -234,7 +234,7 @@
       "celestial_mountains"
     ],
     "hatches_into": "beast.thunder_tiger",
-    "hatch_minutes": 120,
+    "hatch_wins": 15,
     "hatch_requirements": {
       "realm": "realm.soul_transformation"
     },
@@ -266,7 +266,7 @@
       "nine_heavens"
     ],
     "hatches_into": "beast.cloud_qilin",
-    "hatch_minutes": 120,
+    "hatch_wins": 15,
     "hatch_requirements": {
       "realm": "realm.spirit_severing"
     },
@@ -298,7 +298,7 @@
       "thunderclap_wastes"
     ],
     "hatches_into": "beast.storm_roc",
-    "hatch_minutes": 120,
+    "hatch_wins": 15,
     "hatch_requirements": {
       "realm": "realm.dao_integration"
     },
@@ -330,7 +330,7 @@
       "thunderclap_wastes"
     ],
     "hatches_into": "beast.lightning_eel",
-    "hatch_minutes": 120,
+    "hatch_wins": 15,
     "hatch_requirements": {
       "realm": "realm.dao_integration"
     },
@@ -362,7 +362,7 @@
       "sunken_dragon_sea"
     ],
     "hatches_into": "beast.black_tortoise",
-    "hatch_minutes": 150,
+    "hatch_wins": 19,
     "hatch_requirements": {
       "realm": "realm.tribulation_transcendence"
     },
@@ -394,7 +394,7 @@
       "starfall_desert"
     ],
     "hatches_into": "beast.sand_dragon",
-    "hatch_minutes": 150,
+    "hatch_wins": 19,
     "hatch_requirements": {
       "realm": "realm.mahayana"
     },
@@ -426,7 +426,7 @@
       "starfall_desert"
     ],
     "hatches_into": "beast.starlight_deer",
-    "hatch_minutes": 150,
+    "hatch_wins": 19,
     "hatch_requirements": {
       "realm": "realm.mahayana"
     },
@@ -458,7 +458,7 @@
       "gate_of_ascension"
     ],
     "hatches_into": "beast.vermilion_bird",
-    "hatch_minutes": 150,
+    "hatch_wins": 19,
     "hatch_requirements": {
       "realm": "realm.immortal_ascension"
     },
@@ -490,7 +490,7 @@
       "jade_immortal_realm"
     ],
     "hatches_into": "beast.white_tiger",
-    "hatch_minutes": 180,
+    "hatch_wins": 22,
     "hatch_requirements": {
       "realm": "realm.earth_immortal"
     },
@@ -522,7 +522,7 @@
       "golden_palace_of_laws"
     ],
     "hatches_into": "beast.nine_tailed_fox",
-    "hatch_minutes": 180,
+    "hatch_wins": 22,
     "hatch_requirements": {
       "realm": "realm.heavenly_immortal"
     },
@@ -554,7 +554,7 @@
       "throne_of_the_immortal_emperor"
     ],
     "hatches_into": "beast.azure_dragon",
-    "hatch_minutes": 210,
+    "hatch_wins": 26,
     "hatch_requirements": {
       "realm": "realm.immortal_king"
     },

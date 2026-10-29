@@ -137,6 +137,9 @@ export class App {
       else if (e.type === "achievement") this.router.toast(`Achievement: ${c.get<any>(e.id).name}`, "good", 3600);
       else if (e.type === "affinity_level") this.router.toast(`${c.get<any>(e.npc).name} now sees you as: ${e.name}`, "good", 3600);
       else if (e.type === "rank_up") this.router.open(rankUpModal(this, e.rank));
+      else if (e.type === "beast_level") this.router.toast(`${this.game.state.beasts.owned[e.uid]?.name ?? "Your beast"} reached level ${e.level}`, "good");
+      else if (e.type === "beast_bond") this.router.toast(`Bond with ${this.game.state.beasts.owned[e.uid]?.name ?? "your beast"} deepened (${e.level})`, "good");
+      else if (e.type === "dao_bonded") this.router.toast(`${c.get<any>(e.npc).name} is now your Dao companion`, "good", 4000);
     }
   }
 

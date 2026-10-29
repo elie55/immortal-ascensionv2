@@ -79,5 +79,28 @@
   "mastery_bonus_per_level": 0.03,
   "slot_unlocks": {
     "artifact": "realm.foundation_establishment"
+  },
+  "beasts": {
+    "xp_base": 40,
+    "xp_exp": 1.5,
+    "max_level": 60,
+    "bond_per_level": 10,
+    "incubators": 2,
+    "preferred_food_mult": 1.5,
+    "battle_xp_share": 0.5,
+    "battle_bond": 1,
+    "play": {
+      "bond": 2,
+      "cooldown_min": 30
+    },
+    "train": {
+      "energy": 5,
+      "xp_pct": 15
+    }
+  },
+  "dao": {
+    "affinity_level": 4,
+    "qi_mult": 1.1,
+    "stat_scale": 0.75
   }
 }

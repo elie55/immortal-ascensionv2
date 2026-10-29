@@ -39,6 +39,8 @@ export type DomainEvent =
   | { type: "duel_won"; npc: string }
   | { type: "purchase"; shop: string; id: string; qty: number }
   | { type: "tournament_round"; tournament: string; round: number; won: boolean }
-  | { type: "tournament_won"; tournament: string };
+  | { type: "tournament_won"; tournament: string }
+  | { type: "egg_incubated"; egg: string } | { type: "beast_hatched"; uid: number; beast: string } | { type: "beast_level"; uid: number; level: number }
+  | { type: "beast_evolved"; uid: number; beast: string; stage: string } | { type: "beast_bond"; uid: number; level: number } | { type: "dao_bonded"; npc: string };
 
 export type EventSink = (e: DomainEvent) => void;

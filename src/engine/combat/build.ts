@@ -4,6 +4,7 @@ import type { GameState } from "../state.ts";
 import { computeStats, masteryMult, type StatBlock } from "../stats.ts";
 import { EQUIP_SLOTS } from "../inventory.ts";
 import type { Combatant, Skill, GearSpecial } from "./types.ts";
+import { companionCombatant } from "../companions.ts";
 
 export const BASIC: Omit<Skill, "element" | "power" | "masteryMult"> = { id: "basic", name: "Attack", kind: "basic", hits: 1, spCost: 0, cooldown: 0, targeting: "single", applies: [] };
 
@@ -80,6 +81,9 @@ export function buildBeast(s: GameState, c: ContentIndex): Combatant | null {
   return make({ id: beast.id, name: bi.name, side: "ally", kind: "beast", element: beast.element, base, maxHp: Math.max(1, Math.round(base.hp ?? 1)), maxSp: 0, skills, specials: [], resistances: {},
     ai: { strategy: "aggressive", rules: [] }, art: c.art(beast.id, `battle_${bi.stage}`), cp: 0, masteryXp: 0, realmOrder: 1 });
 }
+
+/** A bonded Dao companion as an ally (see companions.ts for scaling). */
+export function buildCompanion(s: GameState, c: ContentIndex, npcId: string): Combatant { return companionCombatant(s, c, npcId, make); }
 
 /** An enemy or boss from content. `hpMult` applies dungeon modifiers. */
 export function buildEnemy(c: ContentIndex, id: string, opts: { hpMult?: number; kind?: Combatant["kind"] } = {}): Combatant {

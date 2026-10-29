@@ -62,7 +62,8 @@ export const QuestItem = ItemBase.extend({
 export const Egg = ItemBase.extend({
   id: ref("egg"),
   hatches_into: ref("beast"),
-  hatch_minutes: z.number().int().positive(),
+  /** Battles won (adventure nodes, events, dungeons) while the egg sits in an incubator. */
+  hatch_wins: z.number().int().positive(),
   hatch_requirements: z.object({ realm: ref("realm").optional(), items: z.array(Quantity).optional() }).default({}),
 });
 

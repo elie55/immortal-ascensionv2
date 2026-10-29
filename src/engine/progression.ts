@@ -150,6 +150,8 @@ export function countEvent(s: GameState, e: DomainEvent): void {
     case "visit": bump(s, `visits:${e.target}`); break;
     case "enhanced": if (e.success && e.level >= 15) bump(s, "gear_enhanced_15"); break;
     case "tournament_won": bump(s, "tournaments_won"); break;
+    case "beast_evolved": bump(s, "beasts_evolved"); bump(s, `evolved:${e.beast}:${e.stage}`); break;
+    case "beast_hatched": bump(s, `hatched:${e.beast}`); break;
     case "currency": if (e.currency === "spirit_stones" && e.delta > 0) bump(s, "spirit_stones_earned", e.delta); break;
     default: break;
   }

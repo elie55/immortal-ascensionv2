@@ -7,7 +7,7 @@ import type { ContentIndex } from "../content/index.ts";
 import { seedRng } from "./rng.ts";
 import { grantGear } from "./inventory.ts";
 
-export const STATE_VERSION = 3;
+export const STATE_VERSION = 4;
 
 export const GearInstanceSchema = z.object({
   base: z.string(), rarity: z.string(), ilvl: z.number().int(), enhance: z.number().int().min(0).max(15),
@@ -27,8 +27,12 @@ export const BuffSchema = z.object({
 
 export const BeastInstanceSchema = z.object({
   uid: z.number().int(), beast: z.string(), name: z.string(), stage: z.string(), level: z.number().int().min(1), xp: z.number().min(0),
+  /** Bond points (the bond level is derived from them, see beasts.ts). */
   bond: z.number().min(0), hatchedAt: z.number(),
+  playedAt: z.number().optional(),
 });
+
+export const IncubatorSchema = z.object({ egg: z.string(), wins: z.number().int().min(0), need: z.number().int().positive(), startedAt: z.number() });
 
 export const GameStateSchema = z.object({
   meta: z.object({
@@ -79,7 +83,9 @@ export const GameStateSchema = z.object({
   }),
   equipped: z.record(z.string(), z.number().int()),            // slot key → gear uid
   buffs: z.array(BuffSchema),
-  beasts: z.object({ owned: z.record(z.string(), BeastInstanceSchema), active: z.number().int().nullable() }),
+  beasts: z.object({ owned: z.record(z.string(), BeastInstanceSchema), active: z.number().int().nullable(), incubating: z.array(IncubatorSchema), nextUid: z.number().int().min(1) }),
+  /** Dao companions: NPCs bonded with the player, and those chosen to fight alongside. */
+  companions: z.object({ bonded: z.array(z.string()), active: z.array(z.string()) }),
   relations: z.record(z.string(), z.object({
     affinity: z.number().int(), giftsToday: z.number().int().min(0), lastGiftDay: z.string().optional(), topics: z.array(z.string()), lastDuelAt: z.number().optional(),
   })),
@@ -146,7 +152,8 @@ export function newGameState(content: ContentIndex, now: number, opts: { name?: 
     inventory: { stacks: {}, gear: {}, nextUid: 1, lockedGear: [] },
     equipped: {},
     buffs: [],
-    beasts: { owned: {}, active: null },
+    beasts: { owned: {}, active: null, incubating: [], nextUid: 1 },
+    companions: { bonded: [], active: [] },
     relations: {},
     progress: {
       quests: { active: {}, completed: {}, lastCompletedAt: {} }, achievements: {}, storySeen: {}, storyChoices: {},

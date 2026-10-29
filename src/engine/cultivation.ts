@@ -61,6 +61,7 @@ export function qiRate(s: GameState, content: ContentIndex, now: number): RateBr
     const beast = bi ? content.get<Beast>(bi.beast) : undefined;
     if (beast && beast.cultivation_bonus > 0) factors.push({ label: bi!.name, mult: 1 + beast.cultivation_bonus });
   }
+  if (s.companions.bonded.length && content.rules.dao.qi_mult !== 1) factors.push({ label: "Dual cultivation", mult: content.rules.dao.qi_mult });
   for (const b of s.buffs) if (b.qi_mult && b.expiresAt > now) factors.push({ label: b.label, mult: b.qi_mult });
   const perSecond = factors.reduce((r, f) => r * f.mult, base);
   return { base, factors, perSecond };

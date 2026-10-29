@@ -25,7 +25,7 @@
       }
     },
     "hatches_into": "beast.yunyun",
-    "hatch_minutes": 30,
+    "hatch_wins": 4,
     "hatch_requirements": {}
   },
   {
@@ -54,7 +54,7 @@
       }
     },
     "hatches_into": "beast.flame_fox",
-    "hatch_minutes": 120,
+    "hatch_wins": 15,
     "hatch_requirements": {}
   }
 ]

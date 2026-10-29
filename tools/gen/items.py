@@ -92,7 +92,7 @@ def quest_items():
     ]
 
 def eggs():
-    E = lambda key, name, desc, rarity, sell, beast, minutes, cn=None: item("egg", key, name, desc, rarity, sell, "eggs", cn, {"hatches_into": beast, "hatch_minutes": minutes, "hatch_requirements": {}}, stack=5)
+    E = lambda key, name, desc, rarity, sell, beast, minutes, cn=None: item("egg", key, name, desc, rarity, sell, "eggs", cn, {"hatches_into": beast, "hatch_wins": max(3, round(minutes / 8)), "hatch_requirements": {}}, stack=5)
     return [
         E("cloud_fox", "Cloud Fox Egg", "a round white egg wrapped in soft cloud wisps, faintly warm", "uncommon", 100, "beast.yunyun", 30, "云狐蛋"),
         E("flame_fox", "Flame Fox Egg", "a red-orange egg with ember cracks glowing along its shell", "rare", 400, "beast.flame_fox", 120, "焰狐蛋"),

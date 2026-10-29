@@ -2,6 +2,7 @@
  * Derived character stats and Combat Power. Pure: (state, content) → numbers.
  * Order of folding: base → realms/stages → root → method → passives → gear → sets → beast bond → buffs → title.
  */
+import { bondLevel } from "./beasts.ts";
 import type { ContentIndex, Realm, Root, Method, Technique, GearBase, GearSet, Beast, Title } from "../content/index.ts";
 import type { GameState } from "./state.ts";
 import { gearStats, EQUIP_SLOTS } from "./inventory.ts";
@@ -83,7 +84,8 @@ export function computeStats(s: GameState, content: ContentIndex): StatBreakdown
     if (bi) {
       const beast = content.get<Beast>(bi.beast);
       const bStats: StatBlock = {};
-      for (const m of beast.bond.milestones) if (bi.bond >= m.level) add(bStats, m.bonus);
+      const lvl = bondLevel(content, bi);
+      for (const m of beast.bond.milestones) if (lvl >= m.level) add(bStats, m.bonus);
       push("Spirit beast bond", bStats);
     }
   }

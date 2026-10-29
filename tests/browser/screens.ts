@@ -201,6 +201,40 @@ await page.locator(".rule-edit .chip", { hasText: "My HP below" }).click();
 check(await ia<string>("window.__ia.game.state.combat.presets[0].rules[1].when") === "hp_below", "auto-battle rule condition edits the preset");
 await page.locator(".nav button", { hasText: "Character" }).click();
 
+// ---------- spirit beasts & Dao companions ----------
+await page.locator(".nav button", { hasText: "Cultivate" }).click();
+await page.locator(".cult-tile", { hasText: "Spirit Beasts" }).click();
+await page.waitForSelector('[data-screen="beasts"]');
+await shot("beasts-empty");
+await page.locator(".beast-cell.empty").first().click();
+await page.locator(".sheet .btn", { hasText: "Incubate" }).first().click();
+check(await ia<number>("window.__ia.game.state.beasts.incubating.length") === 1, "the starting egg goes into an incubator");
+await page.evaluate(() => { const ia = (window as any).__ia; for (const inc of ia.game.state.beasts.incubating) inc.wins = inc.need; ia.app.router.refresh(); });
+await page.locator(".beast-cell.egg.ready").click();
+await page.waitForSelector(".modal.celebrate");
+await shot("beast-hatched");
+await page.locator(".modal .btn", { hasText: "Welcome" }).click();
+check(await ia<string>("window.__ia.game.state.beasts.owned[window.__ia.game.state.beasts.active]?.beast") === "beast.yunyun", "YunYun hatches and becomes the active companion");
+await shot("beasts");
+await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.inventory.stacks["bfood.spirit_fruit"] = 30; ia.app.router.refresh(); });
+await page.locator(".beast-actions .btn", { hasText: "Feed" }).click();
+await shot("beast-feed");
+await page.locator(".sheet .setrow", { hasText: "Spirit Fruit" }).locator(".btn.jade").click();
+check(await ia<number>("window.__ia.game.state.beasts.owned[window.__ia.game.state.beasts.active].level") > 1, "feeding levels the beast up");
+await page.locator(".sheet .btn", { hasText: "Done" }).click();
+await page.locator(".beast-actions .btn", { hasText: "Evolve" }).click();
+await shot("beast-evolve");
+await page.locator(".sheet-backdrop").click({ position: { x: 20, y: 20 } });
+await page.locator(".nav button", { hasText: "Cultivate" }).click();   // same tab: back to its root
+await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.relations["npc.bai_lingshuang"].affinity = 1000; ia.app.router.refresh(); });
+await openLoc("Sword Grounds");
+await page.locator(".setrow", { hasText: "Bai Lingshuang" }).first().click();
+await page.locator(".npc-act", { hasText: "Dao Companion" }).click();
+await shot("dao-proposal");
+await page.locator(".modal .btn.gold", { hasText: "Ask" }).click();
+check(await ia<boolean>("window.__ia.game.state.companions.bonded.includes('npc.bai_lingshuang')"), "Bai Lingshuang becomes a Dao companion");
+await page.locator(".nav button", { hasText: "Character" }).click();
+
 // adventure → region map → first battle (auto), victory panel, then a manual turn
 await page.locator(".nav button", { hasText: "Adventure" }).click();
 await shot("adventure");

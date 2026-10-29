@@ -18,6 +18,7 @@ import { ITEM_ICON } from "./items.ts";
 import { shopScreen } from "./shop.ts";
 import { missionHallScreen } from "./quests.ts";
 import { startEncounter } from "./battle.ts";
+import { canBond, bondDao } from "../../engine/companions.ts";
 
 type Line = { who: "npc" | "me" | "note"; text: string };
 /** Conversation logs live for the session only (never saved). */
@@ -58,6 +59,7 @@ export function npcScreen(app: App, npcId: string, backTo: string): Screen {
         { id: "gift", label: "Gift", icon: "fame", badge: giftsLeft(s, c, npcId), run: () => giftSheet(app, npcId, say) },
         n.shop && { id: "shop", label: "Shop", icon: "gem", run: () => app.router.push(shopScreen(app, n.shop, n.name)) },
         quests.length && { id: "quests", label: "Requests", icon: "scroll", badge: ready, run: () => app.router.push(missionHallScreen(app, npcId)) },
+        canBond(s, c, npcId).ok && { id: "dao", label: "Dao Companion", icon: "fame", on: true, run: () => daoModal(app, npcId, say) },
       ].filter(Boolean) as any[];
       return [
         header(app),
@@ -191,5 +193,25 @@ function sparCard(app: App, npcId: string) {
       h("div", { class: "grid-2", style: { marginTop: "10px" } },
         h("button", { class: "btn ghost", onClick: close }, "Not now"),
         h("button", { class: "btn gold", disabled: !can.ok, onClick: () => { close(); const hp = s.character.hp; startEncounter(app, { kind: "duel", npc: npcId }, () => { app.game.state.character.hp = hp; }); } }, "Spar!")));
+  } });
+}
+
+function daoModal(app: App, npcId: string, say: (who: Line["who"], text: string) => void) {
+  app.router.open({ id: "dao", kind: "modal", cls: "celebrate", render: (close) => {
+    const c = app.content;
+    const n = c.get<any>(npcId);
+    return h("div", { class: "center" },
+      h("div", { class: "muted up pink-t" }, "道侣 · Dao Companion"),
+      h("div", { style: { margin: "10px auto", width: "max-content" } }, npcAvatar(app, npcId, 84)),
+      h("div", { class: "result-title", style: { fontSize: "26px" } }, n.name),
+      h("div", { class: "dim", style: { margin: "8px 0" } }, `Ask ${n.name} to walk the path to immortality at your side. Dao companions cultivate with you (×${c.rules.dao.qi_mult} Qi) and fight beside you in adventures and great dungeons.`),
+      h("div", { class: "grid-2" },
+        h("button", { class: "btn ghost", onClick: close }, "Not yet"),
+        h("button", { class: "btn gold", onClick: () => {
+          const r = app.game.run("dao", app.now(), (st, cc) => bondDao(st, cc, npcId));
+          if (!r.ok) { app.router.toast(r.reason, "bad"); return; }
+          say("me", "Will you walk the path with me?"); say("npc", "…I was waiting for you to ask."); say("note", "道侣 · You are now Dao companions");
+          close();
+        } }, "Ask")));
   } });
 }

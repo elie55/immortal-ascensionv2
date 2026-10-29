@@ -19,6 +19,7 @@ import { missionHallScreen } from "./quests.ts";
 import { alchemyScreen } from "./alchemy.ts";
 import { forgeScreen } from "./forge.ts";
 import { arenaScreen } from "./tournament.ts";
+import { beastsScreen } from "./beasts.ts";
 import type { App as AppT } from "../../app.ts";
 
 /** Open a sect location (records the visit for quests and story triggers). */
@@ -38,7 +39,7 @@ function activity(app: AppT, f: string, loc: any): { go?: () => void; tag: strin
     case "forge": return { go: () => app.router.push(forgeScreen(app, back)), tag: "Forge" };
     case "tournament": return { go: () => app.router.push(arenaScreen(app, back)), tag: "Enter" };
     case "duels": { const n = (loc.npcs as string[]).find((x) => app.content.get<any>(x).duel?.enabled); return n ? { go: () => app.router.push(npcScreen(app, n, back)), tag: "Spar", note: `Spar with ${app.content.get<any>(n).name}` } : { tag: "Soon" }; }
-    case "beasts": return loc.shop ? { go: () => app.router.push(shopScreen(app, loc.shop, back)), tag: "Food", note: "Beast food and bells (hatching arrives with the companion update)" } : { tag: "Soon" };
+    case "beasts": return { go: () => app.router.push(beastsScreen(app, back)), tag: "Open", note: "Hatch eggs, raise and evolve your beasts" };
     case "rest": return { go: () => { app.game.run("rest", app.now(), (st) => { delete st.character.hp; return { ok: true, events: [] }; }, false); app.router.toast("You rest and recover fully", "good"); }, tag: "Rest", note: "Recover all HP" };
     default: return { tag: "Soon" };
   }
@@ -111,6 +112,7 @@ export function locationScreen(app: App, id: string): Screen {
             icon("lotus", 18), h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, here ? "Cultivating here" : "Cultivate here"), h("div", { class: "desc" }, `Qi ×${(c.rules.location_qi_mult[id.split(".")[1]!] ?? 1).toFixed(2)} while you meditate here`)), h("span", { class: ["tag", here && "jade"] }, here ? "Active" : "Move")),
           ...(l.features ?? []).filter((f: string) => f !== "meditation").map((f: string) => { const a = activity(app, f, l); return h("button", { class: "setrow", onClick: () => a.go ? a.go() : app.router.toast(`${FEATURE[f]?.label ?? f} arrives in a later update`) },
             icon(FEATURE[f]?.icon ?? "temple", 18), h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, FEATURE[f]?.label ?? f), h("div", { class: "desc" }, a.note ?? FEATURE[f]?.note ?? "")), h("span", { class: ["tag", a.go && "jade"] }, a.tag)); }))),
+        open.ok && l.shop && !(l.features ?? []).some((f: string) => f === "pavilion" || f === "merchant") && h("button", { class: "setrow glass", onClick: () => app.router.push(shopScreen(app, l.shop, l.name)) }, icon("gem", 18), h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, c.get<any>(l.shop).name), h("div", { class: "desc" }, c.get<any>(l.shop).description)), h("span", { class: "tag jade" }, "Shop")),
         !open.ok && h("div", { class: "glass panel center" }, icon("lock", 22), h("div", { class: "dim", style: { marginTop: "6px" } }, open.reasons.join(" · "))),
         h("div", { class: "muted center" }, `Current cultivation spot: ${here ? l.name : s.character.location ? c.get<any>(s.character.location).name : "Your quarters"} · Qi ×${locationQiMult(s, c).toFixed(2)}`),
       ];
