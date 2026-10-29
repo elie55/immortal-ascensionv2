@@ -77,7 +77,7 @@ def beasts():
              "cultivation_bonus": cult,
              "art": {"icon": icon(f"beasts/{key}_icon", f"the face of {look}", rarity, ["refs/mockups/spirit_beasts.png"])}}
         for s in stages:
-            d["art"][f"battle_{s['key']}"] = battle(f"beasts/{key}_{s['key']}", f"{look}, {s['name']} form ({s['key']} stage)", (768, 768), ["refs/mockups/spirit_beasts.png"])
+            d["art"][f"battle_{s['key']}"] = beast_stage(f"beasts/{key}_{s['key']}", look, s["key"], s["name"])
         return d
     st = lambda key, name, lvl, mats, stones, hp, atk, df, spd, act, pas: {"key": key, "name": name, "level_required": lvl, "evolve_materials": mats, "evolve_cost_stones": stones,
                                                                            "stats": {"hp": hp, "atk": atk, "def": df, "spd": spd}, "active": act, "passive": pas}

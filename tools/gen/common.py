@@ -76,3 +76,14 @@ def write(rel, data):
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")
     print("wrote", rel, len(data) if isinstance(data, list) else "")
+
+# Spirit beast evolution stages must read as clearly different forms of the same creature.
+BEAST_STAGE_LOOK = {
+    "hatchling": "as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame",
+    "juvenile": "as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size",
+    "adult": "as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame",
+    "sovereign": "as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence",
+}
+
+def beast_stage(path, look, stage, stage_name):
+    return battle(path, f"{look}, shown {BEAST_STAGE_LOOK[stage]} ({stage_name})", (768, 768), ["refs/mockups/spirit_beasts.png"])

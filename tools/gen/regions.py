@@ -195,7 +195,7 @@ def region(rd, prev):
              "food": ["bfood.spirit_fruit", "bfood.dried_fish"] if bel2 in ("water", "wood") else ["bfood.spirit_meat", "bfood.dried_fish"],
              "bond": {"max": 10, "milestones": [{"level": 3, "bonus": {"hp": 50 * n}}, {"level": 6, "bonus": {"atk": 8 * n}}, {"level": 10, "bonus": {"crit": 2, "spd": 2}}]},
              "cultivation_bonus": round(0.02 + 0.01 * ri, 2), "art": {"icon": icon(f"beasts/{bk2}_icon", f"the face of {look}", brar, ["refs/mockups/spirit_beasts.png"])}}
-        for s in keys: b["art"][f"battle_{s}"] = battle(f"beasts/{bk2}_{s}", f"{look}, {stage_names[s]} form ({s} stage)", (768, 768), ["refs/mockups/spirit_beasts.png"])
+        for s in keys: b["art"][f"battle_{s}"] = beast_stage(f"beasts/{bk2}_{s}", look, s, stage_names[s])
         out["beasts"].append(b)
         egg = {"id": f"egg.{bk2}", **named(f"{bn} Egg", f"An egg that will hatch into a {bn}.", None), "rarity": brar, "sell_value": 100 * n * (ri + 1), "stack_limit": 5, "tags": [key],
                "hatches_into": f"beast.{bk2}", "hatch_minutes": 30 * (ri + 1), "hatch_requirements": {"realm": realm_id(rmin)},

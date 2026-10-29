@@ -47,7 +47,7 @@
         "references": [
           "refs/mockups/tribulation.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -99,7 +99,7 @@
         "references": [
           "refs/mockups/tribulation.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -156,7 +156,7 @@
         "references": [
           "refs/mockups/tribulation.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -213,7 +213,7 @@
         "references": [
           "refs/mockups/tribulation.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -275,7 +275,7 @@
         "references": [
           "refs/mockups/tribulation.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   }

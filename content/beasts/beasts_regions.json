@@ -123,7 +123,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small chubby black salamander with orange spots and big golden eyes, Ember Salamander Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small chubby black salamander with orange spots and big golden eyes, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Ember Salamander Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -137,7 +137,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small chubby black salamander with orange spots and big golden eyes, Ember Salamander form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small chubby black salamander with orange spots and big golden eyes, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Ember Salamander), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -151,12 +151,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small chubby black salamander with orange spots and big golden eyes, Elder Ember Salamander form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small chubby black salamander with orange spots and big golden eyes, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Ember Salamander), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -284,12 +284,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young blue-grey wolf with a white ruff and silver eyes, Azure Wolf Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young blue-grey wolf with a white ruff and silver eyes, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Azure Wolf Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_juvenile": {
         "file": "assets/beasts/azure_wolf_juvenile.webp",
@@ -298,12 +298,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young blue-grey wolf with a white ruff and silver eyes, Azure Wolf form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young blue-grey wolf with a white ruff and silver eyes, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Azure Wolf), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_adult": {
         "file": "assets/beasts/azure_wolf_adult.webp",
@@ -312,12 +312,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young blue-grey wolf with a white ruff and silver eyes, Elder Azure Wolf form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young blue-grey wolf with a white ruff and silver eyes, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Azure Wolf), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -445,7 +445,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of an elegant white crane with ice-blue wingtips and a red crown, Snow Crane Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of an elegant white crane with ice-blue wingtips and a red crown, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Snow Crane Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -459,7 +459,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of an elegant white crane with ice-blue wingtips and a red crown, Snow Crane form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of an elegant white crane with ice-blue wingtips and a red crown, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Snow Crane), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -473,7 +473,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of an elegant white crane with ice-blue wingtips and a red crown, Elder Snow Crane form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of an elegant white crane with ice-blue wingtips and a red crown, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Snow Crane), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -606,7 +606,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a round little white otter with frosty whiskers clutching a pebble, Frost Otter Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a round little white otter with frosty whiskers clutching a pebble, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Frost Otter Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -620,7 +620,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a round little white otter with frosty whiskers clutching a pebble, Frost Otter form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a round little white otter with frosty whiskers clutching a pebble, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Frost Otter), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -634,7 +634,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a round little white otter with frosty whiskers clutching a pebble, Elder Frost Otter form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a round little white otter with frosty whiskers clutching a pebble, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Frost Otter), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -767,7 +767,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender jade-green serpent with golden eyes and leaf-shaped scales, Jade Serpent Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender jade-green serpent with golden eyes and leaf-shaped scales, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Jade Serpent Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -781,7 +781,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender jade-green serpent with golden eyes and leaf-shaped scales, Jade Serpent form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender jade-green serpent with golden eyes and leaf-shaped scales, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Jade Serpent), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -795,7 +795,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender jade-green serpent with golden eyes and leaf-shaped scales, Elder Jade Serpent form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender jade-green serpent with golden eyes and leaf-shaped scales, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Jade Serpent), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -928,12 +928,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a black wolf with a red crescent mark on its brow and crimson eyes, Blood-Moon Wolf Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a black wolf with a red crescent mark on its brow and crimson eyes, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Blood-Moon Wolf Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_juvenile": {
         "file": "assets/beasts/blood_moon_wolf_juvenile.webp",
@@ -942,12 +942,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a black wolf with a red crescent mark on its brow and crimson eyes, Blood-Moon Wolf form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a black wolf with a red crescent mark on its brow and crimson eyes, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Blood-Moon Wolf), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_adult": {
         "file": "assets/beasts/blood_moon_wolf_adult.webp",
@@ -956,12 +956,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a black wolf with a red crescent mark on its brow and crimson eyes, Elder Blood-Moon Wolf form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a black wolf with a red crescent mark on its brow and crimson eyes, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Blood-Moon Wolf), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1089,7 +1089,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a large moth with wings like paper lanterns glowing soft orange, Ghost Lantern Moth Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a large moth with wings like paper lanterns glowing soft orange, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Ghost Lantern Moth Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1103,7 +1103,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a large moth with wings like paper lanterns glowing soft orange, Ghost Lantern Moth form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a large moth with wings like paper lanterns glowing soft orange, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Ghost Lantern Moth), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1117,7 +1117,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a large moth with wings like paper lanterns glowing soft orange, Elder Ghost Lantern Moth form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a large moth with wings like paper lanterns glowing soft orange, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Ghost Lantern Moth), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1274,7 +1274,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with black lightning stripes and blue eyes, Thunder Tiger Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with black lightning stripes and blue eyes, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Thunder Tiger Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1288,7 +1288,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with black lightning stripes and blue eyes, Thunder Tiger form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with black lightning stripes and blue eyes, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Thunder Tiger), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1302,7 +1302,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with black lightning stripes and blue eyes, Elder Thunder Tiger form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with black lightning stripes and blue eyes, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Thunder Tiger), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1316,7 +1316,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with black lightning stripes and blue eyes, Sovereign Thunder Tiger form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with black lightning stripes and blue eyes, shown as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence (Sovereign Thunder Tiger), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1473,12 +1473,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small qilin with a cloud-white mane, jade scales and a single golden horn, Cloud Qilin Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small qilin with a cloud-white mane, jade scales and a single golden horn, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Cloud Qilin Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_juvenile": {
         "file": "assets/beasts/cloud_qilin_juvenile.webp",
@@ -1487,12 +1487,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small qilin with a cloud-white mane, jade scales and a single golden horn, Cloud Qilin form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small qilin with a cloud-white mane, jade scales and a single golden horn, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Cloud Qilin), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_adult": {
         "file": "assets/beasts/cloud_qilin_adult.webp",
@@ -1501,12 +1501,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small qilin with a cloud-white mane, jade scales and a single golden horn, Elder Cloud Qilin form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small qilin with a cloud-white mane, jade scales and a single golden horn, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Cloud Qilin), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_sovereign": {
         "file": "assets/beasts/cloud_qilin_sovereign.webp",
@@ -1515,12 +1515,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small qilin with a cloud-white mane, jade scales and a single golden horn, Sovereign Cloud Qilin form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small qilin with a cloud-white mane, jade scales and a single golden horn, shown as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence (Sovereign Cloud Qilin), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1672,7 +1672,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a fluffy violet roc chick with sparks in its downy feathers, Storm Roc Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a fluffy violet roc chick with sparks in its downy feathers, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Storm Roc Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1686,7 +1686,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a fluffy violet roc chick with sparks in its downy feathers, Storm Roc form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a fluffy violet roc chick with sparks in its downy feathers, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Storm Roc), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1700,7 +1700,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a fluffy violet roc chick with sparks in its downy feathers, Elder Storm Roc form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a fluffy violet roc chick with sparks in its downy feathers, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Storm Roc), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1714,7 +1714,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a fluffy violet roc chick with sparks in its downy feathers, Sovereign Storm Roc form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a fluffy violet roc chick with sparks in its downy feathers, shown as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence (Sovereign Storm Roc), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1871,7 +1871,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek dark-blue eel with glowing violet lines along its body, Lightning Eel Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek dark-blue eel with glowing violet lines along its body, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Lightning Eel Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1885,7 +1885,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek dark-blue eel with glowing violet lines along its body, Lightning Eel form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek dark-blue eel with glowing violet lines along its body, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Lightning Eel), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1899,7 +1899,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek dark-blue eel with glowing violet lines along its body, Elder Lightning Eel form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek dark-blue eel with glowing violet lines along its body, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Lightning Eel), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -1913,7 +1913,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek dark-blue eel with glowing violet lines along its body, Sovereign Lightning Eel form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek dark-blue eel with glowing violet lines along its body, shown as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence (Sovereign Lightning Eel), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2070,12 +2070,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small black tortoise with a serpent tail and starry patterns on its shell, Black Tortoise Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small black tortoise with a serpent tail and starry patterns on its shell, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Black Tortoise Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_juvenile": {
         "file": "assets/beasts/black_tortoise_juvenile.webp",
@@ -2084,12 +2084,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small black tortoise with a serpent tail and starry patterns on its shell, Black Tortoise form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small black tortoise with a serpent tail and starry patterns on its shell, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Black Tortoise), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_adult": {
         "file": "assets/beasts/black_tortoise_adult.webp",
@@ -2098,12 +2098,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small black tortoise with a serpent tail and starry patterns on its shell, Elder Black Tortoise form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small black tortoise with a serpent tail and starry patterns on its shell, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Black Tortoise), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_sovereign": {
         "file": "assets/beasts/black_tortoise_sovereign.webp",
@@ -2112,12 +2112,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small black tortoise with a serpent tail and starry patterns on its shell, Sovereign Black Tortoise form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small black tortoise with a serpent tail and starry patterns on its shell, shown as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence (Sovereign Black Tortoise), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2269,7 +2269,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden sand dragon with silver star freckles and stubby wings, Sand Dragon Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden sand dragon with silver star freckles and stubby wings, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Sand Dragon Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2283,7 +2283,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden sand dragon with silver star freckles and stubby wings, Sand Dragon form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden sand dragon with silver star freckles and stubby wings, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Sand Dragon), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2297,7 +2297,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden sand dragon with silver star freckles and stubby wings, Elder Sand Dragon form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden sand dragon with silver star freckles and stubby wings, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Sand Dragon), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2311,7 +2311,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden sand dragon with silver star freckles and stubby wings, Sovereign Sand Dragon form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden sand dragon with silver star freckles and stubby wings, shown as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence (Sovereign Sand Dragon), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2468,7 +2468,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender white deer with antlers of starlight and silver spots, Starlight Deer Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender white deer with antlers of starlight and silver spots, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Starlight Deer Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2482,7 +2482,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender white deer with antlers of starlight and silver spots, Starlight Deer form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender white deer with antlers of starlight and silver spots, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Starlight Deer), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2496,7 +2496,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender white deer with antlers of starlight and silver spots, Elder Starlight Deer form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender white deer with antlers of starlight and silver spots, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Starlight Deer), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2510,7 +2510,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender white deer with antlers of starlight and silver spots, Sovereign Starlight Deer form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender white deer with antlers of starlight and silver spots, shown as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence (Sovereign Starlight Deer), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2667,7 +2667,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small vermilion bird with golden flame tail feathers and bright eyes, Vermilion Bird Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small vermilion bird with golden flame tail feathers and bright eyes, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Vermilion Bird Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2681,7 +2681,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small vermilion bird with golden flame tail feathers and bright eyes, Vermilion Bird form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small vermilion bird with golden flame tail feathers and bright eyes, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Vermilion Bird), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2695,7 +2695,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small vermilion bird with golden flame tail feathers and bright eyes, Elder Vermilion Bird form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small vermilion bird with golden flame tail feathers and bright eyes, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Vermilion Bird), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2709,7 +2709,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small vermilion bird with golden flame tail feathers and bright eyes, Sovereign Vermilion Bird form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small vermilion bird with golden flame tail feathers and bright eyes, shown as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence (Sovereign Vermilion Bird), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2866,7 +2866,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, White Tiger Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (White Tiger Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2880,7 +2880,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, White Tiger form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (White Tiger), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2894,7 +2894,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, Elder White Tiger form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder White Tiger), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -2908,7 +2908,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, Sovereign White Tiger form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, shown as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence (Sovereign White Tiger), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -3065,7 +3065,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, Nine-Tailed Fox Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Nine-Tailed Fox Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -3079,7 +3079,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, Nine-Tailed Fox form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Nine-Tailed Fox), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -3093,7 +3093,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, Elder Nine-Tailed Fox form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Nine-Tailed Fox), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -3107,7 +3107,7 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, Sovereign Nine-Tailed Fox form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, shown as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence (Sovereign Nine-Tailed Fox), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -3264,12 +3264,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young azure dragon with pearl-white whiskers and starlight in its scales, Azure Dragon Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young azure dragon with pearl-white whiskers and starlight in its scales, shown as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame (Azure Dragon Hatchling), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_juvenile": {
         "file": "assets/beasts/azure_dragon_juvenile.webp",
@@ -3278,12 +3278,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young azure dragon with pearl-white whiskers and starlight in its scales, Azure Dragon form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young azure dragon with pearl-white whiskers and starlight in its scales, shown as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size (Azure Dragon), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_adult": {
         "file": "assets/beasts/azure_dragon_adult.webp",
@@ -3292,12 +3292,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young azure dragon with pearl-white whiskers and starlight in its scales, Elder Azure Dragon form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young azure dragon with pearl-white whiskers and starlight in its scales, shown as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame (Elder Azure Dragon), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_sovereign": {
         "file": "assets/beasts/azure_dragon_sovereign.webp",
@@ -3306,12 +3306,12 @@
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young azure dragon with pearl-white whiskers and starlight in its scales, Sovereign Azure Dragon form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young azure dragon with pearl-white whiskers and starlight in its scales, shown as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence (Sovereign Azure Dragon), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   }

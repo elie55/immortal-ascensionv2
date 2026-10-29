@@ -85,7 +85,7 @@
         "references": [
           "refs/mockups/cultivation_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "beasts": {
         "file": "assets/ui/shortcut_beasts.webp",
@@ -99,7 +99,7 @@
         "references": [
           "refs/mockups/cultivation_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "quests": {
         "file": "assets/ui/shortcut_quests.webp",
@@ -113,7 +113,7 @@
         "references": [
           "refs/mockups/cultivation_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "settings": {
         "file": "assets/ui/shortcut_settings.webp",
@@ -127,7 +127,7 @@
         "references": [
           "refs/mockups/cultivation_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
