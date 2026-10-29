@@ -1,7 +1,8 @@
 import json, os
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-STYLE = ("Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, "
-         "luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail")
+STYLE = ("Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, "
+         "soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, "
+         "atmospheric lighting, colours that suit the subject, highly detailed")
 NEG = "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped"
 RARITY_LOOK = {
     "common": "plain bamboo wood and rough undyed cloth, muted natural colours, no ornament",
@@ -13,14 +14,29 @@ RARITY_LOOK = {
     "immortal": "white-gold radiance, celestial clouds, feathered light, translucent crystal",
     "divine": "prismatic dragon-pearl light, azure dragon motifs, rainbow halo, overwhelming divine aura",
 }
+RARITY_GLOW = {
+    "common": "no glow", "uncommon": "a faint green glow", "rare": "a soft cyan glow", "epic": "a violet glow with drifting spirit mist",
+    "legendary": "a radiant golden glow", "mythic": "a crimson aura with silver starlight sparks", "immortal": "a white-gold celestial radiance",
+    "divine": "a prismatic rainbow halo of overwhelming divine light",
+}
 RARITY_ORDER = ["common", "uncommon", "rare", "epic", "legendary", "mythic", "immortal", "divine"]
 
+_APPROVED_PATH = os.path.join(ROOT, "assets", "APPROVED.txt")
+APPROVED = set(l.strip() for l in open(_APPROVED_PATH, encoding="utf-8")) if os.path.exists(_APPROVED_PATH) else set()
+
+def art_status(file):
+    """planned → generated (file exists in assets/) → approved (listed in assets/APPROVED.txt by the owner)."""
+    if not os.path.exists(os.path.join(ROOT, file)): return "planned"
+    return "approved" if file in APPROVED else "generated"
+
 def art(file, prompt, size=(256, 256), transparent=True, refs=None, negative=NEG):
+    # Shipped art is lossy WebP (alpha kept): ~10x smaller than PNG, native on Android.
+    if file.endswith(".png"): file = file[:-4] + ".webp"
     return {"file": file, "size": list(size), "transparent": transparent, "prompt": prompt,
-            "negative": negative, "references": refs or [], "status": "planned"}
+            "negative": negative, "references": refs or [], "status": art_status(file)}
 
 def icon(path, desc, rarity=None, refs=None, size=(256, 256)):
-    look = f", {RARITY_LOOK[rarity]}" if rarity else ""
+    look = (f", {RARITY_LOOK[rarity]}" if path.startswith("equipment/") else f", with {RARITY_GLOW[rarity]}") if rarity else ""
     return art(f"assets/{path}.png", f"{STYLE}. Game inventory icon of {desc}{look}. Centered single object, "
                f"three-quarter view, subtle glow, isolated on plain background, no text.", size, True,
                refs or ["refs/mockups/inventory_icons.png"])

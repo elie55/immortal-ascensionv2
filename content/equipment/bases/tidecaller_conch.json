@@ -23,13 +23,13 @@
       "epic": {
         "art": {
           "icon": {
-            "file": "assets/equipment/artifact/tidecaller_conch_epic.png",
+            "file": "assets/equipment/artifact/tidecaller_conch_epic.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a large spiral conch shell of pearl and gold that hums with tides, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a large spiral conch shell of pearl and gold that hums with tides, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",
@@ -42,13 +42,13 @@
       "legendary": {
         "art": {
           "icon": {
-            "file": "assets/equipment/artifact/tidecaller_conch_legendary.png",
+            "file": "assets/equipment/artifact/tidecaller_conch_legendary.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a large spiral conch shell of pearl and gold that hums with tides, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a large spiral conch shell of pearl and gold that hums with tides, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",
@@ -61,13 +61,13 @@
       "mythic": {
         "art": {
           "icon": {
-            "file": "assets/equipment/artifact/tidecaller_conch_mythic.png",
+            "file": "assets/equipment/artifact/tidecaller_conch_mythic.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a large spiral conch shell of pearl and gold that hums with tides, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a large spiral conch shell of pearl and gold that hums with tides, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",
@@ -80,13 +80,13 @@
       "immortal": {
         "art": {
           "icon": {
-            "file": "assets/equipment/artifact/tidecaller_conch_immortal.png",
+            "file": "assets/equipment/artifact/tidecaller_conch_immortal.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a large spiral conch shell of pearl and gold that hums with tides, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a large spiral conch shell of pearl and gold that hums with tides, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",

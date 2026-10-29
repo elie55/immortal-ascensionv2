@@ -31,13 +31,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/qi_condensation_breakthrough.png",
+        "file": "assets/realms/qi_condensation_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a young cultivator seated in lotus pose on a mossy stone above a misty waterfall, pale jade qi rising in soft spirals, cherry petals drifting. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a young cultivator seated in lotus pose on a mossy stone above a misty waterfall, pale jade qi rising in soft spirals, cherry petals drifting. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -85,13 +85,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/foundation_establishment_breakthrough.png",
+        "file": "assets/realms/foundation_establishment_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a cultivator meditating on a floating stone platform as golden foundation runes lock into a circle beneath her, dawn clouds. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a cultivator meditating on a floating stone platform as golden foundation runes lock into a circle beneath her, dawn clouds. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -142,13 +142,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/core_formation_breakthrough.png",
+        "file": "assets/realms/core_formation_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a golden core igniting like a small sun inside swirling cyan qi, storm clouds parting above mountain peaks. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a golden core igniting like a small sun inside swirling cyan qi, storm clouds parting above mountain peaks. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -194,13 +194,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/nascent_soul_breakthrough.png",
+        "file": "assets/realms/nascent_soul_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a translucent infant soul of light hovering above a meditating cultivator, nebula-coloured sky, lotus blooms. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a translucent infant soul of light hovering above a meditating cultivator, nebula-coloured sky, lotus blooms. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -247,13 +247,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/soul_transformation_breakthrough.png",
+        "file": "assets/realms/soul_transformation_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a cultivator dissolving into motes of starlight above an ancient altar, galaxy reflections on still water. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a cultivator dissolving into motes of starlight above an ancient altar, galaxy reflections on still water. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -299,13 +299,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/spirit_severing_breakthrough.png",
+        "file": "assets/realms/spirit_severing_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: sword-like light severing chains of mist around a cultivator, void-dark sky with silver cracks. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: sword-like light severing chains of mist around a cultivator, void-dark sky with silver cracks. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -351,13 +351,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/dao_integration_breakthrough.png",
+        "file": "assets/realms/dao_integration_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a cultivator merging with a towering phantom of her own form made of clouds and dao script. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a cultivator merging with a towering phantom of her own form made of clouds and dao script. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -404,13 +404,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/tribulation_transcendence_breakthrough.png",
+        "file": "assets/realms/tribulation_transcendence_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: nine layers of purple lightning spiralling down from a vortex sky toward a lone figure on a peak. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: nine layers of purple lightning spiralling down from a vortex sky toward a lone figure on a peak. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -456,13 +456,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/mahayana_breakthrough.png",
+        "file": "assets/realms/mahayana_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a vast calm sea of clouds under a golden sun, a cultivator standing on a lotus of light. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a vast calm sea of clouds under a golden sun, a cultivator standing on a lotus of light. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -509,13 +509,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/immortal_ascension_breakthrough.png",
+        "file": "assets/realms/immortal_ascension_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a stairway of light climbing from a mountaintop into a rift of white radiance, phoenix silhouettes. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a stairway of light climbing from a mountaintop into a rift of white radiance, phoenix silhouettes. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -561,13 +561,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/earth_immortal_breakthrough.png",
+        "file": "assets/realms/earth_immortal_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a serene immortal realm of floating jade islands and waterfalls flowing upward. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a serene immortal realm of floating jade islands and waterfalls flowing upward. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -613,13 +613,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/heavenly_immortal_breakthrough.png",
+        "file": "assets/realms/heavenly_immortal_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: celestial palaces among aurora clouds, cranes in flight, soft white-gold light. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: celestial palaces among aurora clouds, cranes in flight, soft white-gold light. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -666,13 +666,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/golden_immortal_breakthrough.png",
+        "file": "assets/realms/golden_immortal_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a figure wreathed in golden flame standing before a cosmic wheel of law. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a figure wreathed in golden flame standing before a cosmic wheel of law. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -718,13 +718,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/immortal_king_breakthrough.png",
+        "file": "assets/realms/immortal_king_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a throne of clouds and starlight above endless realms, azure dragons coiling. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a throne of clouds and starlight above endless realms, azure dragons coiling. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -771,13 +771,13 @@
     },
     "art": {
       "breakthrough_bg": {
-        "file": "assets/realms/immortal_emperor_breakthrough.png",
+        "file": "assets/realms/immortal_emperor_breakthrough.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: an emperor of light at the apex of heaven, all five elements orbiting as rings. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: an emperor of light at the apex of heaven, all five elements orbiting as rings. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"

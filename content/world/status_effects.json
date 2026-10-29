@@ -13,13 +13,13 @@
     },
     "art": {
       "icon": {
-        "file": "assets/status/burning.png",
+        "file": "assets/status/burning.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Burning': Takes fire damage each turn. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Burning': Takes fire damage each turn. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -44,13 +44,13 @@
     },
     "art": {
       "icon": {
-        "file": "assets/status/poison.png",
+        "file": "assets/status/poison.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Poison': Takes nature damage each turn and heals less. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Poison': Takes nature damage each turn and heals less. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -73,13 +73,13 @@
     },
     "art": {
       "icon": {
-        "file": "assets/status/bleeding.png",
+        "file": "assets/status/bleeding.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Bleeding': Loses a portion of max HP each turn. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Bleeding': Loses a portion of max HP each turn. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -101,13 +101,13 @@
     },
     "art": {
       "icon": {
-        "file": "assets/status/freeze.png",
+        "file": "assets/status/freeze.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Freeze': Cannot act. Fire damage breaks the ice. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Freeze': Cannot act. Fire damage breaks the ice. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -127,13 +127,13 @@
     "modifiers": {},
     "art": {
       "icon": {
-        "file": "assets/status/stun.png",
+        "file": "assets/status/stun.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Stun': Skips the next turn. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Stun': Skips the next turn. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -153,13 +153,13 @@
     "modifiers": {},
     "art": {
       "icon": {
-        "file": "assets/status/silence.png",
+        "file": "assets/status/silence.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Silence': Cannot use techniques; basic attacks only. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Silence': Cannot use techniques; basic attacks only. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -181,13 +181,13 @@
     },
     "art": {
       "icon": {
-        "file": "assets/status/slow.png",
+        "file": "assets/status/slow.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Slow': Speed reduced. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Slow': Speed reduced. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -209,13 +209,13 @@
     },
     "art": {
       "icon": {
-        "file": "assets/status/def_down.png",
+        "file": "assets/status/def_down.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Defense Down': Defense reduced. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Defense Down': Defense reduced. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -237,13 +237,13 @@
     },
     "art": {
       "icon": {
-        "file": "assets/status/atk_down.png",
+        "file": "assets/status/atk_down.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Attack Down': Attack reduced. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Attack Down': Attack reduced. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -263,13 +263,13 @@
     "modifiers": {},
     "art": {
       "icon": {
-        "file": "assets/status/shield.png",
+        "file": "assets/status/shield.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Shield': Absorbs damage until depleted. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Shield': Absorbs damage until depleted. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -292,13 +292,13 @@
     },
     "art": {
       "icon": {
-        "file": "assets/status/regen.png",
+        "file": "assets/status/regen.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Regeneration': Restores HP each turn. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Regeneration': Restores HP each turn. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -318,13 +318,13 @@
     "modifiers": {},
     "art": {
       "icon": {
-        "file": "assets/status/reflect.png",
+        "file": "assets/status/reflect.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Damage Reflection': Returns part of the damage taken to the attacker. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Damage Reflection': Returns part of the damage taken to the attacker. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -344,13 +344,13 @@
     "modifiers": {},
     "art": {
       "icon": {
-        "file": "assets/status/invuln.png",
+        "file": "assets/status/invuln.webp",
         "size": [
           128,
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Small round status-effect icon for 'Invulnerable': Immune to all damage this turn. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Invulnerable': Immune to all damage this turn. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"

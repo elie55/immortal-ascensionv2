@@ -36,13 +36,13 @@
     "mastery_xp": 20,
     "art": {
       "icon": {
-        "file": "assets/enemies/blazing_mountain/ember_salamander_icon.png",
+        "file": "assets/enemies/blazing_mountain/ember_salamander_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a glossy black salamander with glowing orange cracks along its back. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a glossy black salamander with glowing orange cracks along its back. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -50,13 +50,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/blazing_mountain/ember_salamander_battle.png",
+        "file": "assets/enemies/blazing_mountain/ember_salamander_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a glossy black salamander with glowing orange cracks along its back, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a glossy black salamander with glowing orange cracks along its back, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -102,13 +102,13 @@
     "mastery_xp": 22,
     "art": {
       "icon": {
-        "file": "assets/enemies/blazing_mountain/ash_vulture_icon.png",
+        "file": "assets/enemies/blazing_mountain/ash_vulture_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a grey vulture with ember-tipped feathers and a hooked obsidian beak. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a grey vulture with ember-tipped feathers and a hooked obsidian beak. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -116,13 +116,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/blazing_mountain/ash_vulture_battle.png",
+        "file": "assets/enemies/blazing_mountain/ash_vulture_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a grey vulture with ember-tipped feathers and a hooked obsidian beak, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a grey vulture with ember-tipped feathers and a hooked obsidian beak, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -168,13 +168,13 @@
     "mastery_xp": 24,
     "art": {
       "icon": {
-        "file": "assets/enemies/blazing_mountain/magma_golem_icon.png",
+        "file": "assets/enemies/blazing_mountain/magma_golem_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a hulking golem of cooling black rock with molten seams. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a hulking golem of cooling black rock with molten seams. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -182,13 +182,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/blazing_mountain/magma_golem_battle.png",
+        "file": "assets/enemies/blazing_mountain/magma_golem_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a hulking golem of cooling black rock with molten seams, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a hulking golem of cooling black rock with molten seams, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -234,13 +234,13 @@
     "mastery_xp": 30,
     "art": {
       "icon": {
-        "file": "assets/enemies/blazing_mountain/flame_lion_icon.png",
+        "file": "assets/enemies/blazing_mountain/flame_lion_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a great red lion whose mane is living fire, golden eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a great red lion whose mane is living fire, golden eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -248,13 +248,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/blazing_mountain/flame_lion_battle.png",
+        "file": "assets/enemies/blazing_mountain/flame_lion_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a great red lion whose mane is living fire, golden eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a great red lion whose mane is living fire, golden eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -300,13 +300,13 @@
     "mastery_xp": 26,
     "art": {
       "icon": {
-        "file": "assets/enemies/blazing_mountain/caravan_raider_icon.png",
+        "file": "assets/enemies/blazing_mountain/caravan_raider_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a masked raider in soot-stained leathers with a curved saber and fire goggles. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a masked raider in soot-stained leathers with a curved saber and fire goggles. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -314,13 +314,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/blazing_mountain/caravan_raider_battle.png",
+        "file": "assets/enemies/blazing_mountain/caravan_raider_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a masked raider in soot-stained leathers with a curved saber and fire goggles, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a masked raider in soot-stained leathers with a curved saber and fire goggles, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -366,13 +366,13 @@
     "mastery_xp": 32,
     "art": {
       "icon": {
-        "file": "assets/enemies/frozen_lotus_valley/snow_fox_spirit_icon.png",
+        "file": "assets/enemies/frozen_lotus_valley/snow_fox_spirit_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a slender white fox with icy blue eyes and frost trailing from its tails. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a slender white fox with icy blue eyes and frost trailing from its tails. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -380,13 +380,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/frozen_lotus_valley/snow_fox_spirit_battle.png",
+        "file": "assets/enemies/frozen_lotus_valley/snow_fox_spirit_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a slender white fox with icy blue eyes and frost trailing from its tails, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slender white fox with icy blue eyes and frost trailing from its tails, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -432,13 +432,13 @@
     "mastery_xp": 35,
     "art": {
       "icon": {
-        "file": "assets/enemies/frozen_lotus_valley/ice_lotus_guardian_icon.png",
+        "file": "assets/enemies/frozen_lotus_valley/ice_lotus_guardian_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a figure of ice shaped like a monk holding a frozen lotus. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a figure of ice shaped like a monk holding a frozen lotus. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -446,13 +446,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/frozen_lotus_valley/ice_lotus_guardian_battle.png",
+        "file": "assets/enemies/frozen_lotus_valley/ice_lotus_guardian_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a figure of ice shaped like a monk holding a frozen lotus, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a figure of ice shaped like a monk holding a frozen lotus, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -498,13 +498,13 @@
     "mastery_xp": 39,
     "art": {
       "icon": {
-        "file": "assets/enemies/frozen_lotus_valley/frost_yeti_icon.png",
+        "file": "assets/enemies/frozen_lotus_valley/frost_yeti_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a huge white-furred yeti with blue ice crusted on its fists. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a huge white-furred yeti with blue ice crusted on its fists. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -512,13 +512,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/frozen_lotus_valley/frost_yeti_battle.png",
+        "file": "assets/enemies/frozen_lotus_valley/frost_yeti_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a huge white-furred yeti with blue ice crusted on its fists, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a huge white-furred yeti with blue ice crusted on its fists, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -564,13 +564,13 @@
     "mastery_xp": 52,
     "art": {
       "icon": {
-        "file": "assets/enemies/frozen_lotus_valley/frost_wyrm_icon.png",
+        "file": "assets/enemies/frozen_lotus_valley/frost_wyrm_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a long pale-blue wyrm with crystal horns and frost breath. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a long pale-blue wyrm with crystal horns and frost breath. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -578,13 +578,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/frozen_lotus_valley/frost_wyrm_battle.png",
+        "file": "assets/enemies/frozen_lotus_valley/frost_wyrm_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a long pale-blue wyrm with crystal horns and frost breath, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a long pale-blue wyrm with crystal horns and frost breath, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -630,13 +630,13 @@
     "mastery_xp": 43,
     "art": {
       "icon": {
-        "file": "assets/enemies/frozen_lotus_valley/frozen_cultist_icon.png",
+        "file": "assets/enemies/frozen_lotus_valley/frozen_cultist_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a pale cultist in torn white robes with frostbitten hands and blue-black lips. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a pale cultist in torn white robes with frostbitten hands and blue-black lips. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -644,13 +644,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/frozen_lotus_valley/frozen_cultist_battle.png",
+        "file": "assets/enemies/frozen_lotus_valley/frozen_cultist_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a pale cultist in torn white robes with frostbitten hands and blue-black lips, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a pale cultist in torn white robes with frostbitten hands and blue-black lips, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -696,13 +696,13 @@
     "mastery_xp": 55,
     "art": {
       "icon": {
-        "file": "assets/enemies/ancient_sword_tomb/rusted_sword_spirit_icon.png",
+        "file": "assets/enemies/ancient_sword_tomb/rusted_sword_spirit_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a floating rusted sword surrounded by a faint ghostly hand. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a floating rusted sword surrounded by a faint ghostly hand. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -710,13 +710,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/ancient_sword_tomb/rusted_sword_spirit_battle.png",
+        "file": "assets/enemies/ancient_sword_tomb/rusted_sword_spirit_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a floating rusted sword surrounded by a faint ghostly hand, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a floating rusted sword surrounded by a faint ghostly hand, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -762,13 +762,13 @@
     "mastery_xp": 62,
     "art": {
       "icon": {
-        "file": "assets/enemies/ancient_sword_tomb/tomb_guardian_statue_icon.png",
+        "file": "assets/enemies/ancient_sword_tomb/tomb_guardian_statue_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a stone warrior statue with a cracked face and a stone greatsword. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a stone warrior statue with a cracked face and a stone greatsword. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -776,13 +776,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/ancient_sword_tomb/tomb_guardian_statue_battle.png",
+        "file": "assets/enemies/ancient_sword_tomb/tomb_guardian_statue_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a stone warrior statue with a cracked face and a stone greatsword, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a stone warrior statue with a cracked face and a stone greatsword, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -828,13 +828,13 @@
     "mastery_xp": 69,
     "art": {
       "icon": {
-        "file": "assets/enemies/ancient_sword_tomb/sword_qi_wisp_icon.png",
+        "file": "assets/enemies/ancient_sword_tomb/sword_qi_wisp_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a silver wisp shaped like a crescent blade, humming. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a silver wisp shaped like a crescent blade, humming. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -842,13 +842,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/ancient_sword_tomb/sword_qi_wisp_battle.png",
+        "file": "assets/enemies/ancient_sword_tomb/sword_qi_wisp_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a silver wisp shaped like a crescent blade, humming, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a silver wisp shaped like a crescent blade, humming, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -894,13 +894,13 @@
     "mastery_xp": 97,
     "art": {
       "icon": {
-        "file": "assets/enemies/ancient_sword_tomb/headless_general_icon.png",
+        "file": "assets/enemies/ancient_sword_tomb/headless_general_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of an armoured general without a head, holding his helmet under one arm and a halberd. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of an armoured general without a head, holding his helmet under one arm and a halberd. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -908,13 +908,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/ancient_sword_tomb/headless_general_battle.png",
+        "file": "assets/enemies/ancient_sword_tomb/headless_general_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an armoured general without a head, holding his helmet under one arm and a halberd, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of an armoured general without a head, holding his helmet under one arm and a halberd, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -960,13 +960,13 @@
     "mastery_xp": 78,
     "art": {
       "icon": {
-        "file": "assets/enemies/ancient_sword_tomb/tomb_robber_icon.png",
+        "file": "assets/enemies/ancient_sword_tomb/tomb_robber_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a gaunt robber in dusty grey with a shovel-spear and a lantern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a gaunt robber in dusty grey with a shovel-spear and a lantern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -974,13 +974,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/ancient_sword_tomb/tomb_robber_battle.png",
+        "file": "assets/enemies/ancient_sword_tomb/tomb_robber_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a gaunt robber in dusty grey with a shovel-spear and a lantern, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a gaunt robber in dusty grey with a shovel-spear and a lantern, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1026,13 +1026,13 @@
     "mastery_xp": 104,
     "art": {
       "icon": {
-        "file": "assets/enemies/demon_territory/blood_imp_icon.png",
+        "file": "assets/enemies/demon_territory/blood_imp_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a small red imp with bat wings, horns and a wicked grin. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a small red imp with bat wings, horns and a wicked grin. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1040,13 +1040,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/demon_territory/blood_imp_battle.png",
+        "file": "assets/enemies/demon_territory/blood_imp_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small red imp with bat wings, horns and a wicked grin, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small red imp with bat wings, horns and a wicked grin, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1092,13 +1092,13 @@
     "mastery_xp": 118,
     "art": {
       "icon": {
-        "file": "assets/enemies/demon_territory/bone_hound_icon.png",
+        "file": "assets/enemies/demon_territory/bone_hound_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a skeletal hound wreathed in red fire with glowing eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a skeletal hound wreathed in red fire with glowing eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1106,13 +1106,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/demon_territory/bone_hound_battle.png",
+        "file": "assets/enemies/demon_territory/bone_hound_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a skeletal hound wreathed in red fire with glowing eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a skeletal hound wreathed in red fire with glowing eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1158,13 +1158,13 @@
     "mastery_xp": 132,
     "art": {
       "icon": {
-        "file": "assets/enemies/demon_territory/shadow_assassin_icon.png",
+        "file": "assets/enemies/demon_territory/shadow_assassin_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a slim assassin in black with a crimson veil and twin hooked daggers. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a slim assassin in black with a crimson veil and twin hooked daggers. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1172,13 +1172,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/demon_territory/shadow_assassin_battle.png",
+        "file": "assets/enemies/demon_territory/shadow_assassin_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a slim assassin in black with a crimson veil and twin hooked daggers, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a slim assassin in black with a crimson veil and twin hooked daggers, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1224,13 +1224,13 @@
     "mastery_xp": 188,
     "art": {
       "icon": {
-        "file": "assets/enemies/demon_territory/demon_general_icon.png",
+        "file": "assets/enemies/demon_territory/demon_general_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of an armoured demon general with ram horns, a burning halberd and black-red plate. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of an armoured demon general with ram horns, a burning halberd and black-red plate. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1238,13 +1238,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/demon_territory/demon_general_battle.png",
+        "file": "assets/enemies/demon_territory/demon_general_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an armoured demon general with ram horns, a burning halberd and black-red plate, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of an armoured demon general with ram horns, a burning halberd and black-red plate, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1290,13 +1290,13 @@
     "mastery_xp": 151,
     "art": {
       "icon": {
-        "file": "assets/enemies/demon_territory/blood_sect_disciple_icon.png",
+        "file": "assets/enemies/demon_territory/blood_sect_disciple_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a young cultivator in crimson robes with blood-red sigils on his arms. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a young cultivator in crimson robes with blood-red sigils on his arms. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1304,13 +1304,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/demon_territory/blood_sect_disciple_battle.png",
+        "file": "assets/enemies/demon_territory/blood_sect_disciple_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a young cultivator in crimson robes with blood-red sigils on his arms, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a young cultivator in crimson robes with blood-red sigils on his arms, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1356,13 +1356,13 @@
     "mastery_xp": 202,
     "art": {
       "icon": {
-        "file": "assets/enemies/celestial_mountains/thunder_crane_icon.png",
+        "file": "assets/enemies/celestial_mountains/thunder_crane_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a tall white crane crackling with blue lightning along its wings. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a tall white crane crackling with blue lightning along its wings. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1370,13 +1370,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/celestial_mountains/thunder_crane_battle.png",
+        "file": "assets/enemies/celestial_mountains/thunder_crane_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a tall white crane crackling with blue lightning along its wings, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a tall white crane crackling with blue lightning along its wings, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1422,13 +1422,13 @@
     "mastery_xp": 231,
     "art": {
       "icon": {
-        "file": "assets/enemies/celestial_mountains/cloud_ape_icon.png",
+        "file": "assets/enemies/celestial_mountains/cloud_ape_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a white ape that rides small clouds and wears a golden band. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a white ape that rides small clouds and wears a golden band. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1436,13 +1436,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/celestial_mountains/cloud_ape_battle.png",
+        "file": "assets/enemies/celestial_mountains/cloud_ape_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white ape that rides small clouds and wears a golden band, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white ape that rides small clouds and wears a golden band, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1488,13 +1488,13 @@
     "mastery_xp": 260,
     "art": {
       "icon": {
-        "file": "assets/enemies/celestial_mountains/celestial_soldier_icon.png",
+        "file": "assets/enemies/celestial_mountains/celestial_soldier_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a soldier in white and gold armour with a halo and a spear of light. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a soldier in white and gold armour with a halo and a spear of light. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1502,13 +1502,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/celestial_mountains/celestial_soldier_battle.png",
+        "file": "assets/enemies/celestial_mountains/celestial_soldier_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a soldier in white and gold armour with a halo and a spear of light, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a soldier in white and gold armour with a halo and a spear of light, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1554,13 +1554,13 @@
     "mastery_xp": 376,
     "art": {
       "icon": {
-        "file": "assets/enemies/celestial_mountains/storm_tiger_icon.png",
+        "file": "assets/enemies/celestial_mountains/storm_tiger_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a huge white tiger with black lightning stripes and storm-blue eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a huge white tiger with black lightning stripes and storm-blue eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1568,13 +1568,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/celestial_mountains/storm_tiger_battle.png",
+        "file": "assets/enemies/celestial_mountains/storm_tiger_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a huge white tiger with black lightning stripes and storm-blue eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a huge white tiger with black lightning stripes and storm-blue eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1620,13 +1620,13 @@
     "mastery_xp": 299,
     "art": {
       "icon": {
-        "file": "assets/enemies/celestial_mountains/heaven_seeker_icon.png",
+        "file": "assets/enemies/celestial_mountains/heaven_seeker_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a wild-haired hermit in patched green robes with a gourd and a peach-wood sword. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a wild-haired hermit in patched green robes with a gourd and a peach-wood sword. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1634,13 +1634,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/celestial_mountains/heaven_seeker_battle.png",
+        "file": "assets/enemies/celestial_mountains/heaven_seeker_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a wild-haired hermit in patched green robes with a gourd and a peach-wood sword, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a wild-haired hermit in patched green robes with a gourd and a peach-wood sword, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1686,13 +1686,13 @@
     "mastery_xp": 405,
     "art": {
       "icon": {
-        "file": "assets/enemies/nine_heavens/cloud_jellyfish_icon.png",
+        "file": "assets/enemies/nine_heavens/cloud_jellyfish_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a translucent giant jellyfish of cloud and starlight trailing lightning tendrils. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a translucent giant jellyfish of cloud and starlight trailing lightning tendrils. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1700,13 +1700,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/nine_heavens/cloud_jellyfish_battle.png",
+        "file": "assets/enemies/nine_heavens/cloud_jellyfish_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a translucent giant jellyfish of cloud and starlight trailing lightning tendrils, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a translucent giant jellyfish of cloud and starlight trailing lightning tendrils, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1752,13 +1752,13 @@
     "mastery_xp": 464,
     "art": {
       "icon": {
-        "file": "assets/enemies/nine_heavens/starlight_sentinel_icon.png",
+        "file": "assets/enemies/nine_heavens/starlight_sentinel_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a sleek silver sentinel with a starry visor and wings of light. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a sleek silver sentinel with a starry visor and wings of light. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1766,13 +1766,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/nine_heavens/starlight_sentinel_battle.png",
+        "file": "assets/enemies/nine_heavens/starlight_sentinel_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek silver sentinel with a starry visor and wings of light, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek silver sentinel with a starry visor and wings of light, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1818,13 +1818,13 @@
     "mastery_xp": 524,
     "art": {
       "icon": {
-        "file": "assets/enemies/nine_heavens/heaven_eagle_icon.png",
+        "file": "assets/enemies/nine_heavens/heaven_eagle_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a golden eagle with wings as wide as a hall and silver talons. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a golden eagle with wings as wide as a hall and silver talons. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1832,13 +1832,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/nine_heavens/heaven_eagle_battle.png",
+        "file": "assets/enemies/nine_heavens/heaven_eagle_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a golden eagle with wings as wide as a hall and silver talons, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a golden eagle with wings as wide as a hall and silver talons, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1884,13 +1884,13 @@
     "mastery_xp": 761,
     "art": {
       "icon": {
-        "file": "assets/enemies/nine_heavens/fallen_immortal_icon.png",
+        "file": "assets/enemies/nine_heavens/fallen_immortal_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a pale immortal with torn white robes, broken halo and black water dripping from her hands. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a pale immortal with torn white robes, broken halo and black water dripping from her hands. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1898,13 +1898,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/nine_heavens/fallen_immortal_battle.png",
+        "file": "assets/enemies/nine_heavens/fallen_immortal_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a pale immortal with torn white robes, broken halo and black water dripping from her hands, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a pale immortal with torn white robes, broken halo and black water dripping from her hands, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1950,13 +1950,13 @@
     "mastery_xp": 603,
     "art": {
       "icon": {
-        "file": "assets/enemies/nine_heavens/abyss_cultist_icon.png",
+        "file": "assets/enemies/nine_heavens/abyss_cultist_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a cultist in sea-dark robes with coral growing from his shoulders. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a cultist in sea-dark robes with coral growing from his shoulders. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1964,13 +1964,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/nine_heavens/abyss_cultist_battle.png",
+        "file": "assets/enemies/nine_heavens/abyss_cultist_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a cultist in sea-dark robes with coral growing from his shoulders, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a cultist in sea-dark robes with coral growing from his shoulders, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2016,13 +2016,13 @@
     "mastery_xp": 820,
     "art": {
       "icon": {
-        "file": "assets/enemies/thunderclap_wastes/thunder_beetle_icon.png",
+        "file": "assets/enemies/thunderclap_wastes/thunder_beetle_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a giant black beetle with a shell crackling with violet lightning. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a giant black beetle with a shell crackling with violet lightning. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2030,13 +2030,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/thunderclap_wastes/thunder_beetle_battle.png",
+        "file": "assets/enemies/thunderclap_wastes/thunder_beetle_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a giant black beetle with a shell crackling with violet lightning, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a giant black beetle with a shell crackling with violet lightning, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2082,13 +2082,13 @@
     "mastery_xp": 942,
     "art": {
       "icon": {
-        "file": "assets/enemies/thunderclap_wastes/glass_scorpion_icon.png",
+        "file": "assets/enemies/thunderclap_wastes/glass_scorpion_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a translucent glass scorpion with a lightning-charged stinger. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a translucent glass scorpion with a lightning-charged stinger. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2096,13 +2096,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/thunderclap_wastes/glass_scorpion_battle.png",
+        "file": "assets/enemies/thunderclap_wastes/glass_scorpion_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a translucent glass scorpion with a lightning-charged stinger, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a translucent glass scorpion with a lightning-charged stinger, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2148,13 +2148,13 @@
     "mastery_xp": 1064,
     "art": {
       "icon": {
-        "file": "assets/enemies/thunderclap_wastes/storm_wraith_icon.png",
+        "file": "assets/enemies/thunderclap_wastes/storm_wraith_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a ghostly figure of purple lightning with hollow eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a ghostly figure of purple lightning with hollow eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2162,13 +2162,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/thunderclap_wastes/storm_wraith_battle.png",
+        "file": "assets/enemies/thunderclap_wastes/storm_wraith_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a ghostly figure of purple lightning with hollow eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a ghostly figure of purple lightning with hollow eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2214,13 +2214,13 @@
     "mastery_xp": 1550,
     "art": {
       "icon": {
-        "file": "assets/enemies/thunderclap_wastes/lightning_roc_icon.png",
+        "file": "assets/enemies/thunderclap_wastes/lightning_roc_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of an enormous roc with violet feathers and lightning crackling across its wings. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of an enormous roc with violet feathers and lightning crackling across its wings. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2228,13 +2228,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/thunderclap_wastes/lightning_roc_battle.png",
+        "file": "assets/enemies/thunderclap_wastes/lightning_roc_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an enormous roc with violet feathers and lightning crackling across its wings, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of an enormous roc with violet feathers and lightning crackling across its wings, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2280,13 +2280,13 @@
     "mastery_xp": 1226,
     "art": {
       "icon": {
-        "file": "assets/enemies/thunderclap_wastes/tribulation_scavenger_icon.png",
+        "file": "assets/enemies/thunderclap_wastes/tribulation_scavenger_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a scavenger in insulated grey robes with copper rods on his back and a crackling lantern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a scavenger in insulated grey robes with copper rods on his back and a crackling lantern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2294,13 +2294,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/thunderclap_wastes/tribulation_scavenger_battle.png",
+        "file": "assets/enemies/thunderclap_wastes/tribulation_scavenger_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a scavenger in insulated grey robes with copper rods on his back and a crackling lantern, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a scavenger in insulated grey robes with copper rods on his back and a crackling lantern, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2346,13 +2346,13 @@
     "mastery_xp": 1672,
     "art": {
       "icon": {
-        "file": "assets/enemies/sunken_dragon_sea/coral_naga_icon.png",
+        "file": "assets/enemies/sunken_dragon_sea/coral_naga_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a serpent-tailed warrior with coral armour and a trident. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a serpent-tailed warrior with coral armour and a trident. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2360,13 +2360,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/sunken_dragon_sea/coral_naga_battle.png",
+        "file": "assets/enemies/sunken_dragon_sea/coral_naga_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a serpent-tailed warrior with coral armour and a trident, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a serpent-tailed warrior with coral armour and a trident, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2412,13 +2412,13 @@
     "mastery_xp": 1921,
     "art": {
       "icon": {
-        "file": "assets/enemies/sunken_dragon_sea/abyssal_angler_icon.png",
+        "file": "assets/enemies/sunken_dragon_sea/abyssal_angler_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a giant deep-sea anglerfish with a glowing lure and needle teeth. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a giant deep-sea anglerfish with a glowing lure and needle teeth. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2426,13 +2426,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/sunken_dragon_sea/abyssal_angler_battle.png",
+        "file": "assets/enemies/sunken_dragon_sea/abyssal_angler_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a giant deep-sea anglerfish with a glowing lure and needle teeth, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a giant deep-sea anglerfish with a glowing lure and needle teeth, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2478,13 +2478,13 @@
     "mastery_xp": 2171,
     "art": {
       "icon": {
-        "file": "assets/enemies/sunken_dragon_sea/bone_dragon_spirit_icon.png",
+        "file": "assets/enemies/sunken_dragon_sea/bone_dragon_spirit_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a ghostly dragon made of bleached bones and sea mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a ghostly dragon made of bleached bones and sea mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2492,13 +2492,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/sunken_dragon_sea/bone_dragon_spirit_battle.png",
+        "file": "assets/enemies/sunken_dragon_sea/bone_dragon_spirit_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a ghostly dragon made of bleached bones and sea mist, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a ghostly dragon made of bleached bones and sea mist, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2544,13 +2544,13 @@
     "mastery_xp": 3168,
     "art": {
       "icon": {
-        "file": "assets/enemies/sunken_dragon_sea/tide_kraken_icon.png",
+        "file": "assets/enemies/sunken_dragon_sea/tide_kraken_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a huge kraken with tentacles covered in barnacles and a single golden eye. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a huge kraken with tentacles covered in barnacles and a single golden eye. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2558,13 +2558,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/sunken_dragon_sea/tide_kraken_battle.png",
+        "file": "assets/enemies/sunken_dragon_sea/tide_kraken_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a huge kraken with tentacles covered in barnacles and a single golden eye, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a huge kraken with tentacles covered in barnacles and a single golden eye, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2610,13 +2610,13 @@
     "mastery_xp": 2503,
     "art": {
       "icon": {
-        "file": "assets/enemies/sunken_dragon_sea/pirate_cultivator_icon.png",
+        "file": "assets/enemies/sunken_dragon_sea/pirate_cultivator_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a pirate cultivator with a tattered blue coat, a cutlass and a bone hook. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a pirate cultivator with a tattered blue coat, a cutlass and a bone hook. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2624,13 +2624,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/sunken_dragon_sea/pirate_cultivator_battle.png",
+        "file": "assets/enemies/sunken_dragon_sea/pirate_cultivator_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a pirate cultivator with a tattered blue coat, a cutlass and a bone hook, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a pirate cultivator with a tattered blue coat, a cutlass and a bone hook, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2676,13 +2676,13 @@
     "mastery_xp": 3418,
     "art": {
       "icon": {
-        "file": "assets/enemies/starfall_desert/sand_wyrm_icon.png",
+        "file": "assets/enemies/starfall_desert/sand_wyrm_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a giant pale sand wyrm with a ring of crystal teeth bursting from the dunes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a giant pale sand wyrm with a ring of crystal teeth bursting from the dunes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2690,13 +2690,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/starfall_desert/sand_wyrm_battle.png",
+        "file": "assets/enemies/starfall_desert/sand_wyrm_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a giant pale sand wyrm with a ring of crystal teeth bursting from the dunes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a giant pale sand wyrm with a ring of crystal teeth bursting from the dunes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2742,13 +2742,13 @@
     "mastery_xp": 3929,
     "art": {
       "icon": {
-        "file": "assets/enemies/starfall_desert/star_scarab_icon.png",
+        "file": "assets/enemies/starfall_desert/star_scarab_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a golden scarab with starlight on its shell. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a golden scarab with starlight on its shell. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2756,13 +2756,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/starfall_desert/star_scarab_battle.png",
+        "file": "assets/enemies/starfall_desert/star_scarab_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a golden scarab with starlight on its shell, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a golden scarab with starlight on its shell, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2808,13 +2808,13 @@
     "mastery_xp": 4440,
     "art": {
       "icon": {
-        "file": "assets/enemies/starfall_desert/dune_mirage_icon.png",
+        "file": "assets/enemies/starfall_desert/dune_mirage_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a shimmering figure of heat haze shaped like a lost traveller. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a shimmering figure of heat haze shaped like a lost traveller. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2822,13 +2822,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/starfall_desert/dune_mirage_battle.png",
+        "file": "assets/enemies/starfall_desert/dune_mirage_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a shimmering figure of heat haze shaped like a lost traveller, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a shimmering figure of heat haze shaped like a lost traveller, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2874,13 +2874,13 @@
     "mastery_xp": 6485,
     "art": {
       "icon": {
-        "file": "assets/enemies/starfall_desert/star_metal_golem_icon.png",
+        "file": "assets/enemies/starfall_desert/star_metal_golem_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a towering golem of silver star metal with a meteor for a heart. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a towering golem of silver star metal with a meteor for a heart. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2888,13 +2888,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/starfall_desert/star_metal_golem_battle.png",
+        "file": "assets/enemies/starfall_desert/star_metal_golem_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a towering golem of silver star metal with a meteor for a heart, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a towering golem of silver star metal with a meteor for a heart, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2940,13 +2940,13 @@
     "mastery_xp": 5122,
     "art": {
       "icon": {
-        "file": "assets/enemies/starfall_desert/nomad_star_hunter_icon.png",
+        "file": "assets/enemies/starfall_desert/nomad_star_hunter_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a veiled desert nomad in indigo robes riding a sand lizard, holding a star-metal lance. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a veiled desert nomad in indigo robes riding a sand lizard, holding a star-metal lance. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -2954,13 +2954,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/starfall_desert/nomad_star_hunter_battle.png",
+        "file": "assets/enemies/starfall_desert/nomad_star_hunter_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a veiled desert nomad in indigo robes riding a sand lizard, holding a star-metal lance, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a veiled desert nomad in indigo robes riding a sand lizard, holding a star-metal lance, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3006,13 +3006,13 @@
     "mastery_xp": 6996,
     "art": {
       "icon": {
-        "file": "assets/enemies/gate_of_ascension/phoenix_flame_spirit_icon.png",
+        "file": "assets/enemies/gate_of_ascension/phoenix_flame_spirit_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a spirit of golden phoenix fire shaped like a dancing woman. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a spirit of golden phoenix fire shaped like a dancing woman. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3020,13 +3020,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/gate_of_ascension/phoenix_flame_spirit_battle.png",
+        "file": "assets/enemies/gate_of_ascension/phoenix_flame_spirit_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a spirit of golden phoenix fire shaped like a dancing woman, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a spirit of golden phoenix fire shaped like a dancing woman, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3072,13 +3072,13 @@
     "mastery_xp": 8044,
     "art": {
       "icon": {
-        "file": "assets/enemies/gate_of_ascension/chain_warden_icon.png",
+        "file": "assets/enemies/gate_of_ascension/chain_warden_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of an armoured warden wrapped in broken golden chains with a lantern of light. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of an armoured warden wrapped in broken golden chains with a lantern of light. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3086,13 +3086,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/gate_of_ascension/chain_warden_battle.png",
+        "file": "assets/enemies/gate_of_ascension/chain_warden_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an armoured warden wrapped in broken golden chains with a lantern of light, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of an armoured warden wrapped in broken golden chains with a lantern of light, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3138,13 +3138,13 @@
     "mastery_xp": 9092,
     "art": {
       "icon": {
-        "file": "assets/enemies/gate_of_ascension/cloud_lion_icon.png",
+        "file": "assets/enemies/gate_of_ascension/cloud_lion_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a white lion with a mane of golden cloud and jade claws. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a white lion with a mane of golden cloud and jade claws. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3152,13 +3152,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/gate_of_ascension/cloud_lion_battle.png",
+        "file": "assets/enemies/gate_of_ascension/cloud_lion_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white lion with a mane of golden cloud and jade claws, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white lion with a mane of golden cloud and jade claws, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3204,13 +3204,13 @@
     "mastery_xp": 13284,
     "art": {
       "icon": {
-        "file": "assets/enemies/gate_of_ascension/ascension_judge_icon.png",
+        "file": "assets/enemies/gate_of_ascension/ascension_judge_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a robed immortal judge with a golden scale and a brush of fire. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a robed immortal judge with a golden scale and a brush of fire. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3218,13 +3218,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/gate_of_ascension/ascension_judge_battle.png",
+        "file": "assets/enemies/gate_of_ascension/ascension_judge_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a robed immortal judge with a golden scale and a brush of fire, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a robed immortal judge with a golden scale and a brush of fire, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3270,13 +3270,13 @@
     "mastery_xp": 10489,
     "art": {
       "icon": {
-        "file": "assets/enemies/gate_of_ascension/failed_ascendant_icon.png",
+        "file": "assets/enemies/gate_of_ascension/failed_ascendant_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a half-burned cultivator with cracked golden skin and wild eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a half-burned cultivator with cracked golden skin and wild eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3284,13 +3284,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/gate_of_ascension/failed_ascendant_battle.png",
+        "file": "assets/enemies/gate_of_ascension/failed_ascendant_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a half-burned cultivator with cracked golden skin and wild eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a half-burned cultivator with cracked golden skin and wild eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3336,13 +3336,13 @@
     "mastery_xp": 14332,
     "art": {
       "icon": {
-        "file": "assets/enemies/jade_immortal_realm/jade_tiger_icon.png",
+        "file": "assets/enemies/jade_immortal_realm/jade_tiger_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a white tiger with jade-green stripes and jade claws. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a white tiger with jade-green stripes and jade claws. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3350,13 +3350,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/jade_immortal_realm/jade_tiger_battle.png",
+        "file": "assets/enemies/jade_immortal_realm/jade_tiger_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white tiger with jade-green stripes and jade claws, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a white tiger with jade-green stripes and jade claws, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3402,13 +3402,13 @@
     "mastery_xp": 16480,
     "art": {
       "icon": {
-        "file": "assets/enemies/jade_immortal_realm/immortal_gardener_icon.png",
+        "file": "assets/enemies/jade_immortal_realm/immortal_gardener_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a calm immortal in green robes with pruning shears that cut space. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a calm immortal in green robes with pruning shears that cut space. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3416,13 +3416,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/jade_immortal_realm/immortal_gardener_battle.png",
+        "file": "assets/enemies/jade_immortal_realm/immortal_gardener_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a calm immortal in green robes with pruning shears that cut space, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a calm immortal in green robes with pruning shears that cut space, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3468,13 +3468,13 @@
     "mastery_xp": 18629,
     "art": {
       "icon": {
-        "file": "assets/enemies/jade_immortal_realm/waterfall_spirit_icon.png",
+        "file": "assets/enemies/jade_immortal_realm/waterfall_spirit_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a spirit of water flowing upward in the shape of a dancer. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a spirit of water flowing upward in the shape of a dancer. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3482,13 +3482,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/jade_immortal_realm/waterfall_spirit_battle.png",
+        "file": "assets/enemies/jade_immortal_realm/waterfall_spirit_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a spirit of water flowing upward in the shape of a dancer, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a spirit of water flowing upward in the shape of a dancer, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3534,13 +3534,13 @@
     "mastery_xp": 27222,
     "art": {
       "icon": {
-        "file": "assets/enemies/jade_immortal_realm/jade_guardian_beast_icon.png",
+        "file": "assets/enemies/jade_immortal_realm/jade_guardian_beast_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a massive jade lion statue that has come to life, eyes of green fire. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a massive jade lion statue that has come to life, eyes of green fire. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3548,13 +3548,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/jade_immortal_realm/jade_guardian_beast_battle.png",
+        "file": "assets/enemies/jade_immortal_realm/jade_guardian_beast_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a massive jade lion statue that has come to life, eyes of green fire, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a massive jade lion statue that has come to life, eyes of green fire, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3600,13 +3600,13 @@
     "mastery_xp": 21493,
     "art": {
       "icon": {
-        "file": "assets/enemies/jade_immortal_realm/realm_exile_icon.png",
+        "file": "assets/enemies/jade_immortal_realm/realm_exile_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a ragged immortal in torn jade robes with a broken flute. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a ragged immortal in torn jade robes with a broken flute. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3614,13 +3614,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/jade_immortal_realm/realm_exile_battle.png",
+        "file": "assets/enemies/jade_immortal_realm/realm_exile_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a ragged immortal in torn jade robes with a broken flute, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a ragged immortal in torn jade robes with a broken flute, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3666,13 +3666,13 @@
     "mastery_xp": 29371,
     "art": {
       "icon": {
-        "file": "assets/enemies/golden_palace_of_laws/law_enforcer_icon.png",
+        "file": "assets/enemies/golden_palace_of_laws/law_enforcer_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a golden armoured heavenly general with a law-scroll and a chain whip. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a golden armoured heavenly general with a law-scroll and a chain whip. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3680,13 +3680,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/golden_palace_of_laws/law_enforcer_battle.png",
+        "file": "assets/enemies/golden_palace_of_laws/law_enforcer_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a golden armoured heavenly general with a law-scroll and a chain whip, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a golden armoured heavenly general with a law-scroll and a chain whip, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3732,13 +3732,13 @@
     "mastery_xp": 33775,
     "art": {
       "icon": {
-        "file": "assets/enemies/golden_palace_of_laws/golden_crow_icon.png",
+        "file": "assets/enemies/golden_palace_of_laws/golden_crow_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a three-legged crow of golden fire. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a three-legged crow of golden fire. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3746,13 +3746,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/golden_palace_of_laws/golden_crow_battle.png",
+        "file": "assets/enemies/golden_palace_of_laws/golden_crow_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a three-legged crow of golden fire, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a three-legged crow of golden fire, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3798,13 +3798,13 @@
     "mastery_xp": 38179,
     "art": {
       "icon": {
-        "file": "assets/enemies/golden_palace_of_laws/scroll_golem_icon.png",
+        "file": "assets/enemies/golden_palace_of_laws/scroll_golem_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a golem made of folded golden scrolls with law-characters glowing on its body. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a golem made of folded golden scrolls with law-characters glowing on its body. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3812,13 +3812,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/golden_palace_of_laws/scroll_golem_battle.png",
+        "file": "assets/enemies/golden_palace_of_laws/scroll_golem_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a golem made of folded golden scrolls with law-characters glowing on its body, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a golem made of folded golden scrolls with law-characters glowing on its body, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3864,13 +3864,13 @@
     "mastery_xp": 55796,
     "art": {
       "icon": {
-        "file": "assets/enemies/golden_palace_of_laws/nine_tailed_shadow_icon.png",
+        "file": "assets/enemies/golden_palace_of_laws/nine_tailed_shadow_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a shadowy fox with nine tails of golden fire and mischievous eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a shadowy fox with nine tails of golden fire and mischievous eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3878,13 +3878,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/golden_palace_of_laws/nine_tailed_shadow_battle.png",
+        "file": "assets/enemies/golden_palace_of_laws/nine_tailed_shadow_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a shadowy fox with nine tails of golden fire and mischievous eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a shadowy fox with nine tails of golden fire and mischievous eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3930,13 +3930,13 @@
     "mastery_xp": 44051,
     "art": {
       "icon": {
-        "file": "assets/enemies/golden_palace_of_laws/rebel_immortal_icon.png",
+        "file": "assets/enemies/golden_palace_of_laws/rebel_immortal_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a defiant immortal in torn blue robes with a broken law-seal tattoo. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a defiant immortal in torn blue robes with a broken law-seal tattoo. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3944,13 +3944,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/golden_palace_of_laws/rebel_immortal_battle.png",
+        "file": "assets/enemies/golden_palace_of_laws/rebel_immortal_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a defiant immortal in torn blue robes with a broken law-seal tattoo, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a defiant immortal in torn blue robes with a broken law-seal tattoo, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -3996,13 +3996,13 @@
     "mastery_xp": 60200,
     "art": {
       "icon": {
-        "file": "assets/enemies/throne_of_the_immortal_emperor/azure_dragon_guard_icon.png",
+        "file": "assets/enemies/throne_of_the_immortal_emperor/azure_dragon_guard_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a dragon-headed warrior in azure scale armour with a glaive of water. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a dragon-headed warrior in azure scale armour with a glaive of water. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -4010,13 +4010,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/throne_of_the_immortal_emperor/azure_dragon_guard_battle.png",
+        "file": "assets/enemies/throne_of_the_immortal_emperor/azure_dragon_guard_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a dragon-headed warrior in azure scale armour with a glaive of water, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a dragon-headed warrior in azure scale armour with a glaive of water, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -4062,13 +4062,13 @@
     "mastery_xp": 69228,
     "art": {
       "icon": {
-        "file": "assets/enemies/throne_of_the_immortal_emperor/five_element_sentinel_icon.png",
+        "file": "assets/enemies/throne_of_the_immortal_emperor/five_element_sentinel_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a sentinel whose body shifts between wood, fire, earth, metal and water. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a sentinel whose body shifts between wood, fire, earth, metal and water. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -4076,13 +4076,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/throne_of_the_immortal_emperor/five_element_sentinel_battle.png",
+        "file": "assets/enemies/throne_of_the_immortal_emperor/five_element_sentinel_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sentinel whose body shifts between wood, fire, earth, metal and water, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sentinel whose body shifts between wood, fire, earth, metal and water, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -4128,13 +4128,13 @@
     "mastery_xp": 78257,
     "art": {
       "icon": {
-        "file": "assets/enemies/throne_of_the_immortal_emperor/star_whale_icon.png",
+        "file": "assets/enemies/throne_of_the_immortal_emperor/star_whale_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of an immense whale swimming through starlight, constellations on its skin. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of an immense whale swimming through starlight, constellations on its skin. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -4142,13 +4142,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/throne_of_the_immortal_emperor/star_whale_battle.png",
+        "file": "assets/enemies/throne_of_the_immortal_emperor/star_whale_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an immense whale swimming through starlight, constellations on its skin, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of an immense whale swimming through starlight, constellations on its skin, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -4194,13 +4194,13 @@
     "mastery_xp": 114371,
     "art": {
       "icon": {
-        "file": "assets/enemies/throne_of_the_immortal_emperor/emperors_shadow_icon.png",
+        "file": "assets/enemies/throne_of_the_immortal_emperor/emperors_shadow_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a towering shadow wearing an emperor's crown and robes of starlight. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a towering shadow wearing an emperor's crown and robes of starlight. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -4208,13 +4208,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/throne_of_the_immortal_emperor/emperors_shadow_battle.png",
+        "file": "assets/enemies/throne_of_the_immortal_emperor/emperors_shadow_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a towering shadow wearing an emperor's crown and robes of starlight, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a towering shadow wearing an emperor's crown and robes of starlight, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -4260,13 +4260,13 @@
     "mastery_xp": 90295,
     "art": {
       "icon": {
-        "file": "assets/enemies/throne_of_the_immortal_emperor/throne_usurper_icon.png",
+        "file": "assets/enemies/throne_of_the_immortal_emperor/throne_usurper_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a burning immortal king in cracked armour with a stolen crown. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a burning immortal king in cracked armour with a stolen crown. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -4274,13 +4274,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/throne_of_the_immortal_emperor/throne_usurper_battle.png",
+        "file": "assets/enemies/throne_of_the_immortal_emperor/throne_usurper_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a burning immortal king in cracked armour with a stolen crown, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a burning immortal king in cracked armour with a stolen crown, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"

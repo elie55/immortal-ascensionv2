@@ -31,13 +31,13 @@
     "hint": "Adventure · Blazing Mountain",
     "art": {
       "icon": {
-        "file": "assets/quests/main_blazing_mountain_arrival.png",
+        "file": "assets/quests/main_blazing_mountain_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Blazing Mountain' in the Blazing Mountain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Blazing Mountain' in the Blazing Mountain, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -88,13 +88,13 @@
     "hint": "Adventure · Blazing Mountain · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_blazing_mountain_sovereign.png",
+        "file": "assets/quests/main_blazing_mountain_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Blazing Mountain' in the Blazing Mountain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Blazing Mountain' in the Blazing Mountain, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -136,13 +136,13 @@
     "hint": "Blazing Mountain · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_blazing_mountain_salamander_scale.png",
+        "file": "assets/quests/mission_blazing_mountain_salamander_scale.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Blazing Mountain' in the Blazing Mountain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Blazing Mountain' in the Blazing Mountain, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -188,13 +188,13 @@
     "hint": "Blazing Mountain · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_blazing_mountain_elite_hunt.png",
+        "file": "assets/quests/combat_blazing_mountain_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Blazing Mountain' in the Blazing Mountain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Blazing Mountain' in the Blazing Mountain, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -241,13 +241,13 @@
     "hint": "Adventure · Dungeons · Ember Forge Ruins",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_blazing_mountain_ember_forge_ruins.png",
+        "file": "assets/quests/dungeon_blazing_mountain_ember_forge_ruins.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Ember Forge Ruins' in the Blazing Mountain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Ember Forge Ruins' in the Blazing Mountain, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -299,13 +299,13 @@
     "hint": "Blazing Mountain · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_old_kang.png",
+        "file": "assets/quests/npc_old_kang.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Old Kang' in the Blazing Mountain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Old Kang' in the Blazing Mountain, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -346,13 +346,13 @@
     "hint": "Adventure · Frozen Lotus Valley",
     "art": {
       "icon": {
-        "file": "assets/quests/main_frozen_lotus_valley_arrival.png",
+        "file": "assets/quests/main_frozen_lotus_valley_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Frozen Lotus Valley' in the Frozen Lotus Valley, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Frozen Lotus Valley' in the Frozen Lotus Valley, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -403,13 +403,13 @@
     "hint": "Adventure · Frozen Lotus Valley · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_frozen_lotus_valley_sovereign.png",
+        "file": "assets/quests/main_frozen_lotus_valley_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Frozen Lotus Valley' in the Frozen Lotus Valley, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Frozen Lotus Valley' in the Frozen Lotus Valley, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -451,13 +451,13 @@
     "hint": "Frozen Lotus Valley · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_frozen_lotus_valley_yeti_fur.png",
+        "file": "assets/quests/mission_frozen_lotus_valley_yeti_fur.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Frozen Lotus Valley' in the Frozen Lotus Valley, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Frozen Lotus Valley' in the Frozen Lotus Valley, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -503,13 +503,13 @@
     "hint": "Frozen Lotus Valley · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_frozen_lotus_valley_elite_hunt.png",
+        "file": "assets/quests/combat_frozen_lotus_valley_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Frozen Lotus Valley' in the Frozen Lotus Valley, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Frozen Lotus Valley' in the Frozen Lotus Valley, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -556,13 +556,13 @@
     "hint": "Adventure · Dungeons · Glacier Caverns",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_frozen_lotus_valley_glacier_caverns.png",
+        "file": "assets/quests/dungeon_frozen_lotus_valley_glacier_caverns.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Glacier Caverns' in the Frozen Lotus Valley, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Glacier Caverns' in the Frozen Lotus Valley, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -614,13 +614,13 @@
     "hint": "Frozen Lotus Valley · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_hermit_shuang.png",
+        "file": "assets/quests/npc_hermit_shuang.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Hermit Shuang' in the Frozen Lotus Valley, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Hermit Shuang' in the Frozen Lotus Valley, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -661,13 +661,13 @@
     "hint": "Adventure · Ancient Sword Tomb",
     "art": {
       "icon": {
-        "file": "assets/quests/main_ancient_sword_tomb_arrival.png",
+        "file": "assets/quests/main_ancient_sword_tomb_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Ancient Sword Tomb' in the Ancient Sword Tomb, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Ancient Sword Tomb' in the Ancient Sword Tomb, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -718,13 +718,13 @@
     "hint": "Adventure · Ancient Sword Tomb · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_ancient_sword_tomb_sovereign.png",
+        "file": "assets/quests/main_ancient_sword_tomb_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Ancient Sword Tomb' in the Ancient Sword Tomb, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Ancient Sword Tomb' in the Ancient Sword Tomb, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -766,13 +766,13 @@
     "hint": "Ancient Sword Tomb · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_ancient_sword_tomb_sword_spirit_shard.png",
+        "file": "assets/quests/mission_ancient_sword_tomb_sword_spirit_shard.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Ancient Sword Tomb' in the Ancient Sword Tomb, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Ancient Sword Tomb' in the Ancient Sword Tomb, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -818,13 +818,13 @@
     "hint": "Ancient Sword Tomb · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_ancient_sword_tomb_elite_hunt.png",
+        "file": "assets/quests/combat_ancient_sword_tomb_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Ancient Sword Tomb' in the Ancient Sword Tomb, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Ancient Sword Tomb' in the Ancient Sword Tomb, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -871,13 +871,13 @@
     "hint": "Adventure · Dungeons · Hall of Ten Thousand Blades",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_ancient_sword_tomb_hall_of_ten_thousand_blades.png",
+        "file": "assets/quests/dungeon_ancient_sword_tomb_hall_of_ten_thousand_blades.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Hall of Ten Thousand Blades' in the Ancient Sword Tomb, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Hall of Ten Thousand Blades' in the Ancient Sword Tomb, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -929,13 +929,13 @@
     "hint": "Ancient Sword Tomb · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_blind_swordsmith_yu.png",
+        "file": "assets/quests/npc_blind_swordsmith_yu.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Blind Swordsmith Yu' in the Ancient Sword Tomb, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Blind Swordsmith Yu' in the Ancient Sword Tomb, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -976,13 +976,13 @@
     "hint": "Adventure · Demon Territory",
     "art": {
       "icon": {
-        "file": "assets/quests/main_demon_territory_arrival.png",
+        "file": "assets/quests/main_demon_territory_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Demon Territory' in the Demon Territory, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Demon Territory' in the Demon Territory, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1033,13 +1033,13 @@
     "hint": "Adventure · Demon Territory · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_demon_territory_sovereign.png",
+        "file": "assets/quests/main_demon_territory_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Demon Territory' in the Demon Territory, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Demon Territory' in the Demon Territory, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1081,13 +1081,13 @@
     "hint": "Demon Territory · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_demon_territory_demon_horn.png",
+        "file": "assets/quests/mission_demon_territory_demon_horn.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Demon Territory' in the Demon Territory, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Demon Territory' in the Demon Territory, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1133,13 +1133,13 @@
     "hint": "Demon Territory · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_demon_territory_elite_hunt.png",
+        "file": "assets/quests/combat_demon_territory_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Demon Territory' in the Demon Territory, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Demon Territory' in the Demon Territory, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1186,13 +1186,13 @@
     "hint": "Adventure · Dungeons · Blood River Prison",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_demon_territory_blood_river_prison.png",
+        "file": "assets/quests/dungeon_demon_territory_blood_river_prison.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Blood River Prison' in the Demon Territory, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Blood River Prison' in the Demon Territory, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1244,13 +1244,13 @@
     "hint": "Demon Territory · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_defector_lian.png",
+        "file": "assets/quests/npc_defector_lian.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Defector Lian' in the Demon Territory, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Defector Lian' in the Demon Territory, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1291,13 +1291,13 @@
     "hint": "Adventure · Celestial Mountains",
     "art": {
       "icon": {
-        "file": "assets/quests/main_celestial_mountains_arrival.png",
+        "file": "assets/quests/main_celestial_mountains_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Celestial Mountains' in the Celestial Mountains, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Celestial Mountains' in the Celestial Mountains, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1348,13 +1348,13 @@
     "hint": "Adventure · Celestial Mountains · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_celestial_mountains_sovereign.png",
+        "file": "assets/quests/main_celestial_mountains_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Celestial Mountains' in the Celestial Mountains, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Celestial Mountains' in the Celestial Mountains, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1396,13 +1396,13 @@
     "hint": "Celestial Mountains · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_celestial_mountains_thunder_feather.png",
+        "file": "assets/quests/mission_celestial_mountains_thunder_feather.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Celestial Mountains' in the Celestial Mountains, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Celestial Mountains' in the Celestial Mountains, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1448,13 +1448,13 @@
     "hint": "Celestial Mountains · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_celestial_mountains_elite_hunt.png",
+        "file": "assets/quests/combat_celestial_mountains_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Celestial Mountains' in the Celestial Mountains, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Celestial Mountains' in the Celestial Mountains, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1501,13 +1501,13 @@
     "hint": "Adventure · Dungeons · Thunder Pine Sanctum",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_celestial_mountains_thunder_pine_sanctum.png",
+        "file": "assets/quests/dungeon_celestial_mountains_thunder_pine_sanctum.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Thunder Pine Sanctum' in the Celestial Mountains, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Thunder Pine Sanctum' in the Celestial Mountains, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1559,13 +1559,13 @@
     "hint": "Celestial Mountains · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_crane_boy_ming.png",
+        "file": "assets/quests/npc_crane_boy_ming.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Crane Boy Ming' in the Celestial Mountains, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Crane Boy Ming' in the Celestial Mountains, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1606,13 +1606,13 @@
     "hint": "Adventure · Nine Heavens",
     "art": {
       "icon": {
-        "file": "assets/quests/main_nine_heavens_arrival.png",
+        "file": "assets/quests/main_nine_heavens_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Nine Heavens' in the Nine Heavens, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Nine Heavens' in the Nine Heavens, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1663,13 +1663,13 @@
     "hint": "Adventure · Nine Heavens · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_nine_heavens_sovereign.png",
+        "file": "assets/quests/main_nine_heavens_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Nine Heavens' in the Nine Heavens, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Nine Heavens' in the Nine Heavens, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1711,13 +1711,13 @@
     "hint": "Nine Heavens · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_nine_heavens_jellyfish_silk.png",
+        "file": "assets/quests/mission_nine_heavens_jellyfish_silk.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Nine Heavens' in the Nine Heavens, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Nine Heavens' in the Nine Heavens, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1763,13 +1763,13 @@
     "hint": "Nine Heavens · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_nine_heavens_elite_hunt.png",
+        "file": "assets/quests/combat_nine_heavens_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Nine Heavens' in the Nine Heavens, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Nine Heavens' in the Nine Heavens, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1816,13 +1816,13 @@
     "hint": "Adventure · Dungeons · Sunken Star Palace",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_nine_heavens_sunken_star_palace.png",
+        "file": "assets/quests/dungeon_nine_heavens_sunken_star_palace.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Sunken Star Palace' in the Nine Heavens, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Sunken Star Palace' in the Nine Heavens, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1874,13 +1874,13 @@
     "hint": "Nine Heavens · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_star_reader_wu.png",
+        "file": "assets/quests/npc_star_reader_wu.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Star-Reader Wu' in the Nine Heavens, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Star-Reader Wu' in the Nine Heavens, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1921,13 +1921,13 @@
     "hint": "Adventure · Thunderclap Wastes",
     "art": {
       "icon": {
-        "file": "assets/quests/main_thunderclap_wastes_arrival.png",
+        "file": "assets/quests/main_thunderclap_wastes_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Thunderclap Wastes' in the Thunderclap Wastes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Thunderclap Wastes' in the Thunderclap Wastes, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -1978,13 +1978,13 @@
     "hint": "Adventure · Thunderclap Wastes · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_thunderclap_wastes_sovereign.png",
+        "file": "assets/quests/main_thunderclap_wastes_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Thunderclap Wastes' in the Thunderclap Wastes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Thunderclap Wastes' in the Thunderclap Wastes, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2026,13 +2026,13 @@
     "hint": "Thunderclap Wastes · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_thunderclap_wastes_roc_lightning_feather.png",
+        "file": "assets/quests/mission_thunderclap_wastes_roc_lightning_feather.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Thunderclap Wastes' in the Thunderclap Wastes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Thunderclap Wastes' in the Thunderclap Wastes, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2078,13 +2078,13 @@
     "hint": "Thunderclap Wastes · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_thunderclap_wastes_elite_hunt.png",
+        "file": "assets/quests/combat_thunderclap_wastes_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Thunderclap Wastes' in the Thunderclap Wastes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Thunderclap Wastes' in the Thunderclap Wastes, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2131,13 +2131,13 @@
     "hint": "Adventure · Dungeons · Glass Labyrinth",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_thunderclap_wastes_glass_labyrinth.png",
+        "file": "assets/quests/dungeon_thunderclap_wastes_glass_labyrinth.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Glass Labyrinth' in the Thunderclap Wastes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Glass Labyrinth' in the Thunderclap Wastes, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2189,13 +2189,13 @@
     "hint": "Thunderclap Wastes · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_storm_widow_jin.png",
+        "file": "assets/quests/npc_storm_widow_jin.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Storm Widow Jin' in the Thunderclap Wastes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Storm Widow Jin' in the Thunderclap Wastes, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2236,13 +2236,13 @@
     "hint": "Adventure · Sunken Dragon Sea",
     "art": {
       "icon": {
-        "file": "assets/quests/main_sunken_dragon_sea_arrival.png",
+        "file": "assets/quests/main_sunken_dragon_sea_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Sunken Dragon Sea' in the Sunken Dragon Sea, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Sunken Dragon Sea' in the Sunken Dragon Sea, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2293,13 +2293,13 @@
     "hint": "Adventure · Sunken Dragon Sea · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_sunken_dragon_sea_sovereign.png",
+        "file": "assets/quests/main_sunken_dragon_sea_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Sunken Dragon Sea' in the Sunken Dragon Sea, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Sunken Dragon Sea' in the Sunken Dragon Sea, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2341,13 +2341,13 @@
     "hint": "Sunken Dragon Sea · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_sunken_dragon_sea_kraken_ink.png",
+        "file": "assets/quests/mission_sunken_dragon_sea_kraken_ink.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Sunken Dragon Sea' in the Sunken Dragon Sea, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Sunken Dragon Sea' in the Sunken Dragon Sea, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2393,13 +2393,13 @@
     "hint": "Sunken Dragon Sea · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_sunken_dragon_sea_elite_hunt.png",
+        "file": "assets/quests/combat_sunken_dragon_sea_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Sunken Dragon Sea' in the Sunken Dragon Sea, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Sunken Dragon Sea' in the Sunken Dragon Sea, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2446,13 +2446,13 @@
     "hint": "Adventure · Dungeons · Coral Labyrinth",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_sunken_dragon_sea_coral_labyrinth.png",
+        "file": "assets/quests/dungeon_sunken_dragon_sea_coral_labyrinth.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Coral Labyrinth' in the Sunken Dragon Sea, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Coral Labyrinth' in the Sunken Dragon Sea, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2504,13 +2504,13 @@
     "hint": "Sunken Dragon Sea · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_fisherwoman_ah_hai.png",
+        "file": "assets/quests/npc_fisherwoman_ah_hai.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Fisherwoman Ah-Hai' in the Sunken Dragon Sea, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Fisherwoman Ah-Hai' in the Sunken Dragon Sea, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2551,13 +2551,13 @@
     "hint": "Adventure · Starfall Desert",
     "art": {
       "icon": {
-        "file": "assets/quests/main_starfall_desert_arrival.png",
+        "file": "assets/quests/main_starfall_desert_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Starfall Desert' in the Starfall Desert, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Starfall Desert' in the Starfall Desert, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2608,13 +2608,13 @@
     "hint": "Adventure · Starfall Desert · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_starfall_desert_sovereign.png",
+        "file": "assets/quests/main_starfall_desert_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Starfall Desert' in the Starfall Desert, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Starfall Desert' in the Starfall Desert, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2656,13 +2656,13 @@
     "hint": "Starfall Desert · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_starfall_desert_sand_wyrm_tooth.png",
+        "file": "assets/quests/mission_starfall_desert_sand_wyrm_tooth.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Starfall Desert' in the Starfall Desert, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Starfall Desert' in the Starfall Desert, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2708,13 +2708,13 @@
     "hint": "Starfall Desert · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_starfall_desert_elite_hunt.png",
+        "file": "assets/quests/combat_starfall_desert_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Starfall Desert' in the Starfall Desert, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Starfall Desert' in the Starfall Desert, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2761,13 +2761,13 @@
     "hint": "Adventure · Dungeons · Buried Star Temple",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_starfall_desert_buried_star_temple.png",
+        "file": "assets/quests/dungeon_starfall_desert_buried_star_temple.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Buried Star Temple' in the Starfall Desert, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Buried Star Temple' in the Starfall Desert, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2819,13 +2819,13 @@
     "hint": "Starfall Desert · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_caravan_princess_zahra.png",
+        "file": "assets/quests/npc_caravan_princess_zahra.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Caravan Princess Zahra' in the Starfall Desert, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Caravan Princess Zahra' in the Starfall Desert, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2866,13 +2866,13 @@
     "hint": "Adventure · Gate of Ascension",
     "art": {
       "icon": {
-        "file": "assets/quests/main_gate_of_ascension_arrival.png",
+        "file": "assets/quests/main_gate_of_ascension_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Gate of Ascension' in the Gate of Ascension, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Gate of Ascension' in the Gate of Ascension, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2923,13 +2923,13 @@
     "hint": "Adventure · Gate of Ascension · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_gate_of_ascension_sovereign.png",
+        "file": "assets/quests/main_gate_of_ascension_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Gate of Ascension' in the Gate of Ascension, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Gate of Ascension' in the Gate of Ascension, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -2971,13 +2971,13 @@
     "hint": "Gate of Ascension · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_gate_of_ascension_phoenix_down.png",
+        "file": "assets/quests/mission_gate_of_ascension_phoenix_down.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Gate of Ascension' in the Gate of Ascension, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Gate of Ascension' in the Gate of Ascension, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3023,13 +3023,13 @@
     "hint": "Gate of Ascension · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_gate_of_ascension_elite_hunt.png",
+        "file": "assets/quests/combat_gate_of_ascension_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Gate of Ascension' in the Gate of Ascension, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Gate of Ascension' in the Gate of Ascension, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3076,13 +3076,13 @@
     "hint": "Adventure · Dungeons · Trial of Nine Flames",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_gate_of_ascension_trial_of_nine_flames.png",
+        "file": "assets/quests/dungeon_gate_of_ascension_trial_of_nine_flames.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Trial of Nine Flames' in the Gate of Ascension, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Trial of Nine Flames' in the Gate of Ascension, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3134,13 +3134,13 @@
     "hint": "Gate of Ascension · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_immortal_wanderer_qiu.png",
+        "file": "assets/quests/npc_immortal_wanderer_qiu.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Immortal Wanderer Qiu' in the Gate of Ascension, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Immortal Wanderer Qiu' in the Gate of Ascension, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3181,13 +3181,13 @@
     "hint": "Adventure · Jade Immortal Realm",
     "art": {
       "icon": {
-        "file": "assets/quests/main_jade_immortal_realm_arrival.png",
+        "file": "assets/quests/main_jade_immortal_realm_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Jade Immortal Realm' in the Jade Immortal Realm, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Jade Immortal Realm' in the Jade Immortal Realm, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3238,13 +3238,13 @@
     "hint": "Adventure · Jade Immortal Realm · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_jade_immortal_realm_sovereign.png",
+        "file": "assets/quests/main_jade_immortal_realm_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Jade Immortal Realm' in the Jade Immortal Realm, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Jade Immortal Realm' in the Jade Immortal Realm, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3286,13 +3286,13 @@
     "hint": "Jade Immortal Realm · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_jade_immortal_realm_white_tiger_fang.png",
+        "file": "assets/quests/mission_jade_immortal_realm_white_tiger_fang.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Jade Immortal Realm' in the Jade Immortal Realm, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Jade Immortal Realm' in the Jade Immortal Realm, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3338,13 +3338,13 @@
     "hint": "Jade Immortal Realm · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_jade_immortal_realm_elite_hunt.png",
+        "file": "assets/quests/combat_jade_immortal_realm_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Jade Immortal Realm' in the Jade Immortal Realm, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Jade Immortal Realm' in the Jade Immortal Realm, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3391,13 +3391,13 @@
     "hint": "Adventure · Dungeons · Immortal Peach Garden",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_jade_immortal_realm_immortal_peach_garden.png",
+        "file": "assets/quests/dungeon_jade_immortal_realm_immortal_peach_garden.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Immortal Peach Garden' in the Jade Immortal Realm, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Immortal Peach Garden' in the Jade Immortal Realm, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3449,13 +3449,13 @@
     "hint": "Jade Immortal Realm · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_peach_keeper_mei.png",
+        "file": "assets/quests/npc_peach_keeper_mei.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Peach Keeper Mei' in the Jade Immortal Realm, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Peach Keeper Mei' in the Jade Immortal Realm, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3496,13 +3496,13 @@
     "hint": "Adventure · Golden Palace of Laws",
     "art": {
       "icon": {
-        "file": "assets/quests/main_golden_palace_of_laws_arrival.png",
+        "file": "assets/quests/main_golden_palace_of_laws_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Golden Palace of Laws' in the Golden Palace of Laws, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Golden Palace of Laws' in the Golden Palace of Laws, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3553,13 +3553,13 @@
     "hint": "Adventure · Golden Palace of Laws · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_golden_palace_of_laws_sovereign.png",
+        "file": "assets/quests/main_golden_palace_of_laws_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Golden Palace of Laws' in the Golden Palace of Laws, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Golden Palace of Laws' in the Golden Palace of Laws, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3601,13 +3601,13 @@
     "hint": "Golden Palace of Laws · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_golden_palace_of_laws_golden_crow_feather.png",
+        "file": "assets/quests/mission_golden_palace_of_laws_golden_crow_feather.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Golden Palace of Laws' in the Golden Palace of Laws, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Golden Palace of Laws' in the Golden Palace of Laws, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3653,13 +3653,13 @@
     "hint": "Golden Palace of Laws · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_golden_palace_of_laws_elite_hunt.png",
+        "file": "assets/quests/combat_golden_palace_of_laws_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Golden Palace of Laws' in the Golden Palace of Laws, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Golden Palace of Laws' in the Golden Palace of Laws, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3706,13 +3706,13 @@
     "hint": "Adventure · Dungeons · Hall of Verdicts",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_golden_palace_of_laws_hall_of_verdicts.png",
+        "file": "assets/quests/dungeon_golden_palace_of_laws_hall_of_verdicts.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Hall of Verdicts' in the Golden Palace of Laws, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Hall of Verdicts' in the Golden Palace of Laws, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3764,13 +3764,13 @@
     "hint": "Golden Palace of Laws · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_clerk_fu.png",
+        "file": "assets/quests/npc_clerk_fu.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Heavenly Clerk Fu' in the Golden Palace of Laws, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Heavenly Clerk Fu' in the Golden Palace of Laws, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3811,13 +3811,13 @@
     "hint": "Adventure · Throne of the Immortal Emperor",
     "art": {
       "icon": {
-        "file": "assets/quests/main_throne_of_the_immortal_emperor_arrival.png",
+        "file": "assets/quests/main_throne_of_the_immortal_emperor_arrival.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Throne of the Immortal Emperor' in the Throne of the Immortal Emperor, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Throne of the Immortal Emperor' in the Throne of the Immortal Emperor, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3868,13 +3868,13 @@
     "hint": "Adventure · Throne of the Immortal Emperor · Throne",
     "art": {
       "icon": {
-        "file": "assets/quests/main_throne_of_the_immortal_emperor_sovereign.png",
+        "file": "assets/quests/main_throne_of_the_immortal_emperor_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Throne of the Immortal Emperor' in the Throne of the Immortal Emperor, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Throne of the Immortal Emperor' in the Throne of the Immortal Emperor, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3915,13 +3915,13 @@
     "hint": "Throne of the Immortal Emperor · enemies drop it",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_throne_of_the_immortal_emperor_azure_dragon_scale.png",
+        "file": "assets/quests/mission_throne_of_the_immortal_emperor_azure_dragon_scale.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Throne of the Immortal Emperor' in the Throne of the Immortal Emperor, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Throne of the Immortal Emperor' in the Throne of the Immortal Emperor, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -3967,13 +3967,13 @@
     "hint": "Throne of the Immortal Emperor · Lair / Den",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_throne_of_the_immortal_emperor_elite_hunt.png",
+        "file": "assets/quests/combat_throne_of_the_immortal_emperor_elite_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Throne of the Immortal Emperor' in the Throne of the Immortal Emperor, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Throne of the Immortal Emperor' in the Throne of the Immortal Emperor, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -4020,13 +4020,13 @@
     "hint": "Adventure · Dungeons · Hall of Five Elements",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_throne_of_the_immortal_emperor_hall_of_five_elements.png",
+        "file": "assets/quests/dungeon_throne_of_the_immortal_emperor_hall_of_five_elements.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Hall of Five Elements' in the Throne of the Immortal Emperor, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Hall of Five Elements' in the Throne of the Immortal Emperor, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -4078,13 +4078,13 @@
     "hint": "Throne of the Immortal Emperor · Gathering Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_throne_steward_lao.png",
+        "file": "assets/quests/npc_throne_steward_lao.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Throne Steward Lao' in the Throne of the Immortal Emperor, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Throne Steward Lao' in the Throne of the Immortal Emperor, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -4122,13 +4122,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_foundation_establishment.png",
+        "file": "assets/quests/cultivation_reach_foundation_establishment.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the foundation establishment realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the foundation establishment realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4166,13 +4166,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_core_formation.png",
+        "file": "assets/quests/cultivation_reach_core_formation.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the core formation realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the core formation realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4210,13 +4210,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_nascent_soul.png",
+        "file": "assets/quests/cultivation_reach_nascent_soul.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the nascent soul realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the nascent soul realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4254,13 +4254,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_soul_transformation.png",
+        "file": "assets/quests/cultivation_reach_soul_transformation.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the soul transformation realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the soul transformation realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4298,13 +4298,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_spirit_severing.png",
+        "file": "assets/quests/cultivation_reach_spirit_severing.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the spirit severing realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the spirit severing realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4342,13 +4342,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_dao_integration.png",
+        "file": "assets/quests/cultivation_reach_dao_integration.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the dao integration realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the dao integration realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4386,13 +4386,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_tribulation_transcendence.png",
+        "file": "assets/quests/cultivation_reach_tribulation_transcendence.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the tribulation transcendence realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the tribulation transcendence realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4430,13 +4430,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_mahayana.png",
+        "file": "assets/quests/cultivation_reach_mahayana.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the mahayana realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the mahayana realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4474,13 +4474,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_immortal_ascension.png",
+        "file": "assets/quests/cultivation_reach_immortal_ascension.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the immortal ascension realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the immortal ascension realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4518,13 +4518,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_earth_immortal.png",
+        "file": "assets/quests/cultivation_reach_earth_immortal.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the earth immortal realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the earth immortal realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4562,13 +4562,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_heavenly_immortal.png",
+        "file": "assets/quests/cultivation_reach_heavenly_immortal.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the heavenly immortal realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the heavenly immortal realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4606,13 +4606,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_golden_immortal.png",
+        "file": "assets/quests/cultivation_reach_golden_immortal.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the golden immortal realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the golden immortal realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4650,13 +4650,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_immortal_king.png",
+        "file": "assets/quests/cultivation_reach_immortal_king.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the immortal king realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the immortal king realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -4694,13 +4694,13 @@
     "hint": "Cultivate tab · Break through",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_reach_immortal_emperor.png",
+        "file": "assets/quests/cultivation_reach_immortal_emperor.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the immortal emperor realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem celebrating the immortal emperor realm, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"

@@ -42,13 +42,13 @@
     "hint": "Azure Bamboo Forest · Hollow Shrine → Merchant Pavilion",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_tangs_ledger.png",
+        "file": "assets/quests/npc_tangs_ledger.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Tang's Missing Ledger': Tang's caravan manifest went missing in the forest. Find it in the Hollow Shrine and bring it back., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Tang's Missing Ledger': Tang's caravan manifest went missing in the forest. Find it in the Hollow Shrine and bring it back., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -106,13 +106,13 @@
     "hint": "Sect · Merchant Pavilion · Duel Tang, then Sword Grounds",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_frost_sword_lesson.png",
+        "file": "assets/quests/npc_frost_sword_lesson.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'The Frost Sword Lesson': Bai will teach the Frost Blossom Slash once you reach Stage 3 and win a friendly spar against Tang., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'The Frost Sword Lesson': Bai will teach the Frost Blossom Slash once you reach Stage 3 and win a friendly spar against Tang., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -154,13 +154,13 @@
     "hint": "Sect · Spirit Beast Garden",
     "art": {
       "icon": {
-        "file": "assets/quests/npc_qins_first_companion.png",
+        "file": "assets/quests/npc_qins_first_companion.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'A First Companion': Qin hands you a warm cloud-fox egg. Hatch it in the Spirit Beast Garden., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'A First Companion': Qin hands you a warm cloud-fox egg. Hatch it in the Spirit Beast Garden., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -212,13 +212,13 @@
     "hint": "Sect · Spirit Beast Garden · YunYun",
     "art": {
       "icon": {
-        "file": "assets/quests/beast_evolve_yunyun.png",
+        "file": "assets/quests/beast_evolve_yunyun.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'YunYun Grows Up': Raise YunYun to level 10 and evolve her into a Cloud Fox., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'YunYun Grows Up': Raise YunYun to level 10 and evolve her into a Cloud Fox., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"

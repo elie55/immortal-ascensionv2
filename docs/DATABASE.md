@@ -86,7 +86,7 @@ from a loot *gear entry* (base or pool + rarity weights + the table's ilvl band)
 ```json
 "art": {
   "icon": {
-    "file": "assets/items/mat/spirit_iron_ore.png",
+    "file": "assets/items/materials/spirit_iron_ore.webp",
     "size": [256, 256],
     "transparent": true,
     "prompt": "…",

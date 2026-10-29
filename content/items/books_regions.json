@@ -13,13 +13,13 @@
     "teaches": "method.red_furnace_sutra",
     "art": {
       "icon": {
-        "file": "assets/items/books/red_furnace_sutra.png",
+        "file": "assets/items/books/red_furnace_sutra.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Red Furnace Sutra, fire themed cover, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Red Furnace Sutra, fire themed cover, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"
@@ -42,13 +42,13 @@
     "teaches": "method.ice_lotus_heart_art",
     "art": {
       "icon": {
-        "file": "assets/items/books/ice_lotus_heart_art.png",
+        "file": "assets/items/books/ice_lotus_heart_art.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Ice Lotus Heart Art, water themed cover, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Ice Lotus Heart Art, water themed cover, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"
@@ -71,13 +71,13 @@
     "teaches": "method.sword_burial_scripture",
     "art": {
       "icon": {
-        "file": "assets/items/books/sword_burial_scripture.png",
+        "file": "assets/items/books/sword_burial_scripture.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Sword Burial Scripture, metal themed cover, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Sword Burial Scripture, metal themed cover, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"
@@ -100,13 +100,13 @@
     "teaches": "method.blood_moon_canon",
     "art": {
       "icon": {
-        "file": "assets/items/books/blood_moon_canon.png",
+        "file": "assets/items/books/blood_moon_canon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Blood Moon Canon, fire themed cover, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Blood Moon Canon, fire themed cover, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"
@@ -129,13 +129,13 @@
     "teaches": "method.nine_heavens_breath",
     "art": {
       "icon": {
-        "file": "assets/items/books/nine_heavens_breath.png",
+        "file": "assets/items/books/nine_heavens_breath.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Nine Heavens Breath, metal themed cover, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Nine Heavens Breath, metal themed cover, with a radiant golden glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"
@@ -158,13 +158,13 @@
     "teaches": "method.starlight_canon",
     "art": {
       "icon": {
-        "file": "assets/items/books/starlight_canon.png",
+        "file": "assets/items/books/starlight_canon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Starlight Canon, water themed cover, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Starlight Canon, water themed cover, with a radiant golden glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"
@@ -187,13 +187,13 @@
     "teaches": "method.tribulation_thunder_body",
     "art": {
       "icon": {
-        "file": "assets/items/books/tribulation_thunder_body.png",
+        "file": "assets/items/books/tribulation_thunder_body.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Tribulation Thunder Body, metal themed cover, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Tribulation Thunder Body, metal themed cover, with a radiant golden glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"
@@ -216,13 +216,13 @@
     "teaches": "method.azure_dragon_scripture",
     "art": {
       "icon": {
-        "file": "assets/items/books/azure_dragon_scripture.png",
+        "file": "assets/items/books/azure_dragon_scripture.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Azure Dragon Scripture, water themed cover, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Azure Dragon Scripture, water themed cover, with a radiant golden glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"
@@ -245,13 +245,13 @@
     "teaches": "method.starfall_scripture",
     "art": {
       "icon": {
-        "file": "assets/items/books/starfall_scripture.png",
+        "file": "assets/items/books/starfall_scripture.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Starfall Scripture, earth themed cover, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Starfall Scripture, earth themed cover, with a radiant golden glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"
@@ -274,13 +274,13 @@
     "teaches": "method.ascension_canon",
     "art": {
       "icon": {
-        "file": "assets/items/books/ascension_canon.png",
+        "file": "assets/items/books/ascension_canon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Ascension Canon, fire themed cover, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Ascension Canon, fire themed cover, with a crimson aura with silver starlight sparks. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"
@@ -303,13 +303,13 @@
     "teaches": "method.jade_immortal_sutra",
     "art": {
       "icon": {
-        "file": "assets/items/books/jade_immortal_sutra.png",
+        "file": "assets/items/books/jade_immortal_sutra.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Jade Immortal Sutra, wood themed cover, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Jade Immortal Sutra, wood themed cover, with a crimson aura with silver starlight sparks. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"
@@ -332,13 +332,13 @@
     "teaches": "method.ten_thousand_laws_canon",
     "art": {
       "icon": {
-        "file": "assets/items/books/ten_thousand_laws_canon.png",
+        "file": "assets/items/books/ten_thousand_laws_canon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Ten Thousand Laws Canon, metal themed cover, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Ten Thousand Laws Canon, metal themed cover, with a crimson aura with silver starlight sparks. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"
@@ -361,13 +361,13 @@
     "teaches": "method.immortal_emperor_canon",
     "art": {
       "icon": {
-        "file": "assets/items/books/immortal_emperor_canon.png",
+        "file": "assets/items/books/immortal_emperor_canon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Immortal Emperor Canon, water themed cover, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate cultivation manual titled Immortal Emperor Canon, water themed cover, with a crimson aura with silver starlight sparks. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"

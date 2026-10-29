@@ -18,13 +18,13 @@
     },
     "art": {
       "icon": {
-        "file": "assets/techniques/methods/azure_cloud_breathing.png",
+        "file": "assets/techniques/methods/azure_cloud_breathing.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Azure Cloud Breathing': The Azure Cloud Sect's foundation breathing art. Steady, safe, and endlessly refinable., polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a cultivation-method scroll emblem for 'Azure Cloud Breathing': The Azure Cloud Sect's foundation breathing art. Steady, safe, and endlessly refinable., with a faint green glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -59,13 +59,13 @@
     },
     "art": {
       "icon": {
-        "file": "assets/techniques/methods/nine_yang_scripture.png",
+        "file": "assets/techniques/methods/nine_yang_scripture.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Nine Yang Scripture': Nine suns circulate through the meridians. Cultivation burns hot and fast., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a cultivation-method scroll emblem for 'Nine Yang Scripture': Nine suns circulate through the meridians. Cultivation burns hot and fast., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -100,13 +100,13 @@
     },
     "art": {
       "icon": {
-        "file": "assets/techniques/methods/heavenly_dragon_art.png",
+        "file": "assets/techniques/methods/heavenly_dragon_art.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Heavenly Dragon Art': Qi coils like a dragon through the body. Favoured by the sect's elites., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a cultivation-method scroll emblem for 'Heavenly Dragon Art': Qi coils like a dragon through the body. Favoured by the sect's elites., with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
@@ -139,13 +139,13 @@
     },
     "art": {
       "icon": {
-        "file": "assets/techniques/methods/primordial_chaos_scripture.png",
+        "file": "assets/techniques/methods/primordial_chaos_scripture.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Primordial Chaos Scripture': A scripture older than the sect. Draws Qi from chaos itself., golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a cultivation-method scroll emblem for 'Primordial Chaos Scripture': A scripture older than the sect. Draws Qi from chaos itself., with a radiant golden glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"

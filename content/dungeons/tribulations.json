@@ -31,13 +31,13 @@
     "rewards": "loot.tribulation.core_formation",
     "art": {
       "battle_bg": {
-        "file": "assets/tribulations/core_formation_bg.png",
+        "file": "assets/tribulations/core_formation_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a mountain peak under a vortex of purple storm clouds with lightning tearing down, golden sunset rim. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a mountain peak under a vortex of purple storm clouds with lightning tearing down, golden sunset rim. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/tribulation.png"

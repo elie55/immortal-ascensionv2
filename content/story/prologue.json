@@ -27,13 +27,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/prologue_entrance_gate.png",
+        "file": "assets/story/prologue_entrance_gate.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a vast stone staircase climbing into clouds toward a red-and-gold sect gate, floating mountains, waterfalls, cherry blossoms, crowds of hopeful applicants. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a vast stone staircase climbing into clouds toward a red-and-gold sect gate, floating mountains, waterfalls, cherry blossoms, crowds of hopeful applicants. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -106,13 +106,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/prologue_elders_trial.png",
+        "file": "assets/story/prologue_elders_trial.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a serene elder's study with scrolls, a wooden staff and morning light through paper windows, cherry branches. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a serene elder's study with scrolls, a wooden staff and morning light through paper windows, cherry branches. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -154,13 +154,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/prologue_welcome.png",
+        "file": "assets/story/prologue_welcome.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a breathtaking view of the Azure Cloud Sect: floating islands, pagodas, bridges and waterfalls in golden morning light. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a breathtaking view of the Azure Cloud Sect: floating islands, pagodas, bridges and waterfalls in golden morning light. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -198,13 +198,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/prologue_senior_sister.png",
+        "file": "assets/story/prologue_senior_sister.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: sunlit sword-training terraces above clouds with frost-blue banners and a single plum tree. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: sunlit sword-training terraces above clouds with frost-blue banners and a single plum tree. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"

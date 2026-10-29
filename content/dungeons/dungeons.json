@@ -47,13 +47,13 @@
     ],
     "art": {
       "card": {
-        "file": "assets/dungeons/old_granary_cellars_card.png",
+        "file": "assets/dungeons/old_granary_cellars_card.webp",
         "size": [
           1024,
           640
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a torch-lit stone cellar stacked with grain sacks and stolen chests. Wide painterly composition, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dungeon card illustration: a torch-lit stone cellar stacked with grain sacks and stolen chests. Wide painterly composition, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/dungeon_hub.png"
@@ -61,13 +61,13 @@
         "status": "planned"
       },
       "battle_bg": {
-        "file": "assets/dungeons/old_granary_cellars_battle_bg.png",
+        "file": "assets/dungeons/old_granary_cellars_battle_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a torch-lit stone cellar stacked with grain sacks and stolen chests. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: battle backdrop inside a torch-lit stone cellar stacked with grain sacks and stolen chests. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -130,13 +130,13 @@
     ],
     "art": {
       "card": {
-        "file": "assets/dungeons/spirit_stone_mine_card.png",
+        "file": "assets/dungeons/spirit_stone_mine_card.webp",
         "size": [
           1024,
           640
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a glowing crystal mine with blue spirit-stone veins and mine-cart rails. Wide painterly composition, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dungeon card illustration: a glowing crystal mine with blue spirit-stone veins and mine-cart rails. Wide painterly composition, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/dungeon_hub.png"
@@ -144,13 +144,13 @@
         "status": "planned"
       },
       "battle_bg": {
-        "file": "assets/dungeons/spirit_stone_mine_battle_bg.png",
+        "file": "assets/dungeons/spirit_stone_mine_battle_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a glowing crystal mine with blue spirit-stone veins and mine-cart rails. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: battle backdrop inside a glowing crystal mine with blue spirit-stone veins and mine-cart rails. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -220,13 +220,13 @@
     ],
     "art": {
       "card": {
-        "file": "assets/dungeons/green_labyrinth_card.png",
+        "file": "assets/dungeons/green_labyrinth_card.webp",
         "size": [
           1024,
           640
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a maze of towering green bamboo walls with glowing moss floors and shafts of light. Wide painterly composition, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dungeon card illustration: a maze of towering green bamboo walls with glowing moss floors and shafts of light. Wide painterly composition, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/dungeon_hub.png"
@@ -234,13 +234,13 @@
         "status": "planned"
       },
       "battle_bg": {
-        "file": "assets/dungeons/green_labyrinth_battle_bg.png",
+        "file": "assets/dungeons/green_labyrinth_battle_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a maze of towering green bamboo walls with glowing moss floors and shafts of light. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: battle backdrop inside a maze of towering green bamboo walls with glowing moss floors and shafts of light. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -378,13 +378,13 @@
     },
     "art": {
       "card": {
-        "file": "assets/dungeons/heaven_piercing_tower_card.png",
+        "file": "assets/dungeons/heaven_piercing_tower_card.webp",
         "size": [
           1024,
           640
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a colossal white tower spiralling into the clouds, floors of jade and gold. Wide painterly composition, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dungeon card illustration: a colossal white tower spiralling into the clouds, floors of jade and gold. Wide painterly composition, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/dungeon_hub.png"
@@ -392,13 +392,13 @@
         "status": "planned"
       },
       "battle_bg": {
-        "file": "assets/dungeons/heaven_piercing_tower_battle_bg.png",
+        "file": "assets/dungeons/heaven_piercing_tower_battle_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a colossal white tower spiralling into the clouds, floors of jade and gold. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: battle backdrop inside a colossal white tower spiralling into the clouds, floors of jade and gold. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -575,13 +575,13 @@
     ],
     "art": {
       "card": {
-        "file": "assets/dungeons/origin_secret_realm_card.png",
+        "file": "assets/dungeons/origin_secret_realm_card.webp",
         "size": [
           1024,
           640
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a surreal realm of floating stone platforms, mirror pools and an altar of ember under a violet sky. Wide painterly composition, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dungeon card illustration: a surreal realm of floating stone platforms, mirror pools and an altar of ember under a violet sky. Wide painterly composition, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/dungeon_hub.png"
@@ -589,13 +589,13 @@
         "status": "planned"
       },
       "battle_bg": {
-        "file": "assets/dungeons/origin_secret_realm_battle_bg.png",
+        "file": "assets/dungeons/origin_secret_realm_battle_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a surreal realm of floating stone platforms, mirror pools and an altar of ember under a violet sky. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: battle backdrop inside a surreal realm of floating stone platforms, mirror pools and an altar of ember under a violet sky. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -603,13 +603,13 @@
         "status": "planned"
       },
       "map": {
-        "file": "assets/dungeons/origin_secret_realm_map.png",
+        "file": "assets/dungeons/origin_secret_realm_map.webp",
         "size": [
           1080,
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated branching map of a surreal realm of floating stone platforms, mirror pools and an altar of ember under a violet sky, floating platforms connected by light paths, no text, no icons.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated branching map of a surreal realm of floating stone platforms, mirror pools and an altar of ember under a violet sky, floating platforms connected by light paths, no text, no icons.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/secret_realm_map.png"
@@ -693,13 +693,13 @@
     ],
     "art": {
       "card": {
-        "file": "assets/dungeons/abyss_of_the_nine_heavens_card.png",
+        "file": "assets/dungeons/abyss_of_the_nine_heavens_card.webp",
         "size": [
           1024,
           640
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a vast abyss of black water and violet lightning beneath floating islands, a nine-headed serpent silhouette. Wide painterly composition, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dungeon card illustration: a vast abyss of black water and violet lightning beneath floating islands, a nine-headed serpent silhouette. Wide painterly composition, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/dungeon_hub.png"
@@ -707,13 +707,13 @@
         "status": "planned"
       },
       "battle_bg": {
-        "file": "assets/dungeons/abyss_of_the_nine_heavens_battle_bg.png",
+        "file": "assets/dungeons/abyss_of_the_nine_heavens_battle_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a vast abyss of black water and violet lightning beneath floating islands, a nine-headed serpent silhouette. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: battle backdrop inside a vast abyss of black water and violet lightning beneath floating islands, a nine-headed serpent silhouette. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"

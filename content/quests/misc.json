@@ -28,13 +28,13 @@
     "hint": "Cultivate tab",
     "art": {
       "icon": {
-        "file": "assets/quests/cultivation_qi_condensation_five.png",
+        "file": "assets/quests/cultivation_qi_condensation_five.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Halfway Up the Mountain': Reach Qi Condensation Stage 5., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Halfway Up the Mountain': Reach Qi Condensation Stage 5., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -72,13 +72,13 @@
     "hint": "Sect · Alchemy Hall",
     "art": {
       "icon": {
-        "file": "assets/quests/alchemy_first_pill.png",
+        "file": "assets/quests/alchemy_first_pill.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'First Pill': Refine a Qi Gathering Pill in the Alchemy Hall., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'First Pill': Refine a Qi Gathering Pill in the Alchemy Hall., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -120,13 +120,13 @@
     "hint": "Sect · Spirit Forge · Enhance",
     "art": {
       "icon": {
-        "file": "assets/quests/forge_first_enhancement.png",
+        "file": "assets/quests/forge_first_enhancement.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Sharper Than Yesterday': Enhance any piece of equipment to +3 at the Spirit Forge., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Sharper Than Yesterday': Enhance any piece of equipment to +3 at the Spirit Forge., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -170,13 +170,13 @@
     "hint": "Adventure · Dungeons · The Green Labyrinth",
     "art": {
       "icon": {
-        "file": "assets/quests/dungeon_green_labyrinth_trial.png",
+        "file": "assets/quests/dungeon_green_labyrinth_trial.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Trial of the Green Labyrinth': Elder Feng challenges you to clear the Green Labyrinth., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Trial of the Green Labyrinth': Elder Feng challenges you to clear the Green Labyrinth., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -215,13 +215,13 @@
     "hint": "Adventure · Dungeons · Heaven-Piercing Tower",
     "art": {
       "icon": {
-        "file": "assets/quests/combat_tower_five.png",
+        "file": "assets/quests/combat_tower_five.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Five Floors': Climb to floor 5 of the Heaven-Piercing Tower., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Five Floors': Climb to floor 5 of the Heaven-Piercing Tower., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -264,13 +264,13 @@
     "hint": "Azure Bamboo Forest · ???",
     "art": {
       "icon": {
-        "file": "assets/quests/hidden_heart_of_the_grove.png",
+        "file": "assets/quests/hidden_heart_of_the_grove.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Heart of the Grove': Find the hidden clearing and face the Frost Hermit's trial., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Heart of the Grove': Find the hidden clearing and face the Frost Hermit's trial., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"

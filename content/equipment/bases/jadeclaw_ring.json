@@ -23,13 +23,13 @@
       "legendary": {
         "art": {
           "icon": {
-            "file": "assets/equipment/ring/jadeclaw_ring_legendary.png",
+            "file": "assets/equipment/ring/jadeclaw_ring_legendary.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a silver ring shaped like a tiger biting a jade stone, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a silver ring shaped like a tiger biting a jade stone, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",
@@ -42,13 +42,13 @@
       "mythic": {
         "art": {
           "icon": {
-            "file": "assets/equipment/ring/jadeclaw_ring_mythic.png",
+            "file": "assets/equipment/ring/jadeclaw_ring_mythic.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a silver ring shaped like a tiger biting a jade stone, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a silver ring shaped like a tiger biting a jade stone, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",
@@ -61,13 +61,13 @@
       "immortal": {
         "art": {
           "icon": {
-            "file": "assets/equipment/ring/jadeclaw_ring_immortal.png",
+            "file": "assets/equipment/ring/jadeclaw_ring_immortal.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a silver ring shaped like a tiger biting a jade stone, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a silver ring shaped like a tiger biting a jade stone, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",

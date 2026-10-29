@@ -52,13 +52,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/lava_shrine.png",
+        "file": "assets/events/lava_shrine.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a small red shrine on an island in a lava lake, stepping stones glowing. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a small red shrine on an island in a lava lake, stepping stones glowing. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -120,13 +120,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/frozen_reflection.png",
+        "file": "assets/events/frozen_reflection.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a frozen lake reflecting an aurora and a lone figure, the reflection subtly wrong. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a frozen lake reflecting an aurora and a lone figure, the reflection subtly wrong. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -188,13 +188,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/singing_blade.png",
+        "file": "assets/events/singing_blade.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a single silver sword glowing among rusted ones, notes of light rising from it. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a single silver sword glowing among rusted ones, notes of light rising from it. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -256,13 +256,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/demon_bazaar.png",
+        "file": "assets/events/demon_bazaar.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a night market of masked demonic merchants under red lanterns among black spires. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a night market of masked demonic merchants under red lanterns among black spires. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -324,13 +324,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/stair_of_trials.png",
+        "file": "assets/events/stair_of_trials.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a glowing staircase of light rising into golden clouds. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a glowing staircase of light rising into golden clouds. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -392,13 +392,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/falling_star.png",
+        "file": "assets/events/falling_star.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a glowing fallen star in a crater on a floating cloud island at night. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a glowing fallen star in a crater on a floating cloud island at night. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -460,13 +460,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/struck_monolith.png",
+        "file": "assets/events/struck_monolith.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a black monolith in a glass plain being struck by violet lightning. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a black monolith in a glass plain being struck by violet lightning. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -528,13 +528,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/dragon_whisper.png",
+        "file": "assets/events/dragon_whisper.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a swirling whirlpool with a giant dragon eye glowing beneath the water. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a swirling whirlpool with a giant dragon eye glowing beneath the water. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -596,13 +596,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/oasis_of_stars.png",
+        "file": "assets/events/oasis_of_stars.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a small oasis in silver dunes reflecting a starry sky at midday. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a small oasis in silver dunes reflecting a starry sky at midday. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -664,13 +664,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/the_weighing.png",
+        "file": "assets/events/the_weighing.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a giant golden scale floating in white clouds before a golden gate. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a giant golden scale floating in white clouds before a golden gate. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -732,13 +732,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/forbidden_peach.png",
+        "file": "assets/events/forbidden_peach.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a single glowing golden peach on a low branch in a jade garden. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a single glowing golden peach on a low branch in a jade garden. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -800,13 +800,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/unwritten_law.png",
+        "file": "assets/events/unwritten_law.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a blank golden scroll floating in an empty golden hall with a brush beside it. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a blank golden scroll floating in an empty golden hall with a brush beside it. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -868,13 +868,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/empty_throne.png",
+        "file": "assets/events/empty_throne.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: an empty throne of starlight above the clouds with an azure dragon sleeping around it. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: an empty throne of starlight above the clouds with an azure dragon sleeping around it. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"

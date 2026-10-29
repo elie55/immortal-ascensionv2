@@ -22,13 +22,13 @@
       "common": {
         "art": {
           "icon": {
-            "file": "assets/equipment/necklace/jade_pendant_common.png",
+            "file": "assets/equipment/necklace/jade_pendant_common.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a round pale-green jade pendant with a carved cloud on a red silk cord, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round pale-green jade pendant with a carved cloud on a red silk cord, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",
@@ -41,13 +41,13 @@
       "uncommon": {
         "art": {
           "icon": {
-            "file": "assets/equipment/necklace/jade_pendant_uncommon.png",
+            "file": "assets/equipment/necklace/jade_pendant_uncommon.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a round pale-green jade pendant with a carved cloud on a red silk cord, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round pale-green jade pendant with a carved cloud on a red silk cord, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",
@@ -60,13 +60,13 @@
       "rare": {
         "art": {
           "icon": {
-            "file": "assets/equipment/necklace/jade_pendant_rare.png",
+            "file": "assets/equipment/necklace/jade_pendant_rare.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a round pale-green jade pendant with a carved cloud on a red silk cord, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round pale-green jade pendant with a carved cloud on a red silk cord, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",

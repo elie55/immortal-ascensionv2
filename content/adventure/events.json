@@ -55,13 +55,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/blazing_shrine.png",
+        "file": "assets/events/blazing_shrine.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a half-collapsed red shrine in golden grass, embers glowing in a cracked altar at sunset. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a half-collapsed red shrine in golden grass, embers glowing in a cracked altar at sunset. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -126,13 +126,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/frost_hermit_trial.png",
+        "file": "assets/events/frost_hermit_trial.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a clearing of silver bamboo with a small snow-dusted hut and an old man in white meditating on a stone. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a clearing of silver bamboo with a small snow-dusted hut and an old man in white meditating on a stone. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"
@@ -191,13 +191,13 @@
     ],
     "art": {
       "illustration": {
-        "file": "assets/events/hidden_whisper.png",
+        "file": "assets/events/hidden_whisper.webp",
         "size": [
           1024,
           768
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a misty reed marsh at night with teal lights under the water and a shadowy figure among the reeds. Painterly, atmospheric, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Event illustration: a misty reed marsh at night with teal lights under the water and a shadowy figure among the reeds. Painterly, atmospheric, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/node_interactions.png"

@@ -23,13 +23,13 @@
       "uncommon": {
         "art": {
           "icon": {
-            "file": "assets/equipment/boots/frostlotus_steps_uncommon.png",
+            "file": "assets/equipment/boots/frostlotus_steps_uncommon.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of white fur-lined boots with blue lotus embroidery and silver soles, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a pair of white fur-lined boots with blue lotus embroidery and silver soles, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",
@@ -42,13 +42,13 @@
       "rare": {
         "art": {
           "icon": {
-            "file": "assets/equipment/boots/frostlotus_steps_rare.png",
+            "file": "assets/equipment/boots/frostlotus_steps_rare.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of white fur-lined boots with blue lotus embroidery and silver soles, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a pair of white fur-lined boots with blue lotus embroidery and silver soles, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",
@@ -61,13 +61,13 @@
       "epic": {
         "art": {
           "icon": {
-            "file": "assets/equipment/boots/frostlotus_steps_epic.png",
+            "file": "assets/equipment/boots/frostlotus_steps_epic.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of white fur-lined boots with blue lotus embroidery and silver soles, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a pair of white fur-lined boots with blue lotus embroidery and silver soles, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",
@@ -80,13 +80,13 @@
       "legendary": {
         "art": {
           "icon": {
-            "file": "assets/equipment/boots/frostlotus_steps_legendary.png",
+            "file": "assets/equipment/boots/frostlotus_steps_legendary.webp",
             "size": [
               256,
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of white fur-lined boots with blue lotus embroidery and silver soles, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a pair of white fur-lined boots with blue lotus embroidery and silver soles, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",

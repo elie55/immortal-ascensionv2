@@ -29,13 +29,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/forest_first_steps.png",
+        "file": "assets/story/forest_first_steps.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: the edge of a misty blue bamboo forest with a small merchant caravan and lanterns among the stalks. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: the edge of a misty blue bamboo forest with a small merchant caravan and lanterns among the stalks. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"

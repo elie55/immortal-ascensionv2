@@ -19,13 +19,13 @@
     ],
     "art": {
       "card": {
-        "file": "assets/regions/mortal_plains_card.png",
+        "file": "assets/regions/mortal_plains_card.webp",
         "size": [
           1024,
           640
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: golden wheat fields, a dirt road, a distant windmill and village under a soft sunset sky. Painterly, wide composition, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Region card illustration, landscape: golden wheat fields, a dirt road, a distant windmill and village under a soft sunset sky. Painterly, wide composition, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/world_regions.png"
@@ -33,13 +33,13 @@
         "status": "planned"
       },
       "map": {
-        "file": "assets/regions/mortal_plains_map.png",
+        "file": "assets/regions/mortal_plains_map.webp",
         "size": [
           1080,
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of golden wheat fields, a dirt road, a distant windmill and village under a soft sunset sky, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of golden wheat fields, a dirt road, a distant windmill and village under a soft sunset sky, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/region_node_map.png"
@@ -47,13 +47,13 @@
         "status": "planned"
       },
       "battle_bg": {
-        "file": "assets/regions/mortal_plains_battle_bg.png",
+        "file": "assets/regions/mortal_plains_battle_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside golden wheat fields, a dirt road, a distant windmill and village under a soft sunset sky, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: battle backdrop inside golden wheat fields, a dirt road, a distant windmill and village under a soft sunset sky, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -90,13 +90,13 @@
     ],
     "art": {
       "card": {
-        "file": "assets/regions/azure_bamboo_forest_card.png",
+        "file": "assets/regions/azure_bamboo_forest_card.webp",
         "size": [
           1024,
           640
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: a dense misty forest of towering blue-green bamboo with shafts of light, a moonlit pool and mossy stones. Painterly, wide composition, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Region card illustration, landscape: a dense misty forest of towering blue-green bamboo with shafts of light, a moonlit pool and mossy stones. Painterly, wide composition, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/world_regions.png"
@@ -104,13 +104,13 @@
         "status": "planned"
       },
       "map": {
-        "file": "assets/regions/azure_bamboo_forest_map.png",
+        "file": "assets/regions/azure_bamboo_forest_map.webp",
         "size": [
           1080,
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of a dense misty forest of towering blue-green bamboo with shafts of light, a moonlit pool and mossy stones, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of a dense misty forest of towering blue-green bamboo with shafts of light, a moonlit pool and mossy stones, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/region_node_map.png"
@@ -118,13 +118,13 @@
         "status": "planned"
       },
       "battle_bg": {
-        "file": "assets/regions/azure_bamboo_forest_battle_bg.png",
+        "file": "assets/regions/azure_bamboo_forest_battle_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a dense misty forest of towering blue-green bamboo with shafts of light, a moonlit pool and mossy stones, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: battle backdrop inside a dense misty forest of towering blue-green bamboo with shafts of light, a moonlit pool and mossy stones, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"

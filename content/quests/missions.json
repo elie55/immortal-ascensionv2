@@ -34,13 +34,13 @@
     "hint": "Azure Bamboo Forest · Frost Lynx Den",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_frost_beast_cores.png",
+        "file": "assets/quests/mission_frost_beast_cores.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Frost Beast Cores': Senior Sister Bai needs three Frost Beast Cores from the Azure Bamboo Forest., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Frost Beast Cores': Senior Sister Bai needs three Frost Beast Cores from the Azure Bamboo Forest., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -88,13 +88,13 @@
     "hint": "Mortal Plains · Herb Meadow / Wolf Den",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_goods_for_the_caravan.png",
+        "file": "assets/quests/mission_goods_for_the_caravan.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Goods for the Caravan': Tang Xiaoman wants spirit grass and wolf fangs from the Mortal Plains., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Goods for the Caravan': Tang Xiaoman wants spirit grass and wolf fangs from the Mortal Plains., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -141,13 +141,13 @@
     "hint": "Azure Bamboo Forest · Spirit Iron Vein",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_ore_for_the_armory.png",
+        "file": "assets/quests/mission_ore_for_the_armory.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Ore for the Armory': Master Gu needs five Spirit Iron Ore., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Ore for the Armory': Master Gu needs five Spirit Iron Ore., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -194,13 +194,13 @@
     "hint": "Origin Secret Realm · Origin Vault",
     "art": {
       "icon": {
-        "file": "assets/quests/mission_lotus_of_living_flame.png",
+        "file": "assets/quests/mission_lotus_of_living_flame.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'A Lotus of Living Flame': The Alchemy Hall elder seeks a Flame Lotus from the Origin Secret Realm., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'A Lotus of Living Flame': The Alchemy Hall elder seeks a Flame Lotus from the Origin Secret Realm., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"

@@ -4,3 +4,4 @@ dist/
 *.log
 # mockup boards & crops are added from the owner's PC (binary); see tools/make-refs.py
 refs/originals/
+__pycache__/

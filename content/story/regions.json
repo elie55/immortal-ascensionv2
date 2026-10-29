@@ -23,13 +23,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_blazing_mountain_arrival.png",
+        "file": "assets/story/regions_blazing_mountain_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a volcanic mountain of black rock and rivers of lava under an orange sky, ash drifting, fire-lit caravan road. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a volcanic mountain of black rock and rivers of lava under an orange sky, ash drifting, fire-lit caravan road. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -62,13 +62,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_frozen_lotus_valley_arrival.png",
+        "file": "assets/story/regions_frozen_lotus_valley_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a snowy valley with a frozen lake, glowing blue ice lotuses and pale mountains under a cold aurora. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a snowy valley with a frozen lake, glowing blue ice lotuses and pale mountains under a cold aurora. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -101,13 +101,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_ancient_sword_tomb_arrival.png",
+        "file": "assets/story/regions_ancient_sword_tomb_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a vast valley of ten thousand rusted swords planted in grey earth, a ruined tomb gate, sword qi crackling in the wind. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a vast valley of ten thousand rusted swords planted in grey earth, a ruined tomb gate, sword qi crackling in the wind. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -140,13 +140,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_demon_territory_arrival.png",
+        "file": "assets/story/regions_demon_territory_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a blood-red wasteland of black spires and burning rivers under a crimson moon, demonic banners on bone towers. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a blood-red wasteland of black spires and burning rivers under a crimson moon, demonic banners on bone towers. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -179,13 +179,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_celestial_mountains_arrival.png",
+        "file": "assets/story/regions_celestial_mountains_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: impossibly tall white peaks piercing golden clouds, celestial pavilions, thunder cranes and sacred pines. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: impossibly tall white peaks piercing golden clouds, celestial pavilions, thunder cranes and sacred pines. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -218,13 +218,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_nine_heavens_arrival.png",
+        "file": "assets/story/regions_nine_heavens_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: nine layers of floating cloud continents under a starry sky, waterfalls falling into nothing, ruined heavenly palaces. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: nine layers of floating cloud continents under a starry sky, waterfalls falling into nothing, ruined heavenly palaces. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -257,13 +257,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_thunderclap_wastes_arrival.png",
+        "file": "assets/story/regions_thunderclap_wastes_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a shattered plain of black glass under an endless violet thunderstorm, lightning-struck monoliths and charred trees. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a shattered plain of black glass under an endless violet thunderstorm, lightning-struck monoliths and charred trees. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -296,13 +296,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_sunken_dragon_sea_arrival.png",
+        "file": "assets/story/regions_sunken_dragon_sea_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a vast turquoise sea with the bones of ancient dragons rising from the water, coral palaces below, whirlpools and sea mist. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a vast turquoise sea with the bones of ancient dragons rising from the water, coral palaces below, whirlpools and sea mist. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -335,13 +335,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_starfall_desert_arrival.png",
+        "file": "assets/story/regions_starfall_desert_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: an endless desert of silver sand under a sky of falling stars, crater oases and half-buried star-metal ruins. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: an endless desert of silver sand under a sky of falling stars, crater oases and half-buried star-metal ruins. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -374,13 +374,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_gate_of_ascension_arrival.png",
+        "file": "assets/story/regions_gate_of_ascension_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a colossal golden gate floating in white clouds at the edge of the mortal world, phoenix flames, broken chains and endless light beyond. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a colossal golden gate floating in white clouds at the edge of the mortal world, phoenix flames, broken chains and endless light beyond. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -413,13 +413,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_jade_immortal_realm_arrival.png",
+        "file": "assets/story/regions_jade_immortal_realm_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a serene realm of floating jade islands, waterfalls flowing upward, immortal gardens and white tigers resting under peach trees. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a serene realm of floating jade islands, waterfalls flowing upward, immortal gardens and white tigers resting under peach trees. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -452,13 +452,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_golden_palace_of_laws_arrival.png",
+        "file": "assets/story/regions_golden_palace_of_laws_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: an enormous golden palace of floating halls connected by bridges of light, giant law-wheels turning in the sky. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: an enormous golden palace of floating halls connected by bridges of light, giant law-wheels turning in the sky. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"
@@ -491,13 +491,13 @@
     "skippable": true,
     "art": {
       "cg": {
-        "file": "assets/story/regions_throne_of_the_immortal_emperor_arrival.png",
+        "file": "assets/story/regions_throne_of_the_immortal_emperor_arrival.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a throne of starlight above the clouds of all realms, an azure dragon coiled around it, the five elements orbiting as rings of light. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a throne of starlight above the clouds of all realms, an azure dragon coiled around it, the five elements orbiting as rings of light. Cinematic, no characters in the foreground, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/prologue.png"

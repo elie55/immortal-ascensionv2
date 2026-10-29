@@ -22,13 +22,13 @@
     "hint": "Prologue · follow the story",
     "art": {
       "icon": {
-        "file": "assets/quests/main_the_path_begins.png",
+        "file": "assets/quests/main_the_path_begins.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'The Path Begins': Climb the Thousand Steps and pass the Elder's Trial., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'The Path Begins': Climb the Thousand Steps and pass the Elder's Trial., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -78,13 +78,13 @@
     "hint": "Sect · Sword Grounds · Bai Lingshuang",
     "art": {
       "icon": {
-        "file": "assets/quests/main_senior_sister.png",
+        "file": "assets/quests/main_senior_sister.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Senior Sister': Present Elder Wen's token to Bai Lingshuang at the Sword Grounds., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Senior Sister': Present Elder Wen's token to Bai Lingshuang at the Sword Grounds., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -127,13 +127,13 @@
     "hint": "Cultivate tab · Break through to Stage 2",
     "art": {
       "icon": {
-        "file": "assets/quests/main_first_breath.png",
+        "file": "assets/quests/main_first_breath.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'First Breath': Cultivate Azure Cloud Breathing until you reach Qi Condensation Stage 2., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'First Breath': Cultivate Azure Cloud Breathing until you reach Qi Condensation Stage 2., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -177,13 +177,13 @@
     "hint": "Adventure · Mortal Plains · Boar Thicket",
     "art": {
       "icon": {
-        "file": "assets/quests/main_first_hunt.png",
+        "file": "assets/quests/main_first_hunt.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'First Hunt': Prove your blade on the Mortal Plains: defeat three Wild Boars., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'First Hunt': Prove your blade on the Mortal Plains: defeat three Wild Boars., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -229,13 +229,13 @@
     "hint": "Adventure · Mortal Plains · Bandit Camp",
     "art": {
       "icon": {
-        "file": "assets/quests/main_bandit_chief.png",
+        "file": "assets/quests/main_bandit_chief.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'The Bandit Chief': Chief Hu has been robbing sect caravans. End it., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'The Bandit Chief': Chief Hu has been robbing sect caravans. End it., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -277,13 +277,13 @@
     "hint": "Adventure · Azure Bamboo Forest",
     "art": {
       "icon": {
-        "file": "assets/quests/main_into_the_bamboo.png",
+        "file": "assets/quests/main_into_the_bamboo.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Into the Bamboo': The Azure Bamboo Forest is open to you. Explore three of its nodes., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'Into the Bamboo': The Azure Bamboo Forest is open to you. Explore three of its nodes., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"
@@ -332,13 +332,13 @@
     "hint": "Adventure · Azure Bamboo Forest · Ancient Bamboo Sovereign",
     "art": {
       "icon": {
-        "file": "assets/quests/main_bamboo_sovereign.png",
+        "file": "assets/quests/main_bamboo_sovereign.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'The Bamboo Sovereign': Something ancient stirs at the heart of the forest. Defeat the Thousand-Node Bamboo Dragon., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a quest emblem for 'The Bamboo Sovereign': Something ancient stirs at the heart of the forest. Defeat the Thousand-Node Bamboo Dragon., with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/mission_hall.png"

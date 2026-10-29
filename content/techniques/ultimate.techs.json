@@ -30,13 +30,13 @@
     "enemy_only": false,
     "art": {
       "icon": {
-        "file": "assets/techniques/ult/heavenly_sword_rain.png",
+        "file": "assets/techniques/ult/heavenly_sword_rain.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Heavenly Sword Rain' (metal element): A thousand sword lights fall from the sky. 320% ATK to all enemies, lowers Defense., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a square technique icon for 'Heavenly Sword Rain' (metal element): A thousand sword lights fall from the sky. 320% ATK to all enemies, lowers Defense., with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -82,13 +82,13 @@
     "enemy_only": false,
     "art": {
       "icon": {
-        "file": "assets/techniques/ult/soul_devouring_art.png",
+        "file": "assets/techniques/ult/soul_devouring_art.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Soul Devouring Art' (water element): Drain the target's spirit. 280% ATK, heals 30% of damage dealt, Silences., golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a square technique icon for 'Soul Devouring Art' (water element): Drain the target's spirit. 280% ATK, heals 30% of damage dealt, Silences., with a radiant golden glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -129,13 +129,13 @@
     "enemy_only": true,
     "art": {
       "icon": {
-        "file": "assets/techniques/ult/ten_thousand_gold_rain.png",
+        "file": "assets/techniques/ult/ten_thousand_gold_rain.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a square technique icon for 'Ten Thousand Gold Rain' (metal element): Tang Xiaoman's ultimate: a deluge of coins buries the field. 260% ATK to all, Stun chance., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a square technique icon for 'Ten Thousand Gold Rain' (metal element): Tang Xiaoman's ultimate: a deluge of coins buries the field. 260% ATK to all, Stun chance., with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"

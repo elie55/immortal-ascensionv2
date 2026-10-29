@@ -16,13 +16,13 @@
     "transform_sources": [],
     "art": {
       "illustration": {
-        "file": "assets/roots/faint_mortal.png",
+        "file": "assets/roots/faint_mortal.webp",
         "size": [
           768,
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Circular spiritual-root emblem: A thin, unremarkable root. Many start here; few stay. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Circular spiritual-root emblem: A thin, unremarkable root. Many start here; few stay. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_root.png"
@@ -53,13 +53,13 @@
     "transform_sources": [],
     "art": {
       "illustration": {
-        "file": "assets/roots/wood_water_dual.png",
+        "file": "assets/roots/wood_water_dual.webp",
         "size": [
           768,
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Circular spiritual-root emblem: Wood feeds on water; healing and control flow together. Awakened at Qi Condensation 3. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Circular spiritual-root emblem: Wood feeds on water; healing and control flow together. Awakened at Qi Condensation 3. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_root.png"
@@ -90,13 +90,13 @@
     "transform_sources": [],
     "art": {
       "illustration": {
-        "file": "assets/roots/fire_earth_dual.png",
+        "file": "assets/roots/fire_earth_dual.webp",
         "size": [
           768,
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Circular spiritual-root emblem: Burning resolve on unshakable ground. Burst damage with heavy shields. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Circular spiritual-root emblem: Burning resolve on unshakable ground. Burst damage with heavy shields. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_root.png"
@@ -127,13 +127,13 @@
     "transform_sources": [],
     "art": {
       "illustration": {
-        "file": "assets/roots/metal_water_dual.png",
+        "file": "assets/roots/metal_water_dual.webp",
         "size": [
           768,
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Circular spiritual-root emblem: Sword edge tempered by ice. Precision and freezing control. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Circular spiritual-root emblem: Sword edge tempered by ice. Precision and freezing control. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_root.png"
@@ -167,13 +167,13 @@
     "transform_sources": [],
     "art": {
       "illustration": {
-        "file": "assets/roots/five_elements.png",
+        "file": "assets/roots/five_elements.webp",
         "size": [
           768,
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Circular spiritual-root emblem: All five elements in harmony. A root spoken of only in legends. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Circular spiritual-root emblem: All five elements in harmony. A root spoken of only in legends. Ornate jade and gold ring, glowing elemental symbols, centered, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_root.png"

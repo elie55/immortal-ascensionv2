@@ -127,13 +127,13 @@
     "cultivation_bonus": 0.05,
     "art": {
       "icon": {
-        "file": "assets/beasts/yunyun_icon.png",
+        "file": "assets/beasts/yunyun_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the face of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, with a faint green glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -141,13 +141,13 @@
         "status": "planned"
       },
       "battle_hatchling": {
-        "file": "assets/beasts/yunyun_hatchling.png",
+        "file": "assets/beasts/yunyun_hatchling.webp",
         "size": [
           768,
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, Cloud Kit form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, Cloud Kit form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -155,13 +155,13 @@
         "status": "planned"
       },
       "battle_juvenile": {
-        "file": "assets/beasts/yunyun_juvenile.png",
+        "file": "assets/beasts/yunyun_juvenile.webp",
         "size": [
           768,
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, Cloud Fox form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, Cloud Fox form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -169,13 +169,13 @@
         "status": "planned"
       },
       "battle_adult": {
-        "file": "assets/beasts/yunyun_adult.png",
+        "file": "assets/beasts/yunyun_adult.webp",
         "size": [
           768,
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, Cloud Fox Guardian form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, Cloud Fox Guardian form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -183,13 +183,13 @@
         "status": "planned"
       },
       "battle_sovereign": {
-        "file": "assets/beasts/yunyun_sovereign.png",
+        "file": "assets/beasts/yunyun_sovereign.webp",
         "size": [
           768,
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, Cloud Sovereign Fox form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small fluffy white cloud fox with pale blue ear tips, big teal eyes and a cloud-like tail, Cloud Sovereign Fox form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -302,13 +302,13 @@
     "cultivation_bonus": 0.04,
     "art": {
       "icon": {
-        "file": "assets/beasts/flame_fox_icon.png",
+        "file": "assets/beasts/flame_fox_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a sleek orange-red fox with a flaming tail, golden eyes and ember marks on its fur, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the face of a sleek orange-red fox with a flaming tail, golden eyes and ember marks on its fur, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -316,13 +316,13 @@
         "status": "planned"
       },
       "battle_hatchling": {
-        "file": "assets/beasts/flame_fox_hatchling.png",
+        "file": "assets/beasts/flame_fox_hatchling.webp",
         "size": [
           768,
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek orange-red fox with a flaming tail, golden eyes and ember marks on its fur, Ember Kit form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek orange-red fox with a flaming tail, golden eyes and ember marks on its fur, Ember Kit form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -330,13 +330,13 @@
         "status": "planned"
       },
       "battle_juvenile": {
-        "file": "assets/beasts/flame_fox_juvenile.png",
+        "file": "assets/beasts/flame_fox_juvenile.webp",
         "size": [
           768,
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek orange-red fox with a flaming tail, golden eyes and ember marks on its fur, Flame Fox form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek orange-red fox with a flaming tail, golden eyes and ember marks on its fur, Flame Fox form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"
@@ -344,13 +344,13 @@
         "status": "planned"
       },
       "battle_adult": {
-        "file": "assets/beasts/flame_fox_adult.png",
+        "file": "assets/beasts/flame_fox_adult.webp",
         "size": [
           768,
           768
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek orange-red fox with a flaming tail, golden eyes and ember marks on its fur, Blaze Fox form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek orange-red fox with a flaming tail, golden eyes and ember marks on its fur, Blaze Fox form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/spirit_beasts.png"

@@ -36,13 +36,13 @@
     "rewards": "loot.tribulation.soul_transformation",
     "art": {
       "battle_bg": {
-        "file": "assets/tribulations/soul_transformation_bg.png",
+        "file": "assets/tribulations/soul_transformation_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a peak under a vast vortex of metal-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a peak under a vast vortex of metal-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/tribulation.png"
@@ -88,13 +88,13 @@
     "rewards": "loot.tribulation.tribulation_transcendence",
     "art": {
       "battle_bg": {
-        "file": "assets/tribulations/tribulation_transcendence_bg.png",
+        "file": "assets/tribulations/tribulation_transcendence_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a peak under a vast vortex of metal-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a peak under a vast vortex of metal-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/tribulation.png"
@@ -145,13 +145,13 @@
     "rewards": "loot.tribulation.immortal_ascension",
     "art": {
       "battle_bg": {
-        "file": "assets/tribulations/immortal_ascension_bg.png",
+        "file": "assets/tribulations/immortal_ascension_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a peak under a vast vortex of fire-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a peak under a vast vortex of fire-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/tribulation.png"
@@ -202,13 +202,13 @@
     "rewards": "loot.tribulation.golden_immortal",
     "art": {
       "battle_bg": {
-        "file": "assets/tribulations/golden_immortal_bg.png",
+        "file": "assets/tribulations/golden_immortal_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a peak under a vast vortex of fire-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a peak under a vast vortex of fire-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/tribulation.png"
@@ -264,13 +264,13 @@
     "rewards": "loot.tribulation.immortal_emperor",
     "art": {
       "battle_bg": {
-        "file": "assets/tribulations/immortal_emperor_bg.png",
+        "file": "assets/tribulations/immortal_emperor_bg.webp",
         "size": [
           1080,
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a peak under a vast vortex of water-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background: a peak under a vast vortex of water-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/tribulation.png"

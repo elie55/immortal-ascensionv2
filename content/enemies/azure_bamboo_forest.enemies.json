@@ -36,13 +36,13 @@
     "mastery_xp": 15,
     "art": {
       "icon": {
-        "file": "assets/enemies/azure_bamboo_forest/azure_bamboo_wolf_icon.png",
+        "file": "assets/enemies/azure_bamboo_forest/azure_bamboo_wolf_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a sleek blue-grey wolf with bamboo-leaf markings and a white ruff, jade light in its eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a sleek blue-grey wolf with bamboo-leaf markings and a white ruff, jade light in its eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -50,13 +50,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/azure_bamboo_forest/azure_bamboo_wolf_battle.png",
+        "file": "assets/enemies/azure_bamboo_forest/azure_bamboo_wolf_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek blue-grey wolf with bamboo-leaf markings and a white ruff, jade light in its eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a sleek blue-grey wolf with bamboo-leaf markings and a white ruff, jade light in its eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -102,13 +102,13 @@
     "mastery_xp": 15,
     "art": {
       "icon": {
-        "file": "assets/enemies/azure_bamboo_forest/bamboo_spirit_sprite_icon.png",
+        "file": "assets/enemies/azure_bamboo_forest/bamboo_spirit_sprite_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a small humanoid figure made of green bamboo segments and leaves with glowing hollow eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a small humanoid figure made of green bamboo segments and leaves with glowing hollow eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -116,13 +116,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/azure_bamboo_forest/bamboo_spirit_sprite_battle.png",
+        "file": "assets/enemies/azure_bamboo_forest/bamboo_spirit_sprite_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small humanoid figure made of green bamboo segments and leaves with glowing hollow eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a small humanoid figure made of green bamboo segments and leaves with glowing hollow eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -167,13 +167,13 @@
     "mastery_xp": 16,
     "art": {
       "icon": {
-        "file": "assets/enemies/azure_bamboo_forest/green_viper_icon.png",
+        "file": "assets/enemies/azure_bamboo_forest/green_viper_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a coiled bright green viper with golden eyes and dripping fangs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a coiled bright green viper with golden eyes and dripping fangs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -181,13 +181,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/azure_bamboo_forest/green_viper_battle.png",
+        "file": "assets/enemies/azure_bamboo_forest/green_viper_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a coiled bright green viper with golden eyes and dripping fangs, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a coiled bright green viper with golden eyes and dripping fangs, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -233,13 +233,13 @@
     "mastery_xp": 16,
     "art": {
       "icon": {
-        "file": "assets/enemies/azure_bamboo_forest/cloud_silk_spider_icon.png",
+        "file": "assets/enemies/azure_bamboo_forest/cloud_silk_spider_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a large pale-white spider with cloud-like silk and blue markings on its back. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a large pale-white spider with cloud-like silk and blue markings on its back. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -247,13 +247,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/azure_bamboo_forest/cloud_silk_spider_battle.png",
+        "file": "assets/enemies/azure_bamboo_forest/cloud_silk_spider_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a large pale-white spider with cloud-like silk and blue markings on its back, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a large pale-white spider with cloud-like silk and blue markings on its back, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -299,13 +299,13 @@
     "mastery_xp": 19,
     "art": {
       "icon": {
-        "file": "assets/enemies/azure_bamboo_forest/rime_bamboo_lynx_icon.png",
+        "file": "assets/enemies/azure_bamboo_forest/rime_bamboo_lynx_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a powerful pale-blue lynx with frost-crystal fur tufts and icy breath, tufted ears. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a powerful pale-blue lynx with frost-crystal fur tufts and icy breath, tufted ears. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -313,13 +313,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/azure_bamboo_forest/rime_bamboo_lynx_battle.png",
+        "file": "assets/enemies/azure_bamboo_forest/rime_bamboo_lynx_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a powerful pale-blue lynx with frost-crystal fur tufts and icy breath, tufted ears, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a powerful pale-blue lynx with frost-crystal fur tufts and icy breath, tufted ears, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -365,13 +365,13 @@
     "mastery_xp": 21,
     "art": {
       "icon": {
-        "file": "assets/enemies/azure_bamboo_forest/whispering_reed_witch_icon.png",
+        "file": "assets/enemies/azure_bamboo_forest/whispering_reed_witch_icon.webp",
         "size": [
           256,
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a gaunt pale woman in tattered green-black robes woven from reeds, long wet hair, holding a reed flute, eerie teal glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a gaunt pale woman in tattered green-black robes woven from reeds, long wet hair, holding a reed flute, eerie teal glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -379,13 +379,13 @@
         "status": "planned"
       },
       "battle": {
-        "file": "assets/enemies/azure_bamboo_forest/whispering_reed_witch_battle.png",
+        "file": "assets/enemies/azure_bamboo_forest/whispering_reed_witch_battle.webp",
         "size": [
           768,
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a gaunt pale woman in tattered green-black robes woven from reeds, long wet hair, holding a reed flute, eerie teal glow, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a gaunt pale woman in tattered green-black robes woven from reeds, long wet hair, holding a reed flute, eerie teal glow, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
