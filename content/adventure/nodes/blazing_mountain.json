@@ -1,0 +1,445 @@
+[
+  {
+    "id": "node.blazing_mountain.entry",
+    "name": "Blazing Mountain Border",
+    "description": "Border of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.blazing_mountain.gathering",
+      "node.blazing_mountain.outskirts"
+    ],
+    "rec_cp": 546,
+    "first_clear": {
+      "spirit_stones": 135
+    },
+    "replayable": true,
+    "energy_cost": 6,
+    "waves": [
+      [
+        "enemy.ember_salamander"
+      ],
+      [
+        "enemy.magma_golem",
+        "enemy.ember_salamander"
+      ]
+    ]
+  },
+  {
+    "id": "node.blazing_mountain.gathering",
+    "name": "Blazing Mountain Gathering Grounds",
+    "description": "Gathering Grounds of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.blazing_mountain.entry",
+      "node.blazing_mountain.west_path",
+      "node.blazing_mountain.cache"
+    ],
+    "rec_cp": 625,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 6,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.fire_bud",
+          "qty": 3
+        },
+        {
+          "id": "mat.magma_iron_ore",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.blazing_mountain.outskirts",
+    "name": "Blazing Mountain Outskirts",
+    "description": "Outskirts of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.blazing_mountain.entry",
+      "node.blazing_mountain.cache",
+      "node.blazing_mountain.east_path"
+    ],
+    "rec_cp": 590,
+    "first_clear": {
+      "spirit_stones": 135
+    },
+    "replayable": true,
+    "energy_cost": 6,
+    "waves": [
+      [
+        "enemy.ash_vulture",
+        "enemy.magma_golem"
+      ],
+      [
+        "enemy.ash_vulture",
+        "enemy.caravan_raider"
+      ]
+    ]
+  },
+  {
+    "id": "node.blazing_mountain.west_path",
+    "name": "Blazing Mountain Western Trail",
+    "description": "Western Trail of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.blazing_mountain.gathering",
+      "node.blazing_mountain.lair"
+    ],
+    "rec_cp": 612,
+    "first_clear": {
+      "spirit_stones": 135
+    },
+    "replayable": true,
+    "energy_cost": 6,
+    "waves": [
+      [
+        "enemy.magma_golem",
+        "enemy.ember_salamander"
+      ],
+      [
+        "enemy.magma_golem",
+        "enemy.magma_golem"
+      ]
+    ]
+  },
+  {
+    "id": "node.blazing_mountain.cache",
+    "name": "Blazing Mountain Hidden Cache",
+    "description": "Hidden Cache of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.blazing_mountain.gathering",
+      "node.blazing_mountain.outskirts",
+      "node.blazing_mountain.crossroads"
+    ],
+    "rec_cp": 697,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 6,
+    "chest": "loot.chest.blazing_mountain"
+  },
+  {
+    "id": "node.blazing_mountain.east_path",
+    "name": "Blazing Mountain Eastern Trail",
+    "description": "Eastern Trail of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.blazing_mountain.outskirts",
+      "node.blazing_mountain.ridge"
+    ],
+    "rec_cp": 655,
+    "first_clear": {
+      "spirit_stones": 135
+    },
+    "replayable": true,
+    "energy_cost": 6,
+    "waves": [
+      [
+        "enemy.ash_vulture",
+        "enemy.caravan_raider"
+      ],
+      [
+        "enemy.ember_salamander",
+        "enemy.ash_vulture"
+      ]
+    ]
+  },
+  {
+    "id": "node.blazing_mountain.lair",
+    "name": "Blazing Mountain Lair",
+    "description": "Lair of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.blazing_mountain.west_path",
+      "node.blazing_mountain.deep_path"
+    ],
+    "rec_cp": 1286,
+    "first_clear": {
+      "spirit_stones": 360,
+      "items": [
+        {
+          "id": "mat.ember_core",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 6,
+    "waves": [
+      [
+        "enemy.flame_lion"
+      ]
+    ]
+  },
+  {
+    "id": "node.blazing_mountain.crossroads",
+    "name": "Blazing Mountain Crossroads",
+    "description": "Crossroads of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.blazing_mountain.cache",
+      "node.blazing_mountain.deep_path",
+      "node.blazing_mountain.sanctum"
+    ],
+    "rec_cp": 769,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 6,
+    "event": "event.lava_shrine"
+  },
+  {
+    "id": "node.blazing_mountain.ridge",
+    "name": "Blazing Mountain Ridge",
+    "description": "Ridge of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.blazing_mountain.east_path",
+      "node.blazing_mountain.sanctum"
+    ],
+    "rec_cp": 721,
+    "first_clear": {
+      "spirit_stones": 135
+    },
+    "replayable": true,
+    "energy_cost": 6,
+    "waves": [
+      [
+        "enemy.ember_salamander",
+        "enemy.ash_vulture"
+      ],
+      [
+        "enemy.caravan_raider"
+      ]
+    ]
+  },
+  {
+    "id": "node.blazing_mountain.deep_path",
+    "name": "Blazing Mountain Deep Path",
+    "description": "Deep Path of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.blazing_mountain.lair",
+      "node.blazing_mountain.crossroads",
+      "node.blazing_mountain.den"
+    ],
+    "rec_cp": 743,
+    "first_clear": {
+      "spirit_stones": 135
+    },
+    "replayable": true,
+    "energy_cost": 6,
+    "waves": [
+      [
+        "enemy.ash_vulture",
+        "enemy.magma_golem"
+      ],
+      [
+        "enemy.ash_vulture",
+        "enemy.caravan_raider"
+      ]
+    ]
+  },
+  {
+    "id": "node.blazing_mountain.sanctum",
+    "name": "Blazing Mountain Sanctum",
+    "description": "Sanctum of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "cultivation",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.blazing_mountain.crossroads",
+      "node.blazing_mountain.ridge",
+      "node.blazing_mountain.hidden_grove",
+      "node.blazing_mountain.approach"
+    ],
+    "rec_cp": 841,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 6,
+    "cultivation": {
+      "qi_mult": 1.55,
+      "minutes": 30,
+      "energy_cost": 6
+    }
+  },
+  {
+    "id": "node.blazing_mountain.den",
+    "name": "Blazing Mountain Den",
+    "description": "Den of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.blazing_mountain.deep_path",
+      "node.blazing_mountain.throne"
+    ],
+    "rec_cp": 1494,
+    "first_clear": {
+      "spirit_stones": 360,
+      "items": [
+        {
+          "id": "mat.ember_core",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 6,
+    "waves": [
+      [
+        "enemy.ember_salamander",
+        "enemy.ash_vulture"
+      ],
+      [
+        "enemy.flame_lion"
+      ]
+    ]
+  },
+  {
+    "id": "node.blazing_mountain.hidden_grove",
+    "name": "Blazing Mountain Secret Place",
+    "description": "Secret Place of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.blazing_mountain.sanctum",
+      "node.blazing_mountain.approach"
+    ],
+    "rec_cp": 889,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 6,
+    "event": "event.lava_shrine",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.blazing_mountain.approach",
+    "name": "Blazing Mountain Approach",
+    "description": "Approach of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.blazing_mountain.sanctum",
+      "node.blazing_mountain.hidden_grove",
+      "node.blazing_mountain.throne"
+    ],
+    "rec_cp": 830,
+    "first_clear": {
+      "spirit_stones": 135
+    },
+    "replayable": true,
+    "energy_cost": 6,
+    "waves": [
+      [
+        "enemy.magma_golem",
+        "enemy.magma_golem"
+      ],
+      [
+        "enemy.ash_vulture",
+        "enemy.magma_golem"
+      ]
+    ]
+  },
+  {
+    "id": "node.blazing_mountain.throne",
+    "name": "Blazing Mountain Throne",
+    "description": "Throne of the Blazing Mountain.",
+    "region": "region.blazing_mountain",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.blazing_mountain.den",
+      "node.blazing_mountain.approach"
+    ],
+    "rec_cp": 3577,
+    "first_clear": {
+      "spirit_stones": 1350,
+      "sect_fame": 120
+    },
+    "replayable": true,
+    "energy_cost": 6,
+    "waves": [
+      [
+        "enemy.magma_golem",
+        "enemy.flame_lion"
+      ],
+      [
+        "boss.molten_ape_king"
+      ]
+    ]
+  }
+]

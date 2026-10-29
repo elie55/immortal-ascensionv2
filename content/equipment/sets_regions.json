@@ -1,0 +1,224 @@
+[
+  {
+    "id": "set.blazeforge",
+    "name": "Blazeforge Set",
+    "description": "Forged in the Ember Forge Ruins from magma iron.",
+    "name_cn": "炎锻套装",
+    "pieces": [
+      "gear.blazeforge_saber",
+      "gear.blazeforge_plate",
+      "gear.blazeforge_band"
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "stats": {
+          "elem_dmg.fire": 10
+        }
+      },
+      {
+        "pieces": 3,
+        "stats": {
+          "hp": 600
+        },
+        "effect": {
+          "kind": "on_hit_apply",
+          "description": "Hits have a 15% chance to Burn.",
+          "status": "status.burning",
+          "chance": 0.15
+        }
+      }
+    ],
+    "source_hint": "Drops throughout the Blazing Mountain; the weapon can also be forged."
+  },
+  {
+    "id": "set.tombsong",
+    "name": "Tombsong Set",
+    "description": "Arms of the tomb's swordsmen, reforged.",
+    "name_cn": "冢鸣套装",
+    "pieces": [
+      "gear.tombsong_sword",
+      "gear.tombsong_talisman",
+      "gear.tombsong_mantle"
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "stats": {
+          "crit": 4
+        }
+      },
+      {
+        "pieces": 3,
+        "stats": {
+          "hp": 1000
+        },
+        "effect": {
+          "kind": "on_crit_apply",
+          "description": "Critical hits cause Bleeding.",
+          "status": "status.bleeding",
+          "chance": 0.4
+        }
+      }
+    ],
+    "source_hint": "Drops throughout the Ancient Sword Tomb; the weapon can also be forged."
+  },
+  {
+    "id": "set.skyward",
+    "name": "Skyward Set",
+    "description": "Vestments of the celestial stair-keepers.",
+    "name_cn": "通天套装",
+    "pieces": [
+      "gear.skyward_staff",
+      "gear.skyward_vestments",
+      "gear.skyward_pendant"
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "stats": {
+          "sp_power": 120
+        }
+      },
+      {
+        "pieces": 3,
+        "stats": {
+          "hp": 1400
+        },
+        "effect": {
+          "kind": "cooldown_reduction",
+          "description": "Technique cooldowns −1 at battle start.",
+          "value": 1
+        }
+      }
+    ],
+    "source_hint": "Drops throughout the Celestial Mountains; the weapon can also be forged."
+  },
+  {
+    "id": "set.stormcall",
+    "name": "Stormcall Set",
+    "description": "Armour tempered in the Thunderclap Wastes.",
+    "name_cn": "唤雷套装",
+    "pieces": [
+      "gear.stormcall_spear",
+      "gear.stormcall_helm",
+      "gear.stormcall_armor"
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "stats": {
+          "elem_dmg.metal": 12
+        }
+      },
+      {
+        "pieces": 3,
+        "stats": {
+          "hp": 1800
+        },
+        "effect": {
+          "kind": "on_hit_apply",
+          "description": "Hits have a 10% chance to Stun.",
+          "status": "status.stun",
+          "chance": 0.1
+        }
+      }
+    ],
+    "source_hint": "Drops throughout the Thunderclap Wastes; the weapon can also be forged."
+  },
+  {
+    "id": "set.starborn",
+    "name": "Starborn Set",
+    "description": "Regalia of the desert kingdom that worshipped the falling stars.",
+    "name_cn": "星生套装",
+    "pieces": [
+      "gear.starborn_fan",
+      "gear.starborn_robe",
+      "gear.starborn_ring"
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "stats": {
+          "crit": 5
+        }
+      },
+      {
+        "pieces": 3,
+        "stats": {
+          "hp": 2200
+        },
+        "effect": {
+          "kind": "shield_on_battle_start",
+          "description": "Start battle with a shield of 12% max HP.",
+          "value": 12
+        }
+      }
+    ],
+    "source_hint": "Drops throughout the Starfall Desert; the weapon can also be forged."
+  },
+  {
+    "id": "set.jadeclaw",
+    "name": "Jadeclaw Set",
+    "description": "Arms of the White Tiger Sovereign's guard.",
+    "name_cn": "玉爪套装",
+    "pieces": [
+      "gear.jadeclaw_sword",
+      "gear.jadeclaw_boots",
+      "gear.jadeclaw_ring"
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "stats": {
+          "atk": 300
+        }
+      },
+      {
+        "pieces": 3,
+        "stats": {
+          "hp": 2600
+        },
+        "effect": {
+          "kind": "on_crit_apply",
+          "description": "Critical hits cause Bleeding.",
+          "status": "status.bleeding",
+          "chance": 0.5
+        }
+      }
+    ],
+    "source_hint": "Drops throughout the Jade Immortal Realm; the weapon can also be forged."
+  },
+  {
+    "id": "set.emperors_regalia",
+    "name": "Emperor's Regalia",
+    "description": "The regalia of the Immortal Emperors.",
+    "name_cn": "帝之仪",
+    "pieces": [
+      "gear.emperor_saber",
+      "gear.emperor_necklace",
+      "gear.emperor_boots"
+    ],
+    "bonuses": [
+      {
+        "pieces": 2,
+        "stats": {
+          "atk": 500,
+          "hp": 2000
+        }
+      },
+      {
+        "pieces": 3,
+        "stats": {
+          "hp": 3000
+        },
+        "effect": {
+          "kind": "heal_on_turn",
+          "description": "Heal 4% max HP each turn.",
+          "value": 4
+        }
+      }
+    ],
+    "source_hint": "Drops throughout the Throne of the Immortal Emperor; the weapon can also be forged."
+  }
+]

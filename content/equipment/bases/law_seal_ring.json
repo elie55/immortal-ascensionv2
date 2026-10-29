@@ -1,0 +1,55 @@
+[
+  {
+    "id": "gear.law_seal_ring",
+    "name": "Law-Seal Ring",
+    "description": "A divine treasure of the Hall of Ten Thousand Laws.",
+    "name_cn": "律印戒",
+    "slot": "ring",
+    "main_value": 6,
+    "rarity_range": [
+      "divine",
+      "divine"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": true,
+    "special_effects": [
+      {
+        "kind": "cooldown_reduction",
+        "description": "Technique cooldowns −1 every 3rd turn.",
+        "value": 1
+      },
+      {
+        "kind": "on_crit_apply",
+        "description": "Critical hits Silence the target.",
+        "status": "status.silence",
+        "chance": 0.3
+      }
+    ],
+    "requirements": {
+      "realm": "realm.heavenly_immortal"
+    },
+    "signature_affix": "crit",
+    "rarities": {
+      "divine": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/ring/law_seal_ring_divine.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a heavy golden ring with a tiny turning law-wheel set in its face, prismatic dragon-pearl light, azure dragon motifs, rainbow halo, overwhelming divine aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    }
+  }
+]

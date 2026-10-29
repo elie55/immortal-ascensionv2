@@ -621,22 +621,25 @@
   {
     "id": "dungeon.abyss_of_the_nine_heavens",
     "name": "Abyss of the Nine Heavens",
-    "description": "A mega dungeon beneath the sea of clouds. Bring Dao Companions. The only known source of Divine equipment.",
+    "description": "A mega dungeon beneath the sea of clouds. Bring Dao Companions. The first of the five Divine-bearing mega dungeons.",
     "name_cn": "九天之渊",
     "kind": "mega",
     "entry": {
       "realm": {
-        "id": "realm.core_formation",
-        "stage": 1
+        "id": "realm.spirit_severing",
+        "stage": 5
       },
-      "rank": "rank.inner_disciple",
+      "rank": "rank.core_disciple",
+      "regions": [
+        "region.nine_heavens"
+      ],
       "energy_cost": 40,
       "party": {
         "companions_allowed": true,
         "max_companions": 2
       }
     },
-    "rec_cp": 18000,
+    "rec_cp": 158000,
     "modifiers": [],
     "rewards": {
       "per_wave": "loot.dungeon.abyss_wave",
@@ -657,29 +660,29 @@
     "waves": [
       {
         "enemies": [
-          "enemy.abyss_spawn",
-          "enemy.abyss_spawn",
-          "enemy.abyss_spawn"
+          "enemy.cloud_jellyfish",
+          "enemy.cloud_jellyfish",
+          "enemy.cloud_jellyfish"
         ]
       },
       {
         "enemies": [
-          "enemy.thunder_wisp",
-          "enemy.abyss_spawn",
-          "enemy.thunder_wisp"
+          "enemy.heaven_eagle",
+          "enemy.abyss_cultist",
+          "enemy.heaven_eagle"
         ]
       },
       {
         "enemies": [
-          "boss.tower_warden"
+          "boss.star_palace_regent"
         ]
       },
       {
         "enemies": [
-          "enemy.abyss_spawn",
-          "enemy.abyss_spawn",
-          "enemy.abyss_spawn",
-          "enemy.abyss_spawn"
+          "enemy.abyss_cultist",
+          "enemy.abyss_cultist",
+          "enemy.fallen_immortal",
+          "enemy.fallen_immortal"
         ]
       },
       {

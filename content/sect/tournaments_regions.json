@@ -1,0 +1,140 @@
+[
+  {
+    "id": "tournament.inner_sect",
+    "name": "Inner Sect Tournament",
+    "description": "Four rounds among the Inner Disciples. Win to become a Core Disciple.",
+    "name_cn": "核心大比",
+    "entry": {
+      "rank": "rank.inner_disciple",
+      "sect_fame": 4000,
+      "realm": {
+        "id": "realm.core_formation",
+        "stage": 1
+      }
+    },
+    "rounds": [
+      {
+        "opponent": "npc.lu_feiyan",
+        "cp": 2600,
+        "rewards": {
+          "spirit_stones": 1500
+        }
+      },
+      {
+        "opponent": "npc.su_wanqing",
+        "cp": 2900,
+        "rewards": {
+          "spirit_stones": 2000
+        }
+      },
+      {
+        "opponent": "npc.han_jinghong",
+        "cp": 3400,
+        "rewards": {
+          "spirit_stones": 2500,
+          "items": [
+            {
+              "id": "mat.refining_stone",
+              "qty": 3
+            }
+          ]
+        }
+      },
+      {
+        "opponent": "npc.mo_lianjue",
+        "cp": 3900,
+        "rewards": {
+          "spirit_stones": 3000
+        }
+      }
+    ],
+    "champion_rewards": {
+      "spirit_stones": 12000,
+      "sect_fame": 1500,
+      "items": [
+        {
+          "id": "mat.awakening_crystal",
+          "qty": 1
+        },
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 2
+        }
+      ]
+    },
+    "loss": {
+      "sect_fame": -400
+    },
+    "reentry": {
+      "sect_fame_required": 4000
+    },
+    "repeatable": true
+  },
+  {
+    "id": "tournament.core_sect",
+    "name": "Core Sect Tournament",
+    "description": "The core disciples' grand contest. The champion becomes a Direct Disciple of an elder.",
+    "name_cn": "亲传大比",
+    "entry": {
+      "rank": "rank.core_disciple",
+      "sect_fame": 9000,
+      "realm": {
+        "id": "realm.nascent_soul",
+        "stage": 1
+      }
+    },
+    "rounds": [
+      {
+        "opponent": "npc.shen_qingxue",
+        "cp": 9000,
+        "rewards": {
+          "spirit_stones": 6000
+        }
+      },
+      {
+        "opponent": "npc.han_jinghong",
+        "cp": 10500,
+        "rewards": {
+          "spirit_stones": 8000
+        }
+      },
+      {
+        "opponent": "npc.gu_xuanming",
+        "cp": 12500,
+        "rewards": {
+          "spirit_stones": 10000,
+          "items": [
+            {
+              "id": "mat.awakening_crystal",
+              "qty": 1
+            }
+          ]
+        }
+      },
+      {
+        "opponent": "npc.bai_lingshuang",
+        "cp": 14000,
+        "rewards": {
+          "spirit_stones": 12000
+        }
+      }
+    ],
+    "champion_rewards": {
+      "spirit_stones": 50000,
+      "sect_fame": 4000,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 5
+        }
+      ]
+    },
+    "loss": {
+      "sect_fame": -800
+    },
+    "reentry": {
+      "sect_fame_required": 9000
+    },
+    "repeatable": true
+  }
+]

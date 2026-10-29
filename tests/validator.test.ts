@@ -173,7 +173,12 @@ test("blueprint and recipe must point at each other", () => {
 });
 
 test("strict mode turns coverage shortfalls into errors", () => {
-  const dir = scenario("content/meta/content_targets.json", (d) => { d.strict = true; });
+  const dir = scenario("content/meta/content_targets.json", (d) => { d.strict = true; d.targets.regions = 99; });
   const { rules } = rulesOf(dir);
-  assert.ok(rules.has("content-target") && rules.has("rarity-coverage"));
+  assert.ok(rules.has("content-target"));
+});
+
+test("every slot can roll every rarity in the shipped database", () => {
+  const dir = scenario("content/meta/content_targets.json", (d) => { d.strict = true; });
+  assert.ok(!rulesOf(dir).rules.has("rarity-coverage"));
 });

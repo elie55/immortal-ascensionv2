@@ -1,0 +1,445 @@
+[
+  {
+    "id": "node.sunken_dragon_sea.entry",
+    "name": "Sunken Dragon Sea Border",
+    "description": "Border of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.gathering",
+      "node.sunken_dragon_sea.outskirts"
+    ],
+    "rec_cp": 83124,
+    "first_clear": {
+      "spirit_stones": 1500
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.coral_naga"
+      ],
+      [
+        "enemy.bone_dragon_spirit",
+        "enemy.coral_naga"
+      ]
+    ]
+  },
+  {
+    "id": "node.sunken_dragon_sea.gathering",
+    "name": "Sunken Dragon Sea Gathering Grounds",
+    "description": "Gathering Grounds of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.entry",
+      "node.sunken_dragon_sea.west_path",
+      "node.sunken_dragon_sea.cache"
+    ],
+    "rec_cp": 95094,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 10,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.sea_jade_kelp",
+          "qty": 3
+        },
+        {
+          "id": "mat.dragonbone_ore",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.sunken_dragon_sea.outskirts",
+    "name": "Sunken Dragon Sea Outskirts",
+    "description": "Outskirts of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.entry",
+      "node.sunken_dragon_sea.cache",
+      "node.sunken_dragon_sea.east_path"
+    ],
+    "rec_cp": 89774,
+    "first_clear": {
+      "spirit_stones": 1500
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.abyssal_angler",
+        "enemy.bone_dragon_spirit"
+      ],
+      [
+        "enemy.abyssal_angler",
+        "enemy.pirate_cultivator"
+      ]
+    ]
+  },
+  {
+    "id": "node.sunken_dragon_sea.west_path",
+    "name": "Sunken Dragon Sea Western Trail",
+    "description": "Western Trail of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.gathering",
+      "node.sunken_dragon_sea.lair"
+    ],
+    "rec_cp": 93099,
+    "first_clear": {
+      "spirit_stones": 1500
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.bone_dragon_spirit",
+        "enemy.coral_naga"
+      ],
+      [
+        "enemy.bone_dragon_spirit",
+        "enemy.bone_dragon_spirit"
+      ]
+    ]
+  },
+  {
+    "id": "node.sunken_dragon_sea.cache",
+    "name": "Sunken Dragon Sea Hidden Cache",
+    "description": "Hidden Cache of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.gathering",
+      "node.sunken_dragon_sea.outskirts",
+      "node.sunken_dragon_sea.crossroads"
+    ],
+    "rec_cp": 106066,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 10,
+    "chest": "loot.chest.sunken_dragon_sea"
+  },
+  {
+    "id": "node.sunken_dragon_sea.east_path",
+    "name": "Sunken Dragon Sea Eastern Trail",
+    "description": "Eastern Trail of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.outskirts",
+      "node.sunken_dragon_sea.ridge"
+    ],
+    "rec_cp": 99749,
+    "first_clear": {
+      "spirit_stones": 1500
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.abyssal_angler",
+        "enemy.pirate_cultivator"
+      ],
+      [
+        "enemy.coral_naga",
+        "enemy.abyssal_angler"
+      ]
+    ]
+  },
+  {
+    "id": "node.sunken_dragon_sea.lair",
+    "name": "Sunken Dragon Sea Lair",
+    "description": "Lair of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.west_path",
+      "node.sunken_dragon_sea.deep_path"
+    ],
+    "rec_cp": 195840,
+    "first_clear": {
+      "spirit_stones": 4000,
+      "items": [
+        {
+          "id": "mat.dragon_pearl",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.tide_kraken"
+      ]
+    ]
+  },
+  {
+    "id": "node.sunken_dragon_sea.crossroads",
+    "name": "Sunken Dragon Sea Crossroads",
+    "description": "Crossroads of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.cache",
+      "node.sunken_dragon_sea.deep_path",
+      "node.sunken_dragon_sea.sanctum"
+    ],
+    "rec_cp": 117039,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 10,
+    "event": "event.dragon_whisper"
+  },
+  {
+    "id": "node.sunken_dragon_sea.ridge",
+    "name": "Sunken Dragon Sea Ridge",
+    "description": "Ridge of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.east_path",
+      "node.sunken_dragon_sea.sanctum"
+    ],
+    "rec_cp": 109724,
+    "first_clear": {
+      "spirit_stones": 1500
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.coral_naga",
+        "enemy.abyssal_angler"
+      ],
+      [
+        "enemy.pirate_cultivator"
+      ]
+    ]
+  },
+  {
+    "id": "node.sunken_dragon_sea.deep_path",
+    "name": "Sunken Dragon Sea Deep Path",
+    "description": "Deep Path of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.lair",
+      "node.sunken_dragon_sea.crossroads",
+      "node.sunken_dragon_sea.den"
+    ],
+    "rec_cp": 113049,
+    "first_clear": {
+      "spirit_stones": 1500
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.abyssal_angler",
+        "enemy.bone_dragon_spirit"
+      ],
+      [
+        "enemy.abyssal_angler",
+        "enemy.pirate_cultivator"
+      ]
+    ]
+  },
+  {
+    "id": "node.sunken_dragon_sea.sanctum",
+    "name": "Sunken Dragon Sea Sanctum",
+    "description": "Sanctum of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "cultivation",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.crossroads",
+      "node.sunken_dragon_sea.ridge",
+      "node.sunken_dragon_sea.hidden_grove",
+      "node.sunken_dragon_sea.approach"
+    ],
+    "rec_cp": 128011,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 10,
+    "cultivation": {
+      "qi_mult": 1.9,
+      "minutes": 30,
+      "energy_cost": 6
+    }
+  },
+  {
+    "id": "node.sunken_dragon_sea.den",
+    "name": "Sunken Dragon Sea Den",
+    "description": "Den of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.deep_path",
+      "node.sunken_dragon_sea.throne"
+    ],
+    "rec_cp": 227427,
+    "first_clear": {
+      "spirit_stones": 4000,
+      "items": [
+        {
+          "id": "mat.dragon_pearl",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.coral_naga",
+        "enemy.abyssal_angler"
+      ],
+      [
+        "enemy.tide_kraken"
+      ]
+    ]
+  },
+  {
+    "id": "node.sunken_dragon_sea.hidden_grove",
+    "name": "Sunken Dragon Sea Secret Place",
+    "description": "Secret Place of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.sanctum",
+      "node.sunken_dragon_sea.approach"
+    ],
+    "rec_cp": 135326,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 10,
+    "event": "event.dragon_whisper",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.sunken_dragon_sea.approach",
+    "name": "Sunken Dragon Sea Approach",
+    "description": "Approach of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.sanctum",
+      "node.sunken_dragon_sea.hidden_grove",
+      "node.sunken_dragon_sea.throne"
+    ],
+    "rec_cp": 126348,
+    "first_clear": {
+      "spirit_stones": 1500
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.bone_dragon_spirit",
+        "enemy.bone_dragon_spirit"
+      ],
+      [
+        "enemy.abyssal_angler",
+        "enemy.bone_dragon_spirit"
+      ]
+    ]
+  },
+  {
+    "id": "node.sunken_dragon_sea.throne",
+    "name": "Sunken Dragon Sea Throne",
+    "description": "Throne of the Sunken Dragon Sea.",
+    "region": "region.sunken_dragon_sea",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.sunken_dragon_sea.den",
+      "node.sunken_dragon_sea.approach"
+    ],
+    "rec_cp": 544628,
+    "first_clear": {
+      "spirit_stones": 15000,
+      "sect_fame": 400
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.bone_dragon_spirit",
+        "enemy.tide_kraken"
+      ],
+      [
+        "boss.drowned_dragon_lord"
+      ]
+    ]
+  }
+]

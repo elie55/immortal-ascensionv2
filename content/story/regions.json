@@ -1,0 +1,509 @@
+[
+  {
+    "id": "story.regions.blazing_mountain_arrival",
+    "name": "Arrival: Blazing Mountain",
+    "description": "A volcano the caravans must cross. Salamanders swim in its lava; the Molten Ape King rules its caldera.",
+    "name_cn": "炎山",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.blazing_mountain"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "A volcano the caravans must cross. Salamanders swim in its lava; the Molten Ape King rules its caldera."
+      },
+      {
+        "speaker": "npc.old_kang",
+        "text": "Thirty years I've crossed this mountain. It still wants a cart every trip."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_blazing_mountain_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a volcanic mountain of black rock and rivers of lava under an orange sky, ash drifting, fire-lit caravan road. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.regions.frozen_lotus_valley_arrival",
+    "name": "Arrival: Frozen Lotus Valley",
+    "description": "Bai Lingshuang's old training ground. Ice lotuses bloom once a decade; a Frost Wyrm sleeps beneath the lake.",
+    "name_cn": "冰莲谷",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.frozen_lotus_valley"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "Bai Lingshuang's old training ground. Ice lotuses bloom once a decade; a Frost Wyrm sleeps beneath the lake."
+      },
+      {
+        "speaker": "npc.hermit_shuang",
+        "text": "You walk like her. The silver-haired one. Has she learned to smile yet?"
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_frozen_lotus_valley_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a snowy valley with a frozen lake, glowing blue ice lotuses and pale mountains under a cold aurora. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.regions.ancient_sword_tomb_arrival",
+    "name": "Arrival: Ancient Sword Tomb",
+    "description": "Where ten thousand swordsmen were buried with their blades. The swords remember how to fight.",
+    "name_cn": "古剑冢",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.ancient_sword_tomb"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "Where ten thousand swordsmen were buried with their blades. The swords remember how to fight."
+      },
+      {
+        "speaker": "npc.blind_swordsmith_yu",
+        "text": "Every blade here is singing. Most of them are singing about you."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_ancient_sword_tomb_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a vast valley of ten thousand rusted swords planted in grey earth, a ruined tomb gate, sword qi crackling in the wind. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.regions.demon_territory_arrival",
+    "name": "Arrival: Demon Territory",
+    "description": "Beyond the Black Pass lies the demon sects' land. The moon is red here, and so are the rivers.",
+    "name_cn": "魔域",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.demon_territory"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "Beyond the Black Pass lies the demon sects' land. The moon is red here, and so are the rivers."
+      },
+      {
+        "speaker": "npc.defector_lian",
+        "text": "Don't look at me like that. I'm here because I said no once."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_demon_territory_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a blood-red wasteland of black spires and burning rivers under a crimson moon, demonic banners on bone towers. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.regions.celestial_mountains_arrival",
+    "name": "Arrival: Celestial Mountains",
+    "description": "Mountains so high the air is Qi. Thunder tigers prowl the peaks; the Celestial Guardian keeps the stair to heaven.",
+    "name_cn": "天穹山",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.celestial_mountains"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "Mountains so high the air is Qi. Thunder tigers prowl the peaks; the Celestial Guardian keeps the stair to heaven."
+      },
+      {
+        "speaker": "npc.crane_boy_ming",
+        "text": "You're the third person this century to make it up here. The other two were rude."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_celestial_mountains_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: impossibly tall white peaks piercing golden clouds, celestial pavilions, thunder cranes and sacred pines. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.regions.nine_heavens_arrival",
+    "name": "Arrival: Nine Heavens",
+    "description": "The lowest of the nine heavenly layers. Below the clouds lies the Abyss; above, the palaces of forgotten gods.",
+    "name_cn": "九天",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.nine_heavens"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "The lowest of the nine heavenly layers. Below the clouds lies the Abyss; above, the palaces of forgotten gods."
+      },
+      {
+        "speaker": "npc.star_reader_wu",
+        "text": "The stars say you are late. The stars are always saying something."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_nine_heavens_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: nine layers of floating cloud continents under a starry sky, waterfalls falling into nothing, ruined heavenly palaces. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.regions.thunderclap_wastes_arrival",
+    "name": "Arrival: Thunderclap Wastes",
+    "description": "Where ancient tribulations struck so often the earth turned to glass. Storm rocs nest in the monoliths.",
+    "name_cn": "雷鸣荒原",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.thunderclap_wastes"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "Where ancient tribulations struck so often the earth turned to glass. Storm rocs nest in the monoliths."
+      },
+      {
+        "speaker": "npc.storm_widow_jin",
+        "text": "Lightning doesn't hate you. It just doesn't care. Remember that."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_thunderclap_wastes_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a shattered plain of black glass under an endless violet thunderstorm, lightning-struck monoliths and charred trees. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.regions.sunken_dragon_sea_arrival",
+    "name": "Arrival: Sunken Dragon Sea",
+    "description": "An inland sea where the dragons of old came to die. Their bones are islands; their palace lies below.",
+    "name_cn": "沉龙海",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.sunken_dragon_sea"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "An inland sea where the dragons of old came to die. Their bones are islands; their palace lies below."
+      },
+      {
+        "speaker": "npc.fisherwoman_ah_hai",
+        "text": "Don't eat anything that glows. Unless it's very tasty."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_sunken_dragon_sea_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a vast turquoise sea with the bones of ancient dragons rising from the water, coral palaces below, whirlpools and sea mist. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.regions.starfall_desert_arrival",
+    "name": "Arrival: Starfall Desert",
+    "description": "Stars fall here nightly. Sand dragons swim beneath the dunes; the Starfall Pharaoh sleeps in his crater.",
+    "name_cn": "星陨沙海",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.starfall_desert"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "Stars fall here nightly. Sand dragons swim beneath the dunes; the Starfall Pharaoh sleeps in his crater."
+      },
+      {
+        "speaker": "npc.caravan_princess_zahra",
+        "text": "Every star that falls here is someone's prayer. Some of them are mine."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_starfall_desert_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: an endless desert of silver sand under a sky of falling stars, crater oases and half-buried star-metal ruins. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.regions.gate_of_ascension_arrival",
+    "name": "Arrival: Gate of Ascension",
+    "description": "The gate through which mortals ascend. Its guardians are ascended immortals who did not like what they found.",
+    "name_cn": "飞升门",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.gate_of_ascension"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "The gate through which mortals ascend. Its guardians are ascended immortals who did not like what they found."
+      },
+      {
+        "speaker": "npc.immortal_wanderer_qiu",
+        "text": "It's not better up there. It's just higher."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_gate_of_ascension_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a colossal golden gate floating in white clouds at the edge of the mortal world, phoenix flames, broken chains and endless light beyond. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.regions.jade_immortal_realm_arrival",
+    "name": "Arrival: Jade Immortal Realm",
+    "description": "The first realm beyond the gate. Beautiful, peaceful, and patrolled by those who decide who may stay.",
+    "name_cn": "玉仙境",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.jade_immortal_realm"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "The first realm beyond the gate. Beautiful, peaceful, and patrolled by those who decide who may stay."
+      },
+      {
+        "speaker": "npc.peach_keeper_mei",
+        "text": "You may look at the peaches. You may not touch the peaches. I count them."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_jade_immortal_realm_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a serene realm of floating jade islands, waterfalls flowing upward, immortal gardens and white tigers resting under peach trees. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.regions.golden_palace_of_laws_arrival",
+    "name": "Arrival: Golden Palace of Laws",
+    "description": "Where the laws of heaven are written and enforced. Nine-tailed foxes slip between its halls, breaking the rules.",
+    "name_cn": "金律天宫",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.golden_palace_of_laws"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "Where the laws of heaven are written and enforced. Nine-tailed foxes slip between its halls, breaking the rules."
+      },
+      {
+        "speaker": "npc.clerk_fu",
+        "text": "Please don't break anything. I'd have to write it down. In triplicate."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_golden_palace_of_laws_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: an enormous golden palace of floating halls connected by bridges of light, giant law-wheels turning in the sky. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "story.regions.throne_of_the_immortal_emperor_arrival",
+    "name": "Arrival: Throne of the Immortal Emperor",
+    "description": "The apex of heaven. The throne is empty; the trial to sit on it is not.",
+    "name_cn": "仙帝座",
+    "chapter": "regions",
+    "trigger": {
+      "on": "region_enter",
+      "region": "region.throne_of_the_immortal_emperor"
+    },
+    "lines": [
+      {
+        "speaker": "narration",
+        "text": "The apex of heaven. The throne is empty; the trial to sit on it is not."
+      },
+      {
+        "speaker": "npc.throne_steward_lao",
+        "text": "Ten thousand years. Do take your time."
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/regions_throne_of_the_immortal_emperor_arrival.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen visual novel background illustration: a throne of starlight above the clouds of all realms, an azure dragon coiled around it, the five elements orbiting as rings of light. Cinematic, no characters in the foreground, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

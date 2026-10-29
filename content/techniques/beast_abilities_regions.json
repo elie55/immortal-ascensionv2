@@ -1,0 +1,1154 @@
+[
+  {
+    "id": "btech.ember_salamander_pup.flame_burst",
+    "beast": "beast.ember_salamander_pup",
+    "name": "Ember Salamander's Flame Burst",
+    "description": "Ember Salamander unleashes a flame burst.",
+    "kind": "active",
+    "element": "elem.fire",
+    "power": 95,
+    "applies": [
+      {
+        "status": "status.burning",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/ember_salamander_pup_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Ember Salamander using Flame Burst, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.ember_salamander_pup.fire_affinity",
+    "beast": "beast.ember_salamander_pup",
+    "name": "Fire Affinity",
+    "description": "Fire damage +8%.",
+    "kind": "passive",
+    "element": "elem.fire",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.fire": 8
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/ember_salamander_pup_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Ember Salamander's fire affinity, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.azure_wolf.steel_talon",
+    "beast": "beast.azure_wolf",
+    "name": "Azure Wolf's Steel Talon",
+    "description": "Azure Wolf unleashes a steel talon.",
+    "kind": "active",
+    "element": "elem.metal",
+    "power": 95,
+    "applies": [
+      {
+        "status": "status.bleeding",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/azure_wolf_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Azure Wolf using Steel Talon, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.azure_wolf.metal_affinity",
+    "beast": "beast.azure_wolf",
+    "name": "Metal Affinity",
+    "description": "Metal damage +8%.",
+    "kind": "passive",
+    "element": "elem.metal",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.metal": 8
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/azure_wolf_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Azure Wolf's metal affinity, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.snow_crane.tidal_pulse",
+    "beast": "beast.snow_crane",
+    "name": "Snow Crane's Tidal Pulse",
+    "description": "Snow Crane unleashes a tidal pulse.",
+    "kind": "active",
+    "element": "elem.water",
+    "power": 110,
+    "applies": [
+      {
+        "status": "status.slow",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/snow_crane_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Snow Crane using Tidal Pulse, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.snow_crane.water_affinity",
+    "beast": "beast.snow_crane",
+    "name": "Water Affinity",
+    "description": "Water damage +10%.",
+    "kind": "passive",
+    "element": "elem.water",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.water": 10
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/snow_crane_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Snow Crane's water affinity, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.frost_otter.tidal_pulse",
+    "beast": "beast.frost_otter",
+    "name": "Frost Otter's Tidal Pulse",
+    "description": "Frost Otter unleashes a tidal pulse.",
+    "kind": "active",
+    "element": "elem.water",
+    "power": 95,
+    "applies": [
+      {
+        "status": "status.slow",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/frost_otter_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Frost Otter using Tidal Pulse, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.frost_otter.water_affinity",
+    "beast": "beast.frost_otter",
+    "name": "Water Affinity",
+    "description": "Water damage +8%.",
+    "kind": "passive",
+    "element": "elem.water",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.water": 8
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/frost_otter_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Frost Otter's water affinity, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.jade_serpent.thorn_lash",
+    "beast": "beast.jade_serpent",
+    "name": "Jade Serpent's Thorn Lash",
+    "description": "Jade Serpent unleashes a thorn lash.",
+    "kind": "active",
+    "element": "elem.wood",
+    "power": 110,
+    "applies": [
+      {
+        "status": "status.poison",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/jade_serpent_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Jade Serpent using Thorn Lash, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.jade_serpent.wood_affinity",
+    "beast": "beast.jade_serpent",
+    "name": "Wood Affinity",
+    "description": "Wood damage +10%.",
+    "kind": "passive",
+    "element": "elem.wood",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.wood": 10
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/jade_serpent_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Jade Serpent's wood affinity, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.blood_moon_wolf.flame_burst",
+    "beast": "beast.blood_moon_wolf",
+    "name": "Blood-Moon Wolf's Flame Burst",
+    "description": "Blood-Moon Wolf unleashes a flame burst.",
+    "kind": "active",
+    "element": "elem.fire",
+    "power": 110,
+    "applies": [
+      {
+        "status": "status.burning",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/blood_moon_wolf_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Blood-Moon Wolf using Flame Burst, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.blood_moon_wolf.fire_affinity",
+    "beast": "beast.blood_moon_wolf",
+    "name": "Fire Affinity",
+    "description": "Fire damage +10%.",
+    "kind": "passive",
+    "element": "elem.fire",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.fire": 10
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/blood_moon_wolf_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Blood-Moon Wolf's fire affinity, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.ghost_lantern_moth.flame_burst",
+    "beast": "beast.ghost_lantern_moth",
+    "name": "Ghost Lantern Moth's Flame Burst",
+    "description": "Ghost Lantern Moth unleashes a flame burst.",
+    "kind": "active",
+    "element": "elem.fire",
+    "power": 110,
+    "applies": [
+      {
+        "status": "status.burning",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/ghost_lantern_moth_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Ghost Lantern Moth using Flame Burst, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.ghost_lantern_moth.fire_affinity",
+    "beast": "beast.ghost_lantern_moth",
+    "name": "Fire Affinity",
+    "description": "Fire damage +10%.",
+    "kind": "passive",
+    "element": "elem.fire",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.fire": 10
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/ghost_lantern_moth_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Ghost Lantern Moth's fire affinity, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.thunder_tiger.steel_talon",
+    "beast": "beast.thunder_tiger",
+    "name": "Thunder Tiger's Steel Talon",
+    "description": "Thunder Tiger unleashes a steel talon.",
+    "kind": "active",
+    "element": "elem.metal",
+    "power": 125,
+    "applies": [
+      {
+        "status": "status.bleeding",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/thunder_tiger_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Thunder Tiger using Steel Talon, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.thunder_tiger.metal_affinity",
+    "beast": "beast.thunder_tiger",
+    "name": "Metal Affinity",
+    "description": "Metal damage +12%.",
+    "kind": "passive",
+    "element": "elem.metal",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.metal": 12
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/thunder_tiger_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Thunder Tiger's metal affinity, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.cloud_qilin.stone_rampart",
+    "beast": "beast.cloud_qilin",
+    "name": "Cloud Qilin's Stone Rampart",
+    "description": "Cloud Qilin unleashes a stone rampart.",
+    "kind": "active",
+    "element": "elem.earth",
+    "power": 0,
+    "applies": [
+      {
+        "status": "status.shield",
+        "chance": 1,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/cloud_qilin_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Cloud Qilin using Stone Rampart, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.cloud_qilin.earth_affinity",
+    "beast": "beast.cloud_qilin",
+    "name": "Earth Affinity",
+    "description": "Earth damage +12%.",
+    "kind": "passive",
+    "element": "elem.earth",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.earth": 12
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/cloud_qilin_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Cloud Qilin's earth affinity, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.storm_roc.steel_talon",
+    "beast": "beast.storm_roc",
+    "name": "Storm Roc's Steel Talon",
+    "description": "Storm Roc unleashes a steel talon.",
+    "kind": "active",
+    "element": "elem.metal",
+    "power": 125,
+    "applies": [
+      {
+        "status": "status.bleeding",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/storm_roc_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Storm Roc using Steel Talon, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.storm_roc.metal_affinity",
+    "beast": "beast.storm_roc",
+    "name": "Metal Affinity",
+    "description": "Metal damage +12%.",
+    "kind": "passive",
+    "element": "elem.metal",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.metal": 12
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/storm_roc_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Storm Roc's metal affinity, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.lightning_eel.tidal_pulse",
+    "beast": "beast.lightning_eel",
+    "name": "Lightning Eel's Tidal Pulse",
+    "description": "Lightning Eel unleashes a tidal pulse.",
+    "kind": "active",
+    "element": "elem.water",
+    "power": 125,
+    "applies": [
+      {
+        "status": "status.slow",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/lightning_eel_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Lightning Eel using Tidal Pulse, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.lightning_eel.water_affinity",
+    "beast": "beast.lightning_eel",
+    "name": "Water Affinity",
+    "description": "Water damage +12%.",
+    "kind": "passive",
+    "element": "elem.water",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.water": 12
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/lightning_eel_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Lightning Eel's water affinity, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.black_tortoise.tidal_pulse",
+    "beast": "beast.black_tortoise",
+    "name": "Black Tortoise's Tidal Pulse",
+    "description": "Black Tortoise unleashes a tidal pulse.",
+    "kind": "active",
+    "element": "elem.water",
+    "power": 140,
+    "applies": [
+      {
+        "status": "status.slow",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/black_tortoise_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Black Tortoise using Tidal Pulse, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.black_tortoise.water_affinity",
+    "beast": "beast.black_tortoise",
+    "name": "Water Affinity",
+    "description": "Water damage +14%.",
+    "kind": "passive",
+    "element": "elem.water",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.water": 14
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/black_tortoise_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Black Tortoise's water affinity, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.sand_dragon.stone_rampart",
+    "beast": "beast.sand_dragon",
+    "name": "Sand Dragon's Stone Rampart",
+    "description": "Sand Dragon unleashes a stone rampart.",
+    "kind": "active",
+    "element": "elem.earth",
+    "power": 0,
+    "applies": [
+      {
+        "status": "status.shield",
+        "chance": 1,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/sand_dragon_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Sand Dragon using Stone Rampart, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.sand_dragon.earth_affinity",
+    "beast": "beast.sand_dragon",
+    "name": "Earth Affinity",
+    "description": "Earth damage +14%.",
+    "kind": "passive",
+    "element": "elem.earth",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.earth": 14
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/sand_dragon_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Sand Dragon's earth affinity, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.starlight_deer.thorn_lash",
+    "beast": "beast.starlight_deer",
+    "name": "Starlight Deer's Thorn Lash",
+    "description": "Starlight Deer unleashes a thorn lash.",
+    "kind": "active",
+    "element": "elem.wood",
+    "power": 140,
+    "applies": [
+      {
+        "status": "status.poison",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/starlight_deer_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Starlight Deer using Thorn Lash, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.starlight_deer.wood_affinity",
+    "beast": "beast.starlight_deer",
+    "name": "Wood Affinity",
+    "description": "Wood damage +14%.",
+    "kind": "passive",
+    "element": "elem.wood",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.wood": 14
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/starlight_deer_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Starlight Deer's wood affinity, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.vermilion_bird.flame_burst",
+    "beast": "beast.vermilion_bird",
+    "name": "Vermilion Bird's Flame Burst",
+    "description": "Vermilion Bird unleashes a flame burst.",
+    "kind": "active",
+    "element": "elem.fire",
+    "power": 140,
+    "applies": [
+      {
+        "status": "status.burning",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/vermilion_bird_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Vermilion Bird using Flame Burst, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.vermilion_bird.fire_affinity",
+    "beast": "beast.vermilion_bird",
+    "name": "Fire Affinity",
+    "description": "Fire damage +14%.",
+    "kind": "passive",
+    "element": "elem.fire",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.fire": 14
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/vermilion_bird_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Vermilion Bird's fire affinity, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.white_tiger.steel_talon",
+    "beast": "beast.white_tiger",
+    "name": "White Tiger's Steel Talon",
+    "description": "White Tiger unleashes a steel talon.",
+    "kind": "active",
+    "element": "elem.metal",
+    "power": 155,
+    "applies": [
+      {
+        "status": "status.bleeding",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/white_tiger_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: White Tiger using Steel Talon, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.white_tiger.metal_affinity",
+    "beast": "beast.white_tiger",
+    "name": "Metal Affinity",
+    "description": "Metal damage +16%.",
+    "kind": "passive",
+    "element": "elem.metal",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.metal": 16
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/white_tiger_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of White Tiger's metal affinity, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.nine_tailed_fox.flame_burst",
+    "beast": "beast.nine_tailed_fox",
+    "name": "Nine-Tailed Fox's Flame Burst",
+    "description": "Nine-Tailed Fox unleashes a flame burst.",
+    "kind": "active",
+    "element": "elem.fire",
+    "power": 155,
+    "applies": [
+      {
+        "status": "status.burning",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/nine_tailed_fox_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Nine-Tailed Fox using Flame Burst, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.nine_tailed_fox.fire_affinity",
+    "beast": "beast.nine_tailed_fox",
+    "name": "Fire Affinity",
+    "description": "Fire damage +16%.",
+    "kind": "passive",
+    "element": "elem.fire",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.fire": 16
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/nine_tailed_fox_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Nine-Tailed Fox's fire affinity, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.azure_dragon.tidal_pulse",
+    "beast": "beast.azure_dragon",
+    "name": "Azure Dragon's Tidal Pulse",
+    "description": "Azure Dragon unleashes a tidal pulse.",
+    "kind": "active",
+    "element": "elem.water",
+    "power": 170,
+    "applies": [
+      {
+        "status": "status.slow",
+        "chance": 0.5,
+        "turns": 2
+      }
+    ],
+    "passive_bonuses": {},
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/azure_dragon_active.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast ability icon: Azure Dragon using Tidal Pulse, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "btech.azure_dragon.water_affinity",
+    "beast": "beast.azure_dragon",
+    "name": "Water Affinity",
+    "description": "Water damage +18%.",
+    "kind": "passive",
+    "element": "elem.water",
+    "power": 0,
+    "applies": [],
+    "passive_bonuses": {
+      "elem_dmg.water": 18
+    },
+    "cooldown": 3,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/beast/azure_dragon_passive.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast passive icon of Azure Dragon's water affinity, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

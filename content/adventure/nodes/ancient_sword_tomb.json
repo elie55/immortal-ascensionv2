@@ -1,0 +1,445 @@
+[
+  {
+    "id": "node.ancient_sword_tomb.entry",
+    "name": "Ancient Sword Tomb Border",
+    "description": "Border of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.gathering",
+      "node.ancient_sword_tomb.outskirts"
+    ],
+    "rec_cp": 2296,
+    "first_clear": {
+      "spirit_stones": 375
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.rusted_sword_spirit"
+      ],
+      [
+        "enemy.sword_qi_wisp",
+        "enemy.rusted_sword_spirit"
+      ]
+    ]
+  },
+  {
+    "id": "node.ancient_sword_tomb.gathering",
+    "name": "Ancient Sword Tomb Gathering Grounds",
+    "description": "Gathering Grounds of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.entry",
+      "node.ancient_sword_tomb.west_path",
+      "node.ancient_sword_tomb.cache"
+    ],
+    "rec_cp": 2627,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 7,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.sword_grass",
+          "qty": 3
+        },
+        {
+          "id": "mat.tomb_iron",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.ancient_sword_tomb.outskirts",
+    "name": "Ancient Sword Tomb Outskirts",
+    "description": "Outskirts of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.entry",
+      "node.ancient_sword_tomb.cache",
+      "node.ancient_sword_tomb.east_path"
+    ],
+    "rec_cp": 2480,
+    "first_clear": {
+      "spirit_stones": 375
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.tomb_guardian_statue",
+        "enemy.sword_qi_wisp"
+      ],
+      [
+        "enemy.tomb_guardian_statue",
+        "enemy.tomb_robber"
+      ]
+    ]
+  },
+  {
+    "id": "node.ancient_sword_tomb.west_path",
+    "name": "Ancient Sword Tomb Western Trail",
+    "description": "Western Trail of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.gathering",
+      "node.ancient_sword_tomb.lair"
+    ],
+    "rec_cp": 2572,
+    "first_clear": {
+      "spirit_stones": 375
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.sword_qi_wisp",
+        "enemy.rusted_sword_spirit"
+      ],
+      [
+        "enemy.sword_qi_wisp",
+        "enemy.sword_qi_wisp"
+      ]
+    ]
+  },
+  {
+    "id": "node.ancient_sword_tomb.cache",
+    "name": "Ancient Sword Tomb Hidden Cache",
+    "description": "Hidden Cache of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.gathering",
+      "node.ancient_sword_tomb.outskirts",
+      "node.ancient_sword_tomb.crossroads"
+    ],
+    "rec_cp": 2930,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 7,
+    "chest": "loot.chest.ancient_sword_tomb"
+  },
+  {
+    "id": "node.ancient_sword_tomb.east_path",
+    "name": "Ancient Sword Tomb Eastern Trail",
+    "description": "Eastern Trail of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.outskirts",
+      "node.ancient_sword_tomb.ridge"
+    ],
+    "rec_cp": 2755,
+    "first_clear": {
+      "spirit_stones": 375
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.tomb_guardian_statue",
+        "enemy.tomb_robber"
+      ],
+      [
+        "enemy.rusted_sword_spirit",
+        "enemy.tomb_guardian_statue"
+      ]
+    ]
+  },
+  {
+    "id": "node.ancient_sword_tomb.lair",
+    "name": "Ancient Sword Tomb Lair",
+    "description": "Lair of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.west_path",
+      "node.ancient_sword_tomb.deep_path"
+    ],
+    "rec_cp": 5409,
+    "first_clear": {
+      "spirit_stones": 1000,
+      "items": [
+        {
+          "id": "mat.sword_intent_crystal",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.headless_general"
+      ]
+    ]
+  },
+  {
+    "id": "node.ancient_sword_tomb.crossroads",
+    "name": "Ancient Sword Tomb Crossroads",
+    "description": "Crossroads of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.cache",
+      "node.ancient_sword_tomb.deep_path",
+      "node.ancient_sword_tomb.sanctum"
+    ],
+    "rec_cp": 3233,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 7,
+    "event": "event.singing_blade"
+  },
+  {
+    "id": "node.ancient_sword_tomb.ridge",
+    "name": "Ancient Sword Tomb Ridge",
+    "description": "Ridge of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.east_path",
+      "node.ancient_sword_tomb.sanctum"
+    ],
+    "rec_cp": 3031,
+    "first_clear": {
+      "spirit_stones": 375
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.rusted_sword_spirit",
+        "enemy.tomb_guardian_statue"
+      ],
+      [
+        "enemy.tomb_robber"
+      ]
+    ]
+  },
+  {
+    "id": "node.ancient_sword_tomb.deep_path",
+    "name": "Ancient Sword Tomb Deep Path",
+    "description": "Deep Path of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.lair",
+      "node.ancient_sword_tomb.crossroads",
+      "node.ancient_sword_tomb.den"
+    ],
+    "rec_cp": 3123,
+    "first_clear": {
+      "spirit_stones": 375
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.tomb_guardian_statue",
+        "enemy.sword_qi_wisp"
+      ],
+      [
+        "enemy.tomb_guardian_statue",
+        "enemy.tomb_robber"
+      ]
+    ]
+  },
+  {
+    "id": "node.ancient_sword_tomb.sanctum",
+    "name": "Ancient Sword Tomb Sanctum",
+    "description": "Sanctum of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "cultivation",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.crossroads",
+      "node.ancient_sword_tomb.ridge",
+      "node.ancient_sword_tomb.hidden_grove",
+      "node.ancient_sword_tomb.approach"
+    ],
+    "rec_cp": 3536,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 7,
+    "cultivation": {
+      "qi_mult": 1.65,
+      "minutes": 30,
+      "energy_cost": 6
+    }
+  },
+  {
+    "id": "node.ancient_sword_tomb.den",
+    "name": "Ancient Sword Tomb Den",
+    "description": "Den of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.deep_path",
+      "node.ancient_sword_tomb.throne"
+    ],
+    "rec_cp": 6282,
+    "first_clear": {
+      "spirit_stones": 1000,
+      "items": [
+        {
+          "id": "mat.sword_intent_crystal",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.rusted_sword_spirit",
+        "enemy.tomb_guardian_statue"
+      ],
+      [
+        "enemy.headless_general"
+      ]
+    ]
+  },
+  {
+    "id": "node.ancient_sword_tomb.hidden_grove",
+    "name": "Ancient Sword Tomb Secret Place",
+    "description": "Secret Place of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.sanctum",
+      "node.ancient_sword_tomb.approach"
+    ],
+    "rec_cp": 3738,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 7,
+    "event": "event.singing_blade",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.ancient_sword_tomb.approach",
+    "name": "Ancient Sword Tomb Approach",
+    "description": "Approach of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.sanctum",
+      "node.ancient_sword_tomb.hidden_grove",
+      "node.ancient_sword_tomb.throne"
+    ],
+    "rec_cp": 3490,
+    "first_clear": {
+      "spirit_stones": 375
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.sword_qi_wisp",
+        "enemy.sword_qi_wisp"
+      ],
+      [
+        "enemy.tomb_guardian_statue",
+        "enemy.sword_qi_wisp"
+      ]
+    ]
+  },
+  {
+    "id": "node.ancient_sword_tomb.throne",
+    "name": "Ancient Sword Tomb Throne",
+    "description": "Throne of the Ancient Sword Tomb.",
+    "region": "region.ancient_sword_tomb",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.ancient_sword_tomb.den",
+      "node.ancient_sword_tomb.approach"
+    ],
+    "rec_cp": 15043,
+    "first_clear": {
+      "spirit_stones": 3750,
+      "sect_fame": 200
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.sword_qi_wisp",
+        "enemy.headless_general"
+      ],
+      [
+        "boss.sword_sovereign_remnant"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,445 @@
+[
+  {
+    "id": "node.celestial_mountains.entry",
+    "name": "Celestial Mountains Border",
+    "description": "Border of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.celestial_mountains.gathering",
+      "node.celestial_mountains.outskirts"
+    ],
+    "rec_cp": 9649,
+    "first_clear": {
+      "spirit_stones": 735
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.thunder_crane"
+      ],
+      [
+        "enemy.celestial_soldier",
+        "enemy.thunder_crane"
+      ]
+    ]
+  },
+  {
+    "id": "node.celestial_mountains.gathering",
+    "name": "Celestial Mountains Gathering Grounds",
+    "description": "Gathering Grounds of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.celestial_mountains.entry",
+      "node.celestial_mountains.west_path",
+      "node.celestial_mountains.cache"
+    ],
+    "rec_cp": 11038,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 8,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.celestial_peach",
+          "qty": 3
+        },
+        {
+          "id": "mat.skystone",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.celestial_mountains.outskirts",
+    "name": "Celestial Mountains Outskirts",
+    "description": "Outskirts of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.celestial_mountains.entry",
+      "node.celestial_mountains.cache",
+      "node.celestial_mountains.east_path"
+    ],
+    "rec_cp": 10421,
+    "first_clear": {
+      "spirit_stones": 735
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.cloud_ape",
+        "enemy.celestial_soldier"
+      ],
+      [
+        "enemy.cloud_ape",
+        "enemy.heaven_seeker"
+      ]
+    ]
+  },
+  {
+    "id": "node.celestial_mountains.west_path",
+    "name": "Celestial Mountains Western Trail",
+    "description": "Western Trail of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.celestial_mountains.gathering",
+      "node.celestial_mountains.lair"
+    ],
+    "rec_cp": 10807,
+    "first_clear": {
+      "spirit_stones": 735
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.celestial_soldier",
+        "enemy.thunder_crane"
+      ],
+      [
+        "enemy.celestial_soldier",
+        "enemy.celestial_soldier"
+      ]
+    ]
+  },
+  {
+    "id": "node.celestial_mountains.cache",
+    "name": "Celestial Mountains Hidden Cache",
+    "description": "Hidden Cache of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.celestial_mountains.gathering",
+      "node.celestial_mountains.outskirts",
+      "node.celestial_mountains.crossroads"
+    ],
+    "rec_cp": 12312,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 8,
+    "chest": "loot.chest.celestial_mountains"
+  },
+  {
+    "id": "node.celestial_mountains.east_path",
+    "name": "Celestial Mountains Eastern Trail",
+    "description": "Eastern Trail of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.celestial_mountains.outskirts",
+      "node.celestial_mountains.ridge"
+    ],
+    "rec_cp": 11579,
+    "first_clear": {
+      "spirit_stones": 735
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.cloud_ape",
+        "enemy.heaven_seeker"
+      ],
+      [
+        "enemy.thunder_crane",
+        "enemy.cloud_ape"
+      ]
+    ]
+  },
+  {
+    "id": "node.celestial_mountains.lair",
+    "name": "Celestial Mountains Lair",
+    "description": "Lair of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.celestial_mountains.west_path",
+      "node.celestial_mountains.deep_path"
+    ],
+    "rec_cp": 22733,
+    "first_clear": {
+      "spirit_stones": 1960,
+      "items": [
+        {
+          "id": "mat.heaven_pine_amber",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.storm_tiger"
+      ]
+    ]
+  },
+  {
+    "id": "node.celestial_mountains.crossroads",
+    "name": "Celestial Mountains Crossroads",
+    "description": "Crossroads of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.celestial_mountains.cache",
+      "node.celestial_mountains.deep_path",
+      "node.celestial_mountains.sanctum"
+    ],
+    "rec_cp": 13586,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 8,
+    "event": "event.stair_of_trials"
+  },
+  {
+    "id": "node.celestial_mountains.ridge",
+    "name": "Celestial Mountains Ridge",
+    "description": "Ridge of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.celestial_mountains.east_path",
+      "node.celestial_mountains.sanctum"
+    ],
+    "rec_cp": 12737,
+    "first_clear": {
+      "spirit_stones": 735
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.thunder_crane",
+        "enemy.cloud_ape"
+      ],
+      [
+        "enemy.heaven_seeker"
+      ]
+    ]
+  },
+  {
+    "id": "node.celestial_mountains.deep_path",
+    "name": "Celestial Mountains Deep Path",
+    "description": "Deep Path of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.celestial_mountains.lair",
+      "node.celestial_mountains.crossroads",
+      "node.celestial_mountains.den"
+    ],
+    "rec_cp": 13123,
+    "first_clear": {
+      "spirit_stones": 735
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.cloud_ape",
+        "enemy.celestial_soldier"
+      ],
+      [
+        "enemy.cloud_ape",
+        "enemy.heaven_seeker"
+      ]
+    ]
+  },
+  {
+    "id": "node.celestial_mountains.sanctum",
+    "name": "Celestial Mountains Sanctum",
+    "description": "Sanctum of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "cultivation",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.celestial_mountains.crossroads",
+      "node.celestial_mountains.ridge",
+      "node.celestial_mountains.hidden_grove",
+      "node.celestial_mountains.approach"
+    ],
+    "rec_cp": 14859,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 8,
+    "cultivation": {
+      "qi_mult": 1.75,
+      "minutes": 30,
+      "energy_cost": 6
+    }
+  },
+  {
+    "id": "node.celestial_mountains.den",
+    "name": "Celestial Mountains Den",
+    "description": "Den of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.celestial_mountains.deep_path",
+      "node.celestial_mountains.throne"
+    ],
+    "rec_cp": 26400,
+    "first_clear": {
+      "spirit_stones": 1960,
+      "items": [
+        {
+          "id": "mat.heaven_pine_amber",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.thunder_crane",
+        "enemy.cloud_ape"
+      ],
+      [
+        "enemy.storm_tiger"
+      ]
+    ]
+  },
+  {
+    "id": "node.celestial_mountains.hidden_grove",
+    "name": "Celestial Mountains Secret Place",
+    "description": "Secret Place of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.celestial_mountains.sanctum",
+      "node.celestial_mountains.approach"
+    ],
+    "rec_cp": 15709,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 8,
+    "event": "event.stair_of_trials",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.celestial_mountains.approach",
+    "name": "Celestial Mountains Approach",
+    "description": "Approach of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.celestial_mountains.sanctum",
+      "node.celestial_mountains.hidden_grove",
+      "node.celestial_mountains.throne"
+    ],
+    "rec_cp": 14666,
+    "first_clear": {
+      "spirit_stones": 735
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.celestial_soldier",
+        "enemy.celestial_soldier"
+      ],
+      [
+        "enemy.cloud_ape",
+        "enemy.celestial_soldier"
+      ]
+    ]
+  },
+  {
+    "id": "node.celestial_mountains.throne",
+    "name": "Celestial Mountains Throne",
+    "description": "Throne of the Celestial Mountains.",
+    "region": "region.celestial_mountains",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.celestial_mountains.den",
+      "node.celestial_mountains.approach"
+    ],
+    "rec_cp": 63220,
+    "first_clear": {
+      "spirit_stones": 7350,
+      "sect_fame": 280
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.celestial_soldier",
+        "enemy.storm_tiger"
+      ],
+      [
+        "boss.celestial_stair_guardian"
+      ]
+    ]
+  }
+]

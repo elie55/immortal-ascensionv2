@@ -1,0 +1,445 @@
+[
+  {
+    "id": "node.golden_palace_of_laws.entry",
+    "name": "Golden Palace of Laws Border",
+    "description": "Border of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.gathering",
+      "node.golden_palace_of_laws.outskirts"
+    ],
+    "rec_cp": 1468059,
+    "first_clear": {
+      "spirit_stones": 2940
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.law_enforcer"
+      ],
+      [
+        "enemy.scroll_golem",
+        "enemy.law_enforcer"
+      ]
+    ]
+  },
+  {
+    "id": "node.golden_palace_of_laws.gathering",
+    "name": "Golden Palace of Laws Gathering Grounds",
+    "description": "Gathering Grounds of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.entry",
+      "node.golden_palace_of_laws.west_path",
+      "node.golden_palace_of_laws.cache"
+    ],
+    "rec_cp": 1679459,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 12,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.law_flower",
+          "qty": 3
+        },
+        {
+          "id": "mat.heavenly_gold",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.golden_palace_of_laws.outskirts",
+    "name": "Golden Palace of Laws Outskirts",
+    "description": "Outskirts of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.entry",
+      "node.golden_palace_of_laws.cache",
+      "node.golden_palace_of_laws.east_path"
+    ],
+    "rec_cp": 1585504,
+    "first_clear": {
+      "spirit_stones": 2940
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.golden_crow",
+        "enemy.scroll_golem"
+      ],
+      [
+        "enemy.golden_crow",
+        "enemy.rebel_immortal"
+      ]
+    ]
+  },
+  {
+    "id": "node.golden_palace_of_laws.west_path",
+    "name": "Golden Palace of Laws Western Trail",
+    "description": "Western Trail of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.gathering",
+      "node.golden_palace_of_laws.lair"
+    ],
+    "rec_cp": 1644226,
+    "first_clear": {
+      "spirit_stones": 2940
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.scroll_golem",
+        "enemy.law_enforcer"
+      ],
+      [
+        "enemy.scroll_golem",
+        "enemy.scroll_golem"
+      ]
+    ]
+  },
+  {
+    "id": "node.golden_palace_of_laws.cache",
+    "name": "Golden Palace of Laws Hidden Cache",
+    "description": "Hidden Cache of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.gathering",
+      "node.golden_palace_of_laws.outskirts",
+      "node.golden_palace_of_laws.crossroads"
+    ],
+    "rec_cp": 1873243,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 12,
+    "chest": "loot.chest.golden_palace_of_laws"
+  },
+  {
+    "id": "node.golden_palace_of_laws.east_path",
+    "name": "Golden Palace of Laws Eastern Trail",
+    "description": "Eastern Trail of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.outskirts",
+      "node.golden_palace_of_laws.ridge"
+    ],
+    "rec_cp": 1761671,
+    "first_clear": {
+      "spirit_stones": 2940
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.golden_crow",
+        "enemy.rebel_immortal"
+      ],
+      [
+        "enemy.law_enforcer",
+        "enemy.golden_crow"
+      ]
+    ]
+  },
+  {
+    "id": "node.golden_palace_of_laws.lair",
+    "name": "Golden Palace of Laws Lair",
+    "description": "Lair of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.west_path",
+      "node.golden_palace_of_laws.deep_path"
+    ],
+    "rec_cp": 3458747,
+    "first_clear": {
+      "spirit_stones": 7840,
+      "items": [
+        {
+          "id": "mat.law_wheel_fragment",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.nine_tailed_shadow"
+      ]
+    ]
+  },
+  {
+    "id": "node.golden_palace_of_laws.crossroads",
+    "name": "Golden Palace of Laws Crossroads",
+    "description": "Crossroads of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.cache",
+      "node.golden_palace_of_laws.deep_path",
+      "node.golden_palace_of_laws.sanctum"
+    ],
+    "rec_cp": 2067027,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 12,
+    "event": "event.unwritten_law"
+  },
+  {
+    "id": "node.golden_palace_of_laws.ridge",
+    "name": "Golden Palace of Laws Ridge",
+    "description": "Ridge of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.east_path",
+      "node.golden_palace_of_laws.sanctum"
+    ],
+    "rec_cp": 1937838,
+    "first_clear": {
+      "spirit_stones": 2940
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.law_enforcer",
+        "enemy.golden_crow"
+      ],
+      [
+        "enemy.rebel_immortal"
+      ]
+    ]
+  },
+  {
+    "id": "node.golden_palace_of_laws.deep_path",
+    "name": "Golden Palace of Laws Deep Path",
+    "description": "Deep Path of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.lair",
+      "node.golden_palace_of_laws.crossroads",
+      "node.golden_palace_of_laws.den"
+    ],
+    "rec_cp": 1996560,
+    "first_clear": {
+      "spirit_stones": 2940
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.golden_crow",
+        "enemy.scroll_golem"
+      ],
+      [
+        "enemy.golden_crow",
+        "enemy.rebel_immortal"
+      ]
+    ]
+  },
+  {
+    "id": "node.golden_palace_of_laws.sanctum",
+    "name": "Golden Palace of Laws Sanctum",
+    "description": "Sanctum of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "cultivation",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.crossroads",
+      "node.golden_palace_of_laws.ridge",
+      "node.golden_palace_of_laws.hidden_grove",
+      "node.golden_palace_of_laws.approach"
+    ],
+    "rec_cp": 2260811,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 12,
+    "cultivation": {
+      "qi_mult": 2.1,
+      "minutes": 30,
+      "energy_cost": 6
+    }
+  },
+  {
+    "id": "node.golden_palace_of_laws.den",
+    "name": "Golden Palace of Laws Den",
+    "description": "Den of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.deep_path",
+      "node.golden_palace_of_laws.throne"
+    ],
+    "rec_cp": 4016609,
+    "first_clear": {
+      "spirit_stones": 7840,
+      "items": [
+        {
+          "id": "mat.law_wheel_fragment",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.law_enforcer",
+        "enemy.golden_crow"
+      ],
+      [
+        "enemy.nine_tailed_shadow"
+      ]
+    ]
+  },
+  {
+    "id": "node.golden_palace_of_laws.hidden_grove",
+    "name": "Golden Palace of Laws Secret Place",
+    "description": "Secret Place of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.sanctum",
+      "node.golden_palace_of_laws.approach"
+    ],
+    "rec_cp": 2390000,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 12,
+    "event": "event.unwritten_law",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.golden_palace_of_laws.approach",
+    "name": "Golden Palace of Laws Approach",
+    "description": "Approach of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.sanctum",
+      "node.golden_palace_of_laws.hidden_grove",
+      "node.golden_palace_of_laws.throne"
+    ],
+    "rec_cp": 2231450,
+    "first_clear": {
+      "spirit_stones": 2940
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.scroll_golem",
+        "enemy.scroll_golem"
+      ],
+      [
+        "enemy.golden_crow",
+        "enemy.scroll_golem"
+      ]
+    ]
+  },
+  {
+    "id": "node.golden_palace_of_laws.throne",
+    "name": "Golden Palace of Laws Throne",
+    "description": "Throne of the Golden Palace of Laws.",
+    "region": "region.golden_palace_of_laws",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.golden_palace_of_laws.den",
+      "node.golden_palace_of_laws.approach"
+    ],
+    "rec_cp": 9618723,
+    "first_clear": {
+      "spirit_stones": 29400,
+      "sect_fame": 560
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.scroll_golem",
+        "enemy.nine_tailed_shadow"
+      ],
+      [
+        "boss.arbiter_of_laws"
+      ]
+    ]
+  }
+]

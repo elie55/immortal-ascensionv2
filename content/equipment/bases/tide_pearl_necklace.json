@@ -1,0 +1,54 @@
+[
+  {
+    "id": "gear.tide_pearl_necklace",
+    "name": "Tide Pearl Necklace",
+    "description": "A divine treasure of the Sunken Palace of the Dragon King.",
+    "name_cn": "潮珠链",
+    "slot": "necklace",
+    "main_value": 20,
+    "rarity_range": [
+      "divine",
+      "divine"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": true,
+    "special_effects": [
+      {
+        "kind": "sp_restore",
+        "description": "Restore 12 SP per turn.",
+        "value": 12
+      },
+      {
+        "kind": "heal_on_turn",
+        "description": "Heal 3% max HP each turn.",
+        "value": 3
+      }
+    ],
+    "requirements": {
+      "realm": "realm.tribulation_transcendence"
+    },
+    "signature_affix": "sp_energy",
+    "rarities": {
+      "divine": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/necklace/tide_pearl_necklace_divine.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a necklace of nine glowing sea pearls around a great dragon pearl, prismatic dragon-pearl light, azure dragon motifs, rainbow halo, overwhelming divine aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    }
+  }
+]

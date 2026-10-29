@@ -1,0 +1,4712 @@
+[
+  {
+    "id": "quest.main.blazing_mountain_arrival",
+    "name": "Into the Blazing Mountain",
+    "description": "Reach the Blazing Mountain and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.bamboo_sovereign"
+      ],
+      "regions": [
+        "region.blazing_mountain"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.blazing_mountain",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 900,
+      "sect_fame": 60
+    },
+    "next": "quest.main.blazing_mountain_sovereign",
+    "difficulty": 1,
+    "rec_cp": 546,
+    "hint": "Adventure · Blazing Mountain",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_blazing_mountain_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Blazing Mountain' in the Blazing Mountain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.blazing_mountain_sovereign",
+    "name": "Sovereign of the Blazing Mountain",
+    "description": "Defeat Molten Ape King, master of the Blazing Mountain.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.blazing_mountain_arrival"
+      ],
+      "realm": {
+        "id": "realm.foundation_establishment",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.molten_ape_king",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 3600,
+      "sect_fame": 240,
+      "techniques": [
+        "tech.active.blazing_comet"
+      ],
+      "gear": [
+        {
+          "base": "gear.blazeforge_saber",
+          "rarity": "rare",
+          "ilvl": 28
+        }
+      ]
+    },
+    "difficulty": 2,
+    "rec_cp": 2293,
+    "hint": "Adventure · Blazing Mountain · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_blazing_mountain_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Blazing Mountain' in the Blazing Mountain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.frozen_lotus_valley_arrival"
+  },
+  {
+    "id": "quest.mission.blazing_mountain_salamander_scale",
+    "name": "Salamander Scale Requisition",
+    "description": "The Mission Hall needs five Salamander Scale from the Blazing Mountain.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.blazing_mountain"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.salamander_scale",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 540,
+      "sect_fame": 45
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 1,
+    "rec_cp": 546,
+    "hint": "Blazing Mountain · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_blazing_mountain_salamander_scale.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Blazing Mountain' in the Blazing Mountain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.blazing_mountain_elite_hunt",
+    "name": "Hunt: Flame-Maned Lion",
+    "description": "Defeat three Flame-Maned Lions in the Blazing Mountain.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.blazing_mountain"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.flame_lion",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 720,
+      "sect_fame": 60,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 2,
+    "rec_cp": 1037,
+    "hint": "Blazing Mountain · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_blazing_mountain_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Blazing Mountain' in the Blazing Mountain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.blazing_mountain_ember_forge_ruins",
+    "name": "Trial: Ember Forge Ruins",
+    "description": "Elder Feng wants proof you can clear the Ember Forge Ruins.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.blazing_mountain"
+      ],
+      "realm": {
+        "id": "realm.foundation_establishment",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.ember_forge_ruins",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 1800,
+      "sect_fame": 90,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 2,
+    "rec_cp": 1365,
+    "hint": "Adventure · Dungeons · Ember Forge Ruins",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_blazing_mountain_ember_forge_ruins.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Ember Forge Ruins' in the Blazing Mountain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.old_kang_request",
+    "name": "Old Kang's Request",
+    "description": "Old Kang asks for eight Fire Bud.",
+    "type": "npc",
+    "giver": "npc.old_kang",
+    "turn_in": "npc.old_kang",
+    "prereqs": {
+      "regions": [
+        "region.blazing_mountain"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.fire_bud",
+        "count": 8,
+        "to": "npc.old_kang"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 450,
+      "items": [
+        {
+          "id": "cons.ember_marrow_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.ember_core",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.old_kang",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Blazing Mountain · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_old_kang.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Old Kang' in the Blazing Mountain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.frozen_lotus_valley_arrival",
+    "name": "Into the Frozen Lotus Valley",
+    "description": "Reach the Frozen Lotus Valley and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.blazing_mountain_sovereign"
+      ],
+      "regions": [
+        "region.frozen_lotus_valley"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.frozen_lotus_valley",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 1600,
+      "sect_fame": 80
+    },
+    "next": "quest.main.frozen_lotus_valley_sovereign",
+    "difficulty": 2,
+    "rec_cp": 1120,
+    "hint": "Adventure · Frozen Lotus Valley",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_frozen_lotus_valley_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Frozen Lotus Valley' in the Frozen Lotus Valley, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.frozen_lotus_valley_sovereign",
+    "name": "Sovereign of the Frozen Lotus Valley",
+    "description": "Defeat Lotus Frost Queen, master of the Frozen Lotus Valley.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.frozen_lotus_valley_arrival"
+      ],
+      "realm": {
+        "id": "realm.foundation_establishment",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.lotus_frost_queen",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 6400,
+      "sect_fame": 320,
+      "techniques": [
+        "tech.active.glacial_spear_rain"
+      ],
+      "gear": [
+        {
+          "base": "gear.frostlotus_circlet",
+          "rarity": "rare",
+          "ilvl": 36
+        }
+      ]
+    },
+    "difficulty": 3,
+    "rec_cp": 4704,
+    "hint": "Adventure · Frozen Lotus Valley · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_frozen_lotus_valley_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Frozen Lotus Valley' in the Frozen Lotus Valley, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.ancient_sword_tomb_arrival"
+  },
+  {
+    "id": "quest.mission.frozen_lotus_valley_yeti_fur",
+    "name": "Yeti Fur Requisition",
+    "description": "The Mission Hall needs five Yeti Fur from the Frozen Lotus Valley.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.frozen_lotus_valley"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.yeti_fur",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 960,
+      "sect_fame": 60
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 2,
+    "rec_cp": 1120,
+    "hint": "Frozen Lotus Valley · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_frozen_lotus_valley_yeti_fur.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Frozen Lotus Valley' in the Frozen Lotus Valley, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.frozen_lotus_valley_elite_hunt",
+    "name": "Hunt: Frost Wyrm",
+    "description": "Defeat three Frost Wyrms in the Frozen Lotus Valley.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.frozen_lotus_valley"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.frost_wyrm",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 1280,
+      "sect_fame": 80,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 3,
+    "rec_cp": 2128,
+    "hint": "Frozen Lotus Valley · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_frozen_lotus_valley_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Frozen Lotus Valley' in the Frozen Lotus Valley, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.frozen_lotus_valley_glacier_caverns",
+    "name": "Trial: Glacier Caverns",
+    "description": "Elder Feng wants proof you can clear the Glacier Caverns.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.frozen_lotus_valley"
+      ],
+      "realm": {
+        "id": "realm.foundation_establishment",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.glacier_caverns",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 3200,
+      "sect_fame": 120,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 3,
+    "rec_cp": 2800,
+    "hint": "Adventure · Dungeons · Glacier Caverns",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_frozen_lotus_valley_glacier_caverns.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Glacier Caverns' in the Frozen Lotus Valley, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.hermit_shuang_request",
+    "name": "Hermit Shuang's Request",
+    "description": "Hermit Shuang asks for eight Snow Lotus Petal.",
+    "type": "npc",
+    "giver": "npc.hermit_shuang",
+    "turn_in": "npc.hermit_shuang",
+    "prereqs": {
+      "regions": [
+        "region.frozen_lotus_valley"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.snow_lotus_petal",
+        "count": 8,
+        "to": "npc.hermit_shuang"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 800,
+      "items": [
+        {
+          "id": "cons.frost_lotus_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.lotus_ice_heart",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.hermit_shuang",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Frozen Lotus Valley · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_hermit_shuang.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Hermit Shuang' in the Frozen Lotus Valley, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.ancient_sword_tomb_arrival",
+    "name": "Into the Ancient Sword Tomb",
+    "description": "Reach the Ancient Sword Tomb and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.frozen_lotus_valley_sovereign"
+      ],
+      "regions": [
+        "region.ancient_sword_tomb"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.ancient_sword_tomb",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 2500,
+      "sect_fame": 100
+    },
+    "next": "quest.main.ancient_sword_tomb_sovereign",
+    "difficulty": 2,
+    "rec_cp": 2296,
+    "hint": "Adventure · Ancient Sword Tomb",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_ancient_sword_tomb_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Ancient Sword Tomb' in the Ancient Sword Tomb, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.ancient_sword_tomb_sovereign",
+    "name": "Sovereign of the Ancient Sword Tomb",
+    "description": "Defeat Sword Sovereign's Remnant, master of the Ancient Sword Tomb.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.ancient_sword_tomb_arrival"
+      ],
+      "realm": {
+        "id": "realm.core_formation",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.sword_sovereign_remnant",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 10000,
+      "sect_fame": 400,
+      "techniques": [
+        "tech.active.ten_thousand_sword_return"
+      ],
+      "gear": [
+        {
+          "base": "gear.tombsong_sword",
+          "rarity": "epic",
+          "ilvl": 44
+        }
+      ]
+    },
+    "difficulty": 3,
+    "rec_cp": 9643,
+    "hint": "Adventure · Ancient Sword Tomb · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_ancient_sword_tomb_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Ancient Sword Tomb' in the Ancient Sword Tomb, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.demon_territory_arrival"
+  },
+  {
+    "id": "quest.mission.ancient_sword_tomb_sword_spirit_shard",
+    "name": "Sword Spirit Shard Requisition",
+    "description": "The Mission Hall needs five Sword Spirit Shard from the Ancient Sword Tomb.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.ancient_sword_tomb"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.sword_spirit_shard",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 1500,
+      "sect_fame": 75
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 2,
+    "rec_cp": 2296,
+    "hint": "Ancient Sword Tomb · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_ancient_sword_tomb_sword_spirit_shard.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Ancient Sword Tomb' in the Ancient Sword Tomb, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.ancient_sword_tomb_elite_hunt",
+    "name": "Hunt: Headless General",
+    "description": "Defeat three Headless Generals in the Ancient Sword Tomb.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.ancient_sword_tomb"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.headless_general",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 2000,
+      "sect_fame": 100,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 3,
+    "rec_cp": 4362,
+    "hint": "Ancient Sword Tomb · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_ancient_sword_tomb_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Ancient Sword Tomb' in the Ancient Sword Tomb, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.ancient_sword_tomb_hall_of_ten_thousand_blades",
+    "name": "Trial: Hall of Ten Thousand Blades",
+    "description": "Elder Feng wants proof you can clear the Hall of Ten Thousand Blades.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.ancient_sword_tomb"
+      ],
+      "realm": {
+        "id": "realm.core_formation",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.hall_of_ten_thousand_blades",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 5000,
+      "sect_fame": 150,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 3,
+    "rec_cp": 5740,
+    "hint": "Adventure · Dungeons · Hall of Ten Thousand Blades",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_ancient_sword_tomb_hall_of_ten_thousand_blades.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Hall of Ten Thousand Blades' in the Ancient Sword Tomb, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.blind_swordsmith_yu_request",
+    "name": "Blind Swordsmith Yu's Request",
+    "description": "Blind Swordsmith Yu asks for eight Sword Grass.",
+    "type": "npc",
+    "giver": "npc.blind_swordsmith_yu",
+    "turn_in": "npc.blind_swordsmith_yu",
+    "prereqs": {
+      "regions": [
+        "region.ancient_sword_tomb"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.sword_grass",
+        "count": 8,
+        "to": "npc.blind_swordsmith_yu"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 1250,
+      "items": [
+        {
+          "id": "cons.sword_marrow_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.sword_intent_crystal",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.blind_swordsmith_yu",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Ancient Sword Tomb · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_blind_swordsmith_yu.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Blind Swordsmith Yu' in the Ancient Sword Tomb, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.demon_territory_arrival",
+    "name": "Into the Demon Territory",
+    "description": "Reach the Demon Territory and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.ancient_sword_tomb_sovereign"
+      ],
+      "regions": [
+        "region.demon_territory"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.demon_territory",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 3600,
+      "sect_fame": 120
+    },
+    "next": "quest.main.demon_territory_sovereign",
+    "difficulty": 2,
+    "rec_cp": 4707,
+    "hint": "Adventure · Demon Territory",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_demon_territory_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Demon Territory' in the Demon Territory, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.demon_territory_sovereign",
+    "name": "Sovereign of the Demon Territory",
+    "description": "Defeat Crimson Moon Matriarch, master of the Demon Territory.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.demon_territory_arrival"
+      ],
+      "realm": {
+        "id": "realm.nascent_soul",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.crimson_moon_matriarch",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 14400,
+      "sect_fame": 480,
+      "techniques": [
+        "tech.active.crimson_moon_slash"
+      ],
+      "gear": [
+        {
+          "base": "gear.crimsonvow_ring",
+          "rarity": "epic",
+          "ilvl": 52
+        }
+      ]
+    },
+    "difficulty": 3,
+    "rec_cp": 19769,
+    "hint": "Adventure · Demon Territory · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_demon_territory_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Demon Territory' in the Demon Territory, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.celestial_mountains_arrival"
+  },
+  {
+    "id": "quest.mission.demon_territory_demon_horn",
+    "name": "Demon Horn Requisition",
+    "description": "The Mission Hall needs five Demon Horn from the Demon Territory.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.demon_territory"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.demon_horn",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 2160,
+      "sect_fame": 90
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 2,
+    "rec_cp": 4707,
+    "hint": "Demon Territory · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_demon_territory_demon_horn.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Demon Territory' in the Demon Territory, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.demon_territory_elite_hunt",
+    "name": "Hunt: Demon General",
+    "description": "Defeat three Demon Generals in the Demon Territory.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.demon_territory"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.demon_general",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 2880,
+      "sect_fame": 120,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 3,
+    "rec_cp": 8943,
+    "hint": "Demon Territory · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_demon_territory_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Demon Territory' in the Demon Territory, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.demon_territory_blood_river_prison",
+    "name": "Trial: Blood River Prison",
+    "description": "Elder Feng wants proof you can clear the Blood River Prison.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.demon_territory"
+      ],
+      "realm": {
+        "id": "realm.nascent_soul",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.blood_river_prison",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 7200,
+      "sect_fame": 180,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 3,
+    "rec_cp": 11768,
+    "hint": "Adventure · Dungeons · Blood River Prison",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_demon_territory_blood_river_prison.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Blood River Prison' in the Demon Territory, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.defector_lian_request",
+    "name": "Defector Lian's Request",
+    "description": "Defector Lian asks for eight Blood Lotus.",
+    "type": "npc",
+    "giver": "npc.defector_lian",
+    "turn_in": "npc.defector_lian",
+    "prereqs": {
+      "regions": [
+        "region.demon_territory"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.blood_lotus",
+        "count": 8,
+        "to": "npc.defector_lian"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 1800,
+      "items": [
+        {
+          "id": "cons.demon_purge_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.crimson_moon_shard",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.defector_lian",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Demon Territory · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_defector_lian.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Defector Lian' in the Demon Territory, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.celestial_mountains_arrival",
+    "name": "Into the Celestial Mountains",
+    "description": "Reach the Celestial Mountains and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.demon_territory_sovereign"
+      ],
+      "regions": [
+        "region.celestial_mountains"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.celestial_mountains",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 4900,
+      "sect_fame": 140
+    },
+    "next": "quest.main.celestial_mountains_sovereign",
+    "difficulty": 2,
+    "rec_cp": 9649,
+    "hint": "Adventure · Celestial Mountains",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_celestial_mountains_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Celestial Mountains' in the Celestial Mountains, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.celestial_mountains_sovereign",
+    "name": "Sovereign of the Celestial Mountains",
+    "description": "Defeat Celestial Stair Guardian, master of the Celestial Mountains.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.celestial_mountains_arrival"
+      ],
+      "realm": {
+        "id": "realm.soul_transformation",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.celestial_stair_guardian",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 19600,
+      "sect_fame": 560,
+      "techniques": [
+        "tech.active.heavenly_thunder_palm"
+      ],
+      "gear": [
+        {
+          "base": "gear.skyward_staff",
+          "rarity": "epic",
+          "ilvl": 60
+        }
+      ]
+    },
+    "difficulty": 3,
+    "rec_cp": 40526,
+    "hint": "Adventure · Celestial Mountains · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_celestial_mountains_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Celestial Mountains' in the Celestial Mountains, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.nine_heavens_arrival"
+  },
+  {
+    "id": "quest.mission.celestial_mountains_thunder_feather",
+    "name": "Thunder Feather Requisition",
+    "description": "The Mission Hall needs five Thunder Feather from the Celestial Mountains.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.celestial_mountains"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.thunder_feather",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 2940,
+      "sect_fame": 105
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 2,
+    "rec_cp": 9649,
+    "hint": "Celestial Mountains · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_celestial_mountains_thunder_feather.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Celestial Mountains' in the Celestial Mountains, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.celestial_mountains_elite_hunt",
+    "name": "Hunt: Storm Tiger",
+    "description": "Defeat three Storm Tigers in the Celestial Mountains.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.celestial_mountains"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.storm_tiger",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 3920,
+      "sect_fame": 140,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 3,
+    "rec_cp": 18333,
+    "hint": "Celestial Mountains · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_celestial_mountains_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Celestial Mountains' in the Celestial Mountains, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.celestial_mountains_thunder_pine_sanctum",
+    "name": "Trial: Thunder Pine Sanctum",
+    "description": "Elder Feng wants proof you can clear the Thunder Pine Sanctum.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.celestial_mountains"
+      ],
+      "realm": {
+        "id": "realm.soul_transformation",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.thunder_pine_sanctum",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 9800,
+      "sect_fame": 210,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 3,
+    "rec_cp": 24122,
+    "hint": "Adventure · Dungeons · Thunder Pine Sanctum",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_celestial_mountains_thunder_pine_sanctum.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Thunder Pine Sanctum' in the Celestial Mountains, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.crane_boy_ming_request",
+    "name": "Crane Boy Ming's Request",
+    "description": "Crane Boy Ming asks for eight Celestial Peach.",
+    "type": "npc",
+    "giver": "npc.crane_boy_ming",
+    "turn_in": "npc.crane_boy_ming",
+    "prereqs": {
+      "regions": [
+        "region.celestial_mountains"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.celestial_peach",
+        "count": 8,
+        "to": "npc.crane_boy_ming"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 2450,
+      "items": [
+        {
+          "id": "cons.celestial_peach_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.heaven_pine_amber",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.crane_boy_ming",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Celestial Mountains · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_crane_boy_ming.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Crane Boy Ming' in the Celestial Mountains, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.nine_heavens_arrival",
+    "name": "Into the Nine Heavens",
+    "description": "Reach the Nine Heavens and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.celestial_mountains_sovereign"
+      ],
+      "regions": [
+        "region.nine_heavens"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.nine_heavens",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 6400,
+      "sect_fame": 160
+    },
+    "next": "quest.main.nine_heavens_sovereign",
+    "difficulty": 3,
+    "rec_cp": 19780,
+    "hint": "Adventure · Nine Heavens",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_nine_heavens_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Nine Heavens' in the Nine Heavens, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.nine_heavens_sovereign",
+    "name": "Sovereign of the Nine Heavens",
+    "description": "Defeat Heavenly Gate Keeper, master of the Nine Heavens.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.nine_heavens_arrival"
+      ],
+      "realm": {
+        "id": "realm.spirit_severing",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.heavenly_gate_keeper",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 25600,
+      "sect_fame": 640,
+      "techniques": [
+        "tech.active.starfall_sword"
+      ],
+      "gear": [
+        {
+          "base": "gear.starward_mirror",
+          "rarity": "legendary",
+          "ilvl": 68
+        }
+      ]
+    },
+    "difficulty": 4,
+    "rec_cp": 83076,
+    "hint": "Adventure · Nine Heavens · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_nine_heavens_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Nine Heavens' in the Nine Heavens, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.thunderclap_wastes_arrival"
+  },
+  {
+    "id": "quest.mission.nine_heavens_jellyfish_silk",
+    "name": "Jellyfish Silk Requisition",
+    "description": "The Mission Hall needs five Jellyfish Silk from the Nine Heavens.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.nine_heavens"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.jellyfish_silk",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 3840,
+      "sect_fame": 120
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 3,
+    "rec_cp": 19780,
+    "hint": "Nine Heavens · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_nine_heavens_jellyfish_silk.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Nine Heavens' in the Nine Heavens, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.nine_heavens_elite_hunt",
+    "name": "Hunt: Fallen Immortal",
+    "description": "Defeat three Fallen Immortals in the Nine Heavens.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.nine_heavens"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.fallen_immortal",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 5120,
+      "sect_fame": 160,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 4,
+    "rec_cp": 37582,
+    "hint": "Nine Heavens · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_nine_heavens_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Nine Heavens' in the Nine Heavens, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.nine_heavens_sunken_star_palace",
+    "name": "Trial: Sunken Star Palace",
+    "description": "Elder Feng wants proof you can clear the Sunken Star Palace.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.nine_heavens"
+      ],
+      "realm": {
+        "id": "realm.spirit_severing",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.sunken_star_palace",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 12800,
+      "sect_fame": 240,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 4,
+    "rec_cp": 49450,
+    "hint": "Adventure · Dungeons · Sunken Star Palace",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_nine_heavens_sunken_star_palace.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Sunken Star Palace' in the Nine Heavens, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.star_reader_wu_request",
+    "name": "Star-Reader Wu's Request",
+    "description": "Star-Reader Wu asks for eight Star-Dew Grass.",
+    "type": "npc",
+    "giver": "npc.star_reader_wu",
+    "turn_in": "npc.star_reader_wu",
+    "prereqs": {
+      "regions": [
+        "region.nine_heavens"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.star_dew_grass",
+        "count": 8,
+        "to": "npc.star_reader_wu"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 3200,
+      "items": [
+        {
+          "id": "cons.star_dew_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.heavenly_star_crystal",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.star_reader_wu",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Nine Heavens · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_star_reader_wu.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Star-Reader Wu' in the Nine Heavens, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.thunderclap_wastes_arrival",
+    "name": "Into the Thunderclap Wastes",
+    "description": "Reach the Thunderclap Wastes and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.nine_heavens_sovereign"
+      ],
+      "regions": [
+        "region.thunderclap_wastes"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.thunderclap_wastes",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 8100,
+      "sect_fame": 180
+    },
+    "next": "quest.main.thunderclap_wastes_sovereign",
+    "difficulty": 3,
+    "rec_cp": 40548,
+    "hint": "Adventure · Thunderclap Wastes",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_thunderclap_wastes_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Thunderclap Wastes' in the Thunderclap Wastes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.thunderclap_wastes_sovereign",
+    "name": "Sovereign of the Thunderclap Wastes",
+    "description": "Defeat Nine-Bolt Thunder Emperor, master of the Thunderclap Wastes.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.thunderclap_wastes_arrival"
+      ],
+      "realm": {
+        "id": "realm.dao_integration",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.nine_bolt_thunder_emperor",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 32400,
+      "sect_fame": 720,
+      "techniques": [
+        "tech.active.violet_thunder_spear"
+      ],
+      "gear": [
+        {
+          "base": "gear.stormcall_spear",
+          "rarity": "legendary",
+          "ilvl": 76
+        }
+      ]
+    },
+    "difficulty": 4,
+    "rec_cp": 170302,
+    "hint": "Adventure · Thunderclap Wastes · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_thunderclap_wastes_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Thunderclap Wastes' in the Thunderclap Wastes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.sunken_dragon_sea_arrival"
+  },
+  {
+    "id": "quest.mission.thunderclap_wastes_roc_lightning_feather",
+    "name": "Roc Lightning Feather Requisition",
+    "description": "The Mission Hall needs five Roc Lightning Feather from the Thunderclap Wastes.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.thunderclap_wastes"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.roc_lightning_feather",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 4860,
+      "sect_fame": 135
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 3,
+    "rec_cp": 40548,
+    "hint": "Thunderclap Wastes · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_thunderclap_wastes_roc_lightning_feather.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Thunderclap Wastes' in the Thunderclap Wastes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.thunderclap_wastes_elite_hunt",
+    "name": "Hunt: Lightning Roc",
+    "description": "Defeat three Lightning Rocs in the Thunderclap Wastes.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.thunderclap_wastes"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.lightning_roc",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 6480,
+      "sect_fame": 180,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 4,
+    "rec_cp": 77041,
+    "hint": "Thunderclap Wastes · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_thunderclap_wastes_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Thunderclap Wastes' in the Thunderclap Wastes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.thunderclap_wastes_glass_labyrinth",
+    "name": "Trial: Glass Labyrinth",
+    "description": "Elder Feng wants proof you can clear the Glass Labyrinth.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.thunderclap_wastes"
+      ],
+      "realm": {
+        "id": "realm.dao_integration",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.glass_labyrinth",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 16200,
+      "sect_fame": 270,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 4,
+    "rec_cp": 101370,
+    "hint": "Adventure · Dungeons · Glass Labyrinth",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_thunderclap_wastes_glass_labyrinth.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Glass Labyrinth' in the Thunderclap Wastes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.storm_widow_jin_request",
+    "name": "Storm Widow Jin's Request",
+    "description": "Storm Widow Jin asks for eight Thunderroot.",
+    "type": "npc",
+    "giver": "npc.storm_widow_jin",
+    "turn_in": "npc.storm_widow_jin",
+    "prereqs": {
+      "regions": [
+        "region.thunderclap_wastes"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.thunderroot",
+        "count": 8,
+        "to": "npc.storm_widow_jin"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 4050,
+      "items": [
+        {
+          "id": "cons.thunder_tempering_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.tribulation_core",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.storm_widow_jin",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Thunderclap Wastes · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_storm_widow_jin.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Storm Widow Jin' in the Thunderclap Wastes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.sunken_dragon_sea_arrival",
+    "name": "Into the Sunken Dragon Sea",
+    "description": "Reach the Sunken Dragon Sea and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.thunderclap_wastes_sovereign"
+      ],
+      "regions": [
+        "region.sunken_dragon_sea"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.sunken_dragon_sea",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 10000,
+      "sect_fame": 200
+    },
+    "next": "quest.main.sunken_dragon_sea_sovereign",
+    "difficulty": 3,
+    "rec_cp": 83124,
+    "hint": "Adventure · Sunken Dragon Sea",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_sunken_dragon_sea_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Sunken Dragon Sea' in the Sunken Dragon Sea, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.sunken_dragon_sea_sovereign",
+    "name": "Sovereign of the Sunken Dragon Sea",
+    "description": "Defeat Drowned Dragon Lord, master of the Sunken Dragon Sea.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.sunken_dragon_sea_arrival"
+      ],
+      "realm": {
+        "id": "realm.tribulation_transcendence",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.drowned_dragon_lord",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 40000,
+      "sect_fame": 800,
+      "techniques": [
+        "tech.active.tidal_dragon_fist"
+      ],
+      "gear": [
+        {
+          "base": "gear.tidecaller_amulet",
+          "rarity": "legendary",
+          "ilvl": 84
+        }
+      ]
+    },
+    "difficulty": 4,
+    "rec_cp": 349121,
+    "hint": "Adventure · Sunken Dragon Sea · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_sunken_dragon_sea_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Sunken Dragon Sea' in the Sunken Dragon Sea, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.starfall_desert_arrival"
+  },
+  {
+    "id": "quest.mission.sunken_dragon_sea_kraken_ink",
+    "name": "Kraken Ink Requisition",
+    "description": "The Mission Hall needs five Kraken Ink from the Sunken Dragon Sea.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.sunken_dragon_sea"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.kraken_ink",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 6000,
+      "sect_fame": 150
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 3,
+    "rec_cp": 83124,
+    "hint": "Sunken Dragon Sea · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_sunken_dragon_sea_kraken_ink.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Sunken Dragon Sea' in the Sunken Dragon Sea, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.sunken_dragon_sea_elite_hunt",
+    "name": "Hunt: Tide Kraken",
+    "description": "Defeat three Tide Krakens in the Sunken Dragon Sea.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.sunken_dragon_sea"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.tide_kraken",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 8000,
+      "sect_fame": 200,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 4,
+    "rec_cp": 157936,
+    "hint": "Sunken Dragon Sea · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_sunken_dragon_sea_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Sunken Dragon Sea' in the Sunken Dragon Sea, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.sunken_dragon_sea_coral_labyrinth",
+    "name": "Trial: Coral Labyrinth",
+    "description": "Elder Feng wants proof you can clear the Coral Labyrinth.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.sunken_dragon_sea"
+      ],
+      "realm": {
+        "id": "realm.tribulation_transcendence",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.coral_labyrinth",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 20000,
+      "sect_fame": 300,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 4,
+    "rec_cp": 207810,
+    "hint": "Adventure · Dungeons · Coral Labyrinth",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_sunken_dragon_sea_coral_labyrinth.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Coral Labyrinth' in the Sunken Dragon Sea, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.fisherwoman_ah_hai_request",
+    "name": "Fisherwoman Ah-Hai's Request",
+    "description": "Fisherwoman Ah-Hai asks for eight Sea-Jade Kelp.",
+    "type": "npc",
+    "giver": "npc.fisherwoman_ah_hai",
+    "turn_in": "npc.fisherwoman_ah_hai",
+    "prereqs": {
+      "regions": [
+        "region.sunken_dragon_sea"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.sea_jade_kelp",
+        "count": 8,
+        "to": "npc.fisherwoman_ah_hai"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 5000,
+      "items": [
+        {
+          "id": "cons.dragon_marrow_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.dragon_pearl",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.fisherwoman_ah_hai",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Sunken Dragon Sea · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_fisherwoman_ah_hai.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Fisherwoman Ah-Hai' in the Sunken Dragon Sea, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.starfall_desert_arrival",
+    "name": "Into the Starfall Desert",
+    "description": "Reach the Starfall Desert and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.sunken_dragon_sea_sovereign"
+      ],
+      "regions": [
+        "region.starfall_desert"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.starfall_desert",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 12100,
+      "sect_fame": 220
+    },
+    "next": "quest.main.starfall_desert_sovereign",
+    "difficulty": 3,
+    "rec_cp": 170405,
+    "hint": "Adventure · Starfall Desert",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_starfall_desert_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Starfall Desert' in the Starfall Desert, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.starfall_desert_sovereign",
+    "name": "Sovereign of the Starfall Desert",
+    "description": "Defeat Starfall Pharaoh, master of the Starfall Desert.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.starfall_desert_arrival"
+      ],
+      "realm": {
+        "id": "realm.mahayana",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.starfall_pharaoh",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 48400,
+      "sect_fame": 880,
+      "techniques": [
+        "tech.active.meteor_impact"
+      ],
+      "gear": [
+        {
+          "base": "gear.starborn_fan",
+          "rarity": "mythic",
+          "ilvl": 92
+        }
+      ]
+    },
+    "difficulty": 4,
+    "rec_cp": 715701,
+    "hint": "Adventure · Starfall Desert · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_starfall_desert_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Starfall Desert' in the Starfall Desert, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.gate_of_ascension_arrival"
+  },
+  {
+    "id": "quest.mission.starfall_desert_sand_wyrm_tooth",
+    "name": "Sand Wyrm Tooth Requisition",
+    "description": "The Mission Hall needs five Sand Wyrm Tooth from the Starfall Desert.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.starfall_desert"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.sand_wyrm_tooth",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 7260,
+      "sect_fame": 165
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 3,
+    "rec_cp": 170405,
+    "hint": "Starfall Desert · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_starfall_desert_sand_wyrm_tooth.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Starfall Desert' in the Starfall Desert, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.starfall_desert_elite_hunt",
+    "name": "Hunt: Star-Metal Golem",
+    "description": "Defeat three Star-Metal Golems in the Starfall Desert.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.starfall_desert"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.star_metal_golem",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 9680,
+      "sect_fame": 220,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 4,
+    "rec_cp": 323770,
+    "hint": "Starfall Desert · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_starfall_desert_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Starfall Desert' in the Starfall Desert, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.starfall_desert_buried_star_temple",
+    "name": "Trial: Buried Star Temple",
+    "description": "Elder Feng wants proof you can clear the Buried Star Temple.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.starfall_desert"
+      ],
+      "realm": {
+        "id": "realm.mahayana",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.buried_star_temple",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 24200,
+      "sect_fame": 330,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 4,
+    "rec_cp": 426012,
+    "hint": "Adventure · Dungeons · Buried Star Temple",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_starfall_desert_buried_star_temple.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Buried Star Temple' in the Starfall Desert, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.caravan_princess_zahra_request",
+    "name": "Caravan Princess Zahra's Request",
+    "description": "Caravan Princess Zahra asks for eight Desert Star Flower.",
+    "type": "npc",
+    "giver": "npc.caravan_princess_zahra",
+    "turn_in": "npc.caravan_princess_zahra",
+    "prereqs": {
+      "regions": [
+        "region.starfall_desert"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.desert_star_flower",
+        "count": 8,
+        "to": "npc.caravan_princess_zahra"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 6050,
+      "items": [
+        {
+          "id": "cons.meteor_core_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.meteor_heart",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.caravan_princess_zahra",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Starfall Desert · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_caravan_princess_zahra.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Caravan Princess Zahra' in the Starfall Desert, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.gate_of_ascension_arrival",
+    "name": "Into the Gate of Ascension",
+    "description": "Reach the Gate of Ascension and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.starfall_desert_sovereign"
+      ],
+      "regions": [
+        "region.gate_of_ascension"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.gate_of_ascension",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 14400,
+      "sect_fame": 240
+    },
+    "next": "quest.main.gate_of_ascension_sovereign",
+    "difficulty": 4,
+    "rec_cp": 349330,
+    "hint": "Adventure · Gate of Ascension",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_gate_of_ascension_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Gate of Ascension' in the Gate of Ascension, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.gate_of_ascension_sovereign",
+    "name": "Sovereign of the Gate of Ascension",
+    "description": "Defeat Vermilion Gatekeeper, master of the Gate of Ascension.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.gate_of_ascension_arrival"
+      ],
+      "realm": {
+        "id": "realm.immortal_ascension",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.vermilion_gatekeeper",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 57600,
+      "sect_fame": 960,
+      "techniques": [
+        "tech.active.vermilion_rebirth"
+      ],
+      "gear": [
+        {
+          "base": "gear.ascendant_crown",
+          "rarity": "mythic",
+          "ilvl": 100
+        }
+      ]
+    },
+    "difficulty": 5,
+    "rec_cp": 1467186,
+    "hint": "Adventure · Gate of Ascension · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_gate_of_ascension_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Gate of Ascension' in the Gate of Ascension, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.jade_immortal_realm_arrival"
+  },
+  {
+    "id": "quest.mission.gate_of_ascension_phoenix_down",
+    "name": "Phoenix Down Requisition",
+    "description": "The Mission Hall needs five Phoenix Down from the Gate of Ascension.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.gate_of_ascension"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.phoenix_down",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 8640,
+      "sect_fame": 180
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 4,
+    "rec_cp": 349330,
+    "hint": "Gate of Ascension · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_gate_of_ascension_phoenix_down.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Gate of Ascension' in the Gate of Ascension, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.gate_of_ascension_elite_hunt",
+    "name": "Hunt: Ascension Judge",
+    "description": "Defeat three Ascension Judges in the Gate of Ascension.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.gate_of_ascension"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.ascension_judge",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 11520,
+      "sect_fame": 240,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 5,
+    "rec_cp": 663727,
+    "hint": "Gate of Ascension · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_gate_of_ascension_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Gate of Ascension' in the Gate of Ascension, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.gate_of_ascension_trial_of_nine_flames",
+    "name": "Trial: Trial of Nine Flames",
+    "description": "Elder Feng wants proof you can clear the Trial of Nine Flames.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.gate_of_ascension"
+      ],
+      "realm": {
+        "id": "realm.immortal_ascension",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.trial_of_nine_flames",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 28800,
+      "sect_fame": 360,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 5,
+    "rec_cp": 873325,
+    "hint": "Adventure · Dungeons · Trial of Nine Flames",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_gate_of_ascension_trial_of_nine_flames.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Trial of Nine Flames' in the Gate of Ascension, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.immortal_wanderer_qiu_request",
+    "name": "Immortal Wanderer Qiu's Request",
+    "description": "Immortal Wanderer Qiu asks for eight Phoenix Lotus.",
+    "type": "npc",
+    "giver": "npc.immortal_wanderer_qiu",
+    "turn_in": "npc.immortal_wanderer_qiu",
+    "prereqs": {
+      "regions": [
+        "region.gate_of_ascension"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.phoenix_lotus",
+        "count": 8,
+        "to": "npc.immortal_wanderer_qiu"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 7200,
+      "items": [
+        {
+          "id": "cons.phoenix_rebirth_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.gate_light_crystal",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.immortal_wanderer_qiu",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Gate of Ascension · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_immortal_wanderer_qiu.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Immortal Wanderer Qiu' in the Gate of Ascension, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.jade_immortal_realm_arrival",
+    "name": "Into the Jade Immortal Realm",
+    "description": "Reach the Jade Immortal Realm and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.gate_of_ascension_sovereign"
+      ],
+      "regions": [
+        "region.jade_immortal_realm"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.jade_immortal_realm",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 16900,
+      "sect_fame": 260
+    },
+    "next": "quest.main.jade_immortal_realm_sovereign",
+    "difficulty": 4,
+    "rec_cp": 716126,
+    "hint": "Adventure · Jade Immortal Realm",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_jade_immortal_realm_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Jade Immortal Realm' in the Jade Immortal Realm, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.jade_immortal_realm_sovereign",
+    "name": "Sovereign of the Jade Immortal Realm",
+    "description": "Defeat White Tiger Sovereign, master of the Jade Immortal Realm.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.jade_immortal_realm_arrival"
+      ],
+      "realm": {
+        "id": "realm.earth_immortal",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.white_tiger_sovereign",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 67600,
+      "sect_fame": 1040,
+      "techniques": [
+        "tech.active.jade_tiger_claw"
+      ],
+      "gear": [
+        {
+          "base": "gear.jadeclaw_sword",
+          "rarity": "mythic",
+          "ilvl": 108
+        }
+      ]
+    },
+    "difficulty": 5,
+    "rec_cp": 3007729,
+    "hint": "Adventure · Jade Immortal Realm · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_jade_immortal_realm_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Jade Immortal Realm' in the Jade Immortal Realm, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.golden_palace_of_laws_arrival"
+  },
+  {
+    "id": "quest.mission.jade_immortal_realm_white_tiger_fang",
+    "name": "White Tiger Fang Requisition",
+    "description": "The Mission Hall needs five White Tiger Fang from the Jade Immortal Realm.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.jade_immortal_realm"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.white_tiger_fang",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 10140,
+      "sect_fame": 195
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 4,
+    "rec_cp": 716126,
+    "hint": "Jade Immortal Realm · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_jade_immortal_realm_white_tiger_fang.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Jade Immortal Realm' in the Jade Immortal Realm, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.jade_immortal_realm_elite_hunt",
+    "name": "Hunt: Jade Guardian Beast",
+    "description": "Defeat three Jade Guardian Beasts in the Jade Immortal Realm.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.jade_immortal_realm"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.jade_guardian_beast",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 13520,
+      "sect_fame": 260,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 5,
+    "rec_cp": 1360639,
+    "hint": "Jade Immortal Realm · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_jade_immortal_realm_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Jade Immortal Realm' in the Jade Immortal Realm, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.jade_immortal_realm_immortal_peach_garden",
+    "name": "Trial: Immortal Peach Garden",
+    "description": "Elder Feng wants proof you can clear the Immortal Peach Garden.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.jade_immortal_realm"
+      ],
+      "realm": {
+        "id": "realm.earth_immortal",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.immortal_peach_garden",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 33800,
+      "sect_fame": 390,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 5,
+    "rec_cp": 1790315,
+    "hint": "Adventure · Dungeons · Immortal Peach Garden",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_jade_immortal_realm_immortal_peach_garden.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Immortal Peach Garden' in the Jade Immortal Realm, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.peach_keeper_mei_request",
+    "name": "Peach Keeper Mei's Request",
+    "description": "Peach Keeper Mei asks for eight Immortal Peach Blossom.",
+    "type": "npc",
+    "giver": "npc.peach_keeper_mei",
+    "turn_in": "npc.peach_keeper_mei",
+    "prereqs": {
+      "regions": [
+        "region.jade_immortal_realm"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.immortal_peach_blossom",
+        "count": 8,
+        "to": "npc.peach_keeper_mei"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 8450,
+      "items": [
+        {
+          "id": "cons.immortal_peach_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.realm_heart_jade",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.peach_keeper_mei",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Jade Immortal Realm · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_peach_keeper_mei.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Peach Keeper Mei' in the Jade Immortal Realm, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.golden_palace_of_laws_arrival",
+    "name": "Into the Golden Palace of Laws",
+    "description": "Reach the Golden Palace of Laws and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.jade_immortal_realm_sovereign"
+      ],
+      "regions": [
+        "region.golden_palace_of_laws"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.golden_palace_of_laws",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 19600,
+      "sect_fame": 280
+    },
+    "next": "quest.main.golden_palace_of_laws_sovereign",
+    "difficulty": 4,
+    "rec_cp": 1468059,
+    "hint": "Adventure · Golden Palace of Laws",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_golden_palace_of_laws_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Golden Palace of Laws' in the Golden Palace of Laws, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.golden_palace_of_laws_sovereign",
+    "name": "Sovereign of the Golden Palace of Laws",
+    "description": "Defeat Arbiter of Ten Thousand Laws, master of the Golden Palace of Laws.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.golden_palace_of_laws_arrival"
+      ],
+      "realm": {
+        "id": "realm.heavenly_immortal",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.arbiter_of_laws",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 78400,
+      "sect_fame": 1120,
+      "techniques": [
+        "tech.active.verdict_of_heaven"
+      ],
+      "gear": [
+        {
+          "base": "gear.lawbound_robe",
+          "rarity": "mythic",
+          "ilvl": 116
+        }
+      ]
+    },
+    "difficulty": 5,
+    "rec_cp": 6165848,
+    "hint": "Adventure · Golden Palace of Laws · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_golden_palace_of_laws_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Golden Palace of Laws' in the Golden Palace of Laws, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "next": "quest.main.throne_of_the_immortal_emperor_arrival"
+  },
+  {
+    "id": "quest.mission.golden_palace_of_laws_golden_crow_feather",
+    "name": "Golden Crow Feather Requisition",
+    "description": "The Mission Hall needs five Golden Crow Feather from the Golden Palace of Laws.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.golden_palace_of_laws"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.golden_crow_feather",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 11760,
+      "sect_fame": 210
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 4,
+    "rec_cp": 1468059,
+    "hint": "Golden Palace of Laws · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_golden_palace_of_laws_golden_crow_feather.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Golden Palace of Laws' in the Golden Palace of Laws, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.golden_palace_of_laws_elite_hunt",
+    "name": "Hunt: Nine-Tailed Shadow",
+    "description": "Defeat three Nine-Tailed Shadows in the Golden Palace of Laws.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.golden_palace_of_laws"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.nine_tailed_shadow",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 15680,
+      "sect_fame": 280,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 5,
+    "rec_cp": 2789312,
+    "hint": "Golden Palace of Laws · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_golden_palace_of_laws_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Golden Palace of Laws' in the Golden Palace of Laws, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.golden_palace_of_laws_hall_of_verdicts",
+    "name": "Trial: Hall of Verdicts",
+    "description": "Elder Feng wants proof you can clear the Hall of Verdicts.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.golden_palace_of_laws"
+      ],
+      "realm": {
+        "id": "realm.heavenly_immortal",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.hall_of_verdicts",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 39200,
+      "sect_fame": 420,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 5,
+    "rec_cp": 3670148,
+    "hint": "Adventure · Dungeons · Hall of Verdicts",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_golden_palace_of_laws_hall_of_verdicts.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Hall of Verdicts' in the Golden Palace of Laws, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.clerk_fu_request",
+    "name": "Heavenly Clerk Fu's Request",
+    "description": "Heavenly Clerk Fu asks for eight Law Flower.",
+    "type": "npc",
+    "giver": "npc.clerk_fu",
+    "turn_in": "npc.clerk_fu",
+    "prereqs": {
+      "regions": [
+        "region.golden_palace_of_laws"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.law_flower",
+        "count": 8,
+        "to": "npc.clerk_fu"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 9800,
+      "items": [
+        {
+          "id": "cons.golden_law_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.law_wheel_fragment",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.clerk_fu",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Golden Palace of Laws · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_clerk_fu.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Heavenly Clerk Fu' in the Golden Palace of Laws, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.throne_of_the_immortal_emperor_arrival",
+    "name": "Into the Throne of the Immortal Emperor",
+    "description": "Reach the Throne of the Immortal Emperor and explore three of its places.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.golden_palace_of_laws_sovereign"
+      ],
+      "regions": [
+        "region.throne_of_the_immortal_emperor"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "explore",
+        "region": "region.throne_of_the_immortal_emperor",
+        "nodes": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 22500,
+      "sect_fame": 300
+    },
+    "next": "quest.main.throne_of_the_immortal_emperor_sovereign",
+    "difficulty": 4,
+    "rec_cp": 3009521,
+    "hint": "Adventure · Throne of the Immortal Emperor",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_throne_of_the_immortal_emperor_arrival.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Throne of the Immortal Emperor' in the Throne of the Immortal Emperor, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.main.throne_of_the_immortal_emperor_sovereign",
+    "name": "Sovereign of the Throne of the Immortal Emperor",
+    "description": "Defeat Remnant of the First Emperor, master of the Throne of the Immortal Emperor.",
+    "type": "main",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {
+      "quests": [
+        "quest.main.throne_of_the_immortal_emperor_arrival"
+      ],
+      "realm": {
+        "id": "realm.immortal_king",
+        "stage": 5
+      }
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "boss.first_emperor_remnant",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 90000,
+      "sect_fame": 1200,
+      "techniques": [
+        "tech.active.emperors_five_element_seal"
+      ],
+      "gear": [
+        {
+          "base": "gear.emperor_saber",
+          "rarity": "mythic",
+          "ilvl": 124
+        }
+      ]
+    },
+    "difficulty": 5,
+    "rec_cp": 12639988,
+    "hint": "Adventure · Throne of the Immortal Emperor · Throne",
+    "art": {
+      "icon": {
+        "file": "assets/quests/main_throne_of_the_immortal_emperor_sovereign.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Throne of the Immortal Emperor' in the Throne of the Immortal Emperor, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.mission.throne_of_the_immortal_emperor_azure_dragon_scale",
+    "name": "Azure Dragon Scale Requisition",
+    "description": "The Mission Hall needs five Azure Dragon Scale from the Throne of the Immortal Emperor.",
+    "type": "mission",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.throne_of_the_immortal_emperor"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.azure_dragon_scale",
+        "count": 5,
+        "to": "sectloc.mission_hall"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 13500,
+      "sect_fame": 225
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 4,
+    "rec_cp": 3009521,
+    "hint": "Throne of the Immortal Emperor · enemies drop it",
+    "art": {
+      "icon": {
+        "file": "assets/quests/mission_throne_of_the_immortal_emperor_azure_dragon_scale.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Throne of the Immortal Emperor' in the Throne of the Immortal Emperor, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.combat.throne_of_the_immortal_emperor_elite_hunt",
+    "name": "Hunt: Emperor's Shadow",
+    "description": "Defeat three Emperor's Shadows in the Throne of the Immortal Emperor.",
+    "type": "combat",
+    "giver": "sectloc.mission_hall",
+    "turn_in": "sectloc.mission_hall",
+    "prereqs": {
+      "regions": [
+        "region.throne_of_the_immortal_emperor"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "defeat",
+        "target": "enemy.emperors_shadow",
+        "count": 3
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 18000,
+      "sect_fame": 300,
+      "items": [
+        {
+          "id": "mat.spirit_enhancing_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "repeatable": {
+      "cooldown_min": 1440
+    },
+    "difficulty": 5,
+    "rec_cp": 5718090,
+    "hint": "Throne of the Immortal Emperor · Lair / Den",
+    "art": {
+      "icon": {
+        "file": "assets/quests/combat_throne_of_the_immortal_emperor_elite_hunt.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Throne of the Immortal Emperor' in the Throne of the Immortal Emperor, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.dungeon.throne_of_the_immortal_emperor_hall_of_five_elements",
+    "name": "Trial: Hall of Five Elements",
+    "description": "Elder Feng wants proof you can clear the Hall of Five Elements.",
+    "type": "dungeon",
+    "giver": "npc.elder_feng",
+    "turn_in": "npc.elder_feng",
+    "prereqs": {
+      "regions": [
+        "region.throne_of_the_immortal_emperor"
+      ],
+      "realm": {
+        "id": "realm.immortal_king",
+        "stage": 3
+      }
+    },
+    "objectives": [
+      {
+        "type": "clear",
+        "target": "dungeon.hall_of_five_elements",
+        "count": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 45000,
+      "sect_fame": 450,
+      "affinity": [
+        {
+          "npc": "npc.elder_feng",
+          "delta": 10
+        }
+      ]
+    },
+    "difficulty": 5,
+    "rec_cp": 7523802,
+    "hint": "Adventure · Dungeons · Hall of Five Elements",
+    "art": {
+      "icon": {
+        "file": "assets/quests/dungeon_throne_of_the_immortal_emperor_hall_of_five_elements.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Hall of Five Elements' in the Throne of the Immortal Emperor, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.npc.throne_steward_lao_request",
+    "name": "Throne Steward Lao's Request",
+    "description": "Throne Steward Lao asks for eight Primordial Lotus.",
+    "type": "npc",
+    "giver": "npc.throne_steward_lao",
+    "turn_in": "npc.throne_steward_lao",
+    "prereqs": {
+      "regions": [
+        "region.throne_of_the_immortal_emperor"
+      ]
+    },
+    "objectives": [
+      {
+        "type": "deliver",
+        "item": "mat.primordial_lotus",
+        "count": 8,
+        "to": "npc.throne_steward_lao"
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 11250,
+      "items": [
+        {
+          "id": "cons.emperor_ascension_pill",
+          "qty": 2
+        },
+        {
+          "id": "mat.primordial_chaos_stone",
+          "qty": 1
+        }
+      ],
+      "affinity": [
+        {
+          "npc": "npc.throne_steward_lao",
+          "delta": 40
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Throne of the Immortal Emperor · Gathering Grounds",
+    "art": {
+      "icon": {
+        "file": "assets/quests/npc_throne_steward_lao.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem for 'Throne Steward Lao' in the Throne of the Immortal Emperor, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/mission_hall.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_foundation_establishment",
+    "name": "Realm: Foundation Establishment",
+    "description": "Break through to Foundation Establishment.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.foundation_establishment",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 800,
+      "sect_fame": 100,
+      "items": [
+        {
+          "id": "cons.spirit_condensing_pill",
+          "qty": 3
+        }
+      ]
+    },
+    "difficulty": 1,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_foundation_establishment.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the foundation establishment realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_core_formation",
+    "name": "Realm: Core Formation",
+    "description": "Break through to Core Formation.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.core_formation",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 1800,
+      "sect_fame": 150,
+      "items": [
+        {
+          "id": "cons.spirit_condensing_pill",
+          "qty": 3
+        }
+      ]
+    },
+    "difficulty": 2,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_core_formation.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the core formation realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_nascent_soul",
+    "name": "Realm: Nascent Soul",
+    "description": "Break through to Nascent Soul.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.nascent_soul",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 3200,
+      "sect_fame": 200,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 1
+        }
+      ]
+    },
+    "difficulty": 2,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_nascent_soul.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the nascent soul realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_soul_transformation",
+    "name": "Realm: Soul Transformation",
+    "description": "Break through to Soul Transformation.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.soul_transformation",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 5000,
+      "sect_fame": 250,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 2
+        }
+      ]
+    },
+    "difficulty": 2,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_soul_transformation.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the soul transformation realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_spirit_severing",
+    "name": "Realm: Spirit Severing",
+    "description": "Break through to Spirit Severing.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.spirit_severing",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 7200,
+      "sect_fame": 300,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 3
+        }
+      ]
+    },
+    "difficulty": 3,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_spirit_severing.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the spirit severing realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_dao_integration",
+    "name": "Realm: Dao Integration",
+    "description": "Break through to Dao Integration.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.dao_integration",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 9800,
+      "sect_fame": 350,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 4
+        }
+      ]
+    },
+    "difficulty": 3,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_dao_integration.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the dao integration realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_tribulation_transcendence",
+    "name": "Realm: Tribulation Transcendence",
+    "description": "Break through to Tribulation Transcendence.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.tribulation_transcendence",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 12800,
+      "sect_fame": 400,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 5
+        }
+      ]
+    },
+    "difficulty": 3,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_tribulation_transcendence.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the tribulation transcendence realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_mahayana",
+    "name": "Realm: Mahayana",
+    "description": "Break through to Mahayana.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.mahayana",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 16200,
+      "sect_fame": 450,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 6
+        }
+      ]
+    },
+    "difficulty": 4,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_mahayana.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the mahayana realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_immortal_ascension",
+    "name": "Realm: Immortal Ascension",
+    "description": "Break through to Immortal Ascension.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.immortal_ascension",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 20000,
+      "sect_fame": 500,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 7
+        }
+      ]
+    },
+    "difficulty": 4,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_immortal_ascension.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the immortal ascension realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_earth_immortal",
+    "name": "Realm: Earth Immortal",
+    "description": "Break through to Earth Immortal.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.earth_immortal",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 24200,
+      "sect_fame": 550,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 8
+        }
+      ]
+    },
+    "difficulty": 4,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_earth_immortal.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the earth immortal realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_heavenly_immortal",
+    "name": "Realm: Heavenly Immortal",
+    "description": "Break through to Heavenly Immortal.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.heavenly_immortal",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 28800,
+      "sect_fame": 600,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 9
+        }
+      ]
+    },
+    "difficulty": 5,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_heavenly_immortal.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the heavenly immortal realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_golden_immortal",
+    "name": "Realm: Golden Immortal",
+    "description": "Break through to Golden Immortal.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.golden_immortal",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 33800,
+      "sect_fame": 650,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 10
+        }
+      ]
+    },
+    "difficulty": 5,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_golden_immortal.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the golden immortal realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_immortal_king",
+    "name": "Realm: Immortal King",
+    "description": "Break through to Immortal King.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.immortal_king",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 39200,
+      "sect_fame": 700,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 11
+        }
+      ]
+    },
+    "difficulty": 5,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_immortal_king.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the immortal king realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "quest.cultivation.reach_immortal_emperor",
+    "name": "Realm: Immortal Emperor",
+    "description": "Break through to Immortal Emperor.",
+    "type": "cultivation",
+    "giver": "system",
+    "turn_in": "auto",
+    "prereqs": {},
+    "objectives": [
+      {
+        "type": "reach_realm",
+        "realm": "realm.immortal_emperor",
+        "stage": 1
+      }
+    ],
+    "rewards": {
+      "spirit_stones": 45000,
+      "sect_fame": 750,
+      "items": [
+        {
+          "id": "mat.dao_insight_crystal",
+          "qty": 12
+        }
+      ]
+    },
+    "difficulty": 5,
+    "hint": "Cultivate tab · Break through",
+    "art": {
+      "icon": {
+        "file": "assets/quests/cultivation_reach_immortal_emperor.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a quest emblem celebrating the immortal emperor realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

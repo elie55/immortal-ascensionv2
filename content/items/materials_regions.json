@@ -1,0 +1,1562 @@
+[
+  {
+    "id": "mat.fire_bud",
+    "name": "Fire Bud",
+    "description": "A red flower bud wrapped in tiny flames. Found in the Blazing Mountain.",
+    "name_cn": "火芽",
+    "rarity": "rare",
+    "sell_value": 72,
+    "stack_limit": 999,
+    "tags": [
+      "blazing_mountain"
+    ],
+    "subtype": "herb",
+    "tier": 3,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/fire_bud.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a red flower bud wrapped in tiny flames, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.magma_iron_ore",
+    "name": "Magma Iron Ore",
+    "description": "A black iron ore with glowing orange veins. Found in the Blazing Mountain.",
+    "name_cn": "熔铁矿",
+    "rarity": "rare",
+    "sell_value": 144,
+    "stack_limit": 999,
+    "tags": [
+      "blazing_mountain"
+    ],
+    "subtype": "ore",
+    "tier": 3,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/magma_iron_ore.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a black iron ore with glowing orange veins, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.salamander_scale",
+    "name": "Salamander Scale",
+    "description": "A glossy black scale with an ember glow beneath. Found in the Blazing Mountain.",
+    "name_cn": "火蜥鳞",
+    "rarity": "epic",
+    "sell_value": 216,
+    "stack_limit": 999,
+    "tags": [
+      "blazing_mountain"
+    ],
+    "subtype": "monster",
+    "tier": 3,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/salamander_scale.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a glossy black scale with an ember glow beneath, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.ember_core",
+    "name": "Ember Core",
+    "description": "A fist-sized crystal holding a swirling ember. Found in the Blazing Mountain.",
+    "name_cn": "炎核",
+    "rarity": "epic",
+    "sell_value": 288,
+    "stack_limit": 999,
+    "tags": [
+      "blazing_mountain"
+    ],
+    "subtype": "crystal",
+    "tier": 3,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/ember_core.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a fist-sized crystal holding a swirling ember, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.snow_lotus_petal",
+    "name": "Snow Lotus Petal",
+    "description": "A translucent white lotus petal rimmed with frost. Found in the Frozen Lotus Valley.",
+    "name_cn": "雪莲瓣",
+    "rarity": "rare",
+    "sell_value": 128,
+    "stack_limit": 999,
+    "tags": [
+      "frozen_lotus_valley"
+    ],
+    "subtype": "herb",
+    "tier": 4,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/snow_lotus_petal.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a translucent white lotus petal rimmed with frost, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.frostsilver_ore",
+    "name": "Frostsilver Ore",
+    "description": "A pale silver ore covered in hoarfrost. Found in the Frozen Lotus Valley.",
+    "name_cn": "霜银矿",
+    "rarity": "rare",
+    "sell_value": 256,
+    "stack_limit": 999,
+    "tags": [
+      "frozen_lotus_valley"
+    ],
+    "subtype": "ore",
+    "tier": 4,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/frostsilver_ore.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pale silver ore covered in hoarfrost, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.yeti_fur",
+    "name": "Yeti Fur",
+    "description": "A thick bundle of white yeti fur with ice crystals. Found in the Frozen Lotus Valley.",
+    "name_cn": "雪猿毛",
+    "rarity": "epic",
+    "sell_value": 384,
+    "stack_limit": 999,
+    "tags": [
+      "frozen_lotus_valley"
+    ],
+    "subtype": "monster",
+    "tier": 4,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/yeti_fur.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a thick bundle of white yeti fur with ice crystals, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.lotus_ice_heart",
+    "name": "Lotus Ice Heart",
+    "description": "A lotus-shaped crystal of pure blue ice. Found in the Frozen Lotus Valley.",
+    "name_cn": "莲冰心",
+    "rarity": "epic",
+    "sell_value": 512,
+    "stack_limit": 999,
+    "tags": [
+      "frozen_lotus_valley"
+    ],
+    "subtype": "crystal",
+    "tier": 4,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/lotus_ice_heart.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a lotus-shaped crystal of pure blue ice, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.sword_grass",
+    "name": "Sword Grass",
+    "description": "Blades of sharp silver-green grass shaped like tiny swords. Found in the Ancient Sword Tomb.",
+    "name_cn": "剑草",
+    "rarity": "rare",
+    "sell_value": 200,
+    "stack_limit": 999,
+    "tags": [
+      "ancient_sword_tomb"
+    ],
+    "subtype": "herb",
+    "tier": 4,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/sword_grass.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of blades of sharp silver-green grass shaped like tiny swords, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.tomb_iron",
+    "name": "Tomb Iron",
+    "description": "A lump of ancient black iron with sword-like grain. Found in the Ancient Sword Tomb.",
+    "name_cn": "冢铁",
+    "rarity": "rare",
+    "sell_value": 400,
+    "stack_limit": 999,
+    "tags": [
+      "ancient_sword_tomb"
+    ],
+    "subtype": "ore",
+    "tier": 4,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/tomb_iron.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a lump of ancient black iron with sword-like grain, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.sword_spirit_shard",
+    "name": "Sword Spirit Shard",
+    "description": "A sliver of a broken blade glowing with silver intent. Found in the Ancient Sword Tomb.",
+    "name_cn": "剑灵碎片",
+    "rarity": "epic",
+    "sell_value": 600,
+    "stack_limit": 999,
+    "tags": [
+      "ancient_sword_tomb"
+    ],
+    "subtype": "monster",
+    "tier": 4,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/sword_spirit_shard.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a sliver of a broken blade glowing with silver intent, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.sword_intent_crystal",
+    "name": "Sword Intent Crystal",
+    "description": "A long silver crystal humming with sharp energy. Found in the Ancient Sword Tomb.",
+    "name_cn": "剑意晶",
+    "rarity": "epic",
+    "sell_value": 800,
+    "stack_limit": 999,
+    "tags": [
+      "ancient_sword_tomb"
+    ],
+    "subtype": "crystal",
+    "tier": 4,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/sword_intent_crystal.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a long silver crystal humming with sharp energy, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.blood_lotus",
+    "name": "Blood Lotus",
+    "description": "A dark crimson lotus that drips red dew. Found in the Demon Territory.",
+    "name_cn": "血莲",
+    "rarity": "rare",
+    "sell_value": 288,
+    "stack_limit": 999,
+    "tags": [
+      "demon_territory"
+    ],
+    "subtype": "herb",
+    "tier": 5,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/blood_lotus.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a dark crimson lotus that drips red dew, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.demon_iron",
+    "name": "Demon Iron",
+    "description": "A black ore pulsing with red veins. Found in the Demon Territory.",
+    "name_cn": "魔铁",
+    "rarity": "rare",
+    "sell_value": 576,
+    "stack_limit": 999,
+    "tags": [
+      "demon_territory"
+    ],
+    "subtype": "ore",
+    "tier": 5,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/demon_iron.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a black ore pulsing with red veins, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.demon_horn",
+    "name": "Demon Horn",
+    "description": "A curved black horn with crimson tips. Found in the Demon Territory.",
+    "name_cn": "魔角",
+    "rarity": "epic",
+    "sell_value": 864,
+    "stack_limit": 999,
+    "tags": [
+      "demon_territory"
+    ],
+    "subtype": "monster",
+    "tier": 5,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/demon_horn.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a curved black horn with crimson tips, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.crimson_moon_shard",
+    "name": "Crimson Moon Shard",
+    "description": "A shard of red crystal shaped like a crescent moon. Found in the Demon Territory.",
+    "name_cn": "赤月碎",
+    "rarity": "epic",
+    "sell_value": 1152,
+    "stack_limit": 999,
+    "tags": [
+      "demon_territory"
+    ],
+    "subtype": "crystal",
+    "tier": 5,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/crimson_moon_shard.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a shard of red crystal shaped like a crescent moon, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.celestial_peach",
+    "name": "Celestial Peach",
+    "description": "A soft glowing pink peach with a gold leaf. Found in the Celestial Mountains.",
+    "name_cn": "仙桃",
+    "rarity": "epic",
+    "sell_value": 392,
+    "stack_limit": 999,
+    "tags": [
+      "celestial_mountains"
+    ],
+    "subtype": "herb",
+    "tier": 5,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/celestial_peach.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a soft glowing pink peach with a gold leaf, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.skystone",
+    "name": "Skystone",
+    "description": "A pale blue stone flecked with gold, light as a feather. Found in the Celestial Mountains.",
+    "name_cn": "天石",
+    "rarity": "epic",
+    "sell_value": 784,
+    "stack_limit": 999,
+    "tags": [
+      "celestial_mountains"
+    ],
+    "subtype": "ore",
+    "tier": 5,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/skystone.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pale blue stone flecked with gold, light as a feather, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.thunder_feather",
+    "name": "Thunder Feather",
+    "description": "A white feather crackling with blue lightning. Found in the Celestial Mountains.",
+    "name_cn": "雷羽",
+    "rarity": "legendary",
+    "sell_value": 1176,
+    "stack_limit": 999,
+    "tags": [
+      "celestial_mountains"
+    ],
+    "subtype": "monster",
+    "tier": 5,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/thunder_feather.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a white feather crackling with blue lightning, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.heaven_pine_amber",
+    "name": "Heaven Pine Amber",
+    "description": "A golden amber drop with a tiny lightning bolt trapped inside. Found in the Celestial Mountains.",
+    "name_cn": "天松琥珀",
+    "rarity": "legendary",
+    "sell_value": 1568,
+    "stack_limit": 999,
+    "tags": [
+      "celestial_mountains"
+    ],
+    "subtype": "crystal",
+    "tier": 5,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/heaven_pine_amber.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a golden amber drop with a tiny lightning bolt trapped inside, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.star_dew_grass",
+    "name": "Star-Dew Grass",
+    "description": "A sprig of silver grass with dew drops that shine like stars. Found in the Nine Heavens.",
+    "name_cn": "星露草",
+    "rarity": "epic",
+    "sell_value": 512,
+    "stack_limit": 999,
+    "tags": [
+      "nine_heavens"
+    ],
+    "subtype": "herb",
+    "tier": 6,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/star_dew_grass.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a sprig of silver grass with dew drops that shine like stars, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.cloud_jade",
+    "name": "Cloud Jade",
+    "description": "A soft white jade that floats slightly above the palm. Found in the Nine Heavens.",
+    "name_cn": "云玉",
+    "rarity": "epic",
+    "sell_value": 1024,
+    "stack_limit": 999,
+    "tags": [
+      "nine_heavens"
+    ],
+    "subtype": "ore",
+    "tier": 6,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/cloud_jade.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a soft white jade that floats slightly above the palm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.jellyfish_silk",
+    "name": "Jellyfish Silk",
+    "description": "A coil of translucent glowing silk. Found in the Nine Heavens.",
+    "name_cn": "水母丝",
+    "rarity": "legendary",
+    "sell_value": 1536,
+    "stack_limit": 999,
+    "tags": [
+      "nine_heavens"
+    ],
+    "subtype": "monster",
+    "tier": 6,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/jellyfish_silk.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a coil of translucent glowing silk, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.heavenly_star_crystal",
+    "name": "Heavenly Star Crystal",
+    "description": "A deep blue crystal with tiny stars inside. Found in the Nine Heavens.",
+    "name_cn": "天星晶",
+    "rarity": "legendary",
+    "sell_value": 2048,
+    "stack_limit": 999,
+    "tags": [
+      "nine_heavens"
+    ],
+    "subtype": "crystal",
+    "tier": 6,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/heavenly_star_crystal.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a deep blue crystal with tiny stars inside, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.thunderroot",
+    "name": "Thunderroot",
+    "description": "A twisted root crackling with violet sparks. Found in the Thunderclap Wastes.",
+    "name_cn": "雷根",
+    "rarity": "epic",
+    "sell_value": 648,
+    "stack_limit": 999,
+    "tags": [
+      "thunderclap_wastes"
+    ],
+    "subtype": "herb",
+    "tier": 6,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/thunderroot.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a twisted root crackling with violet sparks, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.storm_glass",
+    "name": "Storm Glass",
+    "description": "A shard of black glass with lightning frozen inside. Found in the Thunderclap Wastes.",
+    "name_cn": "雷琉璃",
+    "rarity": "epic",
+    "sell_value": 1296,
+    "stack_limit": 999,
+    "tags": [
+      "thunderclap_wastes"
+    ],
+    "subtype": "ore",
+    "tier": 6,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/storm_glass.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a shard of black glass with lightning frozen inside, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.roc_lightning_feather",
+    "name": "Roc Lightning Feather",
+    "description": "A long violet feather that sparks when touched. Found in the Thunderclap Wastes.",
+    "name_cn": "雷鹏羽",
+    "rarity": "legendary",
+    "sell_value": 1944,
+    "stack_limit": 999,
+    "tags": [
+      "thunderclap_wastes"
+    ],
+    "subtype": "monster",
+    "tier": 6,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/roc_lightning_feather.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a long violet feather that sparks when touched, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.tribulation_core",
+    "name": "Tribulation Core",
+    "description": "A sphere of compressed violet lightning in a glass shell. Found in the Thunderclap Wastes.",
+    "name_cn": "劫核",
+    "rarity": "legendary",
+    "sell_value": 2592,
+    "stack_limit": 999,
+    "tags": [
+      "thunderclap_wastes"
+    ],
+    "subtype": "crystal",
+    "tier": 6,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/tribulation_core.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a sphere of compressed violet lightning in a glass shell, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.sea_jade_kelp",
+    "name": "Sea-Jade Kelp",
+    "description": "A ribbon of translucent jade-green kelp. Found in the Sunken Dragon Sea.",
+    "name_cn": "海玉藻",
+    "rarity": "epic",
+    "sell_value": 800,
+    "stack_limit": 999,
+    "tags": [
+      "sunken_dragon_sea"
+    ],
+    "subtype": "herb",
+    "tier": 7,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/sea_jade_kelp.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a ribbon of translucent jade-green kelp, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.dragonbone_ore",
+    "name": "Dragonbone Ore",
+    "description": "A chunk of fossilised dragon bone with metal veins. Found in the Sunken Dragon Sea.",
+    "name_cn": "龙骨矿",
+    "rarity": "epic",
+    "sell_value": 1600,
+    "stack_limit": 999,
+    "tags": [
+      "sunken_dragon_sea"
+    ],
+    "subtype": "ore",
+    "tier": 7,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/dragonbone_ore.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a chunk of fossilised dragon bone with metal veins, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.kraken_ink",
+    "name": "Kraken Ink",
+    "description": "A sealed vial of glowing black ink. Found in the Sunken Dragon Sea.",
+    "name_cn": "海妖墨",
+    "rarity": "legendary",
+    "sell_value": 2400,
+    "stack_limit": 999,
+    "tags": [
+      "sunken_dragon_sea"
+    ],
+    "subtype": "monster",
+    "tier": 7,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/kraken_ink.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a sealed vial of glowing black ink, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.dragon_pearl",
+    "name": "Dragon Pearl",
+    "description": "A luminous blue pearl the size of an eye. Found in the Sunken Dragon Sea.",
+    "name_cn": "龙珠",
+    "rarity": "legendary",
+    "sell_value": 3200,
+    "stack_limit": 999,
+    "tags": [
+      "sunken_dragon_sea"
+    ],
+    "subtype": "crystal",
+    "tier": 7,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/dragon_pearl.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a luminous blue pearl the size of an eye, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.desert_star_flower",
+    "name": "Desert Star Flower",
+    "description": "A small silver flower that only blooms where a star fell. Found in the Starfall Desert.",
+    "name_cn": "沙星花",
+    "rarity": "legendary",
+    "sell_value": 968,
+    "stack_limit": 999,
+    "tags": [
+      "starfall_desert"
+    ],
+    "subtype": "herb",
+    "tier": 7,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/desert_star_flower.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a small silver flower that only blooms where a star fell, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.star_metal",
+    "name": "Star Metal",
+    "description": "A heavy silver ingot with tiny stars in its surface. Found in the Starfall Desert.",
+    "name_cn": "星铁",
+    "rarity": "legendary",
+    "sell_value": 1936,
+    "stack_limit": 999,
+    "tags": [
+      "starfall_desert"
+    ],
+    "subtype": "ore",
+    "tier": 7,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/star_metal.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a heavy silver ingot with tiny stars in its surface, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.sand_wyrm_tooth",
+    "name": "Sand Wyrm Tooth",
+    "description": "A long crystal tooth. Found in the Starfall Desert.",
+    "name_cn": "沙虫牙",
+    "rarity": "mythic",
+    "sell_value": 2904,
+    "stack_limit": 999,
+    "tags": [
+      "starfall_desert"
+    ],
+    "subtype": "monster",
+    "tier": 7,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/sand_wyrm_tooth.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a long crystal tooth, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.meteor_heart",
+    "name": "Meteor Heart",
+    "description": "A glowing molten-silver sphere from a meteor's core. Found in the Starfall Desert.",
+    "name_cn": "陨心",
+    "rarity": "mythic",
+    "sell_value": 3872,
+    "stack_limit": 999,
+    "tags": [
+      "starfall_desert"
+    ],
+    "subtype": "crystal",
+    "tier": 7,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/meteor_heart.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a glowing molten-silver sphere from a meteor's core, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.phoenix_lotus",
+    "name": "Phoenix Lotus",
+    "description": "A lotus with petals of golden flame. Found in the Gate of Ascension.",
+    "name_cn": "凤莲",
+    "rarity": "legendary",
+    "sell_value": 1152,
+    "stack_limit": 999,
+    "tags": [
+      "gate_of_ascension"
+    ],
+    "subtype": "herb",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/phoenix_lotus.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a lotus with petals of golden flame, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.ascension_gold",
+    "name": "Ascension Gold",
+    "description": "A nugget of pure radiant gold. Found in the Gate of Ascension.",
+    "name_cn": "飞升金",
+    "rarity": "legendary",
+    "sell_value": 2304,
+    "stack_limit": 999,
+    "tags": [
+      "gate_of_ascension"
+    ],
+    "subtype": "ore",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/ascension_gold.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a nugget of pure radiant gold, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.phoenix_down",
+    "name": "Phoenix Down",
+    "description": "A soft golden feather glowing with warm light. Found in the Gate of Ascension.",
+    "name_cn": "凤绒",
+    "rarity": "mythic",
+    "sell_value": 3456,
+    "stack_limit": 999,
+    "tags": [
+      "gate_of_ascension"
+    ],
+    "subtype": "monster",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/phoenix_down.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a soft golden feather glowing with warm light, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.gate_light_crystal",
+    "name": "Gate-Light Crystal",
+    "description": "A white crystal radiating the light beyond the gate. Found in the Gate of Ascension.",
+    "name_cn": "门光晶",
+    "rarity": "mythic",
+    "sell_value": 4608,
+    "stack_limit": 999,
+    "tags": [
+      "gate_of_ascension"
+    ],
+    "subtype": "crystal",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/gate_light_crystal.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a white crystal radiating the light beyond the gate, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.immortal_peach_blossom",
+    "name": "Immortal Peach Blossom",
+    "description": "A golden-pink blossom that smells of eternity. Found in the Jade Immortal Realm.",
+    "name_cn": "仙桃花",
+    "rarity": "legendary",
+    "sell_value": 1352,
+    "stack_limit": 999,
+    "tags": [
+      "jade_immortal_realm"
+    ],
+    "subtype": "herb",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/immortal_peach_blossom.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a golden-pink blossom that smells of eternity, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.immortal_jade",
+    "name": "Immortal Jade",
+    "description": "A flawless translucent green jade glowing softly. Found in the Jade Immortal Realm.",
+    "name_cn": "仙玉",
+    "rarity": "legendary",
+    "sell_value": 2704,
+    "stack_limit": 999,
+    "tags": [
+      "jade_immortal_realm"
+    ],
+    "subtype": "ore",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/immortal_jade.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a flawless translucent green jade glowing softly, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.white_tiger_fang",
+    "name": "White Tiger Fang",
+    "description": "A long silver-white fang with jade veins. Found in the Jade Immortal Realm.",
+    "name_cn": "白虎牙",
+    "rarity": "mythic",
+    "sell_value": 4056,
+    "stack_limit": 999,
+    "tags": [
+      "jade_immortal_realm"
+    ],
+    "subtype": "monster",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/white_tiger_fang.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a long silver-white fang with jade veins, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.realm_heart_jade",
+    "name": "Realm-Heart Jade",
+    "description": "A heart-shaped jade pulsing with the realm's Qi. Found in the Jade Immortal Realm.",
+    "name_cn": "境心玉",
+    "rarity": "mythic",
+    "sell_value": 5408,
+    "stack_limit": 999,
+    "tags": [
+      "jade_immortal_realm"
+    ],
+    "subtype": "crystal",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/realm_heart_jade.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a heart-shaped jade pulsing with the realm's Qi, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.law_flower",
+    "name": "Law Flower",
+    "description": "A golden flower whose petals are tiny law-characters. Found in the Golden Palace of Laws.",
+    "name_cn": "律花",
+    "rarity": "legendary",
+    "sell_value": 1568,
+    "stack_limit": 999,
+    "tags": [
+      "golden_palace_of_laws"
+    ],
+    "subtype": "herb",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/law_flower.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a golden flower whose petals are tiny law-characters, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.heavenly_gold",
+    "name": "Heavenly Gold",
+    "description": "A bar of shining gold that rings like a bell. Found in the Golden Palace of Laws.",
+    "name_cn": "天金",
+    "rarity": "legendary",
+    "sell_value": 3136,
+    "stack_limit": 999,
+    "tags": [
+      "golden_palace_of_laws"
+    ],
+    "subtype": "ore",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/heavenly_gold.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a bar of shining gold that rings like a bell, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.golden_crow_feather",
+    "name": "Golden Crow Feather",
+    "description": "A blazing golden feather. Found in the Golden Palace of Laws.",
+    "name_cn": "金乌羽",
+    "rarity": "mythic",
+    "sell_value": 4704,
+    "stack_limit": 999,
+    "tags": [
+      "golden_palace_of_laws"
+    ],
+    "subtype": "monster",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/golden_crow_feather.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a blazing golden feather, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.law_wheel_fragment",
+    "name": "Law-Wheel Fragment",
+    "description": "A curved golden fragment etched with turning laws. Found in the Golden Palace of Laws.",
+    "name_cn": "律轮碎片",
+    "rarity": "mythic",
+    "sell_value": 6272,
+    "stack_limit": 999,
+    "tags": [
+      "golden_palace_of_laws"
+    ],
+    "subtype": "crystal",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/law_wheel_fragment.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a curved golden fragment etched with turning laws, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.primordial_lotus",
+    "name": "Primordial Lotus",
+    "description": "A lotus with five petals each of a different element. Found in the Throne of the Immortal Emperor.",
+    "name_cn": "混沌莲",
+    "rarity": "legendary",
+    "sell_value": 1800,
+    "stack_limit": 999,
+    "tags": [
+      "throne_of_the_immortal_emperor"
+    ],
+    "subtype": "herb",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/primordial_lotus.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a lotus with five petals each of a different element, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.emperor_star_metal",
+    "name": "Emperor Star-Metal",
+    "description": "A dark ingot with a galaxy swirling inside. Found in the Throne of the Immortal Emperor.",
+    "name_cn": "帝星铁",
+    "rarity": "legendary",
+    "sell_value": 3600,
+    "stack_limit": 999,
+    "tags": [
+      "throne_of_the_immortal_emperor"
+    ],
+    "subtype": "ore",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/emperor_star_metal.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a dark ingot with a galaxy swirling inside, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.azure_dragon_scale",
+    "name": "Azure Dragon Scale",
+    "description": "A large luminous azure scale. Found in the Throne of the Immortal Emperor.",
+    "name_cn": "青龙鳞",
+    "rarity": "mythic",
+    "sell_value": 5400,
+    "stack_limit": 999,
+    "tags": [
+      "throne_of_the_immortal_emperor"
+    ],
+    "subtype": "monster",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/azure_dragon_scale.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a large luminous azure scale, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "mat.primordial_chaos_stone",
+    "name": "Primordial Chaos Stone",
+    "description": "A stone that is every colour and none. Found in the Throne of the Immortal Emperor.",
+    "name_cn": "混沌石",
+    "rarity": "mythic",
+    "sell_value": 7200,
+    "stack_limit": 999,
+    "tags": [
+      "throne_of_the_immortal_emperor"
+    ],
+    "subtype": "crystal",
+    "tier": 8,
+    "art": {
+      "icon": {
+        "file": "assets/items/materials/primordial_chaos_stone.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a stone that is every colour and none, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

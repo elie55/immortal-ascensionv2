@@ -1,0 +1,1690 @@
+[
+  {
+    "id": "npc.old_kang",
+    "name": "Old Kang",
+    "description": "Has led caravans over the Blazing Mountain for thirty years and lost a cart every time.",
+    "name_cn": "老康",
+    "role": "villager",
+    "location": "node.blazing_mountain.entry",
+    "personality": "Gruff, loyal to his drivers, superstitious about the mountain.",
+    "backstory": "Has led caravans over the Blazing Mountain for thirty years and lost a cart every time.",
+    "elements": [
+      "elem.fire"
+    ],
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Blazing Mountain",
+        "summary": "What Kang knows of this land.",
+        "unlock": {},
+        "answer": "A volcano the caravans must cross. Salamanders swim in its lava; the Molten Ape King rules its caldera."
+      }
+    ],
+    "quests": [
+      "quest.npc.old_kang_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/old_kang/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Old Kang, a weathered caravan master with a grey braid, soot-streaked face, thick leather coat and a pipe, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/old_kang/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Old Kang, a weathered caravan master with a grey braid, soot-streaked face, thick leather coat and a pipe, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.hermit_shuang",
+    "name": "Hermit Shuang",
+    "description": "Once taught a silver-haired girl to cut a falling leaf without touching the frost on it.",
+    "name_cn": "霜隐士",
+    "role": "story",
+    "location": "node.frozen_lotus_valley.entry",
+    "personality": "Patient, cryptic, kind to the persistent.",
+    "backstory": "Once taught a silver-haired girl to cut a falling leaf without touching the frost on it.",
+    "elements": [
+      "elem.water"
+    ],
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Frozen Lotus Valley",
+        "summary": "What Shuang knows of this land.",
+        "unlock": {},
+        "answer": "Bai Lingshuang's old training ground. Ice lotuses bloom once a decade; a Frost Wyrm sleeps beneath the lake."
+      }
+    ],
+    "quests": [
+      "quest.npc.hermit_shuang_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/hermit_shuang/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Hermit Shuang, an ancient thin man with a long white beard frozen at the tips, white fur cloak, holding a bamboo staff, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/hermit_shuang/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Hermit Shuang, an ancient thin man with a long white beard frozen at the tips, white fur cloak, holding a bamboo staff, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.blind_swordsmith_yu",
+    "name": "Blind Swordsmith Yu",
+    "description": "Came to the tomb to find her father's sword and stayed to tend all of them.",
+    "name_cn": "盲剑匠俞",
+    "role": "instructor",
+    "location": "node.ancient_sword_tomb.entry",
+    "personality": "Dry humour, hears a sword's history in its ring.",
+    "backstory": "Came to the tomb to find her father's sword and stayed to tend all of them.",
+    "elements": [
+      "elem.metal"
+    ],
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Ancient Sword Tomb",
+        "summary": "What Yu knows of this land.",
+        "unlock": {},
+        "answer": "Where ten thousand swordsmen were buried with their blades. The swords remember how to fight."
+      }
+    ],
+    "quests": [
+      "quest.npc.blind_swordsmith_yu_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/blind_swordsmith_yu/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Swordsmith Yu, a blind middle-aged woman with a cloth over her eyes, short grey hair, smith's robes, listening to a blade, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/blind_swordsmith_yu/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Swordsmith Yu, a blind middle-aged woman with a cloth over her eyes, short grey hair, smith's robes, listening to a blade, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.defector_lian",
+    "name": "Defector Lian",
+    "description": "A Blood Sect disciple who fled after refusing to sacrifice a village. She needs a reason to trust the orthodox sects.",
+    "name_cn": "叛修莲",
+    "role": "story",
+    "location": "node.demon_territory.entry",
+    "personality": "Wary, sharp, secretly kind.",
+    "backstory": "A Blood Sect disciple who fled after refusing to sacrifice a village. She needs a reason to trust the orthodox sects.",
+    "elements": [
+      "elem.fire"
+    ],
+    "realm": {
+      "id": "realm.nascent_soul",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Demon Territory",
+        "summary": "What Lian knows of this land.",
+        "unlock": {},
+        "answer": "Beyond the Black Pass lies the demon sects' land. The moon is red here, and so are the rivers."
+      }
+    ],
+    "quests": [
+      "quest.npc.defector_lian_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/defector_lian/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Lian, a young woman with short black hair, a scarred cheek, crimson robes torn and patched with blue sect cloth, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/defector_lian/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Lian, a young woman with short black hair, a scarred cheek, crimson robes torn and patched with blue sect cloth, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.crane_boy_ming",
+    "name": "Crane Boy Ming",
+    "description": "Sweeps the Celestial Stair every morning. Nobody knows how old he really is.",
+    "name_cn": "鹤童明",
+    "role": "story",
+    "location": "node.celestial_mountains.entry",
+    "personality": "Cheerful, nosy, wiser than he looks.",
+    "backstory": "Sweeps the Celestial Stair every morning. Nobody knows how old he really is.",
+    "elements": [
+      "elem.metal"
+    ],
+    "realm": {
+      "id": "realm.soul_transformation",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Celestial Mountains",
+        "summary": "What Ming knows of this land.",
+        "unlock": {},
+        "answer": "Mountains so high the air is Qi. Thunder tigers prowl the peaks; the Celestial Guardian keeps the stair to heaven."
+      }
+    ],
+    "quests": [
+      "quest.npc.crane_boy_ming_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/crane_boy_ming/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Ming, a cheerful boy of about twelve in white robes with a crane feather in his hair, barefoot, carrying a broom, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/crane_boy_ming/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Ming, a cheerful boy of about twelve in white robes with a crane feather in his hair, barefoot, carrying a broom, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.star_reader_wu",
+    "name": "Star-Reader Wu",
+    "description": "Maps the drifting cloud continents and warns climbers when the serpent below stirs.",
+    "name_cn": "观星吴",
+    "role": "story",
+    "location": "node.nine_heavens.entry",
+    "personality": "Absent-minded, kind, obsessed with omens.",
+    "backstory": "Maps the drifting cloud continents and warns climbers when the serpent below stirs.",
+    "elements": [
+      "elem.water"
+    ],
+    "realm": {
+      "id": "realm.spirit_severing",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Nine Heavens",
+        "summary": "What Wu knows of this land.",
+        "unlock": {},
+        "answer": "The lowest of the nine heavenly layers. Below the clouds lies the Abyss; above, the palaces of forgotten gods."
+      }
+    ],
+    "quests": [
+      "quest.npc.star_reader_wu_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/star_reader_wu/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Star-Reader Wu, an elderly astronomer with round spectacles, star-patterned robes and an armful of star charts, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/star_reader_wu/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Star-Reader Wu, an elderly astronomer with round spectacles, star-patterned robes and an armful of star charts, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.storm_widow_jin",
+    "name": "Storm Widow Jin",
+    "description": "Her husband died in the Wastes during his tribulation. She guides others so no one else dies alone.",
+    "name_cn": "雷寡金",
+    "role": "story",
+    "location": "node.thunderclap_wastes.entry",
+    "personality": "Stern, grieving, practical.",
+    "backstory": "Her husband died in the Wastes during his tribulation. She guides others so no one else dies alone.",
+    "elements": [
+      "elem.metal"
+    ],
+    "realm": {
+      "id": "realm.dao_integration",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Thunderclap Wastes",
+        "summary": "What Jin knows of this land.",
+        "unlock": {},
+        "answer": "Where ancient tribulations struck so often the earth turned to glass. Storm rocs nest in the monoliths."
+      }
+    ],
+    "quests": [
+      "quest.npc.storm_widow_jin_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/storm_widow_jin/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Jin, a stern woman in her forties with silver-streaked hair, grey insulated robes and a lightning-scarred arm, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/storm_widow_jin/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Jin, a stern woman in her forties with silver-streaked hair, grey insulated robes and a lightning-scarred arm, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.fisherwoman_ah_hai",
+    "name": "Fisherwoman Ah-Hai",
+    "description": "Fishes between dragon bones and sells scales to anyone brave enough to bargain.",
+    "name_cn": "渔娘阿海",
+    "role": "villager",
+    "location": "node.sunken_dragon_sea.entry",
+    "personality": "Bold, cheerful, superstitious about the sea.",
+    "backstory": "Fishes between dragon bones and sells scales to anyone brave enough to bargain.",
+    "elements": [
+      "elem.water"
+    ],
+    "realm": {
+      "id": "realm.tribulation_transcendence",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Sunken Dragon Sea",
+        "summary": "What Ah-Hai knows of this land.",
+        "unlock": {},
+        "answer": "An inland sea where the dragons of old came to die. Their bones are islands; their palace lies below."
+      }
+    ],
+    "quests": [
+      "quest.npc.fisherwoman_ah_hai_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/fisherwoman_ah_hai/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Ah-Hai, a sun-browned young fisherwoman with a red headscarf, rolled-up trousers, a harpoon and a wide grin, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/fisherwoman_ah_hai/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Ah-Hai, a sun-browned young fisherwoman with a red headscarf, rolled-up trousers, a harpoon and a wide grin, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.caravan_princess_zahra",
+    "name": "Caravan Princess Zahra",
+    "description": "Heir to a desert caravan kingdom, searching for the star that fell on her mother's tomb.",
+    "name_cn": "驼队公主扎赫拉",
+    "role": "story",
+    "location": "node.starfall_desert.entry",
+    "personality": "Proud, curious, fiercely honest.",
+    "backstory": "Heir to a desert caravan kingdom, searching for the star that fell on her mother's tomb.",
+    "elements": [
+      "elem.earth"
+    ],
+    "realm": {
+      "id": "realm.mahayana",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Starfall Desert",
+        "summary": "What Zahra knows of this land.",
+        "unlock": {},
+        "answer": "Stars fall here nightly. Sand dragons swim beneath the dunes; the Starfall Pharaoh sleeps in his crater."
+      }
+    ],
+    "quests": [
+      "quest.npc.caravan_princess_zahra_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/caravan_princess_zahra/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Zahra, a proud young desert princess with dark curls, golden jewellery, indigo veil and a curved star-metal dagger, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/caravan_princess_zahra/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Zahra, a proud young desert princess with dark curls, golden jewellery, indigo veil and a curved star-metal dagger, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.immortal_wanderer_qiu",
+    "name": "Immortal Wanderer Qiu",
+    "description": "Ascended three hundred years ago, came back down, and now sits by the gate drinking and warning climbers.",
+    "name_cn": "游仙丘",
+    "role": "story",
+    "location": "node.gate_of_ascension.entry",
+    "personality": "Lazy, wry, unexpectedly wise.",
+    "backstory": "Ascended three hundred years ago, came back down, and now sits by the gate drinking and warning climbers.",
+    "elements": [
+      "elem.fire"
+    ],
+    "realm": {
+      "id": "realm.immortal_ascension",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Gate of Ascension",
+        "summary": "What Qiu knows of this land.",
+        "unlock": {},
+        "answer": "The gate through which mortals ascend. Its guardians are ascended immortals who did not like what they found."
+      }
+    ],
+    "quests": [
+      "quest.npc.immortal_wanderer_qiu_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/immortal_wanderer_qiu/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Qiu, an ascended immortal with long white hair, a lazy smile, white robes with burn marks and a wine gourd, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/immortal_wanderer_qiu/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Qiu, an ascended immortal with long white hair, a lazy smile, white robes with burn marks and a wine gourd, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.peach_keeper_mei",
+    "name": "Peach Keeper Mei",
+    "description": "Keeper of the immortal peach garden for a thousand years; still counts every peach.",
+    "name_cn": "桃守梅",
+    "role": "story",
+    "location": "node.jade_immortal_realm.entry",
+    "personality": "Gentle, playful, strict about the peaches.",
+    "backstory": "Keeper of the immortal peach garden for a thousand years; still counts every peach.",
+    "elements": [
+      "elem.wood"
+    ],
+    "realm": {
+      "id": "realm.earth_immortal",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Jade Immortal Realm",
+        "summary": "What Mei knows of this land.",
+        "unlock": {},
+        "answer": "The first realm beyond the gate. Beautiful, peaceful, and patrolled by those who decide who may stay."
+      }
+    ],
+    "quests": [
+      "quest.npc.peach_keeper_mei_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/peach_keeper_mei/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Mei, a gentle immortal girl with pink hair in buns, a basket of golden peaches and green-white robes, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/peach_keeper_mei/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Mei, a gentle immortal girl with pink hair in buns, a basket of golden peaches and green-white robes, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.clerk_fu",
+    "name": "Heavenly Clerk Fu",
+    "description": "Copies laws all day and hides the ones he thinks are unfair.",
+    "name_cn": "天吏符",
+    "role": "story",
+    "location": "node.golden_palace_of_laws.entry",
+    "personality": "Nervous, meticulous, secretly rebellious.",
+    "backstory": "Copies laws all day and hides the ones he thinks are unfair.",
+    "elements": [
+      "elem.metal"
+    ],
+    "realm": {
+      "id": "realm.heavenly_immortal",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Golden Palace of Laws",
+        "summary": "What Fu knows of this land.",
+        "unlock": {},
+        "answer": "Where the laws of heaven are written and enforced. Nine-tailed foxes slip between its halls, breaking the rules."
+      }
+    ],
+    "quests": [
+      "quest.npc.clerk_fu_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/clerk_fu/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Clerk Fu, a nervous young immortal clerk with round glasses, golden scholar's robes and armfuls of scrolls, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/clerk_fu/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Clerk Fu, a nervous young immortal clerk with round glasses, golden scholar's robes and armfuls of scrolls, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.throne_steward_lao",
+    "name": "Throne Steward Lao",
+    "description": "Has waited ten thousand years beside the empty throne for someone to sit on it.",
+    "name_cn": "座前司老",
+    "role": "elder",
+    "location": "node.throne_of_the_immortal_emperor.entry",
+    "personality": "Calm, formal, quietly hopeful.",
+    "backstory": "Has waited ten thousand years beside the empty throne for someone to sit on it.",
+    "elements": [
+      "elem.water"
+    ],
+    "realm": {
+      "id": "realm.immortal_king",
+      "stage": 5
+    },
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [
+        "refined"
+      ],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [
+      {
+        "id": "home",
+        "title": "The Throne of the Immortal Emperor",
+        "summary": "What Lao knows of this land.",
+        "unlock": {},
+        "answer": "The apex of heaven. The throne is empty; the trial to sit on it is not."
+      }
+    ],
+    "quests": [
+      "quest.npc.throne_steward_lao_request"
+    ],
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/throne_steward_lao/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Steward Lao, an ancient bent immortal with a long white beard to the floor, starlight robes and a lantern, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/throne_steward_lao/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Steward Lao, an ancient bent immortal with a long white beard to the floor, starlight robes and a lantern, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.lu_feiyan",
+    "name": "Lu Feiyan",
+    "description": "Learned the war fan from a travelling troupe before joining the sect.",
+    "name_cn": "陆飞燕",
+    "role": "opponent",
+    "title": "Wind-Fan Dancer · Inner Disciple",
+    "personality": "Playful, competitive, never misses a chance to show off.",
+    "backstory": "Learned the war fan from a travelling troupe before joining the sect.",
+    "elements": [
+      "elem.wood"
+    ],
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 5
+    },
+    "cp": 3000,
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [],
+    "quests": [],
+    "duel": {
+      "enabled": true,
+      "loadout": [
+        "tech.active.crescent_wind_blade",
+        "tech.active.verdant_vine_bind",
+        "tech.passive.cloud_step"
+      ],
+      "strategy": "trickster",
+      "win": {
+        "mastery_xp": 60
+      },
+      "lose": {
+        "mastery_xp": 20
+      },
+      "cooldown_min": 60
+    },
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [
+      "neutral"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/lu_feiyan/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Lu Feiyan, a graceful young woman with long brown hair in a braid, green and white dancer robes, twin steel war fans, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/lu_feiyan/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Lu Feiyan, a graceful young woman with long brown hair in a braid, green and white dancer robes, twin steel war fans, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/lu_feiyan/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Lu Feiyan, a graceful young woman with long brown hair in a braid, green and white dancer robes, twin steel war fans, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/npcs/lu_feiyan/battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of Lu Feiyan in combat stance, Lu Feiyan, a graceful young woman with long brown hair in a braid, green and white dancer robes, twin steel war fans, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.han_jinghong",
+    "name": "Han Jinghong",
+    "description": "A former demonic-sect captive who escaped and swore to beat every orthodox disciple.",
+    "name_cn": "韩惊鸿",
+    "role": "opponent",
+    "title": "Blood Saber · Inner Disciple",
+    "personality": "Grim, intense, respects only strength.",
+    "backstory": "A former demonic-sect captive who escaped and swore to beat every orthodox disciple.",
+    "elements": [
+      "elem.fire"
+    ],
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 5
+    },
+    "cp": 3000,
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [],
+    "quests": [],
+    "duel": {
+      "enabled": true,
+      "loadout": [
+        "tech.active.flame_palm",
+        "tech.active.crimson_moon_slash",
+        "tech.passive.critical_insight"
+      ],
+      "strategy": "berserker",
+      "win": {
+        "mastery_xp": 60
+      },
+      "lose": {
+        "mastery_xp": 20
+      },
+      "cooldown_min": 60
+    },
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [
+      "neutral"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/han_jinghong/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Han Jinghong, a tall grim young man with a scarred jaw, black and crimson robes, a heavy blood-red saber, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/han_jinghong/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Han Jinghong, a tall grim young man with a scarred jaw, black and crimson robes, a heavy blood-red saber, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/han_jinghong/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Han Jinghong, a tall grim young man with a scarred jaw, black and crimson robes, a heavy blood-red saber, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/npcs/han_jinghong/battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of Han Jinghong in combat stance, Han Jinghong, a tall grim young man with a scarred jaw, black and crimson robes, a heavy blood-red saber, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.su_wanqing",
+    "name": "Su Wanqing",
+    "description": "The Alchemy Hall's prodigy. Her pills cure; her vials do not.",
+    "name_cn": "苏婉清",
+    "role": "opponent",
+    "title": "Poison Alchemist · Inner Disciple",
+    "personality": "Polite, patient, quietly terrifying.",
+    "backstory": "The Alchemy Hall's prodigy. Her pills cure; her vials do not.",
+    "elements": [
+      "elem.wood"
+    ],
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 5
+    },
+    "cp": 3000,
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [],
+    "quests": [],
+    "duel": {
+      "enabled": true,
+      "loadout": [
+        "tech.active.verdant_vine_bind",
+        "tech.active.ripple_mending",
+        "tech.passive.spiritual_regeneration"
+      ],
+      "strategy": "support",
+      "win": {
+        "mastery_xp": 60
+      },
+      "lose": {
+        "mastery_xp": 20
+      },
+      "cooldown_min": 60
+    },
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [
+      "neutral"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/su_wanqing/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Su Wanqing, a soft-spoken young woman with dark green hair in a bun, pale robes with herb pouches, holding a jade vial, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/su_wanqing/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Su Wanqing, a soft-spoken young woman with dark green hair in a bun, pale robes with herb pouches, holding a jade vial, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/su_wanqing/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Su Wanqing, a soft-spoken young woman with dark green hair in a bun, pale robes with herb pouches, holding a jade vial, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/npcs/su_wanqing/battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of Su Wanqing in combat stance, Su Wanqing, a soft-spoken young woman with dark green hair in a bun, pale robes with herb pouches, holding a jade vial, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "npc.gu_xuanming",
+    "name": "Gu Xuanming",
+    "description": "Master Gu's grandson and the sect's strongest core disciple. Has never lost a tournament.",
+    "name_cn": "顾玄明",
+    "role": "opponent",
+    "title": "Core Disciple · Sword Prodigy",
+    "personality": "Composed, polite, utterly confident.",
+    "backstory": "Master Gu's grandson and the sect's strongest core disciple. Has never lost a tournament.",
+    "elements": [
+      "elem.metal"
+    ],
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 5
+    },
+    "cp": 3000,
+    "affinity_levels": [
+      {
+        "name": "Stranger",
+        "threshold": 0
+      },
+      {
+        "name": "Acquaintance",
+        "threshold": 50
+      },
+      {
+        "name": "Friend",
+        "threshold": 300
+      },
+      {
+        "name": "Confidant",
+        "threshold": 600
+      },
+      {
+        "name": "Dao Companion",
+        "threshold": 1000
+      }
+    ],
+    "gifts": {
+      "loved": [],
+      "liked": [],
+      "disliked": [],
+      "loved_tags": [],
+      "liked_tags": [],
+      "repeat_decay": 0.5,
+      "daily_limit": 3
+    },
+    "topics": [],
+    "quests": [],
+    "duel": {
+      "enabled": true,
+      "loadout": [
+        "tech.active.swallow_return_sword",
+        "tech.active.ten_thousand_sword_return",
+        "tech.passive.sword_heart"
+      ],
+      "strategy": "aggressive",
+      "win": {
+        "mastery_xp": 60
+      },
+      "lose": {
+        "mastery_xp": 20
+      },
+      "cooldown_min": 60
+    },
+    "dao_companion": {
+      "eligible": false
+    },
+    "expressions": [
+      "neutral"
+    ],
+    "art": {
+      "portrait": {
+        "file": "assets/npcs/gu_xuanming/portrait.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Gu Xuanming, a composed young man with long black hair, white and silver core-disciple robes, a plain sword on his back, facing slightly left, soft expression, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "full_body": {
+        "file": "assets/npcs/gu_xuanming/full_body.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body standing illustration of Gu Xuanming, a composed young man with long black hair, white and silver core-disciple robes, a plain sword on his back, complete figure head to feet, elegant pose, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "expression_neutral": {
+        "file": "assets/npcs/gu_xuanming/expression_neutral.png",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Bust portrait of Gu Xuanming, a composed young man with long black hair, white and silver core-disciple robes, a plain sword on his back, neutral expression, same face and outfit as the reference, plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/npcs/gu_xuanming/battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of Gu Xuanming in combat stance, Gu Xuanming, a composed young man with long black hair, white and silver core-disciple robes, a plain sword on his back, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "planned"
+      }
+    }
+  }
+]

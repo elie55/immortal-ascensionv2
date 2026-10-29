@@ -1,0 +1,977 @@
+[
+  {
+    "id": "region.blazing_mountain",
+    "name": "Blazing Mountain",
+    "description": "A volcano the caravans must cross. Salamanders swim in its lava; the Molten Ape King rules its caldera.",
+    "name_cn": "炎山",
+    "order": 3,
+    "realm_range": {
+      "min": "realm.foundation_establishment",
+      "max": "realm.foundation_establishment"
+    },
+    "unlock": {
+      "regions": [
+        "region.azure_bamboo_forest"
+      ],
+      "quests": [
+        "quest.main.bamboo_sovereign"
+      ],
+      "realm": {
+        "id": "realm.foundation_establishment",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.blazing_mountain.entry",
+    "boss": "boss.molten_ape_king",
+    "signature_materials": [
+      "mat.fire_bud",
+      "mat.magma_iron_ore",
+      "mat.salamander_scale",
+      "mat.ember_core"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/blazing_mountain_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: a volcanic mountain of black rock and rivers of lava under an orange sky, ash drifting, fire-lit caravan road. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/blazing_mountain_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of a volcanic mountain of black rock and rivers of lava under an orange sky, ash drifting, fire-lit caravan road, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/blazing_mountain_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a volcanic mountain of black rock and rivers of lava under an orange sky, ash drifting, fire-lit caravan road, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.frozen_lotus_valley",
+    "name": "Frozen Lotus Valley",
+    "description": "Bai Lingshuang's old training ground. Ice lotuses bloom once a decade; a Frost Wyrm sleeps beneath the lake.",
+    "name_cn": "冰莲谷",
+    "order": 4,
+    "realm_range": {
+      "min": "realm.foundation_establishment",
+      "max": "realm.core_formation"
+    },
+    "unlock": {
+      "regions": [
+        "region.blazing_mountain"
+      ],
+      "quests": [
+        "quest.main.blazing_mountain_sovereign"
+      ],
+      "realm": {
+        "id": "realm.foundation_establishment",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.frozen_lotus_valley.entry",
+    "boss": "boss.lotus_frost_queen",
+    "signature_materials": [
+      "mat.snow_lotus_petal",
+      "mat.frostsilver_ore",
+      "mat.yeti_fur",
+      "mat.lotus_ice_heart"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/frozen_lotus_valley_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: a snowy valley with a frozen lake, glowing blue ice lotuses and pale mountains under a cold aurora. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/frozen_lotus_valley_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of a snowy valley with a frozen lake, glowing blue ice lotuses and pale mountains under a cold aurora, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/frozen_lotus_valley_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a snowy valley with a frozen lake, glowing blue ice lotuses and pale mountains under a cold aurora, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.ancient_sword_tomb",
+    "name": "Ancient Sword Tomb",
+    "description": "Where ten thousand swordsmen were buried with their blades. The swords remember how to fight.",
+    "name_cn": "古剑冢",
+    "order": 5,
+    "realm_range": {
+      "min": "realm.core_formation",
+      "max": "realm.core_formation"
+    },
+    "unlock": {
+      "regions": [
+        "region.frozen_lotus_valley"
+      ],
+      "quests": [
+        "quest.main.frozen_lotus_valley_sovereign"
+      ],
+      "realm": {
+        "id": "realm.core_formation",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.ancient_sword_tomb.entry",
+    "boss": "boss.sword_sovereign_remnant",
+    "signature_materials": [
+      "mat.sword_grass",
+      "mat.tomb_iron",
+      "mat.sword_spirit_shard",
+      "mat.sword_intent_crystal"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/ancient_sword_tomb_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: a vast valley of ten thousand rusted swords planted in grey earth, a ruined tomb gate, sword qi crackling in the wind. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/ancient_sword_tomb_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of a vast valley of ten thousand rusted swords planted in grey earth, a ruined tomb gate, sword qi crackling in the wind, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/ancient_sword_tomb_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a vast valley of ten thousand rusted swords planted in grey earth, a ruined tomb gate, sword qi crackling in the wind, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.demon_territory",
+    "name": "Demon Territory",
+    "description": "Beyond the Black Pass lies the demon sects' land. The moon is red here, and so are the rivers.",
+    "name_cn": "魔域",
+    "order": 6,
+    "realm_range": {
+      "min": "realm.nascent_soul",
+      "max": "realm.nascent_soul"
+    },
+    "unlock": {
+      "regions": [
+        "region.ancient_sword_tomb"
+      ],
+      "quests": [
+        "quest.main.ancient_sword_tomb_sovereign"
+      ],
+      "realm": {
+        "id": "realm.nascent_soul",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.demon_territory.entry",
+    "boss": "boss.crimson_moon_matriarch",
+    "signature_materials": [
+      "mat.blood_lotus",
+      "mat.demon_iron",
+      "mat.demon_horn",
+      "mat.crimson_moon_shard"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/demon_territory_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: a blood-red wasteland of black spires and burning rivers under a crimson moon, demonic banners on bone towers. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/demon_territory_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of a blood-red wasteland of black spires and burning rivers under a crimson moon, demonic banners on bone towers, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/demon_territory_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a blood-red wasteland of black spires and burning rivers under a crimson moon, demonic banners on bone towers, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.celestial_mountains",
+    "name": "Celestial Mountains",
+    "description": "Mountains so high the air is Qi. Thunder tigers prowl the peaks; the Celestial Guardian keeps the stair to heaven.",
+    "name_cn": "天穹山",
+    "order": 7,
+    "realm_range": {
+      "min": "realm.soul_transformation",
+      "max": "realm.soul_transformation"
+    },
+    "unlock": {
+      "regions": [
+        "region.demon_territory"
+      ],
+      "quests": [
+        "quest.main.demon_territory_sovereign"
+      ],
+      "realm": {
+        "id": "realm.soul_transformation",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.celestial_mountains.entry",
+    "boss": "boss.celestial_stair_guardian",
+    "signature_materials": [
+      "mat.celestial_peach",
+      "mat.skystone",
+      "mat.thunder_feather",
+      "mat.heaven_pine_amber"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/celestial_mountains_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: impossibly tall white peaks piercing golden clouds, celestial pavilions, thunder cranes and sacred pines. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/celestial_mountains_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of impossibly tall white peaks piercing golden clouds, celestial pavilions, thunder cranes and sacred pines, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/celestial_mountains_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside impossibly tall white peaks piercing golden clouds, celestial pavilions, thunder cranes and sacred pines, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.nine_heavens",
+    "name": "Nine Heavens",
+    "description": "The lowest of the nine heavenly layers. Below the clouds lies the Abyss; above, the palaces of forgotten gods.",
+    "name_cn": "九天",
+    "order": 8,
+    "realm_range": {
+      "min": "realm.spirit_severing",
+      "max": "realm.spirit_severing"
+    },
+    "unlock": {
+      "regions": [
+        "region.celestial_mountains"
+      ],
+      "quests": [
+        "quest.main.celestial_mountains_sovereign"
+      ],
+      "realm": {
+        "id": "realm.spirit_severing",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.nine_heavens.entry",
+    "boss": "boss.heavenly_gate_keeper",
+    "signature_materials": [
+      "mat.star_dew_grass",
+      "mat.cloud_jade",
+      "mat.jellyfish_silk",
+      "mat.heavenly_star_crystal"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/nine_heavens_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: nine layers of floating cloud continents under a starry sky, waterfalls falling into nothing, ruined heavenly palaces. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/nine_heavens_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of nine layers of floating cloud continents under a starry sky, waterfalls falling into nothing, ruined heavenly palaces, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/nine_heavens_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside nine layers of floating cloud continents under a starry sky, waterfalls falling into nothing, ruined heavenly palaces, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.thunderclap_wastes",
+    "name": "Thunderclap Wastes",
+    "description": "Where ancient tribulations struck so often the earth turned to glass. Storm rocs nest in the monoliths.",
+    "name_cn": "雷鸣荒原",
+    "order": 9,
+    "realm_range": {
+      "min": "realm.dao_integration",
+      "max": "realm.dao_integration"
+    },
+    "unlock": {
+      "regions": [
+        "region.nine_heavens"
+      ],
+      "quests": [
+        "quest.main.nine_heavens_sovereign"
+      ],
+      "realm": {
+        "id": "realm.dao_integration",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.thunderclap_wastes.entry",
+    "boss": "boss.nine_bolt_thunder_emperor",
+    "signature_materials": [
+      "mat.thunderroot",
+      "mat.storm_glass",
+      "mat.roc_lightning_feather",
+      "mat.tribulation_core"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/thunderclap_wastes_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: a shattered plain of black glass under an endless violet thunderstorm, lightning-struck monoliths and charred trees. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/thunderclap_wastes_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of a shattered plain of black glass under an endless violet thunderstorm, lightning-struck monoliths and charred trees, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/thunderclap_wastes_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a shattered plain of black glass under an endless violet thunderstorm, lightning-struck monoliths and charred trees, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.sunken_dragon_sea",
+    "name": "Sunken Dragon Sea",
+    "description": "An inland sea where the dragons of old came to die. Their bones are islands; their palace lies below.",
+    "name_cn": "沉龙海",
+    "order": 10,
+    "realm_range": {
+      "min": "realm.tribulation_transcendence",
+      "max": "realm.tribulation_transcendence"
+    },
+    "unlock": {
+      "regions": [
+        "region.thunderclap_wastes"
+      ],
+      "quests": [
+        "quest.main.thunderclap_wastes_sovereign"
+      ],
+      "realm": {
+        "id": "realm.tribulation_transcendence",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.sunken_dragon_sea.entry",
+    "boss": "boss.drowned_dragon_lord",
+    "signature_materials": [
+      "mat.sea_jade_kelp",
+      "mat.dragonbone_ore",
+      "mat.kraken_ink",
+      "mat.dragon_pearl"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/sunken_dragon_sea_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: a vast turquoise sea with the bones of ancient dragons rising from the water, coral palaces below, whirlpools and sea mist. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/sunken_dragon_sea_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of a vast turquoise sea with the bones of ancient dragons rising from the water, coral palaces below, whirlpools and sea mist, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/sunken_dragon_sea_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a vast turquoise sea with the bones of ancient dragons rising from the water, coral palaces below, whirlpools and sea mist, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.starfall_desert",
+    "name": "Starfall Desert",
+    "description": "Stars fall here nightly. Sand dragons swim beneath the dunes; the Starfall Pharaoh sleeps in his crater.",
+    "name_cn": "星陨沙海",
+    "order": 11,
+    "realm_range": {
+      "min": "realm.mahayana",
+      "max": "realm.mahayana"
+    },
+    "unlock": {
+      "regions": [
+        "region.sunken_dragon_sea"
+      ],
+      "quests": [
+        "quest.main.sunken_dragon_sea_sovereign"
+      ],
+      "realm": {
+        "id": "realm.mahayana",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.starfall_desert.entry",
+    "boss": "boss.starfall_pharaoh",
+    "signature_materials": [
+      "mat.desert_star_flower",
+      "mat.star_metal",
+      "mat.sand_wyrm_tooth",
+      "mat.meteor_heart"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/starfall_desert_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: an endless desert of silver sand under a sky of falling stars, crater oases and half-buried star-metal ruins. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/starfall_desert_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of an endless desert of silver sand under a sky of falling stars, crater oases and half-buried star-metal ruins, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/starfall_desert_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside an endless desert of silver sand under a sky of falling stars, crater oases and half-buried star-metal ruins, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.gate_of_ascension",
+    "name": "Gate of Ascension",
+    "description": "The gate through which mortals ascend. Its guardians are ascended immortals who did not like what they found.",
+    "name_cn": "飞升门",
+    "order": 12,
+    "realm_range": {
+      "min": "realm.immortal_ascension",
+      "max": "realm.immortal_ascension"
+    },
+    "unlock": {
+      "regions": [
+        "region.starfall_desert"
+      ],
+      "quests": [
+        "quest.main.starfall_desert_sovereign"
+      ],
+      "realm": {
+        "id": "realm.immortal_ascension",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.gate_of_ascension.entry",
+    "boss": "boss.vermilion_gatekeeper",
+    "signature_materials": [
+      "mat.phoenix_lotus",
+      "mat.ascension_gold",
+      "mat.phoenix_down",
+      "mat.gate_light_crystal"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/gate_of_ascension_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: a colossal golden gate floating in white clouds at the edge of the mortal world, phoenix flames, broken chains and endless light beyond. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/gate_of_ascension_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of a colossal golden gate floating in white clouds at the edge of the mortal world, phoenix flames, broken chains and endless light beyond, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/gate_of_ascension_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a colossal golden gate floating in white clouds at the edge of the mortal world, phoenix flames, broken chains and endless light beyond, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.jade_immortal_realm",
+    "name": "Jade Immortal Realm",
+    "description": "The first realm beyond the gate. Beautiful, peaceful, and patrolled by those who decide who may stay.",
+    "name_cn": "玉仙境",
+    "order": 13,
+    "realm_range": {
+      "min": "realm.earth_immortal",
+      "max": "realm.earth_immortal"
+    },
+    "unlock": {
+      "regions": [
+        "region.gate_of_ascension"
+      ],
+      "quests": [
+        "quest.main.gate_of_ascension_sovereign"
+      ],
+      "realm": {
+        "id": "realm.earth_immortal",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.jade_immortal_realm.entry",
+    "boss": "boss.white_tiger_sovereign",
+    "signature_materials": [
+      "mat.immortal_peach_blossom",
+      "mat.immortal_jade",
+      "mat.white_tiger_fang",
+      "mat.realm_heart_jade"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/jade_immortal_realm_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: a serene realm of floating jade islands, waterfalls flowing upward, immortal gardens and white tigers resting under peach trees. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/jade_immortal_realm_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of a serene realm of floating jade islands, waterfalls flowing upward, immortal gardens and white tigers resting under peach trees, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/jade_immortal_realm_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a serene realm of floating jade islands, waterfalls flowing upward, immortal gardens and white tigers resting under peach trees, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.golden_palace_of_laws",
+    "name": "Golden Palace of Laws",
+    "description": "Where the laws of heaven are written and enforced. Nine-tailed foxes slip between its halls, breaking the rules.",
+    "name_cn": "金律天宫",
+    "order": 14,
+    "realm_range": {
+      "min": "realm.heavenly_immortal",
+      "max": "realm.golden_immortal"
+    },
+    "unlock": {
+      "regions": [
+        "region.jade_immortal_realm"
+      ],
+      "quests": [
+        "quest.main.jade_immortal_realm_sovereign"
+      ],
+      "realm": {
+        "id": "realm.heavenly_immortal",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.golden_palace_of_laws.entry",
+    "boss": "boss.arbiter_of_laws",
+    "signature_materials": [
+      "mat.law_flower",
+      "mat.heavenly_gold",
+      "mat.golden_crow_feather",
+      "mat.law_wheel_fragment"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/golden_palace_of_laws_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: an enormous golden palace of floating halls connected by bridges of light, giant law-wheels turning in the sky. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/golden_palace_of_laws_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of an enormous golden palace of floating halls connected by bridges of light, giant law-wheels turning in the sky, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/golden_palace_of_laws_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside an enormous golden palace of floating halls connected by bridges of light, giant law-wheels turning in the sky, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "region.throne_of_the_immortal_emperor",
+    "name": "Throne of the Immortal Emperor",
+    "description": "The apex of heaven. The throne is empty; the trial to sit on it is not.",
+    "name_cn": "仙帝座",
+    "order": 15,
+    "realm_range": {
+      "min": "realm.immortal_king",
+      "max": "realm.immortal_emperor"
+    },
+    "unlock": {
+      "regions": [
+        "region.golden_palace_of_laws"
+      ],
+      "quests": [
+        "quest.main.golden_palace_of_laws_sovereign"
+      ],
+      "realm": {
+        "id": "realm.immortal_king",
+        "stage": 1
+      }
+    },
+    "entry_node": "node.throne_of_the_immortal_emperor.entry",
+    "boss": "boss.first_emperor_remnant",
+    "signature_materials": [
+      "mat.primordial_lotus",
+      "mat.emperor_star_metal",
+      "mat.azure_dragon_scale",
+      "mat.primordial_chaos_stone"
+    ],
+    "art": {
+      "card": {
+        "file": "assets/regions/throne_of_the_immortal_emperor_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Region card illustration, landscape: a throne of starlight above the clouds of all realms, an azure dragon coiled around it, the five elements orbiting as rings of light. Painterly, wide composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/world_regions.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/regions/throne_of_the_immortal_emperor_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated adventure map of a throne of starlight above the clouds of all realms, an azure dragon coiled around it, the five elements orbiting as rings of light, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/regions/throne_of_the_immortal_emperor_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a throne of starlight above the clouds of all realms, an azure dragon coiled around it, the five elements orbiting as rings of light, open ground in the lower third. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

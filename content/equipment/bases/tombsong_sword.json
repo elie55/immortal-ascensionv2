@@ -1,0 +1,105 @@
+[
+  {
+    "id": "gear.tombsong_sword",
+    "name": "Tombsong Sword",
+    "description": "Tombsong Sword, crafted from the materials of the Ancient Sword Tomb.",
+    "name_cn": "冢鸣剑",
+    "slot": "weapon",
+    "main_value": 10,
+    "rarity_range": [
+      "rare",
+      "mythic"
+    ],
+    "droppable": true,
+    "drop_tags": [
+      "ancient_sword_tomb"
+    ],
+    "unique": false,
+    "special_effects": [],
+    "requirements": {
+      "realm": "realm.core_formation"
+    },
+    "rarities": {
+      "rare": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/tombsong_sword_rare.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a long ancient sword with a silver-black blade that glows with faint musical notes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "epic": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/tombsong_sword_epic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a long ancient sword with a silver-black blade that glows with faint musical notes, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "legendary": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/tombsong_sword_legendary.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a long ancient sword with a silver-black blade that glows with faint musical notes, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "mythic": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/tombsong_sword_mythic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a long ancient sword with a silver-black blade that glows with faint musical notes, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "element": "elem.metal",
+    "signature_affix": "crit",
+    "weapon_type": "sword",
+    "set": "set.tombsong"
+  }
+]

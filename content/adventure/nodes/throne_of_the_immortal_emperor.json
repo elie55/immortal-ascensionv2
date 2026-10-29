@@ -1,0 +1,445 @@
+[
+  {
+    "id": "node.throne_of_the_immortal_emperor.entry",
+    "name": "Throne of the Immortal Emperor Border",
+    "description": "Border of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.gathering",
+      "node.throne_of_the_immortal_emperor.outskirts"
+    ],
+    "rec_cp": 3009521,
+    "first_clear": {
+      "spirit_stones": 3375
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.azure_dragon_guard"
+      ],
+      [
+        "enemy.star_whale",
+        "enemy.azure_dragon_guard"
+      ]
+    ]
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.gathering",
+    "name": "Throne of the Immortal Emperor Gathering Grounds",
+    "description": "Gathering Grounds of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.entry",
+      "node.throne_of_the_immortal_emperor.west_path",
+      "node.throne_of_the_immortal_emperor.cache"
+    ],
+    "rec_cp": 3442892,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 12,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.primordial_lotus",
+          "qty": 3
+        },
+        {
+          "id": "mat.emperor_star_metal",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.outskirts",
+    "name": "Throne of the Immortal Emperor Outskirts",
+    "description": "Outskirts of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.entry",
+      "node.throne_of_the_immortal_emperor.cache",
+      "node.throne_of_the_immortal_emperor.east_path"
+    ],
+    "rec_cp": 3250283,
+    "first_clear": {
+      "spirit_stones": 3375
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.five_element_sentinel",
+        "enemy.star_whale"
+      ],
+      [
+        "enemy.five_element_sentinel",
+        "enemy.throne_usurper"
+      ]
+    ]
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.west_path",
+    "name": "Throne of the Immortal Emperor Western Trail",
+    "description": "Western Trail of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.gathering",
+      "node.throne_of_the_immortal_emperor.lair"
+    ],
+    "rec_cp": 3370664,
+    "first_clear": {
+      "spirit_stones": 3375
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.star_whale",
+        "enemy.azure_dragon_guard"
+      ],
+      [
+        "enemy.star_whale",
+        "enemy.star_whale"
+      ]
+    ]
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.cache",
+    "name": "Throne of the Immortal Emperor Hidden Cache",
+    "description": "Hidden Cache of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.gathering",
+      "node.throne_of_the_immortal_emperor.outskirts",
+      "node.throne_of_the_immortal_emperor.crossroads"
+    ],
+    "rec_cp": 3840149,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 12,
+    "chest": "loot.chest.throne_of_the_immortal_emperor"
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.east_path",
+    "name": "Throne of the Immortal Emperor Eastern Trail",
+    "description": "Eastern Trail of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.outskirts",
+      "node.throne_of_the_immortal_emperor.ridge"
+    ],
+    "rec_cp": 3611425,
+    "first_clear": {
+      "spirit_stones": 3375
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.five_element_sentinel",
+        "enemy.throne_usurper"
+      ],
+      [
+        "enemy.azure_dragon_guard",
+        "enemy.five_element_sentinel"
+      ]
+    ]
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.lair",
+    "name": "Throne of the Immortal Emperor Lair",
+    "description": "Lair of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.west_path",
+      "node.throne_of_the_immortal_emperor.deep_path"
+    ],
+    "rec_cp": 7090431,
+    "first_clear": {
+      "spirit_stones": 9000,
+      "items": [
+        {
+          "id": "mat.primordial_chaos_stone",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.emperors_shadow"
+      ]
+    ]
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.crossroads",
+    "name": "Throne of the Immortal Emperor Crossroads",
+    "description": "Crossroads of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.cache",
+      "node.throne_of_the_immortal_emperor.deep_path",
+      "node.throne_of_the_immortal_emperor.sanctum"
+    ],
+    "rec_cp": 4237406,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 12,
+    "event": "event.empty_throne"
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.ridge",
+    "name": "Throne of the Immortal Emperor Ridge",
+    "description": "Ridge of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.east_path",
+      "node.throne_of_the_immortal_emperor.sanctum"
+    ],
+    "rec_cp": 3972568,
+    "first_clear": {
+      "spirit_stones": 3375
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.azure_dragon_guard",
+        "enemy.five_element_sentinel"
+      ],
+      [
+        "enemy.throne_usurper"
+      ]
+    ]
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.deep_path",
+    "name": "Throne of the Immortal Emperor Deep Path",
+    "description": "Deep Path of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.lair",
+      "node.throne_of_the_immortal_emperor.crossroads",
+      "node.throne_of_the_immortal_emperor.den"
+    ],
+    "rec_cp": 4092949,
+    "first_clear": {
+      "spirit_stones": 3375
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.five_element_sentinel",
+        "enemy.star_whale"
+      ],
+      [
+        "enemy.five_element_sentinel",
+        "enemy.throne_usurper"
+      ]
+    ]
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.sanctum",
+    "name": "Throne of the Immortal Emperor Sanctum",
+    "description": "Sanctum of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "cultivation",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.crossroads",
+      "node.throne_of_the_immortal_emperor.ridge",
+      "node.throne_of_the_immortal_emperor.hidden_grove",
+      "node.throne_of_the_immortal_emperor.approach"
+    ],
+    "rec_cp": 4634662,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 12,
+    "cultivation": {
+      "qi_mult": 2.15,
+      "minutes": 30,
+      "energy_cost": 6
+    }
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.den",
+    "name": "Throne of the Immortal Emperor Den",
+    "description": "Den of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.deep_path",
+      "node.throne_of_the_immortal_emperor.throne"
+    ],
+    "rec_cp": 8234049,
+    "first_clear": {
+      "spirit_stones": 9000,
+      "items": [
+        {
+          "id": "mat.primordial_chaos_stone",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.azure_dragon_guard",
+        "enemy.five_element_sentinel"
+      ],
+      [
+        "enemy.emperors_shadow"
+      ]
+    ]
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.hidden_grove",
+    "name": "Throne of the Immortal Emperor Secret Place",
+    "description": "Secret Place of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.sanctum",
+      "node.throne_of_the_immortal_emperor.approach"
+    ],
+    "rec_cp": 4899500,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 12,
+    "event": "event.empty_throne",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.approach",
+    "name": "Throne of the Immortal Emperor Approach",
+    "description": "Approach of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.sanctum",
+      "node.throne_of_the_immortal_emperor.hidden_grove",
+      "node.throne_of_the_immortal_emperor.throne"
+    ],
+    "rec_cp": 4574472,
+    "first_clear": {
+      "spirit_stones": 3375
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.star_whale",
+        "enemy.star_whale"
+      ],
+      [
+        "enemy.five_element_sentinel",
+        "enemy.star_whale"
+      ]
+    ]
+  },
+  {
+    "id": "node.throne_of_the_immortal_emperor.throne",
+    "name": "Throne of the Immortal Emperor Throne",
+    "description": "Throne of the Throne of the Immortal Emperor.",
+    "region": "region.throne_of_the_immortal_emperor",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.throne_of_the_immortal_emperor.den",
+      "node.throne_of_the_immortal_emperor.approach"
+    ],
+    "rec_cp": 19718382,
+    "first_clear": {
+      "spirit_stones": 33750,
+      "sect_fame": 600
+    },
+    "replayable": true,
+    "energy_cost": 12,
+    "waves": [
+      [
+        "enemy.star_whale",
+        "enemy.emperors_shadow"
+      ],
+      [
+        "boss.first_emperor_remnant"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,379 @@
+[
+  {
+    "id": "book.red_furnace_sutra",
+    "name": "Red Furnace Sutra",
+    "description": "The scripture of the Red Furnace Sutra.",
+    "name_cn": "赤炉经",
+    "rarity": "rare",
+    "sell_value": 600,
+    "stack_limit": 5,
+    "tags": [
+      "blazing_mountain"
+    ],
+    "teaches": "method.red_furnace_sutra",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/red_furnace_sutra.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Red Furnace Sutra, fire themed cover, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "book.ice_lotus_heart_art",
+    "name": "Ice Lotus Heart Art",
+    "description": "The scripture of the Ice Lotus Heart Art.",
+    "name_cn": "冰莲心法",
+    "rarity": "epic",
+    "sell_value": 800,
+    "stack_limit": 5,
+    "tags": [
+      "frozen_lotus_valley"
+    ],
+    "teaches": "method.ice_lotus_heart_art",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/ice_lotus_heart_art.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Ice Lotus Heart Art, water themed cover, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "book.sword_burial_scripture",
+    "name": "Sword Burial Scripture",
+    "description": "The scripture of the Sword Burial Scripture.",
+    "name_cn": "葬剑经",
+    "rarity": "epic",
+    "sell_value": 1000,
+    "stack_limit": 5,
+    "tags": [
+      "ancient_sword_tomb"
+    ],
+    "teaches": "method.sword_burial_scripture",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/sword_burial_scripture.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Sword Burial Scripture, metal themed cover, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "book.blood_moon_canon",
+    "name": "Blood Moon Canon",
+    "description": "The scripture of the Blood Moon Canon.",
+    "name_cn": "血月典",
+    "rarity": "epic",
+    "sell_value": 1200,
+    "stack_limit": 5,
+    "tags": [
+      "demon_territory"
+    ],
+    "teaches": "method.blood_moon_canon",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/blood_moon_canon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Blood Moon Canon, fire themed cover, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "book.nine_heavens_breath",
+    "name": "Nine Heavens Breath",
+    "description": "The scripture of the Nine Heavens Breath.",
+    "name_cn": "九天吐纳",
+    "rarity": "legendary",
+    "sell_value": 1400,
+    "stack_limit": 5,
+    "tags": [
+      "celestial_mountains"
+    ],
+    "teaches": "method.nine_heavens_breath",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/nine_heavens_breath.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Nine Heavens Breath, metal themed cover, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "book.starlight_canon",
+    "name": "Starlight Canon",
+    "description": "The scripture of the Starlight Canon.",
+    "name_cn": "星辉典",
+    "rarity": "legendary",
+    "sell_value": 1600,
+    "stack_limit": 5,
+    "tags": [
+      "nine_heavens"
+    ],
+    "teaches": "method.starlight_canon",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/starlight_canon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Starlight Canon, water themed cover, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "book.tribulation_thunder_body",
+    "name": "Tribulation Thunder Body",
+    "description": "The scripture of the Tribulation Thunder Body.",
+    "name_cn": "劫雷体",
+    "rarity": "legendary",
+    "sell_value": 1800,
+    "stack_limit": 5,
+    "tags": [
+      "thunderclap_wastes"
+    ],
+    "teaches": "method.tribulation_thunder_body",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/tribulation_thunder_body.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Tribulation Thunder Body, metal themed cover, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "book.azure_dragon_scripture",
+    "name": "Azure Dragon Scripture",
+    "description": "The scripture of the Azure Dragon Scripture.",
+    "name_cn": "青龙经",
+    "rarity": "legendary",
+    "sell_value": 2000,
+    "stack_limit": 5,
+    "tags": [
+      "sunken_dragon_sea"
+    ],
+    "teaches": "method.azure_dragon_scripture",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/azure_dragon_scripture.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Azure Dragon Scripture, water themed cover, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "book.starfall_scripture",
+    "name": "Starfall Scripture",
+    "description": "The scripture of the Starfall Scripture.",
+    "name_cn": "星陨经",
+    "rarity": "legendary",
+    "sell_value": 2200,
+    "stack_limit": 5,
+    "tags": [
+      "starfall_desert"
+    ],
+    "teaches": "method.starfall_scripture",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/starfall_scripture.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Starfall Scripture, earth themed cover, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "book.ascension_canon",
+    "name": "Ascension Canon",
+    "description": "The scripture of the Ascension Canon.",
+    "name_cn": "飞升典",
+    "rarity": "mythic",
+    "sell_value": 2400,
+    "stack_limit": 5,
+    "tags": [
+      "gate_of_ascension"
+    ],
+    "teaches": "method.ascension_canon",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/ascension_canon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Ascension Canon, fire themed cover, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "book.jade_immortal_sutra",
+    "name": "Jade Immortal Sutra",
+    "description": "The scripture of the Jade Immortal Sutra.",
+    "name_cn": "玉仙经",
+    "rarity": "mythic",
+    "sell_value": 2600,
+    "stack_limit": 5,
+    "tags": [
+      "jade_immortal_realm"
+    ],
+    "teaches": "method.jade_immortal_sutra",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/jade_immortal_sutra.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Jade Immortal Sutra, wood themed cover, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "book.ten_thousand_laws_canon",
+    "name": "Ten Thousand Laws Canon",
+    "description": "The scripture of the Ten Thousand Laws Canon.",
+    "name_cn": "万律典",
+    "rarity": "mythic",
+    "sell_value": 2800,
+    "stack_limit": 5,
+    "tags": [
+      "golden_palace_of_laws"
+    ],
+    "teaches": "method.ten_thousand_laws_canon",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/ten_thousand_laws_canon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Ten Thousand Laws Canon, metal themed cover, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "book.immortal_emperor_canon",
+    "name": "Immortal Emperor Canon",
+    "description": "The scripture of the Immortal Emperor Canon.",
+    "name_cn": "仙帝典",
+    "rarity": "mythic",
+    "sell_value": 3000,
+    "stack_limit": 5,
+    "tags": [
+      "throne_of_the_immortal_emperor"
+    ],
+    "teaches": "method.immortal_emperor_canon",
+    "art": {
+      "icon": {
+        "file": "assets/items/books/immortal_emperor_canon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an ornate cultivation manual titled Immortal Emperor Canon, water themed cover, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

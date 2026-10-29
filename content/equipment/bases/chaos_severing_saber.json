@@ -1,0 +1,56 @@
+[
+  {
+    "id": "gear.chaos_severing_saber",
+    "name": "Chaos-Severing Saber",
+    "description": "A divine treasure of the Primordial Chaos Abyss.",
+    "name_cn": "断混沌刀",
+    "slot": "weapon",
+    "main_value": 10,
+    "rarity_range": [
+      "divine",
+      "divine"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": true,
+    "special_effects": [
+      {
+        "kind": "on_hit_apply",
+        "description": "Hits lower Defense.",
+        "status": "status.def_down",
+        "chance": 0.4
+      },
+      {
+        "kind": "on_kill",
+        "description": "Restore 15% HP on kill.",
+        "value": 15
+      }
+    ],
+    "requirements": {
+      "realm": "realm.immortal_king"
+    },
+    "signature_affix": "atk",
+    "rarities": {
+      "divine": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/weapon/chaos_severing_saber_divine.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a saber whose blade is a sliver of night sky edged with five elemental lights, prismatic dragon-pearl light, azure dragon motifs, rainbow halo, overwhelming divine aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "weapon_type": "saber"
+  }
+]

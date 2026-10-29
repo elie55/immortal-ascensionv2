@@ -1,0 +1,85 @@
+[
+  {
+    "id": "gear.jadeclaw_boots",
+    "name": "Jadeclaw Boots",
+    "description": "Jadeclaw Boots, crafted from the materials of the Jade Immortal Realm.",
+    "name_cn": "玉爪靴",
+    "slot": "boots",
+    "main_value": 8,
+    "rarity_range": [
+      "legendary",
+      "immortal"
+    ],
+    "droppable": true,
+    "drop_tags": [
+      "jade_immortal_realm"
+    ],
+    "unique": false,
+    "special_effects": [],
+    "requirements": {
+      "realm": "realm.earth_immortal"
+    },
+    "rarities": {
+      "legendary": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/jadeclaw_boots_legendary.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of white boots with jade claw-shaped toecaps and silver fur, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "mythic": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/jadeclaw_boots_mythic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of white boots with jade claw-shaped toecaps and silver fur, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "immortal": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/jadeclaw_boots_immortal.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of white boots with jade claw-shaped toecaps and silver fur, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "element": "elem.wood",
+    "signature_affix": "spd",
+    "set": "set.jadeclaw"
+  }
+]

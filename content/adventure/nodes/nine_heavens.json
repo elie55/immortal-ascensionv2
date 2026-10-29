@@ -1,0 +1,445 @@
+[
+  {
+    "id": "node.nine_heavens.entry",
+    "name": "Nine Heavens Border",
+    "description": "Border of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.nine_heavens.gathering",
+      "node.nine_heavens.outskirts"
+    ],
+    "rec_cp": 19780,
+    "first_clear": {
+      "spirit_stones": 960
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.cloud_jellyfish"
+      ],
+      [
+        "enemy.heaven_eagle",
+        "enemy.cloud_jellyfish"
+      ]
+    ]
+  },
+  {
+    "id": "node.nine_heavens.gathering",
+    "name": "Nine Heavens Gathering Grounds",
+    "description": "Gathering Grounds of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.nine_heavens.entry",
+      "node.nine_heavens.west_path",
+      "node.nine_heavens.cache"
+    ],
+    "rec_cp": 22628,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 9,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.star_dew_grass",
+          "qty": 3
+        },
+        {
+          "id": "mat.cloud_jade",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.nine_heavens.outskirts",
+    "name": "Nine Heavens Outskirts",
+    "description": "Outskirts of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.nine_heavens.entry",
+      "node.nine_heavens.cache",
+      "node.nine_heavens.east_path"
+    ],
+    "rec_cp": 21362,
+    "first_clear": {
+      "spirit_stones": 960
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.starlight_sentinel",
+        "enemy.heaven_eagle"
+      ],
+      [
+        "enemy.starlight_sentinel",
+        "enemy.abyss_cultist"
+      ]
+    ]
+  },
+  {
+    "id": "node.nine_heavens.west_path",
+    "name": "Nine Heavens Western Trail",
+    "description": "Western Trail of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.nine_heavens.gathering",
+      "node.nine_heavens.lair"
+    ],
+    "rec_cp": 22154,
+    "first_clear": {
+      "spirit_stones": 960
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.heaven_eagle",
+        "enemy.cloud_jellyfish"
+      ],
+      [
+        "enemy.heaven_eagle",
+        "enemy.heaven_eagle"
+      ]
+    ]
+  },
+  {
+    "id": "node.nine_heavens.cache",
+    "name": "Nine Heavens Hidden Cache",
+    "description": "Hidden Cache of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.nine_heavens.gathering",
+      "node.nine_heavens.outskirts",
+      "node.nine_heavens.crossroads"
+    ],
+    "rec_cp": 25239,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 9,
+    "chest": "loot.chest.nine_heavens"
+  },
+  {
+    "id": "node.nine_heavens.east_path",
+    "name": "Nine Heavens Eastern Trail",
+    "description": "Eastern Trail of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.nine_heavens.outskirts",
+      "node.nine_heavens.ridge"
+    ],
+    "rec_cp": 23736,
+    "first_clear": {
+      "spirit_stones": 960
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.starlight_sentinel",
+        "enemy.abyss_cultist"
+      ],
+      [
+        "enemy.cloud_jellyfish",
+        "enemy.starlight_sentinel"
+      ]
+    ]
+  },
+  {
+    "id": "node.nine_heavens.lair",
+    "name": "Nine Heavens Lair",
+    "description": "Lair of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.nine_heavens.west_path",
+      "node.nine_heavens.deep_path"
+    ],
+    "rec_cp": 46602,
+    "first_clear": {
+      "spirit_stones": 2560,
+      "items": [
+        {
+          "id": "mat.heavenly_star_crystal",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.fallen_immortal"
+      ]
+    ]
+  },
+  {
+    "id": "node.nine_heavens.crossroads",
+    "name": "Nine Heavens Crossroads",
+    "description": "Crossroads of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.nine_heavens.cache",
+      "node.nine_heavens.deep_path",
+      "node.nine_heavens.sanctum"
+    ],
+    "rec_cp": 27850,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 9,
+    "event": "event.falling_star"
+  },
+  {
+    "id": "node.nine_heavens.ridge",
+    "name": "Nine Heavens Ridge",
+    "description": "Ridge of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.nine_heavens.east_path",
+      "node.nine_heavens.sanctum"
+    ],
+    "rec_cp": 26110,
+    "first_clear": {
+      "spirit_stones": 960
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.cloud_jellyfish",
+        "enemy.starlight_sentinel"
+      ],
+      [
+        "enemy.abyss_cultist"
+      ]
+    ]
+  },
+  {
+    "id": "node.nine_heavens.deep_path",
+    "name": "Nine Heavens Deep Path",
+    "description": "Deep Path of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.nine_heavens.lair",
+      "node.nine_heavens.crossroads",
+      "node.nine_heavens.den"
+    ],
+    "rec_cp": 26901,
+    "first_clear": {
+      "spirit_stones": 960
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.starlight_sentinel",
+        "enemy.heaven_eagle"
+      ],
+      [
+        "enemy.starlight_sentinel",
+        "enemy.abyss_cultist"
+      ]
+    ]
+  },
+  {
+    "id": "node.nine_heavens.sanctum",
+    "name": "Nine Heavens Sanctum",
+    "description": "Sanctum of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "cultivation",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.nine_heavens.crossroads",
+      "node.nine_heavens.ridge",
+      "node.nine_heavens.hidden_grove",
+      "node.nine_heavens.approach"
+    ],
+    "rec_cp": 30461,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 9,
+    "cultivation": {
+      "qi_mult": 1.8,
+      "minutes": 30,
+      "energy_cost": 6
+    }
+  },
+  {
+    "id": "node.nine_heavens.den",
+    "name": "Nine Heavens Den",
+    "description": "Den of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.nine_heavens.deep_path",
+      "node.nine_heavens.throne"
+    ],
+    "rec_cp": 54118,
+    "first_clear": {
+      "spirit_stones": 2560,
+      "items": [
+        {
+          "id": "mat.heavenly_star_crystal",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.cloud_jellyfish",
+        "enemy.starlight_sentinel"
+      ],
+      [
+        "enemy.fallen_immortal"
+      ]
+    ]
+  },
+  {
+    "id": "node.nine_heavens.hidden_grove",
+    "name": "Nine Heavens Secret Place",
+    "description": "Secret Place of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.nine_heavens.sanctum",
+      "node.nine_heavens.approach"
+    ],
+    "rec_cp": 32202,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 9,
+    "event": "event.falling_star",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.nine_heavens.approach",
+    "name": "Nine Heavens Approach",
+    "description": "Approach of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.nine_heavens.sanctum",
+      "node.nine_heavens.hidden_grove",
+      "node.nine_heavens.throne"
+    ],
+    "rec_cp": 30066,
+    "first_clear": {
+      "spirit_stones": 960
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.heaven_eagle",
+        "enemy.heaven_eagle"
+      ],
+      [
+        "enemy.starlight_sentinel",
+        "enemy.heaven_eagle"
+      ]
+    ]
+  },
+  {
+    "id": "node.nine_heavens.throne",
+    "name": "Nine Heavens Throne",
+    "description": "Throne of the Nine Heavens.",
+    "region": "region.nine_heavens",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.nine_heavens.den",
+      "node.nine_heavens.approach"
+    ],
+    "rec_cp": 129599,
+    "first_clear": {
+      "spirit_stones": 9600,
+      "sect_fame": 320
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.heaven_eagle",
+        "enemy.fallen_immortal"
+      ],
+      [
+        "boss.heavenly_gate_keeper"
+      ]
+    ]
+  }
+]

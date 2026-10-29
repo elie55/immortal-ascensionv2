@@ -1,0 +1,7479 @@
+[
+  {
+    "id": "loot.enemy.ember_salamander",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      17,
+      28
+    ],
+    "entries": [
+      {
+        "id": "mat.salamander_scale",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.fire_bud",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "blazing_mountain"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 85,
+          "rare": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      45,
+      81
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.ash_vulture",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      17,
+      28
+    ],
+    "entries": [
+      {
+        "id": "mat.salamander_scale",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.fire_bud",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "blazing_mountain"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 85,
+          "rare": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      45,
+      81
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.magma_golem",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      17,
+      28
+    ],
+    "entries": [
+      {
+        "id": "mat.salamander_scale",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.fire_bud",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "blazing_mountain"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 85,
+          "rare": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      45,
+      81
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.flame_lion",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      17,
+      28
+    ],
+    "entries": [
+      {
+        "id": "mat.ember_core",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.salamander_scale",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "blazing_mountain"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 50,
+          "rare": 40,
+          "epic": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      135,
+      225
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.caravan_raider",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      17,
+      28
+    ],
+    "entries": [
+      {
+        "id": "mat.magma_iron_ore",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.salamander_scale",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "blazing_mountain"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 80,
+          "rare": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      90,
+      162
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.molten_ape_king",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      25,
+      30
+    ],
+    "entries": [
+      {
+        "id": "mat.ember_core",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.red_furnace_sutra",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.16,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.08,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "blazing_mountain"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 55,
+          "epic": 35,
+          "legendary": 10
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.salamander_scale",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      540,
+      900
+    ],
+    "sect_fame": 60,
+    "mastery_xp": 120
+  },
+  {
+    "id": "loot.chest.blazing_mountain",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      19,
+      28
+    ],
+    "entries": [
+      {
+        "id": "egg.ember_salamander_pup",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "egg.azure_wolf",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "blazing_mountain"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 60,
+          "rare": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.fire_bud",
+        "qty": 3
+      },
+      {
+        "id": "mat.magma_iron_ore",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      180,
+      315
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.forge_wraith",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      21,
+      30
+    ],
+    "entries": [
+      {
+        "id": "mat.ember_core",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "blazing_mountain"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 30,
+          "rare": 50,
+          "epic": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      360,
+      630
+    ],
+    "sect_fame": 30,
+    "mastery_xp": 90
+  },
+  {
+    "id": "loot.dungeon.ember_forge_ruins_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.magma_iron_ore",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.4,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      180,
+      360
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.ember_forge_ruins_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.magma_iron_ore",
+        "qty": 5
+      },
+      {
+        "id": "mat.fire_bud",
+        "qty": 5
+      }
+    ],
+    "spirit_stones": [
+      1350,
+      2250
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.snow_fox_spirit",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      25,
+      36
+    ],
+    "entries": [
+      {
+        "id": "mat.yeti_fur",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.snow_lotus_petal",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "frozen_lotus_valley"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 85,
+          "rare": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      80,
+      144
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.ice_lotus_guardian",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      25,
+      36
+    ],
+    "entries": [
+      {
+        "id": "mat.yeti_fur",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.snow_lotus_petal",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "frozen_lotus_valley"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 85,
+          "rare": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      80,
+      144
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.frost_yeti",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      25,
+      36
+    ],
+    "entries": [
+      {
+        "id": "mat.yeti_fur",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.snow_lotus_petal",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "frozen_lotus_valley"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 85,
+          "rare": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      80,
+      144
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.frost_wyrm",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      25,
+      36
+    ],
+    "entries": [
+      {
+        "id": "mat.lotus_ice_heart",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.yeti_fur",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "frozen_lotus_valley"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 50,
+          "rare": 40,
+          "epic": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      240,
+      400
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.frozen_cultist",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      25,
+      36
+    ],
+    "entries": [
+      {
+        "id": "mat.frostsilver_ore",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.yeti_fur",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "frozen_lotus_valley"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 80,
+          "rare": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      160,
+      288
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.lotus_frost_queen",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      33,
+      38
+    ],
+    "entries": [
+      {
+        "id": "mat.lotus_ice_heart",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.ice_lotus_heart_art",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.18,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.09,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "frozen_lotus_valley"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 55,
+          "epic": 35,
+          "legendary": 10
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.yeti_fur",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      960,
+      1600
+    ],
+    "sect_fame": 80,
+    "mastery_xp": 160
+  },
+  {
+    "id": "loot.chest.frozen_lotus_valley",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      27,
+      36
+    ],
+    "entries": [
+      {
+        "id": "egg.snow_crane",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "egg.frost_otter",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "frozen_lotus_valley"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 60,
+          "rare": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.snow_lotus_petal",
+        "qty": 3
+      },
+      {
+        "id": "mat.frostsilver_ore",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      320,
+      560
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.glacier_titan",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      29,
+      38
+    ],
+    "entries": [
+      {
+        "id": "mat.lotus_ice_heart",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "frozen_lotus_valley"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 30,
+          "rare": 50,
+          "epic": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      640,
+      1120
+    ],
+    "sect_fame": 40,
+    "mastery_xp": 120
+  },
+  {
+    "id": "loot.dungeon.glacier_caverns_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.yeti_fur",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      320,
+      640
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.glacier_caverns_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      29,
+      38
+    ],
+    "entries": [
+      {
+        "id": "mat.lotus_ice_heart",
+        "chance": 0.7,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "frozen_lotus_valley"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 60,
+          "epic": 30,
+          "legendary": 10
+        },
+        "chance": 0.6
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      2400,
+      4000
+    ],
+    "sect_fame": 60,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.rusted_sword_spirit",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      33,
+      44
+    ],
+    "entries": [
+      {
+        "id": "mat.sword_spirit_shard",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.sword_grass",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "ancient_sword_tomb"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 85,
+          "epic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      125,
+      225
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.tomb_guardian_statue",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      33,
+      44
+    ],
+    "entries": [
+      {
+        "id": "mat.sword_spirit_shard",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.sword_grass",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "ancient_sword_tomb"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 85,
+          "epic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      125,
+      225
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.sword_qi_wisp",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      33,
+      44
+    ],
+    "entries": [
+      {
+        "id": "mat.sword_spirit_shard",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.sword_grass",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "ancient_sword_tomb"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 85,
+          "epic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      125,
+      225
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.headless_general",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      33,
+      44
+    ],
+    "entries": [
+      {
+        "id": "mat.sword_intent_crystal",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.sword_spirit_shard",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "ancient_sword_tomb"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 50,
+          "epic": 40,
+          "legendary": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      375,
+      625
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.tomb_robber",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      33,
+      44
+    ],
+    "entries": [
+      {
+        "id": "mat.tomb_iron",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.sword_spirit_shard",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "ancient_sword_tomb"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 80,
+          "epic": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      250,
+      450
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.sword_sovereign_remnant",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      41,
+      46
+    ],
+    "entries": [
+      {
+        "id": "mat.sword_intent_crystal",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.sword_burial_scripture",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "ancient_sword_tomb"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 55,
+          "legendary": 35,
+          "mythic": 10
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.sword_spirit_shard",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      1500,
+      2500
+    ],
+    "sect_fame": 100,
+    "mastery_xp": 200
+  },
+  {
+    "id": "loot.chest.ancient_sword_tomb",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      35,
+      44
+    ],
+    "entries": [
+      {
+        "id": "egg.jade_serpent",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "ancient_sword_tomb"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 60,
+          "epic": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.sword_grass",
+        "qty": 3
+      },
+      {
+        "id": "mat.tomb_iron",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      500,
+      875
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.blade_storm_avatar",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      37,
+      46
+    ],
+    "entries": [
+      {
+        "id": "mat.sword_intent_crystal",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "ancient_sword_tomb"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 30,
+          "epic": 50,
+          "legendary": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1000,
+      1750
+    ],
+    "sect_fame": 50,
+    "mastery_xp": 150
+  },
+  {
+    "id": "loot.dungeon.hall_of_ten_thousand_blades_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.sword_spirit_shard",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      500,
+      1000
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.hall_of_ten_thousand_blades_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      37,
+      46
+    ],
+    "entries": [
+      {
+        "id": "mat.sword_intent_crystal",
+        "chance": 0.7,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "ancient_sword_tomb"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 60,
+          "legendary": 30,
+          "mythic": 10
+        },
+        "chance": 0.6
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      3750,
+      6250
+    ],
+    "sect_fame": 75,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.blood_imp",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      41,
+      52
+    ],
+    "entries": [
+      {
+        "id": "mat.demon_horn",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.blood_lotus",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "demon_territory"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 85,
+          "epic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      180,
+      324
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.bone_hound",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      41,
+      52
+    ],
+    "entries": [
+      {
+        "id": "mat.demon_horn",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.blood_lotus",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "demon_territory"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 85,
+          "epic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      180,
+      324
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.shadow_assassin",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      41,
+      52
+    ],
+    "entries": [
+      {
+        "id": "mat.demon_horn",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.blood_lotus",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "demon_territory"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 85,
+          "epic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      180,
+      324
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.demon_general",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      41,
+      52
+    ],
+    "entries": [
+      {
+        "id": "mat.crimson_moon_shard",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.demon_horn",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "demon_territory"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 50,
+          "epic": 40,
+          "legendary": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      540,
+      900
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.blood_sect_disciple",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      41,
+      52
+    ],
+    "entries": [
+      {
+        "id": "mat.demon_iron",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.demon_horn",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "demon_territory"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 80,
+          "epic": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      360,
+      648
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.crimson_moon_matriarch",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      49,
+      54
+    ],
+    "entries": [
+      {
+        "id": "mat.crimson_moon_shard",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.blood_moon_canon",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.22,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.11,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "demon_territory"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 55,
+          "legendary": 35,
+          "mythic": 10
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.demon_horn",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      2160,
+      3600
+    ],
+    "sect_fame": 120,
+    "mastery_xp": 240
+  },
+  {
+    "id": "loot.chest.demon_territory",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      43,
+      52
+    ],
+    "entries": [
+      {
+        "id": "egg.blood_moon_wolf",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "demon_territory"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 60,
+          "epic": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.blood_lotus",
+        "qty": 3
+      },
+      {
+        "id": "mat.demon_iron",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      720,
+      1260
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.prison_warden_gu_ling",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      45,
+      54
+    ],
+    "entries": [
+      {
+        "id": "mat.crimson_moon_shard",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "demon_territory"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 30,
+          "epic": 50,
+          "legendary": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1440,
+      2520
+    ],
+    "sect_fame": 60,
+    "mastery_xp": 180
+  },
+  {
+    "id": "loot.dungeon.blood_river_prison_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.demon_iron",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.4,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      720,
+      1440
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.blood_river_prison_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.demon_iron",
+        "qty": 5
+      },
+      {
+        "id": "mat.blood_lotus",
+        "qty": 5
+      }
+    ],
+    "spirit_stones": [
+      5400,
+      9000
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.moon_devourer",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      52,
+      56
+    ],
+    "entries": [
+      {
+        "id": "mat.crimson_moon_shard",
+        "chance": 1.0,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "demon_territory"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 60,
+          "mythic": 40
+        },
+        "chance": 0.8
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      3600,
+      5760
+    ],
+    "sect_fame": 180,
+    "mastery_xp": 360
+  },
+  {
+    "id": "loot.chest.crimson_moon_secret_realm_vault",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      52,
+      56
+    ],
+    "entries": [
+      {
+        "id": "egg.ghost_lantern_moth",
+        "chance": 0.35,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "demon_territory"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 70,
+          "legendary": 30
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.crimson_moon_shard",
+        "qty": 2
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      2880,
+      4320
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.crimson_moon_secret_realm_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.5,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.crimson_moon_shard",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      7200,
+      10800
+    ],
+    "sect_fame": 240,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.thunder_crane",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      49,
+      60
+    ],
+    "entries": [
+      {
+        "id": "mat.thunder_feather",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.celestial_peach",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "celestial_mountains"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 85,
+          "epic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      245,
+      441
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.cloud_ape",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      49,
+      60
+    ],
+    "entries": [
+      {
+        "id": "mat.thunder_feather",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.celestial_peach",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "celestial_mountains"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 85,
+          "epic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      245,
+      441
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.celestial_soldier",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      49,
+      60
+    ],
+    "entries": [
+      {
+        "id": "mat.thunder_feather",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.celestial_peach",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "celestial_mountains"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 85,
+          "epic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      245,
+      441
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.storm_tiger",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      49,
+      60
+    ],
+    "entries": [
+      {
+        "id": "mat.heaven_pine_amber",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.thunder_feather",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "celestial_mountains"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 50,
+          "epic": 40,
+          "legendary": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      735,
+      1225
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.heaven_seeker",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      49,
+      60
+    ],
+    "entries": [
+      {
+        "id": "mat.skystone",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.thunder_feather",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "celestial_mountains"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 80,
+          "epic": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      490,
+      882
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.celestial_stair_guardian",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      57,
+      62
+    ],
+    "entries": [
+      {
+        "id": "mat.heaven_pine_amber",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.nine_heavens_breath",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.24000000000000002,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.12000000000000001,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "celestial_mountains"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 55,
+          "legendary": 35,
+          "mythic": 10
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.thunder_feather",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      2940,
+      4900
+    ],
+    "sect_fame": 140,
+    "mastery_xp": 280
+  },
+  {
+    "id": "loot.chest.celestial_mountains",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      51,
+      60
+    ],
+    "entries": [
+      {
+        "id": "egg.thunder_tiger",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "celestial_mountains"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 60,
+          "epic": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.celestial_peach",
+        "qty": 3
+      },
+      {
+        "id": "mat.skystone",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      980,
+      1715
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.pine_thunder_sage",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      53,
+      62
+    ],
+    "entries": [
+      {
+        "id": "mat.heaven_pine_amber",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "celestial_mountains"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 30,
+          "epic": 50,
+          "legendary": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1960,
+      3430
+    ],
+    "sect_fame": 70,
+    "mastery_xp": 210
+  },
+  {
+    "id": "loot.dungeon.thunder_pine_sanctum_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.skystone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.4,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      980,
+      1960
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.thunder_pine_sanctum_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.skystone",
+        "qty": 5
+      },
+      {
+        "id": "mat.celestial_peach",
+        "qty": 5
+      }
+    ],
+    "spirit_stones": [
+      7350,
+      12250
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.cloud_jellyfish",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      57,
+      68
+    ],
+    "entries": [
+      {
+        "id": "mat.jellyfish_silk",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.star_dew_grass",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "nine_heavens"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 85,
+          "legendary": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      320,
+      576
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.starlight_sentinel",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      57,
+      68
+    ],
+    "entries": [
+      {
+        "id": "mat.jellyfish_silk",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.star_dew_grass",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "nine_heavens"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 85,
+          "legendary": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      320,
+      576
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.heaven_eagle",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      57,
+      68
+    ],
+    "entries": [
+      {
+        "id": "mat.jellyfish_silk",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.star_dew_grass",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "nine_heavens"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 85,
+          "legendary": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      320,
+      576
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.fallen_immortal",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      57,
+      68
+    ],
+    "entries": [
+      {
+        "id": "mat.heavenly_star_crystal",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.jellyfish_silk",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "nine_heavens"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 50,
+          "legendary": 40,
+          "mythic": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      960,
+      1600
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.abyss_cultist",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      57,
+      68
+    ],
+    "entries": [
+      {
+        "id": "mat.cloud_jade",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.jellyfish_silk",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "nine_heavens"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 80,
+          "legendary": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      640,
+      1152
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.heavenly_gate_keeper",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      65,
+      70
+    ],
+    "entries": [
+      {
+        "id": "mat.heavenly_star_crystal",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.starlight_canon",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.26,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.13,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "nine_heavens"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 55,
+          "mythic": 35,
+          "immortal": 10
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.jellyfish_silk",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      3840,
+      6400
+    ],
+    "sect_fame": 160,
+    "mastery_xp": 320
+  },
+  {
+    "id": "loot.chest.nine_heavens",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      59,
+      68
+    ],
+    "entries": [
+      {
+        "id": "egg.cloud_qilin",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "nine_heavens"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 60,
+          "legendary": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.star_dew_grass",
+        "qty": 3
+      },
+      {
+        "id": "mat.cloud_jade",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      1280,
+      2240
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.star_palace_regent",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      61,
+      70
+    ],
+    "entries": [
+      {
+        "id": "mat.heavenly_star_crystal",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "nine_heavens"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 30,
+          "legendary": 50,
+          "mythic": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      2560,
+      4480
+    ],
+    "sect_fame": 80,
+    "mastery_xp": 240
+  },
+  {
+    "id": "loot.dungeon.sunken_star_palace_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.jellyfish_silk",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1280,
+      2560
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.sunken_star_palace_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      61,
+      70
+    ],
+    "entries": [
+      {
+        "id": "mat.heavenly_star_crystal",
+        "chance": 0.7,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "nine_heavens"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 60,
+          "mythic": 30,
+          "immortal": 10
+        },
+        "chance": 0.6
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      9600,
+      16000
+    ],
+    "sect_fame": 120,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.thunder_beetle",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      65,
+      76
+    ],
+    "entries": [
+      {
+        "id": "mat.roc_lightning_feather",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.thunderroot",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "thunderclap_wastes"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 85,
+          "legendary": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      405,
+      729
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.glass_scorpion",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      65,
+      76
+    ],
+    "entries": [
+      {
+        "id": "mat.roc_lightning_feather",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.thunderroot",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "thunderclap_wastes"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 85,
+          "legendary": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      405,
+      729
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.storm_wraith",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      65,
+      76
+    ],
+    "entries": [
+      {
+        "id": "mat.roc_lightning_feather",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.thunderroot",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "thunderclap_wastes"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 85,
+          "legendary": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      405,
+      729
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.lightning_roc",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      65,
+      76
+    ],
+    "entries": [
+      {
+        "id": "mat.tribulation_core",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.roc_lightning_feather",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "thunderclap_wastes"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 50,
+          "legendary": 40,
+          "mythic": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1215,
+      2025
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.tribulation_scavenger",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      65,
+      76
+    ],
+    "entries": [
+      {
+        "id": "mat.storm_glass",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.roc_lightning_feather",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "thunderclap_wastes"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 80,
+          "legendary": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      810,
+      1458
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.nine_bolt_thunder_emperor",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      73,
+      78
+    ],
+    "entries": [
+      {
+        "id": "mat.tribulation_core",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.tribulation_thunder_body",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.28,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.14,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "thunderclap_wastes"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 55,
+          "mythic": 35,
+          "immortal": 10
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.roc_lightning_feather",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      4860,
+      8100
+    ],
+    "sect_fame": 180,
+    "mastery_xp": 360
+  },
+  {
+    "id": "loot.chest.thunderclap_wastes",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      67,
+      76
+    ],
+    "entries": [
+      {
+        "id": "egg.storm_roc",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "egg.lightning_eel",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "thunderclap_wastes"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 60,
+          "legendary": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.thunderroot",
+        "qty": 3
+      },
+      {
+        "id": "mat.storm_glass",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      1620,
+      2835
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.mirror_thunder_beast",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      69,
+      78
+    ],
+    "entries": [
+      {
+        "id": "mat.tribulation_core",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "thunderclap_wastes"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 30,
+          "legendary": 50,
+          "mythic": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      3240,
+      5670
+    ],
+    "sect_fame": 90,
+    "mastery_xp": 270
+  },
+  {
+    "id": "loot.dungeon.glass_labyrinth_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.storm_glass",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.4,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1620,
+      3240
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.glass_labyrinth_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.storm_glass",
+        "qty": 5
+      },
+      {
+        "id": "mat.thunderroot",
+        "qty": 5
+      }
+    ],
+    "spirit_stones": [
+      12150,
+      20250
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.coral_naga",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      73,
+      84
+    ],
+    "entries": [
+      {
+        "id": "mat.kraken_ink",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.sea_jade_kelp",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sunken_dragon_sea"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 85,
+          "legendary": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      500,
+      900
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.abyssal_angler",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      73,
+      84
+    ],
+    "entries": [
+      {
+        "id": "mat.kraken_ink",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.sea_jade_kelp",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sunken_dragon_sea"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 85,
+          "legendary": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      500,
+      900
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.bone_dragon_spirit",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      73,
+      84
+    ],
+    "entries": [
+      {
+        "id": "mat.kraken_ink",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.sea_jade_kelp",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sunken_dragon_sea"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 85,
+          "legendary": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      500,
+      900
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.tide_kraken",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      73,
+      84
+    ],
+    "entries": [
+      {
+        "id": "mat.dragon_pearl",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.kraken_ink",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sunken_dragon_sea"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 50,
+          "legendary": 40,
+          "mythic": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1500,
+      2500
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.pirate_cultivator",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      73,
+      84
+    ],
+    "entries": [
+      {
+        "id": "mat.dragonbone_ore",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.kraken_ink",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sunken_dragon_sea"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 80,
+          "legendary": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1000,
+      1800
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.drowned_dragon_lord",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      81,
+      86
+    ],
+    "entries": [
+      {
+        "id": "mat.dragon_pearl",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.azure_dragon_scripture",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.30000000000000004,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.15000000000000002,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sunken_dragon_sea"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 55,
+          "mythic": 35,
+          "immortal": 10
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.kraken_ink",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      6000,
+      10000
+    ],
+    "sect_fame": 200,
+    "mastery_xp": 400
+  },
+  {
+    "id": "loot.chest.sunken_dragon_sea",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      75,
+      84
+    ],
+    "entries": [
+      {
+        "id": "egg.black_tortoise",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sunken_dragon_sea"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 60,
+          "legendary": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.sea_jade_kelp",
+        "qty": 3
+      },
+      {
+        "id": "mat.dragonbone_ore",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      2000,
+      3500
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.coral_queen",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      77,
+      86
+    ],
+    "entries": [
+      {
+        "id": "mat.dragon_pearl",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sunken_dragon_sea"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 30,
+          "legendary": 50,
+          "mythic": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      4000,
+      7000
+    ],
+    "sect_fame": 100,
+    "mastery_xp": 300
+  },
+  {
+    "id": "loot.dungeon.coral_labyrinth_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.kraken_ink",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      2000,
+      4000
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.coral_labyrinth_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      77,
+      86
+    ],
+    "entries": [
+      {
+        "id": "mat.dragon_pearl",
+        "chance": 0.7,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sunken_dragon_sea"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 60,
+          "mythic": 30,
+          "immortal": 10
+        },
+        "chance": 0.6
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      15000,
+      25000
+    ],
+    "sect_fame": 150,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.sand_wyrm",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      81,
+      92
+    ],
+    "entries": [
+      {
+        "id": "mat.sand_wyrm_tooth",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.desert_star_flower",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "starfall_desert"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      605,
+      1089
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.star_scarab",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      81,
+      92
+    ],
+    "entries": [
+      {
+        "id": "mat.sand_wyrm_tooth",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.desert_star_flower",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "starfall_desert"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      605,
+      1089
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.dune_mirage",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      81,
+      92
+    ],
+    "entries": [
+      {
+        "id": "mat.sand_wyrm_tooth",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.desert_star_flower",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "starfall_desert"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      605,
+      1089
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.star_metal_golem",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      81,
+      92
+    ],
+    "entries": [
+      {
+        "id": "mat.meteor_heart",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.sand_wyrm_tooth",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "starfall_desert"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 50,
+          "mythic": 40,
+          "immortal": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1815,
+      3025
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.nomad_star_hunter",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      81,
+      92
+    ],
+    "entries": [
+      {
+        "id": "mat.star_metal",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.sand_wyrm_tooth",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "starfall_desert"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 80,
+          "mythic": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1210,
+      2178
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.starfall_pharaoh",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      89,
+      94
+    ],
+    "entries": [
+      {
+        "id": "mat.meteor_heart",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.starfall_scripture",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.32,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.16,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "starfall_desert"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "mythic": 55,
+          "immortal": 35
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.sand_wyrm_tooth",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      7260,
+      12100
+    ],
+    "sect_fame": 220,
+    "mastery_xp": 440
+  },
+  {
+    "id": "loot.chest.starfall_desert",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      83,
+      92
+    ],
+    "entries": [
+      {
+        "id": "egg.sand_dragon",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "starfall_desert"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 60,
+          "mythic": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.desert_star_flower",
+        "qty": 3
+      },
+      {
+        "id": "mat.star_metal",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      2420,
+      4235
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.temple_star_priest",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      85,
+      94
+    ],
+    "entries": [
+      {
+        "id": "mat.meteor_heart",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "starfall_desert"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 30,
+          "mythic": 50,
+          "immortal": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      4840,
+      8470
+    ],
+    "sect_fame": 110,
+    "mastery_xp": 330
+  },
+  {
+    "id": "loot.dungeon.buried_star_temple_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.star_metal",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.4,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      2420,
+      4840
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.buried_star_temple_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.star_metal",
+        "qty": 5
+      },
+      {
+        "id": "mat.desert_star_flower",
+        "qty": 5
+      }
+    ],
+    "spirit_stones": [
+      18150,
+      30250
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.vault_sphinx",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      92,
+      96
+    ],
+    "entries": [
+      {
+        "id": "mat.meteor_heart",
+        "chance": 1.0,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "starfall_desert"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "immortal": 60
+        },
+        "chance": 0.8
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      12100,
+      19360
+    ],
+    "sect_fame": 330,
+    "mastery_xp": 660
+  },
+  {
+    "id": "loot.chest.pharaohs_star_vault_vault",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      92,
+      96
+    ],
+    "entries": [
+      {
+        "id": "egg.starlight_deer",
+        "chance": 0.35,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "starfall_desert"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "mythic": 70,
+          "immortal": 30
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.meteor_heart",
+        "qty": 2
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      9680,
+      14520
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.pharaohs_star_vault_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.5,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.meteor_heart",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      24200,
+      36300
+    ],
+    "sect_fame": 440,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.phoenix_flame_spirit",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      89,
+      100
+    ],
+    "entries": [
+      {
+        "id": "mat.phoenix_down",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.phoenix_lotus",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "gate_of_ascension"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      720,
+      1296
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.chain_warden",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      89,
+      100
+    ],
+    "entries": [
+      {
+        "id": "mat.phoenix_down",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.phoenix_lotus",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "gate_of_ascension"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      720,
+      1296
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.cloud_lion",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      89,
+      100
+    ],
+    "entries": [
+      {
+        "id": "mat.phoenix_down",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.phoenix_lotus",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "gate_of_ascension"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      720,
+      1296
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.ascension_judge",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      89,
+      100
+    ],
+    "entries": [
+      {
+        "id": "mat.gate_light_crystal",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.phoenix_down",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "gate_of_ascension"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 50,
+          "mythic": 40,
+          "immortal": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      2160,
+      3600
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.failed_ascendant",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      89,
+      100
+    ],
+    "entries": [
+      {
+        "id": "mat.ascension_gold",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.phoenix_down",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "gate_of_ascension"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 80,
+          "mythic": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1440,
+      2592
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.vermilion_gatekeeper",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      97,
+      102
+    ],
+    "entries": [
+      {
+        "id": "mat.gate_light_crystal",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.ascension_canon",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.33999999999999997,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.16999999999999998,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "gate_of_ascension"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "mythic": 55,
+          "immortal": 35
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.phoenix_down",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      8640,
+      14400
+    ],
+    "sect_fame": 240,
+    "mastery_xp": 480
+  },
+  {
+    "id": "loot.chest.gate_of_ascension",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      91,
+      100
+    ],
+    "entries": [
+      {
+        "id": "egg.vermilion_bird",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "gate_of_ascension"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 60,
+          "mythic": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.phoenix_lotus",
+        "qty": 3
+      },
+      {
+        "id": "mat.ascension_gold",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      2880,
+      5040
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.flame_trial_master",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      93,
+      102
+    ],
+    "entries": [
+      {
+        "id": "mat.gate_light_crystal",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "gate_of_ascension"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 30,
+          "mythic": 50,
+          "immortal": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      5760,
+      10080
+    ],
+    "sect_fame": 120,
+    "mastery_xp": 360
+  },
+  {
+    "id": "loot.dungeon.trial_of_nine_flames_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.phoenix_down",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      2880,
+      5760
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.trial_of_nine_flames_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      93,
+      102
+    ],
+    "entries": [
+      {
+        "id": "mat.gate_light_crystal",
+        "chance": 0.7,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "gate_of_ascension"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "mythic": 60,
+          "immortal": 30
+        },
+        "chance": 0.6
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      21600,
+      36000
+    ],
+    "sect_fame": 180,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.jade_tiger",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      97,
+      108
+    ],
+    "entries": [
+      {
+        "id": "mat.white_tiger_fang",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.immortal_peach_blossom",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "jade_immortal_realm"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      845,
+      1521
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.immortal_gardener",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      97,
+      108
+    ],
+    "entries": [
+      {
+        "id": "mat.white_tiger_fang",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.immortal_peach_blossom",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "jade_immortal_realm"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      845,
+      1521
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.waterfall_spirit",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      97,
+      108
+    ],
+    "entries": [
+      {
+        "id": "mat.white_tiger_fang",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.immortal_peach_blossom",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "jade_immortal_realm"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      845,
+      1521
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.jade_guardian_beast",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      97,
+      108
+    ],
+    "entries": [
+      {
+        "id": "mat.realm_heart_jade",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.white_tiger_fang",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "jade_immortal_realm"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 50,
+          "mythic": 40,
+          "immortal": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      2535,
+      4225
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.realm_exile",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      97,
+      108
+    ],
+    "entries": [
+      {
+        "id": "mat.immortal_jade",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.white_tiger_fang",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "jade_immortal_realm"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 80,
+          "mythic": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1690,
+      3042
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.white_tiger_sovereign",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      105,
+      110
+    ],
+    "entries": [
+      {
+        "id": "mat.realm_heart_jade",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.jade_immortal_sutra",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.36,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.18,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "jade_immortal_realm"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "mythic": 55,
+          "immortal": 35
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.white_tiger_fang",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      10140,
+      16900
+    ],
+    "sect_fame": 260,
+    "mastery_xp": 520
+  },
+  {
+    "id": "loot.chest.jade_immortal_realm",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      99,
+      108
+    ],
+    "entries": [
+      {
+        "id": "egg.white_tiger",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "jade_immortal_realm"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 60,
+          "mythic": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.immortal_peach_blossom",
+        "qty": 3
+      },
+      {
+        "id": "mat.immortal_jade",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      3380,
+      5915
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.peach_tree_ancestor",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      101,
+      110
+    ],
+    "entries": [
+      {
+        "id": "mat.realm_heart_jade",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "jade_immortal_realm"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 30,
+          "mythic": 50,
+          "immortal": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      6760,
+      11830
+    ],
+    "sect_fame": 130,
+    "mastery_xp": 390
+  },
+  {
+    "id": "loot.dungeon.immortal_peach_garden_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.immortal_jade",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.4,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      3380,
+      6760
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.immortal_peach_garden_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.immortal_jade",
+        "qty": 5
+      },
+      {
+        "id": "mat.immortal_peach_blossom",
+        "qty": 5
+      }
+    ],
+    "spirit_stones": [
+      25350,
+      42250
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.law_enforcer",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      105,
+      116
+    ],
+    "entries": [
+      {
+        "id": "mat.golden_crow_feather",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.law_flower",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "golden_palace_of_laws"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      980,
+      1764
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.golden_crow",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      105,
+      116
+    ],
+    "entries": [
+      {
+        "id": "mat.golden_crow_feather",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.law_flower",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "golden_palace_of_laws"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      980,
+      1764
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.scroll_golem",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      105,
+      116
+    ],
+    "entries": [
+      {
+        "id": "mat.golden_crow_feather",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.law_flower",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "golden_palace_of_laws"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      980,
+      1764
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.nine_tailed_shadow",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      105,
+      116
+    ],
+    "entries": [
+      {
+        "id": "mat.law_wheel_fragment",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.golden_crow_feather",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "golden_palace_of_laws"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 50,
+          "mythic": 40,
+          "immortal": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      2940,
+      4900
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.rebel_immortal",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      105,
+      116
+    ],
+    "entries": [
+      {
+        "id": "mat.heavenly_gold",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.golden_crow_feather",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "golden_palace_of_laws"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 80,
+          "mythic": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1960,
+      3528
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.arbiter_of_laws",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      113,
+      118
+    ],
+    "entries": [
+      {
+        "id": "mat.law_wheel_fragment",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.ten_thousand_laws_canon",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.38,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.19,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "golden_palace_of_laws"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "mythic": 55,
+          "immortal": 35
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.golden_crow_feather",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      11760,
+      19600
+    ],
+    "sect_fame": 280,
+    "mastery_xp": 560
+  },
+  {
+    "id": "loot.chest.golden_palace_of_laws",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      107,
+      116
+    ],
+    "entries": [
+      {
+        "id": "egg.nine_tailed_fox",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "golden_palace_of_laws"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 60,
+          "mythic": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.law_flower",
+        "qty": 3
+      },
+      {
+        "id": "mat.heavenly_gold",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      3920,
+      6860
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.chief_magistrate",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      109,
+      118
+    ],
+    "entries": [
+      {
+        "id": "mat.law_wheel_fragment",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "golden_palace_of_laws"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 30,
+          "mythic": 50,
+          "immortal": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      7840,
+      13720
+    ],
+    "sect_fame": 140,
+    "mastery_xp": 420
+  },
+  {
+    "id": "loot.dungeon.hall_of_verdicts_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.golden_crow_feather",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      3920,
+      7840
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.hall_of_verdicts_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      109,
+      118
+    ],
+    "entries": [
+      {
+        "id": "mat.law_wheel_fragment",
+        "chance": 0.7,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "golden_palace_of_laws"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "mythic": 60,
+          "immortal": 30
+        },
+        "chance": 0.6
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      29400,
+      49000
+    ],
+    "sect_fame": 210,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.azure_dragon_guard",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      113,
+      124
+    ],
+    "entries": [
+      {
+        "id": "mat.azure_dragon_scale",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.primordial_lotus",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "throne_of_the_immortal_emperor"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1125,
+      2025
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.five_element_sentinel",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      113,
+      124
+    ],
+    "entries": [
+      {
+        "id": "mat.azure_dragon_scale",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.primordial_lotus",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "throne_of_the_immortal_emperor"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1125,
+      2025
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.star_whale",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      113,
+      124
+    ],
+    "entries": [
+      {
+        "id": "mat.azure_dragon_scale",
+        "chance": 0.45,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.primordial_lotus",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "throne_of_the_immortal_emperor"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 85,
+          "mythic": 15
+        },
+        "chance": 0.05
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      1125,
+      2025
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.emperors_shadow",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      113,
+      124
+    ],
+    "entries": [
+      {
+        "id": "mat.primordial_chaos_stone",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.azure_dragon_scale",
+        "chance": 0.7,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.3,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "throne_of_the_immortal_emperor"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 50,
+          "mythic": 40,
+          "immortal": 10
+        },
+        "chance": 0.15
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      3375,
+      5625
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.enemy.throne_usurper",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      113,
+      124
+    ],
+    "entries": [
+      {
+        "id": "mat.emperor_star_metal",
+        "chance": 0.35,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.azure_dragon_scale",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.15,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "throne_of_the_immortal_emperor"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 80,
+          "mythic": 20
+        },
+        "chance": 0.07
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      2250,
+      4050
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.first_emperor_remnant",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      121,
+      126
+    ],
+    "entries": [
+      {
+        "id": "mat.primordial_chaos_stone",
+        "chance": 0.8,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "book.immortal_emperor_canon",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "throne_of_the_immortal_emperor"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "mythic": 55,
+          "immortal": 35
+        },
+        "chance": 0.7
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.azure_dragon_scale",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      13500,
+      22500
+    ],
+    "sect_fame": 300,
+    "mastery_xp": 600
+  },
+  {
+    "id": "loot.chest.throne_of_the_immortal_emperor",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      115,
+      124
+    ],
+    "entries": [
+      {
+        "id": "egg.azure_dragon",
+        "chance": 0.25,
+        "qty": [
+          1,
+          1
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "throne_of_the_immortal_emperor"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 60,
+          "mythic": 40
+        },
+        "chance": 1.0
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.primordial_lotus",
+        "qty": 3
+      },
+      {
+        "id": "mat.emperor_star_metal",
+        "qty": 2
+      }
+    ],
+    "spirit_stones": [
+      4500,
+      7875
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.five_element_ancestor",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      117,
+      126
+    ],
+    "entries": [
+      {
+        "id": "mat.primordial_chaos_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "throne_of_the_immortal_emperor"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 30,
+          "mythic": 50,
+          "immortal": 20
+        },
+        "chance": 0.5
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      9000,
+      15750
+    ],
+    "sect_fame": 150,
+    "mastery_xp": 450
+  },
+  {
+    "id": "loot.dungeon.hall_of_five_elements_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.azure_dragon_scale",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      4500,
+      9000
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.hall_of_five_elements_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      117,
+      126
+    ],
+    "entries": [
+      {
+        "id": "mat.primordial_chaos_stone",
+        "chance": 0.7,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "throne_of_the_immortal_emperor"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "mythic": 60,
+          "immortal": 30
+        },
+        "chance": 0.6
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      33750,
+      56250
+    ],
+    "sect_fame": 225,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.dragon_king_ao",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      84,
+      88
+    ],
+    "entries": [
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.8,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sunken_dragon_sea"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "mythic": 60,
+          "immortal": 40
+        },
+        "chance": 0.8
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      40000,
+      70000
+    ],
+    "sect_fame": 1000,
+    "mastery_xp": 2000
+  },
+  {
+    "id": "loot.dungeon.dragon_king_palace_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.9,
+        "qty": [
+          3,
+          6
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      10000,
+      20000
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.dragon_king_palace_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      84,
+      88
+    ],
+    "entries": [
+      {
+        "gear": {
+          "base": "gear.dragon_king_scale_armor"
+        },
+        "rarity_weights": {
+          "divine": 1
+        },
+        "chance": 0.03
+      },
+      {
+        "gear": {
+          "base": "gear.tide_pearl_necklace"
+        },
+        "rarity_weights": {
+          "divine": 1
+        },
+        "chance": 0.03
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sunken_dragon_sea"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "mythic": 60,
+          "immortal": 40
+        },
+        "chance": 1.0
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.8,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      100000,
+      160000
+    ],
+    "sect_fame": 1500,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.fallen_heaven_lord",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      100,
+      104
+    ],
+    "entries": [
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.8,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "gate_of_ascension"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "immortal": 60
+        },
+        "chance": 0.8
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      57600,
+      100800
+    ],
+    "sect_fame": 1200,
+    "mastery_xp": 2400
+  },
+  {
+    "id": "loot.dungeon.fallen_heaven_ruins_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.9,
+        "qty": [
+          3,
+          6
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      14400,
+      28800
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.fallen_heaven_ruins_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      100,
+      104
+    ],
+    "entries": [
+      {
+        "gear": {
+          "base": "gear.phoenix_feather_crown"
+        },
+        "rarity_weights": {
+          "divine": 1
+        },
+        "chance": 0.03
+      },
+      {
+        "gear": {
+          "base": "gear.cloudwalker_immortal_boots"
+        },
+        "rarity_weights": {
+          "divine": 1
+        },
+        "chance": 0.03
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "gate_of_ascension"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "immortal": 60
+        },
+        "chance": 1.0
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.8,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      144000,
+      230400
+    ],
+    "sect_fame": 1800,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.law_sovereign",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      116,
+      120
+    ],
+    "entries": [
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.8,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "golden_palace_of_laws"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "immortal": 60
+        },
+        "chance": 0.8
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      78400,
+      137200
+    ],
+    "sect_fame": 1400,
+    "mastery_xp": 2800
+  },
+  {
+    "id": "loot.dungeon.ten_thousand_laws_hall_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.9,
+        "qty": [
+          3,
+          6
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      19600,
+      39200
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.ten_thousand_laws_hall_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      116,
+      120
+    ],
+    "entries": [
+      {
+        "gear": {
+          "base": "gear.law_seal_ring"
+        },
+        "rarity_weights": {
+          "divine": 1
+        },
+        "chance": 0.03
+      },
+      {
+        "gear": {
+          "base": "gear.heaven_mirror"
+        },
+        "rarity_weights": {
+          "divine": 1
+        },
+        "chance": 0.03
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "golden_palace_of_laws"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "immortal": 60
+        },
+        "chance": 1.0
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.8,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      196000,
+      313600
+    ],
+    "sect_fame": 2100,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.chaos_progenitor",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      124,
+      128
+    ],
+    "entries": [
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.6,
+        "qty": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.8,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "throne_of_the_immortal_emperor"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "immortal": 60
+        },
+        "chance": 0.8
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      90000,
+      157500
+    ],
+    "sect_fame": 1500,
+    "mastery_xp": 3000
+  },
+  {
+    "id": "loot.dungeon.primordial_chaos_abyss_wave",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.9,
+        "qty": [
+          3,
+          6
+        ]
+      },
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.6,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      22500,
+      45000
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.primordial_chaos_abyss_clear",
+    "mode": "independent",
+    "rolls": 1,
+    "ilvl": [
+      124,
+      128
+    ],
+    "entries": [
+      {
+        "gear": {
+          "base": "gear.chaos_severing_saber"
+        },
+        "rarity_weights": {
+          "divine": 1
+        },
+        "chance": 0.03
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "throne_of_the_immortal_emperor"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "immortal": 60
+        },
+        "chance": 1.0
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.8,
+        "qty": [
+          1,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      225000,
+      360000
+    ],
+    "sect_fame": 2250,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.tribulation.soul_transformation",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.7,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "qty": 10
+      }
+    ],
+    "spirit_stones": [
+      20000,
+      30000
+    ],
+    "sect_fame": 500,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.soul_transformation_tribulation_spirit",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.5,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      7500,
+      12500
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 500
+  },
+  {
+    "id": "loot.tribulation.tribulation_transcendence",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.7,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "qty": 10
+      }
+    ],
+    "spirit_stones": [
+      51200,
+      76800
+    ],
+    "sect_fame": 800,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.tribulation_transcendence_tribulation_spirit",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.5,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      19200,
+      32000
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 800
+  },
+  {
+    "id": "loot.tribulation.immortal_ascension",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.7,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "qty": 10
+      }
+    ],
+    "spirit_stones": [
+      80000,
+      120000
+    ],
+    "sect_fame": 1000,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.immortal_ascension_tribulation_spirit",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.5,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      30000,
+      50000
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 1000
+  },
+  {
+    "id": "loot.tribulation.golden_immortal",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.7,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "qty": 10
+      }
+    ],
+    "spirit_stones": [
+      135200,
+      202800
+    ],
+    "sect_fame": 1300,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.golden_immortal_tribulation_spirit",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.5,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      50700,
+      84500
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 1300
+  },
+  {
+    "id": "loot.tribulation.immortal_emperor",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.7,
+        "qty": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.4,
+        "qty": [
+          1,
+          1
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "qty": 10
+      }
+    ],
+    "spirit_stones": [
+      180000,
+      270000
+    ],
+    "sect_fame": 1500,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.boss.immortal_emperor_tribulation_spirit",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "chance": 0.5,
+        "qty": [
+          1,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [],
+    "spirit_stones": [
+      67500,
+      112500
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 1500
+  }
+]

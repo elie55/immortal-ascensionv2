@@ -1,0 +1,86 @@
+[
+  {
+    "id": "gear.starborn_robe",
+    "name": "Starborn Robe",
+    "description": "Starborn Robe, crafted from the materials of the Starfall Desert.",
+    "name_cn": "星生袍",
+    "slot": "armor",
+    "main_value": 60,
+    "rarity_range": [
+      "legendary",
+      "immortal"
+    ],
+    "droppable": true,
+    "drop_tags": [
+      "starfall_desert"
+    ],
+    "unique": false,
+    "special_effects": [],
+    "requirements": {
+      "realm": "realm.mahayana"
+    },
+    "rarities": {
+      "legendary": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/armor/starborn_robe_legendary.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an indigo desert robe with silver star embroidery and a golden sash, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "mythic": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/armor/starborn_robe_mythic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an indigo desert robe with silver star embroidery and a golden sash, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "immortal": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/armor/starborn_robe_immortal.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an indigo desert robe with silver star embroidery and a golden sash, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "element": "elem.earth",
+    "signature_affix": "hp",
+    "armor_type": "mystic",
+    "set": "set.starborn"
+  }
+]

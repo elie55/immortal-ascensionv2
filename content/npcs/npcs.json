@@ -882,7 +882,20 @@
       }
     },
     "quests": [
-      "quest.dungeon.green_labyrinth_trial"
+      "quest.dungeon.green_labyrinth_trial",
+      "quest.dungeon.blazing_mountain_ember_forge_ruins",
+      "quest.dungeon.frozen_lotus_valley_glacier_caverns",
+      "quest.dungeon.ancient_sword_tomb_hall_of_ten_thousand_blades",
+      "quest.dungeon.demon_territory_blood_river_prison",
+      "quest.dungeon.celestial_mountains_thunder_pine_sanctum",
+      "quest.dungeon.nine_heavens_sunken_star_palace",
+      "quest.dungeon.thunderclap_wastes_glass_labyrinth",
+      "quest.dungeon.sunken_dragon_sea_coral_labyrinth",
+      "quest.dungeon.starfall_desert_buried_star_temple",
+      "quest.dungeon.gate_of_ascension_trial_of_nine_flames",
+      "quest.dungeon.jade_immortal_realm_immortal_peach_garden",
+      "quest.dungeon.golden_palace_of_laws_hall_of_verdicts",
+      "quest.dungeon.throne_of_the_immortal_emperor_hall_of_five_elements"
     ],
     "gifts": {
       "liked": [

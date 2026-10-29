@@ -1,0 +1,441 @@
+[
+  {
+    "id": "node.starfall_desert.entry",
+    "name": "Starfall Desert Border",
+    "description": "Border of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.starfall_desert.gathering",
+      "node.starfall_desert.outskirts"
+    ],
+    "rec_cp": 170405,
+    "first_clear": {
+      "spirit_stones": 1815
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.sand_wyrm"
+      ],
+      [
+        "enemy.dune_mirage",
+        "enemy.sand_wyrm"
+      ]
+    ]
+  },
+  {
+    "id": "node.starfall_desert.gathering",
+    "name": "Starfall Desert Gathering Grounds",
+    "description": "Gathering Grounds of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.starfall_desert.entry",
+      "node.starfall_desert.west_path",
+      "node.starfall_desert.cache"
+    ],
+    "rec_cp": 194943,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 10,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.desert_star_flower",
+          "qty": 3
+        },
+        {
+          "id": "mat.star_metal",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.starfall_desert.outskirts",
+    "name": "Starfall Desert Outskirts",
+    "description": "Outskirts of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.starfall_desert.entry",
+      "node.starfall_desert.cache",
+      "node.starfall_desert.east_path"
+    ],
+    "rec_cp": 184037,
+    "first_clear": {
+      "spirit_stones": 1815
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.star_scarab",
+        "enemy.dune_mirage"
+      ],
+      [
+        "enemy.star_scarab",
+        "enemy.nomad_star_hunter"
+      ]
+    ]
+  },
+  {
+    "id": "node.starfall_desert.west_path",
+    "name": "Starfall Desert Western Trail",
+    "description": "Western Trail of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.starfall_desert.gathering",
+      "node.starfall_desert.lair"
+    ],
+    "rec_cp": 190854,
+    "first_clear": {
+      "spirit_stones": 1815
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.dune_mirage",
+        "enemy.sand_wyrm"
+      ],
+      [
+        "enemy.dune_mirage",
+        "enemy.dune_mirage"
+      ]
+    ]
+  },
+  {
+    "id": "node.starfall_desert.cache",
+    "name": "Starfall Desert Hidden Cache",
+    "description": "Hidden Cache of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.starfall_desert.gathering",
+      "node.starfall_desert.outskirts",
+      "node.starfall_desert.crossroads"
+    ],
+    "rec_cp": 217437,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 10,
+    "chest": "loot.chest.starfall_desert"
+  },
+  {
+    "id": "node.starfall_desert.east_path",
+    "name": "Starfall Desert Eastern Trail",
+    "description": "Eastern Trail of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.starfall_desert.outskirts",
+      "node.starfall_desert.ridge"
+    ],
+    "rec_cp": 204486,
+    "first_clear": {
+      "spirit_stones": 1815
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.star_scarab",
+        "enemy.nomad_star_hunter"
+      ],
+      [
+        "enemy.sand_wyrm",
+        "enemy.star_scarab"
+      ]
+    ]
+  },
+  {
+    "id": "node.starfall_desert.lair",
+    "name": "Starfall Desert Lair",
+    "description": "Lair of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.starfall_desert.west_path",
+      "node.starfall_desert.deep_path"
+    ],
+    "rec_cp": 401474,
+    "first_clear": {
+      "spirit_stones": 4840,
+      "items": [
+        {
+          "id": "mat.meteor_heart",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.star_metal_golem"
+      ]
+    ]
+  },
+  {
+    "id": "node.starfall_desert.crossroads",
+    "name": "Starfall Desert Crossroads",
+    "description": "Crossroads of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.starfall_desert.cache",
+      "node.starfall_desert.deep_path",
+      "node.starfall_desert.sanctum"
+    ],
+    "rec_cp": 239930,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 10,
+    "event": "event.oasis_of_stars"
+  },
+  {
+    "id": "node.starfall_desert.ridge",
+    "name": "Starfall Desert Ridge",
+    "description": "Ridge of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.starfall_desert.east_path",
+      "node.starfall_desert.sanctum"
+    ],
+    "rec_cp": 224935,
+    "first_clear": {
+      "spirit_stones": 1815
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.sand_wyrm",
+        "enemy.star_scarab"
+      ],
+      [
+        "enemy.nomad_star_hunter"
+      ]
+    ]
+  },
+  {
+    "id": "node.starfall_desert.deep_path",
+    "name": "Starfall Desert Deep Path",
+    "description": "Deep Path of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.starfall_desert.lair",
+      "node.starfall_desert.crossroads",
+      "node.starfall_desert.den"
+    ],
+    "rec_cp": 231751,
+    "first_clear": {
+      "spirit_stones": 1815
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.star_scarab",
+        "enemy.dune_mirage"
+      ],
+      [
+        "enemy.star_scarab",
+        "enemy.nomad_star_hunter"
+      ]
+    ]
+  },
+  {
+    "id": "node.starfall_desert.sanctum",
+    "name": "Starfall Desert Sanctum",
+    "description": "Sanctum of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "secret_realm",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.starfall_desert.crossroads",
+      "node.starfall_desert.ridge",
+      "node.starfall_desert.hidden_grove",
+      "node.starfall_desert.approach"
+    ],
+    "rec_cp": 262424,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 10,
+    "secret_realm": "dungeon.pharaohs_star_vault"
+  },
+  {
+    "id": "node.starfall_desert.den",
+    "name": "Starfall Desert Den",
+    "description": "Den of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.starfall_desert.deep_path",
+      "node.starfall_desert.throne"
+    ],
+    "rec_cp": 466228,
+    "first_clear": {
+      "spirit_stones": 4840,
+      "items": [
+        {
+          "id": "mat.meteor_heart",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.sand_wyrm",
+        "enemy.star_scarab"
+      ],
+      [
+        "enemy.star_metal_golem"
+      ]
+    ]
+  },
+  {
+    "id": "node.starfall_desert.hidden_grove",
+    "name": "Starfall Desert Secret Place",
+    "description": "Secret Place of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.starfall_desert.sanctum",
+      "node.starfall_desert.approach"
+    ],
+    "rec_cp": 277419,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 10,
+    "event": "event.oasis_of_stars",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.starfall_desert.approach",
+    "name": "Starfall Desert Approach",
+    "description": "Approach of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.starfall_desert.sanctum",
+      "node.starfall_desert.hidden_grove",
+      "node.starfall_desert.throne"
+    ],
+    "rec_cp": 259016,
+    "first_clear": {
+      "spirit_stones": 1815
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.dune_mirage",
+        "enemy.dune_mirage"
+      ],
+      [
+        "enemy.star_scarab",
+        "enemy.dune_mirage"
+      ]
+    ]
+  },
+  {
+    "id": "node.starfall_desert.throne",
+    "name": "Starfall Desert Throne",
+    "description": "Throne of the Starfall Desert.",
+    "region": "region.starfall_desert",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.starfall_desert.den",
+      "node.starfall_desert.approach"
+    ],
+    "rec_cp": 1116494,
+    "first_clear": {
+      "spirit_stones": 18150,
+      "sect_fame": 440
+    },
+    "replayable": true,
+    "energy_cost": 10,
+    "waves": [
+      [
+        "enemy.dune_mirage",
+        "enemy.star_metal_golem"
+      ],
+      [
+        "boss.starfall_pharaoh"
+      ]
+    ]
+  }
+]

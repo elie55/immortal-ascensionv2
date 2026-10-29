@@ -1,0 +1,578 @@
+[
+  {
+    "id": "egg.ember_salamander_pup",
+    "name": "Ember Salamander Egg",
+    "description": "An egg that will hatch into a Ember Salamander.",
+    "rarity": "uncommon",
+    "sell_value": 600,
+    "stack_limit": 5,
+    "tags": [
+      "blazing_mountain"
+    ],
+    "hatches_into": "beast.ember_salamander_pup",
+    "hatch_minutes": 60,
+    "hatch_requirements": {
+      "realm": "realm.foundation_establishment"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/ember_salamander_pup.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Ember Salamander: fire-themed shell with markings hinting at a small chubby black salamander with orange spots and big golden eyes, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.azure_wolf",
+    "name": "Azure Wolf Egg",
+    "description": "An egg that will hatch into a Azure Wolf.",
+    "rarity": "uncommon",
+    "sell_value": 600,
+    "stack_limit": 5,
+    "tags": [
+      "blazing_mountain"
+    ],
+    "hatches_into": "beast.azure_wolf",
+    "hatch_minutes": 60,
+    "hatch_requirements": {
+      "realm": "realm.foundation_establishment"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/azure_wolf.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Azure Wolf: metal-themed shell with markings hinting at a young blue-grey wolf with a white ruff and silver eyes, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.snow_crane",
+    "name": "Snow Crane Egg",
+    "description": "An egg that will hatch into a Snow Crane.",
+    "rarity": "rare",
+    "sell_value": 1200,
+    "stack_limit": 5,
+    "tags": [
+      "frozen_lotus_valley"
+    ],
+    "hatches_into": "beast.snow_crane",
+    "hatch_minutes": 90,
+    "hatch_requirements": {
+      "realm": "realm.foundation_establishment"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/snow_crane.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Snow Crane: water-themed shell with markings hinting at an elegant white crane with ice-blue wingtips and a red crown, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.frost_otter",
+    "name": "Frost Otter Egg",
+    "description": "An egg that will hatch into a Frost Otter.",
+    "rarity": "uncommon",
+    "sell_value": 800,
+    "stack_limit": 5,
+    "tags": [
+      "frozen_lotus_valley"
+    ],
+    "hatches_into": "beast.frost_otter",
+    "hatch_minutes": 60,
+    "hatch_requirements": {
+      "realm": "realm.foundation_establishment"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/frost_otter.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Frost Otter: water-themed shell with markings hinting at a round little white otter with frosty whiskers clutching a pebble, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.jade_serpent",
+    "name": "Jade Serpent Egg",
+    "description": "An egg that will hatch into a Jade Serpent.",
+    "rarity": "rare",
+    "sell_value": 1500,
+    "stack_limit": 5,
+    "tags": [
+      "ancient_sword_tomb"
+    ],
+    "hatches_into": "beast.jade_serpent",
+    "hatch_minutes": 90,
+    "hatch_requirements": {
+      "realm": "realm.core_formation"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/jade_serpent.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Jade Serpent: wood-themed shell with markings hinting at a slender jade-green serpent with golden eyes and leaf-shaped scales, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.blood_moon_wolf",
+    "name": "Blood-Moon Wolf Egg",
+    "description": "An egg that will hatch into a Blood-Moon Wolf.",
+    "rarity": "rare",
+    "sell_value": 1800,
+    "stack_limit": 5,
+    "tags": [
+      "demon_territory"
+    ],
+    "hatches_into": "beast.blood_moon_wolf",
+    "hatch_minutes": 90,
+    "hatch_requirements": {
+      "realm": "realm.nascent_soul"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/blood_moon_wolf.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Blood-Moon Wolf: fire-themed shell with markings hinting at a black wolf with a red crescent mark on its brow and crimson eyes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.ghost_lantern_moth",
+    "name": "Ghost Lantern Moth Egg",
+    "description": "An egg that will hatch into a Ghost Lantern Moth.",
+    "rarity": "rare",
+    "sell_value": 1800,
+    "stack_limit": 5,
+    "tags": [
+      "demon_territory"
+    ],
+    "hatches_into": "beast.ghost_lantern_moth",
+    "hatch_minutes": 90,
+    "hatch_requirements": {
+      "realm": "realm.nascent_soul"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/ghost_lantern_moth.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Ghost Lantern Moth: fire-themed shell with markings hinting at a large moth with wings like paper lanterns glowing soft orange, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.thunder_tiger",
+    "name": "Thunder Tiger Egg",
+    "description": "An egg that will hatch into a Thunder Tiger.",
+    "rarity": "epic",
+    "sell_value": 2800,
+    "stack_limit": 5,
+    "tags": [
+      "celestial_mountains"
+    ],
+    "hatches_into": "beast.thunder_tiger",
+    "hatch_minutes": 120,
+    "hatch_requirements": {
+      "realm": "realm.soul_transformation"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/thunder_tiger.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Thunder Tiger: metal-themed shell with markings hinting at a white tiger cub with black lightning stripes and blue eyes, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.cloud_qilin",
+    "name": "Cloud Qilin Egg",
+    "description": "An egg that will hatch into a Cloud Qilin.",
+    "rarity": "epic",
+    "sell_value": 3200,
+    "stack_limit": 5,
+    "tags": [
+      "nine_heavens"
+    ],
+    "hatches_into": "beast.cloud_qilin",
+    "hatch_minutes": 120,
+    "hatch_requirements": {
+      "realm": "realm.spirit_severing"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/cloud_qilin.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Cloud Qilin: earth-themed shell with markings hinting at a small qilin with a cloud-white mane, jade scales and a single golden horn, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.storm_roc",
+    "name": "Storm Roc Egg",
+    "description": "An egg that will hatch into a Storm Roc.",
+    "rarity": "epic",
+    "sell_value": 3600,
+    "stack_limit": 5,
+    "tags": [
+      "thunderclap_wastes"
+    ],
+    "hatches_into": "beast.storm_roc",
+    "hatch_minutes": 120,
+    "hatch_requirements": {
+      "realm": "realm.dao_integration"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/storm_roc.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Storm Roc: metal-themed shell with markings hinting at a fluffy violet roc chick with sparks in its downy feathers, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.lightning_eel",
+    "name": "Lightning Eel Egg",
+    "description": "An egg that will hatch into a Lightning Eel.",
+    "rarity": "epic",
+    "sell_value": 3600,
+    "stack_limit": 5,
+    "tags": [
+      "thunderclap_wastes"
+    ],
+    "hatches_into": "beast.lightning_eel",
+    "hatch_minutes": 120,
+    "hatch_requirements": {
+      "realm": "realm.dao_integration"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/lightning_eel.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Lightning Eel: water-themed shell with markings hinting at a sleek dark-blue eel with glowing violet lines along its body, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.black_tortoise",
+    "name": "Black Tortoise Egg",
+    "description": "An egg that will hatch into a Black Tortoise.",
+    "rarity": "legendary",
+    "sell_value": 5000,
+    "stack_limit": 5,
+    "tags": [
+      "sunken_dragon_sea"
+    ],
+    "hatches_into": "beast.black_tortoise",
+    "hatch_minutes": 150,
+    "hatch_requirements": {
+      "realm": "realm.tribulation_transcendence"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/black_tortoise.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Black Tortoise: water-themed shell with markings hinting at a small black tortoise with a serpent tail and starry patterns on its shell, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.sand_dragon",
+    "name": "Sand Dragon Egg",
+    "description": "An egg that will hatch into a Sand Dragon.",
+    "rarity": "legendary",
+    "sell_value": 5500,
+    "stack_limit": 5,
+    "tags": [
+      "starfall_desert"
+    ],
+    "hatches_into": "beast.sand_dragon",
+    "hatch_minutes": 150,
+    "hatch_requirements": {
+      "realm": "realm.mahayana"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/sand_dragon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Sand Dragon: earth-themed shell with markings hinting at a small golden sand dragon with silver star freckles and stubby wings, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.starlight_deer",
+    "name": "Starlight Deer Egg",
+    "description": "An egg that will hatch into a Starlight Deer.",
+    "rarity": "legendary",
+    "sell_value": 5500,
+    "stack_limit": 5,
+    "tags": [
+      "starfall_desert"
+    ],
+    "hatches_into": "beast.starlight_deer",
+    "hatch_minutes": 150,
+    "hatch_requirements": {
+      "realm": "realm.mahayana"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/starlight_deer.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Starlight Deer: wood-themed shell with markings hinting at a slender white deer with antlers of starlight and silver spots, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.vermilion_bird",
+    "name": "Vermilion Bird Egg",
+    "description": "An egg that will hatch into a Vermilion Bird.",
+    "rarity": "legendary",
+    "sell_value": 6000,
+    "stack_limit": 5,
+    "tags": [
+      "gate_of_ascension"
+    ],
+    "hatches_into": "beast.vermilion_bird",
+    "hatch_minutes": 150,
+    "hatch_requirements": {
+      "realm": "realm.immortal_ascension"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/vermilion_bird.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Vermilion Bird: fire-themed shell with markings hinting at a small vermilion bird with golden flame tail feathers and bright eyes, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.white_tiger",
+    "name": "White Tiger Egg",
+    "description": "An egg that will hatch into a White Tiger.",
+    "rarity": "mythic",
+    "sell_value": 7800,
+    "stack_limit": 5,
+    "tags": [
+      "jade_immortal_realm"
+    ],
+    "hatches_into": "beast.white_tiger",
+    "hatch_minutes": 180,
+    "hatch_requirements": {
+      "realm": "realm.earth_immortal"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/white_tiger.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the White Tiger: metal-themed shell with markings hinting at a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.nine_tailed_fox",
+    "name": "Nine-Tailed Fox Egg",
+    "description": "An egg that will hatch into a Nine-Tailed Fox.",
+    "rarity": "mythic",
+    "sell_value": 8400,
+    "stack_limit": 5,
+    "tags": [
+      "golden_palace_of_laws"
+    ],
+    "hatches_into": "beast.nine_tailed_fox",
+    "hatch_minutes": 180,
+    "hatch_requirements": {
+      "realm": "realm.heavenly_immortal"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/nine_tailed_fox.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Nine-Tailed Fox: fire-themed shell with markings hinting at a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "egg.azure_dragon",
+    "name": "Azure Dragon Egg",
+    "description": "An egg that will hatch into a Azure Dragon.",
+    "rarity": "immortal",
+    "sell_value": 10500,
+    "stack_limit": 5,
+    "tags": [
+      "throne_of_the_immortal_emperor"
+    ],
+    "hatches_into": "beast.azure_dragon",
+    "hatch_minutes": 210,
+    "hatch_requirements": {
+      "realm": "realm.immortal_king"
+    },
+    "art": {
+      "icon": {
+        "file": "assets/items/eggs/azure_dragon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a spirit-beast egg of the Azure Dragon: water-themed shell with markings hinting at a young azure dragon with pearl-white whiskers and starlight in its scales, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

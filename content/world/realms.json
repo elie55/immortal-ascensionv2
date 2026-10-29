@@ -241,8 +241,9 @@
           "qty": 3
         }
       ],
-      "success_base": 0.85,
-      "unlocks": []
+      "success_base": 0.8,
+      "unlocks": [],
+      "tribulation": "tribulation.soul_transformation"
     },
     "art": {
       "breakthrough_bg": {
@@ -397,8 +398,9 @@
           "qty": 6
         }
       ],
-      "success_base": 0.85,
-      "unlocks": []
+      "success_base": 0.8,
+      "unlocks": [],
+      "tribulation": "tribulation.tribulation_transcendence"
     },
     "art": {
       "breakthrough_bg": {
@@ -501,8 +503,9 @@
           "qty": 8
         }
       ],
-      "success_base": 0.85,
-      "unlocks": []
+      "success_base": 0.8,
+      "unlocks": [],
+      "tribulation": "tribulation.immortal_ascension"
     },
     "art": {
       "breakthrough_bg": {
@@ -657,8 +660,9 @@
           "qty": 11
         }
       ],
-      "success_base": 0.85,
-      "unlocks": []
+      "success_base": 0.8,
+      "unlocks": [],
+      "tribulation": "tribulation.golden_immortal"
     },
     "art": {
       "breakthrough_bg": {
@@ -761,8 +765,9 @@
           "qty": 13
         }
       ],
-      "success_base": 0.85,
-      "unlocks": []
+      "success_base": 0.8,
+      "unlocks": [],
+      "tribulation": "tribulation.immortal_emperor"
     },
     "art": {
       "breakthrough_bg": {

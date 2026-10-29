@@ -36,12 +36,15 @@
   {
     "id": "rank.core_disciple",
     "name": "Core Disciple",
-    "description": "Clear the Green Labyrinth to prove your core.",
+    "description": "Win the Inner Sect Tournament to become a Core Disciple.",
     "name_cn": "核心弟子",
     "order": 3,
     "fame_required": 4000,
     "promotion": {
-      "trial": "dungeon.green_labyrinth"
+      "quests": [
+        "quest.dungeon.green_labyrinth_trial"
+      ],
+      "trial": "tournament.inner_sect"
     },
     "benefits": {
       "qi_mult": 1.2,
@@ -54,11 +57,13 @@
   {
     "id": "rank.direct_disciple",
     "name": "Direct Disciple",
-    "description": "Taken as a direct student of an elder.",
+    "description": "Win the Core Sect Tournament and an elder takes you as a direct student.",
     "name_cn": "亲传弟子",
     "order": 4,
     "fame_required": 9000,
-    "promotion": {},
+    "promotion": {
+      "trial": "tournament.core_sect"
+    },
     "benefits": {
       "qi_mult": 1.3,
       "shop_tier": 4

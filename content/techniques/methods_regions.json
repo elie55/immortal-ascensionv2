@@ -1,0 +1,633 @@
+[
+  {
+    "id": "method.red_furnace_sutra",
+    "name": "Red Furnace Sutra",
+    "description": "Turn the body into a furnace; Qi refines itself in the heat.",
+    "name_cn": "赤炉经",
+    "rarity": "rare",
+    "grade": "earth",
+    "element": "elem.fire",
+    "qi_mult": 1.5,
+    "bonuses": {
+      "elem_dmg.fire": 12,
+      "hp": 400
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.foundation_establishment"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 190,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/red_furnace_sutra.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Red Furnace Sutra': Turn the body into a furnace; Qi refines itself in the heat., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.ice_lotus_heart_art",
+    "name": "Ice Lotus Heart Art",
+    "description": "Still the heart like a lotus under ice. Favoured by the Frost Sword lineage.",
+    "name_cn": "冰莲心法",
+    "rarity": "epic",
+    "grade": "heaven",
+    "element": "elem.water",
+    "qi_mult": 1.65,
+    "bonuses": {
+      "elem_dmg.water": 12,
+      "sp_energy": 20
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.foundation_establishment"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 220,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/ice_lotus_heart_art.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Ice Lotus Heart Art': Still the heart like a lotus under ice. Favoured by the Frost Sword lineage., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.sword_burial_scripture",
+    "name": "Sword Burial Scripture",
+    "description": "Bury the self like a sword in earth, and draw it sharper.",
+    "name_cn": "葬剑经",
+    "rarity": "epic",
+    "grade": "heaven",
+    "element": "elem.metal",
+    "qi_mult": 1.9,
+    "bonuses": {
+      "crit": 4,
+      "atk": 150
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.core_formation"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 250,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/sword_burial_scripture.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Sword Burial Scripture': Bury the self like a sword in earth, and draw it sharper., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.blood_moon_canon",
+    "name": "Blood Moon Canon",
+    "description": "A demonic canon purified by a defector's notes. Powerful, if you can bear it.",
+    "name_cn": "血月典",
+    "rarity": "epic",
+    "grade": "heaven",
+    "element": "elem.fire",
+    "qi_mult": 2.1,
+    "bonuses": {
+      "life_steal": 4,
+      "atk": 200
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.nascent_soul"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 280,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/blood_moon_canon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Blood Moon Canon': A demonic canon purified by a defector's notes. Powerful, if you can bear it., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.nine_heavens_breath",
+    "name": "Nine Heavens Breath",
+    "description": "Breathe as the heavens breathe; each breath is a season.",
+    "name_cn": "九天吐纳",
+    "rarity": "legendary",
+    "grade": "heaven",
+    "element": "elem.metal",
+    "qi_mult": 2.4,
+    "bonuses": {
+      "sp_power": 500,
+      "acc": 5
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.soul_transformation"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 310,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/nine_heavens_breath.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Nine Heavens Breath': Breathe as the heavens breathe; each breath is a season., golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.starlight_canon",
+    "name": "Starlight Canon",
+    "description": "Draw Qi from the stars themselves.",
+    "name_cn": "星辉典",
+    "rarity": "legendary",
+    "grade": "heaven",
+    "element": "elem.water",
+    "qi_mult": 2.8,
+    "bonuses": {
+      "sp_power": 700,
+      "elem_dmg.water": 14
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.spirit_severing"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 340,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/starlight_canon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Starlight Canon': Draw Qi from the stars themselves., golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.tribulation_thunder_body",
+    "name": "Tribulation Thunder Body",
+    "description": "Temper the body with the lightning that kills others.",
+    "name_cn": "劫雷体",
+    "rarity": "legendary",
+    "grade": "immortal",
+    "element": "elem.metal",
+    "qi_mult": 3.2,
+    "bonuses": {
+      "hp": 4000,
+      "elem_res.metal": 15
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.dao_integration"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 370,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/tribulation_thunder_body.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Tribulation Thunder Body': Temper the body with the lightning that kills others., golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.azure_dragon_scripture",
+    "name": "Azure Dragon Scripture",
+    "description": "The scripture of the drowned dragons, read in their bones.",
+    "name_cn": "青龙经",
+    "rarity": "legendary",
+    "grade": "immortal",
+    "element": "elem.water",
+    "qi_mult": 3.6,
+    "bonuses": {
+      "hp": 5000,
+      "elem_dmg.water": 16
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.tribulation_transcendence"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 400,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/azure_dragon_scripture.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Azure Dragon Scripture': The scripture of the drowned dragons, read in their bones., golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.starfall_scripture",
+    "name": "Starfall Scripture",
+    "description": "Each fallen star is a lesson; this scripture remembers them all.",
+    "name_cn": "星陨经",
+    "rarity": "legendary",
+    "grade": "immortal",
+    "element": "elem.earth",
+    "qi_mult": 4.0,
+    "bonuses": {
+      "def": 1500,
+      "elem_dmg.earth": 16
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.mahayana"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 430,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/starfall_scripture.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Starfall Scripture': Each fallen star is a lesson; this scripture remembers them all., golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.ascension_canon",
+    "name": "Ascension Canon",
+    "description": "The canon every ascendant recites as they step through the gate.",
+    "name_cn": "飞升典",
+    "rarity": "mythic",
+    "grade": "immortal",
+    "element": "elem.fire",
+    "qi_mult": 4.5,
+    "bonuses": {
+      "sp_power": 1200,
+      "hp": 6000
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.immortal_ascension"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 460,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/ascension_canon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Ascension Canon': The canon every ascendant recites as they step through the gate., crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.jade_immortal_sutra",
+    "name": "Jade Immortal Sutra",
+    "description": "The sutra the realm's first immortals carved into jade.",
+    "name_cn": "玉仙经",
+    "rarity": "mythic",
+    "grade": "immortal",
+    "element": "elem.wood",
+    "qi_mult": 5.2,
+    "bonuses": {
+      "hp": 9000,
+      "heal_bonus": 15
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.earth_immortal"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 490,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/jade_immortal_sutra.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Jade Immortal Sutra': The sutra the realm's first immortals carved into jade., crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.ten_thousand_laws_canon",
+    "name": "Ten Thousand Laws Canon",
+    "description": "Understand the laws, and they bend around you.",
+    "name_cn": "万律典",
+    "rarity": "mythic",
+    "grade": "immortal",
+    "element": "elem.metal",
+    "qi_mult": 6.0,
+    "bonuses": {
+      "atk": 3000,
+      "cdr": 10
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.heavenly_immortal"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 520,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/ten_thousand_laws_canon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Ten Thousand Laws Canon': Understand the laws, and they bend around you., crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.immortal_emperor_canon",
+    "name": "Immortal Emperor Canon",
+    "description": "The canon of the first emperor, written on the underside of the throne.",
+    "name_cn": "仙帝典",
+    "rarity": "mythic",
+    "grade": "immortal",
+    "element": "elem.water",
+    "qi_mult": 7.5,
+    "bonuses": {
+      "hp": 15000,
+      "atk": 4000,
+      "sp_power": 3000
+    },
+    "requirements": {
+      "realm": {
+        "id": "realm.immortal_king"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 550,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/immortal_emperor_canon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Immortal Emperor Canon': The canon of the first emperor, written on the underside of the throne., crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.five_elements_harmony",
+    "name": "Five Elements Harmony Art",
+    "description": "Balance the five elements in the meridians.",
+    "name_cn": "五行和合功",
+    "rarity": "epic",
+    "grade": "heaven",
+    "qi_mult": 2.0,
+    "bonuses": {
+      "elem_res.wood": 6,
+      "elem_res.fire": 6,
+      "elem_res.earth": 6,
+      "elem_res.metal": 6,
+      "elem_res.water": 6
+    },
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 120,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/five_elements_harmony.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Five Elements Harmony Art': Balance the five elements in the meridians., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.lotus_heart_scripture",
+    "name": "Lotus Heart Scripture",
+    "description": "A gentle scripture that steadies the heart like a lotus on water.",
+    "name_cn": "莲心经",
+    "rarity": "rare",
+    "grade": "earth",
+    "element": "elem.wood",
+    "qi_mult": 1.45,
+    "bonuses": {
+      "heal_bonus": 8,
+      "hp": 600
+    },
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 120,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/lotus_heart_scripture.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Lotus Heart Scripture': A gentle scripture that steadies the heart like a lotus on water., silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "method.vajra_body_method",
+    "name": "Vajra Body Method",
+    "description": "Make the body indestructible as vajra.",
+    "name_cn": "金刚体法",
+    "rarity": "epic",
+    "grade": "heaven",
+    "element": "elem.earth",
+    "qi_mult": 1.9,
+    "bonuses": {
+      "def": 400,
+      "dmg_red": 4
+    },
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 120,
+      "per_level_bonus": 0.04
+    },
+    "art": {
+      "icon": {
+        "file": "assets/techniques/methods/vajra_body_method.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a cultivation-method scroll emblem for 'Vajra Body Method': Make the body indestructible as vajra., violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

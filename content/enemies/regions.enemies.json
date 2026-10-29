@@ -1,0 +1,4292 @@
+[
+  {
+    "id": "enemy.ember_salamander",
+    "name": "Ember Salamander",
+    "description": "Swims through lava as if it were water.",
+    "name_cn": "火蜥",
+    "kind": "beast",
+    "element": "elem.fire",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 1747,
+      "atk": 153,
+      "def": 71,
+      "spd": 16,
+      "crit": 8,
+      "crit_dmg": 165,
+      "acc": 93,
+      "eva": 6,
+      "sp_power": 109,
+      "sp_energy": 130
+    },
+    "cp": 546,
+    "techniques": [
+      "tech.active.magma_slam",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.ember_salamander",
+    "mastery_xp": 20,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/blazing_mountain/ember_salamander_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a glossy black salamander with glowing orange cracks along its back. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/blazing_mountain/ember_salamander_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a glossy black salamander with glowing orange cracks along its back, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.ash_vulture",
+    "name": "Ash Vulture",
+    "description": "Circles the caravan road, waiting for stragglers.",
+    "name_cn": "灰鹫",
+    "kind": "beast",
+    "element": "elem.fire",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 2010,
+      "atk": 176,
+      "def": 82,
+      "spd": 16,
+      "crit": 8,
+      "crit_dmg": 165,
+      "acc": 93,
+      "eva": 6,
+      "sp_power": 126,
+      "sp_energy": 130
+    },
+    "cp": 628,
+    "techniques": [
+      "tech.active.magma_slam",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.ash_vulture",
+    "mastery_xp": 22,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/blazing_mountain/ash_vulture_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a grey vulture with ember-tipped feathers and a hooked obsidian beak. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/blazing_mountain/ash_vulture_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a grey vulture with ember-tipped feathers and a hooked obsidian beak, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.magma_golem",
+    "name": "Magma Golem",
+    "description": "Rock that refused to stay still.",
+    "name_cn": "熔岩傀",
+    "kind": "construct",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 2272,
+      "atk": 199,
+      "def": 92,
+      "spd": 16,
+      "crit": 8,
+      "crit_dmg": 165,
+      "acc": 93,
+      "eva": 6,
+      "sp_power": 142,
+      "sp_energy": 130
+    },
+    "cp": 710,
+    "techniques": [
+      "tech.active.magma_slam",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.magma_golem",
+    "mastery_xp": 24,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/blazing_mountain/magma_golem_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a hulking golem of cooling black rock with molten seams. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/blazing_mountain/magma_golem_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a hulking golem of cooling black rock with molten seams, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.flame_lion",
+    "name": "Flame-Maned Lion",
+    "description": "Hunts the upper slopes; its roar melts snow.",
+    "name_cn": "焰鬃狮",
+    "kind": "elite",
+    "element": "elem.fire",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 3318,
+      "atk": 290,
+      "def": 135,
+      "spd": 16,
+      "crit": 13,
+      "crit_dmg": 165,
+      "acc": 93,
+      "eva": 6,
+      "sp_power": 207,
+      "sp_energy": 130
+    },
+    "cp": 1037,
+    "techniques": [
+      "tech.active.magma_slam",
+      "tech.active.blazing_comet"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.flame_lion",
+    "mastery_xp": 30,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/blazing_mountain/flame_lion_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a great red lion whose mane is living fire, golden eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/blazing_mountain/flame_lion_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a great red lion whose mane is living fire, golden eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.caravan_raider",
+    "name": "Caravan Raider",
+    "description": "Robs the caravans that cross the mountain.",
+    "name_cn": "劫车匪",
+    "kind": "human",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 2621,
+      "atk": 229,
+      "def": 106,
+      "spd": 16,
+      "crit": 8,
+      "crit_dmg": 165,
+      "acc": 93,
+      "eva": 6,
+      "sp_power": 164,
+      "sp_energy": 130
+    },
+    "cp": 819,
+    "techniques": [
+      "tech.active.magma_slam",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.caravan_raider",
+    "mastery_xp": 26,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/blazing_mountain/caravan_raider_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a masked raider in soot-stained leathers with a curved saber and fire goggles. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/blazing_mountain/caravan_raider_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a masked raider in soot-stained leathers with a curved saber and fire goggles, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.snow_fox_spirit",
+    "name": "Snow Fox Spirit",
+    "description": "Leads travellers in circles until they freeze.",
+    "name_cn": "雪狐灵",
+    "kind": "beast",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 3584,
+      "atk": 314,
+      "def": 146,
+      "spd": 18,
+      "crit": 9,
+      "crit_dmg": 170,
+      "acc": 94,
+      "eva": 7,
+      "sp_power": 224,
+      "sp_energy": 140
+    },
+    "cp": 1120,
+    "techniques": [
+      "tech.active.frost_lotus_bloom",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.snow_fox_spirit",
+    "mastery_xp": 32,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/frozen_lotus_valley/snow_fox_spirit_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a slender white fox with icy blue eyes and frost trailing from its tails. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/frozen_lotus_valley/snow_fox_spirit_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a slender white fox with icy blue eyes and frost trailing from its tails, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.ice_lotus_guardian",
+    "name": "Ice Lotus Guardian",
+    "description": "Guards the lotuses for no master anyone remembers.",
+    "name_cn": "冰莲卫",
+    "kind": "construct",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 4122,
+      "atk": 361,
+      "def": 167,
+      "spd": 18,
+      "crit": 9,
+      "crit_dmg": 170,
+      "acc": 94,
+      "eva": 7,
+      "sp_power": 258,
+      "sp_energy": 140
+    },
+    "cp": 1288,
+    "techniques": [
+      "tech.active.frost_lotus_bloom",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.ice_lotus_guardian",
+    "mastery_xp": 35,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/frozen_lotus_valley/ice_lotus_guardian_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a figure of ice shaped like a monk holding a frozen lotus. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/frozen_lotus_valley/ice_lotus_guardian_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a figure of ice shaped like a monk holding a frozen lotus, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.frost_yeti",
+    "name": "Frost Yeti",
+    "description": "Throws boulders of packed snow.",
+    "name_cn": "霜猿",
+    "kind": "beast",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 4659,
+      "atk": 408,
+      "def": 189,
+      "spd": 18,
+      "crit": 9,
+      "crit_dmg": 170,
+      "acc": 94,
+      "eva": 7,
+      "sp_power": 291,
+      "sp_energy": 140
+    },
+    "cp": 1456,
+    "techniques": [
+      "tech.active.frost_lotus_bloom",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.frost_yeti",
+    "mastery_xp": 39,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/frozen_lotus_valley/frost_yeti_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a huge white-furred yeti with blue ice crusted on its fists. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/frozen_lotus_valley/frost_yeti_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a huge white-furred yeti with blue ice crusted on its fists, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.frost_wyrm",
+    "name": "Frost Wyrm",
+    "description": "Its heart-core is worth a fortune; it knows.",
+    "name_cn": "冰蛟",
+    "kind": "elite",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 6810,
+      "atk": 596,
+      "def": 277,
+      "spd": 18,
+      "crit": 14,
+      "crit_dmg": 170,
+      "acc": 94,
+      "eva": 7,
+      "sp_power": 426,
+      "sp_energy": 140
+    },
+    "cp": 2128,
+    "techniques": [
+      "tech.active.frost_lotus_bloom",
+      "tech.active.glacial_spear_rain"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.frost_wyrm",
+    "mastery_xp": 52,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/frozen_lotus_valley/frost_wyrm_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a long pale-blue wyrm with crystal horns and frost breath. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/frozen_lotus_valley/frost_wyrm_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a long pale-blue wyrm with crystal horns and frost breath, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.frozen_cultist",
+    "name": "Frozen Lotus Cultist",
+    "description": "Seeks to drink the lotus blooms for forbidden power.",
+    "name_cn": "冰莲邪修",
+    "kind": "demonic",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.foundation_establishment",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 5376,
+      "atk": 470,
+      "def": 218,
+      "spd": 18,
+      "crit": 9,
+      "crit_dmg": 170,
+      "acc": 94,
+      "eva": 7,
+      "sp_power": 336,
+      "sp_energy": 140
+    },
+    "cp": 1680,
+    "techniques": [
+      "tech.active.frost_lotus_bloom",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.frozen_cultist",
+    "mastery_xp": 43,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/frozen_lotus_valley/frozen_cultist_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a pale cultist in torn white robes with frostbitten hands and blue-black lips. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/frozen_lotus_valley/frozen_cultist_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a pale cultist in torn white robes with frostbitten hands and blue-black lips, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.rusted_sword_spirit",
+    "name": "Rusted Sword Spirit",
+    "description": "A blade whose master is long gone. It still swings.",
+    "name_cn": "锈剑灵",
+    "kind": "construct",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 7347,
+      "atk": 643,
+      "def": 298,
+      "spd": 20,
+      "crit": 10,
+      "crit_dmg": 175,
+      "acc": 95,
+      "eva": 7,
+      "sp_power": 459,
+      "sp_energy": 150
+    },
+    "cp": 2296,
+    "techniques": [
+      "tech.active.sword_tempest",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.rusted_sword_spirit",
+    "mastery_xp": 55,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/ancient_sword_tomb/rusted_sword_spirit_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a floating rusted sword surrounded by a faint ghostly hand. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/ancient_sword_tomb/rusted_sword_spirit_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a floating rusted sword surrounded by a faint ghostly hand, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.tomb_guardian_statue",
+    "name": "Tomb Guardian Statue",
+    "description": "Woke when the tomb was disturbed.",
+    "name_cn": "墓卫石像",
+    "kind": "guardian",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 8448,
+      "atk": 739,
+      "def": 343,
+      "spd": 20,
+      "crit": 10,
+      "crit_dmg": 175,
+      "acc": 95,
+      "eva": 7,
+      "sp_power": 528,
+      "sp_energy": 150
+    },
+    "cp": 2640,
+    "techniques": [
+      "tech.active.sword_tempest",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.tomb_guardian_statue",
+    "mastery_xp": 62,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/ancient_sword_tomb/tomb_guardian_statue_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a stone warrior statue with a cracked face and a stone greatsword. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/ancient_sword_tomb/tomb_guardian_statue_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a stone warrior statue with a cracked face and a stone greatsword, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.sword_qi_wisp",
+    "name": "Sword-Qi Wisp",
+    "description": "Pure sword intent, given form.",
+    "name_cn": "剑气灵",
+    "kind": "celestial",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 9552,
+      "atk": 836,
+      "def": 388,
+      "spd": 20,
+      "crit": 10,
+      "crit_dmg": 175,
+      "acc": 95,
+      "eva": 7,
+      "sp_power": 597,
+      "sp_energy": 150
+    },
+    "cp": 2985,
+    "techniques": [
+      "tech.active.sword_tempest",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.sword_qi_wisp",
+    "mastery_xp": 69,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/ancient_sword_tomb/sword_qi_wisp_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a silver wisp shaped like a crescent blade, humming. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/ancient_sword_tomb/sword_qi_wisp_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a silver wisp shaped like a crescent blade, humming, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.headless_general",
+    "name": "Headless General",
+    "description": "Still leading an army no one else can see.",
+    "name_cn": "无首将军",
+    "kind": "elite",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 13958,
+      "atk": 1221,
+      "def": 567,
+      "spd": 20,
+      "crit": 15,
+      "crit_dmg": 175,
+      "acc": 95,
+      "eva": 7,
+      "sp_power": 872,
+      "sp_energy": 150
+    },
+    "cp": 4362,
+    "techniques": [
+      "tech.active.sword_tempest",
+      "tech.active.ten_thousand_sword_return"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.headless_general",
+    "mastery_xp": 97,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/ancient_sword_tomb/headless_general_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of an armoured general without a head, holding his helmet under one arm and a halberd. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/ancient_sword_tomb/headless_general_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an armoured general without a head, holding his helmet under one arm and a halberd, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.tomb_robber",
+    "name": "Tomb Robber Cultivator",
+    "description": "Digs for famous blades to sell.",
+    "name_cn": "盗墓修士",
+    "kind": "human",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.core_formation",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 11021,
+      "atk": 964,
+      "def": 448,
+      "spd": 20,
+      "crit": 10,
+      "crit_dmg": 175,
+      "acc": 95,
+      "eva": 7,
+      "sp_power": 689,
+      "sp_energy": 150
+    },
+    "cp": 3444,
+    "techniques": [
+      "tech.active.sword_tempest",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.tomb_robber",
+    "mastery_xp": 78,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/ancient_sword_tomb/tomb_robber_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a gaunt robber in dusty grey with a shovel-spear and a lantern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/ancient_sword_tomb/tomb_robber_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a gaunt robber in dusty grey with a shovel-spear and a lantern, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.blood_imp",
+    "name": "Blood Imp",
+    "description": "Mischievous, hungry and never alone.",
+    "name_cn": "血魔崽",
+    "kind": "demonic",
+    "element": "elem.fire",
+    "realm": {
+      "id": "realm.nascent_soul",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 15062,
+      "atk": 1318,
+      "def": 612,
+      "spd": 22,
+      "crit": 11,
+      "crit_dmg": 180,
+      "acc": 96,
+      "eva": 8,
+      "sp_power": 941,
+      "sp_energy": 160
+    },
+    "cp": 4707,
+    "techniques": [
+      "tech.active.blood_drain",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.blood_imp",
+    "mastery_xp": 104,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/demon_territory/blood_imp_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a small red imp with bat wings, horns and a wicked grin. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/demon_territory/blood_imp_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small red imp with bat wings, horns and a wicked grin, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.bone_hound",
+    "name": "Bone Hound",
+    "description": "Bred by demon cultivators to track Qi.",
+    "name_cn": "骨犬",
+    "kind": "beast",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.nascent_soul",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 17322,
+      "atk": 1516,
+      "def": 704,
+      "spd": 22,
+      "crit": 11,
+      "crit_dmg": 180,
+      "acc": 96,
+      "eva": 8,
+      "sp_power": 1083,
+      "sp_energy": 160
+    },
+    "cp": 5413,
+    "techniques": [
+      "tech.active.blood_drain",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.bone_hound",
+    "mastery_xp": 118,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/demon_territory/bone_hound_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a skeletal hound wreathed in red fire with glowing eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/demon_territory/bone_hound_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a skeletal hound wreathed in red fire with glowing eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.shadow_assassin",
+    "name": "Shadow Assassin",
+    "description": "Walks in moonlight shadows.",
+    "name_cn": "影刺",
+    "kind": "demonic",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.nascent_soul",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 19581,
+      "atk": 1713,
+      "def": 795,
+      "spd": 22,
+      "crit": 11,
+      "crit_dmg": 180,
+      "acc": 96,
+      "eva": 8,
+      "sp_power": 1224,
+      "sp_energy": 160
+    },
+    "cp": 6119,
+    "techniques": [
+      "tech.active.blood_drain",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.shadow_assassin",
+    "mastery_xp": 132,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/demon_territory/shadow_assassin_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a slim assassin in black with a crimson veil and twin hooked daggers. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/demon_territory/shadow_assassin_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a slim assassin in black with a crimson veil and twin hooked daggers, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.demon_general",
+    "name": "Demon General",
+    "description": "Commands the border legions.",
+    "name_cn": "魔将",
+    "kind": "elite",
+    "element": "elem.fire",
+    "realm": {
+      "id": "realm.nascent_soul",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 28618,
+      "atk": 2504,
+      "def": 1163,
+      "spd": 22,
+      "crit": 16,
+      "crit_dmg": 180,
+      "acc": 96,
+      "eva": 8,
+      "sp_power": 1789,
+      "sp_energy": 160
+    },
+    "cp": 8943,
+    "techniques": [
+      "tech.active.blood_drain",
+      "tech.active.crimson_moon_slash"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.demon_general",
+    "mastery_xp": 188,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/demon_territory/demon_general_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of an armoured demon general with ram horns, a burning halberd and black-red plate. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/demon_territory/demon_general_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an armoured demon general with ram horns, a burning halberd and black-red plate, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.blood_sect_disciple",
+    "name": "Blood Sect Disciple",
+    "description": "Proud, ruthless and convinced the orthodox sects are hypocrites.",
+    "name_cn": "血宗弟子",
+    "kind": "demonic",
+    "element": "elem.fire",
+    "realm": {
+      "id": "realm.nascent_soul",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 22592,
+      "atk": 1977,
+      "def": 918,
+      "spd": 22,
+      "crit": 11,
+      "crit_dmg": 180,
+      "acc": 96,
+      "eva": 8,
+      "sp_power": 1412,
+      "sp_energy": 160
+    },
+    "cp": 7060,
+    "techniques": [
+      "tech.active.blood_drain",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.blood_sect_disciple",
+    "mastery_xp": 151,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/demon_territory/blood_sect_disciple_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a young cultivator in crimson robes with blood-red sigils on his arms. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/demon_territory/blood_sect_disciple_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a young cultivator in crimson robes with blood-red sigils on his arms, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.thunder_crane",
+    "name": "Thunder Crane",
+    "description": "Its cry is followed by thunder.",
+    "name_cn": "雷鹤",
+    "kind": "beast",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.soul_transformation",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 30877,
+      "atk": 2702,
+      "def": 1254,
+      "spd": 24,
+      "crit": 12,
+      "crit_dmg": 185,
+      "acc": 97,
+      "eva": 8,
+      "sp_power": 1930,
+      "sp_energy": 170
+    },
+    "cp": 9649,
+    "techniques": [
+      "tech.active.celestial_spear",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.thunder_crane",
+    "mastery_xp": 202,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/celestial_mountains/thunder_crane_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a tall white crane crackling with blue lightning along its wings. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/celestial_mountains/thunder_crane_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a tall white crane crackling with blue lightning along its wings, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.cloud_ape",
+    "name": "Cloud Ape",
+    "description": "Guards the pine groves; throws thunderbolts like stones.",
+    "name_cn": "云猿",
+    "kind": "beast",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.soul_transformation",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 35507,
+      "atk": 3107,
+      "def": 1442,
+      "spd": 24,
+      "crit": 12,
+      "crit_dmg": 185,
+      "acc": 97,
+      "eva": 8,
+      "sp_power": 2219,
+      "sp_energy": 170
+    },
+    "cp": 11096,
+    "techniques": [
+      "tech.active.celestial_spear",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.cloud_ape",
+    "mastery_xp": 231,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/celestial_mountains/cloud_ape_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a white ape that rides small clouds and wears a golden band. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/celestial_mountains/cloud_ape_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white ape that rides small clouds and wears a golden band, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.celestial_soldier",
+    "name": "Celestial Soldier",
+    "description": "A remnant of an ancient heavenly army.",
+    "name_cn": "天兵",
+    "kind": "celestial",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.soul_transformation",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 40141,
+      "atk": 3512,
+      "def": 1631,
+      "spd": 24,
+      "crit": 12,
+      "crit_dmg": 185,
+      "acc": 97,
+      "eva": 8,
+      "sp_power": 2509,
+      "sp_energy": 170
+    },
+    "cp": 12544,
+    "techniques": [
+      "tech.active.celestial_spear",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.celestial_soldier",
+    "mastery_xp": 260,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/celestial_mountains/celestial_soldier_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a soldier in white and gold armour with a halo and a spear of light. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/celestial_mountains/celestial_soldier_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a soldier in white and gold armour with a halo and a spear of light, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.storm_tiger",
+    "name": "Storm Tiger",
+    "description": "Lord of the upper peaks.",
+    "name_cn": "暴雷虎",
+    "kind": "elite",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.soul_transformation",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 58666,
+      "atk": 5133,
+      "def": 2383,
+      "spd": 24,
+      "crit": 17,
+      "crit_dmg": 185,
+      "acc": 97,
+      "eva": 8,
+      "sp_power": 3667,
+      "sp_energy": 170
+    },
+    "cp": 18333,
+    "techniques": [
+      "tech.active.celestial_spear",
+      "tech.active.heavenly_thunder_palm"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.storm_tiger",
+    "mastery_xp": 376,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/celestial_mountains/storm_tiger_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a huge white tiger with black lightning stripes and storm-blue eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/celestial_mountains/storm_tiger_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a huge white tiger with black lightning stripes and storm-blue eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.heaven_seeker",
+    "name": "Heaven-Seeker Hermit",
+    "description": "Has climbed for a hundred years and resents anyone faster.",
+    "name_cn": "求天散修",
+    "kind": "human",
+    "element": "elem.wood",
+    "realm": {
+      "id": "realm.soul_transformation",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 46317,
+      "atk": 4053,
+      "def": 1882,
+      "spd": 24,
+      "crit": 12,
+      "crit_dmg": 185,
+      "acc": 97,
+      "eva": 8,
+      "sp_power": 2895,
+      "sp_energy": 170
+    },
+    "cp": 14474,
+    "techniques": [
+      "tech.active.celestial_spear",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.heaven_seeker",
+    "mastery_xp": 299,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/celestial_mountains/heaven_seeker_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a wild-haired hermit in patched green robes with a gourd and a peach-wood sword. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/celestial_mountains/heaven_seeker_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a wild-haired hermit in patched green robes with a gourd and a peach-wood sword, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.cloud_jellyfish",
+    "name": "Cloud Jellyfish",
+    "description": "Drifts between cloud islands.",
+    "name_cn": "云水母",
+    "kind": "beast",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.spirit_severing",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 63296,
+      "atk": 5538,
+      "def": 2571,
+      "spd": 26,
+      "crit": 13,
+      "crit_dmg": 190,
+      "acc": 98,
+      "eva": 9,
+      "sp_power": 3956,
+      "sp_energy": 180
+    },
+    "cp": 19780,
+    "techniques": [
+      "tech.active.cloud_lightning",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.cloud_jellyfish",
+    "mastery_xp": 405,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/nine_heavens/cloud_jellyfish_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a translucent giant jellyfish of cloud and starlight trailing lightning tendrils. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/nine_heavens/cloud_jellyfish_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a translucent giant jellyfish of cloud and starlight trailing lightning tendrils, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.starlight_sentinel",
+    "name": "Starlight Sentinel",
+    "description": "Guards palaces no one lives in.",
+    "name_cn": "星辉卫",
+    "kind": "construct",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.spirit_severing",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 72790,
+      "atk": 6369,
+      "def": 2957,
+      "spd": 26,
+      "crit": 13,
+      "crit_dmg": 190,
+      "acc": 98,
+      "eva": 9,
+      "sp_power": 4549,
+      "sp_energy": 180
+    },
+    "cp": 22747,
+    "techniques": [
+      "tech.active.cloud_lightning",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.starlight_sentinel",
+    "mastery_xp": 464,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/nine_heavens/starlight_sentinel_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a sleek silver sentinel with a starry visor and wings of light. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/nine_heavens/starlight_sentinel_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek silver sentinel with a starry visor and wings of light, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.heaven_eagle",
+    "name": "Heaven-Piercing Eagle",
+    "description": "Hunts dragons for sport.",
+    "name_cn": "穿云雕",
+    "kind": "beast",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.spirit_severing",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 82285,
+      "atk": 7200,
+      "def": 3343,
+      "spd": 26,
+      "crit": 13,
+      "crit_dmg": 190,
+      "acc": 98,
+      "eva": 9,
+      "sp_power": 5143,
+      "sp_energy": 180
+    },
+    "cp": 25714,
+    "techniques": [
+      "tech.active.cloud_lightning",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.heaven_eagle",
+    "mastery_xp": 524,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/nine_heavens/heaven_eagle_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a golden eagle with wings as wide as a hall and silver talons. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/nine_heavens/heaven_eagle_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a golden eagle with wings as wide as a hall and silver talons, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.fallen_immortal",
+    "name": "Fallen Immortal",
+    "description": "Fell from the upper heavens and hates those who still climb.",
+    "name_cn": "堕仙",
+    "kind": "elite",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.spirit_severing",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 120262,
+      "atk": 10523,
+      "def": 4886,
+      "spd": 26,
+      "crit": 18,
+      "crit_dmg": 190,
+      "acc": 98,
+      "eva": 9,
+      "sp_power": 7516,
+      "sp_energy": 180
+    },
+    "cp": 37582,
+    "techniques": [
+      "tech.active.cloud_lightning",
+      "tech.active.starfall_sword"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.fallen_immortal",
+    "mastery_xp": 761,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/nine_heavens/fallen_immortal_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a pale immortal with torn white robes, broken halo and black water dripping from her hands. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/nine_heavens/fallen_immortal_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a pale immortal with torn white robes, broken halo and black water dripping from her hands, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.abyss_cultist",
+    "name": "Abyss Cultist",
+    "description": "Worships the serpent beneath the clouds.",
+    "name_cn": "渊教徒",
+    "kind": "demonic",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.spirit_severing",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 94944,
+      "atk": 8308,
+      "def": 3857,
+      "spd": 26,
+      "crit": 13,
+      "crit_dmg": 190,
+      "acc": 98,
+      "eva": 9,
+      "sp_power": 5934,
+      "sp_energy": 180
+    },
+    "cp": 29670,
+    "techniques": [
+      "tech.active.cloud_lightning",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.abyss_cultist",
+    "mastery_xp": 603,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/nine_heavens/abyss_cultist_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a cultist in sea-dark robes with coral growing from his shoulders. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/nine_heavens/abyss_cultist_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a cultist in sea-dark robes with coral growing from his shoulders, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.thunder_beetle",
+    "name": "Thunder Beetle",
+    "description": "Its shell stores lightning for a year.",
+    "name_cn": "雷甲虫",
+    "kind": "beast",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.dao_integration",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 129754,
+      "atk": 11353,
+      "def": 5271,
+      "spd": 28,
+      "crit": 14,
+      "crit_dmg": 195,
+      "acc": 99,
+      "eva": 9,
+      "sp_power": 8110,
+      "sp_energy": 190
+    },
+    "cp": 40548,
+    "techniques": [
+      "tech.active.chain_lightning",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.thunder_beetle",
+    "mastery_xp": 820,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/thunderclap_wastes/thunder_beetle_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a giant black beetle with a shell crackling with violet lightning. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/thunderclap_wastes/thunder_beetle_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a giant black beetle with a shell crackling with violet lightning, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.glass_scorpion",
+    "name": "Glass Scorpion",
+    "description": "Hides in the glass plains, invisible until it strikes.",
+    "name_cn": "琉璃蝎",
+    "kind": "beast",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.dao_integration",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 149216,
+      "atk": 13056,
+      "def": 6062,
+      "spd": 28,
+      "crit": 14,
+      "crit_dmg": 195,
+      "acc": 99,
+      "eva": 9,
+      "sp_power": 9326,
+      "sp_energy": 190
+    },
+    "cp": 46630,
+    "techniques": [
+      "tech.active.chain_lightning",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.glass_scorpion",
+    "mastery_xp": 942,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/thunderclap_wastes/glass_scorpion_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a translucent glass scorpion with a lightning-charged stinger. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/thunderclap_wastes/glass_scorpion_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a translucent glass scorpion with a lightning-charged stinger, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.storm_wraith",
+    "name": "Storm Wraith",
+    "description": "The remnant of a cultivator who failed their tribulation.",
+    "name_cn": "雷魂",
+    "kind": "celestial",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.dao_integration",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 168678,
+      "atk": 14759,
+      "def": 6853,
+      "spd": 28,
+      "crit": 14,
+      "crit_dmg": 195,
+      "acc": 99,
+      "eva": 9,
+      "sp_power": 10542,
+      "sp_energy": 190
+    },
+    "cp": 52712,
+    "techniques": [
+      "tech.active.chain_lightning",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.storm_wraith",
+    "mastery_xp": 1064,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/thunderclap_wastes/storm_wraith_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a ghostly figure of purple lightning with hollow eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/thunderclap_wastes/storm_wraith_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a ghostly figure of purple lightning with hollow eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.lightning_roc",
+    "name": "Lightning Roc",
+    "description": "Nests on lightning rods of its own making.",
+    "name_cn": "雷鹏",
+    "kind": "elite",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.dao_integration",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 246531,
+      "atk": 21571,
+      "def": 10015,
+      "spd": 28,
+      "crit": 19,
+      "crit_dmg": 195,
+      "acc": 99,
+      "eva": 9,
+      "sp_power": 15408,
+      "sp_energy": 190
+    },
+    "cp": 77041,
+    "techniques": [
+      "tech.active.chain_lightning",
+      "tech.active.violet_thunder_spear"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.lightning_roc",
+    "mastery_xp": 1550,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/thunderclap_wastes/lightning_roc_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of an enormous roc with violet feathers and lightning crackling across its wings. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/thunderclap_wastes/lightning_roc_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an enormous roc with violet feathers and lightning crackling across its wings, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.tribulation_scavenger",
+    "name": "Tribulation Scavenger",
+    "description": "Collects the treasures of failed cultivators.",
+    "name_cn": "劫后拾荒者",
+    "kind": "human",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.dao_integration",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 194630,
+      "atk": 17030,
+      "def": 7907,
+      "spd": 28,
+      "crit": 14,
+      "crit_dmg": 195,
+      "acc": 99,
+      "eva": 9,
+      "sp_power": 12164,
+      "sp_energy": 190
+    },
+    "cp": 60822,
+    "techniques": [
+      "tech.active.chain_lightning",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.tribulation_scavenger",
+    "mastery_xp": 1226,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/thunderclap_wastes/tribulation_scavenger_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a scavenger in insulated grey robes with copper rods on his back and a crackling lantern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/thunderclap_wastes/tribulation_scavenger_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a scavenger in insulated grey robes with copper rods on his back and a crackling lantern, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.coral_naga",
+    "name": "Coral Naga",
+    "description": "Guards the reefs around the dragon bones.",
+    "name_cn": "珊瑚娜迦",
+    "kind": "beast",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.tribulation_transcendence",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 265997,
+      "atk": 23275,
+      "def": 10806,
+      "spd": 30,
+      "crit": 15,
+      "crit_dmg": 200,
+      "acc": 100,
+      "eva": 10,
+      "sp_power": 16625,
+      "sp_energy": 200
+    },
+    "cp": 83124,
+    "techniques": [
+      "tech.active.whirlpool_crush",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.coral_naga",
+    "mastery_xp": 1672,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/sunken_dragon_sea/coral_naga_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a serpent-tailed warrior with coral armour and a trident. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/sunken_dragon_sea/coral_naga_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a serpent-tailed warrior with coral armour and a trident, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.abyssal_angler",
+    "name": "Abyssal Angler",
+    "description": "Lures travellers with false treasure light.",
+    "name_cn": "深渊鮟鱇",
+    "kind": "beast",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.tribulation_transcendence",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 305898,
+      "atk": 26766,
+      "def": 12427,
+      "spd": 30,
+      "crit": 15,
+      "crit_dmg": 200,
+      "acc": 100,
+      "eva": 10,
+      "sp_power": 19119,
+      "sp_energy": 200
+    },
+    "cp": 95593,
+    "techniques": [
+      "tech.active.whirlpool_crush",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.abyssal_angler",
+    "mastery_xp": 1921,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/sunken_dragon_sea/abyssal_angler_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a giant deep-sea anglerfish with a glowing lure and needle teeth. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/sunken_dragon_sea/abyssal_angler_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a giant deep-sea anglerfish with a glowing lure and needle teeth, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.bone_dragon_spirit",
+    "name": "Bone Dragon Spirit",
+    "description": "Remembers being a king.",
+    "name_cn": "骨龙灵",
+    "kind": "celestial",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.tribulation_transcendence",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 345795,
+      "atk": 30257,
+      "def": 14048,
+      "spd": 30,
+      "crit": 15,
+      "crit_dmg": 200,
+      "acc": 100,
+      "eva": 10,
+      "sp_power": 21612,
+      "sp_energy": 200
+    },
+    "cp": 108061,
+    "techniques": [
+      "tech.active.whirlpool_crush",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.bone_dragon_spirit",
+    "mastery_xp": 2171,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/sunken_dragon_sea/bone_dragon_spirit_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a ghostly dragon made of bleached bones and sea mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/sunken_dragon_sea/bone_dragon_spirit_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a ghostly dragon made of bleached bones and sea mist, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.tide_kraken",
+    "name": "Tide Kraken",
+    "description": "Sinks ships for the sound of it.",
+    "name_cn": "潮汐海妖",
+    "kind": "elite",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.tribulation_transcendence",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 505395,
+      "atk": 44222,
+      "def": 20532,
+      "spd": 30,
+      "crit": 20,
+      "crit_dmg": 200,
+      "acc": 100,
+      "eva": 10,
+      "sp_power": 31587,
+      "sp_energy": 200
+    },
+    "cp": 157936,
+    "techniques": [
+      "tech.active.whirlpool_crush",
+      "tech.active.tidal_dragon_fist"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.tide_kraken",
+    "mastery_xp": 3168,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/sunken_dragon_sea/tide_kraken_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a huge kraken with tentacles covered in barnacles and a single golden eye. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/sunken_dragon_sea/tide_kraken_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a huge kraken with tentacles covered in barnacles and a single golden eye, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.pirate_cultivator",
+    "name": "Sea-Ghost Pirate",
+    "description": "Raids the dragon-bone islands for scales.",
+    "name_cn": "海鬼盗",
+    "kind": "human",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.tribulation_transcendence",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 398995,
+      "atk": 34912,
+      "def": 16209,
+      "spd": 30,
+      "crit": 15,
+      "crit_dmg": 200,
+      "acc": 100,
+      "eva": 10,
+      "sp_power": 24937,
+      "sp_energy": 200
+    },
+    "cp": 124686,
+    "techniques": [
+      "tech.active.whirlpool_crush",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.pirate_cultivator",
+    "mastery_xp": 2503,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/sunken_dragon_sea/pirate_cultivator_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a pirate cultivator with a tattered blue coat, a cutlass and a bone hook. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/sunken_dragon_sea/pirate_cultivator_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a pirate cultivator with a tattered blue coat, a cutlass and a bone hook, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.sand_wyrm",
+    "name": "Sand Wyrm",
+    "description": "Feels footsteps from a mile away.",
+    "name_cn": "沙虫",
+    "kind": "beast",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.mahayana",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 545296,
+      "atk": 47713,
+      "def": 22153,
+      "spd": 32,
+      "crit": 16,
+      "crit_dmg": 205,
+      "acc": 101,
+      "eva": 10,
+      "sp_power": 34081,
+      "sp_energy": 210
+    },
+    "cp": 170405,
+    "techniques": [
+      "tech.active.sand_burial",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.sand_wyrm",
+    "mastery_xp": 3418,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/starfall_desert/sand_wyrm_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a giant pale sand wyrm with a ring of crystal teeth bursting from the dunes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/starfall_desert/sand_wyrm_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a giant pale sand wyrm with a ring of crystal teeth bursting from the dunes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.star_scarab",
+    "name": "Star Scarab",
+    "description": "Rolls fallen stars like dung balls.",
+    "name_cn": "星甲虫",
+    "kind": "beast",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.mahayana",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 627091,
+      "atk": 54870,
+      "def": 25476,
+      "spd": 32,
+      "crit": 16,
+      "crit_dmg": 205,
+      "acc": 101,
+      "eva": 10,
+      "sp_power": 39193,
+      "sp_energy": 210
+    },
+    "cp": 195966,
+    "techniques": [
+      "tech.active.sand_burial",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.star_scarab",
+    "mastery_xp": 3929,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/starfall_desert/star_scarab_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a golden scarab with starlight on its shell. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/starfall_desert/star_scarab_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a golden scarab with starlight on its shell, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.dune_mirage",
+    "name": "Dune Mirage",
+    "description": "Shows you what you want, then takes it.",
+    "name_cn": "沙蜃",
+    "kind": "celestial",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.mahayana",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 708883,
+      "atk": 62027,
+      "def": 28798,
+      "spd": 32,
+      "crit": 16,
+      "crit_dmg": 205,
+      "acc": 101,
+      "eva": 10,
+      "sp_power": 44305,
+      "sp_energy": 210
+    },
+    "cp": 221526,
+    "techniques": [
+      "tech.active.sand_burial",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.dune_mirage",
+    "mastery_xp": 4440,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/starfall_desert/dune_mirage_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a shimmering figure of heat haze shaped like a lost traveller. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/starfall_desert/dune_mirage_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a shimmering figure of heat haze shaped like a lost traveller, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.star_metal_golem",
+    "name": "Star-Metal Golem",
+    "description": "Built from a fallen star by a forgotten people.",
+    "name_cn": "星铁傀",
+    "kind": "elite",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.mahayana",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 1036064,
+      "atk": 90656,
+      "def": 42090,
+      "spd": 32,
+      "crit": 21,
+      "crit_dmg": 205,
+      "acc": 101,
+      "eva": 10,
+      "sp_power": 64754,
+      "sp_energy": 210
+    },
+    "cp": 323770,
+    "techniques": [
+      "tech.active.sand_burial",
+      "tech.active.meteor_impact"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.star_metal_golem",
+    "mastery_xp": 6485,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/starfall_desert/star_metal_golem_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a towering golem of silver star metal with a meteor for a heart. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/starfall_desert/star_metal_golem_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a towering golem of silver star metal with a meteor for a heart, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.nomad_star_hunter",
+    "name": "Nomad Star-Hunter",
+    "description": "Hunts fallen stars and those who steal them.",
+    "name_cn": "逐星游牧",
+    "kind": "human",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.mahayana",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 817946,
+      "atk": 71570,
+      "def": 33229,
+      "spd": 32,
+      "crit": 16,
+      "crit_dmg": 205,
+      "acc": 101,
+      "eva": 10,
+      "sp_power": 51122,
+      "sp_energy": 210
+    },
+    "cp": 255608,
+    "techniques": [
+      "tech.active.sand_burial",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.nomad_star_hunter",
+    "mastery_xp": 5122,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/starfall_desert/nomad_star_hunter_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a veiled desert nomad in indigo robes riding a sand lizard, holding a star-metal lance. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/starfall_desert/nomad_star_hunter_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a veiled desert nomad in indigo robes riding a sand lizard, holding a star-metal lance, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.phoenix_flame_spirit",
+    "name": "Phoenix-Flame Spirit",
+    "description": "Burns away what mortals cannot carry upward.",
+    "name_cn": "凤焰灵",
+    "kind": "celestial",
+    "element": "elem.fire",
+    "realm": {
+      "id": "realm.immortal_ascension",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 1117856,
+      "atk": 97812,
+      "def": 45413,
+      "spd": 34,
+      "crit": 17,
+      "crit_dmg": 210,
+      "acc": 102,
+      "eva": 11,
+      "sp_power": 69866,
+      "sp_energy": 220
+    },
+    "cp": 349330,
+    "techniques": [
+      "tech.active.judgement_flame",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.phoenix_flame_spirit",
+    "mastery_xp": 6996,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/gate_of_ascension/phoenix_flame_spirit_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a spirit of golden phoenix fire shaped like a dancing woman. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/gate_of_ascension/phoenix_flame_spirit_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a spirit of golden phoenix fire shaped like a dancing woman, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.chain_warden",
+    "name": "Chain Warden",
+    "description": "Binds those not ready to ascend.",
+    "name_cn": "锁链守",
+    "kind": "guardian",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.immortal_ascension",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 1285533,
+      "atk": 112484,
+      "def": 52225,
+      "spd": 34,
+      "crit": 17,
+      "crit_dmg": 210,
+      "acc": 102,
+      "eva": 11,
+      "sp_power": 80346,
+      "sp_energy": 220
+    },
+    "cp": 401729,
+    "techniques": [
+      "tech.active.judgement_flame",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.chain_warden",
+    "mastery_xp": 8044,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/gate_of_ascension/chain_warden_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of an armoured warden wrapped in broken golden chains with a lantern of light. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/gate_of_ascension/chain_warden_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an armoured warden wrapped in broken golden chains with a lantern of light, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.cloud_lion",
+    "name": "Cloud Lion",
+    "description": "Guards the steps to the gate.",
+    "name_cn": "云狮",
+    "kind": "beast",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.immortal_ascension",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 1453213,
+      "atk": 127156,
+      "def": 59037,
+      "spd": 34,
+      "crit": 17,
+      "crit_dmg": 210,
+      "acc": 102,
+      "eva": 11,
+      "sp_power": 90826,
+      "sp_energy": 220
+    },
+    "cp": 454129,
+    "techniques": [
+      "tech.active.judgement_flame",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.cloud_lion",
+    "mastery_xp": 9092,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/gate_of_ascension/cloud_lion_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a white lion with a mane of golden cloud and jade claws. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/gate_of_ascension/cloud_lion_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white lion with a mane of golden cloud and jade claws, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.ascension_judge",
+    "name": "Ascension Judge",
+    "description": "Weighs every soul at the gate.",
+    "name_cn": "飞升判官",
+    "kind": "elite",
+    "element": "elem.fire",
+    "realm": {
+      "id": "realm.immortal_ascension",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 2123926,
+      "atk": 185844,
+      "def": 86285,
+      "spd": 34,
+      "crit": 22,
+      "crit_dmg": 210,
+      "acc": 102,
+      "eva": 11,
+      "sp_power": 132745,
+      "sp_energy": 220
+    },
+    "cp": 663727,
+    "techniques": [
+      "tech.active.judgement_flame",
+      "tech.active.vermilion_rebirth"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.ascension_judge",
+    "mastery_xp": 13284,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/gate_of_ascension/ascension_judge_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a robed immortal judge with a golden scale and a brush of fire. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/gate_of_ascension/ascension_judge_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a robed immortal judge with a golden scale and a brush of fire, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.failed_ascendant",
+    "name": "Failed Ascendant",
+    "description": "Fell back through the gate and cannot forgive it.",
+    "name_cn": "坠升者",
+    "kind": "demonic",
+    "element": "elem.fire",
+    "realm": {
+      "id": "realm.immortal_ascension",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 1676784,
+      "atk": 146719,
+      "def": 68119,
+      "spd": 34,
+      "crit": 17,
+      "crit_dmg": 210,
+      "acc": 102,
+      "eva": 11,
+      "sp_power": 104799,
+      "sp_energy": 220
+    },
+    "cp": 523995,
+    "techniques": [
+      "tech.active.judgement_flame",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.failed_ascendant",
+    "mastery_xp": 10489,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/gate_of_ascension/failed_ascendant_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a half-burned cultivator with cracked golden skin and wild eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/gate_of_ascension/failed_ascendant_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a half-burned cultivator with cracked golden skin and wild eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.jade_tiger",
+    "name": "Jade Tiger",
+    "description": "Rests under the peach trees; wakes for intruders.",
+    "name_cn": "玉虎",
+    "kind": "beast",
+    "element": "elem.wood",
+    "realm": {
+      "id": "realm.earth_immortal",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 2291603,
+      "atk": 200515,
+      "def": 93096,
+      "spd": 36,
+      "crit": 18,
+      "crit_dmg": 215,
+      "acc": 103,
+      "eva": 11,
+      "sp_power": 143225,
+      "sp_energy": 230
+    },
+    "cp": 716126,
+    "techniques": [
+      "tech.active.immortal_prune",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.jade_tiger",
+    "mastery_xp": 14332,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/jade_immortal_realm/jade_tiger_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a white tiger with jade-green stripes and jade claws. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/jade_immortal_realm/jade_tiger_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white tiger with jade-green stripes and jade claws, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.immortal_gardener",
+    "name": "Immortal Gardener",
+    "description": "Prunes anything that grows wrong—including visitors.",
+    "name_cn": "仙园丁",
+    "kind": "guardian",
+    "element": "elem.wood",
+    "realm": {
+      "id": "realm.earth_immortal",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 2635344,
+      "atk": 230593,
+      "def": 107061,
+      "spd": 36,
+      "crit": 18,
+      "crit_dmg": 215,
+      "acc": 103,
+      "eva": 11,
+      "sp_power": 164709,
+      "sp_energy": 230
+    },
+    "cp": 823545,
+    "techniques": [
+      "tech.active.immortal_prune",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.immortal_gardener",
+    "mastery_xp": 16480,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/jade_immortal_realm/immortal_gardener_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a calm immortal in green robes with pruning shears that cut space. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/jade_immortal_realm/immortal_gardener_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a calm immortal in green robes with pruning shears that cut space, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.waterfall_spirit",
+    "name": "Upward-Waterfall Spirit",
+    "description": "Everything here flows the wrong way, especially her temper.",
+    "name_cn": "逆瀑灵",
+    "kind": "celestial",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.earth_immortal",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 2979085,
+      "atk": 260670,
+      "def": 121025,
+      "spd": 36,
+      "crit": 18,
+      "crit_dmg": 215,
+      "acc": 103,
+      "eva": 11,
+      "sp_power": 186193,
+      "sp_energy": 230
+    },
+    "cp": 930964,
+    "techniques": [
+      "tech.active.immortal_prune",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.waterfall_spirit",
+    "mastery_xp": 18629,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/jade_immortal_realm/waterfall_spirit_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a spirit of water flowing upward in the shape of a dancer. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/jade_immortal_realm/waterfall_spirit_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a spirit of water flowing upward in the shape of a dancer, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.jade_guardian_beast",
+    "name": "Jade Guardian Beast",
+    "description": "Guards the realm's heart garden.",
+    "name_cn": "玉守兽",
+    "kind": "elite",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.earth_immortal",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 4354045,
+      "atk": 380979,
+      "def": 176883,
+      "spd": 36,
+      "crit": 23,
+      "crit_dmg": 215,
+      "acc": 103,
+      "eva": 11,
+      "sp_power": 272128,
+      "sp_energy": 230
+    },
+    "cp": 1360639,
+    "techniques": [
+      "tech.active.immortal_prune",
+      "tech.active.jade_tiger_claw"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.jade_guardian_beast",
+    "mastery_xp": 27222,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/jade_immortal_realm/jade_guardian_beast_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a massive jade lion statue that has come to life, eyes of green fire. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/jade_immortal_realm/jade_guardian_beast_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a massive jade lion statue that has come to life, eyes of green fire, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.realm_exile",
+    "name": "Realm Exile",
+    "description": "Exiled for picking a forbidden peach.",
+    "name_cn": "逐仙",
+    "kind": "human",
+    "element": "elem.wood",
+    "realm": {
+      "id": "realm.earth_immortal",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 3437405,
+      "atk": 300773,
+      "def": 139645,
+      "spd": 36,
+      "crit": 18,
+      "crit_dmg": 215,
+      "acc": 103,
+      "eva": 11,
+      "sp_power": 214838,
+      "sp_energy": 230
+    },
+    "cp": 1074189,
+    "techniques": [
+      "tech.active.immortal_prune",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.realm_exile",
+    "mastery_xp": 21493,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/jade_immortal_realm/realm_exile_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a ragged immortal in torn jade robes with a broken flute. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/jade_immortal_realm/realm_exile_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a ragged immortal in torn jade robes with a broken flute, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.law_enforcer",
+    "name": "Law Enforcer",
+    "description": "Enforces laws no one remembers writing.",
+    "name_cn": "执法天将",
+    "kind": "celestial",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.heavenly_immortal",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 4697789,
+      "atk": 411057,
+      "def": 190848,
+      "spd": 38,
+      "crit": 19,
+      "crit_dmg": 220,
+      "acc": 104,
+      "eva": 12,
+      "sp_power": 293612,
+      "sp_energy": 240
+    },
+    "cp": 1468059,
+    "techniques": [
+      "tech.active.law_chain",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.law_enforcer",
+    "mastery_xp": 29371,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/golden_palace_of_laws/law_enforcer_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a golden armoured heavenly general with a law-scroll and a chain whip. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/golden_palace_of_laws/law_enforcer_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a golden armoured heavenly general with a law-scroll and a chain whip, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.golden_crow",
+    "name": "Golden Crow",
+    "description": "One of the suns' children, bored of the sky.",
+    "name_cn": "金乌",
+    "kind": "beast",
+    "element": "elem.fire",
+    "realm": {
+      "id": "realm.heavenly_immortal",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 5402458,
+      "atk": 472715,
+      "def": 219475,
+      "spd": 38,
+      "crit": 19,
+      "crit_dmg": 220,
+      "acc": 104,
+      "eva": 12,
+      "sp_power": 337654,
+      "sp_energy": 240
+    },
+    "cp": 1688268,
+    "techniques": [
+      "tech.active.law_chain",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.golden_crow",
+    "mastery_xp": 33775,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/golden_palace_of_laws/golden_crow_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a three-legged crow of golden fire. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/golden_palace_of_laws/golden_crow_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a three-legged crow of golden fire, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.scroll_golem",
+    "name": "Scroll Golem",
+    "description": "Walks the halls reciting statutes.",
+    "name_cn": "律卷傀",
+    "kind": "construct",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.heavenly_immortal",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 6107126,
+      "atk": 534374,
+      "def": 248102,
+      "spd": 38,
+      "crit": 19,
+      "crit_dmg": 220,
+      "acc": 104,
+      "eva": 12,
+      "sp_power": 381695,
+      "sp_energy": 240
+    },
+    "cp": 1908477,
+    "techniques": [
+      "tech.active.law_chain",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.scroll_golem",
+    "mastery_xp": 38179,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/golden_palace_of_laws/scroll_golem_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a golem made of folded golden scrolls with law-characters glowing on its body. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/golden_palace_of_laws/scroll_golem_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a golem made of folded golden scrolls with law-characters glowing on its body, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.nine_tailed_shadow",
+    "name": "Nine-Tailed Shadow",
+    "description": "A trickster who loves breaking heavenly laws.",
+    "name_cn": "九尾幻影",
+    "kind": "elite",
+    "element": "elem.fire",
+    "realm": {
+      "id": "realm.heavenly_immortal",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 8925798,
+      "atk": 781007,
+      "def": 362611,
+      "spd": 38,
+      "crit": 24,
+      "crit_dmg": 220,
+      "acc": 104,
+      "eva": 12,
+      "sp_power": 557862,
+      "sp_energy": 240
+    },
+    "cp": 2789312,
+    "techniques": [
+      "tech.active.law_chain",
+      "tech.active.verdict_of_heaven"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.nine_tailed_shadow",
+    "mastery_xp": 55796,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/golden_palace_of_laws/nine_tailed_shadow_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a shadowy fox with nine tails of golden fire and mischievous eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/golden_palace_of_laws/nine_tailed_shadow_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a shadowy fox with nine tails of golden fire and mischievous eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.rebel_immortal",
+    "name": "Rebel Immortal",
+    "description": "Believes the laws of heaven are chains.",
+    "name_cn": "叛仙",
+    "kind": "human",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.heavenly_immortal",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 7046682,
+      "atk": 616585,
+      "def": 286271,
+      "spd": 38,
+      "crit": 19,
+      "crit_dmg": 220,
+      "acc": 104,
+      "eva": 12,
+      "sp_power": 440418,
+      "sp_energy": 240
+    },
+    "cp": 2202088,
+    "techniques": [
+      "tech.active.law_chain",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.rebel_immortal",
+    "mastery_xp": 44051,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/golden_palace_of_laws/rebel_immortal_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a defiant immortal in torn blue robes with a broken law-seal tattoo. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/golden_palace_of_laws/rebel_immortal_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a defiant immortal in torn blue robes with a broken law-seal tattoo, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.azure_dragon_guard",
+    "name": "Azure Dragon Guard",
+    "description": "Sworn to the throne since the first emperor.",
+    "name_cn": "青龙卫",
+    "kind": "celestial",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.immortal_king",
+      "stage": 2
+    },
+    "stats": {
+      "hp": 9630467,
+      "atk": 842666,
+      "def": 391238,
+      "spd": 40,
+      "crit": 20,
+      "crit_dmg": 225,
+      "acc": 105,
+      "eva": 12,
+      "sp_power": 601904,
+      "sp_energy": 250
+    },
+    "cp": 3009521,
+    "techniques": [
+      "tech.active.starlight_tide",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.azure_dragon_guard",
+    "mastery_xp": 60200,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/throne_of_the_immortal_emperor/azure_dragon_guard_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a dragon-headed warrior in azure scale armour with a glaive of water. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/throne_of_the_immortal_emperor/azure_dragon_guard_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a dragon-headed warrior in azure scale armour with a glaive of water, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.five_element_sentinel",
+    "name": "Five-Element Sentinel",
+    "description": "Strikes with whatever element you are weak to.",
+    "name_cn": "五行卫",
+    "kind": "construct",
+    "element": "elem.earth",
+    "realm": {
+      "id": "realm.immortal_king",
+      "stage": 3
+    },
+    "stats": {
+      "hp": 11075037,
+      "atk": 969066,
+      "def": 449923,
+      "spd": 40,
+      "crit": 20,
+      "crit_dmg": 225,
+      "acc": 105,
+      "eva": 12,
+      "sp_power": 692190,
+      "sp_energy": 250
+    },
+    "cp": 3460949,
+    "techniques": [
+      "tech.active.starlight_tide",
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.five_element_sentinel",
+    "mastery_xp": 69228,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/throne_of_the_immortal_emperor/five_element_sentinel_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a sentinel whose body shifts between wood, fire, earth, metal and water. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/throne_of_the_immortal_emperor/five_element_sentinel_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sentinel whose body shifts between wood, fire, earth, metal and water, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.star_whale",
+    "name": "Star Whale",
+    "description": "Sings the songs of dead realms.",
+    "name_cn": "星鲸",
+    "kind": "beast",
+    "element": "elem.water",
+    "realm": {
+      "id": "realm.immortal_king",
+      "stage": 4
+    },
+    "stats": {
+      "hp": 12519606,
+      "atk": 1095466,
+      "def": 508609,
+      "spd": 40,
+      "crit": 20,
+      "crit_dmg": 225,
+      "acc": 105,
+      "eva": 12,
+      "sp_power": 782475,
+      "sp_energy": 250
+    },
+    "cp": 3912377,
+    "techniques": [
+      "tech.active.starlight_tide",
+      "tech.active.savage_bite"
+    ],
+    "ai": {
+      "strategy": "aggressive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.star_whale",
+    "mastery_xp": 78257,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/throne_of_the_immortal_emperor/star_whale_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of an immense whale swimming through starlight, constellations on its skin. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/throne_of_the_immortal_emperor/star_whale_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an immense whale swimming through starlight, constellations on its skin, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.emperors_shadow",
+    "name": "Emperor's Shadow",
+    "description": "What remains of every emperor who failed the throne.",
+    "name_cn": "帝影",
+    "kind": "elite",
+    "element": "elem.metal",
+    "realm": {
+      "id": "realm.immortal_king",
+      "stage": 6
+    },
+    "stats": {
+      "hp": 18297888,
+      "atk": 1601065,
+      "def": 743352,
+      "spd": 40,
+      "crit": 25,
+      "crit_dmg": 225,
+      "acc": 105,
+      "eva": 12,
+      "sp_power": 1143618,
+      "sp_energy": 250
+    },
+    "cp": 5718090,
+    "techniques": [
+      "tech.active.starlight_tide",
+      "tech.active.emperors_five_element_seal"
+    ],
+    "ai": {
+      "strategy": "berserker",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.emperors_shadow",
+    "mastery_xp": 114371,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/throne_of_the_immortal_emperor/emperors_shadow_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a towering shadow wearing an emperor's crown and robes of starlight. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/throne_of_the_immortal_emperor/emperors_shadow_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a towering shadow wearing an emperor's crown and robes of starlight, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "enemy.throne_usurper",
+    "name": "Throne Usurper",
+    "description": "Tried to take the throne by force. Still trying.",
+    "name_cn": "篡位者",
+    "kind": "demonic",
+    "element": "elem.fire",
+    "realm": {
+      "id": "realm.immortal_king",
+      "stage": 5
+    },
+    "stats": {
+      "hp": 14445702,
+      "atk": 1263999,
+      "def": 586857,
+      "spd": 40,
+      "crit": 20,
+      "crit_dmg": 225,
+      "acc": 105,
+      "eva": 12,
+      "sp_power": 902856,
+      "sp_energy": 250
+    },
+    "cp": 4514282,
+    "techniques": [
+      "tech.active.starlight_tide",
+      "tech.active.bandit_slash"
+    ],
+    "ai": {
+      "strategy": "trickster",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.throne_usurper",
+    "mastery_xp": 90295,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/throne_of_the_immortal_emperor/throne_usurper_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the head and shoulders of a burning immortal king in cracked armour with a stolen crown. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "battle": {
+        "file": "assets/enemies/throne_of_the_immortal_emperor/throne_usurper_battle.png",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a burning immortal king in cracked armour with a stolen crown, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

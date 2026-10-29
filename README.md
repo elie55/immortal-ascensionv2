@@ -10,6 +10,8 @@ its **schemas** and the **validator**; the game client is built on top of it.
 - `tools/validate.ts` — referential-integrity + reverse-rule validator. Must pass before any content commit.
 - `tools/export-art-jobs.ts` — turns `status: "planned"` art blocks into ComfyUI jobs.
 - `tools/make-refs.py` — cuts the approved mockup boards into the reference crops the art blocks point at.
+- `tools/gen/` — Python generators that write `content/`. `regions.py` builds regions 3–15 and the endgame from the
+  single table in `region_data.py`, so every enemy, drop, recipe, quest and art block is wired together by construction.
 - `tests/` — fixture tests proving each validator rule fires.
 
 ```bash
@@ -18,6 +20,7 @@ npm run validate      # → RESULT: OK, plus content-vs-target table
 npm test
 npm run art:jobs      # → .tmp/art-jobs.json
 python3 tools/make-refs.py refs/originals   # needs the six mockup boards in refs/originals/
+(cd tools/gen && for f in world items actors places progress regions; do PYTHONPATH=. python3 $f.py; done)  # regenerate content
 ```
 
 Working rules for Claude sessions are in `CLAUDE.md`.

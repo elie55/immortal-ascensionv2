@@ -1,0 +1,35 @@
+[
+  {
+    "id": "bfood.spirit_meat",
+    "name": "Spirit Meat",
+    "description": "a slab of glowing red spirit-beast meat wrapped in a leaf",
+    "name_cn": "灵兽肉",
+    "rarity": "uncommon",
+    "sell_value": 12,
+    "stack_limit": 999,
+    "tags": [],
+    "xp": 60,
+    "bond": 1,
+    "preferred_elements": [
+      "elem.fire",
+      "elem.earth",
+      "elem.metal"
+    ],
+    "art": {
+      "icon": {
+        "file": "assets/items/beast_food/spirit_meat.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a slab of glowing red spirit-beast meat wrapped in a leaf, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

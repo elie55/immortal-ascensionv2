@@ -467,22 +467,22 @@
     "kind": "mega",
     "element": "elem.water",
     "realm": {
-      "id": "realm.core_formation",
+      "id": "realm.spirit_severing",
       "stage": 9
     },
     "stats": {
-      "hp": 96000,
-      "atk": 900,
-      "def": 400,
-      "spd": 24,
-      "crit": 5,
+      "hp": 569600,
+      "atk": 49840,
+      "def": 23140,
+      "spd": 26,
+      "crit": 18,
       "crit_dmg": 150,
-      "acc": 90,
-      "eva": 5,
-      "sp_power": 0,
-      "sp_energy": 100
+      "acc": 98,
+      "eva": 9,
+      "sp_power": 35600,
+      "sp_energy": 180
     },
-    "cp": 18000,
+    "cp": 178000,
     "techniques": [
       "tech.active.abyssal_torrent",
       "tech.active.frost_breath",
@@ -494,7 +494,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.nine_headed_abyss_serpent",
-    "mastery_xp": 490,
+    "mastery_xp": 4490,
     "phases": [
       {
         "name": "Rising Tide",
@@ -514,7 +514,7 @@
         ],
         "summons": [
           {
-            "enemy": "enemy.abyss_spawn",
+            "enemy": "enemy.abyss_cultist",
             "count": 3
           }
         ],

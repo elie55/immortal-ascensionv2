@@ -1,0 +1,3318 @@
+[
+  {
+    "id": "beast.ember_salamander_pup",
+    "name": "Ember Salamander",
+    "description": "A lava-loving salamander that curls up in your sleeve.",
+    "name_cn": "火蜥灵",
+    "rarity": "uncommon",
+    "element": "elem.fire",
+    "species": "Salamander",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Ember Salamander Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 328,
+          "atk": 33,
+          "def": 22,
+          "spd": 12
+        },
+        "active": "btech.ember_salamander_pup.flame_burst",
+        "passive": "btech.ember_salamander_pup.fire_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Ember Salamander",
+        "level_required": 16,
+        "evolve_materials": [
+          {
+            "id": "mat.salamander_scale",
+            "qty": 6
+          },
+          {
+            "id": "mat.fire_bud",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 1800,
+        "stats": {
+          "hp": 983,
+          "atk": 98,
+          "def": 66,
+          "spd": 14
+        },
+        "active": "btech.ember_salamander_pup.flame_burst",
+        "passive": "btech.ember_salamander_pup.fire_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Ember Salamander",
+        "level_required": 34,
+        "evolve_materials": [
+          {
+            "id": "mat.ember_core",
+            "qty": 3
+          },
+          {
+            "id": "mat.magma_iron_ore",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 4800,
+        "stats": {
+          "hp": 2621,
+          "atk": 262,
+          "def": 175,
+          "spd": 19
+        },
+        "active": "btech.ember_salamander_pup.flame_burst",
+        "passive": "btech.ember_salamander_pup.fire_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_meat",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 150
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 24
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.03,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/ember_salamander_pup_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a small chubby black salamander with orange spots and big golden eyes, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/ember_salamander_pup_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small chubby black salamander with orange spots and big golden eyes, Ember Salamander Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/ember_salamander_pup_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small chubby black salamander with orange spots and big golden eyes, Ember Salamander form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/ember_salamander_pup_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small chubby black salamander with orange spots and big golden eyes, Elder Ember Salamander form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.azure_wolf",
+    "name": "Azure Wolf",
+    "description": "A loyal wolf pup raised from a caravan dog's litter—or so Old Kang claims.",
+    "name_cn": "苍狼",
+    "rarity": "uncommon",
+    "element": "elem.metal",
+    "species": "Wolf",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Azure Wolf Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 328,
+          "atk": 33,
+          "def": 22,
+          "spd": 12
+        },
+        "active": "btech.azure_wolf.steel_talon",
+        "passive": "btech.azure_wolf.metal_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Azure Wolf",
+        "level_required": 16,
+        "evolve_materials": [
+          {
+            "id": "mat.salamander_scale",
+            "qty": 6
+          },
+          {
+            "id": "mat.fire_bud",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 1800,
+        "stats": {
+          "hp": 983,
+          "atk": 98,
+          "def": 66,
+          "spd": 14
+        },
+        "active": "btech.azure_wolf.steel_talon",
+        "passive": "btech.azure_wolf.metal_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Azure Wolf",
+        "level_required": 34,
+        "evolve_materials": [
+          {
+            "id": "mat.ember_core",
+            "qty": 3
+          },
+          {
+            "id": "mat.magma_iron_ore",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 4800,
+        "stats": {
+          "hp": 2621,
+          "atk": 262,
+          "def": 175,
+          "spd": 19
+        },
+        "active": "btech.azure_wolf.steel_talon",
+        "passive": "btech.azure_wolf.metal_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_meat",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 150
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 24
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.03,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/azure_wolf_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a young blue-grey wolf with a white ruff and silver eyes, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/azure_wolf_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a young blue-grey wolf with a white ruff and silver eyes, Azure Wolf Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/azure_wolf_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a young blue-grey wolf with a white ruff and silver eyes, Azure Wolf form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/azure_wolf_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a young blue-grey wolf with a white ruff and silver eyes, Elder Azure Wolf form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.snow_crane",
+    "name": "Snow Crane",
+    "description": "A crane of the frozen valley; graceful, aloof, fiercely protective.",
+    "name_cn": "雪鹤",
+    "rarity": "rare",
+    "element": "elem.water",
+    "species": "Crane",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Snow Crane Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 672,
+          "atk": 67,
+          "def": 45,
+          "spd": 13
+        },
+        "active": "btech.snow_crane.tidal_pulse",
+        "passive": "btech.snow_crane.water_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Snow Crane",
+        "level_required": 18,
+        "evolve_materials": [
+          {
+            "id": "mat.yeti_fur",
+            "qty": 6
+          },
+          {
+            "id": "mat.snow_lotus_petal",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 2400,
+        "stats": {
+          "hp": 2016,
+          "atk": 202,
+          "def": 134,
+          "spd": 15
+        },
+        "active": "btech.snow_crane.tidal_pulse",
+        "passive": "btech.snow_crane.water_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Snow Crane",
+        "level_required": 37,
+        "evolve_materials": [
+          {
+            "id": "mat.lotus_ice_heart",
+            "qty": 3
+          },
+          {
+            "id": "mat.frostsilver_ore",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 6400,
+        "stats": {
+          "hp": 5376,
+          "atk": 538,
+          "def": 358,
+          "spd": 20
+        },
+        "active": "btech.snow_crane.tidal_pulse",
+        "passive": "btech.snow_crane.water_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_fruit",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 200
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 32
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.04,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/snow_crane_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of an elegant white crane with ice-blue wingtips and a red crown, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/snow_crane_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an elegant white crane with ice-blue wingtips and a red crown, Snow Crane Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/snow_crane_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an elegant white crane with ice-blue wingtips and a red crown, Snow Crane form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/snow_crane_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of an elegant white crane with ice-blue wingtips and a red crown, Elder Snow Crane form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.frost_otter",
+    "name": "Frost Otter",
+    "description": "Plays in ice holes and steals shiny things.",
+    "name_cn": "霜獭",
+    "rarity": "uncommon",
+    "element": "elem.water",
+    "species": "Otter",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Frost Otter Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 672,
+          "atk": 67,
+          "def": 45,
+          "spd": 13
+        },
+        "active": "btech.frost_otter.tidal_pulse",
+        "passive": "btech.frost_otter.water_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Frost Otter",
+        "level_required": 18,
+        "evolve_materials": [
+          {
+            "id": "mat.yeti_fur",
+            "qty": 6
+          },
+          {
+            "id": "mat.snow_lotus_petal",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 2400,
+        "stats": {
+          "hp": 2016,
+          "atk": 202,
+          "def": 134,
+          "spd": 15
+        },
+        "active": "btech.frost_otter.tidal_pulse",
+        "passive": "btech.frost_otter.water_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Frost Otter",
+        "level_required": 37,
+        "evolve_materials": [
+          {
+            "id": "mat.lotus_ice_heart",
+            "qty": 3
+          },
+          {
+            "id": "mat.frostsilver_ore",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 6400,
+        "stats": {
+          "hp": 5376,
+          "atk": 538,
+          "def": 358,
+          "spd": 20
+        },
+        "active": "btech.frost_otter.tidal_pulse",
+        "passive": "btech.frost_otter.water_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_fruit",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 200
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 32
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.03,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/frost_otter_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a round little white otter with frosty whiskers clutching a pebble, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/frost_otter_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a round little white otter with frosty whiskers clutching a pebble, Frost Otter Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/frost_otter_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a round little white otter with frosty whiskers clutching a pebble, Frost Otter form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/frost_otter_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a round little white otter with frosty whiskers clutching a pebble, Elder Frost Otter form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.jade_serpent",
+    "name": "Jade Serpent",
+    "description": "Coils around the hilts of sleeping swords.",
+    "name_cn": "翠蛇",
+    "rarity": "rare",
+    "element": "elem.wood",
+    "species": "Serpent",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Jade Serpent Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 1378,
+          "atk": 138,
+          "def": 92,
+          "spd": 14
+        },
+        "active": "btech.jade_serpent.thorn_lash",
+        "passive": "btech.jade_serpent.wood_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Jade Serpent",
+        "level_required": 20,
+        "evolve_materials": [
+          {
+            "id": "mat.sword_spirit_shard",
+            "qty": 6
+          },
+          {
+            "id": "mat.sword_grass",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 3000,
+        "stats": {
+          "hp": 4133,
+          "atk": 413,
+          "def": 276,
+          "spd": 16
+        },
+        "active": "btech.jade_serpent.thorn_lash",
+        "passive": "btech.jade_serpent.wood_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Jade Serpent",
+        "level_required": 40,
+        "evolve_materials": [
+          {
+            "id": "mat.sword_intent_crystal",
+            "qty": 3
+          },
+          {
+            "id": "mat.tomb_iron",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 8000,
+        "stats": {
+          "hp": 11021,
+          "atk": 1102,
+          "def": 735,
+          "spd": 21
+        },
+        "active": "btech.jade_serpent.thorn_lash",
+        "passive": "btech.jade_serpent.wood_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_fruit",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 250
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 40
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.04,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/jade_serpent_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a slender jade-green serpent with golden eyes and leaf-shaped scales, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/jade_serpent_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a slender jade-green serpent with golden eyes and leaf-shaped scales, Jade Serpent Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/jade_serpent_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a slender jade-green serpent with golden eyes and leaf-shaped scales, Jade Serpent form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/jade_serpent_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a slender jade-green serpent with golden eyes and leaf-shaped scales, Elder Jade Serpent form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.blood_moon_wolf",
+    "name": "Blood-Moon Wolf",
+    "description": "Raised under the red moon; loyal only to the one who fed it first.",
+    "name_cn": "血月狼",
+    "rarity": "rare",
+    "element": "elem.fire",
+    "species": "Wolf",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Blood-Moon Wolf Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 2824,
+          "atk": 282,
+          "def": 188,
+          "spd": 15
+        },
+        "active": "btech.blood_moon_wolf.flame_burst",
+        "passive": "btech.blood_moon_wolf.fire_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Blood-Moon Wolf",
+        "level_required": 22,
+        "evolve_materials": [
+          {
+            "id": "mat.demon_horn",
+            "qty": 6
+          },
+          {
+            "id": "mat.blood_lotus",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 3600,
+        "stats": {
+          "hp": 8473,
+          "atk": 847,
+          "def": 565,
+          "spd": 17
+        },
+        "active": "btech.blood_moon_wolf.flame_burst",
+        "passive": "btech.blood_moon_wolf.fire_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Blood-Moon Wolf",
+        "level_required": 43,
+        "evolve_materials": [
+          {
+            "id": "mat.crimson_moon_shard",
+            "qty": 3
+          },
+          {
+            "id": "mat.demon_iron",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 9600,
+        "stats": {
+          "hp": 22594,
+          "atk": 2259,
+          "def": 1506,
+          "spd": 22
+        },
+        "active": "btech.blood_moon_wolf.flame_burst",
+        "passive": "btech.blood_moon_wolf.fire_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_meat",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 300
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 48
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.04,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/blood_moon_wolf_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a black wolf with a red crescent mark on its brow and crimson eyes, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/blood_moon_wolf_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a black wolf with a red crescent mark on its brow and crimson eyes, Blood-Moon Wolf Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/blood_moon_wolf_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a black wolf with a red crescent mark on its brow and crimson eyes, Blood-Moon Wolf form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/blood_moon_wolf_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a black wolf with a red crescent mark on its brow and crimson eyes, Elder Blood-Moon Wolf form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.ghost_lantern_moth",
+    "name": "Ghost Lantern Moth",
+    "description": "Its glow guides lost souls—and lost disciples.",
+    "name_cn": "鬼灯蛾",
+    "rarity": "rare",
+    "element": "elem.fire",
+    "species": "Moth",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Ghost Lantern Moth Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 2824,
+          "atk": 282,
+          "def": 188,
+          "spd": 15
+        },
+        "active": "btech.ghost_lantern_moth.flame_burst",
+        "passive": "btech.ghost_lantern_moth.fire_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Ghost Lantern Moth",
+        "level_required": 22,
+        "evolve_materials": [
+          {
+            "id": "mat.demon_horn",
+            "qty": 6
+          },
+          {
+            "id": "mat.blood_lotus",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 3600,
+        "stats": {
+          "hp": 8473,
+          "atk": 847,
+          "def": 565,
+          "spd": 17
+        },
+        "active": "btech.ghost_lantern_moth.flame_burst",
+        "passive": "btech.ghost_lantern_moth.fire_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Ghost Lantern Moth",
+        "level_required": 43,
+        "evolve_materials": [
+          {
+            "id": "mat.crimson_moon_shard",
+            "qty": 3
+          },
+          {
+            "id": "mat.demon_iron",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 9600,
+        "stats": {
+          "hp": 22594,
+          "atk": 2259,
+          "def": 1506,
+          "spd": 22
+        },
+        "active": "btech.ghost_lantern_moth.flame_burst",
+        "passive": "btech.ghost_lantern_moth.fire_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_meat",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 300
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 48
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.04,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/ghost_lantern_moth_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a large moth with wings like paper lanterns glowing soft orange, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/ghost_lantern_moth_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a large moth with wings like paper lanterns glowing soft orange, Ghost Lantern Moth Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/ghost_lantern_moth_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a large moth with wings like paper lanterns glowing soft orange, Ghost Lantern Moth form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/ghost_lantern_moth_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a large moth with wings like paper lanterns glowing soft orange, Elder Ghost Lantern Moth form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.thunder_tiger",
+    "name": "Thunder Tiger",
+    "description": "A storm tiger cub found in a nest of scorched pine needles.",
+    "name_cn": "雷虎",
+    "rarity": "epic",
+    "element": "elem.metal",
+    "species": "Tiger",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Thunder Tiger Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 5789,
+          "atk": 579,
+          "def": 386,
+          "spd": 16
+        },
+        "active": "btech.thunder_tiger.steel_talon",
+        "passive": "btech.thunder_tiger.metal_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Thunder Tiger",
+        "level_required": 24,
+        "evolve_materials": [
+          {
+            "id": "mat.thunder_feather",
+            "qty": 6
+          },
+          {
+            "id": "mat.celestial_peach",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 4200,
+        "stats": {
+          "hp": 17368,
+          "atk": 1737,
+          "def": 1158,
+          "spd": 18
+        },
+        "active": "btech.thunder_tiger.steel_talon",
+        "passive": "btech.thunder_tiger.metal_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Thunder Tiger",
+        "level_required": 46,
+        "evolve_materials": [
+          {
+            "id": "mat.heaven_pine_amber",
+            "qty": 3
+          },
+          {
+            "id": "mat.skystone",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 11200,
+        "stats": {
+          "hp": 46315,
+          "atk": 4632,
+          "def": 3088,
+          "spd": 23
+        },
+        "active": "btech.thunder_tiger.steel_talon",
+        "passive": "btech.thunder_tiger.metal_affinity"
+      },
+      {
+        "key": "sovereign",
+        "name": "Sovereign Thunder Tiger",
+        "level_required": 66,
+        "evolve_materials": [
+          {
+            "id": "mat.heaven_pine_amber",
+            "qty": 6
+          },
+          {
+            "id": "mat.dao_insight_crystal",
+            "qty": 1
+          }
+        ],
+        "evolve_cost_stones": 28000,
+        "stats": {
+          "hp": 115788,
+          "atk": 11579,
+          "def": 7719,
+          "spd": 35
+        },
+        "active": "btech.thunder_tiger.steel_talon",
+        "passive": "btech.thunder_tiger.metal_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_meat",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 350
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 56
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.05,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/thunder_tiger_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a white tiger cub with black lightning stripes and blue eyes, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/thunder_tiger_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white tiger cub with black lightning stripes and blue eyes, Thunder Tiger Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/thunder_tiger_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white tiger cub with black lightning stripes and blue eyes, Thunder Tiger form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/thunder_tiger_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white tiger cub with black lightning stripes and blue eyes, Elder Thunder Tiger form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_sovereign": {
+        "file": "assets/beasts/thunder_tiger_sovereign.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white tiger cub with black lightning stripes and blue eyes, Sovereign Thunder Tiger form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.cloud_qilin",
+    "name": "Cloud Qilin",
+    "description": "A qilin foal that walks on clouds and brings good fortune.",
+    "name_cn": "云麒麟",
+    "rarity": "epic",
+    "element": "elem.earth",
+    "species": "Qilin",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Cloud Qilin Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 11868,
+          "atk": 1187,
+          "def": 791,
+          "spd": 17
+        },
+        "active": "btech.cloud_qilin.stone_rampart",
+        "passive": "btech.cloud_qilin.earth_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Cloud Qilin",
+        "level_required": 26,
+        "evolve_materials": [
+          {
+            "id": "mat.jellyfish_silk",
+            "qty": 6
+          },
+          {
+            "id": "mat.star_dew_grass",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 4800,
+        "stats": {
+          "hp": 35604,
+          "atk": 3560,
+          "def": 2374,
+          "spd": 19
+        },
+        "active": "btech.cloud_qilin.stone_rampart",
+        "passive": "btech.cloud_qilin.earth_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Cloud Qilin",
+        "level_required": 49,
+        "evolve_materials": [
+          {
+            "id": "mat.heavenly_star_crystal",
+            "qty": 3
+          },
+          {
+            "id": "mat.cloud_jade",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 12800,
+        "stats": {
+          "hp": 94944,
+          "atk": 9494,
+          "def": 6330,
+          "spd": 24
+        },
+        "active": "btech.cloud_qilin.stone_rampart",
+        "passive": "btech.cloud_qilin.earth_affinity"
+      },
+      {
+        "key": "sovereign",
+        "name": "Sovereign Cloud Qilin",
+        "level_required": 69,
+        "evolve_materials": [
+          {
+            "id": "mat.heavenly_star_crystal",
+            "qty": 6
+          },
+          {
+            "id": "mat.dao_insight_crystal",
+            "qty": 1
+          }
+        ],
+        "evolve_cost_stones": 32000,
+        "stats": {
+          "hp": 237360,
+          "atk": 23736,
+          "def": 15824,
+          "spd": 36
+        },
+        "active": "btech.cloud_qilin.stone_rampart",
+        "passive": "btech.cloud_qilin.earth_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_meat",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 400
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 64
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.05,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/cloud_qilin_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a small qilin with a cloud-white mane, jade scales and a single golden horn, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/cloud_qilin_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small qilin with a cloud-white mane, jade scales and a single golden horn, Cloud Qilin Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/cloud_qilin_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small qilin with a cloud-white mane, jade scales and a single golden horn, Cloud Qilin form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/cloud_qilin_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small qilin with a cloud-white mane, jade scales and a single golden horn, Elder Cloud Qilin form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_sovereign": {
+        "file": "assets/beasts/cloud_qilin_sovereign.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small qilin with a cloud-white mane, jade scales and a single golden horn, Sovereign Cloud Qilin form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.storm_roc",
+    "name": "Storm Roc",
+    "description": "A roc chick that thinks you are its mother.",
+    "name_cn": "雷鹏雏",
+    "rarity": "epic",
+    "element": "elem.metal",
+    "species": "Roc",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Storm Roc Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 24329,
+          "atk": 2433,
+          "def": 1622,
+          "spd": 18
+        },
+        "active": "btech.storm_roc.steel_talon",
+        "passive": "btech.storm_roc.metal_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Storm Roc",
+        "level_required": 28,
+        "evolve_materials": [
+          {
+            "id": "mat.roc_lightning_feather",
+            "qty": 6
+          },
+          {
+            "id": "mat.thunderroot",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 5400,
+        "stats": {
+          "hp": 72986,
+          "atk": 7299,
+          "def": 4866,
+          "spd": 20
+        },
+        "active": "btech.storm_roc.steel_talon",
+        "passive": "btech.storm_roc.metal_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Storm Roc",
+        "level_required": 52,
+        "evolve_materials": [
+          {
+            "id": "mat.tribulation_core",
+            "qty": 3
+          },
+          {
+            "id": "mat.storm_glass",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 14400,
+        "stats": {
+          "hp": 194630,
+          "atk": 19463,
+          "def": 12975,
+          "spd": 25
+        },
+        "active": "btech.storm_roc.steel_talon",
+        "passive": "btech.storm_roc.metal_affinity"
+      },
+      {
+        "key": "sovereign",
+        "name": "Sovereign Storm Roc",
+        "level_required": 72,
+        "evolve_materials": [
+          {
+            "id": "mat.tribulation_core",
+            "qty": 6
+          },
+          {
+            "id": "mat.dao_insight_crystal",
+            "qty": 1
+          }
+        ],
+        "evolve_cost_stones": 36000,
+        "stats": {
+          "hp": 486576,
+          "atk": 48658,
+          "def": 32438,
+          "spd": 37
+        },
+        "active": "btech.storm_roc.steel_talon",
+        "passive": "btech.storm_roc.metal_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_meat",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 450
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 72
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.05,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/storm_roc_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a fluffy violet roc chick with sparks in its downy feathers, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/storm_roc_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a fluffy violet roc chick with sparks in its downy feathers, Storm Roc Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/storm_roc_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a fluffy violet roc chick with sparks in its downy feathers, Storm Roc form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/storm_roc_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a fluffy violet roc chick with sparks in its downy feathers, Elder Storm Roc form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_sovereign": {
+        "file": "assets/beasts/storm_roc_sovereign.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a fluffy violet roc chick with sparks in its downy feathers, Sovereign Storm Roc form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.lightning_eel",
+    "name": "Lightning Eel",
+    "description": "Lives in storm puddles and zaps anything that bothers you.",
+    "name_cn": "雷鳗",
+    "rarity": "epic",
+    "element": "elem.water",
+    "species": "Eel",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Lightning Eel Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 24329,
+          "atk": 2433,
+          "def": 1622,
+          "spd": 18
+        },
+        "active": "btech.lightning_eel.tidal_pulse",
+        "passive": "btech.lightning_eel.water_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Lightning Eel",
+        "level_required": 28,
+        "evolve_materials": [
+          {
+            "id": "mat.roc_lightning_feather",
+            "qty": 6
+          },
+          {
+            "id": "mat.thunderroot",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 5400,
+        "stats": {
+          "hp": 72986,
+          "atk": 7299,
+          "def": 4866,
+          "spd": 20
+        },
+        "active": "btech.lightning_eel.tidal_pulse",
+        "passive": "btech.lightning_eel.water_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Lightning Eel",
+        "level_required": 52,
+        "evolve_materials": [
+          {
+            "id": "mat.tribulation_core",
+            "qty": 3
+          },
+          {
+            "id": "mat.storm_glass",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 14400,
+        "stats": {
+          "hp": 194630,
+          "atk": 19463,
+          "def": 12975,
+          "spd": 25
+        },
+        "active": "btech.lightning_eel.tidal_pulse",
+        "passive": "btech.lightning_eel.water_affinity"
+      },
+      {
+        "key": "sovereign",
+        "name": "Sovereign Lightning Eel",
+        "level_required": 72,
+        "evolve_materials": [
+          {
+            "id": "mat.tribulation_core",
+            "qty": 6
+          },
+          {
+            "id": "mat.dao_insight_crystal",
+            "qty": 1
+          }
+        ],
+        "evolve_cost_stones": 36000,
+        "stats": {
+          "hp": 486576,
+          "atk": 48658,
+          "def": 32438,
+          "spd": 37
+        },
+        "active": "btech.lightning_eel.tidal_pulse",
+        "passive": "btech.lightning_eel.water_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_fruit",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 450
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 72
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.05,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/lightning_eel_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a sleek dark-blue eel with glowing violet lines along its body, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/lightning_eel_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek dark-blue eel with glowing violet lines along its body, Lightning Eel Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/lightning_eel_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek dark-blue eel with glowing violet lines along its body, Lightning Eel form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/lightning_eel_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek dark-blue eel with glowing violet lines along its body, Elder Lightning Eel form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_sovereign": {
+        "file": "assets/beasts/lightning_eel_sovereign.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a sleek dark-blue eel with glowing violet lines along its body, Sovereign Lightning Eel form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.black_tortoise",
+    "name": "Black Tortoise",
+    "description": "A divine beast hatchling. Slow, patient and impossible to hurt.",
+    "name_cn": "玄武",
+    "rarity": "legendary",
+    "element": "elem.water",
+    "species": "Tortoise",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Black Tortoise Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 49874,
+          "atk": 4987,
+          "def": 3325,
+          "spd": 19
+        },
+        "active": "btech.black_tortoise.tidal_pulse",
+        "passive": "btech.black_tortoise.water_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Black Tortoise",
+        "level_required": 30,
+        "evolve_materials": [
+          {
+            "id": "mat.kraken_ink",
+            "qty": 6
+          },
+          {
+            "id": "mat.sea_jade_kelp",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 6000,
+        "stats": {
+          "hp": 149623,
+          "atk": 14962,
+          "def": 9975,
+          "spd": 21
+        },
+        "active": "btech.black_tortoise.tidal_pulse",
+        "passive": "btech.black_tortoise.water_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Black Tortoise",
+        "level_required": 55,
+        "evolve_materials": [
+          {
+            "id": "mat.dragon_pearl",
+            "qty": 3
+          },
+          {
+            "id": "mat.dragonbone_ore",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 16000,
+        "stats": {
+          "hp": 398995,
+          "atk": 39900,
+          "def": 26600,
+          "spd": 26
+        },
+        "active": "btech.black_tortoise.tidal_pulse",
+        "passive": "btech.black_tortoise.water_affinity"
+      },
+      {
+        "key": "sovereign",
+        "name": "Sovereign Black Tortoise",
+        "level_required": 75,
+        "evolve_materials": [
+          {
+            "id": "mat.dragon_pearl",
+            "qty": 6
+          },
+          {
+            "id": "mat.dao_insight_crystal",
+            "qty": 1
+          }
+        ],
+        "evolve_cost_stones": 40000,
+        "stats": {
+          "hp": 997488,
+          "atk": 99749,
+          "def": 66499,
+          "spd": 38
+        },
+        "active": "btech.black_tortoise.tidal_pulse",
+        "passive": "btech.black_tortoise.water_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_fruit",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 500
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 80
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.06,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/black_tortoise_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a small black tortoise with a serpent tail and starry patterns on its shell, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/black_tortoise_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small black tortoise with a serpent tail and starry patterns on its shell, Black Tortoise Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/black_tortoise_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small black tortoise with a serpent tail and starry patterns on its shell, Black Tortoise form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/black_tortoise_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small black tortoise with a serpent tail and starry patterns on its shell, Elder Black Tortoise form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_sovereign": {
+        "file": "assets/beasts/black_tortoise_sovereign.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small black tortoise with a serpent tail and starry patterns on its shell, Sovereign Black Tortoise form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.sand_dragon",
+    "name": "Sand Dragon",
+    "description": "Swims through dunes like water and hoards shiny pebbles.",
+    "name_cn": "沙龙",
+    "rarity": "legendary",
+    "element": "elem.earth",
+    "species": "Dragon",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Sand Dragon Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 102243,
+          "atk": 10224,
+          "def": 6816,
+          "spd": 20
+        },
+        "active": "btech.sand_dragon.stone_rampart",
+        "passive": "btech.sand_dragon.earth_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Sand Dragon",
+        "level_required": 32,
+        "evolve_materials": [
+          {
+            "id": "mat.sand_wyrm_tooth",
+            "qty": 6
+          },
+          {
+            "id": "mat.desert_star_flower",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 6600,
+        "stats": {
+          "hp": 306729,
+          "atk": 30673,
+          "def": 20449,
+          "spd": 22
+        },
+        "active": "btech.sand_dragon.stone_rampart",
+        "passive": "btech.sand_dragon.earth_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Sand Dragon",
+        "level_required": 58,
+        "evolve_materials": [
+          {
+            "id": "mat.meteor_heart",
+            "qty": 3
+          },
+          {
+            "id": "mat.star_metal",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 17600,
+        "stats": {
+          "hp": 817944,
+          "atk": 81794,
+          "def": 54530,
+          "spd": 27
+        },
+        "active": "btech.sand_dragon.stone_rampart",
+        "passive": "btech.sand_dragon.earth_affinity"
+      },
+      {
+        "key": "sovereign",
+        "name": "Sovereign Sand Dragon",
+        "level_required": 78,
+        "evolve_materials": [
+          {
+            "id": "mat.meteor_heart",
+            "qty": 6
+          },
+          {
+            "id": "mat.dao_insight_crystal",
+            "qty": 1
+          }
+        ],
+        "evolve_cost_stones": 44000,
+        "stats": {
+          "hp": 2044860,
+          "atk": 204486,
+          "def": 136324,
+          "spd": 39
+        },
+        "active": "btech.sand_dragon.stone_rampart",
+        "passive": "btech.sand_dragon.earth_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_meat",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 550
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 88
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.06,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/sand_dragon_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a small golden sand dragon with silver star freckles and stubby wings, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/sand_dragon_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small golden sand dragon with silver star freckles and stubby wings, Sand Dragon Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/sand_dragon_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small golden sand dragon with silver star freckles and stubby wings, Sand Dragon form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/sand_dragon_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small golden sand dragon with silver star freckles and stubby wings, Elder Sand Dragon form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_sovereign": {
+        "file": "assets/beasts/sand_dragon_sovereign.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small golden sand dragon with silver star freckles and stubby wings, Sovereign Sand Dragon form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.starlight_deer",
+    "name": "Starlight Deer",
+    "description": "Only appears to those who have waited for a falling star.",
+    "name_cn": "星光鹿",
+    "rarity": "legendary",
+    "element": "elem.wood",
+    "species": "Deer",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Starlight Deer Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 102243,
+          "atk": 10224,
+          "def": 6816,
+          "spd": 20
+        },
+        "active": "btech.starlight_deer.thorn_lash",
+        "passive": "btech.starlight_deer.wood_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Starlight Deer",
+        "level_required": 32,
+        "evolve_materials": [
+          {
+            "id": "mat.sand_wyrm_tooth",
+            "qty": 6
+          },
+          {
+            "id": "mat.desert_star_flower",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 6600,
+        "stats": {
+          "hp": 306729,
+          "atk": 30673,
+          "def": 20449,
+          "spd": 22
+        },
+        "active": "btech.starlight_deer.thorn_lash",
+        "passive": "btech.starlight_deer.wood_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Starlight Deer",
+        "level_required": 58,
+        "evolve_materials": [
+          {
+            "id": "mat.meteor_heart",
+            "qty": 3
+          },
+          {
+            "id": "mat.star_metal",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 17600,
+        "stats": {
+          "hp": 817944,
+          "atk": 81794,
+          "def": 54530,
+          "spd": 27
+        },
+        "active": "btech.starlight_deer.thorn_lash",
+        "passive": "btech.starlight_deer.wood_affinity"
+      },
+      {
+        "key": "sovereign",
+        "name": "Sovereign Starlight Deer",
+        "level_required": 78,
+        "evolve_materials": [
+          {
+            "id": "mat.meteor_heart",
+            "qty": 6
+          },
+          {
+            "id": "mat.dao_insight_crystal",
+            "qty": 1
+          }
+        ],
+        "evolve_cost_stones": 44000,
+        "stats": {
+          "hp": 2044860,
+          "atk": 204486,
+          "def": 136324,
+          "spd": 39
+        },
+        "active": "btech.starlight_deer.thorn_lash",
+        "passive": "btech.starlight_deer.wood_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_fruit",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 550
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 88
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.06,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/starlight_deer_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a slender white deer with antlers of starlight and silver spots, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/starlight_deer_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a slender white deer with antlers of starlight and silver spots, Starlight Deer Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/starlight_deer_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a slender white deer with antlers of starlight and silver spots, Starlight Deer form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/starlight_deer_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a slender white deer with antlers of starlight and silver spots, Elder Starlight Deer form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_sovereign": {
+        "file": "assets/beasts/starlight_deer_sovereign.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a slender white deer with antlers of starlight and silver spots, Sovereign Starlight Deer form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.vermilion_bird",
+    "name": "Vermilion Bird",
+    "description": "A divine bird hatchling that warms everything near it.",
+    "name_cn": "朱雀",
+    "rarity": "legendary",
+    "element": "elem.fire",
+    "species": "Phoenix",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Vermilion Bird Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 209598,
+          "atk": 20960,
+          "def": 13973,
+          "spd": 21
+        },
+        "active": "btech.vermilion_bird.flame_burst",
+        "passive": "btech.vermilion_bird.fire_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Vermilion Bird",
+        "level_required": 34,
+        "evolve_materials": [
+          {
+            "id": "mat.phoenix_down",
+            "qty": 6
+          },
+          {
+            "id": "mat.phoenix_lotus",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 7200,
+        "stats": {
+          "hp": 628794,
+          "atk": 62879,
+          "def": 41920,
+          "spd": 23
+        },
+        "active": "btech.vermilion_bird.flame_burst",
+        "passive": "btech.vermilion_bird.fire_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Vermilion Bird",
+        "level_required": 61,
+        "evolve_materials": [
+          {
+            "id": "mat.gate_light_crystal",
+            "qty": 3
+          },
+          {
+            "id": "mat.ascension_gold",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 19200,
+        "stats": {
+          "hp": 1676784,
+          "atk": 167678,
+          "def": 111786,
+          "spd": 28
+        },
+        "active": "btech.vermilion_bird.flame_burst",
+        "passive": "btech.vermilion_bird.fire_affinity"
+      },
+      {
+        "key": "sovereign",
+        "name": "Sovereign Vermilion Bird",
+        "level_required": 81,
+        "evolve_materials": [
+          {
+            "id": "mat.gate_light_crystal",
+            "qty": 6
+          },
+          {
+            "id": "mat.dao_insight_crystal",
+            "qty": 1
+          }
+        ],
+        "evolve_cost_stones": 48000,
+        "stats": {
+          "hp": 4191960,
+          "atk": 419196,
+          "def": 279464,
+          "spd": 40
+        },
+        "active": "btech.vermilion_bird.flame_burst",
+        "passive": "btech.vermilion_bird.fire_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_meat",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 600
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 96
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.06,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/vermilion_bird_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a small vermilion bird with golden flame tail feathers and bright eyes, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/vermilion_bird_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small vermilion bird with golden flame tail feathers and bright eyes, Vermilion Bird Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/vermilion_bird_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small vermilion bird with golden flame tail feathers and bright eyes, Vermilion Bird form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/vermilion_bird_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small vermilion bird with golden flame tail feathers and bright eyes, Elder Vermilion Bird form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_sovereign": {
+        "file": "assets/beasts/vermilion_bird_sovereign.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small vermilion bird with golden flame tail feathers and bright eyes, Sovereign Vermilion Bird form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.white_tiger",
+    "name": "White Tiger",
+    "description": "A divine beast cub of the western heaven.",
+    "name_cn": "白虎",
+    "rarity": "mythic",
+    "element": "elem.metal",
+    "species": "Tiger",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "White Tiger Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 429676,
+          "atk": 42968,
+          "def": 28645,
+          "spd": 22
+        },
+        "active": "btech.white_tiger.steel_talon",
+        "passive": "btech.white_tiger.metal_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "White Tiger",
+        "level_required": 36,
+        "evolve_materials": [
+          {
+            "id": "mat.white_tiger_fang",
+            "qty": 6
+          },
+          {
+            "id": "mat.immortal_peach_blossom",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 7800,
+        "stats": {
+          "hp": 1289027,
+          "atk": 128903,
+          "def": 85935,
+          "spd": 24
+        },
+        "active": "btech.white_tiger.steel_talon",
+        "passive": "btech.white_tiger.metal_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder White Tiger",
+        "level_required": 64,
+        "evolve_materials": [
+          {
+            "id": "mat.realm_heart_jade",
+            "qty": 3
+          },
+          {
+            "id": "mat.immortal_jade",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 20800,
+        "stats": {
+          "hp": 3437405,
+          "atk": 343740,
+          "def": 229160,
+          "spd": 29
+        },
+        "active": "btech.white_tiger.steel_talon",
+        "passive": "btech.white_tiger.metal_affinity"
+      },
+      {
+        "key": "sovereign",
+        "name": "Sovereign White Tiger",
+        "level_required": 84,
+        "evolve_materials": [
+          {
+            "id": "mat.realm_heart_jade",
+            "qty": 6
+          },
+          {
+            "id": "mat.dao_insight_crystal",
+            "qty": 1
+          }
+        ],
+        "evolve_cost_stones": 52000,
+        "stats": {
+          "hp": 8593512,
+          "atk": 859351,
+          "def": 572901,
+          "spd": 41
+        },
+        "active": "btech.white_tiger.steel_talon",
+        "passive": "btech.white_tiger.metal_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_meat",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 650
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 104
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.07,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/white_tiger_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/white_tiger_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, White Tiger Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/white_tiger_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, White Tiger form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/white_tiger_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, Elder White Tiger form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_sovereign": {
+        "file": "assets/beasts/white_tiger_sovereign.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a white tiger cub with silver stripes and jade eyes, a small sword-shaped mark on its brow, Sovereign White Tiger form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.nine_tailed_fox",
+    "name": "Nine-Tailed Fox",
+    "description": "A divine fox kit who has already broken three heavenly laws today.",
+    "name_cn": "九尾狐",
+    "rarity": "mythic",
+    "element": "elem.fire",
+    "species": "Fox",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Nine-Tailed Fox Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 880835,
+          "atk": 88084,
+          "def": 58722,
+          "spd": 23
+        },
+        "active": "btech.nine_tailed_fox.flame_burst",
+        "passive": "btech.nine_tailed_fox.fire_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Nine-Tailed Fox",
+        "level_required": 38,
+        "evolve_materials": [
+          {
+            "id": "mat.golden_crow_feather",
+            "qty": 6
+          },
+          {
+            "id": "mat.law_flower",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 8400,
+        "stats": {
+          "hp": 2642506,
+          "atk": 264251,
+          "def": 176167,
+          "spd": 25
+        },
+        "active": "btech.nine_tailed_fox.flame_burst",
+        "passive": "btech.nine_tailed_fox.fire_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Nine-Tailed Fox",
+        "level_required": 67,
+        "evolve_materials": [
+          {
+            "id": "mat.law_wheel_fragment",
+            "qty": 3
+          },
+          {
+            "id": "mat.heavenly_gold",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 22400,
+        "stats": {
+          "hp": 7046683,
+          "atk": 704668,
+          "def": 469779,
+          "spd": 30
+        },
+        "active": "btech.nine_tailed_fox.flame_burst",
+        "passive": "btech.nine_tailed_fox.fire_affinity"
+      },
+      {
+        "key": "sovereign",
+        "name": "Sovereign Nine-Tailed Fox",
+        "level_required": 87,
+        "evolve_materials": [
+          {
+            "id": "mat.law_wheel_fragment",
+            "qty": 6
+          },
+          {
+            "id": "mat.dao_insight_crystal",
+            "qty": 1
+          }
+        ],
+        "evolve_cost_stones": 56000,
+        "stats": {
+          "hp": 17616708,
+          "atk": 1761671,
+          "def": 1174447,
+          "spd": 42
+        },
+        "active": "btech.nine_tailed_fox.flame_burst",
+        "passive": "btech.nine_tailed_fox.fire_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_meat",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 700
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 112
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.07,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/nine_tailed_fox_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/nine_tailed_fox_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, Nine-Tailed Fox Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/nine_tailed_fox_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, Nine-Tailed Fox form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/nine_tailed_fox_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, Elder Nine-Tailed Fox form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_sovereign": {
+        "file": "assets/beasts/nine_tailed_fox_sovereign.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a small golden fox with nine fluffy flame-tipped tails and mischievous eyes, Sovereign Nine-Tailed Fox form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "beast.azure_dragon",
+    "name": "Azure Dragon",
+    "description": "The last hatchling of the throne's guardian dragon.",
+    "name_cn": "青龙",
+    "rarity": "immortal",
+    "element": "elem.water",
+    "species": "Dragon",
+    "stages": [
+      {
+        "key": "hatchling",
+        "name": "Azure Dragon Hatchling",
+        "level_required": 1,
+        "evolve_materials": [],
+        "evolve_cost_stones": 0,
+        "stats": {
+          "hp": 1805713,
+          "atk": 180571,
+          "def": 120381,
+          "spd": 24
+        },
+        "active": "btech.azure_dragon.tidal_pulse",
+        "passive": "btech.azure_dragon.water_affinity"
+      },
+      {
+        "key": "juvenile",
+        "name": "Azure Dragon",
+        "level_required": 40,
+        "evolve_materials": [
+          {
+            "id": "mat.azure_dragon_scale",
+            "qty": 6
+          },
+          {
+            "id": "mat.primordial_lotus",
+            "qty": 10
+          }
+        ],
+        "evolve_cost_stones": 9000,
+        "stats": {
+          "hp": 5417138,
+          "atk": 541714,
+          "def": 361143,
+          "spd": 26
+        },
+        "active": "btech.azure_dragon.tidal_pulse",
+        "passive": "btech.azure_dragon.water_affinity"
+      },
+      {
+        "key": "adult",
+        "name": "Elder Azure Dragon",
+        "level_required": 70,
+        "evolve_materials": [
+          {
+            "id": "mat.primordial_chaos_stone",
+            "qty": 3
+          },
+          {
+            "id": "mat.emperor_star_metal",
+            "qty": 8
+          }
+        ],
+        "evolve_cost_stones": 24000,
+        "stats": {
+          "hp": 14445701,
+          "atk": 1444570,
+          "def": 963047,
+          "spd": 31
+        },
+        "active": "btech.azure_dragon.tidal_pulse",
+        "passive": "btech.azure_dragon.water_affinity"
+      },
+      {
+        "key": "sovereign",
+        "name": "Sovereign Azure Dragon",
+        "level_required": 90,
+        "evolve_materials": [
+          {
+            "id": "mat.primordial_chaos_stone",
+            "qty": 6
+          },
+          {
+            "id": "mat.dao_insight_crystal",
+            "qty": 1
+          }
+        ],
+        "evolve_cost_stones": 60000,
+        "stats": {
+          "hp": 36114252,
+          "atk": 3611425,
+          "def": 2407617,
+          "spd": 43
+        },
+        "active": "btech.azure_dragon.tidal_pulse",
+        "passive": "btech.azure_dragon.water_affinity"
+      }
+    ],
+    "food": [
+      "bfood.spirit_fruit",
+      "bfood.dried_fish"
+    ],
+    "bond": {
+      "max": 10,
+      "milestones": [
+        {
+          "level": 3,
+          "bonus": {
+            "hp": 750
+          }
+        },
+        {
+          "level": 6,
+          "bonus": {
+            "atk": 120
+          }
+        },
+        {
+          "level": 10,
+          "bonus": {
+            "crit": 2,
+            "spd": 2
+          }
+        }
+      ]
+    },
+    "cultivation_bonus": 0.08,
+    "art": {
+      "icon": {
+        "file": "assets/beasts/azure_dragon_icon.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of the face of a young azure dragon with pearl-white whiskers and starlight in its scales, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_hatchling": {
+        "file": "assets/beasts/azure_dragon_hatchling.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a young azure dragon with pearl-white whiskers and starlight in its scales, Azure Dragon Hatchling form (hatchling stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_juvenile": {
+        "file": "assets/beasts/azure_dragon_juvenile.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a young azure dragon with pearl-white whiskers and starlight in its scales, Azure Dragon form (juvenile stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_adult": {
+        "file": "assets/beasts/azure_dragon_adult.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a young azure dragon with pearl-white whiskers and starlight in its scales, Elder Azure Dragon form (adult stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      },
+      "battle_sovereign": {
+        "file": "assets/beasts/azure_dragon_sovereign.png",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-body combat illustration of a young azure dragon with pearl-white whiskers and starlight in its scales, Sovereign Azure Dragon form (sovereign stage), dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/spirit_beasts.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

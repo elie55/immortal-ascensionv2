@@ -1,0 +1,2046 @@
+[
+  {
+    "id": "dungeon.ember_forge_ruins",
+    "name": "Ember Forge Ruins",
+    "description": "A resource dungeon of the Blazing Mountain. Its master guards the final hall.",
+    "name_cn": "余烬炉墟",
+    "kind": "resource",
+    "entry": {
+      "realm": {
+        "id": "realm.foundation_establishment",
+        "stage": 3
+      },
+      "regions": [
+        "region.blazing_mountain"
+      ],
+      "energy_cost": 16,
+      "daily_limit": 3,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 1365,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.ember_salamander",
+          "enemy.ash_vulture"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.ash_vulture",
+          "enemy.magma_golem",
+          "enemy.ember_salamander"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.flame_lion",
+          "enemy.caravan_raider"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.forge_wraith"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.ember_forge_ruins_wave",
+      "clear": "loot.dungeon.ember_forge_ruins_clear",
+      "first_clear": {
+        "spirit_stones": 2700,
+        "sect_fame": 90,
+        "gear": [
+          {
+            "base": "gear.blazeforge_plate",
+            "rarity": "rare",
+            "ilvl": 28
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/ember_forge_ruins_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a ruined ancient forge built into the volcano with dead anvils and glowing slag pools. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/ember_forge_ruins_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a ruined ancient forge built into the volcano with dead anvils and glowing slag pools. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.glacier_caverns",
+    "name": "Glacier Caverns",
+    "description": "A challenge dungeon of the Frozen Lotus Valley. Its master guards the final hall.",
+    "name_cn": "冰川窟",
+    "kind": "challenge",
+    "entry": {
+      "realm": {
+        "id": "realm.foundation_establishment",
+        "stage": 3
+      },
+      "regions": [
+        "region.frozen_lotus_valley"
+      ],
+      "energy_cost": 18,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 2800,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.snow_fox_spirit",
+          "enemy.ice_lotus_guardian"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.ice_lotus_guardian",
+          "enemy.frost_yeti",
+          "enemy.snow_fox_spirit"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.frost_wyrm",
+          "enemy.frozen_cultist"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.glacier_titan"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.glacier_caverns_wave",
+      "clear": "loot.dungeon.glacier_caverns_clear",
+      "first_clear": {
+        "spirit_stones": 4800,
+        "sect_fame": 120,
+        "gear": [
+          {
+            "base": "gear.frostlotus_steps",
+            "rarity": "rare",
+            "ilvl": 36
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/glacier_caverns_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: blue ice caverns with frozen waterfalls and crystal stalactites. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/glacier_caverns_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside blue ice caverns with frozen waterfalls and crystal stalactites. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.hall_of_ten_thousand_blades",
+    "name": "Hall of Ten Thousand Blades",
+    "description": "A challenge dungeon of the Ancient Sword Tomb. Its master guards the final hall.",
+    "name_cn": "万剑堂",
+    "kind": "challenge",
+    "entry": {
+      "realm": {
+        "id": "realm.core_formation",
+        "stage": 3
+      },
+      "regions": [
+        "region.ancient_sword_tomb"
+      ],
+      "energy_cost": 20,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 5740,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.rusted_sword_spirit",
+          "enemy.tomb_guardian_statue"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.tomb_guardian_statue",
+          "enemy.sword_qi_wisp",
+          "enemy.rusted_sword_spirit"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.headless_general",
+          "enemy.tomb_robber"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.blade_storm_avatar"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.hall_of_ten_thousand_blades_wave",
+      "clear": "loot.dungeon.hall_of_ten_thousand_blades_clear",
+      "first_clear": {
+        "spirit_stones": 7500,
+        "sect_fame": 150,
+        "gear": [
+          {
+            "base": "gear.tombsong_talisman",
+            "rarity": "epic",
+            "ilvl": 44
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/hall_of_ten_thousand_blades_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: an underground hall whose walls are lined with thousands of floating swords. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/hall_of_ten_thousand_blades_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside an underground hall whose walls are lined with thousands of floating swords. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.blood_river_prison",
+    "name": "Blood River Prison",
+    "description": "A resource dungeon of the Demon Territory. Its master guards the final hall.",
+    "name_cn": "血河狱",
+    "kind": "resource",
+    "entry": {
+      "realm": {
+        "id": "realm.nascent_soul",
+        "stage": 3
+      },
+      "regions": [
+        "region.demon_territory"
+      ],
+      "energy_cost": 22,
+      "daily_limit": 3,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 11768,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.blood_imp",
+          "enemy.bone_hound"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.bone_hound",
+          "enemy.shadow_assassin",
+          "enemy.blood_imp"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.demon_general",
+          "enemy.blood_sect_disciple"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.prison_warden_gu_ling"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.blood_river_prison_wave",
+      "clear": "loot.dungeon.blood_river_prison_clear",
+      "first_clear": {
+        "spirit_stones": 10800,
+        "sect_fame": 180,
+        "gear": [
+          {
+            "base": "gear.crimsonvow_hood",
+            "rarity": "epic",
+            "ilvl": 52
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/blood_river_prison_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a demonic prison of iron cages above a river of blood, red lanterns. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/blood_river_prison_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a demonic prison of iron cages above a river of blood, red lanterns. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.crimson_moon_secret_realm",
+    "name": "Crimson Moon Secret Realm",
+    "description": "A secret realm hidden in the Demon Territory. Branching paths, a sealed vault and a guardian.",
+    "name_cn": "赤月秘境",
+    "kind": "secret_realm",
+    "entry": {
+      "realm": {
+        "id": "realm.nascent_soul",
+        "stage": 5
+      },
+      "quests": [
+        "quest.main.demon_territory_sovereign"
+      ],
+      "energy_cost": 25,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 18828,
+    "modifiers": [],
+    "rewards": {
+      "clear": "loot.dungeon.crimson_moon_secret_realm_clear",
+      "first_clear": {
+        "spirit_stones": 18000,
+        "sect_fame": 360
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "realm_nodes": [
+      {
+        "key": "gate",
+        "name": "Realm Gate",
+        "kind": "battle",
+        "position": [
+          0.5,
+          0.92
+        ],
+        "connections": [
+          "left",
+          "right"
+        ],
+        "waves": [
+          [
+            "enemy.blood_imp",
+            "enemy.bone_hound"
+          ]
+        ]
+      },
+      {
+        "key": "left",
+        "name": "Trial Path",
+        "kind": "elite",
+        "position": [
+          0.25,
+          0.68
+        ],
+        "connections": [
+          "gate",
+          "vault"
+        ],
+        "waves": [
+          [
+            "enemy.demon_general"
+          ]
+        ]
+      },
+      {
+        "key": "right",
+        "name": "Still Pool",
+        "kind": "cultivation",
+        "position": [
+          0.75,
+          0.68
+        ],
+        "connections": [
+          "gate",
+          "whisper"
+        ]
+      },
+      {
+        "key": "vault",
+        "name": "Sealed Vault",
+        "kind": "chest",
+        "position": [
+          0.22,
+          0.4
+        ],
+        "connections": [
+          "left",
+          "altar"
+        ],
+        "chest": "loot.chest.crimson_moon_secret_realm_vault"
+      },
+      {
+        "key": "whisper",
+        "name": "Whispering Hollow",
+        "kind": "event",
+        "position": [
+          0.78,
+          0.4
+        ],
+        "connections": [
+          "right",
+          "altar"
+        ],
+        "event": "event.demon_bazaar"
+      },
+      {
+        "key": "altar",
+        "name": "Guardian's Altar",
+        "kind": "boss",
+        "position": [
+          0.5,
+          0.15
+        ],
+        "connections": [
+          "vault",
+          "whisper",
+          "exit"
+        ],
+        "waves": [
+          [
+            "boss.moon_devourer"
+          ]
+        ]
+      },
+      {
+        "key": "exit",
+        "name": "Exit",
+        "kind": "exit",
+        "position": [
+          0.5,
+          0.04
+        ],
+        "connections": [
+          "altar"
+        ]
+      }
+    ],
+    "art": {
+      "card": {
+        "file": "assets/dungeons/crimson_moon_secret_realm_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a hidden realm beneath a giant red moon with floating islands of black stone and blood lotus ponds. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/crimson_moon_secret_realm_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a hidden realm beneath a giant red moon with floating islands of black stone and blood lotus ponds. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/dungeons/crimson_moon_secret_realm_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated branching map of a hidden realm beneath a giant red moon with floating islands of black stone and blood lotus ponds, floating platforms connected by light paths, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/secret_realm_map.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.thunder_pine_sanctum",
+    "name": "Thunder Pine Sanctum",
+    "description": "A resource dungeon of the Celestial Mountains. Its master guards the final hall.",
+    "name_cn": "雷松圣殿",
+    "kind": "resource",
+    "entry": {
+      "realm": {
+        "id": "realm.soul_transformation",
+        "stage": 3
+      },
+      "regions": [
+        "region.celestial_mountains"
+      ],
+      "energy_cost": 24,
+      "daily_limit": 3,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 24122,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.thunder_crane",
+          "enemy.cloud_ape"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.cloud_ape",
+          "enemy.celestial_soldier",
+          "enemy.thunder_crane"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.storm_tiger",
+          "enemy.heaven_seeker"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.pine_thunder_sage"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.thunder_pine_sanctum_wave",
+      "clear": "loot.dungeon.thunder_pine_sanctum_clear",
+      "first_clear": {
+        "spirit_stones": 14700,
+        "sect_fame": 210,
+        "gear": [
+          {
+            "base": "gear.skyward_vestments",
+            "rarity": "epic",
+            "ilvl": 60
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/thunder_pine_sanctum_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a temple among lightning-scarred pines on a cloud-wrapped peak. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/thunder_pine_sanctum_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a temple among lightning-scarred pines on a cloud-wrapped peak. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.sunken_star_palace",
+    "name": "Sunken Star Palace",
+    "description": "A challenge dungeon of the Nine Heavens. Its master guards the final hall.",
+    "name_cn": "沉星宫",
+    "kind": "challenge",
+    "entry": {
+      "realm": {
+        "id": "realm.spirit_severing",
+        "stage": 3
+      },
+      "regions": [
+        "region.nine_heavens"
+      ],
+      "energy_cost": 26,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 49450,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.cloud_jellyfish",
+          "enemy.starlight_sentinel"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.starlight_sentinel",
+          "enemy.heaven_eagle",
+          "enemy.cloud_jellyfish"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.fallen_immortal",
+          "enemy.abyss_cultist"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.star_palace_regent"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.sunken_star_palace_wave",
+      "clear": "loot.dungeon.sunken_star_palace_clear",
+      "first_clear": {
+        "spirit_stones": 19200,
+        "sect_fame": 240,
+        "gear": [
+          {
+            "base": "gear.starward_signet",
+            "rarity": "legendary",
+            "ilvl": 68
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/sunken_star_palace_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a half-ruined palace of starlight sunk into a cloud sea, glowing constellations on the floor. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/sunken_star_palace_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a half-ruined palace of starlight sunk into a cloud sea, glowing constellations on the floor. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.glass_labyrinth",
+    "name": "Glass Labyrinth",
+    "description": "A resource dungeon of the Thunderclap Wastes. Its master guards the final hall.",
+    "name_cn": "琉璃迷宫",
+    "kind": "resource",
+    "entry": {
+      "realm": {
+        "id": "realm.dao_integration",
+        "stage": 3
+      },
+      "regions": [
+        "region.thunderclap_wastes"
+      ],
+      "energy_cost": 28,
+      "daily_limit": 3,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 101370,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.thunder_beetle",
+          "enemy.glass_scorpion"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.glass_scorpion",
+          "enemy.storm_wraith",
+          "enemy.thunder_beetle"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.lightning_roc",
+          "enemy.tribulation_scavenger"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.mirror_thunder_beast"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.glass_labyrinth_wave",
+      "clear": "loot.dungeon.glass_labyrinth_clear",
+      "first_clear": {
+        "spirit_stones": 24300,
+        "sect_fame": 270,
+        "gear": [
+          {
+            "base": "gear.stormcall_helm",
+            "rarity": "legendary",
+            "ilvl": 76
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/glass_labyrinth_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a labyrinth of black glass walls reflecting lightning endlessly. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/glass_labyrinth_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a labyrinth of black glass walls reflecting lightning endlessly. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.coral_labyrinth",
+    "name": "Coral Labyrinth",
+    "description": "A challenge dungeon of the Sunken Dragon Sea. Its master guards the final hall.",
+    "name_cn": "珊瑚迷宫",
+    "kind": "challenge",
+    "entry": {
+      "realm": {
+        "id": "realm.tribulation_transcendence",
+        "stage": 3
+      },
+      "regions": [
+        "region.sunken_dragon_sea"
+      ],
+      "energy_cost": 30,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 207810,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.coral_naga",
+          "enemy.abyssal_angler"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.abyssal_angler",
+          "enemy.bone_dragon_spirit",
+          "enemy.coral_naga"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.tide_kraken",
+          "enemy.pirate_cultivator"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.coral_queen"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.coral_labyrinth_wave",
+      "clear": "loot.dungeon.coral_labyrinth_clear",
+      "first_clear": {
+        "spirit_stones": 30000,
+        "sect_fame": 300,
+        "gear": [
+          {
+            "base": "gear.tidecaller_boots",
+            "rarity": "legendary",
+            "ilvl": 84
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/coral_labyrinth_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: an underwater coral maze glowing in turquoise light with schools of glowing fish. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/coral_labyrinth_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside an underwater coral maze glowing in turquoise light with schools of glowing fish. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.buried_star_temple",
+    "name": "Buried Star Temple",
+    "description": "A resource dungeon of the Starfall Desert. Its master guards the final hall.",
+    "name_cn": "埋星神殿",
+    "kind": "resource",
+    "entry": {
+      "realm": {
+        "id": "realm.mahayana",
+        "stage": 3
+      },
+      "regions": [
+        "region.starfall_desert"
+      ],
+      "energy_cost": 32,
+      "daily_limit": 3,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 426012,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.sand_wyrm",
+          "enemy.star_scarab"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.star_scarab",
+          "enemy.dune_mirage",
+          "enemy.sand_wyrm"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.star_metal_golem",
+          "enemy.nomad_star_hunter"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.temple_star_priest"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.buried_star_temple_wave",
+      "clear": "loot.dungeon.buried_star_temple_clear",
+      "first_clear": {
+        "spirit_stones": 36300,
+        "sect_fame": 330,
+        "gear": [
+          {
+            "base": "gear.starborn_robe",
+            "rarity": "mythic",
+            "ilvl": 92
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/buried_star_temple_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a sand-buried temple of star metal with glowing hieroglyphs and fallen meteors in its halls. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/buried_star_temple_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a sand-buried temple of star metal with glowing hieroglyphs and fallen meteors in its halls. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.pharaohs_star_vault",
+    "name": "Pharaoh's Star Vault",
+    "description": "A secret realm hidden in the Starfall Desert. Branching paths, a sealed vault and a guardian.",
+    "name_cn": "法老星库",
+    "kind": "secret_realm",
+    "entry": {
+      "realm": {
+        "id": "realm.mahayana",
+        "stage": 5
+      },
+      "quests": [
+        "quest.main.starfall_desert_sovereign"
+      ],
+      "energy_cost": 25,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 681620,
+    "modifiers": [],
+    "rewards": {
+      "clear": "loot.dungeon.pharaohs_star_vault_clear",
+      "first_clear": {
+        "spirit_stones": 60500,
+        "sect_fame": 660
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "realm_nodes": [
+      {
+        "key": "gate",
+        "name": "Realm Gate",
+        "kind": "battle",
+        "position": [
+          0.5,
+          0.92
+        ],
+        "connections": [
+          "left",
+          "right"
+        ],
+        "waves": [
+          [
+            "enemy.sand_wyrm",
+            "enemy.star_scarab"
+          ]
+        ]
+      },
+      {
+        "key": "left",
+        "name": "Trial Path",
+        "kind": "elite",
+        "position": [
+          0.25,
+          0.68
+        ],
+        "connections": [
+          "gate",
+          "vault"
+        ],
+        "waves": [
+          [
+            "enemy.star_metal_golem"
+          ]
+        ]
+      },
+      {
+        "key": "right",
+        "name": "Still Pool",
+        "kind": "cultivation",
+        "position": [
+          0.75,
+          0.68
+        ],
+        "connections": [
+          "gate",
+          "whisper"
+        ]
+      },
+      {
+        "key": "vault",
+        "name": "Sealed Vault",
+        "kind": "chest",
+        "position": [
+          0.22,
+          0.4
+        ],
+        "connections": [
+          "left",
+          "altar"
+        ],
+        "chest": "loot.chest.pharaohs_star_vault_vault"
+      },
+      {
+        "key": "whisper",
+        "name": "Whispering Hollow",
+        "kind": "event",
+        "position": [
+          0.78,
+          0.4
+        ],
+        "connections": [
+          "right",
+          "altar"
+        ],
+        "event": "event.oasis_of_stars"
+      },
+      {
+        "key": "altar",
+        "name": "Guardian's Altar",
+        "kind": "boss",
+        "position": [
+          0.5,
+          0.15
+        ],
+        "connections": [
+          "vault",
+          "whisper",
+          "exit"
+        ],
+        "waves": [
+          [
+            "boss.vault_sphinx"
+          ]
+        ]
+      },
+      {
+        "key": "exit",
+        "name": "Exit",
+        "kind": "exit",
+        "position": [
+          0.5,
+          0.04
+        ],
+        "connections": [
+          "altar"
+        ]
+      }
+    ],
+    "art": {
+      "card": {
+        "file": "assets/dungeons/pharaohs_star_vault_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a hidden vault of golden halls under the sand filled with fallen stars and sleeping guardians. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/pharaohs_star_vault_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a hidden vault of golden halls under the sand filled with fallen stars and sleeping guardians. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      },
+      "map": {
+        "file": "assets/dungeons/pharaohs_star_vault_map.png",
+        "size": [
+          1080,
+          1620
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Top-down illustrated branching map of a hidden vault of golden halls under the sand filled with fallen stars and sleeping guardians, floating platforms connected by light paths, no text, no icons.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/secret_realm_map.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.trial_of_nine_flames",
+    "name": "Trial of Nine Flames",
+    "description": "A challenge dungeon of the Gate of Ascension. Its master guards the final hall.",
+    "name_cn": "九焰试炼",
+    "kind": "challenge",
+    "entry": {
+      "realm": {
+        "id": "realm.immortal_ascension",
+        "stage": 3
+      },
+      "regions": [
+        "region.gate_of_ascension"
+      ],
+      "energy_cost": 34,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 873325,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.phoenix_flame_spirit",
+          "enemy.chain_warden"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.chain_warden",
+          "enemy.cloud_lion",
+          "enemy.phoenix_flame_spirit"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.ascension_judge",
+          "enemy.failed_ascendant"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.flame_trial_master"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.trial_of_nine_flames_wave",
+      "clear": "loot.dungeon.trial_of_nine_flames_clear",
+      "first_clear": {
+        "spirit_stones": 43200,
+        "sect_fame": 360,
+        "gear": [
+          {
+            "base": "gear.ascendant_torc",
+            "rarity": "mythic",
+            "ilvl": 100
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/trial_of_nine_flames_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: nine rings of golden fire floating in white space before the gate. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/trial_of_nine_flames_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside nine rings of golden fire floating in white space before the gate. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.immortal_peach_garden",
+    "name": "Immortal Peach Garden",
+    "description": "A resource dungeon of the Jade Immortal Realm. Its master guards the final hall.",
+    "name_cn": "蟠桃园",
+    "kind": "resource",
+    "entry": {
+      "realm": {
+        "id": "realm.earth_immortal",
+        "stage": 3
+      },
+      "regions": [
+        "region.jade_immortal_realm"
+      ],
+      "energy_cost": 36,
+      "daily_limit": 3,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 1790315,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.jade_tiger",
+          "enemy.immortal_gardener"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.immortal_gardener",
+          "enemy.waterfall_spirit",
+          "enemy.jade_tiger"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.jade_guardian_beast",
+          "enemy.realm_exile"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.peach_tree_ancestor"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.immortal_peach_garden_wave",
+      "clear": "loot.dungeon.immortal_peach_garden_clear",
+      "first_clear": {
+        "spirit_stones": 50700,
+        "sect_fame": 390,
+        "gear": [
+          {
+            "base": "gear.jadeclaw_boots",
+            "rarity": "mythic",
+            "ilvl": 108
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/immortal_peach_garden_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a vast garden of glowing peach trees on floating jade terraces. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/immortal_peach_garden_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a vast garden of glowing peach trees on floating jade terraces. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.hall_of_verdicts",
+    "name": "Hall of Verdicts",
+    "description": "A challenge dungeon of the Golden Palace of Laws. Its master guards the final hall.",
+    "name_cn": "裁决殿",
+    "kind": "challenge",
+    "entry": {
+      "realm": {
+        "id": "realm.heavenly_immortal",
+        "stage": 3
+      },
+      "regions": [
+        "region.golden_palace_of_laws"
+      ],
+      "energy_cost": 38,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 3670148,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.law_enforcer",
+          "enemy.golden_crow"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.golden_crow",
+          "enemy.scroll_golem",
+          "enemy.law_enforcer"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.nine_tailed_shadow",
+          "enemy.rebel_immortal"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.chief_magistrate"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.hall_of_verdicts_wave",
+      "clear": "loot.dungeon.hall_of_verdicts_clear",
+      "first_clear": {
+        "spirit_stones": 58800,
+        "sect_fame": 420,
+        "gear": [
+          {
+            "base": "gear.lawbound_crown",
+            "rarity": "mythic",
+            "ilvl": 116
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/hall_of_verdicts_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a vast golden courtroom with floating law-wheels and chains of light. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/hall_of_verdicts_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a vast golden courtroom with floating law-wheels and chains of light. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.hall_of_five_elements",
+    "name": "Hall of Five Elements",
+    "description": "A challenge dungeon of the Throne of the Immortal Emperor. Its master guards the final hall.",
+    "name_cn": "五行殿",
+    "kind": "challenge",
+    "entry": {
+      "realm": {
+        "id": "realm.immortal_king",
+        "stage": 3
+      },
+      "regions": [
+        "region.throne_of_the_immortal_emperor"
+      ],
+      "energy_cost": 40,
+      "party": {
+        "companions_allowed": false,
+        "max_companions": 0
+      }
+    },
+    "rec_cp": 7523802,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.azure_dragon_guard",
+          "enemy.five_element_sentinel"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.five_element_sentinel",
+          "enemy.star_whale",
+          "enemy.azure_dragon_guard"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.emperors_shadow",
+          "enemy.throne_usurper"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.five_element_ancestor"
+        ]
+      }
+    ],
+    "modifiers": [],
+    "rewards": {
+      "per_wave": "loot.dungeon.hall_of_five_elements_wave",
+      "clear": "loot.dungeon.hall_of_five_elements_clear",
+      "first_clear": {
+        "spirit_stones": 67500,
+        "sect_fame": 450,
+        "gear": [
+          {
+            "base": "gear.emperor_necklace",
+            "rarity": "mythic",
+            "ilvl": 124
+          }
+        ]
+      }
+    },
+    "checkpoints": false,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/hall_of_five_elements_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Dungeon card illustration: a circular hall with five elemental gates of wood, fire, earth, metal and water around a starry floor. Wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/hall_of_five_elements_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a circular hall with five elemental gates of wood, fire, earth, metal and water around a starry floor. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.dragon_king_palace",
+    "name": "Sunken Palace of the Dragon King",
+    "description": "A mega dungeon of the Sunken Dragon Sea. Bring Dao Companions. Divine treasures sleep here.",
+    "name_cn": "龙王沉宫",
+    "kind": "mega",
+    "entry": {
+      "realm": {
+        "id": "realm.tribulation_transcendence",
+        "stage": 5
+      },
+      "rank": "rank.core_disciple",
+      "energy_cost": 40,
+      "party": {
+        "companions_allowed": true,
+        "max_companions": 2
+      }
+    },
+    "rec_cp": 664992,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.coral_naga",
+          "enemy.abyssal_angler",
+          "enemy.bone_dragon_spirit"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.tide_kraken",
+          "enemy.pirate_cultivator",
+          "enemy.tide_kraken"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.coral_queen"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.tide_kraken",
+          "enemy.tide_kraken",
+          "enemy.pirate_cultivator",
+          "enemy.pirate_cultivator"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.dragon_king_ao"
+        ]
+      }
+    ],
+    "modifiers": [
+      {
+        "id": "abyssal_pressure",
+        "name": "Overwhelming Pressure",
+        "description": "All enemies deal 15% more damage.",
+        "effect": {
+          "enemy_dmg_mult": 1.15
+        }
+      }
+    ],
+    "rewards": {
+      "per_wave": "loot.dungeon.dragon_king_palace_wave",
+      "clear": "loot.dungeon.dragon_king_palace_clear",
+      "first_clear": {
+        "spirit_stones": 200000,
+        "sect_fame": 3000
+      }
+    },
+    "checkpoints": true,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/dragon_king_palace_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Mega dungeon card illustration: a vast palace of coral and pearl on the sea floor, dragon statues and drowned treasure. Epic wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/dragon_king_palace_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a vast palace of coral and pearl on the sea floor, dragon statues and drowned treasure. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.fallen_heaven_ruins",
+    "name": "Ruins of the Fallen Heaven",
+    "description": "A mega dungeon of the Gate of Ascension. Bring Dao Companions. Divine treasures sleep here.",
+    "name_cn": "坠天遗墟",
+    "kind": "mega",
+    "entry": {
+      "realm": {
+        "id": "realm.immortal_ascension",
+        "stage": 5
+      },
+      "rank": "rank.direct_disciple",
+      "energy_cost": 40,
+      "party": {
+        "companions_allowed": true,
+        "max_companions": 2
+      }
+    },
+    "rec_cp": 2794640,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.phoenix_flame_spirit",
+          "enemy.chain_warden",
+          "enemy.cloud_lion"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.ascension_judge",
+          "enemy.failed_ascendant",
+          "enemy.ascension_judge"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.flame_trial_master"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.ascension_judge",
+          "enemy.ascension_judge",
+          "enemy.failed_ascendant",
+          "enemy.failed_ascendant"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.fallen_heaven_lord"
+        ]
+      }
+    ],
+    "modifiers": [
+      {
+        "id": "abyssal_pressure",
+        "name": "Overwhelming Pressure",
+        "description": "All enemies deal 15% more damage.",
+        "effect": {
+          "enemy_dmg_mult": 1.15
+        }
+      }
+    ],
+    "rewards": {
+      "per_wave": "loot.dungeon.fallen_heaven_ruins_wave",
+      "clear": "loot.dungeon.fallen_heaven_ruins_clear",
+      "first_clear": {
+        "spirit_stones": 288000,
+        "sect_fame": 3600
+      }
+    },
+    "checkpoints": true,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/fallen_heaven_ruins_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Mega dungeon card illustration: the burning ruins of a heavenly city fallen through the Gate of Ascension, golden rubble and phoenix fire. Epic wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/fallen_heaven_ruins_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside the burning ruins of a heavenly city fallen through the Gate of Ascension, golden rubble and phoenix fire. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.ten_thousand_laws_hall",
+    "name": "Hall of Ten Thousand Laws",
+    "description": "A mega dungeon of the Golden Palace of Laws. Bring Dao Companions. Divine treasures sleep here.",
+    "name_cn": "万律大殿",
+    "kind": "mega",
+    "entry": {
+      "realm": {
+        "id": "realm.heavenly_immortal",
+        "stage": 5
+      },
+      "rank": "rank.elder",
+      "energy_cost": 40,
+      "party": {
+        "companions_allowed": true,
+        "max_companions": 2
+      }
+    },
+    "rec_cp": 11744472,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.law_enforcer",
+          "enemy.golden_crow",
+          "enemy.scroll_golem"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.nine_tailed_shadow",
+          "enemy.rebel_immortal",
+          "enemy.nine_tailed_shadow"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.chief_magistrate"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.nine_tailed_shadow",
+          "enemy.nine_tailed_shadow",
+          "enemy.rebel_immortal",
+          "enemy.rebel_immortal"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.law_sovereign"
+        ]
+      }
+    ],
+    "modifiers": [
+      {
+        "id": "abyssal_pressure",
+        "name": "Overwhelming Pressure",
+        "description": "All enemies deal 15% more damage.",
+        "effect": {
+          "enemy_dmg_mult": 1.15
+        }
+      }
+    ],
+    "rewards": {
+      "per_wave": "loot.dungeon.ten_thousand_laws_hall_wave",
+      "clear": "loot.dungeon.ten_thousand_laws_hall_clear",
+      "first_clear": {
+        "spirit_stones": 392000,
+        "sect_fame": 4200
+      }
+    },
+    "checkpoints": true,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/ten_thousand_laws_hall_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Mega dungeon card illustration: an infinite golden hall where every pillar is a written law and great law-wheels turn overhead. Epic wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/ten_thousand_laws_hall_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside an infinite golden hall where every pillar is a written law and great law-wheels turn overhead. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "dungeon.primordial_chaos_abyss",
+    "name": "Primordial Chaos Abyss",
+    "description": "A mega dungeon of the Throne of the Immortal Emperor. Bring Dao Companions. Divine treasures sleep here.",
+    "name_cn": "混沌深渊",
+    "kind": "mega",
+    "entry": {
+      "realm": {
+        "id": "realm.immortal_king",
+        "stage": 5
+      },
+      "rank": "rank.grand_elder",
+      "energy_cost": 40,
+      "party": {
+        "companions_allowed": true,
+        "max_companions": 2
+      }
+    },
+    "rec_cp": 24076168,
+    "waves": [
+      {
+        "enemies": [
+          "enemy.azure_dragon_guard",
+          "enemy.five_element_sentinel",
+          "enemy.star_whale"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.emperors_shadow",
+          "enemy.throne_usurper",
+          "enemy.emperors_shadow"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.five_element_ancestor"
+        ]
+      },
+      {
+        "enemies": [
+          "enemy.emperors_shadow",
+          "enemy.emperors_shadow",
+          "enemy.throne_usurper",
+          "enemy.throne_usurper"
+        ]
+      },
+      {
+        "enemies": [
+          "boss.chaos_progenitor"
+        ]
+      }
+    ],
+    "modifiers": [
+      {
+        "id": "abyssal_pressure",
+        "name": "Overwhelming Pressure",
+        "description": "All enemies deal 15% more damage.",
+        "effect": {
+          "enemy_dmg_mult": 1.15
+        }
+      }
+    ],
+    "rewards": {
+      "per_wave": "loot.dungeon.primordial_chaos_abyss_wave",
+      "clear": "loot.dungeon.primordial_chaos_abyss_clear",
+      "first_clear": {
+        "spirit_stones": 450000,
+        "sect_fame": 4500
+      }
+    },
+    "checkpoints": true,
+    "persistent_hp": true,
+    "art": {
+      "card": {
+        "file": "assets/dungeons/primordial_chaos_abyss_card.png",
+        "size": [
+          1024,
+          640
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Mega dungeon card illustration: a swirling abyss of primordial chaos beneath the Immortal Emperor's throne, all five elements tearing at each other. Epic wide painterly composition, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/dungeon_hub.png"
+        ],
+        "status": "planned"
+      },
+      "battle_bg": {
+        "file": "assets/dungeons/primordial_chaos_abyss_battle_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: battle backdrop inside a swirling abyss of primordial chaos beneath the Immortal Emperor's throne, all five elements tearing at each other. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

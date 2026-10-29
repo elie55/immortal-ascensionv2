@@ -1,0 +1,445 @@
+[
+  {
+    "id": "node.gate_of_ascension.entry",
+    "name": "Gate of Ascension Border",
+    "description": "Border of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.gate_of_ascension.gathering",
+      "node.gate_of_ascension.outskirts"
+    ],
+    "rec_cp": 349330,
+    "first_clear": {
+      "spirit_stones": 2160
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.phoenix_flame_spirit"
+      ],
+      [
+        "enemy.cloud_lion",
+        "enemy.phoenix_flame_spirit"
+      ]
+    ]
+  },
+  {
+    "id": "node.gate_of_ascension.gathering",
+    "name": "Gate of Ascension Gathering Grounds",
+    "description": "Gathering Grounds of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.gate_of_ascension.entry",
+      "node.gate_of_ascension.west_path",
+      "node.gate_of_ascension.cache"
+    ],
+    "rec_cp": 399634,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 11,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.phoenix_lotus",
+          "qty": 3
+        },
+        {
+          "id": "mat.ascension_gold",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.gate_of_ascension.outskirts",
+    "name": "Gate of Ascension Outskirts",
+    "description": "Outskirts of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.gate_of_ascension.entry",
+      "node.gate_of_ascension.cache",
+      "node.gate_of_ascension.east_path"
+    ],
+    "rec_cp": 377276,
+    "first_clear": {
+      "spirit_stones": 2160
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.chain_warden",
+        "enemy.cloud_lion"
+      ],
+      [
+        "enemy.chain_warden",
+        "enemy.failed_ascendant"
+      ]
+    ]
+  },
+  {
+    "id": "node.gate_of_ascension.west_path",
+    "name": "Gate of Ascension Western Trail",
+    "description": "Western Trail of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.gate_of_ascension.gathering",
+      "node.gate_of_ascension.lair"
+    ],
+    "rec_cp": 391250,
+    "first_clear": {
+      "spirit_stones": 2160
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.cloud_lion",
+        "enemy.phoenix_flame_spirit"
+      ],
+      [
+        "enemy.cloud_lion",
+        "enemy.cloud_lion"
+      ]
+    ]
+  },
+  {
+    "id": "node.gate_of_ascension.cache",
+    "name": "Gate of Ascension Hidden Cache",
+    "description": "Hidden Cache of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.gate_of_ascension.gathering",
+      "node.gate_of_ascension.outskirts",
+      "node.gate_of_ascension.crossroads"
+    ],
+    "rec_cp": 445745,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 11,
+    "chest": "loot.chest.gate_of_ascension"
+  },
+  {
+    "id": "node.gate_of_ascension.east_path",
+    "name": "Gate of Ascension Eastern Trail",
+    "description": "Eastern Trail of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.gate_of_ascension.outskirts",
+      "node.gate_of_ascension.ridge"
+    ],
+    "rec_cp": 419196,
+    "first_clear": {
+      "spirit_stones": 2160
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.chain_warden",
+        "enemy.failed_ascendant"
+      ],
+      [
+        "enemy.phoenix_flame_spirit",
+        "enemy.chain_warden"
+      ]
+    ]
+  },
+  {
+    "id": "node.gate_of_ascension.lair",
+    "name": "Gate of Ascension Lair",
+    "description": "Lair of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.gate_of_ascension.west_path",
+      "node.gate_of_ascension.deep_path"
+    ],
+    "rec_cp": 823021,
+    "first_clear": {
+      "spirit_stones": 5760,
+      "items": [
+        {
+          "id": "mat.gate_light_crystal",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.ascension_judge"
+      ]
+    ]
+  },
+  {
+    "id": "node.gate_of_ascension.crossroads",
+    "name": "Gate of Ascension Crossroads",
+    "description": "Crossroads of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.gate_of_ascension.cache",
+      "node.gate_of_ascension.deep_path",
+      "node.gate_of_ascension.sanctum"
+    ],
+    "rec_cp": 491857,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 11,
+    "event": "event.the_weighing"
+  },
+  {
+    "id": "node.gate_of_ascension.ridge",
+    "name": "Gate of Ascension Ridge",
+    "description": "Ridge of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.gate_of_ascension.east_path",
+      "node.gate_of_ascension.sanctum"
+    ],
+    "rec_cp": 461116,
+    "first_clear": {
+      "spirit_stones": 2160
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.phoenix_flame_spirit",
+        "enemy.chain_warden"
+      ],
+      [
+        "enemy.failed_ascendant"
+      ]
+    ]
+  },
+  {
+    "id": "node.gate_of_ascension.deep_path",
+    "name": "Gate of Ascension Deep Path",
+    "description": "Deep Path of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.gate_of_ascension.lair",
+      "node.gate_of_ascension.crossroads",
+      "node.gate_of_ascension.den"
+    ],
+    "rec_cp": 475089,
+    "first_clear": {
+      "spirit_stones": 2160
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.chain_warden",
+        "enemy.cloud_lion"
+      ],
+      [
+        "enemy.chain_warden",
+        "enemy.failed_ascendant"
+      ]
+    ]
+  },
+  {
+    "id": "node.gate_of_ascension.sanctum",
+    "name": "Gate of Ascension Sanctum",
+    "description": "Sanctum of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "cultivation",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.gate_of_ascension.crossroads",
+      "node.gate_of_ascension.ridge",
+      "node.gate_of_ascension.hidden_grove",
+      "node.gate_of_ascension.approach"
+    ],
+    "rec_cp": 537968,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 11,
+    "cultivation": {
+      "qi_mult": 2.0,
+      "minutes": 30,
+      "energy_cost": 6
+    }
+  },
+  {
+    "id": "node.gate_of_ascension.den",
+    "name": "Gate of Ascension Den",
+    "description": "Den of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.gate_of_ascension.deep_path",
+      "node.gate_of_ascension.throne"
+    ],
+    "rec_cp": 955767,
+    "first_clear": {
+      "spirit_stones": 5760,
+      "items": [
+        {
+          "id": "mat.gate_light_crystal",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.phoenix_flame_spirit",
+        "enemy.chain_warden"
+      ],
+      [
+        "enemy.ascension_judge"
+      ]
+    ]
+  },
+  {
+    "id": "node.gate_of_ascension.hidden_grove",
+    "name": "Gate of Ascension Secret Place",
+    "description": "Secret Place of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.gate_of_ascension.sanctum",
+      "node.gate_of_ascension.approach"
+    ],
+    "rec_cp": 568709,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 11,
+    "event": "event.the_weighing",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.gate_of_ascension.approach",
+    "name": "Gate of Ascension Approach",
+    "description": "Approach of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.gate_of_ascension.sanctum",
+      "node.gate_of_ascension.hidden_grove",
+      "node.gate_of_ascension.throne"
+    ],
+    "rec_cp": 530982,
+    "first_clear": {
+      "spirit_stones": 2160
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.cloud_lion",
+        "enemy.cloud_lion"
+      ],
+      [
+        "enemy.chain_warden",
+        "enemy.cloud_lion"
+      ]
+    ]
+  },
+  {
+    "id": "node.gate_of_ascension.throne",
+    "name": "Gate of Ascension Throne",
+    "description": "Throne of the Gate of Ascension.",
+    "region": "region.gate_of_ascension",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.gate_of_ascension.den",
+      "node.gate_of_ascension.approach"
+    ],
+    "rec_cp": 2288810,
+    "first_clear": {
+      "spirit_stones": 21600,
+      "sect_fame": 480
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.cloud_lion",
+        "enemy.ascension_judge"
+      ],
+      [
+        "boss.vermilion_gatekeeper"
+      ]
+    ]
+  }
+]

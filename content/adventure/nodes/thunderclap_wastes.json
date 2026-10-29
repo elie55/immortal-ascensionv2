@@ -1,0 +1,445 @@
+[
+  {
+    "id": "node.thunderclap_wastes.entry",
+    "name": "Thunderclap Wastes Border",
+    "description": "Border of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.thunderclap_wastes.gathering",
+      "node.thunderclap_wastes.outskirts"
+    ],
+    "rec_cp": 40548,
+    "first_clear": {
+      "spirit_stones": 1215
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.thunder_beetle"
+      ],
+      [
+        "enemy.storm_wraith",
+        "enemy.thunder_beetle"
+      ]
+    ]
+  },
+  {
+    "id": "node.thunderclap_wastes.gathering",
+    "name": "Thunderclap Wastes Gathering Grounds",
+    "description": "Gathering Grounds of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.thunderclap_wastes.entry",
+      "node.thunderclap_wastes.west_path",
+      "node.thunderclap_wastes.cache"
+    ],
+    "rec_cp": 46387,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 9,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.thunderroot",
+          "qty": 3
+        },
+        {
+          "id": "mat.storm_glass",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.thunderclap_wastes.outskirts",
+    "name": "Thunderclap Wastes Outskirts",
+    "description": "Outskirts of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.thunderclap_wastes.entry",
+      "node.thunderclap_wastes.cache",
+      "node.thunderclap_wastes.east_path"
+    ],
+    "rec_cp": 43792,
+    "first_clear": {
+      "spirit_stones": 1215
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.glass_scorpion",
+        "enemy.storm_wraith"
+      ],
+      [
+        "enemy.glass_scorpion",
+        "enemy.tribulation_scavenger"
+      ]
+    ]
+  },
+  {
+    "id": "node.thunderclap_wastes.west_path",
+    "name": "Thunderclap Wastes Western Trail",
+    "description": "Western Trail of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.thunderclap_wastes.gathering",
+      "node.thunderclap_wastes.lair"
+    ],
+    "rec_cp": 45414,
+    "first_clear": {
+      "spirit_stones": 1215
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.storm_wraith",
+        "enemy.thunder_beetle"
+      ],
+      [
+        "enemy.storm_wraith",
+        "enemy.storm_wraith"
+      ]
+    ]
+  },
+  {
+    "id": "node.thunderclap_wastes.cache",
+    "name": "Thunderclap Wastes Hidden Cache",
+    "description": "Hidden Cache of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.thunderclap_wastes.gathering",
+      "node.thunderclap_wastes.outskirts",
+      "node.thunderclap_wastes.crossroads"
+    ],
+    "rec_cp": 51739,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 9,
+    "chest": "loot.chest.thunderclap_wastes"
+  },
+  {
+    "id": "node.thunderclap_wastes.east_path",
+    "name": "Thunderclap Wastes Eastern Trail",
+    "description": "Eastern Trail of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.thunderclap_wastes.outskirts",
+      "node.thunderclap_wastes.ridge"
+    ],
+    "rec_cp": 48658,
+    "first_clear": {
+      "spirit_stones": 1215
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.glass_scorpion",
+        "enemy.tribulation_scavenger"
+      ],
+      [
+        "enemy.thunder_beetle",
+        "enemy.glass_scorpion"
+      ]
+    ]
+  },
+  {
+    "id": "node.thunderclap_wastes.lair",
+    "name": "Thunderclap Wastes Lair",
+    "description": "Lair of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.thunderclap_wastes.west_path",
+      "node.thunderclap_wastes.deep_path"
+    ],
+    "rec_cp": 95531,
+    "first_clear": {
+      "spirit_stones": 3240,
+      "items": [
+        {
+          "id": "mat.tribulation_core",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.lightning_roc"
+      ]
+    ]
+  },
+  {
+    "id": "node.thunderclap_wastes.crossroads",
+    "name": "Thunderclap Wastes Crossroads",
+    "description": "Crossroads of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.thunderclap_wastes.cache",
+      "node.thunderclap_wastes.deep_path",
+      "node.thunderclap_wastes.sanctum"
+    ],
+    "rec_cp": 57092,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 9,
+    "event": "event.struck_monolith"
+  },
+  {
+    "id": "node.thunderclap_wastes.ridge",
+    "name": "Thunderclap Wastes Ridge",
+    "description": "Ridge of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.thunderclap_wastes.east_path",
+      "node.thunderclap_wastes.sanctum"
+    ],
+    "rec_cp": 53523,
+    "first_clear": {
+      "spirit_stones": 1215
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.thunder_beetle",
+        "enemy.glass_scorpion"
+      ],
+      [
+        "enemy.tribulation_scavenger"
+      ]
+    ]
+  },
+  {
+    "id": "node.thunderclap_wastes.deep_path",
+    "name": "Thunderclap Wastes Deep Path",
+    "description": "Deep Path of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.thunderclap_wastes.lair",
+      "node.thunderclap_wastes.crossroads",
+      "node.thunderclap_wastes.den"
+    ],
+    "rec_cp": 55145,
+    "first_clear": {
+      "spirit_stones": 1215
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.glass_scorpion",
+        "enemy.storm_wraith"
+      ],
+      [
+        "enemy.glass_scorpion",
+        "enemy.tribulation_scavenger"
+      ]
+    ]
+  },
+  {
+    "id": "node.thunderclap_wastes.sanctum",
+    "name": "Thunderclap Wastes Sanctum",
+    "description": "Sanctum of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "cultivation",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.thunderclap_wastes.crossroads",
+      "node.thunderclap_wastes.ridge",
+      "node.thunderclap_wastes.hidden_grove",
+      "node.thunderclap_wastes.approach"
+    ],
+    "rec_cp": 62444,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 9,
+    "cultivation": {
+      "qi_mult": 1.85,
+      "minutes": 30,
+      "energy_cost": 6
+    }
+  },
+  {
+    "id": "node.thunderclap_wastes.den",
+    "name": "Thunderclap Wastes Den",
+    "description": "Den of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.thunderclap_wastes.deep_path",
+      "node.thunderclap_wastes.throne"
+    ],
+    "rec_cp": 110939,
+    "first_clear": {
+      "spirit_stones": 3240,
+      "items": [
+        {
+          "id": "mat.tribulation_core",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.thunder_beetle",
+        "enemy.glass_scorpion"
+      ],
+      [
+        "enemy.lightning_roc"
+      ]
+    ]
+  },
+  {
+    "id": "node.thunderclap_wastes.hidden_grove",
+    "name": "Thunderclap Wastes Secret Place",
+    "description": "Secret Place of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.thunderclap_wastes.sanctum",
+      "node.thunderclap_wastes.approach"
+    ],
+    "rec_cp": 66012,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 9,
+    "event": "event.struck_monolith",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.thunderclap_wastes.approach",
+    "name": "Thunderclap Wastes Approach",
+    "description": "Approach of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.thunderclap_wastes.sanctum",
+      "node.thunderclap_wastes.hidden_grove",
+      "node.thunderclap_wastes.throne"
+    ],
+    "rec_cp": 61633,
+    "first_clear": {
+      "spirit_stones": 1215
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.storm_wraith",
+        "enemy.storm_wraith"
+      ],
+      [
+        "enemy.glass_scorpion",
+        "enemy.storm_wraith"
+      ]
+    ]
+  },
+  {
+    "id": "node.thunderclap_wastes.throne",
+    "name": "Thunderclap Wastes Throne",
+    "description": "Throne of the Thunderclap Wastes.",
+    "region": "region.thunderclap_wastes",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.thunderclap_wastes.den",
+      "node.thunderclap_wastes.approach"
+    ],
+    "rec_cp": 265670,
+    "first_clear": {
+      "spirit_stones": 12150,
+      "sect_fame": 360
+    },
+    "replayable": true,
+    "energy_cost": 9,
+    "waves": [
+      [
+        "enemy.storm_wraith",
+        "enemy.lightning_roc"
+      ],
+      [
+        "boss.nine_bolt_thunder_emperor"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,535 @@
+[
+  {
+    "id": "alchemy.ember_marrow_pill",
+    "name": "Ember Marrow Pill",
+    "description": "Grade III. Refines the marrow with fire; grants Qi and a brief fire resistance.",
+    "name_cn": "炎髓丹",
+    "output": {
+      "id": "cons.ember_marrow_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.fire_bud",
+        "qty": 4
+      },
+      {
+        "id": "mat.salamander_scale",
+        "qty": 2
+      },
+      {
+        "id": "mat.ember_core",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 900,
+    "grade": 3,
+    "success_base": 0.5,
+    "furnace_min": 1,
+    "proficiency_min": 120,
+    "proficiency_xp": 90,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 600
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.frost_lotus_pill",
+    "name": "Frost Lotus Pill",
+    "description": "Grade III. Calms the Qi; grants Qi and a short water-resistance boost.",
+    "name_cn": "冰莲丹",
+    "output": {
+      "id": "cons.frost_lotus_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.snow_lotus_petal",
+        "qty": 4
+      },
+      {
+        "id": "mat.yeti_fur",
+        "qty": 2
+      },
+      {
+        "id": "mat.lotus_ice_heart",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 1600,
+    "grade": 4,
+    "success_base": 0.5,
+    "furnace_min": 1,
+    "proficiency_min": 160,
+    "proficiency_xp": 120,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 1000
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.sword_marrow_pill",
+    "name": "Sword Marrow Pill",
+    "description": "Grade IV. Sharpens sword intent; grants Qi and a brief critical boost.",
+    "name_cn": "剑髓丹",
+    "output": {
+      "id": "cons.sword_marrow_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.sword_grass",
+        "qty": 4
+      },
+      {
+        "id": "mat.sword_spirit_shard",
+        "qty": 2
+      },
+      {
+        "id": "mat.sword_intent_crystal",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 2500,
+    "grade": 4,
+    "success_base": 0.5,
+    "furnace_min": 2,
+    "proficiency_min": 200,
+    "proficiency_xp": 150,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 1500
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.demon_purge_pill",
+    "name": "Demon-Purge Pill",
+    "description": "Grade IV. Purges demonic Qi; grants Qi and status resistance.",
+    "name_cn": "祛魔丹",
+    "output": {
+      "id": "cons.demon_purge_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.blood_lotus",
+        "qty": 4
+      },
+      {
+        "id": "mat.demon_horn",
+        "qty": 2
+      },
+      {
+        "id": "mat.crimson_moon_shard",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 3600,
+    "grade": 5,
+    "success_base": 0.5,
+    "furnace_min": 2,
+    "proficiency_min": 240,
+    "proficiency_xp": 180,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 2500
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.celestial_peach_pill",
+    "name": "Celestial Peach Pill",
+    "description": "Grade V. Refines the spirit with celestial peach; grants a large amount of Qi.",
+    "name_cn": "仙桃丹",
+    "output": {
+      "id": "cons.celestial_peach_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.celestial_peach",
+        "qty": 4
+      },
+      {
+        "id": "mat.thunder_feather",
+        "qty": 2
+      },
+      {
+        "id": "mat.heaven_pine_amber",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 4900,
+    "grade": 5,
+    "success_base": 0.5,
+    "furnace_min": 2,
+    "proficiency_min": 280,
+    "proficiency_xp": 210,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 4000
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.star_dew_pill",
+    "name": "Star-Dew Pill",
+    "description": "Grade VI. Condenses starlight; grants a large amount of Qi and spiritual energy.",
+    "name_cn": "星露丹",
+    "output": {
+      "id": "cons.star_dew_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.star_dew_grass",
+        "qty": 4
+      },
+      {
+        "id": "mat.jellyfish_silk",
+        "qty": 2
+      },
+      {
+        "id": "mat.heavenly_star_crystal",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 6400,
+    "grade": 6,
+    "success_base": 0.5,
+    "furnace_min": 2,
+    "proficiency_min": 320,
+    "proficiency_xp": 240,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 6000
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.thunder_tempering_pill",
+    "name": "Thunder-Tempering Pill",
+    "description": "Grade VI. Tempers the meridians with lightning; grants Qi and lightning resistance.",
+    "name_cn": "雷炼丹",
+    "output": {
+      "id": "cons.thunder_tempering_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.thunderroot",
+        "qty": 4
+      },
+      {
+        "id": "mat.roc_lightning_feather",
+        "qty": 2
+      },
+      {
+        "id": "mat.tribulation_core",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 8100,
+    "grade": 6,
+    "success_base": 0.5,
+    "furnace_min": 2,
+    "proficiency_min": 360,
+    "proficiency_xp": 270,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 9000
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.dragon_marrow_pill",
+    "name": "Dragon Marrow Pill",
+    "description": "Grade VII. Infused with dragon marrow; grants a huge amount of Qi.",
+    "name_cn": "龙髓丹",
+    "output": {
+      "id": "cons.dragon_marrow_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.sea_jade_kelp",
+        "qty": 4
+      },
+      {
+        "id": "mat.kraken_ink",
+        "qty": 2
+      },
+      {
+        "id": "mat.dragon_pearl",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 10000,
+    "grade": 7,
+    "success_base": 0.5,
+    "furnace_min": 3,
+    "proficiency_min": 400,
+    "proficiency_xp": 300,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 12000
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.meteor_core_pill",
+    "name": "Meteor Core Pill",
+    "description": "Grade VII. Condenses a meteor's power; grants a huge amount of Qi.",
+    "name_cn": "陨核丹",
+    "output": {
+      "id": "cons.meteor_core_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.desert_star_flower",
+        "qty": 4
+      },
+      {
+        "id": "mat.sand_wyrm_tooth",
+        "qty": 2
+      },
+      {
+        "id": "mat.meteor_heart",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 12100,
+    "grade": 7,
+    "success_base": 0.5,
+    "furnace_min": 3,
+    "proficiency_min": 440,
+    "proficiency_xp": 330,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 16000
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.phoenix_rebirth_pill",
+    "name": "Phoenix Rebirth Pill",
+    "description": "Grade VIII. Burns away mortal impurities; grants a vast amount of Qi.",
+    "name_cn": "凤生丹",
+    "output": {
+      "id": "cons.phoenix_rebirth_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.phoenix_lotus",
+        "qty": 4
+      },
+      {
+        "id": "mat.phoenix_down",
+        "qty": 2
+      },
+      {
+        "id": "mat.gate_light_crystal",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 14400,
+    "grade": 8,
+    "success_base": 0.5,
+    "furnace_min": 3,
+    "proficiency_min": 480,
+    "proficiency_xp": 360,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 20000
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.immortal_peach_pill",
+    "name": "Immortal Peach Pill",
+    "description": "Grade VIII. Distilled from immortal peaches; grants a vast amount of Qi.",
+    "name_cn": "蟠桃丹",
+    "output": {
+      "id": "cons.immortal_peach_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.immortal_peach_blossom",
+        "qty": 4
+      },
+      {
+        "id": "mat.white_tiger_fang",
+        "qty": 2
+      },
+      {
+        "id": "mat.realm_heart_jade",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 16900,
+    "grade": 8,
+    "success_base": 0.5,
+    "furnace_min": 3,
+    "proficiency_min": 520,
+    "proficiency_xp": 390,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 26000
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.golden_law_pill",
+    "name": "Golden Law Pill",
+    "description": "Grade IX. Refines Qi according to heavenly law; grants an immense amount of Qi.",
+    "name_cn": "金律丹",
+    "output": {
+      "id": "cons.golden_law_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.law_flower",
+        "qty": 4
+      },
+      {
+        "id": "mat.golden_crow_feather",
+        "qty": 2
+      },
+      {
+        "id": "mat.law_wheel_fragment",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 19600,
+    "grade": 9,
+    "success_base": 0.5,
+    "furnace_min": 3,
+    "proficiency_min": 560,
+    "proficiency_xp": 420,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 34000
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  },
+  {
+    "id": "alchemy.emperor_ascension_pill",
+    "name": "Emperor Ascension Pill",
+    "description": "Grade IX. The pill of emperors; grants a boundless amount of Qi.",
+    "name_cn": "帝升丹",
+    "output": {
+      "id": "cons.emperor_ascension_pill",
+      "qty": [
+        1,
+        2
+      ]
+    },
+    "ingredients": [
+      {
+        "id": "mat.primordial_lotus",
+        "qty": 4
+      },
+      {
+        "id": "mat.azure_dragon_scale",
+        "qty": 2
+      },
+      {
+        "id": "mat.primordial_chaos_stone",
+        "qty": 1
+      }
+    ],
+    "cost_stones": 22500,
+    "grade": 9,
+    "success_base": 0.5,
+    "furnace_min": 3,
+    "proficiency_min": 600,
+    "proficiency_xp": 450,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 45000
+    },
+    "failure": {
+      "return_pct": 0.3,
+      "byproduct": "gift.bitter_medicine"
+    }
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "id": "gear.cloudwalker_immortal_boots",
+    "name": "Cloudwalker Immortal Boots",
+    "description": "A divine treasure of the Ruins of the Fallen Heaven.",
+    "name_cn": "踏云仙履",
+    "slot": "boots",
+    "main_value": 8,
+    "rarity_range": [
+      "divine",
+      "divine"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": true,
+    "special_effects": [
+      {
+        "kind": "stat_mult",
+        "description": "Evasion +8%.",
+        "attribute": "eva",
+        "value": 8
+      },
+      {
+        "kind": "cooldown_reduction",
+        "description": "Technique cooldowns −1 at battle start.",
+        "value": 1
+      }
+    ],
+    "requirements": {
+      "realm": "realm.immortal_ascension"
+    },
+    "signature_affix": "spd",
+    "rarities": {
+      "divine": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/cloudwalker_immortal_boots_divine.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of white and gold boots trailing clouds and tiny phoenix sparks, prismatic dragon-pearl light, azure dragon motifs, rainbow halo, overwhelming divine aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    }
+  }
+]

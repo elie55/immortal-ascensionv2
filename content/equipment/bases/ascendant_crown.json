@@ -1,0 +1,84 @@
+[
+  {
+    "id": "gear.ascendant_crown",
+    "name": "Ascendant Crown",
+    "description": "Ascendant Crown, crafted from the materials of the Gate of Ascension.",
+    "name_cn": "飞升冠",
+    "slot": "helmet",
+    "main_value": 30,
+    "rarity_range": [
+      "legendary",
+      "immortal"
+    ],
+    "droppable": true,
+    "drop_tags": [
+      "gate_of_ascension"
+    ],
+    "unique": false,
+    "special_effects": [],
+    "requirements": {
+      "realm": "realm.immortal_ascension"
+    },
+    "rarities": {
+      "legendary": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/helmet/ascendant_crown_legendary.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a golden crown of phoenix feathers with a white flame jewel, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "mythic": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/helmet/ascendant_crown_mythic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a golden crown of phoenix feathers with a white flame jewel, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "immortal": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/helmet/ascendant_crown_immortal.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a golden crown of phoenix feathers with a white flame jewel, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "element": "elem.fire",
+    "signature_affix": "sp_power"
+  }
+]

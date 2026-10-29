@@ -619,7 +619,7 @@ export function contentCounts(db: Database): Record<string, number> {
     regions: by("region").length,
     dungeons: by("dungeon").filter((d) => d.data.kind !== "mega").length,
     mega_dungeons: by("dungeon").filter((d) => d.data.kind === "mega").length,
-    encounters: by("node").filter((n) => ["battle", "elite", "boss"].includes(n.data.kind)).length,
+    encounters: by("node").filter((n) => ["battle", "elite", "boss", "event", "hidden"].includes(n.data.kind)).length,
     bosses: by("boss").length,
     active_techniques: techs.filter((t) => t.data.kind === "active").length,
     passive_techniques: techs.filter((t) => t.data.kind === "passive").length,

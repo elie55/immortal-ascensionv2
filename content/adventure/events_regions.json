@@ -1,0 +1,886 @@
+[
+  {
+    "id": "event.lava_shrine",
+    "name": "The Lava Shrine",
+    "description": "A shrine to the fire god stands in a lava lake, reachable only by stepping stones.",
+    "name_cn": "熔岩祠",
+    "text": "A shrine to the fire god stands in a lava lake, reachable only by stepping stones.",
+    "choices": [
+      {
+        "text": "Cross the stepping stones.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.ember_core",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 270
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.caravan_raider"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Throw an offering into the lava.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.fire_bud",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 15
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/lava_shrine.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a small red shrine on an island in a lava lake, stepping stones glowing. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.frozen_reflection",
+    "name": "Frozen Reflection",
+    "description": "In the ice of the lake, your reflection moves a moment after you do.",
+    "name_cn": "冰中倒影",
+    "text": "In the ice of the lake, your reflection moves a moment after you do.",
+    "choices": [
+      {
+        "text": "Touch the reflection.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.lotus_ice_heart",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 480
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.frozen_cultist"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Walk away without looking back.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.snow_lotus_petal",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 20
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/frozen_reflection.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a frozen lake reflecting an aurora and a lone figure, the reflection subtly wrong. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.singing_blade",
+    "name": "The Singing Blade",
+    "description": "One sword in the field is humming a melody no one taught it.",
+    "name_cn": "鸣剑",
+    "text": "One sword in the field is humming a melody no one taught it.",
+    "choices": [
+      {
+        "text": "Draw the singing blade.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.sword_intent_crystal",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 750
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.tomb_robber"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Listen until the song ends.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.sword_grass",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 25
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/singing_blade.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a single silver sword glowing among rusted ones, notes of light rising from it. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.demon_bazaar",
+    "name": "The Demon Bazaar",
+    "description": "A masked bazaar sells things that should not be sold.",
+    "name_cn": "魔市",
+    "text": "A masked bazaar sells things that should not be sold.",
+    "choices": [
+      {
+        "text": "Browse the stalls.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.crimson_moon_shard",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 1080
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.blood_sect_disciple"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Leave before anyone notices you.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.blood_lotus",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 30
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/demon_bazaar.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a night market of masked demonic merchants under red lanterns among black spires. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.stair_of_trials",
+    "name": "Stair of Trials",
+    "description": "A stair of light appears in the clouds, each step heavier than the last.",
+    "name_cn": "试炼天梯",
+    "text": "A stair of light appears in the clouds, each step heavier than the last.",
+    "choices": [
+      {
+        "text": "Climb as far as you can.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.heaven_pine_amber",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 1470
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.heaven_seeker"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Bow to the stair and wait.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.celestial_peach",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 35
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/stair_of_trials.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a glowing staircase of light rising into golden clouds. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.falling_star",
+    "name": "A Falling Star",
+    "description": "A star falls onto a nearby cloud island and keeps glowing.",
+    "name_cn": "坠星",
+    "text": "A star falls onto a nearby cloud island and keeps glowing.",
+    "choices": [
+      {
+        "text": "Approach the fallen star.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.heavenly_star_crystal",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 1920
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.abyss_cultist"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Note its position for Star-Reader Wu.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.star_dew_grass",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 40
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/falling_star.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a glowing fallen star in a crater on a floating cloud island at night. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.struck_monolith",
+    "name": "The Struck Monolith",
+    "description": "A monolith hums before lightning strikes it, every few minutes, exactly on time.",
+    "name_cn": "雷击碑",
+    "text": "A monolith hums before lightning strikes it, every few minutes, exactly on time.",
+    "choices": [
+      {
+        "text": "Stand beside it when it strikes.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.tribulation_core",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 2430
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.tribulation_scavenger"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Carve your name beneath the others.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.thunderroot",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 45
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/struck_monolith.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a black monolith in a glass plain being struck by violet lightning. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.dragon_whisper",
+    "name": "Whisper of the Drowned",
+    "description": "A voice rises from the whirlpool, offering a deal.",
+    "name_cn": "溺龙低语",
+    "text": "A voice rises from the whirlpool, offering a deal.",
+    "choices": [
+      {
+        "text": "Listen to the offer.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.dragon_pearl",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 3000
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.pirate_cultivator"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Throw a stone into the whirlpool.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.sea_jade_kelp",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 50
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/dragon_whisper.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a swirling whirlpool with a giant dragon eye glowing beneath the water. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.oasis_of_stars",
+    "name": "Oasis of Stars",
+    "description": "An oasis reflects stars even at noon.",
+    "name_cn": "星泉",
+    "text": "An oasis reflects stars even at noon.",
+    "choices": [
+      {
+        "text": "Drink from the oasis.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.meteor_heart",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 3630
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.nomad_star_hunter"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Fill a flask and move on.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.desert_star_flower",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 55
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/oasis_of_stars.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a small oasis in silver dunes reflecting a starry sky at midday. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.the_weighing",
+    "name": "The Weighing",
+    "description": "A golden scale appears before you, waiting for something to be placed on it.",
+    "name_cn": "称魂",
+    "text": "A golden scale appears before you, waiting for something to be placed on it.",
+    "choices": [
+      {
+        "text": "Place your sword on the scale.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.gate_light_crystal",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 4320
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.failed_ascendant"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Place nothing on the scale.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.phoenix_lotus",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 60
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/the_weighing.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a giant golden scale floating in white clouds before a golden gate. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.forbidden_peach",
+    "name": "The Forbidden Peach",
+    "description": "A single peach glows brighter than the rest on a low branch.",
+    "name_cn": "禁桃",
+    "text": "A single peach glows brighter than the rest on a low branch.",
+    "choices": [
+      {
+        "text": "Pick the peach.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.realm_heart_jade",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 5070
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.realm_exile"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Tell the Peach Keeper about it.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.immortal_peach_blossom",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 65
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/forbidden_peach.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a single glowing golden peach on a low branch in a jade garden. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.unwritten_law",
+    "name": "The Unwritten Law",
+    "description": "A blank law-scroll floats in an empty hall, waiting for a law to be written.",
+    "name_cn": "无字律",
+    "text": "A blank law-scroll floats in an empty hall, waiting for a law to be written.",
+    "choices": [
+      {
+        "text": "Write a law.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.law_wheel_fragment",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 5880
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.rebel_immortal"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Leave it blank.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.law_flower",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 70
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/unwritten_law.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: a blank golden scroll floating in an empty golden hall with a brush beside it. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "event.empty_throne",
+    "name": "The Empty Throne",
+    "description": "The throne is empty. It would be so easy to sit.",
+    "name_cn": "空座",
+    "text": "The throne is empty. It would be so easy to sit.",
+    "choices": [
+      {
+        "text": "Sit on the throne.",
+        "outcomes": [
+          {
+            "chance": 0.5,
+            "text": "Fortune favours you.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.primordial_chaos_stone",
+                  "qty": 1
+                }
+              ],
+              "spirit_stones": 6750
+            }
+          },
+          {
+            "chance": 0.5,
+            "text": "Something was waiting for you.",
+            "battle": [
+              "enemy.throne_usurper"
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Kneel before it.",
+        "outcomes": [
+          {
+            "chance": 1.0,
+            "text": "You leave with a small reward and your wits intact.",
+            "rewards": {
+              "items": [
+                {
+                  "id": "mat.primordial_lotus",
+                  "qty": 3
+                }
+              ],
+              "sect_fame": 75
+            }
+          }
+        ]
+      }
+    ],
+    "art": {
+      "illustration": {
+        "file": "assets/events/empty_throne.png",
+        "size": [
+          1024,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Event illustration: an empty throne of starlight above the clouds with an azure dragon sleeping around it. Painterly, atmospheric, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/node_interactions.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

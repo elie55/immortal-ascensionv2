@@ -1,0 +1,282 @@
+[
+  {
+    "id": "tribulation.soul_transformation",
+    "name": "Soul Transformation Tribulation",
+    "description": "Waves of heavenly lightning test those who would enter Soul Transformation.",
+    "name_cn": "化神天劫",
+    "realm": "realm.soul_transformation",
+    "spirit": "boss.soul_transformation_tribulation_spirit",
+    "waves": [
+      {
+        "bolts": 3,
+        "dmg_mult": 1.0,
+        "element": "elem.metal"
+      },
+      {
+        "bolts": 4,
+        "dmg_mult": 1.4,
+        "element": "elem.metal"
+      },
+      {
+        "bolts": 5,
+        "dmg_mult": 1.8,
+        "element": "elem.metal"
+      },
+      {
+        "bolts": 6,
+        "dmg_mult": 2.2,
+        "element": "elem.metal"
+      }
+    ],
+    "modifiers": [],
+    "failure": {
+      "qi_loss_pct": 0.3,
+      "retry_cooldown_min": 180
+    },
+    "rewards": "loot.tribulation.soul_transformation",
+    "art": {
+      "battle_bg": {
+        "file": "assets/tribulations/soul_transformation_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a peak under a vast vortex of metal-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tribulation.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tribulation.tribulation_transcendence",
+    "name": "Great Heavenly Tribulation",
+    "description": "Waves of heavenly lightning test those who would enter Tribulation Transcendence.",
+    "name_cn": "渡劫大劫",
+    "realm": "realm.tribulation_transcendence",
+    "spirit": "boss.tribulation_transcendence_tribulation_spirit",
+    "waves": [
+      {
+        "bolts": 3,
+        "dmg_mult": 1.0,
+        "element": "elem.metal"
+      },
+      {
+        "bolts": 4,
+        "dmg_mult": 1.4,
+        "element": "elem.metal"
+      },
+      {
+        "bolts": 5,
+        "dmg_mult": 1.8,
+        "element": "elem.metal"
+      },
+      {
+        "bolts": 6,
+        "dmg_mult": 2.2,
+        "element": "elem.metal"
+      }
+    ],
+    "modifiers": [],
+    "failure": {
+      "qi_loss_pct": 0.3,
+      "retry_cooldown_min": 180
+    },
+    "rewards": "loot.tribulation.tribulation_transcendence",
+    "art": {
+      "battle_bg": {
+        "file": "assets/tribulations/tribulation_transcendence_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a peak under a vast vortex of metal-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tribulation.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tribulation.immortal_ascension",
+    "name": "Ascension Tribulation",
+    "description": "Waves of heavenly lightning test those who would enter Immortal Ascension.",
+    "name_cn": "飞升劫",
+    "realm": "realm.immortal_ascension",
+    "spirit": "boss.immortal_ascension_tribulation_spirit",
+    "waves": [
+      {
+        "bolts": 3,
+        "dmg_mult": 1.0,
+        "element": "elem.fire"
+      },
+      {
+        "bolts": 4,
+        "dmg_mult": 1.4,
+        "element": "elem.fire"
+      },
+      {
+        "bolts": 5,
+        "dmg_mult": 1.8,
+        "element": "elem.fire"
+      },
+      {
+        "bolts": 6,
+        "dmg_mult": 2.2,
+        "element": "elem.fire"
+      },
+      {
+        "bolts": 7,
+        "dmg_mult": 2.6,
+        "element": "elem.fire"
+      }
+    ],
+    "modifiers": [],
+    "failure": {
+      "qi_loss_pct": 0.3,
+      "retry_cooldown_min": 180
+    },
+    "rewards": "loot.tribulation.immortal_ascension",
+    "art": {
+      "battle_bg": {
+        "file": "assets/tribulations/immortal_ascension_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a peak under a vast vortex of fire-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tribulation.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tribulation.golden_immortal",
+    "name": "Golden Immortal Tribulation",
+    "description": "Waves of heavenly lightning test those who would enter Golden Immortal.",
+    "name_cn": "金仙劫",
+    "realm": "realm.golden_immortal",
+    "spirit": "boss.golden_immortal_tribulation_spirit",
+    "waves": [
+      {
+        "bolts": 3,
+        "dmg_mult": 1.0,
+        "element": "elem.fire"
+      },
+      {
+        "bolts": 4,
+        "dmg_mult": 1.4,
+        "element": "elem.fire"
+      },
+      {
+        "bolts": 5,
+        "dmg_mult": 1.8,
+        "element": "elem.fire"
+      },
+      {
+        "bolts": 6,
+        "dmg_mult": 2.2,
+        "element": "elem.fire"
+      },
+      {
+        "bolts": 7,
+        "dmg_mult": 2.6,
+        "element": "elem.fire"
+      }
+    ],
+    "modifiers": [],
+    "failure": {
+      "qi_loss_pct": 0.3,
+      "retry_cooldown_min": 180
+    },
+    "rewards": "loot.tribulation.golden_immortal",
+    "art": {
+      "battle_bg": {
+        "file": "assets/tribulations/golden_immortal_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a peak under a vast vortex of fire-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tribulation.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "tribulation.immortal_emperor",
+    "name": "Emperor's Tribulation",
+    "description": "Waves of heavenly lightning test those who would enter Immortal Emperor.",
+    "name_cn": "帝劫",
+    "realm": "realm.immortal_emperor",
+    "spirit": "boss.immortal_emperor_tribulation_spirit",
+    "waves": [
+      {
+        "bolts": 3,
+        "dmg_mult": 1.0,
+        "element": "elem.water"
+      },
+      {
+        "bolts": 4,
+        "dmg_mult": 1.4,
+        "element": "elem.water"
+      },
+      {
+        "bolts": 5,
+        "dmg_mult": 1.8,
+        "element": "elem.water"
+      },
+      {
+        "bolts": 6,
+        "dmg_mult": 2.2,
+        "element": "elem.water"
+      },
+      {
+        "bolts": 7,
+        "dmg_mult": 2.6,
+        "element": "elem.water"
+      },
+      {
+        "bolts": 8,
+        "dmg_mult": 3.0,
+        "element": "elem.water"
+      }
+    ],
+    "modifiers": [],
+    "failure": {
+      "qi_loss_pct": 0.3,
+      "retry_cooldown_min": 180
+    },
+    "rewards": "loot.tribulation.immortal_emperor",
+    "art": {
+      "battle_bg": {
+        "file": "assets/tribulations/immortal_emperor_bg.png",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Full-screen vertical background: a peak under a vast vortex of water-coloured storm clouds with lightning tearing down, grander than any previous tribulation. Painterly depth, atmospheric light, no characters, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/tribulation.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

@@ -1,0 +1,85 @@
+[
+  {
+    "id": "gear.jadeclaw_ring",
+    "name": "Jadeclaw Ring",
+    "description": "Jadeclaw Ring, crafted from the materials of the Jade Immortal Realm.",
+    "name_cn": "玉爪戒",
+    "slot": "ring",
+    "main_value": 6,
+    "rarity_range": [
+      "legendary",
+      "immortal"
+    ],
+    "droppable": true,
+    "drop_tags": [
+      "jade_immortal_realm"
+    ],
+    "unique": false,
+    "special_effects": [],
+    "requirements": {
+      "realm": "realm.earth_immortal"
+    },
+    "rarities": {
+      "legendary": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/ring/jadeclaw_ring_legendary.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a silver ring shaped like a tiger biting a jade stone, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "mythic": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/ring/jadeclaw_ring_mythic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a silver ring shaped like a tiger biting a jade stone, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "immortal": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/ring/jadeclaw_ring_immortal.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a silver ring shaped like a tiger biting a jade stone, white-gold radiance, celestial clouds, feathered light, translucent crystal. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "element": "elem.wood",
+    "signature_affix": "atk",
+    "set": "set.jadeclaw"
+  }
+]

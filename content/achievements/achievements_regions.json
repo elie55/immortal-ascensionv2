@@ -1,0 +1,522 @@
+[
+  {
+    "id": "ach.exploration.blazing_mountain_charted",
+    "name": "Blazing Mountain Charted",
+    "description": "Explore every place in the Blazing Mountain.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.blazing_mountain",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 1800,
+      "items": [
+        {
+          "id": "mat.ember_core",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_blazing_mountain_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Blazing Mountain, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.frozen_lotus_valley_charted",
+    "name": "Frozen Lotus Valley Charted",
+    "description": "Explore every place in the Frozen Lotus Valley.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.frozen_lotus_valley",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 3200,
+      "items": [
+        {
+          "id": "mat.lotus_ice_heart",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_frozen_lotus_valley_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Frozen Lotus Valley, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.ancient_sword_tomb_charted",
+    "name": "Ancient Sword Tomb Charted",
+    "description": "Explore every place in the Ancient Sword Tomb.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.ancient_sword_tomb",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 5000,
+      "items": [
+        {
+          "id": "mat.sword_intent_crystal",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_ancient_sword_tomb_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Ancient Sword Tomb, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.demon_territory_charted",
+    "name": "Demon Territory Charted",
+    "description": "Explore every place in the Demon Territory.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.demon_territory",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 7200,
+      "items": [
+        {
+          "id": "mat.crimson_moon_shard",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_demon_territory_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Demon Territory, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.celestial_mountains_charted",
+    "name": "Celestial Mountains Charted",
+    "description": "Explore every place in the Celestial Mountains.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.celestial_mountains",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 9800,
+      "items": [
+        {
+          "id": "mat.heaven_pine_amber",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_celestial_mountains_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Celestial Mountains, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.nine_heavens_charted",
+    "name": "Nine Heavens Charted",
+    "description": "Explore every place in the Nine Heavens.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.nine_heavens",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 12800,
+      "items": [
+        {
+          "id": "mat.heavenly_star_crystal",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_nine_heavens_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Nine Heavens, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.thunderclap_wastes_charted",
+    "name": "Thunderclap Wastes Charted",
+    "description": "Explore every place in the Thunderclap Wastes.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.thunderclap_wastes",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 16200,
+      "items": [
+        {
+          "id": "mat.tribulation_core",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_thunderclap_wastes_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Thunderclap Wastes, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.sunken_dragon_sea_charted",
+    "name": "Sunken Dragon Sea Charted",
+    "description": "Explore every place in the Sunken Dragon Sea.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.sunken_dragon_sea",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 20000,
+      "items": [
+        {
+          "id": "mat.dragon_pearl",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_sunken_dragon_sea_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Sunken Dragon Sea, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.starfall_desert_charted",
+    "name": "Starfall Desert Charted",
+    "description": "Explore every place in the Starfall Desert.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.starfall_desert",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 24200,
+      "items": [
+        {
+          "id": "mat.meteor_heart",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_starfall_desert_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Starfall Desert, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.gate_of_ascension_charted",
+    "name": "Gate of Ascension Charted",
+    "description": "Explore every place in the Gate of Ascension.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.gate_of_ascension",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 28800,
+      "items": [
+        {
+          "id": "mat.gate_light_crystal",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_gate_of_ascension_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Gate of Ascension, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.jade_immortal_realm_charted",
+    "name": "Jade Immortal Realm Charted",
+    "description": "Explore every place in the Jade Immortal Realm.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.jade_immortal_realm",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 33800,
+      "items": [
+        {
+          "id": "mat.realm_heart_jade",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_jade_immortal_realm_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Jade Immortal Realm, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.golden_palace_of_laws_charted",
+    "name": "Golden Palace of Laws Charted",
+    "description": "Explore every place in the Golden Palace of Laws.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.golden_palace_of_laws",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 39200,
+      "items": [
+        {
+          "id": "mat.law_wheel_fragment",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_golden_palace_of_laws_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Golden Palace of Laws, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "ach.exploration.throne_of_the_immortal_emperor_charted",
+    "name": "Throne of the Immortal Emperor Charted",
+    "description": "Explore every place in the Throne of the Immortal Emperor.",
+    "category": "exploration",
+    "condition": {
+      "type": "objective",
+      "objective": {
+        "type": "explore",
+        "region": "region.throne_of_the_immortal_emperor",
+        "nodes": 15
+      }
+    },
+    "rewards": {
+      "spirit_stones": 45000,
+      "items": [
+        {
+          "id": "mat.primordial_chaos_stone",
+          "qty": 2
+        }
+      ]
+    },
+    "hidden": false,
+    "art": {
+      "icon": {
+        "file": "assets/achievements/exploration_throne_of_the_immortal_emperor_charted.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of an achievement medal showing a map of the Throne of the Immortal Emperor, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/achievements.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]

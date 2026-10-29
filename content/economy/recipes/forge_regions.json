@@ -1,0 +1,405 @@
+[
+  {
+    "id": "forge.blazeforge_saber",
+    "name": "Blazeforge Saber",
+    "description": "Forge a Blazeforge Saber from the materials of the Blazing Mountain.",
+    "name_cn": "炎锻刀",
+    "output": {
+      "base": "gear.blazeforge_saber",
+      "rarity": "uncommon",
+      "ilvl": 28
+    },
+    "ingredients": [
+      {
+        "id": "mat.magma_iron_ore",
+        "qty": 8
+      },
+      {
+        "id": "mat.ember_core",
+        "qty": 2
+      },
+      {
+        "id": "mat.salamander_scale",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 4500,
+    "fame_required": 600,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 600
+    }
+  },
+  {
+    "id": "forge.frostlotus_circlet",
+    "name": "Frostlotus Circlet",
+    "description": "Forge a Frostlotus Circlet from the materials of the Frozen Lotus Valley.",
+    "name_cn": "冰莲冠",
+    "output": {
+      "base": "gear.frostlotus_circlet",
+      "rarity": "uncommon",
+      "ilvl": 36
+    },
+    "ingredients": [
+      {
+        "id": "mat.frostsilver_ore",
+        "qty": 8
+      },
+      {
+        "id": "mat.lotus_ice_heart",
+        "qty": 2
+      },
+      {
+        "id": "mat.yeti_fur",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 8000,
+    "fame_required": 1000,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 1000
+    }
+  },
+  {
+    "id": "forge.tombsong_sword",
+    "name": "Tombsong Sword",
+    "description": "Forge a Tombsong Sword from the materials of the Ancient Sword Tomb.",
+    "name_cn": "冢鸣剑",
+    "output": {
+      "base": "gear.tombsong_sword",
+      "rarity": "rare",
+      "ilvl": 44
+    },
+    "ingredients": [
+      {
+        "id": "mat.tomb_iron",
+        "qty": 8
+      },
+      {
+        "id": "mat.sword_intent_crystal",
+        "qty": 2
+      },
+      {
+        "id": "mat.sword_spirit_shard",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 12500,
+    "fame_required": 1500,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 1500
+    }
+  },
+  {
+    "id": "forge.crimsonvow_ring",
+    "name": "Crimson Vow Ring",
+    "description": "Forge a Crimson Vow Ring from the materials of the Demon Territory.",
+    "name_cn": "赤誓戒",
+    "output": {
+      "base": "gear.crimsonvow_ring",
+      "rarity": "rare",
+      "ilvl": 52
+    },
+    "ingredients": [
+      {
+        "id": "mat.demon_iron",
+        "qty": 8
+      },
+      {
+        "id": "mat.crimson_moon_shard",
+        "qty": 2
+      },
+      {
+        "id": "mat.demon_horn",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 18000,
+    "fame_required": 2500,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 2500
+    }
+  },
+  {
+    "id": "forge.skyward_staff",
+    "name": "Skyward Staff",
+    "description": "Forge a Skyward Staff from the materials of the Celestial Mountains.",
+    "name_cn": "通天杖",
+    "output": {
+      "base": "gear.skyward_staff",
+      "rarity": "rare",
+      "ilvl": 60
+    },
+    "ingredients": [
+      {
+        "id": "mat.skystone",
+        "qty": 8
+      },
+      {
+        "id": "mat.heaven_pine_amber",
+        "qty": 2
+      },
+      {
+        "id": "mat.thunder_feather",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 24500,
+    "fame_required": 4000,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 4000
+    }
+  },
+  {
+    "id": "forge.starward_mirror",
+    "name": "Starward Mirror",
+    "description": "Forge a Starward Mirror from the materials of the Nine Heavens.",
+    "name_cn": "星照镜",
+    "output": {
+      "base": "gear.starward_mirror",
+      "rarity": "epic",
+      "ilvl": 68
+    },
+    "ingredients": [
+      {
+        "id": "mat.cloud_jade",
+        "qty": 8
+      },
+      {
+        "id": "mat.heavenly_star_crystal",
+        "qty": 2
+      },
+      {
+        "id": "mat.jellyfish_silk",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 32000,
+    "fame_required": 6000,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 6000
+    }
+  },
+  {
+    "id": "forge.stormcall_spear",
+    "name": "Stormcall Spear",
+    "description": "Forge a Stormcall Spear from the materials of the Thunderclap Wastes.",
+    "name_cn": "唤雷枪",
+    "output": {
+      "base": "gear.stormcall_spear",
+      "rarity": "epic",
+      "ilvl": 76
+    },
+    "ingredients": [
+      {
+        "id": "mat.storm_glass",
+        "qty": 8
+      },
+      {
+        "id": "mat.tribulation_core",
+        "qty": 2
+      },
+      {
+        "id": "mat.roc_lightning_feather",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 40500,
+    "fame_required": 9000,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 9000
+    }
+  },
+  {
+    "id": "forge.tidecaller_amulet",
+    "name": "Tidecaller Amulet",
+    "description": "Forge a Tidecaller Amulet from the materials of the Sunken Dragon Sea.",
+    "name_cn": "唤潮坠",
+    "output": {
+      "base": "gear.tidecaller_amulet",
+      "rarity": "epic",
+      "ilvl": 84
+    },
+    "ingredients": [
+      {
+        "id": "mat.dragonbone_ore",
+        "qty": 8
+      },
+      {
+        "id": "mat.dragon_pearl",
+        "qty": 2
+      },
+      {
+        "id": "mat.kraken_ink",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 50000,
+    "fame_required": 12000,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 12000
+    }
+  },
+  {
+    "id": "forge.starborn_fan",
+    "name": "Starborn Fan",
+    "description": "Forge a Starborn Fan from the materials of the Starfall Desert.",
+    "name_cn": "星生扇",
+    "output": {
+      "base": "gear.starborn_fan",
+      "rarity": "legendary",
+      "ilvl": 92
+    },
+    "ingredients": [
+      {
+        "id": "mat.star_metal",
+        "qty": 8
+      },
+      {
+        "id": "mat.meteor_heart",
+        "qty": 2
+      },
+      {
+        "id": "mat.sand_wyrm_tooth",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 60500,
+    "fame_required": 16000,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 16000
+    }
+  },
+  {
+    "id": "forge.ascendant_crown",
+    "name": "Ascendant Crown",
+    "description": "Forge a Ascendant Crown from the materials of the Gate of Ascension.",
+    "name_cn": "飞升冠",
+    "output": {
+      "base": "gear.ascendant_crown",
+      "rarity": "legendary",
+      "ilvl": 100
+    },
+    "ingredients": [
+      {
+        "id": "mat.ascension_gold",
+        "qty": 8
+      },
+      {
+        "id": "mat.gate_light_crystal",
+        "qty": 2
+      },
+      {
+        "id": "mat.phoenix_down",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 72000,
+    "fame_required": 20000,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 20000
+    }
+  },
+  {
+    "id": "forge.jadeclaw_sword",
+    "name": "Jadeclaw Sword",
+    "description": "Forge a Jadeclaw Sword from the materials of the Jade Immortal Realm.",
+    "name_cn": "玉爪剑",
+    "output": {
+      "base": "gear.jadeclaw_sword",
+      "rarity": "legendary",
+      "ilvl": 108
+    },
+    "ingredients": [
+      {
+        "id": "mat.immortal_jade",
+        "qty": 8
+      },
+      {
+        "id": "mat.realm_heart_jade",
+        "qty": 2
+      },
+      {
+        "id": "mat.white_tiger_fang",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 84500,
+    "fame_required": 26000,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 26000
+    }
+  },
+  {
+    "id": "forge.lawbound_robe",
+    "name": "Lawbound Robe",
+    "description": "Forge a Lawbound Robe from the materials of the Golden Palace of Laws.",
+    "name_cn": "律缚袍",
+    "output": {
+      "base": "gear.lawbound_robe",
+      "rarity": "legendary",
+      "ilvl": 116
+    },
+    "ingredients": [
+      {
+        "id": "mat.heavenly_gold",
+        "qty": 8
+      },
+      {
+        "id": "mat.law_wheel_fragment",
+        "qty": 2
+      },
+      {
+        "id": "mat.golden_crow_feather",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 98000,
+    "fame_required": 34000,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 34000
+    }
+  },
+  {
+    "id": "forge.emperor_saber",
+    "name": "Emperor's Saber",
+    "description": "Forge a Emperor's Saber from the materials of the Throne of the Immortal Emperor.",
+    "name_cn": "帝刀",
+    "output": {
+      "base": "gear.emperor_saber",
+      "rarity": "legendary",
+      "ilvl": 124
+    },
+    "ingredients": [
+      {
+        "id": "mat.emperor_star_metal",
+        "qty": 8
+      },
+      {
+        "id": "mat.primordial_chaos_stone",
+        "qty": 2
+      },
+      {
+        "id": "mat.azure_dragon_scale",
+        "qty": 5
+      }
+    ],
+    "cost_stones": 112500,
+    "fame_required": 45000,
+    "unlock": {
+      "type": "sect_fame",
+      "fame": 45000
+    }
+  }
+]

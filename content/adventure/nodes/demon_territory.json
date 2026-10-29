@@ -1,0 +1,441 @@
+[
+  {
+    "id": "node.demon_territory.entry",
+    "name": "Demon Territory Border",
+    "description": "Border of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.demon_territory.gathering",
+      "node.demon_territory.outskirts"
+    ],
+    "rec_cp": 4707,
+    "first_clear": {
+      "spirit_stones": 540
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.blood_imp"
+      ],
+      [
+        "enemy.shadow_assassin",
+        "enemy.blood_imp"
+      ]
+    ]
+  },
+  {
+    "id": "node.demon_territory.gathering",
+    "name": "Demon Territory Gathering Grounds",
+    "description": "Gathering Grounds of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.demon_territory.entry",
+      "node.demon_territory.west_path",
+      "node.demon_territory.cache"
+    ],
+    "rec_cp": 5385,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 8,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.blood_lotus",
+          "qty": 3
+        },
+        {
+          "id": "mat.demon_iron",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.demon_territory.outskirts",
+    "name": "Demon Territory Outskirts",
+    "description": "Outskirts of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.demon_territory.entry",
+      "node.demon_territory.cache",
+      "node.demon_territory.east_path"
+    ],
+    "rec_cp": 5084,
+    "first_clear": {
+      "spirit_stones": 540
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.bone_hound",
+        "enemy.shadow_assassin"
+      ],
+      [
+        "enemy.bone_hound",
+        "enemy.blood_sect_disciple"
+      ]
+    ]
+  },
+  {
+    "id": "node.demon_territory.west_path",
+    "name": "Demon Territory Western Trail",
+    "description": "Western Trail of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.demon_territory.gathering",
+      "node.demon_territory.lair"
+    ],
+    "rec_cp": 5272,
+    "first_clear": {
+      "spirit_stones": 540
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.shadow_assassin",
+        "enemy.blood_imp"
+      ],
+      [
+        "enemy.shadow_assassin",
+        "enemy.shadow_assassin"
+      ]
+    ]
+  },
+  {
+    "id": "node.demon_territory.cache",
+    "name": "Demon Territory Hidden Cache",
+    "description": "Hidden Cache of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.demon_territory.gathering",
+      "node.demon_territory.outskirts",
+      "node.demon_territory.crossroads"
+    ],
+    "rec_cp": 6006,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 8,
+    "chest": "loot.chest.demon_territory"
+  },
+  {
+    "id": "node.demon_territory.east_path",
+    "name": "Demon Territory Eastern Trail",
+    "description": "Eastern Trail of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.demon_territory.outskirts",
+      "node.demon_territory.ridge"
+    ],
+    "rec_cp": 5648,
+    "first_clear": {
+      "spirit_stones": 540
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.bone_hound",
+        "enemy.blood_sect_disciple"
+      ],
+      [
+        "enemy.blood_imp",
+        "enemy.bone_hound"
+      ]
+    ]
+  },
+  {
+    "id": "node.demon_territory.lair",
+    "name": "Demon Territory Lair",
+    "description": "Lair of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.demon_territory.west_path",
+      "node.demon_territory.deep_path"
+    ],
+    "rec_cp": 11090,
+    "first_clear": {
+      "spirit_stones": 1440,
+      "items": [
+        {
+          "id": "mat.crimson_moon_shard",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.demon_general"
+      ]
+    ]
+  },
+  {
+    "id": "node.demon_territory.crossroads",
+    "name": "Demon Territory Crossroads",
+    "description": "Crossroads of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.demon_territory.cache",
+      "node.demon_territory.deep_path",
+      "node.demon_territory.sanctum"
+    ],
+    "rec_cp": 6627,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 8,
+    "event": "event.demon_bazaar"
+  },
+  {
+    "id": "node.demon_territory.ridge",
+    "name": "Demon Territory Ridge",
+    "description": "Ridge of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.demon_territory.east_path",
+      "node.demon_territory.sanctum"
+    ],
+    "rec_cp": 6213,
+    "first_clear": {
+      "spirit_stones": 540
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.blood_imp",
+        "enemy.bone_hound"
+      ],
+      [
+        "enemy.blood_sect_disciple"
+      ]
+    ]
+  },
+  {
+    "id": "node.demon_territory.deep_path",
+    "name": "Demon Territory Deep Path",
+    "description": "Deep Path of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.demon_territory.lair",
+      "node.demon_territory.crossroads",
+      "node.demon_territory.den"
+    ],
+    "rec_cp": 6402,
+    "first_clear": {
+      "spirit_stones": 540
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.bone_hound",
+        "enemy.shadow_assassin"
+      ],
+      [
+        "enemy.bone_hound",
+        "enemy.blood_sect_disciple"
+      ]
+    ]
+  },
+  {
+    "id": "node.demon_territory.sanctum",
+    "name": "Demon Territory Sanctum",
+    "description": "Sanctum of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "secret_realm",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.demon_territory.crossroads",
+      "node.demon_territory.ridge",
+      "node.demon_territory.hidden_grove",
+      "node.demon_territory.approach"
+    ],
+    "rec_cp": 7249,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 8,
+    "secret_realm": "dungeon.crimson_moon_secret_realm"
+  },
+  {
+    "id": "node.demon_territory.den",
+    "name": "Demon Territory Den",
+    "description": "Den of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.demon_territory.deep_path",
+      "node.demon_territory.throne"
+    ],
+    "rec_cp": 12878,
+    "first_clear": {
+      "spirit_stones": 1440,
+      "items": [
+        {
+          "id": "mat.crimson_moon_shard",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.blood_imp",
+        "enemy.bone_hound"
+      ],
+      [
+        "enemy.demon_general"
+      ]
+    ]
+  },
+  {
+    "id": "node.demon_territory.hidden_grove",
+    "name": "Demon Territory Secret Place",
+    "description": "Secret Place of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.demon_territory.sanctum",
+      "node.demon_territory.approach"
+    ],
+    "rec_cp": 7663,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 8,
+    "event": "event.demon_bazaar",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.demon_territory.approach",
+    "name": "Demon Territory Approach",
+    "description": "Approach of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.demon_territory.sanctum",
+      "node.demon_territory.hidden_grove",
+      "node.demon_territory.throne"
+    ],
+    "rec_cp": 7155,
+    "first_clear": {
+      "spirit_stones": 540
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.shadow_assassin",
+        "enemy.shadow_assassin"
+      ],
+      [
+        "enemy.bone_hound",
+        "enemy.shadow_assassin"
+      ]
+    ]
+  },
+  {
+    "id": "node.demon_territory.throne",
+    "name": "Demon Territory Throne",
+    "description": "Throne of the Demon Territory.",
+    "region": "region.demon_territory",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.demon_territory.den",
+      "node.demon_territory.approach"
+    ],
+    "rec_cp": 30840,
+    "first_clear": {
+      "spirit_stones": 5400,
+      "sect_fame": 240
+    },
+    "replayable": true,
+    "energy_cost": 8,
+    "waves": [
+      [
+        "enemy.shadow_assassin",
+        "enemy.demon_general"
+      ],
+      [
+        "boss.crimson_moon_matriarch"
+      ]
+    ]
+  }
+]

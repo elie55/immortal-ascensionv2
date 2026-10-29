@@ -1,0 +1,55 @@
+[
+  {
+    "id": "gear.phoenix_feather_crown",
+    "name": "Phoenix Feather Crown",
+    "description": "A divine treasure of the Ruins of the Fallen Heaven.",
+    "name_cn": "凤羽冠",
+    "slot": "helmet",
+    "main_value": 30,
+    "rarity_range": [
+      "divine",
+      "divine"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": true,
+    "special_effects": [
+      {
+        "kind": "heal_on_turn",
+        "description": "Heal 4% max HP each turn.",
+        "value": 4
+      },
+      {
+        "kind": "on_hit_apply",
+        "description": "Hits have a 20% chance to Burn.",
+        "status": "status.burning",
+        "chance": 0.2
+      }
+    ],
+    "requirements": {
+      "realm": "realm.immortal_ascension"
+    },
+    "signature_affix": "status_res",
+    "rarities": {
+      "divine": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/helmet/phoenix_feather_crown_divine.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a radiant crown of living phoenix feathers with a ruby flame at the centre, prismatic dragon-pearl light, azure dragon motifs, rainbow halo, overwhelming divine aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    }
+  }
+]

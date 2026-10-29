@@ -1,0 +1,445 @@
+[
+  {
+    "id": "node.frozen_lotus_valley.entry",
+    "name": "Frozen Lotus Valley Border",
+    "description": "Border of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.gathering",
+      "node.frozen_lotus_valley.outskirts"
+    ],
+    "rec_cp": 1120,
+    "first_clear": {
+      "spirit_stones": 240
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.snow_fox_spirit"
+      ],
+      [
+        "enemy.frost_yeti",
+        "enemy.snow_fox_spirit"
+      ]
+    ]
+  },
+  {
+    "id": "node.frozen_lotus_valley.gathering",
+    "name": "Frozen Lotus Valley Gathering Grounds",
+    "description": "Gathering Grounds of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.entry",
+      "node.frozen_lotus_valley.west_path",
+      "node.frozen_lotus_valley.cache"
+    ],
+    "rec_cp": 1281,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 7,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.snow_lotus_petal",
+          "qty": 3
+        },
+        {
+          "id": "mat.frostsilver_ore",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.frozen_lotus_valley.outskirts",
+    "name": "Frozen Lotus Valley Outskirts",
+    "description": "Outskirts of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.entry",
+      "node.frozen_lotus_valley.cache",
+      "node.frozen_lotus_valley.east_path"
+    ],
+    "rec_cp": 1210,
+    "first_clear": {
+      "spirit_stones": 240
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.ice_lotus_guardian",
+        "enemy.frost_yeti"
+      ],
+      [
+        "enemy.ice_lotus_guardian",
+        "enemy.frozen_cultist"
+      ]
+    ]
+  },
+  {
+    "id": "node.frozen_lotus_valley.west_path",
+    "name": "Frozen Lotus Valley Western Trail",
+    "description": "Western Trail of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.gathering",
+      "node.frozen_lotus_valley.lair"
+    ],
+    "rec_cp": 1254,
+    "first_clear": {
+      "spirit_stones": 240
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.frost_yeti",
+        "enemy.snow_fox_spirit"
+      ],
+      [
+        "enemy.frost_yeti",
+        "enemy.frost_yeti"
+      ]
+    ]
+  },
+  {
+    "id": "node.frozen_lotus_valley.cache",
+    "name": "Frozen Lotus Valley Hidden Cache",
+    "description": "Hidden Cache of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.gathering",
+      "node.frozen_lotus_valley.outskirts",
+      "node.frozen_lotus_valley.crossroads"
+    ],
+    "rec_cp": 1429,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 7,
+    "chest": "loot.chest.frozen_lotus_valley"
+  },
+  {
+    "id": "node.frozen_lotus_valley.east_path",
+    "name": "Frozen Lotus Valley Eastern Trail",
+    "description": "Eastern Trail of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.outskirts",
+      "node.frozen_lotus_valley.ridge"
+    ],
+    "rec_cp": 1344,
+    "first_clear": {
+      "spirit_stones": 240
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.ice_lotus_guardian",
+        "enemy.frozen_cultist"
+      ],
+      [
+        "enemy.snow_fox_spirit",
+        "enemy.ice_lotus_guardian"
+      ]
+    ]
+  },
+  {
+    "id": "node.frozen_lotus_valley.lair",
+    "name": "Frozen Lotus Valley Lair",
+    "description": "Lair of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.west_path",
+      "node.frozen_lotus_valley.deep_path"
+    ],
+    "rec_cp": 2639,
+    "first_clear": {
+      "spirit_stones": 640,
+      "items": [
+        {
+          "id": "mat.lotus_ice_heart",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.frost_wyrm"
+      ]
+    ]
+  },
+  {
+    "id": "node.frozen_lotus_valley.crossroads",
+    "name": "Frozen Lotus Valley Crossroads",
+    "description": "Crossroads of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.cache",
+      "node.frozen_lotus_valley.deep_path",
+      "node.frozen_lotus_valley.sanctum"
+    ],
+    "rec_cp": 1577,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 7,
+    "event": "event.frozen_reflection"
+  },
+  {
+    "id": "node.frozen_lotus_valley.ridge",
+    "name": "Frozen Lotus Valley Ridge",
+    "description": "Ridge of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.east_path",
+      "node.frozen_lotus_valley.sanctum"
+    ],
+    "rec_cp": 1478,
+    "first_clear": {
+      "spirit_stones": 240
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.snow_fox_spirit",
+        "enemy.ice_lotus_guardian"
+      ],
+      [
+        "enemy.frozen_cultist"
+      ]
+    ]
+  },
+  {
+    "id": "node.frozen_lotus_valley.deep_path",
+    "name": "Frozen Lotus Valley Deep Path",
+    "description": "Deep Path of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.lair",
+      "node.frozen_lotus_valley.crossroads",
+      "node.frozen_lotus_valley.den"
+    ],
+    "rec_cp": 1523,
+    "first_clear": {
+      "spirit_stones": 240
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.ice_lotus_guardian",
+        "enemy.frost_yeti"
+      ],
+      [
+        "enemy.ice_lotus_guardian",
+        "enemy.frozen_cultist"
+      ]
+    ]
+  },
+  {
+    "id": "node.frozen_lotus_valley.sanctum",
+    "name": "Frozen Lotus Valley Sanctum",
+    "description": "Sanctum of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "cultivation",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.crossroads",
+      "node.frozen_lotus_valley.ridge",
+      "node.frozen_lotus_valley.hidden_grove",
+      "node.frozen_lotus_valley.approach"
+    ],
+    "rec_cp": 1725,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 7,
+    "cultivation": {
+      "qi_mult": 1.6,
+      "minutes": 30,
+      "energy_cost": 6
+    }
+  },
+  {
+    "id": "node.frozen_lotus_valley.den",
+    "name": "Frozen Lotus Valley Den",
+    "description": "Den of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.deep_path",
+      "node.frozen_lotus_valley.throne"
+    ],
+    "rec_cp": 3064,
+    "first_clear": {
+      "spirit_stones": 640,
+      "items": [
+        {
+          "id": "mat.lotus_ice_heart",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.snow_fox_spirit",
+        "enemy.ice_lotus_guardian"
+      ],
+      [
+        "enemy.frost_wyrm"
+      ]
+    ]
+  },
+  {
+    "id": "node.frozen_lotus_valley.hidden_grove",
+    "name": "Frozen Lotus Valley Secret Place",
+    "description": "Secret Place of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.sanctum",
+      "node.frozen_lotus_valley.approach"
+    ],
+    "rec_cp": 1823,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 7,
+    "event": "event.frozen_reflection",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.frozen_lotus_valley.approach",
+    "name": "Frozen Lotus Valley Approach",
+    "description": "Approach of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.sanctum",
+      "node.frozen_lotus_valley.hidden_grove",
+      "node.frozen_lotus_valley.throne"
+    ],
+    "rec_cp": 1702,
+    "first_clear": {
+      "spirit_stones": 240
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.frost_yeti",
+        "enemy.frost_yeti"
+      ],
+      [
+        "enemy.ice_lotus_guardian",
+        "enemy.frost_yeti"
+      ]
+    ]
+  },
+  {
+    "id": "node.frozen_lotus_valley.throne",
+    "name": "Frozen Lotus Valley Throne",
+    "description": "Throne of the Frozen Lotus Valley.",
+    "region": "region.frozen_lotus_valley",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.frozen_lotus_valley.den",
+      "node.frozen_lotus_valley.approach"
+    ],
+    "rec_cp": 7338,
+    "first_clear": {
+      "spirit_stones": 2400,
+      "sect_fame": 160
+    },
+    "replayable": true,
+    "energy_cost": 7,
+    "waves": [
+      [
+        "enemy.frost_yeti",
+        "enemy.frost_wyrm"
+      ],
+      [
+        "boss.lotus_frost_queen"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "gear.dragon_king_scale_armor",
+    "name": "Dragon King's Scale Armour",
+    "description": "A divine treasure of the Sunken Palace of the Dragon King.",
+    "name_cn": "龙王鳞甲",
+    "slot": "armor",
+    "main_value": 60,
+    "rarity_range": [
+      "divine",
+      "divine"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": true,
+    "special_effects": [
+      {
+        "kind": "shield_on_battle_start",
+        "description": "Start battle with a shield of 20% max HP.",
+        "value": 20
+      },
+      {
+        "kind": "reflect",
+        "description": "Reflect 15% of damage taken.",
+        "status": "status.reflect",
+        "value": 15
+      }
+    ],
+    "requirements": {
+      "realm": "realm.tribulation_transcendence"
+    },
+    "signature_affix": "dmg_red",
+    "rarities": {
+      "divine": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/armor/dragon_king_scale_armor_divine.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of magnificent azure dragon-scale armour with pearl inlays and a dragon-head pauldron, prismatic dragon-pearl light, azure dragon motifs, rainbow halo, overwhelming divine aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "armor_type": "heavy"
+  }
+]

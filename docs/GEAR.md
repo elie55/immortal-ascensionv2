@@ -91,7 +91,7 @@ Every gear source declares its ilvl:
 
 Content bands (guideline, enforced as warnings): region order *n* → ilvl `[8n−7, 8n+4]`;
 dungeons inherit their region's band; tower floor *f* → `ilvl = min(cap, 3 + f)`; mega dungeons
-start at 90.
+use the top of their region band (+0…4): Abyss 68–72 … Primordial Chaos Abyss 124–128.
 
 ## 4. Rarity rules
 

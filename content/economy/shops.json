@@ -303,6 +303,150 @@
         "unlock": {
           "rank": "rank.core_disciple"
         }
+      },
+      {
+        "id": "tech.passive.fire_heart",
+        "price": 2700,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 600
+        }
+      },
+      {
+        "id": "tech.passive.frost_body",
+        "price": 4800,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 1000
+        }
+      },
+      {
+        "id": "tech.passive.sword_heart",
+        "price": 7500,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 1500
+        }
+      },
+      {
+        "id": "tech.passive.demon_slayer_will",
+        "price": 10800,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 2500
+        }
+      },
+      {
+        "id": "tech.passive.cloud_step",
+        "price": 14700,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 4000
+        }
+      },
+      {
+        "id": "tech.passive.star_sight",
+        "price": 19200,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 6000
+        }
+      },
+      {
+        "id": "tech.passive.lightning_reflex",
+        "price": 24300,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 9000
+        }
+      },
+      {
+        "id": "tech.passive.dragon_scale_skin",
+        "price": 30000,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 12000
+        }
+      },
+      {
+        "id": "tech.passive.desert_endurance",
+        "price": 36300,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 16000
+        }
+      },
+      {
+        "id": "tech.passive.phoenix_heart",
+        "price": 43200,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 20000
+        }
+      },
+      {
+        "id": "tech.passive.immortal_vitality",
+        "price": 50700,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 26000
+        }
+      },
+      {
+        "id": "tech.passive.law_insight",
+        "price": 58800,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 34000
+        }
+      },
+      {
+        "id": "tech.passive.emperors_will",
+        "price": 67500,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 45000
+        }
+      },
+      {
+        "id": "method.five_elements_harmony",
+        "price": 8000,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 4000
+        }
+      },
+      {
+        "id": "method.lotus_heart_scripture",
+        "price": 3000,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 1500
+        }
+      },
+      {
+        "id": "method.vajra_body_method",
+        "price": 12000,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 6000
+        }
+      },
+      {
+        "id": "tech.passive.battle_focus",
+        "price": 800,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 800
+        }
+      },
+      {
+        "id": "tech.passive.spirit_shield_art",
+        "price": 1200,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 1200
+        }
       }
     ]
   },
@@ -371,6 +515,12 @@
       {
         "id": "bfood.dried_fish",
         "price": 5,
+        "currency": "spirit_stones",
+        "unlock": {}
+      },
+      {
+        "id": "bfood.spirit_meat",
+        "price": 10,
         "currency": "spirit_stones",
         "unlock": {}
       },

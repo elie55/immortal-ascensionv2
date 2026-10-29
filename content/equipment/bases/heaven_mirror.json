@@ -1,0 +1,55 @@
+[
+  {
+    "id": "gear.heaven_mirror",
+    "name": "Mirror of Heaven",
+    "description": "A divine treasure of the Hall of Ten Thousand Laws.",
+    "name_cn": "天镜",
+    "slot": "artifact",
+    "main_value": 25,
+    "rarity_range": [
+      "divine",
+      "divine"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": true,
+    "special_effects": [
+      {
+        "kind": "reflect",
+        "description": "Reflect 20% of damage taken.",
+        "status": "status.reflect",
+        "value": 20
+      },
+      {
+        "kind": "shield_on_battle_start",
+        "description": "Start battle with a shield of 15% max HP.",
+        "value": 15
+      }
+    ],
+    "requirements": {
+      "realm": "realm.heavenly_immortal"
+    },
+    "signature_affix": "cdr",
+    "rarities": {
+      "divine": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/artifact/heaven_mirror_divine.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a large round mirror of white gold reflecting a perfect starry heaven, prismatic dragon-pearl light, azure dragon motifs, rainbow halo, overwhelming divine aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    }
+  }
+]

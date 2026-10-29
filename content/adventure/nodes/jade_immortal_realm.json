@@ -1,0 +1,445 @@
+[
+  {
+    "id": "node.jade_immortal_realm.entry",
+    "name": "Jade Immortal Realm Border",
+    "description": "Border of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "battle",
+    "position": [
+      0.5,
+      0.93
+    ],
+    "connections": [
+      "node.jade_immortal_realm.gathering",
+      "node.jade_immortal_realm.outskirts"
+    ],
+    "rec_cp": 716126,
+    "first_clear": {
+      "spirit_stones": 2535
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.jade_tiger"
+      ],
+      [
+        "enemy.waterfall_spirit",
+        "enemy.jade_tiger"
+      ]
+    ]
+  },
+  {
+    "id": "node.jade_immortal_realm.gathering",
+    "name": "Jade Immortal Realm Gathering Grounds",
+    "description": "Gathering Grounds of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "gather",
+    "position": [
+      0.22,
+      0.82
+    ],
+    "connections": [
+      "node.jade_immortal_realm.entry",
+      "node.jade_immortal_realm.west_path",
+      "node.jade_immortal_realm.cache"
+    ],
+    "rec_cp": 819248,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 11,
+    "gather": {
+      "items": [
+        {
+          "id": "mat.immortal_peach_blossom",
+          "qty": 3
+        },
+        {
+          "id": "mat.immortal_jade",
+          "qty": 2
+        }
+      ],
+      "energy_cost": 5,
+      "cooldown_min": 45
+    }
+  },
+  {
+    "id": "node.jade_immortal_realm.outskirts",
+    "name": "Jade Immortal Realm Outskirts",
+    "description": "Outskirts of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "battle",
+    "position": [
+      0.78,
+      0.82
+    ],
+    "connections": [
+      "node.jade_immortal_realm.entry",
+      "node.jade_immortal_realm.cache",
+      "node.jade_immortal_realm.east_path"
+    ],
+    "rec_cp": 773416,
+    "first_clear": {
+      "spirit_stones": 2535
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.immortal_gardener",
+        "enemy.waterfall_spirit"
+      ],
+      [
+        "enemy.immortal_gardener",
+        "enemy.realm_exile"
+      ]
+    ]
+  },
+  {
+    "id": "node.jade_immortal_realm.west_path",
+    "name": "Jade Immortal Realm Western Trail",
+    "description": "Western Trail of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "battle",
+    "position": [
+      0.18,
+      0.66
+    ],
+    "connections": [
+      "node.jade_immortal_realm.gathering",
+      "node.jade_immortal_realm.lair"
+    ],
+    "rec_cp": 802061,
+    "first_clear": {
+      "spirit_stones": 2535
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.waterfall_spirit",
+        "enemy.jade_tiger"
+      ],
+      [
+        "enemy.waterfall_spirit",
+        "enemy.waterfall_spirit"
+      ]
+    ]
+  },
+  {
+    "id": "node.jade_immortal_realm.cache",
+    "name": "Jade Immortal Realm Hidden Cache",
+    "description": "Hidden Cache of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "chest",
+    "position": [
+      0.5,
+      0.72
+    ],
+    "connections": [
+      "node.jade_immortal_realm.gathering",
+      "node.jade_immortal_realm.outskirts",
+      "node.jade_immortal_realm.crossroads"
+    ],
+    "rec_cp": 913777,
+    "first_clear": {},
+    "replayable": false,
+    "energy_cost": 11,
+    "chest": "loot.chest.jade_immortal_realm"
+  },
+  {
+    "id": "node.jade_immortal_realm.east_path",
+    "name": "Jade Immortal Realm Eastern Trail",
+    "description": "Eastern Trail of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "battle",
+    "position": [
+      0.82,
+      0.66
+    ],
+    "connections": [
+      "node.jade_immortal_realm.outskirts",
+      "node.jade_immortal_realm.ridge"
+    ],
+    "rec_cp": 859351,
+    "first_clear": {
+      "spirit_stones": 2535
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.immortal_gardener",
+        "enemy.realm_exile"
+      ],
+      [
+        "enemy.jade_tiger",
+        "enemy.immortal_gardener"
+      ]
+    ]
+  },
+  {
+    "id": "node.jade_immortal_realm.lair",
+    "name": "Jade Immortal Realm Lair",
+    "description": "Lair of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "elite",
+    "position": [
+      0.14,
+      0.5
+    ],
+    "connections": [
+      "node.jade_immortal_realm.west_path",
+      "node.jade_immortal_realm.deep_path"
+    ],
+    "rec_cp": 1687193,
+    "first_clear": {
+      "spirit_stones": 6760,
+      "items": [
+        {
+          "id": "mat.realm_heart_jade",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.jade_guardian_beast"
+      ]
+    ]
+  },
+  {
+    "id": "node.jade_immortal_realm.crossroads",
+    "name": "Jade Immortal Realm Crossroads",
+    "description": "Crossroads of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "event",
+    "position": [
+      0.46,
+      0.53
+    ],
+    "connections": [
+      "node.jade_immortal_realm.cache",
+      "node.jade_immortal_realm.deep_path",
+      "node.jade_immortal_realm.sanctum"
+    ],
+    "rec_cp": 1008305,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 11,
+    "event": "event.forbidden_peach"
+  },
+  {
+    "id": "node.jade_immortal_realm.ridge",
+    "name": "Jade Immortal Realm Ridge",
+    "description": "Ridge of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "battle",
+    "position": [
+      0.76,
+      0.5
+    ],
+    "connections": [
+      "node.jade_immortal_realm.east_path",
+      "node.jade_immortal_realm.sanctum"
+    ],
+    "rec_cp": 945286,
+    "first_clear": {
+      "spirit_stones": 2535
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.jade_tiger",
+        "enemy.immortal_gardener"
+      ],
+      [
+        "enemy.realm_exile"
+      ]
+    ]
+  },
+  {
+    "id": "node.jade_immortal_realm.deep_path",
+    "name": "Jade Immortal Realm Deep Path",
+    "description": "Deep Path of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "battle",
+    "position": [
+      0.3,
+      0.36
+    ],
+    "connections": [
+      "node.jade_immortal_realm.lair",
+      "node.jade_immortal_realm.crossroads",
+      "node.jade_immortal_realm.den"
+    ],
+    "rec_cp": 973931,
+    "first_clear": {
+      "spirit_stones": 2535
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.immortal_gardener",
+        "enemy.waterfall_spirit"
+      ],
+      [
+        "enemy.immortal_gardener",
+        "enemy.realm_exile"
+      ]
+    ]
+  },
+  {
+    "id": "node.jade_immortal_realm.sanctum",
+    "name": "Jade Immortal Realm Sanctum",
+    "description": "Sanctum of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "cultivation",
+    "position": [
+      0.66,
+      0.36
+    ],
+    "connections": [
+      "node.jade_immortal_realm.crossroads",
+      "node.jade_immortal_realm.ridge",
+      "node.jade_immortal_realm.hidden_grove",
+      "node.jade_immortal_realm.approach"
+    ],
+    "rec_cp": 1102834,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 11,
+    "cultivation": {
+      "qi_mult": 2.05,
+      "minutes": 30,
+      "energy_cost": 6
+    }
+  },
+  {
+    "id": "node.jade_immortal_realm.den",
+    "name": "Jade Immortal Realm Den",
+    "description": "Den of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "elite",
+    "position": [
+      0.2,
+      0.2
+    ],
+    "connections": [
+      "node.jade_immortal_realm.deep_path",
+      "node.jade_immortal_realm.throne"
+    ],
+    "rec_cp": 1959321,
+    "first_clear": {
+      "spirit_stones": 6760,
+      "items": [
+        {
+          "id": "mat.realm_heart_jade",
+          "qty": 1
+        }
+      ]
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.jade_tiger",
+        "enemy.immortal_gardener"
+      ],
+      [
+        "enemy.jade_guardian_beast"
+      ]
+    ]
+  },
+  {
+    "id": "node.jade_immortal_realm.hidden_grove",
+    "name": "Jade Immortal Realm Secret Place",
+    "description": "Secret Place of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "hidden",
+    "position": [
+      0.84,
+      0.22
+    ],
+    "connections": [
+      "node.jade_immortal_realm.sanctum",
+      "node.jade_immortal_realm.approach"
+    ],
+    "rec_cp": 1165853,
+    "first_clear": {},
+    "replayable": true,
+    "energy_cost": 11,
+    "event": "event.forbidden_peach",
+    "hidden": {
+      "condition": "clear the region boss",
+      "reveal_chance": 0.3
+    }
+  },
+  {
+    "id": "node.jade_immortal_realm.approach",
+    "name": "Jade Immortal Realm Approach",
+    "description": "Approach of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "battle",
+    "position": [
+      0.55,
+      0.24
+    ],
+    "connections": [
+      "node.jade_immortal_realm.sanctum",
+      "node.jade_immortal_realm.hidden_grove",
+      "node.jade_immortal_realm.throne"
+    ],
+    "rec_cp": 1088512,
+    "first_clear": {
+      "spirit_stones": 2535
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.waterfall_spirit",
+        "enemy.waterfall_spirit"
+      ],
+      [
+        "enemy.immortal_gardener",
+        "enemy.waterfall_spirit"
+      ]
+    ]
+  },
+  {
+    "id": "node.jade_immortal_realm.throne",
+    "name": "Jade Immortal Realm Throne",
+    "description": "Throne of the Jade Immortal Realm.",
+    "region": "region.jade_immortal_realm",
+    "kind": "boss",
+    "position": [
+      0.5,
+      0.07
+    ],
+    "connections": [
+      "node.jade_immortal_realm.den",
+      "node.jade_immortal_realm.approach"
+    ],
+    "rec_cp": 4692058,
+    "first_clear": {
+      "spirit_stones": 25350,
+      "sect_fame": 520
+    },
+    "replayable": true,
+    "energy_cost": 11,
+    "waves": [
+      [
+        "enemy.waterfall_spirit",
+        "enemy.jade_guardian_beast"
+      ],
+      [
+        "boss.white_tiger_sovereign"
+      ]
+    ]
+  }
+]

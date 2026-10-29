@@ -1,0 +1,509 @@
+[
+  {
+    "id": "cons.ember_marrow_pill",
+    "name": "Ember Marrow Pill",
+    "description": "Grade III. Refines the marrow with fire; grants Qi and a brief fire resistance.",
+    "name_cn": "炎髓丹",
+    "rarity": "epic",
+    "sell_value": 270,
+    "stack_limit": 999,
+    "tags": [
+      "blazing_mountain"
+    ],
+    "subtype": "pill",
+    "grade": 3,
+    "effects": {
+      "qi": 2400,
+      "cultivation_boost": {
+        "mult": 1.26,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/ember_marrow_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a red pill with a flickering flame inside, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "cons.frost_lotus_pill",
+    "name": "Frost Lotus Pill",
+    "description": "Grade III. Calms the Qi; grants Qi and a short water-resistance boost.",
+    "name_cn": "冰莲丹",
+    "rarity": "epic",
+    "sell_value": 480,
+    "stack_limit": 999,
+    "tags": [
+      "frozen_lotus_valley"
+    ],
+    "subtype": "pill",
+    "grade": 4,
+    "effects": {
+      "qi": 2400,
+      "cultivation_boost": {
+        "mult": 1.28,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/frost_lotus_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pale blue pill shaped like a lotus bud, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "cons.sword_marrow_pill",
+    "name": "Sword Marrow Pill",
+    "description": "Grade IV. Sharpens sword intent; grants Qi and a brief critical boost.",
+    "name_cn": "剑髓丹",
+    "rarity": "epic",
+    "sell_value": 750,
+    "stack_limit": 999,
+    "tags": [
+      "ancient_sword_tomb"
+    ],
+    "subtype": "pill",
+    "grade": 4,
+    "effects": {
+      "qi": 36000,
+      "cultivation_boost": {
+        "mult": 1.3,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/sword_marrow_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a silver pill etched with a tiny sword, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "cons.demon_purge_pill",
+    "name": "Demon-Purge Pill",
+    "description": "Grade IV. Purges demonic Qi; grants Qi and status resistance.",
+    "name_cn": "祛魔丹",
+    "rarity": "epic",
+    "sell_value": 1080,
+    "stack_limit": 999,
+    "tags": [
+      "demon_territory"
+    ],
+    "subtype": "pill",
+    "grade": 5,
+    "effects": {
+      "qi": 540000,
+      "cultivation_boost": {
+        "mult": 1.32,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/demon_purge_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a white pill with a red core, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "cons.celestial_peach_pill",
+    "name": "Celestial Peach Pill",
+    "description": "Grade V. Refines the spirit with celestial peach; grants a large amount of Qi.",
+    "name_cn": "仙桃丹",
+    "rarity": "legendary",
+    "sell_value": 1470,
+    "stack_limit": 999,
+    "tags": [
+      "celestial_mountains"
+    ],
+    "subtype": "pill",
+    "grade": 5,
+    "effects": {
+      "qi": 7200000,
+      "cultivation_boost": {
+        "mult": 1.34,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/celestial_peach_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pink pill with a golden leaf, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "cons.star_dew_pill",
+    "name": "Star-Dew Pill",
+    "description": "Grade VI. Condenses starlight; grants a large amount of Qi and spiritual energy.",
+    "name_cn": "星露丹",
+    "rarity": "legendary",
+    "sell_value": 1920,
+    "stack_limit": 999,
+    "tags": [
+      "nine_heavens"
+    ],
+    "subtype": "pill",
+    "grade": 6,
+    "effects": {
+      "qi": 90000000,
+      "cultivation_boost": {
+        "mult": 1.36,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/star_dew_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a silver pill sparkling like a night sky, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "cons.thunder_tempering_pill",
+    "name": "Thunder-Tempering Pill",
+    "description": "Grade VI. Tempers the meridians with lightning; grants Qi and lightning resistance.",
+    "name_cn": "雷炼丹",
+    "rarity": "legendary",
+    "sell_value": 2430,
+    "stack_limit": 999,
+    "tags": [
+      "thunderclap_wastes"
+    ],
+    "subtype": "pill",
+    "grade": 6,
+    "effects": {
+      "qi": 1080000000,
+      "cultivation_boost": {
+        "mult": 1.38,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/thunder_tempering_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a violet pill with a spark inside, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "cons.dragon_marrow_pill",
+    "name": "Dragon Marrow Pill",
+    "description": "Grade VII. Infused with dragon marrow; grants a huge amount of Qi.",
+    "name_cn": "龙髓丹",
+    "rarity": "legendary",
+    "sell_value": 3000,
+    "stack_limit": 999,
+    "tags": [
+      "sunken_dragon_sea"
+    ],
+    "subtype": "pill",
+    "grade": 7,
+    "effects": {
+      "qi": 12000000000,
+      "cultivation_boost": {
+        "mult": 1.4,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/dragon_marrow_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a deep blue pill with a dragon silhouette, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "cons.meteor_core_pill",
+    "name": "Meteor Core Pill",
+    "description": "Grade VII. Condenses a meteor's power; grants a huge amount of Qi.",
+    "name_cn": "陨核丹",
+    "rarity": "mythic",
+    "sell_value": 3630,
+    "stack_limit": 999,
+    "tags": [
+      "starfall_desert"
+    ],
+    "subtype": "pill",
+    "grade": 7,
+    "effects": {
+      "qi": 132000000000,
+      "cultivation_boost": {
+        "mult": 1.42,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/meteor_core_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a heavy silver pill glowing faintly, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "cons.phoenix_rebirth_pill",
+    "name": "Phoenix Rebirth Pill",
+    "description": "Grade VIII. Burns away mortal impurities; grants a vast amount of Qi.",
+    "name_cn": "凤生丹",
+    "rarity": "mythic",
+    "sell_value": 4320,
+    "stack_limit": 999,
+    "tags": [
+      "gate_of_ascension"
+    ],
+    "subtype": "pill",
+    "grade": 8,
+    "effects": {
+      "qi": 1440000000000,
+      "cultivation_boost": {
+        "mult": 1.44,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/phoenix_rebirth_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a golden pill wrapped in a tiny flame, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "cons.immortal_peach_pill",
+    "name": "Immortal Peach Pill",
+    "description": "Grade VIII. Distilled from immortal peaches; grants a vast amount of Qi.",
+    "name_cn": "蟠桃丹",
+    "rarity": "mythic",
+    "sell_value": 5070,
+    "stack_limit": 999,
+    "tags": [
+      "jade_immortal_realm"
+    ],
+    "subtype": "pill",
+    "grade": 8,
+    "effects": {
+      "qi": 15600000000000,
+      "cultivation_boost": {
+        "mult": 1.46,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/immortal_peach_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a golden pill shaped like a tiny peach, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "cons.golden_law_pill",
+    "name": "Golden Law Pill",
+    "description": "Grade IX. Refines Qi according to heavenly law; grants an immense amount of Qi.",
+    "name_cn": "金律丹",
+    "rarity": "mythic",
+    "sell_value": 5880,
+    "stack_limit": 999,
+    "tags": [
+      "golden_palace_of_laws"
+    ],
+    "subtype": "pill",
+    "grade": 9,
+    "effects": {
+      "qi": 168000000000000,
+      "cultivation_boost": {
+        "mult": 1.48,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/golden_law_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a golden pill with turning characters on its surface, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "cons.emperor_ascension_pill",
+    "name": "Emperor Ascension Pill",
+    "description": "Grade IX. The pill of emperors; grants a boundless amount of Qi.",
+    "name_cn": "帝升丹",
+    "rarity": "mythic",
+    "sell_value": 6750,
+    "stack_limit": 999,
+    "tags": [
+      "throne_of_the_immortal_emperor"
+    ],
+    "subtype": "pill",
+    "grade": 9,
+    "effects": {
+      "qi": 19200000000000000,
+      "cultivation_boost": {
+        "mult": 1.5,
+        "minutes": 30
+      }
+    },
+    "usable_in_battle": false,
+    "cooldown_min": 0,
+    "art": {
+      "icon": {
+        "file": "assets/items/consumables/emperor_ascension_pill.png",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pill of five colours swirling like a galaxy, crimson and black lacquer with silver starlight runes, swirling dark-red aura. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "planned"
+      }
+    }
+  }
+]
