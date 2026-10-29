@@ -52,7 +52,7 @@
           "refs/mockups/character_screen.png",
           "refs/mockups/cultivation_screen.png"
         ],
-        "status": "generated"
+        "status": "approved"
       },
       "expression_neutral": {
         "file": "assets/npcs/lin_xueyao/expression_neutral.webp",
@@ -186,7 +186,7 @@
         "references": [
           "refs/mockups/prologue_bai.png"
         ],
-        "status": "generated"
+        "status": "approved"
       },
       "expression_neutral": {
         "file": "assets/npcs/bai_lingshuang/expression_neutral.webp",
@@ -427,7 +427,7 @@
           "refs/mockups/tang_talk.png",
           "refs/mockups/merchant_pavilion.png"
         ],
-        "status": "generated"
+        "status": "approved"
       },
       "expression_neutral": {
         "file": "assets/npcs/tang_xiaoman/expression_neutral.webp",
@@ -732,7 +732,7 @@
         "references": [
           "refs/mockups/prologue_elder_wen.png"
         ],
-        "status": "generated"
+        "status": "approved"
       },
       "expression_neutral": {
         "file": "assets/npcs/elder_wen/expression_neutral.webp",
@@ -842,7 +842,7 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body standing illustration of Elder Feng, a stern middle-aged man with a long black beard streaked grey, sharp eyes, wearing dark navy scholar robes with gold trim, holding a scroll, complete figure head to feet, elegant pose, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
-        "status": "generated"
+        "status": "approved"
       },
       "expression_neutral": {
         "file": "assets/npcs/elder_feng/expression_neutral.webp",
@@ -956,7 +956,7 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body standing illustration of Qin, a calm androgynous young cultivator with long dark green hair tied low, half-lidded grey eyes, wearing earthy green robes with leaf patterns, a small fox resting on their shoulder, complete figure head to feet, elegant pose, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
-        "status": "generated"
+        "status": "approved"
       },
       "expression_neutral": {
         "file": "assets/npcs/qin/expression_neutral.webp",
@@ -1058,7 +1058,7 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body standing illustration of Master Gu, a broad bald blacksmith with a grey goatee, burn-scarred forearms, leather apron over brown robes, a glowing hammer at his belt, complete figure head to feet, elegant pose, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
-        "status": "generated"
+        "status": "approved"
       },
       "expression_neutral": {
         "file": "assets/npcs/master_gu/expression_neutral.webp",
@@ -1161,7 +1161,7 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body standing illustration of Zhao Lie, a muscular young man with spiky red-brown hair and a headband, bare arms wrapped in bandages, orange and black martial robes, fists wreathed in flame, complete figure head to feet, elegant pose, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
-        "status": "generated"
+        "status": "approved"
       },
       "expression_neutral": {
         "file": "assets/npcs/zhao_lie/expression_neutral.webp",
@@ -1261,7 +1261,7 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body standing illustration of Shen Qingxue, a slender young woman with blue-black hair in twin loops, pale blue eyes, light blue and white robes, holding a long ice-crystal spear, complete figure head to feet, elegant pose, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
-        "status": "generated"
+        "status": "approved"
       },
       "expression_neutral": {
         "file": "assets/npcs/shen_qingxue/expression_neutral.webp",
@@ -1362,7 +1362,7 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body standing illustration of Tie Shanhe, a bald broad-shouldered monk with prayer beads, grey and saffron robes, stone-like skin glowing with earthy runes, complete figure head to feet, elegant pose, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
-        "status": "generated"
+        "status": "approved"
       },
       "expression_neutral": {
         "file": "assets/npcs/tie_shanhe/expression_neutral.webp",
@@ -1464,7 +1464,7 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body standing illustration of Mo Lianjue, a handsome young man with long black hair tied with a silver ribbon, dark eyes, black and silver robes, a sleek black sword floating behind him, complete figure head to feet, elegant pose, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
-        "status": "generated"
+        "status": "approved"
       },
       "expression_neutral": {
         "file": "assets/npcs/mo_lianjue/expression_neutral.webp",
