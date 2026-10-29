@@ -13,7 +13,7 @@ import { Enemy, Boss, Beast, Npc } from "./actors.ts";
 import { Region, Node, Dungeon, Tribulation, SectLocation, Rank, Event } from "./places.ts";
 import { Shop, LootTable, AlchemyRecipe, ForgeRecipe, Furnace } from "./economy.ts";
 import { GearRules } from "./gear-math.ts";
-import { Quest, Achievement, Tournament, StoryScene, StartingState, ContentTargets } from "./progress.ts";
+import { Quest, Achievement, Tournament, StoryScene, StartingState, ContentTargets, CultivationRules } from "./progress.ts";
 
 export interface Collection {
   prefix: Prefix;
@@ -73,6 +73,7 @@ export const SINGLETONS = {
   furnaces: { file: "content/economy/furnaces.json", schema: Furnace.array() },
   starting_state: { file: "content/meta/starting_state.json", schema: StartingState },
   content_targets: { file: "content/meta/content_targets.json", schema: ContentTargets },
+  cultivation_rules: { file: "content/meta/cultivation_rules.json", schema: CultivationRules },
 } as const;
 
 export * from "./ids.ts";

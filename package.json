@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Immortal Ascension — offline Android xianxia cultivation RPG. Content database + validator.",
+  "description": "Immortal Ascension \u2014 offline Android xianxia cultivation RPG. Content database + validator.",
   "engines": {
     "node": ">=22.18"
   },
@@ -11,13 +11,19 @@
     "validate": "node tools/validate.ts",
     "art:jobs": "node tools/export-art-jobs.ts",
     "test": "node --test \"tests/**/*.test.ts\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build": "node tools/build.ts",
+    "dev": "node tools/build.ts --watch",
+    "test:browser": "node tools/build.ts && node tests/browser/smoke.ts",
+    "check": "npm run validate && npm test && npm run typecheck && npm run build"
   },
   "dependencies": {
     "zod": "^3.25.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "esbuild": "^0.28.2",
+    "playwright": "^1.56.0"
   }
 }

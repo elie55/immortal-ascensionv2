@@ -4,7 +4,7 @@
  */
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
-import { mkdtempSync, cpSync, rmSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdtempSync, cpSync, rmSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { validate } from "../tools/lib/validator.ts";
@@ -16,6 +16,7 @@ before(() => {
   base = mkdtempSync(join(tmpdir(), "ia-content-"));
   cpSync(join(REPO, "content"), join(base, "content"), { recursive: true });
   cpSync(join(REPO, "refs"), join(base, "refs"), { recursive: true });
+  if (existsSync(join(REPO, "assets"))) cpSync(join(REPO, "assets"), join(base, "assets"), { recursive: true });
 });
 after(() => rmSync(base, { recursive: true, force: true }));
 

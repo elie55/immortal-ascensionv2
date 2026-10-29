@@ -11,11 +11,17 @@
     "types": [
       "node"
     ],
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ]
   },
   "include": [
     "schema",
-    "tools",
-    "tests"
+    "src",
+    "tests",
+    "tools"
   ]
 }

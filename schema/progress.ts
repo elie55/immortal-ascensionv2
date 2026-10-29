@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Named, Quantity, artBlock, ref, ItemRef, Unlock, Rewards, GearGrant } from "./common.ts";
+import { Named, Quantity, artBlock, ref, ItemRef, Unlock, Rewards, GearGrant, Stats } from "./common.ts";
 
 // ---------- Quest objectives (each maps to a screen route in the game) ----------
 
@@ -151,3 +151,38 @@ export const ContentTargets = z.object({
   strict: z.boolean().default(false),
   targets: z.record(z.string(), z.number().int().positive()),
 });
+
+// ---------- Cultivation rules (singleton) ----------
+
+export const CultivationRules = z.object({
+  /** Minutes of idle cultivation (all multipliers = 1) to fill stage 1 of realm order n (index n-1). */
+  minutes_for_stage1: z.array(z.number().positive()).length(15),
+  /** Qi can be banked up to the end of the current realm plus this many stages of the next. */
+  qi_bank_extra_stages: z.number().int().min(0).default(1),
+  offline: z.object({
+    cap_hours: z.number().positive(),
+    efficiency: z.number().min(0).max(1),
+    /** Absences shorter than this show no offline report. */
+    min_seconds: z.number().nonnegative().default(60),
+  }),
+  major_breakthrough: z.object({
+    fail_qi_loss_pct: z.number().min(0).max(1),
+    pill_bonus_cap: z.number().min(0).max(1),
+  }),
+  energy: z.object({
+    max: z.number().int().positive(),
+    regen_minutes: z.number().positive(),
+    max_per_rank_order: z.number().int().nonnegative().default(0),
+  }),
+  autosave_seconds: z.number().positive().default(30),
+  tick_seconds: z.number().positive().default(1),
+  location_qi_mult: z.record(z.string(), z.number().positive()).default({}),
+  /** The character's stat block before realms, root, method, gear… */
+  base_stats: Stats,
+  /** Combat-power weights per attribute (`elem` applies to every elemental damage and resistance attribute). */
+  cp_weights: z.record(z.string(), z.number()),
+  /** Subtracted before weighting so a default value adds no CP (crit 5, crit_dmg 150, acc 90). */
+  cp_baseline: z.record(z.string(), z.number()).default({}),
+  mastery_bonus_per_level: z.number().default(0.03),
+});
+export type CultivationRules = z.infer<typeof CultivationRules>;
