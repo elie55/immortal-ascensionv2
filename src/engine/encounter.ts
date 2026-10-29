@@ -18,6 +18,7 @@ import { revealHidden, discoverRegions, finishEventBattle } from "./nodes.ts";
 import { buildPlayer, buildBeast, buildEnemy, buildEnemyFrom, buildCompanion, resetUids } from "./combat/build.ts";
 import { companionSlots } from "./companions.ts";
 import { beastsAfterVictory } from "./beasts.ts";
+import { canClimb, towerFloor, towerFloorCleared, realmRun, realmNodeState, realmBattleDone, trackRealmLoot } from "./delves.ts";
 import type { Combatant, BattleOptions, BattleSummary, AutoRuleResolved } from "./combat/types.ts";
 
 export type EncounterSource =
@@ -26,6 +27,8 @@ export type EncounterSource =
   | { kind: "tribulation"; id: string }
   | { kind: "duel"; npc: string; cp?: number }
   | { kind: "tournament"; id: string }
+  | { kind: "tower"; id: string; floor: number }
+  | { kind: "realm"; id: string; node: string; enemies?: string[] }
   | { kind: "event"; node: string; enemies: string[] };
 
 export interface WaveResult { summary: BattleSummary; drops: Drops; gearUids: number[] }
@@ -65,6 +68,16 @@ export function canStart(s: GameState, c: ContentIndex, src: EncounterSource, no
   }
   if (src.kind === "event") return { ok: true, energy: 0 };
   if (src.kind === "tournament") return canEnterTournament(s, c, src.id, now);
+  if (src.kind === "tower") { const r = canClimb(s, c, src.id, src.floor); return r.ok ? { ok: true, energy: 0 } : r; }
+  if (src.kind === "realm") {
+    const run = realmRun(s, src.id);
+    if (!run) return { ok: false, reason: "Enter the realm first" };
+    const st = realmNodeState(s, c, src.id, src.node);
+    if (st !== "open") return { ok: false, reason: st === "cleared" ? "Already cleared" : "Not reachable yet" };
+    const n = c.get<Dungeon>(src.id).realm_nodes!.find((x) => x.key === src.node)!;
+    if (!src.enemies?.length && !n.waves?.length) return { ok: false, reason: "Nothing to fight here" };
+    return { ok: true, energy: 0 };
+  }
   const npc = c.get<Npc>(src.npc);
   if (!npc.duel?.enabled) return { ok: false, reason: "They will not duel" };
   const last = s.relations[src.npc]?.lastDuelAt ?? 0;
@@ -85,6 +98,8 @@ export class Encounter {
   readonly bg?: string;
   private events: DomainEvent[] = [];
   private spiritUid = 0;
+  /** Tower floors scale their enemies to the floor's power. */
+  private statMult = 1;
 
   private constructor(s: GameState, c: ContentIndex, src: EncounterSource) {
     this.s = s; this.c = c; this.src = src;
@@ -99,6 +114,14 @@ export class Encounter {
       opts.surviveRounds = t.waves.length * c.combat.tribulation.turns_per_wave;
       opts.hazard = { name: "Heavenly Lightning", source: 0, turnsPerWave: c.combat.tribulation.turns_per_wave, waves: t.waves.map((w) => ({ element: w.element, power: c.combat.tribulation.bolt_power * w.dmg_mult, bolts: w.bolts })) };
     } else if (src.kind === "event") { const n = c.get<MapNode>(src.node); this.waves = [src.enemies]; this.name = n.name; this.bg = c.art(n.region, "battle_bg"); }
+    else if (src.kind === "tower") {
+      const d = c.get<Dungeon>(src.id); const f = towerFloor(c, d, src.floor);
+      this.waves = [f.enemies]; this.name = `${d.name} · Floor ${src.floor}`; this.bg = c.art(d.id, "battle_bg"); opts.isBossFight = f.boss; this.statMult = f.statMult;
+    } else if (src.kind === "realm") {
+      const d = c.get<Dungeon>(src.id); const n = d.realm_nodes!.find((x) => x.key === src.node)!;
+      this.waves = src.enemies?.length ? [src.enemies] : n.waves!; this.name = `${d.name} · ${n.name}`; this.bg = c.art(d.id, "battle_bg"); opts.isBossFight = n.kind === "boss";
+      const hp = realmRun(s, src.id)?.hp; if (hp !== undefined) this.carry = { hp };
+    }
     else if (src.kind === "tournament") { const t = c.get<Tournament>(src.id); const r = s.progress.tournaments[t.id]?.round ?? 0; this.waves = [[t.rounds[r]!.opponent]]; this.name = `${t.name} · ${r + 1 === t.rounds.length ? "Final" : `Round ${r + 1}`}`; this.bg = c.art("sectloc.proving_arena", "background") ?? c.art("sectloc.sword_grounds", "background"); }
     else { const n = c.get<Npc>(src.npc); this.waves = [[src.npc]]; this.name = `Spar: ${n.name}`; this.bg = c.art("sectloc.sword_grounds", "background"); }
     this.opts = opts;
@@ -128,7 +151,7 @@ export class Encounter {
     for (const npc of this.s.companions.active.slice(0, companionSlots(this.c, this.src))) units.push(buildCompanion(this.s, this.c, npc));
     for (const id of this.waves[this.wave]!) {
       if (id.startsWith("npc.")) units.push(buildDuelist(this.c, id, this.src.kind === "tournament" ? this.c.get<Tournament>(this.src.id).rounds[this.s.progress.tournaments[this.src.id]?.round ?? 0]!.cp : (this.src as any).cp));
-      else units.push(buildEnemy(this.c, id, { hpMult: this.opts.enemyHpMult }));
+      else units.push(buildEnemy(this.c, id, { hpMult: this.opts.enemyHpMult, statMult: this.statMult }));
     }
     const opts = { ...this.opts };
     if (opts.hazard) { this.spiritUid = units.find((u) => u.side === "enemy")!.uid; opts.hazard = { ...opts.hazard, source: this.spiritUid }; }
@@ -149,11 +172,12 @@ export class Encounter {
       let merged = drops;
       for (const id of sum.killed) {
         const def = this.c.find<any>(id);
-        if (def?.loot) merged = mergeDrops(merged, rollTable(this.s, this.c, def.loot));
+        if (def?.loot && this.src.kind !== "tower") merged = mergeDrops(merged, rollTable(this.s, this.c, def.loot));   // tower floors pay their own loot
         this.events.push({ type: "enemy_defeated", id, boss: id.startsWith("boss.") });
       }
       if (this.src.kind === "dungeon") { const d = this.c.get<Dungeon>(this.src.id); if (d.rewards.per_wave) merged = mergeDrops(merged, rollTable(this.s, this.c, d.rewards.per_wave)); }
       gearUids = grantDrops(this.s, this.c, merged, this.events).gearUids;
+      if (this.src.kind === "realm") trackRealmLoot(this.s, this.src.id, merged, gearUids);
       Object.assign(drops, merged);
       this.carry = { hp: sum.playerHp, sp: sum.playerSp, ult: sum.playerUlt };
     }
@@ -173,7 +197,7 @@ export class Encounter {
     const total = this.results.reduce((a, r) => mergeDrops(a, r.drops), emptyDrops());
     let firstClear: Record<string, unknown> | undefined;
     let masteryXp = 0;
-    const enemyCp = this.waves.flat().reduce((n, id) => n + (c.find<any>(id)?.cp ?? 0), 0) / Math.max(1, this.waves.length);
+    const enemyCp = this.waves.flat().reduce((n, id) => n + (c.find<any>(id)?.cp ?? 0), 0) * this.statMult / Math.max(1, this.waves.length);
     if (won) {
       masteryXp = this.results.reduce((n, r) => n + r.summary.killed.reduce((m, id) => m + (c.find<any>(id)?.mastery_xp ?? 0), 0) + r.drops.mastery_xp, 0);
       if (this.src.kind === "node") {
@@ -233,7 +257,9 @@ export class Encounter {
         addMasteryXp(s, c, s.character.method, Math.round(masteryXp * c.combat.mastery.method_share), this.events);
         for (const t of s.techniques.actives) if (t) addMasteryXp(s, c, t, Math.round(masteryXp * c.combat.mastery.active_share), this.events);
       }
-      if (this.src.kind === "node" || this.src.kind === "event" || this.src.kind === "dungeon") beastsAfterVictory(s, c, masteryXp, this.events);
+      if (this.src.kind === "tower") towerFloorCleared(s, c, this.src.id, this.src.floor, now, this.events);
+      if (this.src.kind === "realm") { const src = this.src; const n = c.get<Dungeon>(src.id).realm_nodes!.find((x) => x.key === src.node)!; realmBattleDone(s, src.id, n.key, n.kind, true, s.character.hp ?? 1, this.events); }
+      if (["node", "event", "dungeon", "tower", "realm"].includes(this.src.kind)) beastsAfterVictory(s, c, masteryXp, this.events);
       s.progress.counters.battles_won = (s.progress.counters.battles_won ?? 0) + 1;
       this.events.push({ type: "battle_won", source: srcId(this.src) });
     } else {
@@ -254,6 +280,9 @@ export class Encounter {
         this.events.push({ type: "tournament_round", tournament: t.id, round: p.round + 1, won: false });
         p.round = 0;
         if (t.loss.sect_fame) grantRewards(s, c, { sect_fame: t.loss.sect_fame }, this.events);
+      } else if (this.src.kind === "realm") {
+        const src = this.src; const n = c.get<Dungeon>(src.id).realm_nodes!.find((x) => x.key === src.node)!;
+        realmBattleDone(s, src.id, n.key, n.kind, false, s.character.hp, this.events);
       }
       s.progress.counters.battles_lost = (s.progress.counters.battles_lost ?? 0) + 1;
       this.events.push({ type: "battle_lost", source: srcId(this.src) });

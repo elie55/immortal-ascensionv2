@@ -570,3 +570,30 @@ button.setrow { width: 100%; color: inherit; }
 .bc-n { font-weight: 800; font-size: 11px; line-height: 1.15; } .bc-badge { position: absolute; top: 4px; right: 4px; width: 16px; height: 16px; border-radius: 50%; display: grid; place-items: center; background: var(--jade-lo); color: #fff; }
 .text-input { width: 100%; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--edge-hi); background: rgba(4,10,34,.6); color: var(--text); font-size: 15px; }
 @keyframes pulse { 50% { box-shadow: 0 0 18px rgba(232,189,92,.55); } }
+
+/* ---------- tower & secret realms (mockups dungeon_hub, secret_realm_map) ---------- */
+.tower-hero { position: relative; overflow: hidden; padding: 0; background: var(--navy-800) center/cover; margin-bottom: 10px; }
+.th-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,14,44,.95) 0%, rgba(8,14,44,.7) 55%, rgba(8,14,44,.35) 100%); }
+.th-body { position: relative; padding: 11px 12px; }
+.th-title { display: block; text-align: left; font-family: var(--f-title); font-size: 21px; font-weight: 900; font-variant: small-caps; margin: 2px 0 8px; } .th-title .cn { font-size: 13px; color: var(--gold-hi); }
+.th-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; } .th-stats > div { padding: 6px 8px; border-radius: 10px; font-size: 9.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-3); display: flex; flex-direction: column; } .th-stats b { font-size: 15px; color: var(--text); text-transform: none; letter-spacing: 0; }
+.tower-floors { display: flex; flex-direction: column; gap: 6px; margin: 8px 0; }
+.tf { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: var(--r-md); }
+.tf.next { border-color: var(--gold-line); box-shadow: 0 0 16px rgba(232,189,92,.3); } .tf.locked { opacity: .6; } .tf.done { border-color: rgba(79,224,176,.4); }
+.tf.boss .tf-n { background: linear-gradient(180deg, #ff8a9c, #c43a55); color: #fff; }
+.tf-n { width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; font-weight: 900; background: var(--navy-700); border: 1px solid var(--edge-hi); }
+.realm-status { display: flex; justify-content: space-around; gap: 6px; padding: 7px 10px; border-radius: 999px; font-size: 12px; margin: 8px 0; flex-wrap: wrap; }
+.realm-map { position: relative; width: 100%; aspect-ratio: 1 / 1.4; border-radius: 18px; background: var(--navy-800) center/cover; border: 1px solid var(--edge); overflow: hidden; box-shadow: inset 0 0 60px rgba(0,0,30,.6); margin-bottom: 10px; }
+.rl { position: absolute; height: 3px; transform-origin: 0 50%; background: rgba(255,255,255,.25); border-radius: 2px; pointer-events: none; }
+.rl.on { background: linear-gradient(90deg, #4fe0b0, #b8fff0); box-shadow: 0 0 8px rgba(79,224,176,.8); }
+.rpin { position: absolute; transform: translate(-50%, -50%); width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-family: var(--f-title); font-weight: 900; font-size: 15px; color: #fff; background: radial-gradient(circle at 40% 35%, #3b4d9a, #18235e); border: 2px solid var(--edge-hi); box-shadow: 0 4px 14px rgba(0,0,0,.55); }
+.rpin.k-boss { width: 58px; height: 58px; border-color: var(--gold); box-shadow: 0 0 20px rgba(255,200,90,.6); }
+.rpin.st-cleared { background: radial-gradient(circle at 40% 35%, #8ff5d4, #1fa985); color: #06352a; border-color: #b8fff0; }
+.rpin.st-open { border-color: var(--gold-hi); box-shadow: 0 0 18px rgba(255,220,140,.7); }
+.rpin.st-locked { filter: grayscale(.7) brightness(.75); }
+.rpin.st-hidden { border-style: dashed; background: rgba(20,30,80,.6); color: var(--text-3); }
+.rpin.sel { outline: 3px solid var(--gold-hi); outline-offset: 3px; }
+.rp-lock { position: absolute; right: -3px; bottom: -3px; width: 17px; height: 17px; border-radius: 50%; background: var(--navy-900); border: 1px solid var(--edge-hi); display: grid; place-items: center; }
+.realm-card { margin-bottom: 8px; }
+.realm-loot { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding: 8px 10px; border-radius: var(--r-md); margin-bottom: 8px; }
+.tower-hero .btn.gold { white-space: nowrap; flex: none; }

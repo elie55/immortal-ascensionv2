@@ -17,6 +17,8 @@ import { canStart, Encounter, type EncounterSource } from "../../engine/encounte
 import { computeStats } from "../../engine/stats.ts";
 import { battleScreen } from "./battle.ts";
 import { gearName } from "./items.ts";
+import { dungeonHubScreen, realmScreen } from "./delves.ts";
+import { canEnterRealm, realmRun } from "../../engine/delves.ts";
 
 const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV"];
 const KIND: Record<string, { label: string; icon: string; color: string }> = {
@@ -34,7 +36,7 @@ export function adventureScreen(app: App) {
   return [
     header(app),
     subbar({ title: "World Regions", cn: "天下", sub: `${discovered} of ${regions.length} regions open`, end: energyChip(app, now) }),
-    h("div", { class: "chips glass" }, h("button", { class: "chip on" }, "Regions"), h("button", { class: "chip", onClick: () => app.router.push(dungeonsScreen(app)) }, "Dungeons")),
+    h("div", { class: "chips glass" }, h("button", { class: "chip on" }, "Regions"), h("button", { class: "chip", onClick: () => app.router.push(dungeonHubScreen(app)) }, "Dungeons")),
     h("div", { class: "region-grid" }, regions.map((r) => {
       const open = !!s.progress.regions[r.id];
       const u = checkUnlock(s, c, r.unlock as any);
@@ -163,7 +165,8 @@ function nodeCard(app: App, n: MapNode, refresh: () => void) {
       } }, icon("chevron", 14), h("span", { class: "grow", style: { textAlign: "left", fontSize: "13px" } }, ch.text)))));
   } else if (n.kind === "secret_realm") {
     const d = c.get<Dungeon>(n.secret_realm!);
-    body.push(h("div", { class: "muted", style: { margin: "6px 0" } }, d.description), h("button", { class: "btn block", disabled: true }, "Secret realms open with the dungeon update"));
+    const can = canEnterRealm(s, c, d.id, app.now());
+    body.push(h("div", { class: "muted", style: { margin: "6px 0" } }, d.description), h("button", { class: ["btn block", can.ok && "gold"], onClick: () => app.router.push(realmScreen(app, d.id)) }, realmRun(s, d.id) ? "Resume the realm" : can.ok ? "Approach the rift" : `Sealed · ${can.reason}`));
   } else if (n.kind === "merchant" && (n as any).shop) body.push(h("button", { class: "btn gold block", onClick: () => { app.game.run("visit", app.now(), (st) => visit(st, n.id), false); app.router.push(shopScreen(app, (n as any).shop, c.get<any>(n.region).name)); } }, icon("gem", 14), "Trade"));
   else if (n.kind === "story") body.push(h("button", { class: "btn gold block", onClick: () => app.playStory(n.story!, () => { app.game.run("story node", app.now(), (st2) => { const rec2 = (st2.progress.regions[n.region]!.nodes[n.id] ??= { clears: 0 }); if (!rec2.clears) { rec2.clears = 1; } return { ok: true, events: [{ type: "node_cleared", node: n.id, region: n.region, first: true }] }; }); refresh(); }) }, "Play scene"));
   return h("div", { class: "glass panel gold node-card" }, ...body);
@@ -184,35 +187,4 @@ function lootToast(app: App, drops: any, gearUids: number[]) {
   const c = app.content;
   const bits = [drops.spirit_stones ? `${drops.spirit_stones} stones` : "", ...drops.items.map((i: any) => `${i.qty}× ${c.get<any>(i.id).name}`), ...gearUids.map((u) => gearName(app, app.game.state.inventory.gear[u]!))].filter(Boolean);
   app.router.toast(`Found: ${bits.join(", ")}`, "good", 4000);
-}
-
-export function dungeonsScreen(app: App): Screen {
-  return {
-    id: "dungeons", render: () => {
-      const s = app.game.state, c = app.content, now = app.now();
-      const list = c.byPrefix<Dungeon>("dungeon").slice().sort((a, b) => a.rec_cp - b.rec_cp);
-      const cp = computeStats(s, c).cp;
-      return [
-        header(app),
-        subbar({ title: "Dungeons", cn: "秘境", sub: `${list.length} dungeons · resource, challenge, secret realms, megas, tower`, backTo: "Regions", onBack: () => app.router.back(), end: energyChip(app, now) }),
-        h("div", { class: "rows" }, list.map((d) => {
-          const can = canStart(s, c, { kind: "dungeon", id: d.id }, now);
-          const rec = s.progress.dungeons[d.id];
-          return h("div", { class: ["glass dungeon-card", !can.ok && "locked"] },
-            h("div", { class: "dc-art", style: { backgroundImage: app.img(c.art(d.id, "card")) } }, h("span", { class: "tag", style: { position: "absolute", left: "8px", top: "8px" } }, d.kind.replace("_", " "))),
-            h("div", { class: "dc-body" },
-              h("div", { class: "row between" }, h("div", { class: "title", style: { fontSize: "14px" } }, d.name), h("span", { class: ["tag", cp >= d.rec_cp ? "jade" : ""] }, `Rec. ${fmt.int(d.rec_cp)}`)),
-              h("div", { class: "muted" }, d.waves ? `${d.waves.length} waves · ${d.entry.energy_cost} energy${d.entry.daily_limit ? ` · ${d.entry.daily_limit}/day` : ""}${rec?.clears ? ` · cleared ×${rec.clears}` : ""}` : d.kind === "tower" ? `${d.tower!.floors} floors` : "Branching map"),
-              h("div", { class: "row between", style: { marginTop: "6px" } },
-                h("span", { class: "muted" }, can.ok ? (d.rewards.first_clear && !rec?.clears ? "First clear bonus available" : "") : can.reason),
-                h("button", { class: ["btn sm", can.ok && "gold"], disabled: !can.ok, onClick: () => {
-                  const r = Encounter.start(s, c, { kind: "dungeon", id: d.id }, app.now());
-                  if (!r.ok) { app.router.toast(r.reason, "bad"); return; }
-                  app.game.dirtyImportant = true;
-                  app.router.pushGlobal(battleScreen(app, r.encounter, () => { app.router.popGlobal(); app.router.refresh(); }));
-                } }, "Enter"))));
-        })),
-      ];
-    },
-  };
 }

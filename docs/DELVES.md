@@ -1,0 +1,26 @@
+# Endless Tower and Secret Realms
+
+Engine: `src/engine/delves.ts` (+ encounter sources `tower` and `realm`). Spec: `tests/delves.test.ts`.
+Screens: Adventure → Dungeons (hub, mockup `dungeon_hub`), tower screen, secret realm map (mockup
+`secret_realm_map`). Region map nodes of kind `secret_realm` open the same realm screen.
+
+## Endless Tower (`dungeon.heaven_piercing_tower`)
+
+- Floor n's power = `rec_cp · cp_growth_per_floor^(n-1)`. Enemies from `enemy_pool` (1 on floors 1–4, 2 to
+  floor 19, 3 beyond) are scaled together to that power (HP, attack, defence, spiritual power).
+- Every `boss_every` floors a Warden from `boss_pool` holds the floor alone, scaled the same way.
+- Climb one floor at a time from your best (checkpoints). No energy, no daily cap; a defeat costs nothing.
+- Each floor: the per-floor loot table and `20 · n^1.35` spirit stones. Milestones pay the first time.
+  `bestFloor` drives the `tower_floor` objective and achievement metric.
+
+## Secret realms
+
+- A run is saved (`progress.realmRuns`): leave and resume any time; abandoning resets the rooms.
+- Entering a new run checks the entry requirements and spends the energy once.
+- The first node is open; a node opens when connected to a cleared node; the exit opens after the guardian.
+- Battles (trial, elite, guardian, event fights) carry HP across the run; losing keeps the node open.
+- Vaults open once per run, spirit pools heal fully, the hidden merchant is the realm's shop, events and
+  hidden rooms resolve once. Hidden rooms appear when their condition holds
+  ("<element> root or <element> technique equipped").
+- The exit pays the clear loot, the first-clear rewards once, records the trial and emits `dungeon_cleared`.
+- Dao companions join only if the realm's `entry.party` allows it.

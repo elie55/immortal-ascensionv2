@@ -48,7 +48,7 @@ export function setCompanionActive(s: GameState, npcId: string, on: boolean): Ac
 /** How many Dao companions may join this encounter. */
 export function companionSlots(c: ContentIndex, src: EncounterSource): number {
   if (src.kind === "node" || src.kind === "event") return 1;
-  if (src.kind === "dungeon") { const d = c.get<Dungeon>(src.id); return d.entry.party.companions_allowed ? d.entry.party.max_companions : 0; }
+  if (src.kind === "dungeon" || src.kind === "tower" || src.kind === "realm") { const d = c.get<Dungeon>(src.id); return d.entry.party.companions_allowed ? d.entry.party.max_companions : 0; }
   return 0;
 }
 

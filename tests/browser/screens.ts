@@ -276,6 +276,36 @@ await page.locator(".modal .btn", { hasText: /Map/ }).click();
 await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.combat.manual = false; });
 await page.locator(".back").click();
 
+// ---------- dungeon hub, tower, secret realm ----------
+await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.state; s.character.permanent = { atk: 50000, hp: 900000, def: 20000, spd: 120 }; s.resources.energy.value = 100; delete s.character.hp; ia.app.router.refresh(); });
+await page.locator(".nav button", { hasText: "Adventure" }).click();
+await page.locator(".nav button", { hasText: "Adventure" }).click();
+await page.locator(".chips .chip", { hasText: "Dungeons" }).click();
+await page.waitForSelector(".tower-hero");
+await shot("dungeon-hub");
+await page.locator(".tower-hero .btn.gold").click();
+await page.waitForSelector(".battle");
+await untilResult();
+await page.locator(".modal .btn", { hasText: /Map/ }).click();
+check(await ia<number>("window.__ia.game.state.progress.dungeons['dungeon.heaven_piercing_tower']?.bestFloor ?? 0") === 1, "climbing the tower records floor 1");
+await page.locator(".th-title").click();
+await page.waitForSelector(".tower-floors");
+await shot("tower");
+await page.locator(".back").click();
+await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.state; s.progress.quests.completed["quest.main.bamboo_sovereign"] = 1; if (!s.progress.realmsEntered.includes("realm.foundation_establishment")) s.progress.realmsEntered.push("realm.foundation_establishment"); s.character.realm = "realm.foundation_establishment"; s.character.stage = 3; ia.app.router.refresh(); });
+await page.locator(".dungeon-card", { hasText: "Origin Secret Realm" }).locator(".btn").click();
+await page.waitForSelector(".realm-map");
+await page.locator(".cta", { hasText: "Enter the realm" }).click();
+await shot("secret-realm");
+await page.locator(".realm-card .btn.gold", { hasText: "Enter" }).click();
+await page.waitForSelector(".battle");
+await untilResult();
+await page.locator(".modal .btn", { hasText: /Map/ }).click();
+await page.waitForSelector(".realm-map");
+check(await ia<boolean>("window.__ia.game.state.progress.realmRuns['dungeon.origin_secret_realm'].cleared.includes('gate')"), "winning the gate trial opens the realm's branches");
+await shot("secret-realm-progress");
+await page.locator(".nav button", { hasText: "Adventure" }).click();
+
 // settings + save slots from Cultivate
 await page.locator(".nav button", { hasText: "Cultivate" }).click();
 await page.locator(".cult-tile", { hasText: "Settings" }).click();

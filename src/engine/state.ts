@@ -7,7 +7,7 @@ import type { ContentIndex } from "../content/index.ts";
 import { seedRng } from "./rng.ts";
 import { grantGear } from "./inventory.ts";
 
-export const STATE_VERSION = 4;
+export const STATE_VERSION = 5;
 
 export const GearInstanceSchema = z.object({
   base: z.string(), rarity: z.string(), ilvl: z.number().int(), enhance: z.number().int().min(0).max(15),
@@ -30,6 +30,11 @@ export const BeastInstanceSchema = z.object({
   /** Bond points (the bond level is derived from them, see beasts.ts). */
   bond: z.number().min(0), hatchedAt: z.number(),
   playedAt: z.number().optional(),
+});
+
+export const RealmRunSchema = z.object({
+  startedAt: z.number(), at: z.string(), cleared: z.array(z.string()), found: z.array(z.string()),
+  hp: z.number().optional(), stones: z.number().int().min(0), items: z.array(z.object({ id: z.string(), qty: z.number().int() })), gear: z.array(z.number().int()),
 });
 
 export const IncubatorSchema = z.object({ egg: z.string(), wins: z.number().int().min(0), need: z.number().int().positive(), startedAt: z.number() });
@@ -106,6 +111,8 @@ export const GameStateSchema = z.object({
     recipes: z.array(z.string()),
     /** Alchemy furnace grade and proficiency (accumulated proficiency points). */
     crafting: z.object({ furnace: z.number().int().min(1), proficiency: z.number().min(0) }),
+    /** Secret realm runs in progress (saved: leave and come back). */
+    realmRuns: z.record(z.string(), RealmRunSchema),
     /** Shop id → restock period key the purchase counts belong to. */
     shopPeriods: z.record(z.string(), z.string()),
     shopPurchases: z.record(z.string(), z.record(z.string(), z.number().int())),
@@ -158,7 +165,7 @@ export function newGameState(content: ContentIndex, now: number, opts: { name?: 
     progress: {
       quests: { active: {}, completed: {}, lastCompletedAt: {} }, achievements: {}, storySeen: {}, storyChoices: {},
       regions: { [s.region]: { discoveredAt: now, nodes: {} } }, dungeons: {}, trialsCleared: {}, tournaments: {}, tribulations: {},
-      recipes: [], crafting: { furnace: 1, proficiency: 0 }, shopPurchases: {}, shopPeriods: {}, counters: {}, realmsEntered: [s.realm.id], unlocks: [],
+      recipes: [], crafting: { furnace: 1, proficiency: 0 }, realmRuns: {}, shopPurchases: {}, shopPeriods: {}, counters: {}, realmsEntered: [s.realm.id], unlocks: [],
     },
     daily: { day: dayKey(now), counters: {} },
     combat: defaultCombat(content),

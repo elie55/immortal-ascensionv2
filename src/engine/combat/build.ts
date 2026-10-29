@@ -86,22 +86,24 @@ export function buildBeast(s: GameState, c: ContentIndex): Combatant | null {
 export function buildCompanion(s: GameState, c: ContentIndex, npcId: string): Combatant { return companionCombatant(s, c, npcId, make); }
 
 /** An enemy or boss from content. `hpMult` applies dungeon modifiers. */
-export function buildEnemy(c: ContentIndex, id: string, opts: { hpMult?: number; kind?: Combatant["kind"] } = {}): Combatant {
+export function buildEnemy(c: ContentIndex, id: string, opts: { hpMult?: number; statMult?: number; kind?: Combatant["kind"] } = {}): Combatant {
   return buildEnemyFrom(c, id, c.get<any>(id), opts);
 }
 
 export interface EnemyDef { name: string; element: string; realm: { id: string }; stats: Record<string, number>; cp: number; techniques: string[]; ai: { strategy: string; rules: string[] }; resistances?: Record<string, number>; loot?: string; mastery_xp?: number; phases?: Boss["phases"]; weaknesses?: string[] }
 
 /** Build from an explicit definition (content enemy/boss, or a synthetic one such as a duelling NPC). */
-export function buildEnemyFrom(c: ContentIndex, id: string, e: EnemyDef, opts: { hpMult?: number; kind?: Combatant["kind"]; art?: string } = {}): Combatant {
+export function buildEnemyFrom(c: ContentIndex, id: string, e: EnemyDef, opts: { hpMult?: number; statMult?: number; kind?: Combatant["kind"]; art?: string } = {}): Combatant {
   const isBoss = !!e.phases?.length;
   const base: StatBlock = { ...e.stats };
+  // statMult scales an enemy to a target power (Endless Tower floors): HP, attack, defence and spiritual power.
+  if (opts.statMult && opts.statMult !== 1) for (const k of ["hp", "atk", "def", "sp_power"]) if (base[k] !== undefined) base[k] = base[k]! * opts.statMult;
   const maxHp = Math.max(1, Math.round((base.hp ?? 1) * (opts.hpMult ?? 1)));
   const techIds = isBoss ? [...new Set([...e.phases![0]!.techniques, ...e.techniques])] : e.techniques;
   const skills: Skill[] = [{ ...BASIC, element: e.element, power: c.combat.damage.basic_power, masteryMult: 1 }, ...techIds.map((t: string) => techSkill(c, t, 0))];
   const cmb = make({
     id, name: e.name, side: "enemy", kind: opts.kind ?? (isBoss ? "boss" : "enemy"), element: e.element, base, maxHp, maxSp: Math.max(0, Math.round(base.sp_energy ?? 100)), skills, specials: [],
-    resistances: { ...(e.resistances ?? {}) }, ai: { strategy: e.ai.strategy, rules: e.ai.rules }, art: opts.art ?? c.art(id, "battle"), cp: e.cp, masteryXp: e.mastery_xp ?? 0, lootTable: e.loot, realmOrder: c.get<any>(e.realm.id).order,
+    resistances: { ...(e.resistances ?? {}) }, ai: { strategy: e.ai.strategy, rules: e.ai.rules }, art: opts.art ?? c.art(id, "battle"), cp: Math.round(e.cp * (opts.statMult ?? 1)), masteryXp: e.mastery_xp ?? 0, lootTable: e.loot, realmOrder: c.get<any>(e.realm.id).order,
   });
   if (isBoss) cmb.boss = { phases: [...e.phases!].sort((a, b) => b.hp_threshold - a.hp_threshold), weaknesses: e.weaknesses ?? [], phase: 0, charging: null };
   return cmb;
