@@ -97,24 +97,24 @@ def region(rd, prev):
             "targeting": "self" if tpow == 0 else ("all_enemies" if "all" in tdesc.lower() else "single"), "power": tpow, "hits": 1, "sp_cost": tsp, "cooldown": tcd,
             "applies": [{"status": f"status.{tstat}", "chance": tch, "turns": 2}], "passive_bonuses": {}, "requirements": {"realm": {"id": realm_id(rmin)}},
             "mastery": {"max_level": 10, "xp_per_level": 60 + 20 * n, "per_level_bonus": 0.03}, "enemy_only": False,
-            "art": {"icon": icon(f"techniques/active/{tk}", f"a square technique icon for '{tname}' ({telem} element): {tdesc}", trar, ["refs/mockups/battle_screen.png"])}}
+            "art": {"icon": icon(f"techniques/active/{tk}", f"a square technique icon depicting the {telem}-element art {tname} as a glowing martial-art symbol or action{(': ' + flavor(tdesc)) if flavor(tdesc) else ''}, {NOTXT}", trar, ["refs/mockups/battle_screen.png"])}}
     if tpow == 0: tech["heal_pct"] = 35
     out["techs_active"].append(tech)
     ek, ename, ecn, eelem, edesc, epow, estat, ech = rd["etech"]
     out["techs_active"].append({"id": f"tech.active.{ek}", **named(ename, edesc, ecn), "kind": "active", "rarity": "rare", "element": f"elem.{eelem}", "weapon_affinity": "any",
                                 "targeting": "single", "power": epow, "hits": 1, "sp_cost": 10, "cooldown": 2, "applies": [{"status": f"status.{estat}", "chance": ech, "turns": 2}],
                                 "passive_bonuses": {}, "requirements": {}, "mastery": {"max_level": 10, "xp_per_level": 60, "per_level_bonus": 0.03}, "enemy_only": True,
-                                "art": {"icon": icon(f"techniques/active/{ek}", f"a square technique icon for the enemy art '{ename}': {edesc}", "rare", ["refs/mockups/battle_screen.png"])}})
+                                "art": {"icon": icon(f"techniques/active/{ek}", f"a square technique icon depicting the enemy art {ename} as a glowing symbol or action{(': ' + flavor(edesc)) if flavor(edesc) else ''}, {NOTXT}", "rare", ["refs/mockups/battle_screen.png"])}})
     pk, pname, pcn, pelem, prar, pdesc, pbon = rd["passive"]
     out["techs_passive"].append({"id": f"tech.passive.{pk}", **named(pname, pdesc, pcn), "kind": "passive", "rarity": prar, "element": f"elem.{pelem}", "weapon_affinity": "any",
                                  "targeting": "self", "power": 0, "hits": 1, "sp_cost": 0, "cooldown": 0, "applies": [], "passive_bonuses": pbon,
                                  "requirements": {"realm": {"id": realm_id(rmin)}}, "mastery": {"max_level": 10, "xp_per_level": 80, "per_level_bonus": 0.03}, "enemy_only": False,
-                                 "art": {"icon": icon(f"techniques/passive/{pk}", f"a square passive-technique icon for '{pname}': {pdesc}", prar, ["refs/mockups/battle_screen.png"])}})
+                                 "art": {"icon": icon(f"techniques/passive/{pk}", f"a square passive-technique icon depicting {pname} as a calm glowing emblem{(': ' + flavor(pdesc)) if flavor(pdesc) else ''}, {NOTXT}", prar, ["refs/mockups/battle_screen.png"])}})
     pavilion.append({"id": f"tech.passive.{pk}", "price": 300 * n * n, "currency": "spirit_stones", "unlock": {"sect_fame": FAME[n - 1]}})
     mk, mname, mcn, melem, mrar, mgrade, mmult, mbon, mdesc = rd["method"]
     out["methods"].append({"id": f"method.{mk}", **named(mname, mdesc, mcn), "rarity": mrar, "grade": mgrade, "element": f"elem.{melem}", "qi_mult": mmult, "bonuses": mbon,
                            "requirements": {"realm": {"id": realm_id(rmin)}}, "mastery": {"max_level": 10, "xp_per_level": 100 + 30 * n, "per_level_bonus": 0.04},
-                           "art": {"icon": icon(f"techniques/methods/{mk}", f"a cultivation-method scroll emblem for '{mname}': {mdesc}", mrar, ["refs/mockups/cultivation_screen.png"])}})
+                           "art": {"icon": icon(f"techniques/methods/{mk}", f"a cultivation-method scroll emblem evoking {mname}{(': ' + flavor(mdesc)) if flavor(mdesc) else ''}, {NOTXT}", mrar, ["refs/mockups/cultivation_screen.png"])}})
     out["books"].append({"id": f"book.{mk}", **named(mname, f"The scripture of the {mname}.", mcn), "rarity": mrar, "sell_value": 200 * n, "stack_limit": 5, "tags": [key],
                          "teaches": f"method.{mk}", "art": {"icon": icon(f"items/books/{mk}", f"an ornate cultivation manual titled {mname}, {melem} themed cover", mrar)}})
 
@@ -191,7 +191,7 @@ def region(rd, prev):
         ri = R.index(brar)
         out["btech"].append({"id": act, "beast": f"beast.{bk2}", **named(f"{bn}'s {aname}", f"{bn} unleashes a {aname.lower()}.", None), "kind": "active", "element": f"elem.{bel2}",
                              "power": 0 if astat == "status.shield" else 80 + 15 * ri, "applies": [{"status": astat, "chance": 0.5 if astat != "status.shield" else 1, "turns": 2}],
-                             "passive_bonuses": {}, "cooldown": 3, "art": {"icon": icon(f"techniques/beast/{bk2}_active", f"a spirit-beast ability icon: {bn} using {aname}", brar, ["refs/mockups/spirit_beasts.png"])}})
+                             "passive_bonuses": {}, "cooldown": 3, "art": {"icon": icon(f"techniques/beast/{bk2}_active", f"a spirit-beast ability icon: {bn} using {aname}, {NOTXT}", brar, ["refs/mockups/spirit_beasts.png"])}})
         out["btech"].append({"id": pas, "beast": f"beast.{bk2}", **named(f"{bel2.capitalize()} Affinity", f"{bel2.capitalize()} damage +{6 + 2 * ri}%.", None), "kind": "passive", "element": f"elem.{bel2}",
                              "power": 0, "applies": [], "passive_bonuses": {f"elem_dmg.{bel2}": 6 + 2 * ri}, "cooldown": 3,
                              "art": {"icon": icon(f"techniques/beast/{bk2}_passive", f"a spirit-beast passive icon of {bn}'s {bel2} affinity", brar, ["refs/mockups/spirit_beasts.png"])}})
@@ -205,7 +205,7 @@ def region(rd, prev):
         b = {"id": f"beast.{bk2}", **named(bn, desc, bcn2), "rarity": brar, "element": f"elem.{bel2}", "species": species, "stages": stages,
              "food": ["bfood.spirit_fruit", "bfood.dried_fish"] if bel2 in ("water", "wood") else ["bfood.spirit_meat", "bfood.dried_fish"],
              "bond": {"max": 10, "milestones": [{"level": 3, "bonus": {"hp": 50 * n}}, {"level": 6, "bonus": {"atk": 8 * n}}, {"level": 10, "bonus": {"crit": 2, "spd": 2}}]},
-             "cultivation_bonus": round(0.02 + 0.01 * ri, 2), "art": {"icon": icon(f"beasts/{bk2}_icon", f"the face of {look}", brar, ["refs/mockups/spirit_beasts.png"])}}
+             "cultivation_bonus": round(0.02 + 0.01 * ri, 2), "art": {"icon": icon(f"beasts/{bk2}_icon", f"the face of {look}, floating free with no circle, ring or badge behind it", brar, ["refs/mockups/spirit_beasts.png"])}}
         for s in keys: b["art"][f"battle_{s}"] = beast_stage(f"beasts/{bk2}_{s}", look, s, stage_names[s])
         out["beasts"].append(b)
         egg = {"id": f"egg.{bk2}", **named(f"{bn} Egg", f"An egg that will hatch into a {bn}.", None), "rarity": brar, "sell_value": 100 * n * (ri + 1), "stack_limit": 5, "tags": [key],
@@ -356,7 +356,8 @@ def region(rd, prev):
 
     # ---------- quests & achievement ----------
     arrival, sovereign = f"quest.main.{key}_arrival", f"quest.main.{key}_sovereign"
-    qicon = lambda typ, k, name: {"icon": icon(f"quests/{typ}_{k}", f"a quest emblem for '{name}' in the {rd['name']}", "rare", ["refs/mockups/mission_hall.png"])}
+    # never quote a name in an art prompt: the model letters it onto the emblem
+    qicon = lambda typ, k, name: {"icon": icon(f"quests/{typ}_{k}", f"a round quest emblem with a small pictorial scene evoking {name} of the {rd['name']}, a purely pictorial emblem with no letters, characters or writing anywhere", "rare", ["refs/mockups/mission_hall.png"])}
     out["quests"] += [
         {"id": arrival, **named(f"Into the {rd['name']}", f"Reach the {rd['name']} and explore three of its places.", None), "type": "main", "giver": "system", "turn_in": "auto",
          "prereqs": {"quests": [prev_q], "regions": [f"region.{key}"]}, "objectives": [{"type": "explore", "region": f"region.{key}", "nodes": 3}],
@@ -444,12 +445,12 @@ def endgame():
     # ---- extra methods / passives (pavilion) ----
     for k, name, cn, el, rar, grade, mult, bon, desc, fame in EXTRA_METHODS:
         out["methods"].append({"id": f"method.{k}", **named(name, desc, cn), "rarity": rar, "grade": grade, **({"element": f"elem.{el}"} if el else {}), "qi_mult": mult, "bonuses": bon, "requirements": {},
-                               "mastery": {"max_level": 10, "xp_per_level": 120, "per_level_bonus": 0.04}, "art": {"icon": icon(f"techniques/methods/{k}", f"a cultivation-method scroll emblem for '{name}': {desc}", rar, ["refs/mockups/cultivation_screen.png"])}})
+                               "mastery": {"max_level": 10, "xp_per_level": 120, "per_level_bonus": 0.04}, "art": {"icon": icon(f"techniques/methods/{k}", f"a cultivation-method scroll emblem evoking {name}{(': ' + flavor(desc)) if flavor(desc) else ''}, {NOTXT}", rar, ["refs/mockups/cultivation_screen.png"])}})
         pavilion.append({"id": f"method.{k}", "price": fame * 2, "currency": "spirit_stones", "unlock": {"sect_fame": fame}})
     for k, name, cn, el, rar, desc, bon, fame in EXTRA_PASSIVES:
         out["techs_passive"].append({"id": f"tech.passive.{k}", **named(name, desc, cn), "kind": "passive", "rarity": rar, "element": f"elem.{el}", "weapon_affinity": "any", "targeting": "self", "power": 0, "hits": 1,
                                      "sp_cost": 0, "cooldown": 0, "applies": [], "passive_bonuses": bon, "requirements": {}, "mastery": {"max_level": 10, "xp_per_level": 80, "per_level_bonus": 0.03}, "enemy_only": False,
-                                     "art": {"icon": icon(f"techniques/passive/{k}", f"a square passive-technique icon for '{name}': {desc}", rar, ["refs/mockups/battle_screen.png"])}})
+                                     "art": {"icon": icon(f"techniques/passive/{k}", f"a square passive-technique icon depicting {name} as a calm glowing emblem{(': ' + flavor(desc)) if flavor(desc) else ''}, {NOTXT}", rar, ["refs/mockups/battle_screen.png"])}})
         pavilion.append({"id": f"tech.passive.{k}", "price": fame, "currency": "spirit_stones", "unlock": {"sect_fame": fame}})
 
     regmap = {r["order"]: r for r in REGIONS}
@@ -522,7 +523,7 @@ def endgame():
                               "giver": "system", "turn_in": "auto", "prereqs": {}, "objectives": [{"type": "reach_realm", "realm": realm_id(realm), "stage": 1}],
                               "rewards": {"spirit_stones": 200 * i * i, "sect_fame": 50 * i, "items": [q2("mat.dao_insight_crystal", max(1, i - 3))] if i >= 4 else [q2("cons.spirit_condensing_pill", 3)]},
                               "difficulty": min(5, 1 + i // 3), "hint": "Cultivate tab · Break through",
-                              "art": {"icon": icon(f"quests/cultivation_reach_{realm}", f"a quest emblem celebrating the {realm.replace('_', ' ')} realm", "epic", ["refs/mockups/cultivation_screen.png"])}})
+                              "art": {"icon": icon(f"quests/cultivation_reach_{realm}", f"a quest emblem celebrating the {realm.replace('_', ' ')} realm with a glowing meditating silhouette, a purely pictorial emblem with no letters, characters or writing anywhere", "epic", ["refs/mockups/cultivation_screen.png"])}})
 
 
 def tournaments():

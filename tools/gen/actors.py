@@ -75,7 +75,7 @@ def beasts():
         d = {"id": f"beast.{key}", **named(name, desc, cn), "rarity": rarity, "element": f"elem.{elem}", "species": species, "stages": stages, "food": food,
              "bond": {"max": 10, "milestones": [{"level": 3, "bonus": {"hp": 50}}, {"level": 6, "bonus": {"atk": 15}}, {"level": 10, "bonus": {"crit": 2, "spd": 2}}]},
              "cultivation_bonus": cult,
-             "art": {"icon": icon(f"beasts/{key}_icon", f"the face of {look}", rarity, ["refs/mockups/spirit_beasts.png"])}}
+             "art": {"icon": icon(f"beasts/{key}_icon", f"the face of {look}, floating free with no circle, ring or badge behind it", rarity, ["refs/mockups/spirit_beasts.png"])}}
         for s in stages:
             d["art"][f"battle_{s['key']}"] = beast_stage(f"beasts/{key}_{s['key']}", look, s["key"], s["name"])
         return d

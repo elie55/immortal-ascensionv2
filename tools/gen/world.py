@@ -97,7 +97,7 @@ def statuses():
     S = lambda key, name, kind, turns, mods, tick, desc, stacking="refresh", mx=1: {
         "id": f"status.{key}", **named(name, desc), "kind": kind, "stacking": stacking, "max_stacks": mx, "default_turns": turns,
         "modifiers": mods, **({"tick": tick} if tick else {}),
-        "art": {"icon": art(f"assets/status/{key}.png", f"{STYLE}. Small round status-effect icon for '{name}': {desc} Bold readable symbol, glowing rim, plain background, no text.", (128, 128), True, ["refs/mockups/battle_screen.png"])}}
+        "art": {"icon": art(f"assets/status/{key}.png", f"{STYLE}. Small round status-effect icon: one bold glowing symbol meaning {name.lower()}, glowing rim, plain background, {NOTXT}.", (128, 128), True, ["refs/mockups/battle_screen.png"])}}
     return [
         S("burning", "Burning", "dot", 2, {}, {"pct_atk": 30}, "Takes fire damage each turn.", "stack", 3),
         S("poison", "Poison", "dot", 3, {"heal_bonus": -30}, {"pct_atk": 20}, "Takes nature damage each turn and heals less.", "stack", 5),
@@ -119,7 +119,7 @@ def methods():
     M = lambda key, name, cn, rarity, grade, elem, mult, bon, req, desc: {
         "id": f"method.{key}", **named(name, desc, cn), "rarity": rarity, "grade": grade, **({"element": f"elem.{elem}"} if elem else {}),
         "qi_mult": mult, "bonuses": bon, "requirements": req, "mastery": {"max_level": 10, "xp_per_level": 60, "per_level_bonus": 0.04},
-        "art": {"icon": icon(f"techniques/methods/{key}", f"a cultivation-method scroll emblem for '{name}': {desc}", rarity, ["refs/mockups/cultivation_screen.png"])}}
+        "art": {"icon": icon(f"techniques/methods/{key}", f"a cultivation-method scroll emblem evoking {name}{(': ' + flavor(desc)) if flavor(desc) else ''}, {NOTXT}", rarity, ["refs/mockups/cultivation_screen.png"])}}
     return [
         M("azure_cloud_breathing", "Azure Cloud Breathing", "青云吐纳", "uncommon", "earth", None, 1.0, {"sp_energy": 10}, {}, "The Azure Cloud Sect's foundation breathing art. Steady, safe, and endlessly refinable."),
         M("nine_yang_scripture", "Nine Yang Scripture", "九阳真经", "rare", "earth", "fire", 1.35, {"elem_dmg.fire": 10, "hp": 300}, {"realm": {"id": "realm.qi_condensation", "stage": 5}}, "Nine suns circulate through the meridians. Cultivation burns hot and fast."),
@@ -134,7 +134,7 @@ def techs():
         d = {"id": f"tech.{pre}.{key}", **named(name, desc, cn), "kind": kind, "rarity": rarity, "element": f"elem.{elem}", "weapon_affinity": weapon,
              "targeting": targeting, "power": power, "hits": hits, "sp_cost": sp, "cooldown": cd, "applies": applies or [], "passive_bonuses": passive or {},
              "requirements": req or {}, "mastery": {"max_level": 10, "xp_per_level": 60, "per_level_bonus": 0.03}, "enemy_only": enemy_only,
-             "art": {"icon": icon(f"techniques/{pre}/{key}", f"a square technique icon for '{name}' ({elem} element): {desc}", rarity, ["refs/mockups/battle_screen.png"])}}
+             "art": {"icon": icon(f"techniques/{pre}/{key}", f"a square technique icon depicting the {elem}-element art {name} as a glowing martial-art symbol or action{(': ' + flavor(desc)) if flavor(desc) else ''}, {NOTXT}", rarity, ["refs/mockups/battle_screen.png"])}}
         if heal: d["heal_pct"] = heal
         if shield: d["shield_pct_max_hp"] = shield
         if ult: d["ult_charge"] = ult
@@ -184,7 +184,7 @@ def beast_abilities():
     B = lambda beast, key, name, kind, elem, desc, power=0, applies=None, passive=None, heal=None: {
         "id": f"btech.{beast}.{key}", "beast": f"beast.{beast}", **named(name, desc), "kind": kind, "element": f"elem.{elem}", "power": power,
         **({"heal_pct": heal} if heal else {}), "applies": applies or [], "passive_bonuses": passive or {}, "cooldown": 3,
-        "art": {"icon": icon(f"techniques/beast/{beast}_{key}", f"a square spirit-beast ability icon for '{name}': {desc}", "rare", ["refs/mockups/spirit_beasts.png"])}}
+        "art": {"icon": icon(f"techniques/beast/{beast}_{key}", f"a square spirit-beast ability icon depicting {name}{(': ' + flavor(desc)) if flavor(desc) else ''}, {NOTXT}", "rare", ["refs/mockups/spirit_beasts.png"])}}
     return [
         B("yunyun", "cloud_veil", "Cloud Veil", "active", "water", "YunYun wraps the party in soft cloud, granting a small shield.", 0, [{"status": "status.shield", "chance": 1, "turns": 2}]),
         B("yunyun", "nimble_spirit", "Nimble Spirit", "passive", "water", "Evasion +5%.", passive={"eva": 5}),

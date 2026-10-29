@@ -35,6 +35,15 @@ def art(file, prompt, size=(256, 256), transparent=True, refs=None, negative=NEG
     return {"file": file, "size": list(size), "transparent": transparent, "prompt": prompt,
             "negative": negative, "references": refs or [], "status": art_status(file)}
 
+# Art prompts never quote a name or numbers: the model letters them onto the picture (pilot: medals, quest emblems).
+NOTXT = "a purely pictorial emblem with no letters, characters, numbers or writing anywhere"
+
+def flavor(desc):
+    """The sentences of a description that carry imagery (no numbers), for art prompts."""
+    import re
+    parts = [p.strip() for p in re.split(r"(?<=[.!?])\s+", desc or "") if p.strip() and not re.search(r"\d", p)]
+    return " ".join(parts).rstrip(".")
+
 def icon(path, desc, rarity=None, refs=None, size=(256, 256)):
     look = (f", {RARITY_LOOK[rarity]}" if path.startswith("equipment/") else f", with {RARITY_GLOW[rarity]}") if rarity else ""
     return art(f"assets/{path}.png", f"{STYLE}. Game inventory icon of {desc}{look}. Centered single object, "
@@ -81,12 +90,13 @@ def write(rel, data):
         f.write("\n")
     print("wrote", rel, len(data) if isinstance(data, list) else "")
 
-# Spirit beast evolution stages must read as clearly different forms of the same creature.
+# Spirit beast evolution stages must read as clearly different forms of the same creature. No stage adds horns,
+# legs or a human shape the species does not have (pilot: moths and eels turned into winged people).
 BEAST_STAGE_LOOK = {
     "hatchling": "as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame",
-    "juvenile": "as a young adolescent creature, slender and lanky with long legs, half-grown horns and features, curious alert expression, medium size",
-    "adult": "as a fully grown powerful adult creature, muscular and majestic, complete horns, fins or plumage, confident stance, filling the frame",
-    "sovereign": "as an enormous legendary sovereign form, larger and more ornate than the adult, crown-like glowing horns, flowing ethereal mane, radiant elemental aura and floating runes around it, regal awe-inspiring presence",
+    "juvenile": "as a young adolescent creature, slender and lanky, half-grown features of its kind, curious alert expression, medium size",
+    "adult": "as a fully grown powerful adult creature, strong and majestic, fully developed features of its kind, confident stance, filling the frame",
+    "sovereign": "as an enormous legendary sovereign form, larger and more ornate than the adult, a glowing crown-like crest, flowing ethereal light, radiant elemental aura and floating runes around it, regal awe-inspiring presence",
 }
 
 def beast_stage(path, look, stage, stage_name):

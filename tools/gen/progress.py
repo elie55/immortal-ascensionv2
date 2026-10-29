@@ -108,7 +108,7 @@ def forge():
 def quests():
     def Q(key, typ, name, cn, desc, giver, turn_in, objectives, rewards, hint, prereqs=None, nxt=None, diff=1, cp=None, repeat=None):
         d = {"id": f"quest.{typ}.{key}", **named(name, desc, cn), "type": typ, "giver": giver, "turn_in": turn_in, "prereqs": prereqs or {}, "objectives": objectives, "rewards": rewards,
-             "difficulty": diff, "hint": hint, "art": {"icon": icon(f"quests/{typ}_{key}", f"a quest emblem for '{name}': {desc}", "rare", ["refs/mockups/mission_hall.png"])}}
+             "difficulty": diff, "hint": hint, "art": {"icon": icon(f"quests/{typ}_{key}", f"a round quest emblem with a small pictorial scene evoking {name.lower()}, a purely pictorial emblem with no letters, characters or writing anywhere", "rare", ["refs/mockups/mission_hall.png"])}}
         if nxt: d["next"] = f"quest.{nxt}"
         if cp: d["rec_cp"] = cp
         if repeat: d["repeatable"] = {"cooldown_min": repeat}
