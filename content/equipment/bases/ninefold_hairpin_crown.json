@@ -5,32 +5,26 @@
     "description": "Nine hairpins of celestial gold arranged as a crown.",
     "name_cn": "九重钗冠",
     "slot": "helmet",
+    "main_value": 30,
+    "rarity_range": [
+      "immortal",
+      "immortal"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": true,
+    "special_effects": [
+      {
+        "kind": "heal_on_turn",
+        "description": "Heal 3% max HP each turn.",
+        "value": 3
+      }
+    ],
     "requirements": {
       "realm": "realm.core_formation"
     },
     "rarities": {
       "immortal": {
-        "name": "Ninefold Hairpin Crown · Celestial",
-        "description": "Nine hairpins of celestial gold arranged as a crown. (Immortal grade.)",
-        "stats": {
-          "hp": 540,
-          "def": 90
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "heal_on_turn",
-            "description": "Heal 3% max HP each turn.",
-            "value": 3
-          }
-        ],
-        "item_cp": 955,
-        "sell_value": 9000,
         "art": {
           "icon": {
             "file": "assets/equipment/helmet/ninefold_hairpin_crown_immortal.png",

@@ -7,11 +7,12 @@ import type { Prefix } from "./ids.ts";
 import { Realm, Element, Root, StatusEffect, Method, Technique, BeastAbility } from "./world.ts";
 import {
   Material, Consumable, Gift, Book, Blueprint, QuestItem, Egg, BeastFood, Junk,
-  GearFamily, GearSet, EnhancementTable, RefinementTable, ReforgeTable, Title,
+  GearBase, GearSet, EnhancementTable, RefinementTable, ReforgeTable, Title,
 } from "./items.ts";
 import { Enemy, Boss, Beast, Npc } from "./actors.ts";
 import { Region, Node, Dungeon, Tribulation, SectLocation, Rank, Event } from "./places.ts";
 import { Shop, LootTable, AlchemyRecipe, ForgeRecipe, Furnace } from "./economy.ts";
+import { GearRules } from "./gear-math.ts";
 import { Quest, Achievement, Tournament, StoryScene, StartingState, ContentTargets } from "./progress.ts";
 
 export interface Collection {
@@ -39,7 +40,7 @@ export const COLLECTIONS: Collection[] = [
   { prefix: "egg", files: "content/items/eggs.json", schema: Egg, label: "Beast eggs" },
   { prefix: "bfood", files: "content/items/beast_food.json", schema: BeastFood, label: "Beast food" },
   { prefix: "junk", files: "content/items/junk.json", schema: Junk, label: "Junk" },
-  { prefix: "gear", files: "content/equipment/families/*.json", schema: GearFamily, label: "Gear families" },
+  { prefix: "gear", files: "content/equipment/bases/*.json", schema: GearBase, label: "Gear bases" },
   { prefix: "set", files: "content/equipment/sets.json", schema: GearSet, label: "Gear sets" },
   { prefix: "title", files: "content/items/titles.json", schema: Title, label: "Titles" },
   { prefix: "enemy", files: "content/enemies/*.enemies.json", schema: Enemy, label: "Enemies" },
@@ -65,6 +66,7 @@ export const COLLECTIONS: Collection[] = [
 
 /** Single-object files (not arrays, no IDs). */
 export const SINGLETONS = {
+  gear_rules: { file: "content/equipment/rules.json", schema: GearRules },
   enhancement: { file: "content/equipment/enhancement.json", schema: EnhancementTable },
   refinement: { file: "content/equipment/refinement.json", schema: RefinementTable },
   reforge: { file: "content/equipment/reforge.json", schema: ReforgeTable },
@@ -81,3 +83,4 @@ export * from "./actors.ts";
 export * from "./places.ts";
 export * from "./economy.ts";
 export * from "./progress.ts";
+export * from "./gear-math.ts";

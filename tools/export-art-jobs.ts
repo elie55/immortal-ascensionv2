@@ -22,7 +22,6 @@ export interface ArtJob {
 const db = loadDatabase(resolve("."));
 const jobs: ArtJob[] = [];
 for (const e of db.registry.values()) {
-  if (e.family) continue;
   const push = (entity: string, art: Record<string, any> | undefined) => {
     for (const [key, a] of Object.entries(art ?? {})) {
       if (!all && a.status !== "planned") continue;

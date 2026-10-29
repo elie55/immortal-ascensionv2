@@ -29,12 +29,28 @@
         ]
       },
       {
-        "id": "gear.azure_iron_war_ring.uncommon",
-        "chance": 0.15,
-        "qty": [
-          1,
-          1
-        ]
+        "gear": {
+          "pool": {
+            "tags": [
+              "plains"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 70,
+          "rare": 30
+        },
+        "chance": 0.5
+      },
+      {
+        "gear": {
+          "base": "gear.azure_iron_sword"
+        },
+        "rarity_weights": {
+          "uncommon": 60,
+          "rare": 40
+        },
+        "chance": 0.15
       }
     ],
     "guaranteed": [],
@@ -43,7 +59,11 @@
       200
     ],
     "sect_fame": 20,
-    "mastery_xp": 40
+    "mastery_xp": 40,
+    "ilvl": [
+      8,
+      12
+    ]
   },
   {
     "id": "loot.boss.thousand_node_bamboo_dragon",
@@ -75,14 +95,6 @@
         ]
       },
       {
-        "id": "gear.cloud_veil_crown.rare",
-        "chance": 0.2,
-        "qty": [
-          1,
-          1
-        ]
-      },
-      {
         "id": "mat.spirit_enhancing_stone",
         "chance": 0.8,
         "qty": [
@@ -97,6 +109,32 @@
           1,
           1
         ]
+      },
+      {
+        "gear": {
+          "base": "gear.cloud_veil_crown"
+        },
+        "rarity_weights": {
+          "rare": 65,
+          "epic": 30,
+          "legendary": 5
+        },
+        "chance": 0.25
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "forest"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 55,
+          "epic": 40,
+          "legendary": 5
+        },
+        "chance": 0.6
       }
     ],
     "guaranteed": [],
@@ -105,7 +143,11 @@
       700
     ],
     "sect_fame": 50,
-    "mastery_xp": 120
+    "mastery_xp": 120,
+    "ilvl": [
+      18,
+      22
+    ]
   },
   {
     "id": "loot.boss.guardian_of_the_origin",
@@ -143,6 +185,20 @@
           3,
           6
         ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "forest"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 70,
+          "legendary": 30
+        },
+        "chance": 0.7
       }
     ],
     "guaranteed": [],
@@ -151,7 +207,11 @@
       1400
     ],
     "sect_fame": 80,
-    "mastery_xp": 200
+    "mastery_xp": 200,
+    "ilvl": [
+      24,
+      30
+    ]
   },
   {
     "id": "loot.boss.tribulation_thunder_spirit",
@@ -219,6 +279,19 @@
           1,
           1
         ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sect"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 100
+        },
+        "chance": 0.8
       }
     ],
     "guaranteed": [],
@@ -227,7 +300,11 @@
       12000
     ],
     "sect_fame": 500,
-    "mastery_xp": 1200
+    "mastery_xp": 1200,
+    "ilvl": [
+      90,
+      100
+    ]
   },
   {
     "id": "loot.boss.tower_warden",
@@ -257,6 +334,21 @@
           1,
           1
         ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sect"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 40,
+          "epic": 40,
+          "legendary": 20
+        },
+        "chance": 0.5
       }
     ],
     "guaranteed": [],
@@ -265,6 +357,10 @@
       1000
     ],
     "sect_fame": 40,
-    "mastery_xp": 150
+    "mastery_xp": 150,
+    "ilvl": [
+      10,
+      100
+    ]
   }
 ]

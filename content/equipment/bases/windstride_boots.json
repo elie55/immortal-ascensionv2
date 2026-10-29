@@ -1,0 +1,102 @@
+[
+  {
+    "id": "gear.windstride_boots",
+    "name": "Windstride Boots",
+    "description": "Light leather boots favoured by forest scouts.",
+    "name_cn": "风行靴",
+    "slot": "boots",
+    "main_value": 8,
+    "rarity_range": [
+      "uncommon",
+      "legendary"
+    ],
+    "droppable": true,
+    "drop_tags": [
+      "forest",
+      "sect"
+    ],
+    "unique": false,
+    "special_effects": [],
+    "requirements": {},
+    "rarities": {
+      "uncommon": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/windstride_boots_uncommon.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of light green leather boots with wind-swirl stitching and jade clasps, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "rare": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/windstride_boots_rare.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of light green leather boots with wind-swirl stitching and jade clasps, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "epic": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/windstride_boots_epic.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of light green leather boots with wind-swirl stitching and jade clasps, violet-blue enchanted glow, ornate carvings, trailing spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      },
+      "legendary": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/boots/windstride_boots_legendary.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a pair of light green leather boots with wind-swirl stitching and jade clasps, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
+      }
+    },
+    "element": "elem.wood",
+    "signature_affix": "spd"
+  }
+]

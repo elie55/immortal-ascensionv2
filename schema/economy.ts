@@ -1,14 +1,18 @@
 import { z } from "zod";
-import { Named, Quantity, ref, ItemRef, Unlock, Currency, Range2, Rarity } from "./common.ts";
+import { Named, Quantity, ref, ItemRef, Unlock, Currency, Range2, Rarity, GearGrant, Slot } from "./common.ts";
 
-export const ShopEntry = z.object({
-  id: ref("mat", "cons", "gift", "book", "blueprint", "egg", "bfood", "gear", "tech", "method"),
+const ShopCommon = {
   price: z.number().int().positive(),
   currency: Currency.default("spirit_stones"),
   /** Limited stock per restock; omit for unlimited. */
   qty: z.number().int().positive().optional(),
   unlock: Unlock.default({}),
-});
+};
+/** Either a stackable item / technique (`id`) or a piece of gear (`gear`, stats rolled on purchase). */
+export const ShopEntry = z.union([
+  z.object({ id: ref("mat", "cons", "gift", "book", "blueprint", "egg", "bfood", "tech", "method"), ...ShopCommon }),
+  z.object({ gear: GearGrant, ...ShopCommon }),
+]);
 
 export const Shop = Named.extend({
   id: ref("shop"),
@@ -20,11 +24,28 @@ export const Shop = Named.extend({
   buys_items: z.boolean().default(true),
 });
 
-export const LootEntry = z.object({
-  id: ref("mat", "cons", "gift", "book", "blueprint", "qitem", "egg", "bfood", "junk", "gear", "tech", "method"),
+export const LootItemEntry = z.object({
+  id: ref("mat", "cons", "gift", "book", "blueprint", "qitem", "egg", "bfood", "junk", "tech", "method"),
   chance: z.number().gt(0).max(1),
   qty: Range2.default([1, 1]),
 });
+
+/** A specific base, or a pool resolved against every droppable base matching the filters. */
+export const GearSelector = z.union([
+  z.object({ base: ref("gear") }),
+  z.object({ pool: z.object({ slot: Slot.optional(), set: ref("set").optional(), tags: z.array(z.string()).optional() }) }),
+]);
+
+export const LootGearEntry = z.object({
+  gear: GearSelector,
+  /** Relative weights; rarities absent or 0 never drop. */
+  rarity_weights: z.record(Rarity, z.number().nonnegative()),
+  chance: z.number().gt(0).max(1),
+  /** Override the table's ilvl band for this entry. */
+  ilvl: Range2.optional(),
+}).refine((e) => Object.values(e.rarity_weights).some((w) => w > 0), "rarity_weights must have a positive weight");
+
+export const LootEntry = z.union([LootItemEntry, LootGearEntry]);
 
 export const LootTable = z.object({
   id: ref("loot"),
@@ -32,12 +53,19 @@ export const LootTable = z.object({
   /** `independent`: each entry rolled separately; `pick`: roll `rolls` times weighted by chance. */
   mode: z.enum(["independent", "pick"]).default("independent"),
   rolls: z.number().int().positive().default(1),
+  /** Item-level band for gear from this table (required when the table has gear entries). */
+  ilvl: Range2.optional(),
   entries: z.array(LootEntry).default([]),
   guaranteed: z.array(Quantity).default([]),
+  guaranteed_gear: z.array(GearGrant).default([]),
   spirit_stones: Range2.default([0, 0]),
   sect_fame: z.number().int().nonnegative().default(0),
   mastery_xp: z.number().int().nonnegative().default(0),
-}).refine((l) => l.entries.length + l.guaranteed.length > 0 || l.spirit_stones[1] > 0, "loot table must yield something");
+}).superRefine((l, ctx) => {
+  if (l.entries.length + l.guaranteed.length + l.guaranteed_gear.length === 0 && l.spirit_stones[1] === 0) ctx.addIssue({ code: "custom", message: "loot table must yield something" });
+  const hasGear = l.entries.some((e) => "gear" in e && !(e as any).ilvl);
+  if (hasGear && !l.ilvl) ctx.addIssue({ code: "custom", message: "loot table with gear entries needs an ilvl band" });
+});
 
 const RecipeUnlock = z.discriminatedUnion("type", [
   z.object({ type: z.literal("known") }),
@@ -64,7 +92,8 @@ export const AlchemyRecipe = Named.extend({
 
 export const ForgeRecipe = Named.extend({
   id: ref("forge"),
-  output: ref("gear").refine((g) => g.split(".").length === 3, "forge output must be gear.<family>.<rarity>"),
+  /** The crafted piece: base + rarity + ilvl; stats rolled on craft. */
+  output: GearGrant,
   ingredients: z.array(Quantity).min(1),
   cost_stones: z.number().int().nonnegative(),
   fame_required: z.number().int().nonnegative().default(0),
@@ -79,3 +108,4 @@ export const Furnace = Named.extend({
 });
 
 export { Rarity };
+

@@ -5,24 +5,21 @@
     "description": "Soft boots stitched with a cloud pattern; the feet feel lighter.",
     "name_cn": "踏云靴",
     "slot": "boots",
+    "main_value": 8,
+    "rarity_range": [
+      "common",
+      "rare"
+    ],
+    "droppable": true,
+    "drop_tags": [
+      "plains",
+      "starter"
+    ],
+    "unique": false,
+    "special_effects": [],
     "requirements": {},
     "rarities": {
       "common": {
-        "name": "Cloudstep Boots",
-        "description": "Soft boots stitched with a cloud pattern; the feet feel lighter. (Common grade.)",
-        "stats": {
-          "spd": 3,
-          "eva": 1
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 16,
-        "sell_value": 10,
         "art": {
           "icon": {
             "file": "assets/equipment/boots/cloudstep_boots_common.png",
@@ -42,21 +39,6 @@
         }
       },
       "uncommon": {
-        "name": "Cloudstep Boots (Tempered)",
-        "description": "Soft boots stitched with a cloud pattern; the feet feel lighter. (Uncommon grade.)",
-        "stats": {
-          "spd": 4.8,
-          "eva": 1.6
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 19,
-        "sell_value": 30,
         "art": {
           "icon": {
             "file": "assets/equipment/boots/cloudstep_boots_uncommon.png",
@@ -76,21 +58,6 @@
         }
       },
       "rare": {
-        "name": "Cloudstep Boots (Refined)",
-        "description": "Soft boots stitched with a cloud pattern; the feet feel lighter. (Rare grade.)",
-        "stats": {
-          "spd": 7.8,
-          "eva": 2.6
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 25,
-        "sell_value": 90,
         "art": {
           "icon": {
             "file": "assets/equipment/boots/cloudstep_boots_rare.png",

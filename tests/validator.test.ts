@@ -57,19 +57,53 @@ test("item with no source and no use is an error (reverse rule)", () => {
 });
 
 test("divine gear dropped outside a mega dungeon is an error", () => {
-  const dir = scenario("content/economy/loot/enemies.json", (d) => { d[0].entries.push({ id: "gear.dragon_abyss_sword.divine", chance: 0.5, qty: [1, 1] }); });
+  const dir = scenario("content/economy/loot/enemies.json", (d) => {
+    d[0].ilvl = [1, 6];
+    d[0].entries.push({ gear: { base: "gear.dragon_abyss_sword" }, rarity_weights: { divine: 1 }, chance: 0.5 });
+  });
   assert.ok(rulesOf(dir).rules.has("divine-source"));
 });
 
 test("divine gear sold in a shop is an error", () => {
-  const dir = scenario("content/economy/shops.json", (d) => { d[0].stock.push({ id: "gear.dragon_abyss_sword.divine", price: 1, currency: "spirit_stones", unlock: {} }); });
+  const dir = scenario("content/economy/shops.json", (d) => { d[0].stock.push({ gear: { base: "gear.dragon_abyss_sword", rarity: "divine", ilvl: 100 }, price: 1, currency: "spirit_stones", unlock: {} }); });
   assert.ok(rulesOf(dir).rules.has("divine-source"));
 });
 
-test("rarity gap inside a gear family is a schema error", () => {
-  const dir = scenario("content/equipment/families/azure_iron_sword.json", (d) => { delete d[0].rarities.rare; });
+test("gear base art must cover exactly its rarity range", () => {
+  const dir = scenario("content/equipment/bases/azure_iron_sword.json", (d) => { delete d[0].rarities.rare; });
   const { errors } = rulesOf(dir);
-  assert.ok(errors.some((e) => e.rule === "schema" && /rarity gap/.test(e.message)), errors.map((e) => e.message).join("\n"));
+  assert.ok(errors.some((e) => e.rule === "schema" && /missing art for rarity rare/.test(e.message)), errors.map((e) => e.message).join("\n"));
+});
+
+test("granting a rarity outside the base's range is an error", () => {
+  const dir = scenario("content/economy/shops.json", (d) => { d[0].stock.push({ gear: { base: "gear.bamboo_sword", rarity: "legendary", ilvl: 10 }, price: 1, currency: "spirit_stones", unlock: {} }); });
+  assert.ok(rulesOf(dir).rules.has("gear-rarity-range"));
+});
+
+test("a pool rarity no base can reach is an error", () => {
+  const dir = scenario("content/economy/loot/enemies.json", (d) => {
+    d[0].ilvl = [1, 6];
+    d[0].entries.push({ gear: { pool: { tags: ["plains"] } }, rarity_weights: { divine: 1 }, chance: 0.5 });
+  });
+  assert.ok(rulesOf(dir).rules.has("gear-pool-empty"));
+});
+
+test("a gear variant with no source (and no refinement path) is an error", () => {
+  const dir = scenario("content/equipment/bases/reed_hat.json", (d) => {
+    d[0].rarity_range = ["common", "divine"];
+    for (const r of ["rare", "epic", "legendary", "mythic", "immortal", "divine"]) d[0].rarities[r] = { art: { ...d[0].rarities.common.art, icon: { ...d[0].rarities.common.art.icon, file: `assets/x/reed_hat_${r}.png` } } };
+  });
+  const { errors } = rulesOf(dir);
+  // common..mythic reachable by refinement from the shop's common hat; immortal and divine are not
+  assert.ok(errors.some((e) => e.rule === "no-source" && e.where === "gear.reed_hat (immortal)"));
+  assert.ok(errors.some((e) => e.rule === "no-source" && e.where === "gear.reed_hat (divine)"));
+  assert.ok(!errors.some((e) => e.rule === "no-source" && e.where === "gear.reed_hat (mythic)"));
+});
+
+test("breaking the rarity ordering guarantee in rules.json is an error", () => {
+  const dir = scenario("content/equipment/rules.json", (d) => { d.rarity.uncommon.main_mult = 1.2; });
+  const { errors } = rulesOf(dir);
+  assert.ok(errors.some((e) => e.rule === "gear-math" && /worst uncommon main stat/.test(e.message)));
 });
 
 test("quest prerequisite cycle is an error", () => {

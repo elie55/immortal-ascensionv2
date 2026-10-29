@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Named, Quantity, artBlock, ref, ItemRef, Unlock, Rewards } from "./common.ts";
+import { Named, Quantity, artBlock, ref, ItemRef, Unlock, Rewards, GearGrant } from "./common.ts";
 
 // ---------- Quest objectives (each maps to a screen route in the game) ----------
 
@@ -141,7 +141,7 @@ export const StartingState = z.object({
   method: ref("method"),
   techniques: z.array(ref("tech")).min(1),
   inventory: z.array(Quantity).default([]),
-  equipped: z.record(z.string(), ref("gear")).default({}),
+  equipped: z.record(z.string(), GearGrant).default({}),
   spirit_stones: z.number().int().nonnegative(),
   sect_fame: z.number().int().nonnegative().default(0),
 });

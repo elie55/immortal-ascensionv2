@@ -5,26 +5,22 @@
     "description": "Boots soled with frost-glass that leaves no footprint.",
     "name_cn": "霜玻璃靴",
     "slot": "boots",
+    "main_value": 8,
+    "rarity_range": [
+      "epic",
+      "legendary"
+    ],
+    "droppable": false,
+    "drop_tags": [
+      "frost"
+    ],
+    "unique": false,
+    "special_effects": [],
     "requirements": {
       "realm": "realm.foundation_establishment"
     },
     "rarities": {
       "epic": {
-        "name": "Rimeglass Boots of the Azure Cloud",
-        "description": "Boots soled with frost-glass that leaves no footprint. (Epic grade.)",
-        "stats": {
-          "spd": 12.6,
-          "eva": 4.2
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 35,
-        "sell_value": 300,
         "art": {
           "icon": {
             "file": "assets/equipment/boots/rimeglass_boots_epic.png",
@@ -44,21 +40,6 @@
         }
       },
       "legendary": {
-        "name": "Rimeglass Boots of Nine Heavens",
-        "description": "Boots soled with frost-glass that leaves no footprint. (Legendary grade.)",
-        "stats": {
-          "spd": 21,
-          "eva": 7
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 52,
-        "sell_value": 1000,
         "art": {
           "icon": {
             "file": "assets/equipment/boots/rimeglass_boots_legendary.png",

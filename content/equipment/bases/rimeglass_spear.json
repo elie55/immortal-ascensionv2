@@ -5,33 +5,22 @@
     "description": "A spear of translucent frost-glass that never melts.",
     "name_cn": "霜玻璃枪",
     "slot": "weapon",
+    "main_value": 10,
+    "rarity_range": [
+      "epic",
+      "mythic"
+    ],
+    "droppable": false,
+    "drop_tags": [
+      "frost"
+    ],
+    "unique": false,
+    "special_effects": [],
     "requirements": {
       "realm": "realm.foundation_establishment"
     },
     "rarities": {
       "epic": {
-        "name": "Rimeglass Spear of the Azure Cloud",
-        "description": "A spear of translucent frost-glass that never melts. (Epic grade.)",
-        "stats": {
-          "atk": 16.8,
-          "crit": 4.2
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "elem_dmg.water"
-        ],
-        "effects": [
-          {
-            "kind": "on_crit_apply",
-            "description": "Critical hits Slow the target.",
-            "status": "status.slow",
-            "chance": 0.5
-          }
-        ],
-        "item_cp": 41,
-        "sell_value": 300,
         "art": {
           "icon": {
             "file": "assets/equipment/weapon/rimeglass_spear_epic.png",
@@ -51,28 +40,6 @@
         }
       },
       "legendary": {
-        "name": "Rimeglass Spear of Nine Heavens",
-        "description": "A spear of translucent frost-glass that never melts. (Legendary grade.)",
-        "stats": {
-          "atk": 28,
-          "crit": 7
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "elem_dmg.water"
-        ],
-        "effects": [
-          {
-            "kind": "on_crit_apply",
-            "description": "Critical hits Slow the target.",
-            "status": "status.slow",
-            "chance": 0.5
-          }
-        ],
-        "item_cp": 62,
-        "sell_value": 1000,
         "art": {
           "icon": {
             "file": "assets/equipment/weapon/rimeglass_spear_legendary.png",
@@ -89,50 +56,9 @@
             ],
             "status": "planned"
           }
-        },
-        "awakening": {
-          "effect": {
-            "kind": "on_hit_apply",
-            "description": "Hits have a 20% chance to Freeze.",
-            "status": "status.freeze",
-            "chance": 0.2
-          },
-          "materials": [
-            {
-              "id": "mat.awakening_crystal",
-              "qty": 1
-            },
-            {
-              "id": "mat.frost_wyrm_heart_core",
-              "qty": 1
-            }
-          ],
-          "cost_stones": 5000
         }
       },
       "mythic": {
-        "name": "Rimeglass Spear · Starfall",
-        "description": "A spear of translucent frost-glass that never melts. (Mythic grade.)",
-        "stats": {
-          "atk": 44,
-          "crit": 11
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "elem_dmg.water"
-        ],
-        "effects": [
-          {
-            "kind": "on_crit_apply",
-            "description": "Critical hits Slow the target.",
-            "status": "status.slow",
-            "chance": 0.5
-          }
-        ],
-        "item_cp": 92,
-        "sell_value": 3000,
         "art": {
           "icon": {
             "file": "assets/equipment/weapon/rimeglass_spear_mythic.png",
@@ -149,30 +75,31 @@
             ],
             "status": "planned"
           }
-        },
-        "awakening": {
-          "effect": {
-            "kind": "on_hit_apply",
-            "description": "Hits have a 20% chance to Freeze.",
-            "status": "status.freeze",
-            "chance": 0.2
-          },
-          "materials": [
-            {
-              "id": "mat.awakening_crystal",
-              "qty": 1
-            },
-            {
-              "id": "mat.frost_wyrm_heart_core",
-              "qty": 1
-            }
-          ],
-          "cost_stones": 5000
         }
       }
     },
     "weapon_type": "spear",
     "element": "elem.water",
-    "set": "set.rimeglass"
+    "set": "set.rimeglass",
+    "signature_affix": "elem_dmg.water",
+    "awakening": {
+      "effect": {
+        "kind": "on_hit_apply",
+        "description": "Hits have a 20% chance to Freeze.",
+        "status": "status.freeze",
+        "chance": 0.2
+      },
+      "materials": [
+        {
+          "id": "mat.awakening_crystal",
+          "qty": 1
+        },
+        {
+          "id": "mat.frost_wyrm_heart_core",
+          "qty": 1
+        }
+      ],
+      "cost_stones": 5000
+    }
   }
 ]

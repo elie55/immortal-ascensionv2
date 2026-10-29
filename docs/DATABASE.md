@@ -42,7 +42,7 @@ The first segment is the entity type and decides which registry the ID lives in.
 | `egg.` | Spirit-beast egg | `egg.flame_fox` |
 | `bfood.` | Spirit-beast food | `bfood.spirit_fruit` |
 | `junk.` | Sell-only item (no use required) | `junk.cheap_junk_loot` |
-| `gear.` | Equipment: `gear.<family>.<rarity>` | `gear.rimeglass_spear.epic` |
+| `gear.` | Equipment **base** (kind of item; instances roll stats — see `docs/GEAR.md`) | `gear.rimeglass_spear` |
 | `set.` | Equipment set | `set.rimeglass` |
 | `enemy.` | Normal/elite enemy | `enemy.azure_bamboo_wolf` |
 | `boss.` | Boss | `boss.thousand_node_bamboo_dragon` |
@@ -65,8 +65,10 @@ The first segment is the entity type and decides which registry the ID lives in.
 | `event.` | Random/hidden event | `event.moon_pool_spring` |
 | `title.` | Cosmetic title (achievement reward) | `title.path_of_the_cultivator` |
 
-**Item IDs** = any of `mat. cons. gift. book. blueprint. qitem. egg. bfood. junk. gear.`
-**Reward IDs** = item IDs + `tech. method. title.` + currency keys (`spirit_stones`, `sect_fame`).
+**Item IDs** (stackable) = any of `mat. cons. gift. book. blueprint. qitem. egg. bfood. junk.`
+**Gear** is never referenced as an item: it is granted as `{base, rarity, ilvl}` (a *GearGrant*) or dropped
+from a loot *gear entry* (base or pool + rarity weights + the table's ilvl band). See `docs/GEAR.md`.
+**Rewards** = `items[]` + `gear[]` + `techniques[]` + `beasts[]` + `titles[]` + currencies.
 
 ## 3. Shared blocks
 
@@ -99,7 +101,7 @@ Required art keys per entity type:
 | Type | Keys |
 |---|---|
 | item (all item prefixes) | `icon` |
-| gear (per rarity) | `icon` |
+| gear base | `rarities.<r>.art.icon` for every rarity in `rarity_range` (distinct design per rarity) |
 | tech / method / btech | `icon` |
 | status | `icon` |
 | enemy | `icon`, `battle` (full body, transparent) |
@@ -136,8 +138,8 @@ Only reference-carrying and rule-carrying fields are listed; see `schema/*.ts` f
 | **tech** | `element` → `elem.`, `applies[]` → `status.`, `requirements` as method; `sources[]` |
 | **btech** | `beast` → `beast.`, `applies[]` → `status.` |
 | **items** | `effects?` (consumable) → `status.`/attribute; `teaches` (book) → `tech.`/`method.`; `unlocks` (blueprint) → `forge.`/`alchemy.`; `hatches_into` (egg) → `beast.`; `feeds` (bfood) → beast element filter |
-| **gear family** | `slot`, `set?` → `set.`, `rarities{}` each with `stats`, `effects[]` (→ `status.`), `art.icon` |
-| **set** | `pieces[]` → `gear.` families, bonuses → `status.`/attributes |
+| **gear base** | `slot`, `set?` → `set.`, `main_value`, `signature_affix` (must be in the slot's affix pool), `rarity_range`, `droppable`/`drop_tags` (pool filters), `unique` + `special_effects[]` (→ `status.`), `awakening` (materials → items), `rarities{}` → art only. Stats come from `equipment/rules.json`. |
+| **set** | `pieces[]` → 3–5 `gear.` bases (each must declare the set), bonuses → `status.`/attributes |
 | **enemy / boss** | `element` → `elem.`, `techniques[]` → `tech.`, `loot` → `loot.`, boss: `phases[].techniques[]`, `summons[]` → `enemy.` |
 | **beast** | `element` → `elem.`, `stages[]` each: `evolve_materials[]` → items, `active` → `btech.`, `passive` → `btech.`; `food[]` → `bfood.`; `sources[]` |
 | **npc** | `location?` → `sectloc.`/`node.`, `gifts.{loved,liked,disliked}[]` → items, `topics[].unlock` (affinity level), `quests[]` → `quest.`, `duel.loadout[]` → `tech.`, `shop?` → `shop.`, `dao_companion` (bool + `battle` art) |
@@ -147,10 +149,10 @@ Only reference-carrying and rule-carrying fields are listed; see `schema/*.ts` f
 | **tribulation** | `realm` → `realm.`, `waves[]` (lightning stats), `failure` consequence, `rewards` → `loot.` |
 | **sectloc** | `unlock` → `rank.`/`sect_fame`, `npcs[]` → `npc.`, `shop?` → `shop.`, `actions[]` (recipes/quests boards) |
 | **rank** | `order`, `fame_required`, `promotion.quests[]` → `quest.`, `promotion.trial?` → `dungeon.`/`tournament.`, `benefits` |
-| **shop** | `stock[]` → items/gear with price + `unlock` (rank/fame/affinity), `owner?` → `npc.` |
-| **loot** | `entries[]` → items/gear with `weight`/`chance`/qty; `guaranteed[]`; `currency` ranges |
+| **shop** | `stock[]` → `{id}` items/techs or `{gear: GearGrant}` with price + `unlock`, `owner?` → `npc.` |
+| **loot** | `ilvl: [min,max]` band; `entries[]` → item entries `{id, chance, qty}` or gear entries `{gear: {base}｜{pool}, rarity_weights, chance}`; `guaranteed[]`, `guaranteed_gear[]`; currency ranges |
 | **alchemy** | `ingredients[]` → `mat.`/`cons.`, `output` → `cons.`, `unlock` → `blueprint.`/`rank.`/`npc.`/`quest.`/`known`, `furnace_min`, `proficiency_min` |
-| **forge** | `ingredients[]` → `mat.`, `output` → `gear.`, `unlock` as alchemy, `fame_required` |
+| **forge** | `ingredients[]` → `mat.`, `output` → GearGrant `{base, rarity, ilvl}`, `unlock` as alchemy, `fame_required` |
 | **quest** | `type`, `giver?` → `npc.`/`sectloc.`, `prereqs` (→ `quest.`/`realm.`/`rank.`/npc affinity), `objectives[]` (typed, see below), `rewards` → rewards, `next?` → `quest.`, `turn_in` → `npc.`/`sectloc.`/screen route |
 | **ach** | `condition` (typed; refs as objectives), `rewards` |
 | **tournament** | `entry` (rank/fame), `rounds[]` → `npc.` opponents with `loadout[]` → `tech.`, `round_rewards`, `champion_rewards`, `loss_penalty`, `reentry` |
@@ -173,7 +175,8 @@ An entity "has a source" if at least one of these references it:
 
 | Entity | Counts as a source |
 |---|---|
-| item / gear | `loot.` entry (where that loot table is itself referenced), `shop.` stock, `alchemy`/`forge` output, `quest.rewards`, `ach.rewards`, `node.gather`, `event.outcomes`, `tournament` rewards, `story.unlocks`, `rank.benefits`, `starting_inventory` |
+| item | `loot.` entry (where that loot table is itself referenced), `shop.` stock, `alchemy` output, `quest.rewards`, `ach.rewards`, `node.gather`, `event.outcomes`, `tournament` rewards, `story.unlocks`, `rank.benefits`, `starting_inventory` |
+| gear (base × rarity) | a GearGrant anywhere (shop, forge, any `rewards.gear`, starting equipment), a loot gear entry naming the base or a pool it matches, **or refinement** from the rarity below (≤ mythic). Immortal/divine therefore always need a direct source. |
 | tech / method | `sectloc` pavilion stock (shop with tech entries), `book.teaches`, `quest.rewards`, `loot.` (as drop), `story.unlocks`, `npc` training, `rank.benefits` |
 | beast | `egg.hatches_into` (egg must have a source), `quest.rewards`, `event.outcomes`, `loot.` |
 | enemy / boss | appears in ≥1 `node`, `dungeon`, `tribulation` (lightning spirit), or boss summon list |
@@ -193,9 +196,12 @@ or prefix `junk.`.
 
 ## 6. Semantic rules (beyond references)
 
-- Rarity order respected everywhere; `divine` gear only in `mega` dungeon loot.
-- Gear families have **contiguous** rarities starting at their lowest (refinement path has no gaps);
-  every slot has at least one family at every rarity.
+- Rarity order respected everywhere; `divine` gear only in loot tables owned exclusively by `mega` dungeons
+  (never shops, forge, rewards). Every GearGrant's rarity lies inside its base's `rarity_range`.
+- A loot pool must have, for every weighted rarity, at least one droppable base that can be that rarity.
+- `equipment/rules.json` must satisfy the ordering guarantees in `docs/GEAR.md` (checked for every ilvl).
+- Loot ilvl bands should match the owning region's band (warning).
+- Every slot has at least one base at every rarity (coverage; strict mode only).
 - Realm stages are 1–9; `reach_realm` objectives respect that; realms are strictly ordered 1–15.
 - Node connections are intra-region and symmetric; every node is reachable from the region entry.
 - Quest prerequisite graph and story `next` chains are acyclic.
@@ -220,7 +226,7 @@ content/
   techniques/   methods.json active.json passive.json ultimate.json beast_abilities.json
   items/        materials.json consumables.json gifts.json books.json blueprints.json
                 quest_items.json eggs.json beast_food.json junk.json
-  equipment/    families/*.json  sets.json  enhancement.json  refinement.json
+  equipment/    bases/*.json  sets.json  rules.json  enhancement.json  refinement.json  reforge.json
   enemies/      <region>.json (enemies+bosses grouped by region) tribulation.json
   beasts/       beasts.json
   npcs/         npcs.json

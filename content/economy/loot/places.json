@@ -11,6 +11,20 @@
           1,
           1
         ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "plains"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 80,
+          "rare": 20
+        },
+        "chance": 1.0
       }
     ],
     "guaranteed": [
@@ -28,7 +42,11 @@
       120
     ],
     "sect_fame": 0,
-    "mastery_xp": 0
+    "mastery_xp": 0,
+    "ilvl": [
+      4,
+      8
+    ]
   },
   {
     "id": "loot.chest.forest_hollow",
@@ -42,6 +60,20 @@
           1,
           1
         ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "forest"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 75,
+          "epic": 25
+        },
+        "chance": 1.0
       }
     ],
     "guaranteed": [
@@ -63,7 +95,11 @@
       250
     ],
     "sect_fame": 0,
-    "mastery_xp": 0
+    "mastery_xp": 0,
+    "ilvl": [
+      12,
+      16
+    ]
   },
   {
     "id": "loot.chest.origin_vault",
@@ -85,6 +121,20 @@
           1,
           1
         ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "forest"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 80,
+          "legendary": 20
+        },
+        "chance": 1.0
       }
     ],
     "guaranteed": [
@@ -106,7 +156,11 @@
       800
     ],
     "sect_fame": 0,
-    "mastery_xp": 0
+    "mastery_xp": 0,
+    "ilvl": [
+      24,
+      30
+    ]
   },
   {
     "id": "loot.dungeon.granary_wave",
@@ -278,20 +332,37 @@
         ]
       },
       {
-        "id": "gear.dragonbone_pendant.epic",
-        "chance": 0.05,
-        "qty": [
-          1,
-          1
-        ]
-      },
-      {
         "id": "mat.spirit_enhancing_stone",
         "chance": 0.6,
         "qty": [
           1,
           2
         ]
+      },
+      {
+        "gear": {
+          "base": "gear.dragonbone_pendant"
+        },
+        "rarity_weights": {
+          "epic": 90,
+          "legendary": 10
+        },
+        "chance": 0.05
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "forest"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 50,
+          "epic": 45,
+          "legendary": 5
+        },
+        "chance": 0.4
       }
     ],
     "guaranteed": [],
@@ -300,7 +371,11 @@
       600
     ],
     "sect_fame": 20,
-    "mastery_xp": 0
+    "mastery_xp": 0,
+    "ilvl": [
+      14,
+      20
+    ]
   },
   {
     "id": "loot.dungeon.tower_floor",
@@ -322,6 +397,22 @@
           1,
           2
         ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sect"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 40,
+          "rare": 40,
+          "epic": 17,
+          "legendary": 3
+        },
+        "chance": 0.08
       }
     ],
     "guaranteed": [],
@@ -330,7 +421,11 @@
       90
     ],
     "sect_fame": 0,
-    "mastery_xp": 0
+    "mastery_xp": 0,
+    "ilvl": [
+      4,
+      100
+    ]
   },
   {
     "id": "loot.dungeon.origin_clear",
@@ -360,6 +455,20 @@
           1,
           1
         ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "forest"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "epic": 75,
+          "legendary": 25
+        },
+        "chance": 0.5
       }
     ],
     "guaranteed": [],
@@ -368,7 +477,11 @@
       1800
     ],
     "sect_fame": 50,
-    "mastery_xp": 0
+    "mastery_xp": 0,
+    "ilvl": [
+      24,
+      30
+    ]
   },
   {
     "id": "loot.dungeon.abyss_wave",
@@ -406,30 +519,6 @@
     "rolls": 1,
     "entries": [
       {
-        "id": "gear.dragon_abyss_sword.divine",
-        "chance": 0.02,
-        "qty": [
-          1,
-          1
-        ]
-      },
-      {
-        "id": "gear.demonbane_fan.immortal",
-        "chance": 0.05,
-        "qty": [
-          1,
-          1
-        ]
-      },
-      {
-        "id": "gear.ninefold_hairpin_crown.immortal",
-        "chance": 0.05,
-        "qty": [
-          1,
-          1
-        ]
-      },
-      {
         "id": "mat.awakening_crystal",
         "chance": 0.6,
         "qty": [
@@ -444,6 +533,46 @@
           3,
           5
         ]
+      },
+      {
+        "gear": {
+          "base": "gear.dragon_abyss_sword"
+        },
+        "rarity_weights": {
+          "divine": 1
+        },
+        "chance": 0.02
+      },
+      {
+        "gear": {
+          "base": "gear.demonbane_fan"
+        },
+        "rarity_weights": {
+          "immortal": 1
+        },
+        "chance": 0.05
+      },
+      {
+        "gear": {
+          "base": "gear.ninefold_hairpin_crown"
+        },
+        "rarity_weights": {
+          "immortal": 1
+        },
+        "chance": 0.05
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "sect"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "legendary": 100
+        },
+        "chance": 1.0
       }
     ],
     "guaranteed": [],
@@ -452,7 +581,11 @@
       25000
     ],
     "sect_fame": 300,
-    "mastery_xp": 0
+    "mastery_xp": 0,
+    "ilvl": [
+      95,
+      110
+    ]
   },
   {
     "id": "loot.tribulation.core_formation",

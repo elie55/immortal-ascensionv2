@@ -183,12 +183,12 @@
   ],
   "rarity_cost_mult": {
     "common": 1,
-    "uncommon": 1.6,
-    "rare": 2.6,
-    "epic": 4.2,
-    "legendary": 7,
-    "mythic": 11,
-    "immortal": 18,
-    "divine": 30
+    "uncommon": 1.5,
+    "rare": 2.25,
+    "epic": 3.4,
+    "legendary": 5.1,
+    "mythic": 7.6,
+    "immortal": 11.4,
+    "divine": 17.1
   }
 }

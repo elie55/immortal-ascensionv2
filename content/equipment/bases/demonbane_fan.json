@@ -5,34 +5,20 @@
     "description": "A war fan of crimson feathers and black steel ribs, made to cut what should not exist.",
     "name_cn": "斩魔扇",
     "slot": "weapon",
+    "main_value": 10,
+    "rarity_range": [
+      "legendary",
+      "immortal"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": false,
+    "special_effects": [],
     "requirements": {
       "realm": "realm.core_formation"
     },
     "rarities": {
       "legendary": {
-        "name": "Demonbane Fan of Nine Heavens",
-        "description": "A war fan of crimson feathers and black steel ribs, made to cut what should not exist. (Legendary grade.)",
-        "stats": {
-          "atk": 70,
-          "crit": 7,
-          "crit_dmg": 56
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "on_hit_apply",
-            "description": "Hits may Burn.",
-            "status": "status.burning",
-            "chance": 0.3
-          }
-        ],
-        "item_cp": 209,
-        "sell_value": 1000,
         "art": {
           "icon": {
             "file": "assets/equipment/weapon/demonbane_fan_legendary.png",
@@ -49,51 +35,9 @@
             ],
             "status": "planned"
           }
-        },
-        "awakening": {
-          "effect": {
-            "kind": "counter",
-            "description": "Counterattack when hit, 50% ATK.",
-            "value": 50,
-            "chance": 0.35
-          },
-          "materials": [
-            {
-              "id": "mat.awakening_crystal",
-              "qty": 2
-            },
-            {
-              "id": "mat.abyss_serpent_fang",
-              "qty": 1
-            }
-          ],
-          "cost_stones": 8000
         }
       },
       "mythic": {
-        "name": "Demonbane Fan · Starfall",
-        "description": "A war fan of crimson feathers and black steel ribs, made to cut what should not exist. (Mythic grade.)",
-        "stats": {
-          "atk": 110,
-          "crit": 11,
-          "crit_dmg": 88
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "on_hit_apply",
-            "description": "Hits may Burn.",
-            "status": "status.burning",
-            "chance": 0.3
-          }
-        ],
-        "item_cp": 323,
-        "sell_value": 3000,
         "art": {
           "icon": {
             "file": "assets/equipment/weapon/demonbane_fan_mythic.png",
@@ -110,51 +54,9 @@
             ],
             "status": "planned"
           }
-        },
-        "awakening": {
-          "effect": {
-            "kind": "counter",
-            "description": "Counterattack when hit, 50% ATK.",
-            "value": 50,
-            "chance": 0.35
-          },
-          "materials": [
-            {
-              "id": "mat.awakening_crystal",
-              "qty": 2
-            },
-            {
-              "id": "mat.abyss_serpent_fang",
-              "qty": 1
-            }
-          ],
-          "cost_stones": 8000
         }
       },
       "immortal": {
-        "name": "Demonbane Fan · Celestial",
-        "description": "A war fan of crimson feathers and black steel ribs, made to cut what should not exist. (Immortal grade.)",
-        "stats": {
-          "atk": 180,
-          "crit": 18,
-          "crit_dmg": 144
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "on_hit_apply",
-            "description": "Hits may Burn.",
-            "status": "status.burning",
-            "chance": 0.3
-          }
-        ],
-        "item_cp": 523,
-        "sell_value": 9000,
         "art": {
           "icon": {
             "file": "assets/equipment/weapon/demonbane_fan_immortal.png",
@@ -171,29 +73,30 @@
             ],
             "status": "planned"
           }
-        },
-        "awakening": {
-          "effect": {
-            "kind": "counter",
-            "description": "Counterattack when hit, 50% ATK.",
-            "value": 50,
-            "chance": 0.35
-          },
-          "materials": [
-            {
-              "id": "mat.awakening_crystal",
-              "qty": 2
-            },
-            {
-              "id": "mat.abyss_serpent_fang",
-              "qty": 1
-            }
-          ],
-          "cost_stones": 8000
         }
       }
     },
     "weapon_type": "fan",
-    "element": "elem.fire"
+    "element": "elem.fire",
+    "signature_affix": "crit_dmg",
+    "awakening": {
+      "effect": {
+        "kind": "counter",
+        "description": "Counterattack when hit, 50% ATK.",
+        "value": 50,
+        "chance": 0.35
+      },
+      "materials": [
+        {
+          "id": "mat.awakening_crystal",
+          "qty": 2
+        },
+        {
+          "id": "mat.abyss_serpent_fang",
+          "qty": 1
+        }
+      ],
+      "cost_stones": 8000
+    }
   }
 ]

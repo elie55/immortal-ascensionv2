@@ -5,32 +5,24 @@
     "description": "A ring that holds a fallen star. Found only at the tower's heights.",
     "name_cn": "星辉灵戒",
     "slot": "ring",
+    "main_value": 6,
+    "rarity_range": [
+      "mythic",
+      "mythic"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": true,
+    "special_effects": [
+      {
+        "kind": "cooldown_reduction",
+        "description": "Technique cooldowns −1 every 4th turn.",
+        "value": 1
+      }
+    ],
     "requirements": {},
     "rarities": {
       "mythic": {
-        "name": "Starlight Spirit Ring · Starfall",
-        "description": "A ring that holds a fallen star. Found only at the tower's heights. (Mythic grade.)",
-        "stats": {
-          "atk": 44,
-          "hp": 220,
-          "crit": 44,
-          "sp_power": 440
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "cooldown_reduction",
-            "description": "Technique cooldowns −1 every 4th turn.",
-            "value": 1
-          }
-        ],
-        "item_cp": 1132,
-        "sell_value": 3000,
         "art": {
           "icon": {
             "file": "assets/equipment/ring/starlight_spirit_ring_mythic.png",
@@ -50,6 +42,7 @@
         }
       }
     },
-    "element": "elem.metal"
+    "element": "elem.metal",
+    "signature_affix": "crit"
   }
 ]

@@ -5,24 +5,21 @@
     "description": "A practice sword cut from sect bamboo. Light, humble, dependable.",
     "name_cn": "竹剑",
     "slot": "weapon",
+    "main_value": 10,
+    "rarity_range": [
+      "common",
+      "rare"
+    ],
+    "droppable": true,
+    "drop_tags": [
+      "plains",
+      "starter"
+    ],
+    "unique": false,
+    "special_effects": [],
     "requirements": {},
     "rarities": {
       "common": {
-        "name": "Bamboo Sword",
-        "description": "A practice sword cut from sect bamboo. Light, humble, dependable. (Common grade.)",
-        "stats": {
-          "atk": 10,
-          "crit": 1
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 26,
-        "sell_value": 10,
         "art": {
           "icon": {
             "file": "assets/equipment/weapon/bamboo_sword_common.png",
@@ -42,21 +39,6 @@
         }
       },
       "uncommon": {
-        "name": "Bamboo Sword (Tempered)",
-        "description": "A practice sword cut from sect bamboo. Light, humble, dependable. (Uncommon grade.)",
-        "stats": {
-          "atk": 16.0,
-          "crit": 1.6
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 36,
-        "sell_value": 30,
         "art": {
           "icon": {
             "file": "assets/equipment/weapon/bamboo_sword_uncommon.png",
@@ -76,21 +58,6 @@
         }
       },
       "rare": {
-        "name": "Bamboo Sword (Refined)",
-        "description": "A practice sword cut from sect bamboo. Light, humble, dependable. (Rare grade.)",
-        "stats": {
-          "atk": 26.0,
-          "crit": 2.6
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 52,
-        "sell_value": 90,
         "art": {
           "icon": {
             "file": "assets/equipment/weapon/bamboo_sword_rare.png",

@@ -26,9 +26,21 @@
     }
   ],
   "equipped": {
-    "weapon": "gear.bamboo_sword.common",
-    "armor": "gear.bamboo_robe.common",
-    "ring_1": "gear.azure_iron_war_ring.common"
+    "weapon": {
+      "base": "gear.bamboo_sword",
+      "rarity": "common",
+      "ilvl": 1
+    },
+    "armor": {
+      "base": "gear.bamboo_robe",
+      "rarity": "common",
+      "ilvl": 1
+    },
+    "ring_1": {
+      "base": "gear.azure_iron_war_ring",
+      "rarity": "common",
+      "ilvl": 1
+    }
   },
   "spirit_stones": 340,
   "sect_fame": 120

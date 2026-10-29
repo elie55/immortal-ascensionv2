@@ -182,12 +182,15 @@
         "sect_fame": 150,
         "items": [
           {
-            "id": "gear.dragonbone_pendant.epic",
-            "qty": 1
-          },
-          {
             "id": "book.nine_yang_scripture",
             "qty": 1
+          }
+        ],
+        "gear": [
+          {
+            "base": "gear.dragonbone_pendant",
+            "rarity": "epic",
+            "ilvl": 18
           }
         ]
       }
@@ -309,10 +312,13 @@
               {
                 "id": "mat.sword_rain_fragment",
                 "qty": 2
-              },
+              }
+            ],
+            "gear": [
               {
-                "id": "gear.whispering_reed_flute.rare",
-                "qty": 1
+                "base": "gear.whispering_reed_flute",
+                "rarity": "rare",
+                "ilvl": 13
               }
             ]
           }
@@ -355,12 +361,15 @@
             "spirit_stones": 15000,
             "items": [
               {
-                "id": "gear.starlight_spirit_ring.mythic",
-                "qty": 1
-              },
-              {
                 "id": "mat.dao_insight_crystal",
                 "qty": 4
+              }
+            ],
+            "gear": [
+              {
+                "base": "gear.starlight_spirit_ring",
+                "rarity": "mythic",
+                "ilvl": 53
               }
             ]
           }

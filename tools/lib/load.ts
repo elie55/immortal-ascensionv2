@@ -3,7 +3,6 @@ import { join, dirname, basename, relative } from "node:path";
 import type { ZodTypeAny } from "zod";
 import { COLLECTIONS, SINGLETONS, type Collection } from "../../schema/index.ts";
 import { prefixOf, type Prefix } from "../../schema/ids.ts";
-import { RARITIES } from "../../schema/common.ts";
 
 export interface Issue { level: "error" | "warning"; rule: string; where: string; message: string }
 
@@ -12,8 +11,6 @@ export interface Entity {
   prefix: Prefix;
   file: string;
   data: any;
-  /** For gear rarity variants: the owning family id. */
-  family?: string;
 }
 
 export interface Database {
@@ -92,12 +89,6 @@ export function loadDatabase(root: string): Database {
           return;
         }
         register({ id: data.id, prefix: c.prefix, file: rel, data });
-        if (c.prefix === "gear") {
-          for (const r of RARITIES) {
-            const v = data.rarities[r];
-            if (v) register({ id: `${data.id}.${r}`, prefix: "gear", file: rel, data: { ...v, rarity: r, slot: data.slot, family: data.id }, family: data.id });
-          }
-        }
       });
     }
   }
@@ -117,5 +108,3 @@ export function loadDatabase(root: string): Database {
   return { root, registry, byPrefix, singletons, issues };
 }
 
-export const isFamilyId = (id: string) => id.startsWith("gear.") && id.split(".").length === 2;
-export const isGearItemId = (id: string) => id.startsWith("gear.") && id.split(".").length === 3;

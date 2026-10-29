@@ -35,6 +35,20 @@
           1,
           1
         ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "plains"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "common": 85,
+          "uncommon": 15
+        },
+        "chance": 0.04
       }
     ],
     "guaranteed": [],
@@ -43,7 +57,11 @@
       16
     ],
     "sect_fame": 0,
-    "mastery_xp": 0
+    "mastery_xp": 0,
+    "ilvl": [
+      1,
+      6
+    ]
   },
   {
     "id": "loot.enemy.wild_boar",
@@ -133,6 +151,21 @@
           1,
           1
         ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "plains"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "common": 70,
+          "uncommon": 28,
+          "rare": 2
+        },
+        "chance": 0.05
       }
     ],
     "guaranteed": [],
@@ -141,7 +174,11 @@
       18
     ],
     "sect_fame": 0,
-    "mastery_xp": 0
+    "mastery_xp": 0,
+    "ilvl": [
+      3,
+      9
+    ]
   },
   {
     "id": "loot.enemy.azure_bamboo_wolf",
@@ -171,6 +208,21 @@
           1,
           1
         ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "forest"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 75,
+          "rare": 23,
+          "epic": 2
+        },
+        "chance": 0.05
       }
     ],
     "guaranteed": [],
@@ -179,7 +231,11 @@
       24
     ],
     "sect_fame": 0,
-    "mastery_xp": 0
+    "mastery_xp": 0,
+    "ilvl": [
+      9,
+      15
+    ]
   },
   {
     "id": "loot.enemy.bamboo_spirit_sprite",
@@ -307,6 +363,21 @@
           1,
           1
         ]
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "forest"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "uncommon": 40,
+          "rare": 50,
+          "epic": 10
+        },
+        "chance": 0.12
       }
     ],
     "guaranteed": [],
@@ -315,29 +386,17 @@
       70
     ],
     "sect_fame": 0,
-    "mastery_xp": 0
+    "mastery_xp": 0,
+    "ilvl": [
+      13,
+      19
+    ]
   },
   {
     "id": "loot.enemy.whispering_reed_witch",
     "mode": "independent",
     "rolls": 1,
     "entries": [
-      {
-        "id": "gear.reed_witchs_whisper_ring.epic",
-        "chance": 0.08,
-        "qty": [
-          1,
-          1
-        ]
-      },
-      {
-        "id": "gear.whispering_reed_flute.rare",
-        "chance": 0.12,
-        "qty": [
-          1,
-          1
-        ]
-      },
       {
         "id": "book.crescent_wind_blade_manual",
         "chance": 0.05,
@@ -361,6 +420,39 @@
           1,
           1
         ]
+      },
+      {
+        "gear": {
+          "base": "gear.reed_witchs_whisper_ring"
+        },
+        "rarity_weights": {
+          "epic": 1
+        },
+        "chance": 0.08
+      },
+      {
+        "gear": {
+          "base": "gear.whispering_reed_flute"
+        },
+        "rarity_weights": {
+          "rare": 80,
+          "epic": 20
+        },
+        "chance": 0.12
+      },
+      {
+        "gear": {
+          "pool": {
+            "tags": [
+              "forest"
+            ]
+          }
+        },
+        "rarity_weights": {
+          "rare": 70,
+          "epic": 30
+        },
+        "chance": 0.1
       }
     ],
     "guaranteed": [],
@@ -369,7 +461,11 @@
       100
     ],
     "sect_fame": 10,
-    "mastery_xp": 0
+    "mastery_xp": 0,
+    "ilvl": [
+      15,
+      20
+    ]
   },
   {
     "id": "loot.enemy.abyss_spawn",

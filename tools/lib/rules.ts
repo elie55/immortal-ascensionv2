@@ -1,13 +1,15 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import { type Database, type Entity, type Issue, isFamilyId, isGearItemId } from "./load.ts";
+import { type Database, type Entity, type Issue } from "./load.ts";
 import { looksLikeId, prefixOf, ITEM_PREFIXES, type Prefix } from "../../schema/ids.ts";
 import { RARITIES, REFINE_CAP, rarityIndex, SLOTS, type Rarity } from "../../schema/common.ts";
+import { checkRules as checkGearRules, regionBand } from "../../schema/gear-math.ts";
 
 type Ctx = { db: Database; err: (rule: string, where: string, msg: string) => void; warn: (rule: string, where: string, msg: string) => void };
 
 const ITEM = new Set<string>(ITEM_PREFIXES);
-const isItem = (id: string) => ITEM.has(prefixOf(id) ?? "") && !isFamilyId(id);
+const isItem = (id: string) => ITEM.has(prefixOf(id) ?? "");
+const gearKey = (base: string, rarity: string) => `${base}|${rarity}`;
 
 // ------------------------------------------------------------------ helpers
 
@@ -44,8 +46,31 @@ export function buildGraph(db: Database) {
   const uses = new Map<string, Set<string>>();      // id → set of consumer descriptions
   const appears = new Map<string, Set<string>>();   // enemy/boss/npc/event/story/shop/loot/dungeon → places
   const lootOwners = new Map<string, Set<string>>();
+  /** (base|rarity) → who grants it. Gear is never an item ref; see docs/GEAR.md. */
+  const gearSources = new Map<string, Set<string>>();
+  /** Every concrete gear grant/drop seen, for rarity-range and divine checks. */
+  const gearGrants: { base: string; rarity: string; who: string; where: string; viaLoot?: string; fromPool?: boolean }[] = [];
+  /** Pool entries: for each weighted rarity, how many matching bases can actually be that rarity. */
+  const poolChecks: { where: string; filter: any; rarity: string; matches: number }[] = [];
 
   const grant = (id: string, who: string) => addAll(sources, id, who);
+  const gearGrant = (base: string, rarity: string, who: string, where: string, viaLoot?: string, fromPool = false) => {
+    gearGrants.push({ base, rarity, who, where, viaLoot, fromPool });
+    addAll(gearSources, gearKey(base, rarity), who);
+  };
+  const inRange = (base: Entity, rarity: string) => {
+    const [lo, hi] = base.data.rarity_range as [Rarity, Rarity];
+    const i = rarityIndex(rarity as Rarity);
+    return i >= rarityIndex(lo) && i <= rarityIndex(hi);
+  };
+  /** Resolve a loot gear selector to base ids. */
+  const resolveSelector = (sel: any): string[] => {
+    if (sel.base) return [sel.base];
+    const f = sel.pool ?? {};
+    return [...db.registry.values()].filter((e) => e.prefix === "gear" && e.data.droppable
+      && (!f.slot || e.data.slot === f.slot) && (!f.set || e.data.set === f.set)
+      && (!f.tags || f.tags.every((t: string) => e.data.drop_tags.includes(t)))).map((e) => e.id);
+  };
   const use = (id: string, who: string) => addAll(uses, id, who);
   const appear = (id: string, who: string) => addAll(appears, id, who);
 
@@ -55,7 +80,7 @@ export function buildGraph(db: Database) {
     for (const q of ss.inventory) grant(q.id, "starting_state");
     for (const t of ss.techniques) grant(t, "starting_state");
     grant(ss.method, "starting_state");
-    for (const g of Object.values(ss.equipped as Record<string, string>)) grant(g, "starting_state");
+    for (const [slot, g] of Object.entries<any>(ss.equipped)) gearGrant(g.base, g.rarity, "starting_state", `starting_state.equipped.${slot}`);
     appear(ss.character, "starting_state");
     appear(ss.region, "starting_state");
     appear(ss.root, "starting_state");
@@ -81,13 +106,28 @@ export function buildGraph(db: Database) {
     switch (e.prefix) {
       case "loot":
         if (lootOwners.has(e.id)) {
-          for (const en of d.entries) grant(en.id, `loot:${e.id}`);
+          for (const en of d.entries) {
+            if ("gear" in en) {
+              const bases = resolveSelector(en.gear);
+              for (const [r, w] of Object.entries<number>(en.rarity_weights)) {
+                if (!(w > 0)) continue;
+                if (en.gear.base) { gearGrant(en.gear.base, r, `loot:${e.id}`, `${e.id}.entries`, e.id); continue; }
+                const ok = bases.filter((b) => inRange(db.registry.get(b)!, r));
+                poolChecks.push({ where: `${e.id}.entries`, filter: en.gear.pool, rarity: r, matches: ok.length });
+                for (const b of ok) gearGrant(b, r, `loot:${e.id}`, `${e.id}.entries`, e.id, true);
+              }
+            } else grant(en.id, `loot:${e.id}`);
+          }
           for (const g of d.guaranteed) grant(g.id, `loot:${e.id}`);
+          for (const g of d.guaranteed_gear) gearGrant(g.base, g.rarity, `loot:${e.id}`, `${e.id}.guaranteed_gear`, e.id);
         }
         for (const o of lootOwners.get(e.id) ?? []) appear(e.id, o);
         break;
       case "shop":
-        for (const s of d.stock) { grant(s.id, `shop:${e.id}`); use(s.id, `shop:${e.id}`); }
+        for (const [i, s] of d.stock.entries()) {
+          if (s.gear) gearGrant(s.gear.base, s.gear.rarity, `shop:${e.id}`, `${e.id}.stock[${i}]`);
+          else { grant(s.id, `shop:${e.id}`); use(s.id, `shop:${e.id}`); }
+        }
         if (d.owner) appear(d.owner, `shop:${e.id}`);
         break;
       case "alchemy":
@@ -98,7 +138,7 @@ export function buildGraph(db: Database) {
         if (d.unlock.type === "npc") appear(d.unlock.id, `alchemy:${e.id}`);
         break;
       case "forge":
-        grant(d.output, `forge:${e.id}`);
+        gearGrant(d.output.base, d.output.rarity, `forge:${e.id}`, `${e.id}.output`);
         for (const q of d.ingredients) use(q.id, `forge:${e.id}`);
         if (d.unlock.type === "blueprint") use(d.unlock.id, `forge:${e.id}`);
         if (d.unlock.type === "npc") appear(d.unlock.id, `forge:${e.id}`);
@@ -230,12 +270,14 @@ export function buildGraph(db: Database) {
         for (const b of d.bonuses) if (b.effect?.status) use(b.effect.status, `set:${e.id}`);
         break;
     }
-    // gear variant effects & awakening
-    if (e.prefix === "gear" && isGearItemId(e.id)) {
-      for (const ef of d.effects) if (ef.status) use(ef.status, `gear:${e.id}`);
+    if (e.prefix === "gear") {
+      for (const ef of d.special_effects) if (ef.status) use(ef.status, `gear:${e.id}`);
       if (d.awakening) { for (const q of d.awakening.materials) use(q.id, `gear:${e.id}`); if (d.awakening.effect.status) use(d.awakening.effect.status, `gear:${e.id}`); }
     }
+    // Any Rewards block anywhere in this entity may hand out gear.
+    walkGearGrants(d, (gg, path) => gearGrant(gg.base, gg.rarity, `${e.prefix}:${e.id}`, `${e.id} › ${path}`), e.prefix === "loot" || e.prefix === "shop" || e.prefix === "forge");
   }
+  for (const se of db.singletons.gear_rules?.special_pool ?? []) if (se.status) use(se.status, "gear_rules.special_pool");
 
   // singleton tables consume materials
   const sg = db.singletons;
@@ -244,7 +286,16 @@ export function buildGraph(db: Database) {
   if (sg.reforge) { for (const q of sg.reforge.materials) use(q.id, "reforge"); for (const q of sg.reforge.lock_cost_per_stat) use(q.id, "reforge"); }
   for (const f of sg.furnaces ?? []) for (const q of f.upgrade?.materials ?? []) use(q.id, "furnace");
 
-  return { sources, uses, appears, lootOwners };
+  return { sources, uses, appears, lootOwners, gearSources, gearGrants, poolChecks };
+}
+
+/** Find GearGrant-shaped objects ({base, rarity, ilvl}) inside `rewards`/`first_clear`/`win`… blocks. */
+function walkGearGrants(v: unknown, fn: (g: any, path: string) => void, skip = false, path = ""): void {
+  if (skip || !v || typeof v !== "object") return;
+  if (Array.isArray(v)) { v.forEach((x, i) => walkGearGrants(x, fn, false, `${path}[${i}]`)); return; }
+  const o = v as Record<string, unknown>;
+  if (typeof o.base === "string" && typeof o.rarity === "string" && typeof o.ilvl === "number") { fn(o, path); return; }
+  for (const [k, x] of Object.entries(o)) { if (k === "art") continue; walkGearGrants(x, fn, false, path ? `${path}.${k}` : k); }
 }
 
 // ------------------------------------------------------------------ rules
@@ -263,7 +314,6 @@ export function runRules(db: Database): Issue[] {
 
   // 1. Dangling references (generic sweep over every string shaped like an ID with a known prefix).
   for (const e of all) {
-    if (e.family) continue; // variants are checked via their family
     walkStrings(e.data, (s, path) => {
       if (!looksLikeId(s) || !prefixOf(s)) return;
       if (!db.registry.has(s)) err("dangling-ref", `${e.id} › ${path}`, `references missing ${s}`);
@@ -278,38 +328,71 @@ export function runRules(db: Database): Issue[] {
 
   const g = buildGraph(db);
 
-  // 2. Divine gear only via mega dungeons; never sold/crafted/rewarded.
-  const isDivine = (id: string) => isGearItemId(id) && id.endsWith(".divine");
+  // 2. Gear grants: base exists & rarity inside the base's range; divine only from mega-dungeon loot.
+  const megaLoot = new Set<string>();
   for (const l of by("loot")) {
-    const hasDivine = [...l.data.entries.map((x: any) => x.id), ...l.data.guaranteed.map((x: any) => x.id)].some(isDivine);
-    if (!hasDivine) continue;
-    const owners = g.lootOwners.get(l.id) ?? new Set();
-    for (const o of owners) {
-      const od = get(o);
-      if (!(od?.prefix === "dungeon" && od.data.kind === "mega")) err("divine-source", l.id, `drops divine gear but is used by ${o} (only mega dungeons may)`);
-    }
+    const owners = [...(g.lootOwners.get(l.id) ?? [])];
+    if (owners.length && owners.every((o) => get(o)?.prefix === "dungeon" && get(o)!.data.kind === "mega")) megaLoot.add(l.id);
   }
-  for (const s of by("shop")) for (const st of s.data.stock) if (isDivine(st.id)) err("divine-source", s.id, `sells divine gear ${st.id}`);
-  for (const f of by("forge")) if (isDivine(f.data.output)) err("divine-source", f.id, "forge cannot craft divine gear");
-  for (const e of all) if (["quest", "ach", "tournament", "rank", "node", "event", "story"].includes(e.prefix)) {
-    walkStrings(e.data, (s, path) => { if (isDivine(s) && !path.startsWith("objectives")) err("divine-source", `${e.id} › ${path}`, "divine gear may only come from mega dungeon loot"); });
+  for (const gg of g.gearGrants) {
+    const base = get(gg.base);
+    if (!base) continue; // dangling-ref already reported
+    const [lo, hi] = base.data.rarity_range as [Rarity, Rarity];
+    if (!gg.fromPool && (rarityIndex(gg.rarity as Rarity) < rarityIndex(lo) || rarityIndex(gg.rarity as Rarity) > rarityIndex(hi)))
+      err("gear-rarity-range", gg.where, `${gg.base} cannot be ${gg.rarity} (range ${lo}–${hi})`);
+    if (gg.rarity === "divine" && !(gg.viaLoot && megaLoot.has(gg.viaLoot)))
+      err("divine-source", gg.where, "divine gear may only come from loot tables owned exclusively by mega dungeons");
   }
+  for (const pc of g.poolChecks) if (pc.matches === 0)
+    err("gear-pool-empty", pc.where, `pool ${JSON.stringify(pc.filter)} has no droppable base that can be ${pc.rarity}`);
 
-  // 3. Gear: variants sourced (directly or by refinement from the previous rarity); slot×rarity coverage.
+  // 3. Gear bases: every rarity in range obtainable (directly or by refinement from the rarity below);
+  //    signature affix in slot pool; slot×rarity coverage; rules.json ordering guarantees.
+  const gr = db.singletons.gear_rules;
+  if (gr) {
+    for (const v of checkGearRules(gr)) err("gear-math", "equipment/rules.json", v);
+  }
   const coverage = new Map<string, number>();
-  for (const fam of by("gear").filter((e) => !e.family)) {
-    const present = RARITIES.filter((r) => fam.data.rarities[r]);
+  for (const base of by("gear")) {
+    const [lo, hi] = base.data.rarity_range as [Rarity, Rarity];
     let prevSourced = false;
-    for (const r of present) {
-      const id = `${fam.id}.${r}`;
-      coverage.set(`${fam.data.slot}/${r}`, (coverage.get(`${fam.data.slot}/${r}`) ?? 0) + 1);
-      const direct = g.sources.has(id);
-      const viaRefine: boolean = prevSourced && rarityIndex(r) <= rarityIndex(REFINE_CAP);
-      if (!direct && !viaRefine) err("no-source", id, "gear variant has no acquisition source (loot/shop/forge/reward/starting or refinement from previous rarity)");
+    for (let i = rarityIndex(lo); i <= rarityIndex(hi); i++) {
+      const r = RARITIES[i];
+      coverage.set(`${base.data.slot}/${r}`, (coverage.get(`${base.data.slot}/${r}`) ?? 0) + 1);
+      const direct = g.gearSources.has(gearKey(base.id, r));
+      const viaRefine: boolean = prevSourced && i <= rarityIndex(REFINE_CAP);
+      if (!direct && !viaRefine) err("no-source", `${base.id} (${r})`, "no acquisition source: loot/shop/forge/reward/starting, or refinement from the rarity below");
       prevSourced = direct || viaRefine;
     }
+    if (gr && base.data.signature_affix && !gr.affix_pools[base.data.slot].some((a: any) => a.stat === base.data.signature_affix))
+      err("gear-affix", base.id, `signature_affix ${base.data.signature_affix} is not in the ${base.data.slot} affix pool`);
+    if (base.data.set && !get(base.data.set)?.data.pieces.includes(base.id)) err("set-pieces", base.id, `declares ${base.data.set} but the set does not list it`);
   }
-  for (const slot of SLOTS) for (const r of RARITIES) if (!coverage.get(`${slot}/${r}`)) cov("rarity-coverage", `${slot}/${r}`, `no ${slot} family offers rarity ${r}`);
+  for (const slot of SLOTS) for (const r of RARITIES) if (!coverage.get(`${slot}/${r}`)) cov("rarity-coverage", `${slot}/${r}`, `no ${slot} base can be ${r}`);
+
+  // 3b. Item-level bands: loot owned by things placed in a region should match the region's band (warning).
+  if (gr) {
+    const regionOfNode = new Map<string, string>();
+    for (const n of by("node")) regionOfNode.set(n.id, n.data.region);
+    const enemyRegions = new Map<string, Set<string>>();
+    for (const n of by("node")) for (const en of (n.data.waves ?? []).flat()) addAll(enemyRegions, en, n.data.region);
+    for (const l of by("loot")) {
+      if (!l.data.ilvl) continue;
+      const regions = new Set<string>();
+      for (const o of g.lootOwners.get(l.id) ?? []) {
+        const oe = get(o);
+        if (oe?.prefix === "node") regions.add(oe.data.region);
+        if (oe?.prefix === "enemy" || oe?.prefix === "boss") for (const r of enemyRegions.get(o) ?? []) regions.add(r);
+      }
+      for (const rid of regions) {
+        const order = get(rid)?.data.order;
+        if (!order) continue;
+        const [lo, hi] = regionBand(gr, order);
+        const [a, b] = l.data.ilvl;
+        if (a < lo - 2 || b > hi + 4) warn("ilvl-band", l.id, `ilvl ${a}–${b} but ${rid} (order ${order}) band is ${lo}–${hi}`);
+      }
+    }
+  }
 
   // 4. Refinement table sanity.
   const ref = db.singletons.refinement;
@@ -407,7 +490,7 @@ export function runRules(db: Database): Issue[] {
   for (const e of all) {
     const d = e.data;
     const p = e.prefix;
-    if (isItem(e.id) && p !== "gear") {
+    if (isItem(e.id)) {
       if (!g.sources.has(e.id)) err("no-source", e.id, "item has no acquisition source");
       if (p !== "junk" && !hasUse(e, g)) err("no-use", e.id, "item has no gameplay use");
     }
@@ -484,7 +567,6 @@ export function runRules(db: Database): Issue[] {
   // 14. Art: files exist when generated/approved; references exist; no two assets share a file.
   const files = new Map<string, string>();
   for (const e of all) {
-    if (e.family) continue;
     for (const [key, asset] of Object.entries<any>(e.data.art ?? {})) checkArt(ctx, `${e.id}.art.${key}`, asset, files);
     if (e.prefix === "gear") for (const [r, v] of Object.entries<any>(e.data.rarities)) for (const [key, asset] of Object.entries<any>(v.art)) checkArt(ctx, `${e.id}.${r}.art.${key}`, asset, files);
   }
@@ -543,7 +625,9 @@ export function contentCounts(db: Database): Record<string, number> {
     passive_techniques: techs.filter((t) => t.data.kind === "passive").length,
     ultimate_techniques: techs.filter((t) => t.data.kind === "ultimate").length,
     methods: by("method").length,
-    gear_items: by("gear").filter((e) => !!e.family).length,
+    gear_bases: by("gear").length,
+    gear_items: by("gear").reduce((n, b) => n + (rarityIndex(b.data.rarity_range[1]) - rarityIndex(b.data.rarity_range[0]) + 1), 0),
+    gear_sets: by("set").length,
     enemies: by("enemy").length,
     beasts: by("beast").length,
     quests: by("quest").length,

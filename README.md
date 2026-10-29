@@ -4,6 +4,7 @@ Offline Android xianxia cultivation RPG. This repository currently holds the **c
 its **schemas** and the **validator**; the game client is built on top of it.
 
 - `docs/DATABASE.md` — the design contract: entity types, ID conventions, art blocks, interconnection rules.
+- `docs/GEAR.md` — the gear system: bases, item level, rarity ladders, random affixes, refinement/reforge.
 - `schema/` — zod schemas (also the TypeScript types the game imports).
 - `content/` — the database: one JSON array per entity type.
 - `tools/validate.ts` — referential-integrity + reverse-rule validator. Must pass before any content commit.

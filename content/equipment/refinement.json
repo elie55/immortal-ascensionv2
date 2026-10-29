@@ -14,7 +14,7 @@
     {
       "from": "uncommon",
       "chance": 0.6,
-      "stones": 320,
+      "stones": 300,
       "materials": [
         {
           "id": "mat.refining_stone",
@@ -25,7 +25,7 @@
     {
       "from": "rare",
       "chance": 0.4,
-      "stones": 520,
+      "stones": 450,
       "materials": [
         {
           "id": "mat.refining_stone",
@@ -36,7 +36,7 @@
     {
       "from": "epic",
       "chance": 0.25,
-      "stones": 840,
+      "stones": 680,
       "materials": [
         {
           "id": "mat.refining_stone",
@@ -47,7 +47,7 @@
     {
       "from": "legendary",
       "chance": 0.1,
-      "stones": 1400,
+      "stones": 1019,
       "materials": [
         {
           "id": "mat.refining_stone",

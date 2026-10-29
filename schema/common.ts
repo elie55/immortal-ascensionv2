@@ -55,11 +55,20 @@ export type Quantity = z.infer<typeof Quantity>;
 
 export const Range2 = z.tuple([z.number(), z.number()]).refine(([a, b]) => a <= b, "range min must be <= max");
 
+/** A specific piece of gear to hand out: stats are rolled when granted (see docs/GEAR.md). */
+export const GearGrant = z.object({
+  base: ref("gear"),
+  rarity: Rarity,
+  ilvl: z.number().int().min(1),
+});
+export type GearGrant = z.infer<typeof GearGrant>;
+
 export const Rewards = z.object({
   spirit_stones: z.number().int().nonnegative().optional(),
   sect_fame: z.number().int().optional(),
   contribution: z.number().int().nonnegative().optional(),
   items: z.array(Quantity).optional(),
+  gear: z.array(GearGrant).optional(),
   techniques: z.array(ref("tech", "method")).optional(),
   beasts: z.array(ref("beast")).optional(),
   titles: z.array(ref("title")).optional(),

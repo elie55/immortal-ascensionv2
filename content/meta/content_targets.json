@@ -11,6 +11,8 @@
     "passive_techniques": 20,
     "methods": 20,
     "gear_items": 150,
+    "gear_bases": 60,
+    "gear_sets": 8,
     "enemies": 60,
     "beasts": 20,
     "quests": 100,

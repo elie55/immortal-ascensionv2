@@ -75,49 +75,64 @@ export const BeastFood = ItemBase.extend({
 
 export const Junk = ItemBase.extend({ id: ref("junk") });
 
-// ---------- Equipment ----------
+// ---------- Equipment (see docs/GEAR.md) ----------
 
-export const GearRarityVariant = z.object({
-  name: z.string().min(1),
-  description: z.string().min(1),
-  stats: Stats,
-  secondary_pool: z.array(z.string()).default([]),
-  effects: z.array(GearEffect).default([]),
-  awakening: z
-    .object({ effect: GearEffect, materials: z.array(Quantity).min(1), cost_stones: z.number().int().positive() })
-    .optional(),
-  item_cp: z.number().int().positive(),
-  sell_value: z.number().int().nonnegative(),
+const RarityArt = z.object({
+  /** Optional display-name override for this rarity (default: base name). */
+  name: z.string().min(1).optional(),
+  description: z.string().min(1).optional(),
   art: artBlock(["icon"]),
 });
 
-export const GearFamily = Named.extend({
-  id: ref("gear").refine((id) => id.split(".").length === 2, "family id is gear.<family>"),
+/**
+ * A gear *base*: what kind of item it is. Stats are never stored here — they are rolled per instance
+ * from `content/equipment/rules.json` using (base.main_value, rarity, ilvl).
+ */
+export const GearBase = Named.extend({
+  id: ref("gear").refine((id) => id.split(".").length === 2, "gear id is gear.<base>"),
   slot: Slot,
   weapon_type: z.enum(["sword", "spear", "saber", "staff", "fan", "flute", "bow", "whip"]).optional(),
   armor_type: z.enum(["robe", "light", "heavy", "mystic"]).optional(),
   element: ref("elem").optional(),
   set: ref("set").optional(),
+  /** Main-stat value at ilvl 1, common, perfect roll. Typical: 10 weapon ATK, 60 armor HP. */
+  main_value: z.number().positive(),
+  /** Affix that is always present (must be in the slot's affix pool). */
+  signature_affix: z.string().optional(),
+  rarity_range: z.tuple([Rarity, Rarity]),
+  /** Can be produced by generic pool drops ({pool:{slot}}); uniques and set pieces usually false. */
+  droppable: z.boolean().default(true),
+  drop_tags: z.array(z.string()).default([]),
+  /** Unique: single rarity, fixed special effects, still rolls main stat and affixes. */
+  unique: z.boolean().default(false),
+  special_effects: z.array(GearEffect).default([]),
+  awakening: z
+    .object({ effect: GearEffect, materials: z.array(Quantity).min(1), cost_stones: z.number().int().positive() })
+    .optional(),
   requirements: z.object({ realm: ref("realm").optional() }).default({}),
-  rarities: z.record(Rarity, GearRarityVariant).refine((r) => Object.keys(r).length > 0, "family needs ≥1 rarity"),
-}).superRefine((f, ctx) => {
-  if (f.slot === "weapon" && !f.weapon_type) ctx.addIssue({ code: "custom", message: "weapon family needs weapon_type" });
-  const present = RARITIES.map((r) => (f.rarities as Record<string, unknown>)[r] !== undefined);
-  const first = present.indexOf(true);
-  const last = present.lastIndexOf(true);
-  for (let i = first; i <= last; i++) {
-    if (!present[i]) ctx.addIssue({ code: "custom", message: `rarity gap at ${RARITIES[i]} (refinement path must be contiguous)` });
-  }
+  rarities: z.record(Rarity, RarityArt),
+}).superRefine((b, ctx) => {
+  const [lo, hi] = b.rarity_range.map((r) => RARITIES.indexOf(r));
+  if (lo > hi) ctx.addIssue({ code: "custom", message: "rarity_range min > max" });
+  const expected = RARITIES.slice(lo, hi + 1);
+  for (const r of expected) if (!b.rarities[r]) ctx.addIssue({ code: "custom", message: `missing art for rarity ${r} (inside rarity_range)` });
+  for (const r of Object.keys(b.rarities)) if (!expected.includes(r as Rarity)) ctx.addIssue({ code: "custom", message: `rarity ${r} is outside rarity_range` });
+  if (b.slot === "weapon" && !b.weapon_type) ctx.addIssue({ code: "custom", message: "weapon base needs weapon_type" });
+  if (b.unique && lo !== hi) ctx.addIssue({ code: "custom", message: "unique base must have a single rarity" });
+  if (b.unique && b.special_effects.length === 0) ctx.addIssue({ code: "custom", message: "unique base needs special_effects" });
 });
+export type GearBase = z.infer<typeof GearBase>;
 
 export const GearSet = Named.extend({
   id: ref("set"),
-  pieces: z.array(ref("gear")).min(2),
+  pieces: z.array(ref("gear")).min(3).max(5),
   bonuses: z.array(z.object({
     pieces: z.number().int().min(2),
     stats: Stats.default({}),
     effect: GearEffect.optional(),
   })).min(1),
+  /** Where the set drops (documentation; validated loosely). */
+  source_hint: z.string().min(1),
 });
 
 /** +1 … +15 enhancement table. */
@@ -152,3 +167,4 @@ export const ReforgeTable = z.object({
 export const Title = Named.extend({ id: ref("title"), bonuses: Stats.default({}) });
 
 export { ItemRef };
+

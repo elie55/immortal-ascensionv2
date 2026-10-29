@@ -5,24 +5,21 @@
     "description": "A small jade disc on a red cord, carved with the sect's cloud.",
     "name_cn": "玉佩",
     "slot": "necklace",
+    "main_value": 20,
+    "rarity_range": [
+      "common",
+      "rare"
+    ],
+    "droppable": true,
+    "drop_tags": [
+      "plains",
+      "starter"
+    ],
+    "unique": false,
+    "special_effects": [],
     "requirements": {},
     "rarities": {
       "common": {
-        "name": "Jade Pendant",
-        "description": "A small jade disc on a red cord, carved with the sect's cloud. (Common grade.)",
-        "stats": {
-          "sp_power": 20,
-          "sp_energy": 10
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 55,
-        "sell_value": 10,
         "art": {
           "icon": {
             "file": "assets/equipment/necklace/jade_pendant_common.png",
@@ -42,21 +39,6 @@
         }
       },
       "uncommon": {
-        "name": "Jade Pendant (Tempered)",
-        "description": "A small jade disc on a red cord, carved with the sect's cloud. (Uncommon grade.)",
-        "stats": {
-          "sp_power": 32.0,
-          "sp_energy": 16.0
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 82,
-        "sell_value": 30,
         "art": {
           "icon": {
             "file": "assets/equipment/necklace/jade_pendant_uncommon.png",
@@ -76,21 +58,6 @@
         }
       },
       "rare": {
-        "name": "Jade Pendant (Refined)",
-        "description": "A small jade disc on a red cord, carved with the sect's cloud. (Rare grade.)",
-        "stats": {
-          "sp_power": 52.0,
-          "sp_energy": 26.0
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 127,
-        "sell_value": 90,
         "art": {
           "icon": {
             "file": "assets/equipment/necklace/jade_pendant_rare.png",

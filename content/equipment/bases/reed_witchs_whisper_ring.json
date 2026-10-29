@@ -5,32 +5,25 @@
     "description": "The ring whispers when danger is near. Taken from the Whispering Reed Witch.",
     "name_cn": "苇巫低语戒",
     "slot": "ring",
+    "main_value": 6,
+    "rarity_range": [
+      "epic",
+      "epic"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": true,
+    "special_effects": [
+      {
+        "kind": "stat_mult",
+        "description": "+4% chance to dodge a telegraphed attack.",
+        "attribute": "eva",
+        "value": 4
+      }
+    ],
     "requirements": {},
     "rarities": {
       "epic": {
-        "name": "Reed Witch's Whisper Ring of the Azure Cloud",
-        "description": "The ring whispers when danger is near. Taken from the Whispering Reed Witch. (Epic grade.)",
-        "stats": {
-          "atk": 16.8,
-          "hp": 33.6,
-          "crit": 8.4
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "stat_mult",
-            "description": "+4% chance to dodge a telegraphed attack.",
-            "attribute": "eva",
-            "value": 4
-          }
-        ],
-        "item_cp": 98,
-        "sell_value": 300,
         "art": {
           "icon": {
             "file": "assets/equipment/ring/reed_witchs_whisper_ring_epic.png",
@@ -50,6 +43,7 @@
         }
       }
     },
-    "element": "elem.water"
+    "element": "elem.water",
+    "signature_affix": "eva"
   }
 ]

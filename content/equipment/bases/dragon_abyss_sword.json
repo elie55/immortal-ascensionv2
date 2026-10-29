@@ -5,38 +5,32 @@
     "description": "Drawn from the Abyss of the Nine Heavens. The sea itself bows to it.",
     "name_cn": "龙渊剑",
     "slot": "weapon",
+    "main_value": 10,
+    "rarity_range": [
+      "divine",
+      "divine"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": true,
+    "special_effects": [
+      {
+        "kind": "on_hit_apply",
+        "description": "Hits Freeze the target.",
+        "status": "status.freeze",
+        "chance": 0.35
+      },
+      {
+        "kind": "sp_restore",
+        "description": "Restore 10 SP per hit.",
+        "value": 10
+      }
+    ],
     "requirements": {
       "realm": "realm.nascent_soul"
     },
     "rarities": {
       "divine": {
-        "name": "Dragon Abyss Sword · Divine",
-        "description": "Drawn from the Abyss of the Nine Heavens. The sea itself bows to it. (Divine grade.)",
-        "stats": {
-          "atk": 300,
-          "crit": 90
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "on_hit_apply",
-            "description": "Hits Freeze and Slow.",
-            "status": "status.freeze",
-            "chance": 0.35
-          },
-          {
-            "kind": "sp_restore",
-            "description": "Restore 10 SP per hit.",
-            "value": 10
-          }
-        ],
-        "item_cp": 595,
-        "sell_value": 30000,
         "art": {
           "icon": {
             "file": "assets/equipment/weapon/dragon_abyss_sword_divine.png",
@@ -57,6 +51,7 @@
       }
     },
     "weapon_type": "sword",
-    "element": "elem.water"
+    "element": "elem.water",
+    "signature_affix": "elem_dmg.water"
   }
 ]

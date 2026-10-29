@@ -5,31 +5,20 @@
     "description": "A reed flute whose lullaby dulls the senses of beasts.",
     "name_cn": "苇笛",
     "slot": "artifact",
+    "main_value": 25,
+    "rarity_range": [
+      "rare",
+      "epic"
+    ],
+    "droppable": true,
+    "drop_tags": [
+      "forest"
+    ],
+    "unique": false,
+    "special_effects": [],
     "requirements": {},
     "rarities": {
       "rare": {
-        "name": "Whispering Reed Flute (Refined)",
-        "description": "A reed flute whose lullaby dulls the senses of beasts. (Rare grade.)",
-        "stats": {
-          "sp_power": 78.0,
-          "crit_dmg": 13.0
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "on_hit_apply",
-            "description": "Techniques may Slow the target.",
-            "status": "status.slow",
-            "chance": 0.15
-          }
-        ],
-        "item_cp": 146,
-        "sell_value": 90,
         "art": {
           "icon": {
             "file": "assets/equipment/artifact/whispering_reed_flute_rare.png",
@@ -49,28 +38,6 @@
         }
       },
       "epic": {
-        "name": "Whispering Reed Flute of the Azure Cloud",
-        "description": "A reed flute whose lullaby dulls the senses of beasts. (Epic grade.)",
-        "stats": {
-          "sp_power": 126.0,
-          "crit_dmg": 21.0
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "on_hit_apply",
-            "description": "Techniques may Slow the target.",
-            "status": "status.slow",
-            "chance": 0.15
-          }
-        ],
-        "item_cp": 230,
-        "sell_value": 300,
         "art": {
           "icon": {
             "file": "assets/equipment/artifact/whispering_reed_flute_epic.png",
@@ -90,6 +57,7 @@
         }
       }
     },
-    "element": "elem.water"
+    "element": "elem.water",
+    "signature_affix": "elem_dmg.water"
   }
 ]

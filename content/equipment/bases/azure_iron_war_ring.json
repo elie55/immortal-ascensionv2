@@ -5,24 +5,21 @@
     "description": "A heavy iron ring stamped with the sect seal.",
     "name_cn": "苍铁战戒",
     "slot": "ring",
+    "main_value": 6,
+    "rarity_range": [
+      "common",
+      "rare"
+    ],
+    "droppable": true,
+    "drop_tags": [
+      "plains",
+      "starter"
+    ],
+    "unique": false,
+    "special_effects": [],
     "requirements": {},
     "rarities": {
       "common": {
-        "name": "Azure Iron War Ring",
-        "description": "A heavy iron ring stamped with the sect seal. (Common grade.)",
-        "stats": {
-          "atk": 4,
-          "hp": 20
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 46,
-        "sell_value": 10,
         "art": {
           "icon": {
             "file": "assets/equipment/ring/azure_iron_war_ring_common.png",
@@ -42,21 +39,6 @@
         }
       },
       "uncommon": {
-        "name": "Azure Iron War Ring (Tempered)",
-        "description": "A heavy iron ring stamped with the sect seal. (Uncommon grade.)",
-        "stats": {
-          "atk": 6.4,
-          "hp": 32.0
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 67,
-        "sell_value": 30,
         "art": {
           "icon": {
             "file": "assets/equipment/ring/azure_iron_war_ring_uncommon.png",
@@ -76,21 +58,6 @@
         }
       },
       "rare": {
-        "name": "Azure Iron War Ring (Refined)",
-        "description": "A heavy iron ring stamped with the sect seal. (Rare grade.)",
-        "stats": {
-          "atk": 10.4,
-          "hp": 52.0
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 103,
-        "sell_value": 90,
         "art": {
           "icon": {
             "file": "assets/equipment/ring/azure_iron_war_ring_rare.png",

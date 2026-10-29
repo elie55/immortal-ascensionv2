@@ -17,8 +17,9 @@ export const PREFIXES = [
 ] as const;
 export type Prefix = (typeof PREFIXES)[number];
 
+/** Stackable inventory items. Gear is NOT an item ref: gear is granted as {base, rarity, ilvl} (see GearGrant). */
 export const ITEM_PREFIXES = [
-  "mat", "cons", "gift", "book", "blueprint", "qitem", "egg", "bfood", "junk", "gear",
+  "mat", "cons", "gift", "book", "blueprint", "qitem", "egg", "bfood", "junk",
 ] as const satisfies readonly Prefix[];
 
 /** Things that can be granted as a reward (items + learnables + titles + beasts). */

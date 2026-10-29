@@ -1,0 +1,456 @@
+{
+  "ilvl_cap": 150,
+  "scale": {
+    "a": 0.12,
+    "b": 0.0025
+  },
+  "floor_ilvl_bonus": 0.6,
+  "rarity": {
+    "common": {
+      "main_mult": 1.0,
+      "affix_mult": 1.0,
+      "floor": 0.7,
+      "affixes": 0,
+      "specials": 0
+    },
+    "uncommon": {
+      "main_mult": 1.5,
+      "affix_mult": 1.5,
+      "floor": 0.72,
+      "affixes": 1,
+      "specials": 0
+    },
+    "rare": {
+      "main_mult": 2.25,
+      "affix_mult": 2.25,
+      "floor": 0.74,
+      "affixes": 2,
+      "specials": 0
+    },
+    "epic": {
+      "main_mult": 3.4,
+      "affix_mult": 3.4,
+      "floor": 0.76,
+      "affixes": 3,
+      "specials": 0
+    },
+    "legendary": {
+      "main_mult": 5.1,
+      "affix_mult": 5.1,
+      "floor": 0.78,
+      "affixes": 4,
+      "specials": 0
+    },
+    "mythic": {
+      "main_mult": 7.6,
+      "affix_mult": 7.6,
+      "floor": 0.8,
+      "affixes": 4,
+      "specials": 1
+    },
+    "immortal": {
+      "main_mult": 11.4,
+      "affix_mult": 11.4,
+      "floor": 0.82,
+      "affixes": 5,
+      "specials": 1
+    },
+    "divine": {
+      "main_mult": 17.1,
+      "affix_mult": 17.1,
+      "floor": 0.84,
+      "affixes": 5,
+      "specials": 2
+    }
+  },
+  "main_stat_by_slot": {
+    "weapon": "atk",
+    "armor": "hp",
+    "helmet": "def",
+    "boots": "spd",
+    "necklace": "sp_power",
+    "ring": "atk",
+    "artifact": "sp_power"
+  },
+  "affix_pools": {
+    "weapon": [
+      {
+        "stat": "crit",
+        "value": 1.0
+      },
+      {
+        "stat": "crit_dmg",
+        "value": 3
+      },
+      {
+        "stat": "acc",
+        "value": 1.5
+      },
+      {
+        "stat": "atk",
+        "value": 3
+      },
+      {
+        "stat": "armor_pen",
+        "value": 1
+      },
+      {
+        "stat": "life_steal",
+        "value": 0.5
+      },
+      {
+        "stat": "spd",
+        "value": 0.5
+      },
+      {
+        "stat": "elem_dmg.wood",
+        "value": 1.5
+      },
+      {
+        "stat": "elem_dmg.fire",
+        "value": 1.5
+      },
+      {
+        "stat": "elem_dmg.earth",
+        "value": 1.5
+      },
+      {
+        "stat": "elem_dmg.metal",
+        "value": 1.5
+      },
+      {
+        "stat": "elem_dmg.water",
+        "value": 1.5
+      }
+    ],
+    "armor": [
+      {
+        "stat": "hp",
+        "value": 20
+      },
+      {
+        "stat": "def",
+        "value": 3
+      },
+      {
+        "stat": "dmg_red",
+        "value": 0.5
+      },
+      {
+        "stat": "shield_str",
+        "value": 1
+      },
+      {
+        "stat": "status_res",
+        "value": 1
+      },
+      {
+        "stat": "eva",
+        "value": 0.5
+      },
+      {
+        "stat": "elem_res.wood",
+        "value": 1.0
+      },
+      {
+        "stat": "elem_res.fire",
+        "value": 1.0
+      },
+      {
+        "stat": "elem_res.earth",
+        "value": 1.0
+      },
+      {
+        "stat": "elem_res.metal",
+        "value": 1.0
+      },
+      {
+        "stat": "elem_res.water",
+        "value": 1.0
+      }
+    ],
+    "helmet": [
+      {
+        "stat": "def",
+        "value": 2
+      },
+      {
+        "stat": "hp",
+        "value": 12
+      },
+      {
+        "stat": "sp_power",
+        "value": 6
+      },
+      {
+        "stat": "acc",
+        "value": 1
+      },
+      {
+        "stat": "status_res",
+        "value": 1
+      },
+      {
+        "stat": "crit",
+        "value": 0.5
+      },
+      {
+        "stat": "elem_res.wood",
+        "value": 0.8
+      },
+      {
+        "stat": "elem_res.fire",
+        "value": 0.8
+      },
+      {
+        "stat": "elem_res.earth",
+        "value": 0.8
+      },
+      {
+        "stat": "elem_res.metal",
+        "value": 0.8
+      },
+      {
+        "stat": "elem_res.water",
+        "value": 0.8
+      }
+    ],
+    "boots": [
+      {
+        "stat": "spd",
+        "value": 1
+      },
+      {
+        "stat": "eva",
+        "value": 1
+      },
+      {
+        "stat": "hp",
+        "value": 10
+      },
+      {
+        "stat": "def",
+        "value": 1.5
+      },
+      {
+        "stat": "cdr",
+        "value": 0.3
+      },
+      {
+        "stat": "acc",
+        "value": 1
+      }
+    ],
+    "necklace": [
+      {
+        "stat": "sp_power",
+        "value": 8
+      },
+      {
+        "stat": "sp_energy",
+        "value": 4
+      },
+      {
+        "stat": "heal_bonus",
+        "value": 1
+      },
+      {
+        "stat": "cdr",
+        "value": 0.3
+      },
+      {
+        "stat": "crit",
+        "value": 0.5
+      },
+      {
+        "stat": "elem_dmg.wood",
+        "value": 1.0
+      },
+      {
+        "stat": "elem_dmg.fire",
+        "value": 1.0
+      },
+      {
+        "stat": "elem_dmg.earth",
+        "value": 1.0
+      },
+      {
+        "stat": "elem_dmg.metal",
+        "value": 1.0
+      },
+      {
+        "stat": "elem_dmg.water",
+        "value": 1.0
+      }
+    ],
+    "ring": [
+      {
+        "stat": "atk",
+        "value": 2
+      },
+      {
+        "stat": "crit",
+        "value": 0.8
+      },
+      {
+        "stat": "crit_dmg",
+        "value": 2
+      },
+      {
+        "stat": "life_steal",
+        "value": 0.4
+      },
+      {
+        "stat": "eva",
+        "value": 0.5
+      },
+      {
+        "stat": "hp",
+        "value": 8
+      },
+      {
+        "stat": "armor_pen",
+        "value": 0.6
+      }
+    ],
+    "artifact": [
+      {
+        "stat": "sp_power",
+        "value": 10
+      },
+      {
+        "stat": "crit_dmg",
+        "value": 2.5
+      },
+      {
+        "stat": "cdr",
+        "value": 0.4
+      },
+      {
+        "stat": "heal_bonus",
+        "value": 1
+      },
+      {
+        "stat": "shield_str",
+        "value": 1
+      },
+      {
+        "stat": "elem_dmg.wood",
+        "value": 1.2
+      },
+      {
+        "stat": "elem_dmg.fire",
+        "value": 1.2
+      },
+      {
+        "stat": "elem_dmg.earth",
+        "value": 1.2
+      },
+      {
+        "stat": "elem_dmg.metal",
+        "value": 1.2
+      },
+      {
+        "stat": "elem_dmg.water",
+        "value": 1.2
+      }
+    ]
+  },
+  "special_pool": [
+    {
+      "kind": "on_hit_apply",
+      "description": "Hits have a 15% chance to Burn.",
+      "status": "status.burning",
+      "chance": 0.15
+    },
+    {
+      "kind": "on_hit_apply",
+      "description": "Hits have a 10% chance to Freeze.",
+      "status": "status.freeze",
+      "chance": 0.1
+    },
+    {
+      "kind": "on_crit_apply",
+      "description": "Critical hits cause Bleeding.",
+      "status": "status.bleeding",
+      "chance": 0.3
+    },
+    {
+      "kind": "on_hit_apply",
+      "description": "Hits have a 15% chance to Poison.",
+      "status": "status.poison",
+      "chance": 0.15
+    },
+    {
+      "kind": "counter",
+      "description": "25% chance to counterattack for 40% ATK.",
+      "value": 40,
+      "chance": 0.25
+    },
+    {
+      "kind": "sp_restore",
+      "description": "Restore 5 SP per turn.",
+      "value": 5
+    },
+    {
+      "kind": "cooldown_reduction",
+      "description": "Technique cooldowns −1 on battle start.",
+      "value": 1
+    },
+    {
+      "kind": "heal_on_turn",
+      "description": "Heal 2% max HP each turn.",
+      "value": 2
+    },
+    {
+      "kind": "shield_on_battle_start",
+      "description": "Start battle with a shield of 8% max HP.",
+      "value": 8
+    },
+    {
+      "kind": "reflect",
+      "description": "Reflect 10% of damage taken.",
+      "status": "status.reflect",
+      "value": 10
+    }
+  ],
+  "cp_weights": {
+    "main": 1.0,
+    "special": 40,
+    "affix": {
+      "crit": 15,
+      "crit_dmg": 5,
+      "acc": 6,
+      "eva": 8,
+      "spd": 10,
+      "cdr": 20,
+      "life_steal": 12,
+      "armor_pen": 10,
+      "dmg_red": 12,
+      "heal_bonus": 6,
+      "shield_str": 8,
+      "status_res": 6,
+      "hp": 0.4,
+      "atk": 2,
+      "def": 2,
+      "sp_power": 0.8,
+      "sp_energy": 1,
+      "elem_dmg.wood": 6,
+      "elem_dmg.fire": 6,
+      "elem_dmg.earth": 6,
+      "elem_dmg.metal": 6,
+      "elem_dmg.water": 6,
+      "elem_res.wood": 4,
+      "elem_res.fire": 4,
+      "elem_res.earth": 4,
+      "elem_res.metal": 4,
+      "elem_res.water": 4
+    }
+  },
+  "content_bands": {
+    "region_per_order": 8,
+    "region_span": 11,
+    "tower_base": 3,
+    "mega_min": 90
+  }
+}

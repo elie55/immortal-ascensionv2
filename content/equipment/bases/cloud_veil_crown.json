@@ -5,24 +5,20 @@
     "description": "A silver circlet trailing a veil of cloud-silk.",
     "name_cn": "云纱冠",
     "slot": "helmet",
+    "main_value": 30,
+    "rarity_range": [
+      "rare",
+      "legendary"
+    ],
+    "droppable": true,
+    "drop_tags": [
+      "forest"
+    ],
+    "unique": false,
+    "special_effects": [],
     "requirements": {},
     "rarities": {
       "rare": {
-        "name": "Cloud Veil Crown (Refined)",
-        "description": "A silver circlet trailing a veil of cloud-silk. (Rare grade.)",
-        "stats": {
-          "hp": 78.0,
-          "def": 13.0
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 146,
-        "sell_value": 90,
         "art": {
           "icon": {
             "file": "assets/equipment/helmet/cloud_veil_crown_rare.png",
@@ -42,21 +38,6 @@
         }
       },
       "epic": {
-        "name": "Cloud Veil Crown of the Azure Cloud",
-        "description": "A silver circlet trailing a veil of cloud-silk. (Epic grade.)",
-        "stats": {
-          "hp": 126.0,
-          "def": 21.0
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [],
-        "item_cp": 230,
-        "sell_value": 300,
         "art": {
           "icon": {
             "file": "assets/equipment/helmet/cloud_veil_crown_epic.png",
@@ -74,8 +55,28 @@
             "status": "planned"
           }
         }
+      },
+      "legendary": {
+        "art": {
+          "icon": {
+            "file": "assets/equipment/helmet/cloud_veil_crown_legendary.png",
+            "size": [
+              256,
+              256
+            ],
+            "transparent": true,
+            "prompt": "Immortal Ascension game art, premium anime xianxia illustration, soft painterly rendering, delicate linework, luminous palette of jade green, pale cyan, soft pink, warm gold and deep navy, gentle rim light, high detail. Game inventory icon of a delicate silver circlet with a drifting veil of white cloud-silk and a jade centre stone, golden filigree, flame-like golden aura, intricate phoenix and cloud motifs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+            "references": [
+              "refs/mockups/inventory_icons.png",
+              "refs/mockups/rarity_frames.png"
+            ],
+            "status": "planned"
+          }
+        }
       }
     },
-    "element": "elem.water"
+    "element": "elem.water",
+    "signature_affix": "sp_power"
   }
 ]

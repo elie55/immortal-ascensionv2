@@ -5,30 +5,18 @@
     "description": "A pendant of ancient dragon bone that hums near spirit energy.",
     "name_cn": "龙骨坠",
     "slot": "necklace",
+    "main_value": 20,
+    "rarity_range": [
+      "epic",
+      "legendary"
+    ],
+    "droppable": false,
+    "drop_tags": [],
+    "unique": false,
+    "special_effects": [],
     "requirements": {},
     "rarities": {
       "epic": {
-        "name": "Dragonbone Pendant of the Azure Cloud",
-        "description": "A pendant of ancient dragon bone that hums near spirit energy. (Epic grade.)",
-        "stats": {
-          "sp_power": 84.0,
-          "sp_energy": 42.0
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "sp_restore",
-            "description": "Restore 5 SP per turn.",
-            "value": 5
-          }
-        ],
-        "item_cp": 199,
-        "sell_value": 300,
         "art": {
           "icon": {
             "file": "assets/equipment/necklace/dragonbone_pendant_epic.png",
@@ -48,27 +36,6 @@
         }
       },
       "legendary": {
-        "name": "Dragonbone Pendant of Nine Heavens",
-        "description": "A pendant of ancient dragon bone that hums near spirit energy. (Legendary grade.)",
-        "stats": {
-          "sp_power": 140,
-          "sp_energy": 70
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "sp_restore",
-            "description": "Restore 5 SP per turn.",
-            "value": 5
-          }
-        ],
-        "item_cp": 325,
-        "sell_value": 1000,
         "art": {
           "icon": {
             "file": "assets/equipment/necklace/dragonbone_pendant_legendary.png",
@@ -87,6 +54,7 @@
           }
         }
       }
-    }
+    },
+    "signature_affix": "sp_energy"
   }
 ]

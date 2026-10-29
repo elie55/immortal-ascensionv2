@@ -5,32 +5,22 @@
     "description": "A layered robe of frost-silk threaded with rime crystal.",
     "name_cn": "霜玻璃袍",
     "slot": "armor",
+    "main_value": 60,
+    "rarity_range": [
+      "epic",
+      "legendary"
+    ],
+    "droppable": false,
+    "drop_tags": [
+      "frost"
+    ],
+    "unique": false,
+    "special_effects": [],
     "requirements": {
       "realm": "realm.foundation_establishment"
     },
     "rarities": {
       "epic": {
-        "name": "Rimeglass Robe of the Azure Cloud",
-        "description": "A layered robe of frost-silk threaded with rime crystal. (Epic grade.)",
-        "stats": {
-          "hp": 252.0,
-          "def": 33.6
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "shield_on_battle_start",
-            "description": "Start battle with a shield of 10% max HP.",
-            "value": 10
-          }
-        ],
-        "item_cp": 438,
-        "sell_value": 300,
         "art": {
           "icon": {
             "file": "assets/equipment/armor/rimeglass_robe_epic.png",
@@ -50,27 +40,6 @@
         }
       },
       "legendary": {
-        "name": "Rimeglass Robe of Nine Heavens",
-        "description": "A layered robe of frost-silk threaded with rime crystal. (Legendary grade.)",
-        "stats": {
-          "hp": 420,
-          "def": 56
-        },
-        "secondary_pool": [
-          "crit",
-          "acc",
-          "spd",
-          "hp"
-        ],
-        "effects": [
-          {
-            "kind": "shield_on_battle_start",
-            "description": "Start battle with a shield of 10% max HP.",
-            "value": 10
-          }
-        ],
-        "item_cp": 724,
-        "sell_value": 1000,
         "art": {
           "icon": {
             "file": "assets/equipment/armor/rimeglass_robe_legendary.png",
@@ -92,6 +61,7 @@
     },
     "armor_type": "mystic",
     "element": "elem.water",
-    "set": "set.rimeglass"
+    "set": "set.rimeglass",
+    "signature_affix": "shield_str"
   }
 ]

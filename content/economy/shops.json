@@ -78,45 +78,104 @@
         }
       },
       {
-        "id": "gear.bamboo_sword.common",
+        "gear": {
+          "base": "gear.bamboo_sword",
+          "rarity": "common",
+          "ilvl": 3
+        },
         "price": 60,
         "currency": "spirit_stones",
+        "qty": 1,
         "unlock": {}
       },
       {
-        "id": "gear.bamboo_robe.common",
+        "gear": {
+          "base": "gear.bamboo_robe",
+          "rarity": "common",
+          "ilvl": 3
+        },
         "price": 80,
         "currency": "spirit_stones",
+        "qty": 1,
         "unlock": {}
       },
       {
-        "id": "gear.reed_hat.common",
+        "gear": {
+          "base": "gear.reed_hat",
+          "rarity": "common",
+          "ilvl": 3
+        },
         "price": 50,
         "currency": "spirit_stones",
+        "qty": 1,
         "unlock": {}
       },
       {
-        "id": "gear.cloudstep_boots.common",
+        "gear": {
+          "base": "gear.cloudstep_boots",
+          "rarity": "common",
+          "ilvl": 3
+        },
         "price": 143,
         "currency": "spirit_stones",
+        "qty": 1,
         "unlock": {}
       },
       {
-        "id": "gear.jade_pendant.common",
+        "gear": {
+          "base": "gear.jade_pendant",
+          "rarity": "common",
+          "ilvl": 3
+        },
         "price": 90,
         "currency": "spirit_stones",
+        "qty": 1,
         "unlock": {}
       },
       {
-        "id": "gear.azure_iron_war_ring.common",
+        "gear": {
+          "base": "gear.azure_iron_war_ring",
+          "rarity": "common",
+          "ilvl": 3
+        },
         "price": 70,
         "currency": "spirit_stones",
+        "qty": 1,
         "unlock": {}
       },
       {
-        "id": "gear.azure_iron_sword.uncommon",
+        "gear": {
+          "base": "gear.cloud_talisman",
+          "rarity": "common",
+          "ilvl": 3
+        },
+        "price": 65,
+        "currency": "spirit_stones",
+        "qty": 1,
+        "unlock": {}
+      },
+      {
+        "gear": {
+          "base": "gear.azure_iron_sword",
+          "rarity": "uncommon",
+          "ilvl": 6
+        },
         "price": 171,
         "currency": "spirit_stones",
+        "qty": 1,
+        "unlock": {
+          "sect_fame": 300
+        }
+      },
+      {
+        "gear": {
+          "base": "gear.azure_cloud_robe",
+          "rarity": "uncommon",
+          "ilvl": 6
+        },
+        "price": 190,
+        "currency": "spirit_stones",
+        "qty": 1,
         "unlock": {
           "sect_fame": 300
         }

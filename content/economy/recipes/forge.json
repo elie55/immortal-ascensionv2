@@ -4,7 +4,11 @@
     "name": "Azure Iron Sword",
     "description": "A refined-grade Azure Iron Sword forged from spirit iron.",
     "name_cn": "苍铁剑",
-    "output": "gear.azure_iron_sword.rare",
+    "output": {
+      "base": "gear.azure_iron_sword",
+      "rarity": "rare",
+      "ilvl": 8
+    },
     "ingredients": [
       {
         "id": "mat.spirit_iron_ore",
@@ -34,7 +38,11 @@
     "name": "Rimeglass Spear",
     "description": "Blueprint required. Glacier iron, rime crystal and a Frost Wyrm heart-core.",
     "name_cn": "霜玻璃枪",
-    "output": "gear.rimeglass_spear.epic",
+    "output": {
+      "base": "gear.rimeglass_spear",
+      "rarity": "epic",
+      "ilvl": 24
+    },
     "ingredients": [
       {
         "id": "mat.glacier_iron_ore",
@@ -65,7 +73,11 @@
     "name": "Rimeglass Robe",
     "description": "Frost-silk robe threaded with rime crystal.",
     "name_cn": "霜玻璃袍",
-    "output": "gear.rimeglass_robe.epic",
+    "output": {
+      "base": "gear.rimeglass_robe",
+      "rarity": "epic",
+      "ilvl": 24
+    },
     "ingredients": [
       {
         "id": "mat.cloud_silk_bolt",
@@ -92,7 +104,11 @@
     "name": "Rimeglass Boots",
     "description": "Boots soled with frost-glass.",
     "name_cn": "霜玻璃靴",
-    "output": "gear.rimeglass_boots.epic",
+    "output": {
+      "base": "gear.rimeglass_boots",
+      "rarity": "epic",
+      "ilvl": 24
+    },
     "ingredients": [
       {
         "id": "mat.glacier_iron_ore",
@@ -123,7 +139,11 @@
     "name": "Demonbane Fan",
     "description": "Blueprint required. Feathers from the Abyss and a serpent's fang.",
     "name_cn": "斩魔扇",
-    "output": "gear.demonbane_fan.legendary",
+    "output": {
+      "base": "gear.demonbane_fan",
+      "rarity": "legendary",
+      "ilvl": 60
+    },
     "ingredients": [
       {
         "id": "mat.abyss_serpent_fang",
