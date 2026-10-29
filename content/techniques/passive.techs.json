@@ -38,7 +38,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -81,7 +81,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -123,7 +123,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -166,7 +166,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -212,7 +212,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   }

@@ -93,11 +93,28 @@ def roots():
     ]
 
 # ---------------- Status effects ----------------
+# Concrete pictures for status icons: an abstract "symbol meaning X" made the model paint a cultivator holding a sigil.
+STATUS_LOOK = {
+    "burning": "a roaring orange and crimson spirit flame",
+    "bleeding": "three crimson blood droplets falling from a bright slash mark",
+    "poison": "a green venom droplet dripping from a curved serpent fang in a wisp of toxic mist",
+    "freeze": "a pale blue six-pointed ice crystal wrapped in frost",
+    "stun": "three small golden stars circling a crackling spark of lightning",
+    "silence": "a closed white lotus bud bound tightly with a silver chain",
+    "slow": "a bronze hourglass with heavy grey sand trickling slowly",
+    "atk_down": "a jade sword snapped in half with its blade pointing down, dim red glow",
+    "def_down": "a cracked bronze round shield with shards breaking off, dim red glow",
+    "shield": "a translucent cyan hexagon-patterned qi barrier dome",
+    "regen": "a sprouting jade-green leaf surrounded by soft healing sparkles",
+    "reflect": "a polished round bronze mirror bouncing back a beam of white light",
+    "invuln": "a radiant golden temple bell glowing with protective light",
+}
+
 def statuses():
     S = lambda key, name, kind, turns, mods, tick, desc, stacking="refresh", mx=1: {
         "id": f"status.{key}", **named(name, desc), "kind": kind, "stacking": stacking, "max_stacks": mx, "default_turns": turns,
         "modifiers": mods, **({"tick": tick} if tick else {}),
-        "art": {"icon": art(f"assets/status/{key}.png", f"{STYLE}. Small round status-effect icon: one bold glowing symbol meaning {name.lower()}, glowing rim, plain background, {NOTXT}.", (128, 128), True, ["refs/mockups/battle_screen.png"])}}
+        "art": {"icon": art(f"assets/status/{key}.png", f"{STYLE}. Small round game status-effect icon showing a single object and no person, no figure, no face: {STATUS_LOOK[key]}, centred inside a thin glowing round rim, {NOTXT}.", (128, 128), True, ["refs/mockups/battle_screen.png"])}}
     return [
         S("burning", "Burning", "dot", 2, {}, {"pct_atk": 30}, "Takes fire damage each turn.", "stack", 3),
         S("poison", "Poison", "dot", 3, {"heal_bonus": -30}, {"pct_atk": 20}, "Takes nature damage each turn and heals less.", "stack", 5),

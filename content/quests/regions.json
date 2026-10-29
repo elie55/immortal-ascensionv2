@@ -42,7 +42,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -99,7 +99,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.frozen_lotus_valley_arrival"
@@ -147,7 +147,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -310,7 +310,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -357,7 +357,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -414,7 +414,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.ancient_sword_tomb_arrival"
@@ -462,7 +462,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -625,7 +625,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -672,7 +672,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -729,7 +729,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.demon_territory_arrival"
@@ -777,7 +777,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -940,7 +940,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -987,7 +987,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1044,7 +1044,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.celestial_mountains_arrival"
@@ -1092,7 +1092,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1255,7 +1255,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1302,7 +1302,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1359,7 +1359,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.nine_heavens_arrival"
@@ -1407,7 +1407,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1570,7 +1570,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1617,7 +1617,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1674,7 +1674,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.thunderclap_wastes_arrival"
@@ -1722,7 +1722,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1827,7 +1827,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1885,7 +1885,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1932,7 +1932,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1989,7 +1989,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.sunken_dragon_sea_arrival"
@@ -2037,7 +2037,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2142,7 +2142,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2200,7 +2200,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2247,7 +2247,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2304,7 +2304,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.starfall_desert_arrival"
@@ -2352,7 +2352,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2457,7 +2457,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2515,7 +2515,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2562,7 +2562,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2619,7 +2619,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.gate_of_ascension_arrival"
@@ -2667,7 +2667,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2772,7 +2772,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2830,7 +2830,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2877,7 +2877,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2934,7 +2934,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.jade_immortal_realm_arrival"
@@ -2982,7 +2982,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -3145,7 +3145,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -3192,7 +3192,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -3249,7 +3249,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.golden_palace_of_laws_arrival"
@@ -3297,7 +3297,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -3402,7 +3402,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -3460,7 +3460,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -3507,7 +3507,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -3564,7 +3564,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.throne_of_the_immortal_emperor_arrival"
@@ -3612,7 +3612,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -3775,7 +3775,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -3822,7 +3822,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -3879,7 +3879,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -3926,7 +3926,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -4031,7 +4031,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -4089,7 +4089,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },

@@ -53,7 +53,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -117,7 +117,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -165,7 +165,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.beast.evolve_yunyun"

@@ -33,7 +33,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.senior_sister"
@@ -89,7 +89,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.first_breath"
@@ -138,7 +138,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.first_hunt"
@@ -188,7 +188,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.bandit_chief",
@@ -240,7 +240,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.into_the_bamboo",
@@ -288,7 +288,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "next": "quest.main.bamboo_sovereign",
@@ -343,7 +343,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "rec_cp": 1100

@@ -45,7 +45,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "rec_cp": 400,
@@ -99,7 +99,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "rec_cp": 250,
@@ -152,7 +152,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "rec_cp": 650,
@@ -205,7 +205,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "rec_cp": 1200

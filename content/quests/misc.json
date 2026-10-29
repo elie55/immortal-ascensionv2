@@ -131,7 +131,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -275,7 +275,7 @@
         "references": [
           "refs/mockups/mission_hall.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "rec_cp": 520
