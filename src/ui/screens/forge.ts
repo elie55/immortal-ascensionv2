@@ -152,7 +152,7 @@ function craftPanel(app: App, get: () => string | undefined, set: (r: string) =>
         h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, c.get<any>(x.r.output.base).name), h("div", { class: "desc" }, x.st.unlocked ? `${RARITY_LABEL[x.r.output.rarity]} · Lv ${x.r.output.ilvl}` : x.st.reason)),
         x.st.affordable && h("span", { class: "tag jade" }, "Ready"))))),
     section(base.name, h("span", { class: `rt-${r.output.rarity}` }, `${RARITY_LABEL[r.output.rarity]} · Lv ${r.output.ilvl}`),
-      h("div", { class: "dim", style: { fontSize: "12.5px", marginBottom: "6px" } }, base.description),
+      h("div", { class: "dim", style: { fontSize: "calc(12.5rem / 15)", marginBottom: "6px" } }, base.description),
       h("div", { class: "rows" }, r.ingredients.map((q: any) => needRow(app, q.id, q.qty, itemCount(s, q.id))),
         h("div", { class: ["need", s.resources.spirit_stones < r.cost_stones && "short"] }, h("span", { class: "tile-mini stone-mini" }, icon("gem", 16)), h("span", { class: "grow" }, "Spirit Stones"), h("b", { class: "tnum" }, `${fmt.int(s.resources.spirit_stones)} / ${fmt.int(r.cost_stones)}`)))),
     cta("Craft", sel.st.unlocked ? "Stats are rolled when forged" : sel.st.reason ?? "Locked", () => {

@@ -171,7 +171,7 @@ function hatchModal(app: App, uid: number) {
     return h("div", { class: "center" },
       h("div", { class: "muted up gold-t" }, "The egg hatches!"),
       h("div", { class: ["beast-art big", `r-${def.rarity}`], style: { backgroundImage: app.img(beastArt(app, b)), margin: "10px auto" } }, !beastArt(app, b) && icon("paw", 48)),
-      h("div", { class: "result-title", style: { fontSize: "30px" } }, def.name),
+      h("div", { class: "result-title", style: { fontSize: "calc(30rem / 15)" } }, def.name),
       h("div", { class: "dim" }, def.description),
       h("div", { class: "muted", style: { margin: "6px 0" } }, `${RARITY_LABEL[def.rarity]} ${def.species} · ${ELEM[def.element] ?? ""}`),
       h("button", { class: "btn gold block", onClick: close }, "Welcome!"));

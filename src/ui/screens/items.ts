@@ -9,7 +9,7 @@ import { equippedSlotOf, slotKeysFor, gearStats, type EquipSlot } from "../../en
 import { instanceCp } from "../../../schema/gear-math.ts";
 import { enhanceMult } from "../../engine/inventory.ts";
 import { equip, unequip, useConsumable, sellItem } from "../../engine/actions.ts";
-import { isBreakthroughItem } from "../../engine/cultivation.ts";
+import { isBreakthroughItem, qiBankCap } from "../../engine/cultivation.ts";
 
 export const ITEM_ICON: Record<string, string> = { mat: "sparkle", cons: "cauldron", gift: "fame", book: "scroll", blueprint: "map", qitem: "scroll", egg: "paw", bfood: "paw", junk: "trash" };
 export const CATEGORY: Record<string, string> = { mat: "Material", cons: "Pill", gift: "Gift", book: "Manual", blueprint: "Blueprint", qitem: "Quest item", egg: "Spirit beast egg", bfood: "Beast food", junk: "Junk" };
@@ -74,7 +74,7 @@ export function gearDetail(app: App, uid: number, opts: { onChange?: () => void 
         set && h("div", { class: "muted", style: { marginTop: "4px" } }, `Set: ${set.name}`),
         inst.specials.map((e: any) => h("div", { class: "muted gold-t", style: { marginTop: "2px" } }, `✦ ${e.description}`))),
       h("div", { style: { textAlign: "right", flex: "none" } },
-        h("div", { class: "muted up" }, "Item CP"), h("div", { style: { fontWeight: 900, fontSize: "20px" } }, fmt.int(cp)),
+        h("div", { class: "muted up" }, "Item CP"), h("div", { style: { fontWeight: 900, fontSize: "calc(20rem / 15)" } }, fmt.int(cp)),
         !worn && h("div", { class: "muted up" }, "vs equipped"),
         !worn && h("div", { class: cp >= vsCp ? "jade-t" : "red-t", style: { fontWeight: 800 } }, `${cp >= vsCp ? "▲" : "▼"} ${fmt.int(Math.abs(cp - vsCp))}`))),
     h("div", { class: "grid-3", style: { marginTop: "10px" } },
@@ -94,18 +94,24 @@ export function stackDetail(app: App, id: string, opts: { onChange?: () => void 
   const usable = prefix === "cons" && !isBreakthroughItem(c, id);
   const effects = prefix === "cons" ? Object.entries(def.effects).map(([k, v]: [string, any]) => k === "qi" ? `+${fmt.compact(v)} Qi` : k === "hp_pct" ? `Heal ${v}% HP` : k === "sp_pct" ? `Restore ${v}% SP` : k === "cultivation_boost" ? `×${v.mult} Qi rate for ${v.minutes} min` : k === "breakthrough_chance_bonus" ? `+${Math.round(v * 100)}% breakthrough chance` : k === "permanent" ? Object.entries(v).map(([a, n]: any) => `${attrLabel(a)} +${attrValue(a, n)} permanently`).join(", ") : k === "buff" ? `Applies ${c.get<any>(v.status).name}` : `${k}`) : [];
   const run = (fn: () => any, msg?: string) => { const r = fn(); if (r && r.ok === false) app.router.toast(r.reason, "bad"); else { if (msg) app.router.toast(msg, "good"); opts.onChange?.(); } };
+  // "Use ×N": stackable effects only (Qi, permanent stats, mastery), and never more Qi than the bank can hold.
+  const e = def.effects ?? {};
+  const stackable = usable && !def.cooldown_min && !e.cultivation_boost && !e.buff && !e.hp_pct && !e.sp_pct && !e.breakthrough_chance_bonus;
+  const room = e.qi ? Math.max(0, Math.ceil((qiBankCap(s, c) - s.character.qi) / e.qi)) : qty;
+  const useMany = stackable ? Math.min(qty, room) : 0;
   return h("div", { class: "glass panel item-detail" },
     h("div", { class: "row", style: { alignItems: "flex-start" } },
       h("div", { style: { width: "64px", flex: "none" } }, stackTile(app, id)),
       h("div", { class: "grow" },
         h("div", { class: `muted up rt-${def.rarity ?? "common"}`, style: { fontWeight: 800 } }, `${RARITY_LABEL[def.rarity ?? "common"]} · ${CATEGORY[prefix] ?? prefix}${def.tier ? ` · Tier ${def.tier}` : ""}`),
         h("div", { class: `item-name rt-${def.rarity ?? "common"}` }, def.name, h("span", { class: "muted" }, `  ×${qty}`)),
-        h("div", { class: "dim", style: { fontSize: "12px", marginTop: "2px" } }, def.description),
+        h("div", { class: "dim", style: { fontSize: "calc(12rem / 15)", marginTop: "2px" } }, def.description),
         effects.length > 0 && h("div", { class: "row", style: { flexWrap: "wrap", gap: "4px", marginTop: "6px" } }, effects.map((e) => h("span", { class: "chip-stat" }, e))),
         isBreakthroughItem(c, id) && h("div", { class: "muted gold-t", style: { marginTop: "4px" } }, "✦ Used automatically by your breakthrough")),
       def.sell_value !== undefined && h("div", { style: { textAlign: "right", flex: "none" } }, h("div", { class: "muted up" }, "Sells for"), h("div", { style: { fontWeight: 800 } }, icon("gem", 12), ` ${fmt.int(def.sell_value)}`))),
-    h("div", { class: "grid-2", style: { marginTop: "10px" } },
+    h("div", { class: useMany > 1 ? "grid-3" : "grid-2", style: { marginTop: "10px" } },
       h("button", { class: "btn ghost", disabled: def.sell_value === undefined || prefix === "qitem", onClick: () => run(() => app.game.run("sell", app.now(), (st, ct) => sellItem(st, ct, id, 1)), `Sold 1 ${def.name}`) }, "Sell 1"),
+      useMany > 1 && h("button", { class: "btn", onClick: () => run(() => app.game.run("use", app.now(), (st, ct) => useConsumable(st, ct, { now: app.now() }, id, useMany)), `Used ${useMany} × ${def.name}`) }, `Use ×${useMany}`),
       usable
         ? h("button", { class: "btn gold", onClick: () => run(() => app.game.run("use", app.now(), (st, ct) => useConsumable(st, ct, { now: app.now() }, id)), `Used ${def.name}`) }, "Use")
         : prefix === "book" ? h("button", { class: "btn gold", onClick: () => run(() => app.game.run("read", app.now(), (st, ct) => readBook(st, ct, id)), `Learned ${c.get<any>(def.teaches).name}`) }, "Read")
@@ -122,8 +128,8 @@ function compareSheet(app: App, a: number, b: number) {
     return h("div", null,
       h("div", { class: "m-title" }, "Compare"),
       h("div", { class: "grid-2", style: { marginBottom: "10px" } },
-        h("div", { class: "center" }, h("div", { style: { width: "64px", margin: "0 auto" } }, gearTile(app, b)), h("div", { class: `item-name rt-${B.rarity}`, style: { fontSize: "13px" } }, gearName(app, B)), h("div", { class: "muted" }, "Equipped")),
-        h("div", { class: "center" }, h("div", { style: { width: "64px", margin: "0 auto" } }, gearTile(app, a)), h("div", { class: `item-name rt-${A.rarity}`, style: { fontSize: "13px" } }, gearName(app, A)), h("div", { class: "muted" }, "Selected"))),
+        h("div", { class: "center" }, h("div", { style: { width: "64px", margin: "0 auto" } }, gearTile(app, b)), h("div", { class: `item-name rt-${B.rarity}`, style: { fontSize: "calc(13rem / 15)" } }, gearName(app, B)), h("div", { class: "muted" }, "Equipped")),
+        h("div", { class: "center" }, h("div", { style: { width: "64px", margin: "0 auto" } }, gearTile(app, a)), h("div", { class: `item-name rt-${A.rarity}`, style: { fontSize: "calc(13rem / 15)" } }, gearName(app, A)), h("div", { class: "muted" }, "Selected"))),
       h("dl", { class: "kv cmp" }, ...keys.flatMap((k) => {
         const d = (sa[k] ?? 0) - (sb[k] ?? 0);
         return [h("dt", null, attrLabel(k)), h("dd", null, `${attrValue(k, sb[k] ?? 0)} → ${attrValue(k, sa[k] ?? 0)} `, h("span", { class: d >= 0 ? "jade-t" : "red-t" }, `${d >= 0 ? "▲" : "▼"}${attrValue(k, Math.abs(d))}`))];

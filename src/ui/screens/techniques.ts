@@ -28,7 +28,7 @@ export function techniquesScreen(app: App, backTo: string): Screen {
         const lv = id ? masteryLevel(s.techniques.known[id] ?? 0, curve(t)) : 0;
         return h("button", { class: ["glass tech-slot", !t && "empty", kind], onClick: () => pickSheet(app, kind, i) },
           h("span", { class: "tech-ico", style: { backgroundImage: art ? app.img(art) : undefined } }, !art && icon(t ? (kind === "passives" ? "shield" : kind === "ultimate" ? "bolt" : "sword") : "plus", 18)),
-          h("div", { class: "grow" }, h("div", { class: "lbl" }, t ? t.name : kind === "ultimate" ? "Ultimate" : kind === "passives" ? `Passive ${i + 1}` : `Active ${i + 1}`), h("div", { class: "desc" }, t ? `Mastery ${lv} · ${techLine(app, t).slice(0, 80)}` : "Empty — tap to choose")),
+          h("div", { class: "grow" }, h("div", { class: "lbl" }, t ? t.name : kind === "ultimate" ? "Ultimate" : kind === "passives" ? `Passive ${i + 1}` : `Active ${i + 1}`), h("div", { class: "desc clamp2" }, t ? `Mastery ${lv} · ${techLine(app, t)}` : "Empty — tap to choose")),
           icon("chevron", 12));
       };
       return [
@@ -115,10 +115,10 @@ export function autoBattleScreen(app: App, backTo: string): Screen {
       return [
         header(app),
         subbar({ title: "Auto-Battle", cn: "自动战斗", sub: "Highest ready rule fires first", backTo, onBack: () => app.router.back() }),
-        h("div", { class: "row between" },
+        h("div", { class: "row between glass", style: { padding: "5px 8px", borderRadius: "999px" } },
           seg(s.combat.active, s.combat.presets.map((p, i) => ({ value: i, label: p.name })), (v) => { app.game.run("preset", app.now(), (st) => { st.combat.active = v; return { ok: true, events: [] }; }); open = null; }),
           s.combat.presets.length < 3 && h("button", { class: "icon-btn", "aria-label": "New preset", onClick: () => { app.game.run("preset", app.now(), (st) => { const names = ["Balanced", "Boss", "Farming"]; const name = names.find((n) => !st.combat.presets.some((p) => p.name === n)) ?? `Preset ${st.combat.presets.length + 1}`; st.combat.presets.push({ name, rules: preset.rules.map((r) => ({ ...r })) }); st.combat.active = st.combat.presets.length - 1; return { ok: true, events: [] }; }); app.router.toast("Preset copied — edit it for its purpose", "good"); } }, icon("plus", 14)),
-          h("div", { class: "row", style: { gap: "6px" } }, h("span", { class: "muted" }, "Auto"), toggle(!s.combat.manual, (v) => app.game.run("manual", app.now(), (st) => { st.combat.manual = !v; return { ok: true, events: [] }; })))),
+          h("div", { class: "row", style: { gap: "6px" } }, h("span", { class: "dim" }, "Auto"), toggle(!s.combat.manual, (v) => app.game.run("manual", app.now(), (st) => { st.combat.manual = !v; return { ok: true, events: [] }; })))),
         section("Technique priority", `${rules.filter((r) => r.when !== "never").length} / ${rules.length} active`,
           h("div", { class: "rule-list" }, rules.map((r, i) => {
             const L = ruleLabel(app, r.slot);

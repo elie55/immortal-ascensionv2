@@ -5,7 +5,7 @@
  */
 import { h, fmt } from "../core/dom.ts";
 import { icon, SLOT_ICON } from "../core/icons.ts";
-import { header, subbar, seg, bar, tile, stepper, RARITY_LABEL } from "../core/kit.ts";
+import { header, subbar, seg, bar, tile, stepper, RARITY_LABEL, confirmModal } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
 import type { App } from "../../app.ts";
 import { shopRows, buy, discountPct, restockIn, sellGear, gearSellValue, type ShopRow } from "../../engine/shop.ts";
@@ -52,7 +52,7 @@ export function shopScreen(app: App, shopId: string, backTo: string): Screen {
         owner && h("div", { class: "keeper" },
           h("div", { class: "keeper-art", style: { backgroundImage: app.img(c.artAny(owner.id, "full_body", "portrait")) } }),
           h("div", { class: "glass bubble" }, h("div", { class: "bubble-n" }, owner.name), h("div", null, GREETING[shopId] ?? shop.description),
-            aff && h("div", { class: "row", style: { gap: "6px", marginTop: "6px" } }, h("span", { class: "pink-t", style: { fontSize: "11px", fontWeight: 700 } }, `♥ ${aff.name}`), h("div", { class: "grow" }, bar(aff.next ? affVal / aff.next.threshold : 1, { cls: "thin pink" })), h("span", { class: "muted tnum" }, aff.next ? `${affVal} / ${aff.next.threshold}` : `${affVal}`)))),
+            aff && h("div", { class: "row", style: { gap: "6px", marginTop: "6px" } }, h("span", { class: "pink-t", style: { fontSize: "calc(11rem / 15)", fontWeight: 700 } }, `♥ ${aff.name}`), h("div", { class: "grow" }, bar(aff.next ? affVal / aff.next.threshold : 1, { cls: "thin pink" })), h("span", { class: "muted tnum" }, aff.next ? `${affVal} / ${aff.next.threshold}` : `${affVal}`)))),
         h("div", { class: "glass panel shop-panel" },
           seg(tab, [{ value: "goods", label: "Goods" }, { value: "sell", label: "Sell" }], (v) => { tab = v; sellSel = null; app.router.refresh(); }),
           tab === "goods" ? [
@@ -98,7 +98,7 @@ function buySheet(app: App, shopId: string, index: number) {
     return h("div", { class: "stack" },
       h("div", { class: "row", style: { alignItems: "flex-start" } },
         h("div", { style: { width: "64px", flex: "none" } }, tile({ rarity: a.rarity, art: a.art, fallbackIcon: a.icon, img: (f) => app.img(f) })),
-        h("div", { class: "grow" }, h("div", { class: `muted up rt-${a.rarity}`, style: { fontWeight: 800 } }, a.label), h("div", { class: `item-name rt-${a.rarity}` }, def.name), h("div", { class: "dim", style: { fontSize: "12.5px" } }, extra),
+        h("div", { class: "grow" }, h("div", { class: `muted up rt-${a.rarity}`, style: { fontWeight: 800 } }, a.label), h("div", { class: `item-name rt-${a.rarity}` }, def.name), h("div", { class: "dim", style: { fontSize: "calc(12.5rem / 15)" } }, extra),
           !isGear && !single && h("div", { class: "muted", style: { marginTop: "4px" } }, `You have ${fmt.int(s.inventory.stacks[r.id] ?? 0)}`))),
       r.locked ? h("div", { class: "warnbox" }, icon("lock", 14), r.locked)
         : r.owned ? h("div", { class: "muted center" }, "You already know this.")
@@ -149,13 +149,18 @@ function sellBar(app: App, sel: string | number, clear: () => void) {
     const g = s.inventory.gear[sel];
     if (!g) return null;
     const v = gearSellValue(c, sel, s);
-    return h("div", { class: "glass panel sell-bar" }, h("div", { class: "grow" }, h("div", { class: `item-name rt-${g.rarity}`, style: { fontSize: "13px" } }, gearName(app, g)), h("div", { class: "muted" }, `Sells for ${fmt.int(v)} stones`)),
-      h("button", { class: "btn gold sm", onClick: () => { const r = app.game.run("sell", app.now(), (st, cc) => sellGear(st, cc, [sel])); app.router.toast(r.ok ? `Sold for ${fmt.int(v)} stones` : r.reason, r.ok ? "good" : "bad"); clear(); } }, "Sell"));
+    return h("div", { class: "glass panel sell-bar" }, h("div", { class: "grow" }, h("div", { class: `item-name rt-${g.rarity}`, style: { fontSize: "calc(13rem / 15)" } }, gearName(app, g)), h("div", { class: "muted" }, `Sells for ${fmt.int(v)} stones`)),
+      h("button", { class: "btn gold sm", onClick: () => {
+        const sell = () => { const r = app.game.run("sell", app.now(), (st, cc) => sellGear(st, cc, [sel])); app.router.toast(r.ok ? `Sold for ${fmt.int(v)} stones` : r.reason, r.ok ? "good" : "bad"); clear(); };
+        // rare and better pieces (or enhanced ones) ask first: selling cannot be undone
+        if (g.rarity !== "common" && g.rarity !== "uncommon" || g.enhance > 0) confirmModal(app, { title: "Sell this piece?", body: `${gearName(app, g)} (${RARITY_LABEL[g.rarity]}${g.enhance ? `, +${g.enhance}` : ""}) for ${fmt.int(v)} stones. This cannot be undone. Lock pieces you want to keep.`, ok: "Sell", danger: true }, sell);
+        else sell();
+      } }, "Sell"));
   }
   const def = c.get<any>(sel);
   const n = s.inventory.stacks[sel] ?? 0;
   if (!n) return null;
-  return h("div", { class: "glass panel sell-bar" }, h("div", { class: "grow" }, h("div", { class: "item-name", style: { fontSize: "13px" } }, def.name, h("span", { class: "muted" }, ` ×${n}`)), h("div", { class: "muted" }, `${fmt.int(def.sell_value)} stones each`)),
+  return h("div", { class: "glass panel sell-bar" }, h("div", { class: "grow" }, h("div", { class: "item-name", style: { fontSize: "calc(13rem / 15)" } }, def.name, h("span", { class: "muted" }, ` ×${n}`)), h("div", { class: "muted" }, `${fmt.int(def.sell_value)} stones each`)),
     h("button", { class: "btn sm", onClick: () => { app.game.run("sell", app.now(), (st, cc) => sellItem(st, cc, sel, 1)); } }, "Sell 1"),
     n > 1 && h("button", { class: "btn gold sm", onClick: () => { app.game.run("sell", app.now(), (st, cc) => sellItem(st, cc, sel, n)); app.router.toast(`Sold ${n}× ${def.name}`, "good"); clear(); } }, `All (${fmt.int(def.sell_value * n)})`));
 }

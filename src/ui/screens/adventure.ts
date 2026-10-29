@@ -6,7 +6,7 @@ import { h, fmt } from "../core/dom.ts";
 import { visit } from "../../engine/progression.ts";
 import { shopScreen } from "./shop.ts";
 import { icon } from "../core/icons.ts";
-import { header, subbar, section, bar } from "../core/kit.ts";
+import { header, subbar, section, bar, powerTone } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
 import type { App } from "../../app.ts";
 import type { MapNode, Region, Dungeon } from "../../content/index.ts";
@@ -131,9 +131,9 @@ function nodeCard(app: App, n: MapNode, refresh: () => void) {
   const body: any[] = [];
   const head = h("div", { class: "row" },
     h("span", { class: "np-ico big", style: { background: k.color } }, icon(k.icon, 20)),
-    h("div", { class: "grow" }, h("div", { class: "muted up", style: { color: k.color } }, `${k.label} · ${st === "cleared" ? `cleared ×${rec?.clears}` : st}`), h("div", { class: "title", style: { fontSize: "16px" } }, n.name)),
-    n.rec_cp > 0 && h("span", { class: ["tag", cp >= n.rec_cp ? "jade" : ""] }, `Rec. CP ${fmt.int(n.rec_cp)}`));
-  body.push(head, h("div", { class: "dim", style: { fontSize: "12.5px", margin: "6px 0 8px" } }, n.description));
+    h("div", { class: "grow" }, h("div", { class: "muted up", style: { color: k.color } }, `${k.label} · ${st === "cleared" ? `cleared ×${rec?.clears}` : st}`), h("div", { class: "title", style: { fontSize: "calc(16rem / 15)" } }, n.name)),
+    n.rec_cp > 0 && h("span", { class: ["tag", powerTone(cp, n.rec_cp)] }, `Rec. CP ${fmt.int(n.rec_cp)}`));
+  body.push(head, h("div", { class: "dim", style: { fontSize: "calc(12.5rem / 15)", margin: "6px 0 8px" } }, n.description));
   if (st === "locked") body.push(h("div", { class: "muted" }, icon("lock", 12), " Clear a neighbouring place to reach it."));
   else if (st === "hidden") body.push(h("div", { class: "muted" }, icon("info", 12), ` Something is hidden here. ${n.hidden?.condition ?? ""}`));
   else if (n.waves?.length) {
@@ -155,14 +155,14 @@ function nodeCard(app: App, n: MapNode, refresh: () => void) {
       h("button", { class: ["btn block", here ? "" : "gold"], onClick: () => act("meditate", (st2, ct) => meditateAt(st2, ct, app.now(), n.id), here ? undefined : `Meditating at ${n.name}`) }, here ? "Meditating here" : "Meditate"));
   } else if (n.kind === "event" || n.kind === "hidden") {
     const ev = c.get<any>(n.event!);
-    body.push(h("div", { class: "glass panel", style: { padding: "10px 12px", marginBottom: "8px", background: "rgba(4,10,34,.45)" } }, h("div", { class: "title", style: { fontSize: "13px" } }, ev.name), h("div", { class: "dim", style: { fontSize: "12.5px", fontStyle: "italic" } }, ev.text)),
+    body.push(h("div", { class: "glass panel", style: { padding: "10px 12px", marginBottom: "8px", background: "rgba(4,10,34,.45)" } }, h("div", { class: "title", style: { fontSize: "calc(13rem / 15)" } }, ev.name), h("div", { class: "dim", style: { fontSize: "calc(12.5rem / 15)", fontStyle: "italic" } }, ev.text)),
       st === "cleared" && !n.replayable ? h("div", { class: "muted" }, "Resolved.") : h("div", { class: "rows" }, ev.choices.map((ch: any, i: number) => h("button", { class: "setrow", onClick: () => {
         const r = act("event", (st2, ct) => resolveEvent(st2, ct, app.now(), n.id, i));
         if (!r.ok) return;
-        app.router.open({ id: "event-outcome", kind: "modal", render: (close) => h("div", null, h("div", { class: "m-title" }, ev.name), h("p", { class: "dim center", style: { fontSize: "14px" } }, r.outcome.text),
+        app.router.open({ id: "event-outcome", kind: "modal", render: (close) => h("div", null, h("div", { class: "m-title" }, ev.name), h("p", { class: "dim center", style: { fontSize: "calc(14rem / 15)" } }, r.outcome.text),
           r.outcome.rewards && rewardsLine(app, r.outcome.rewards),
           h("button", { class: "btn gold block", style: { marginTop: "10px" }, onClick: () => { close(); if (r.outcome.battle) start({ kind: "event", node: n.id, enemies: r.outcome.battle }); } }, r.outcome.battle ? "To battle!" : "Continue")) });
-      } }, icon("chevron", 14), h("span", { class: "grow", style: { textAlign: "left", fontSize: "13px" } }, ch.text)))));
+      } }, icon("chevron", 14), h("span", { class: "grow", style: { textAlign: "left", fontSize: "calc(13rem / 15)" } }, ch.text)))));
   } else if (n.kind === "secret_realm") {
     const d = c.get<Dungeon>(n.secret_realm!);
     const can = canEnterRealm(s, c, d.id, app.now());

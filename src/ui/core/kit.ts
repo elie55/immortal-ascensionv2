@@ -125,3 +125,17 @@ export function needRow(app: App, id: string, need: number, have: number) {
 export function cta(label: string, sub: string | null, onClick: () => void, opts: { disabled?: boolean; cls?: string } = {}) {
   return h("button", { class: ["btn gold cta", opts.cls], disabled: !!opts.disabled, onClick }, h("span", { class: "cta-l" }, label), sub && h("span", { class: "cta-s" }, sub));
 }
+
+/** Colour class for a recommended power against yours: green = ready, gold = close (≥ 80%), red = too strong. */
+export function powerTone(cp: number, rec: number): "jade" | "gold" | "red" {
+  return cp >= rec ? "jade" : cp >= rec * 0.8 ? "gold" : "red";
+}
+
+/** Ask before an action that cannot be undone. */
+export function confirmModal(app: App, o: { title: string; body: string; ok: string; danger?: boolean }, onOk: () => void) {
+  app.router.open({ id: "confirm", kind: "modal", render: (close) => h("div", { class: "center" },
+    h("div", { class: "m-title" }, o.title), h("p", { class: "dim", style: { margin: "6px 0 14px" } }, o.body),
+    h("div", { class: "grid-2" },
+      h("button", { class: "btn", onClick: close }, "Cancel"),
+      h("button", { class: ["btn", o.danger ? "danger" : "gold"], onClick: () => { close(); onOk(); } }, o.ok))) });
+}

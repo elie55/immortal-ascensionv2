@@ -2,15 +2,21 @@
  * Screen tour: boots dist/ at 390×844, plays a new journey through the prologue and visits every screen,
  * saving screenshots to .tmp/screens/tour-*.png. Fails on page errors or broken flows.
  *   node tools/build.ts && node tests/browser/screens.ts
+ * IA_VP=360x640 picks the phone size, IA_TEXT=large turns on the Large text setting, IA_OUT the screenshot folder, IA_AUDIT=1 runs the UI checks of
+ * tests/browser/ui_audit.ts on every screen (findings.json in the output folder; see tests/browser/audit.ts).
  */
 import { chromium, type Page } from "playwright";
 import { createServer } from "node:http";
-import { readFileSync, existsSync, mkdirSync, statSync, rmSync } from "node:fs";
+import { readFileSync, existsSync, mkdirSync, statSync, rmSync, writeFileSync } from "node:fs";
 import { join, extname } from "node:path";
 
 const ROOT = join(import.meta.dirname, "../..");
 const DIST = join(ROOT, "dist");
-const OUT = join(ROOT, ".tmp/screens");
+const OUT = process.env.IA_OUT ? join(ROOT, process.env.IA_OUT) : join(ROOT, ".tmp/screens");
+const [VW, VH] = (process.env.IA_VP ?? "390x844").split("x").map(Number) as [number, number];
+const AUDIT = process.env.IA_AUDIT === "1";
+const { auditScreen } = AUDIT ? await import("./ui_audit.ts") : { auditScreen: null };
+const findings: any[] = [];
 rmSync(OUT, { recursive: true, force: true }); mkdirSync(OUT, { recursive: true });
 const MIME: Record<string, string> = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".webp": "image/webp", ".png": "image/png", ".woff2": "font/woff2", ".map": "application/json" };
 const server = createServer((req, res) => {
@@ -22,24 +28,37 @@ await new Promise<void>((r) => server.listen(0, r));
 const url = `http://127.0.0.1:${(server.address() as any).port}/`;
 
 const browser = await chromium.launch();
-const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+const ctx = await browser.newContext({ viewport: { width: VW, height: VH }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
 const page = await ctx.newPage();
 const errors: string[] = [];
 page.on("pageerror", (e) => errors.push(e.message));
 page.on("console", (m) => { if (m.type() === "error" && !/404/.test(m.text())) errors.push(m.text()); });
 let n = 0;
-const shot = async (name: string) => { await page.waitForTimeout(350); await page.screenshot({ path: join(OUT, `tour-${String(++n).padStart(2, "0")}-${name}.png`) }); };
+const failed: string[] = [];
+page.on("response", (r) => { if (r.status() >= 400) failed.push(r.url().replace(url, "")); });
+const shot = async (name: string) => {
+  await page.waitForTimeout(350);
+  const file = `tour-${String(++n).padStart(2, "0")}-${name}`;
+  await page.screenshot({ path: join(OUT, `${file}.png`) });
+  if (auditScreen) {
+    findings.push(...await auditScreen(page, name, { shotPath: (i) => join(OUT, `${file}-p${i + 1}.png`) }));
+    for (const f of failed.splice(0)) findings.push({ screen: name, check: "missing-file", severity: "error", where: f, text: "", detail: "request failed" });
+  }
+};
+/** waitForSelector that leaves FAILED.png in the output folder when the flow breaks. */
+const need = async (sel: string, opts: Parameters<Page["waitForSelector"]>[1] = {}) => { try { return await page.waitForSelector(sel, opts); } catch (e) { await page.screenshot({ path: join(OUT, "FAILED.png") }).catch(() => {}); throw e; } };
 const check = (cond: unknown, msg: string) => { if (!cond) { console.error("FAIL:", msg); process.exitCode = 1; } else console.log("ok  ", msg); };
 const screen = (p: Page) => p.locator("main.screen").getAttribute("data-screen");
 
 await page.goto(url);
-await page.waitForSelector('[data-screen="menu"]');
+await need('[data-screen="menu"]');
+if (process.env.IA_TEXT === "large") await page.evaluate(() => (window as any).__ia.app.setSettings({ textSize: "large" }));
 await shot("main-menu-empty");
 check(await page.getByText("Begin your journey").count() === 1, "fresh install offers Begin your journey");
 
 // New journey → prologue
 await page.getByText("Begin your journey").click();
-await page.waitForSelector(".vn");
+await need(".vn");
 await shot("prologue-gate");
 const clickVN = async (times: number) => { for (let i = 0; i < times; i++) { await page.locator(".vn").click({ position: { x: 195, y: 400 } }); await page.waitForTimeout(120); } };
 /** Tap through the story until `sel` appears (each tap completes typing or advances). */
@@ -54,7 +73,7 @@ await clickVN(1);
 await page.waitForTimeout(500);
 await shot("prologue-senior-sister");
 await tapUntil('[data-screen="cultivate"]', 40);
-await page.waitForSelector('[data-screen="cultivate"]', { timeout: 5000 });
+await need('[data-screen="cultivate"]', { timeout: 5000 });
 check(true, "prologue ends in the Cultivate tab");
 const st = await page.evaluate(() => { const s = (window as any).__ia.game.state; return { seen: Object.keys(s.progress.storySeen).length, aff: s.relations["npc.elder_wen"]?.affinity ?? 0, token: s.inventory.stacks["qitem.elder_wen_token"] ?? 0 }; });
 check(st.seen === 4 && st.aff === 15 && st.token === 1, `prologue recorded: 4 scenes, choice affinity +15, token received (${JSON.stringify(st)})`);
@@ -69,7 +88,18 @@ check(await page.evaluate(() => (window as any).__ia.game.state.character.stage)
 await page.waitForTimeout(2000);
 await page.locator(".cult-method").click();
 await shot("cultivate-rate-sheet");
+// Ticks re-render every second: an open sheet must stay the same element (no replayed slide-in, no scroll reset).
+await page.evaluate(() => { const s = document.querySelector<HTMLElement>(".sheet")!; (window as any).__sheet = s; s.scrollTop = 40; });
+await page.waitForTimeout(2300);
+check(await page.evaluate(() => { const s = document.querySelector(".sheet"); return s === (window as any).__sheet && (s as HTMLElement).scrollTop === (s!.scrollHeight > s!.clientHeight + 40 ? 40 : (s as HTMLElement).scrollTop); }), "open sheet survives game ticks (same element, scroll kept)");
 await page.locator(".sheet-backdrop").click({ position: { x: 20, y: 20 } });
+// A slow tap that spans a tick still lands (press, wait past a re-render, release).
+{
+  const b = await page.locator(".nav button", { hasText: "Inventory" }).boundingBox();
+  await page.mouse.move(b!.x + b!.width / 2, b!.y + b!.height / 2); await page.mouse.down(); await page.waitForTimeout(1300); await page.mouse.up();
+  check(await page.locator('[data-screen="inventory"]').count() === 1, "a long press across a tick still activates the button");
+  await page.locator(".nav button", { hasText: "Cultivate" }).click();
+}
 // major breakthrough sheet
 await page.evaluate(() => { const g = (window as any).__ia.game; g.state.character.stage = 9; g.state.character.qi = 1e6; g.tick(0, Date.now()); });
 await page.locator(".cult-bt").click();
@@ -78,7 +108,7 @@ await page.locator(".sheet-backdrop").click({ position: { x: 20, y: 20 } });
 
 // character
 await page.locator(".nav button", { hasText: "Character" }).click();
-await page.waitForSelector('[data-screen="character"]');
+await need('[data-screen="character"]');
 await shot("character");
 await page.locator(".attr").first().click();
 await shot("character-stats-sheet");
@@ -90,14 +120,14 @@ await page.locator(".sheet-backdrop").click({ position: { x: 20, y: 20 } });
 // inventory
 await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.state; for (const id of ["mat.spirit_grass", "mat.spirit_iron_ore", "cons.spirit_condensing_pill", "gift.candied_hawthorn", "cons.foundation_pill"]) s.inventory.stacks[id] = 3; ia.app.router.refresh(); });
 await page.locator(".nav button", { hasText: "Inventory" }).click();
-await page.waitForSelector('[data-screen="inventory"]');
+await need('[data-screen="inventory"]');
 await shot("inventory");
 await page.locator(".chip", { hasText: "Pills" }).click();
 await shot("inventory-pills");
 
 // sect
 await page.locator(".nav button", { hasText: "Sect" }).click();
-await page.waitForSelector('[data-screen="sect"]');
+await need('[data-screen="sect"]');
 await shot("sect");
 await page.locator(".sect-pin", { hasText: "Meditation Waterfall" }).click();
 await shot("sect-location");
@@ -105,32 +135,32 @@ await page.getByText("Cultivate here").click();
 check(await page.evaluate(() => (window as any).__ia.game.state.character.location) === "sectloc.meditation_waterfall", "Cultivate here moves cultivation to the waterfall");
 
 // ---------- sect systems ----------
-const toSect = async () => { await page.locator(".nav button", { hasText: "Sect" }).click(); await page.locator(".nav button", { hasText: "Sect" }).click(); await page.waitForSelector('[data-screen="sect"]'); };
-const openLoc = async (name: string) => { await toSect(); await page.locator(".sect-pin", { hasText: name }).click(); await page.waitForSelector('[data-screen^="loc:"]'); };
+const toSect = async () => { await page.locator(".nav button", { hasText: "Sect" }).click(); await page.locator(".nav button", { hasText: "Sect" }).click(); await need('[data-screen="sect"]'); };
+const openLoc = async (name: string) => { await toSect(); await page.locator(".sect-pin", { hasText: name }).click(); await need('[data-screen^="loc:"]'); };
 const ia = <T>(fn: string) => page.evaluate(fn) as Promise<T>;
 await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.state; s.resources.spirit_stones = 50000; for (const [id, n] of [["mat.lesser_enhancement_stone", 10], ["mat.refining_stone", 10], ["mat.reforging_sand", 10], ["mat.spirit_grass", 20], ["mat.peach_blossom", 10], ["mat.crane_feather", 10], ["gift.ancient_spirit_coin", 2], ["gift.osmanthus_cake", 2]] as const) s.inventory.stacks[id] = n; ia.app.router.refresh(); });
 // Mission Hall
 await openLoc("Mission Hall");
 await page.locator(".setrow", { hasText: "Mission board" }).last().click();
-await page.waitForSelector(".quest-card");
+await need(".quest-card");
 await shot("mission-hall");
 check(await page.locator(".quest-card").count() > 0, "Mission Hall lists requests");
 // Sword Grounds → Bai: deliver the token, chat, gift, topics, spar card
 await openLoc("Sword Grounds");
 await page.locator(".setrow", { hasText: "Bai Lingshuang" }).first().click();
-await page.waitForSelector('[data-screen="npc:npc.bai_lingshuang"]');
+await need('[data-screen="npc:npc.bai_lingshuang"]');
 await page.locator(".npc-act", { hasText: "Chat" }).click();
 await shot("npc-bai-chat");
 check(await page.locator(".chat-bubble").count() >= 2, "chat adds lines to the conversation");
 await page.locator(".npc-act", { hasText: "Requests" }).click();
-await page.waitForSelector(".quest-card");
+await need(".quest-card");
 await shot("npc-requests");
 await page.locator(".quest-card .btn.gold", { hasText: "Deliver" }).first().click();
 check(await ia<number>("(window.__ia.game.state.progress.quests.completed['quest.main.senior_sister'] ?? 0)") === 1, "delivering Elder Wen's token completes 'Senior Sister'");
 await page.locator(".back").click();
 const aff0 = await ia<number>("window.__ia.game.state.relations['npc.bai_lingshuang'].affinity");
 await page.locator(".npc-act", { hasText: "Gift" }).click();
-await page.waitForSelector(".gift-grid");
+await need(".gift-grid");
 await shot("gift-picker");
 await page.locator(".sheet .btn.gold", { hasText: "Give Gift" }).click();
 check(await ia<number>("window.__ia.game.state.relations['npc.bai_lingshuang'].affinity") > aff0, "a gift raises affinity");
@@ -138,13 +168,13 @@ await page.locator(".npc-act", { hasText: /Ask/ }).click();
 await shot("npc-ask");
 await page.locator(".setrow", { hasText: "The Frost Sword" }).click();
 await page.locator(".npc-act", { hasText: "Duel" }).click();
-await page.waitForSelector(".spar-vs");
+await need(".spar-vs");
 await shot("spar-card");
 await page.locator(".modal .btn", { hasText: "Not now" }).click();
 // Merchant
 await openLoc("Merchant Pavilion");
 await page.locator(".setrow", { hasText: "Merchant" }).last().click();
-await page.waitForSelector(".shop-grid");
+await need(".shop-grid");
 await shot("merchant-pavilion");
 const stones0 = await ia<number>("window.__ia.game.state.resources.spirit_stones");
 await page.locator(".goods").first().click();
@@ -155,12 +185,12 @@ await shot("merchant-sell");
 // Scripture Pavilion
 await openLoc("Scripture Pavilion");
 await page.locator(".setrow", { hasText: "Scripture stacks" }).last().click();
-await page.waitForSelector(".shop-grid");
+await need(".shop-grid");
 await shot("scripture-pavilion");
 // Spirit Forge
 await openLoc("Spirit Forge");
 await page.locator(".setrow", { hasText: "Spirit forge" }).last().click();
-await page.waitForSelector(".forge-tabs");
+await need(".forge-tabs");
 await shot("forge-enhance");
 await page.locator(".cta", { hasText: "Enhance" }).click();
 check(await ia<number>("Math.max(...Object.values(window.__ia.game.state.inventory.gear).map(g => g.enhance))") >= 1, "enhancing raises a piece to +1");
@@ -168,22 +198,22 @@ for (const t of ["Refine", "Reforge", "Craft"]) { await page.locator(".ftab", { 
 // Alchemy
 await openLoc("Alchemy Hall");
 await page.locator(".setrow", { hasText: "Alchemy furnace" }).last().click();
-await page.waitForSelector(".alch-ring");
+await need(".alch-ring");
 await shot("alchemy-hall");
 await page.locator(".cta", { hasText: "Refine" }).click();
-await page.waitForSelector(".modal", { timeout: 3000 });
+await need(".modal", { timeout: 3000 });
 await shot("alchemy-result");
 check(await ia<number>("window.__ia.game.state.progress.crafting.proficiency") > 0, "refining pills grows proficiency");
 await page.locator(".modal .btn", { hasText: "Continue" }).click();
 // Arena
 await openLoc("Proving Arena");
 await page.locator(".setrow", { hasText: "Tournaments" }).last().click();
-await page.waitForSelector(".bracket");
+await need(".bracket");
 await shot("arena-bracket");
 // Quest log + achievements
 await page.locator(".nav button", { hasText: "Cultivate" }).click();
 await page.locator(".cult-tile", { hasText: "Quests" }).click();
-await page.waitForSelector('[data-screen="quests"]');
+await need('[data-screen="quests"]');
 await shot("quest-log");
 await page.locator(".btn", { hasText: "Achievements" }).click();
 await shot("achievements");
@@ -192,7 +222,7 @@ await page.locator(".nav button", { hasText: "Cultivate" }).click();   // same t
 await page.locator(".nav button", { hasText: "Character" }).click();
 await page.locator(".nav button", { hasText: "Character" }).click();
 await page.locator(".btn", { hasText: "Techniques" }).click();
-await page.waitForSelector('[data-screen="techniques"]');
+await need('[data-screen="techniques"]');
 await shot("techniques");
 await page.locator(".subbar .btn", { hasText: "Auto-battle" }).click();
 await page.locator(".rule-main").nth(1).click();
@@ -204,14 +234,14 @@ await page.locator(".nav button", { hasText: "Character" }).click();
 // ---------- spirit beasts & Dao companions ----------
 await page.locator(".nav button", { hasText: "Cultivate" }).click();
 await page.locator(".cult-tile", { hasText: "Spirit Beasts" }).click();
-await page.waitForSelector('[data-screen="beasts"]');
+await need('[data-screen="beasts"]');
 await shot("beasts-empty");
 await page.locator(".beast-cell.empty").first().click();
 await page.locator(".sheet .btn", { hasText: "Incubate" }).first().click();
 check(await ia<number>("window.__ia.game.state.beasts.incubating.length") === 1, "the starting egg goes into an incubator");
 await page.evaluate(() => { const ia = (window as any).__ia; for (const inc of ia.game.state.beasts.incubating) inc.wins = inc.need; ia.app.router.refresh(); });
 await page.locator(".beast-cell.egg.ready").click();
-await page.waitForSelector(".modal.celebrate");
+await need(".modal.celebrate");
 await shot("beast-hatched");
 await page.locator(".modal .btn", { hasText: "Welcome" }).click();
 check(await ia<string>("window.__ia.game.state.beasts.owned[window.__ia.game.state.beasts.active]?.beast") === "beast.yunyun", "YunYun hatches and becomes the active companion");
@@ -239,15 +269,15 @@ await page.locator(".nav button", { hasText: "Character" }).click();
 await page.locator(".nav button", { hasText: "Adventure" }).click();
 await shot("adventure");
 await page.locator(".region-card").first().click();
-await page.waitForSelector(".node-map");
+await need(".node-map");
 await shot("region-map");
 await page.locator(".node-pin").first().click();
-await page.waitForSelector(".node-card");
+await need(".node-card");
 await shot("node-card");
 await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.combat.manual = false; ia.game.state.combat.speed = 3; ia.app.router.refresh(); });
 await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.combat.speed = 1; });
 await page.locator(".node-card .btn.gold").click();
-await page.waitForSelector(".battle");
+await need(".battle");
 await page.waitForTimeout(1500);
 await shot("battle");
 /** Finish a battle: click through wave dialogs until the result panel shows. */
@@ -259,12 +289,12 @@ await shot(won ? "victory" : "defeat");
 const cleared = await page.evaluate(() => { const s = (window as any).__ia.game.state; const reg = Object.values(s.progress.regions)[0] as any; return Object.values(reg.nodes).some((n: any) => n.clears > 0); });
 check(cleared === won, "node cleared iff won");
 await page.locator(".modal .btn", { hasText: /Map/ }).click();
-await page.waitForSelector(".node-map");
+await need(".node-map");
 // manual mode: start the same node, wait for input, pick a technique
 await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.combat.manual = true; ia.game.state.resources.energy.value = 100; ia.app.router.refresh(); });
 await page.locator(".node-pin").first().click();
 await page.locator(".node-card .btn.gold").click();
-await page.waitForSelector(".bt-skill.ready", { timeout: 20000 });
+await need(".bt-skill.ready", { timeout: 20000 });
 await shot("battle-manual");
 const readyName = await page.locator(".bt-skill.ready").first().locator(".sk-name").innerText();
 await page.locator(".bt-skill.ready").first().click();
@@ -281,27 +311,27 @@ await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.s
 await page.locator(".nav button", { hasText: "Adventure" }).click();
 await page.locator(".nav button", { hasText: "Adventure" }).click();
 await page.locator(".chips .chip", { hasText: "Dungeons" }).click();
-await page.waitForSelector(".tower-hero");
+await need(".tower-hero");
 await shot("dungeon-hub");
 await page.locator(".tower-hero .btn.gold").click();
-await page.waitForSelector(".battle");
+await need(".battle");
 await untilResult();
 await page.locator(".modal .btn", { hasText: /Map/ }).click();
 check(await ia<number>("window.__ia.game.state.progress.dungeons['dungeon.heaven_piercing_tower']?.bestFloor ?? 0") === 1, "climbing the tower records floor 1");
 await page.locator(".th-title").click();
-await page.waitForSelector(".tower-floors");
+await need(".tower-floors");
 await shot("tower");
 await page.locator(".back").click();
 await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.state; s.progress.quests.completed["quest.main.bamboo_sovereign"] = 1; if (!s.progress.realmsEntered.includes("realm.foundation_establishment")) s.progress.realmsEntered.push("realm.foundation_establishment"); s.character.realm = "realm.foundation_establishment"; s.character.stage = 3; ia.app.router.refresh(); });
 await page.locator(".dungeon-card", { hasText: "Origin Secret Realm" }).locator(".btn").click();
-await page.waitForSelector(".realm-map");
+await need(".realm-map");
 await page.locator(".cta", { hasText: "Enter the realm" }).click();
 await shot("secret-realm");
 await page.locator(".realm-card .btn.gold", { hasText: "Enter" }).click();
-await page.waitForSelector(".battle");
+await need(".battle");
 await untilResult();
 await page.locator(".modal .btn", { hasText: /Map/ }).click();
-await page.waitForSelector(".realm-map");
+await need(".realm-map");
 check(await ia<boolean>("window.__ia.game.state.progress.realmRuns['dungeon.origin_secret_realm'].cleared.includes('gate')"), "winning the gate trial opens the realm's branches");
 await shot("secret-realm-progress");
 await page.locator(".nav button", { hasText: "Adventure" }).click();
@@ -317,23 +347,24 @@ await shot("save-slots");
 
 // back to the menu, then continue with time away
 await page.evaluate(() => (window as any).__ia.app.toMenu());
-await page.waitForSelector('[data-screen="menu"]');
+await need('[data-screen="menu"]');
 await shot("main-menu-continue");
 await page.evaluate(() => localStorage.setItem("ia:test:offset", String(5 * 3600 * 1000)));
 await page.addInitScript(() => { (window as any).__ia = { clockOffset: Number(localStorage.getItem("ia:test:offset") ?? 0) }; });
 await page.reload();
-await page.waitForSelector('[data-screen="menu"]');
+await need('[data-screen="menu"]');
 check(await page.evaluate(() => (window as any).__ia.app.settings.battleSpeed) === 3, "settings persist across reloads");
 await page.locator(".menu-continue").click();
-await page.waitForSelector(".modal.offline");
+await need(".modal.offline");
 await shot("offline-report");
 await page.locator(".modal .btn", { hasText: "Continue" }).click();
 await page.evaluate(() => localStorage.setItem("ia:test:offset", String(-8 * 3600 * 1000)));
 await page.evaluate(() => (window as any).__ia.app.save(false));
 await page.reload();
 await page.locator(".menu-continue").click();
-await page.waitForSelector(".modal.offline");
+await need(".modal.offline");
 await shot("clock-moved-back");
 
 check(errors.length === 0, `no page errors${errors.length ? ": " + errors.join(" | ") : ""}`);
+if (AUDIT) writeFileSync(join(OUT, "findings.json"), JSON.stringify({ viewport: `${VW}x${VH}`, findings }, null, 1));
 await browser.close(); server.close();

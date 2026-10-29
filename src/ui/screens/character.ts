@@ -9,10 +9,11 @@ import type { App } from "../../app.ts";
 import { computeStats } from "../../engine/stats.ts";
 import { EQUIP_SLOTS, type EquipSlot } from "../../engine/inventory.ts";
 import { slotOpen } from "../../engine/unlock.ts";
+import { equipBest } from "../../engine/actions.ts";
 import { gearTile, gearDetail, gearName, gearCp } from "./items.ts";
 import { techniquesScreen, autoBattleScreen } from "./techniques.ts";
 
-const SLOT_LABEL: Record<EquipSlot, string> = { weapon: "Weapon", armor: "Armor", helmet: "Helmet", boots: "Boots", necklace: "Necklace", ring_1: "Ring 1", ring_2: "Ring 2", artifact: "Spiritual Artifact" };
+const SLOT_LABEL: Record<EquipSlot, string> = { weapon: "Weapon", armor: "Armor", helmet: "Helmet", boots: "Boots", necklace: "Necklace", ring_1: "Ring 1", ring_2: "Ring 2", artifact: "Artifact" };
 const LEFT: EquipSlot[] = ["weapon", "armor", "helmet", "boots"];
 const RIGHT: EquipSlot[] = ["necklace", "ring_1", "ring_2", "artifact"];
 const CORE = ["hp", "atk", "def", "spd", "crit", "crit_dmg", "sp_power", "sp_energy"];
@@ -30,7 +31,7 @@ export function characterScreen(app: App) {
       ? h("div", { class: "tile r-common slot-locked" }, h("div", { class: "in" }, icon("lock", 24)))
       : uid !== undefined ? gearTile(app, uid, { onClick: () => slotSheet(app, k) })
       : h("button", { class: "tile r-common slot-empty", onClick: () => slotSheet(app, k), "aria-label": SLOT_LABEL[k] }, h("div", { class: "in" }, icon(SLOT_ICON[k]!, 26)));
-    return h("div", { class: "eq-slot" }, inner, h("div", { class: "eq-lbl" }, SLOT_LABEL[k]), !open.ok && h("div", { class: "eq-lock" }, open.reasons[0]));
+    return h("div", { class: "eq-slot" }, inner, h("div", { class: "eq-lbl" }, SLOT_LABEL[k]), !open.ok && h("div", { class: "eq-lock" }, open.reasons[0]!.replace(/^Unlocks at /, "")));
   };
   return [
     header(app),
@@ -41,7 +42,12 @@ export function characterScreen(app: App) {
       h("div", { class: "eq-col" }, LEFT.map(slot)),
       h("div", { class: "char-figure", style: { backgroundImage: app.img(c.artAny(s.character.npc, "full_body")) } }, h("div", { class: "char-aura" })),
       h("div", { class: "eq-col" }, RIGHT.map(slot))),
-    h("div", { class: "cp-banner" }, icon("sword", 16), h("span", { class: "cp-lbl" }, "Combat Power"), h("span", { class: "cp-val" }, fmt.int(stats.cp))),
+    h("div", { class: "cp-row" },
+      h("div", { class: "cp-banner" }, icon("sword", 16), h("span", { class: "cp-lbl" }, "Combat Power"), h("span", { class: "cp-val" }, fmt.int(stats.cp))),
+      h("button", { class: ["btn sm cp-best", app.betterGear() && "gold"], "aria-label": "Equip best gear", onClick: () => {
+        const r = app.game.run("equip", app.now(), (st, ct) => equipBest(st, ct));
+        if (!r.ok) app.router.toast(r.reason, "info"); else app.router.toast(`Equipped ${(r as any).changed} piece${(r as any).changed > 1 ? "s" : ""} · CP +${fmt.int((r as any).cpGain)}`, "good");
+      } }, icon("sparkle", 14), "Best", app.betterGear() && h("span", { class: "badge" }, "!"))),
     h("div", { class: "grid-2" },
       h("button", { class: "btn", onClick: () => app.router.push(techniquesScreen(app, "Character")) }, icon("scroll", 15), "Techniques"),
       h("button", { class: "btn", onClick: () => app.router.push(autoBattleScreen(app, "Character")) }, icon("auto", 15), "Auto-battle")),
@@ -82,8 +88,8 @@ function statsSheet(app: App, focus: string | null) {
     return h("div", { class: "stack" },
       h("div", { class: "sec-h" }, h("h3", null, "Attributes"), h("span", { class: "tag" }, `${realm.name} ${s.character.stage} · CP ${fmt.int(b.cp)}`)),
       h("div", { class: "glass panel hi" },
-        h("div", { class: "row between" }, h("div", { class: "title", style: { fontSize: "15px" } }, attrLabel(current)), h("div", { class: "gold-t", style: { fontWeight: 900, fontSize: "22px" } }, attrValue(current, b.total[current] ?? 0))),
-        h("div", { class: "dim", style: { fontSize: "12px", margin: "4px 0 8px" } }, info?.explain ?? (current.startsWith("elem_dmg") ? "Bonus damage with techniques of this element." : "Reduces damage taken from this element.")),
+        h("div", { class: "row between" }, h("div", { class: "title", style: { fontSize: "calc(15rem / 15)" } }, attrLabel(current)), h("div", { class: "gold-t", style: { fontWeight: 900, fontSize: "calc(22rem / 15)" } }, attrValue(current, b.total[current] ?? 0))),
+        h("div", { class: "dim", style: { fontSize: "calc(12rem / 15)", margin: "4px 0 8px" } }, info?.explain ?? (current.startsWith("elem_dmg") ? "Bonus damage with techniques of this element." : "Reduces damage taken from this element.")),
         h("div", { class: "grid-4 src-grid" }, contrib.length ? contrib.map(([l, v]) => h("div", null, h("span", null, l), h("b", null, `${v > 0 ? "+" : ""}${attrValue(current, v)}`))) : h("div", { class: "muted" }, "No sources yet"))),
       section("Primary", "Tap any stat for details", h("div", { class: "stat-grid" }, CORE.concat(["acc", "eva"]).map(cell))),
       section("Element damage & resistance", "From your root, method and gear",

@@ -12,7 +12,7 @@ export function rankUpModal(app: App, rankId: string): Overlay {
   return { id: "rank-up", kind: "modal", cls: "celebrate", render: (close) => h("div", { class: "center" },
     h("div", { class: "muted up gold-t" }, "Promotion"),
     h("div", { class: "result-title" }, r.name),
-    r.name_cn && h("div", { class: "cn", style: { fontSize: "18px" } }, r.name_cn),
+    r.name_cn && h("div", { class: "cn", style: { fontSize: "calc(18rem / 15)" } }, r.name_cn),
     h("div", { class: "dim", style: { margin: "8px 0" } }, r.description),
     h("div", { class: "rows", style: { textAlign: "left" } },
       b.qi_mult && b.qi_mult !== 1 && h("div", { class: "setrow" }, icon("qi", 16), h("div", { class: "grow" }, h("div", { class: "lbl" }, `Cultivation ×${b.qi_mult}`), h("div", { class: "desc" }, "Sect resources flow to you"))),

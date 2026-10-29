@@ -67,7 +67,7 @@ export function sectScreen(app: App) {
       h("div", { class: "row" },
         h("span", { class: "sect-emblem" }, icon("qi", 26)),
         h("div", { class: "grow" },
-          h("div", { class: "row between" }, h("div", { class: "title", style: { fontSize: "15px", fontVariant: "small-caps" } }, "Azure Cloud Sect", h("span", { class: "cn", style: { fontSize: "12px", marginLeft: "6px" } }, "青云宗")), h("span", { class: "tag gold" }, rank.name)),
+          h("div", { class: "row between" }, h("div", { class: "title", style: { fontSize: "calc(15rem / 15)", fontVariant: "small-caps" } }, "Azure Cloud Sect", h("span", { class: "cn", style: { fontSize: "calc(12rem / 15)", marginLeft: "6px" } }, "青云宗")), h("span", { class: "tag gold" }, rank.name)),
           h("div", { style: { margin: "6px 0 3px" } }, bar(nextRank ? Math.min(1, fame / nextRank.fame_required) : 1, { cls: "gold thin" })),
           h("div", { class: "row between muted" }, h("span", { class: "nowrap" }, nextRank ? `Next: ${nextRank.name}` : "Highest rank"), h("span", { class: "nowrap gold-t" }, nextRank ? `${fmt.int(fame)} / ${fmt.int(nextRank.fame_required)} Fame` : `${fmt.int(fame)} Fame`)),
           h("div", { class: "muted" }, "Complete requests to earn Fame")))),
@@ -96,25 +96,26 @@ export function locationScreen(app: App, id: string): Screen {
         header(app),
         subbar({ title: l.name, cn: l.name_cn, sub: open.ok ? (l.features ?? []).map((f: string) => FEATURE[f]?.label ?? f).join(" · ") : open.reasons.join(" · "), backTo: "Sect", onBack: () => app.router.back() }),
         h("div", { class: "loc-space" }),
-        h("div", { class: "glass panel" }, h("div", { class: "dim", style: { fontSize: "13px", lineHeight: 1.5 } }, l.description)),
+        h("div", { class: "glass panel" }, h("div", { class: "dim", style: { fontSize: "calc(13rem / 15)", lineHeight: 1.5 } }, l.description)),
         open.ok && (l.npcs ?? []).length > 0 && section("Here now", null, h("div", { class: "rows" }, (l.npcs as string[]).map((n) => {
           const npc = c.get<any>(n);
           const rel = s.relations[n];
           const ready = c.byPrefix<any>("quest").some((q) => q.turn_in === n && questStatus(s, c, q, app.now()) === "ready");
           const offer = c.byPrefix<any>("quest").some((q) => q.giver === n && questStatus(s, c, q, app.now()) === "available");
           return h("button", { class: "setrow", onClick: () => app.router.push(npcScreen(app, n, l.name)) }, h("span", { class: "avatar", style: { backgroundImage: app.img(c.artAny(n, "portrait", "full_body")), width: "40px", height: "40px" } }),
-            h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, npc.name, npc.name_cn && h("span", { class: "cn", style: { fontSize: "11px", marginLeft: "6px" } }, npc.name_cn)), h("div", { class: "desc" }, npc.title ?? npc.role)),
-            ready ? h("span", { class: "tag gold" }, "! Report") : offer ? h("span", { class: "tag jade" }, "! Request") : null,
-            h("span", { class: "tag pink" }, "♥ ", affinityLevel(c, n, rel?.affinity ?? 0).name));
+            h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, npc.name, npc.name_cn && h("span", { class: "cn", style: { fontSize: "calc(11rem / 15)", marginLeft: "6px" } }, npc.name_cn)), h("div", { class: "desc" }, npc.title ?? npc.role),
+              h("div", { class: "row", style: { gap: "5px", marginTop: "4px", flexWrap: "wrap" } },
+                ready ? h("span", { class: "tag gold" }, "! Report") : offer ? h("span", { class: "tag jade" }, "! Request") : null,
+                h("span", { class: "tag pink" }, "♥ ", affinityLevel(c, n, rel?.affinity ?? 0).name))),
+            icon("chevron", 16));
         }))),
-        open.ok && section("Activities", null, h("div", { class: "rows" },
+        open.ok && section("Activities", `Now cultivating at ${here ? l.name : s.character.location ? c.get<any>(s.character.location).name : "Your Quarters"} · Qi ×${locationQiMult(s, c).toFixed(2)}`, h("div", { class: "rows" },
           canMeditate && h("button", { class: "setrow", onClick: () => { app.game.run("location", app.now(), (st, ct) => setLocation(st, ct, here ? undefined : id)); app.router.toast(here ? "Back to your usual spot" : `Cultivating at ${l.name}`, "good"); } },
             icon("lotus", 18), h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, here ? "Cultivating here" : "Cultivate here"), h("div", { class: "desc" }, `Qi ×${(c.rules.location_qi_mult[id.split(".")[1]!] ?? 1).toFixed(2)} while you meditate here`)), h("span", { class: ["tag", here && "jade"] }, here ? "Active" : "Move")),
           ...(l.features ?? []).filter((f: string) => f !== "meditation").map((f: string) => { const a = activity(app, f, l); return h("button", { class: "setrow", onClick: () => a.go ? a.go() : app.router.toast(`${FEATURE[f]?.label ?? f} arrives in a later update`) },
             icon(FEATURE[f]?.icon ?? "temple", 18), h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, FEATURE[f]?.label ?? f), h("div", { class: "desc" }, a.note ?? FEATURE[f]?.note ?? "")), h("span", { class: ["tag", a.go && "jade"] }, a.tag)); }))),
         open.ok && l.shop && !(l.features ?? []).some((f: string) => f === "pavilion" || f === "merchant") && h("button", { class: "setrow glass", onClick: () => app.router.push(shopScreen(app, l.shop, l.name)) }, icon("gem", 18), h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, c.get<any>(l.shop).name), h("div", { class: "desc" }, c.get<any>(l.shop).description)), h("span", { class: "tag jade" }, "Shop")),
         !open.ok && h("div", { class: "glass panel center" }, icon("lock", 22), h("div", { class: "dim", style: { marginTop: "6px" } }, open.reasons.join(" · "))),
-        h("div", { class: "muted center" }, `Current cultivation spot: ${here ? l.name : s.character.location ? c.get<any>(s.character.location).name : "Your quarters"} · Qi ×${locationQiMult(s, c).toFixed(2)}`),
       ];
     },
   };

@@ -3,7 +3,7 @@
  * fullscreen flows (main menu, save slots, story), plus modals, bottom sheets and toasts.
  * Screens are render functions; the shell re-renders the visible screen when the game changes.
  */
-import { h, replaceChildren, Store, type Child } from "./dom.ts";
+import { h, morph, Store, type Child } from "./dom.ts";
 import { icon } from "./icons.ts";
 
 export type Tab = "cultivate" | "adventure" | "character" | "inventory" | "sect";
@@ -63,10 +63,20 @@ export class Router {
   open(o: Overlay): void { this.store.update((s) => { s.overlays = s.overlays.filter((x) => x.id !== o.id); s.overlays.push(o); }); }
   close(id?: string): void { this.store.update((s) => { if (!id) s.overlays.pop(); else s.overlays = s.overlays.filter((m) => m.id !== id); }); }
   hasOverlay(id: string): boolean { return this.store.state.overlays.some((o) => o.id === id); }
+  /** Toasts show two at a time at the top; the rest wait their turn (none are dropped, repeats are merged). */
   toast(text: string, kind: "info" | "good" | "bad" = "info", ms = 2400): void {
-    const id = ++this.toastId;
-    this.store.update((s) => { s.toasts = [...s.toasts.slice(-2), { id, text, kind }]; });
-    setTimeout(() => this.store.update((s) => { s.toasts = s.toasts.filter((t) => t.id !== id); }), ms);
+    if (this.toastQueue.some((t) => t.text === text) || this.store.state.toasts.some((t) => t.text === text)) return;
+    this.toastQueue.push({ text, kind, ms });
+    this.pumpToasts();
+  }
+  private toastQueue: { text: string; kind: "info" | "good" | "bad"; ms: number }[] = [];
+  private pumpToasts(): void {
+    while (this.store.state.toasts.length < 2 && this.toastQueue.length) {
+      const t = this.toastQueue.shift()!;
+      const id = ++this.toastId;
+      this.store.update((s) => { s.toasts = [...s.toasts, { id, text: t.text, kind: t.kind }]; });
+      setTimeout(() => { this.store.update((s) => { s.toasts = s.toasts.filter((x) => x.id !== id); }); this.pumpToasts(); }, t.ms);
+    }
   }
   refresh(): void { this.render(); }
 
@@ -86,22 +96,23 @@ export class Router {
     if (prevMain) this.scrollPos.set(this.scrollKey, prevMain.scrollTop);
     const key = `${global ? "g" : s.tab}:${screen.id}`;
     const bgFile = (typeof screen.bg === "function" ? screen.bg() : screen.bg) ?? this.defaultBg();
-    const main = h("main", { class: ["screen", !showNav && "fullscreen"], dataset: { screen: screen.id } }, screen.render());
-    const nav = showNav ? h("nav", { class: "nav glass" }, TABS.map((t) => {
+    const main = h("main", { class: ["screen", !showNav && "fullscreen"], dataset: { screen: screen.id, key: `screen:${key}` } }, screen.render());
+    const nav = showNav ? h("nav", { class: "nav glass", dataset: { key: "nav" } }, TABS.map((t) => {
       const n = this.badges(t.id);
       return h("button", { class: t.id === s.tab && "on", onClick: () => this.setTab(t.id), "aria-label": t.label }, icon(t.icon, 24), t.label, n > 0 && h("span", { class: "badge" }, String(n)));
     })) : null;
     const overlays = s.overlays.map((o, i) => {
       const top = i === s.overlays.length - 1;
       const close = () => this.close(o.id);
-      if (o.kind === "sheet") return [h("div", { class: "sheet-backdrop", onClick: () => { if (top && o.dismissible !== false) close(); } }), h("div", { class: ["sheet glass", o.cls] }, h("div", { class: "grab" }), o.render(close))];
-      return h("div", { class: "modal-backdrop", onClick: (e: MouseEvent) => { if (top && e.target === e.currentTarget && o.dismissible !== false) close(); } },
+      if (o.kind === "sheet") return [h("div", { class: "sheet-backdrop", dataset: { key: `bd:${o.id}` }, onClick: () => { if (top && o.dismissible !== false) close(); } }), h("div", { class: ["sheet glass", o.cls], dataset: { key: `ov:${o.id}` } }, h("div", { class: "grab" }), o.render(close))];
+      return h("div", { class: "modal-backdrop", dataset: { key: `ov:${o.id}` }, onClick: (e: MouseEvent) => { if (top && e.target === e.currentTarget && o.dismissible !== false) close(); } },
         h("div", { class: ["modal glass gold", o.cls] }, o.render(close)));
     });
-    const toasts = h("div", { class: "toasts" }, s.toasts.map((t) => h("div", { class: ["toast", t.kind] }, t.text)));
-    const backdrop = h("div", { class: "backdrop" }, bgFile ? h("div", { class: "img", style: { backgroundImage: this.img(bgFile) } }) : null, h("div", { class: "veil" }));
-    replaceChildren(this.root, backdrop, main, nav, overlays, toasts);
-    if (key === this.scrollKey) main.scrollTop = this.scrollPos.get(key) ?? 0;
+    const toasts = h("div", { class: "toasts", dataset: { key: "toasts" } }, s.toasts.map((t) => h("div", { class: ["toast", t.kind], dataset: { key: `t${t.id}` } }, t.text)));
+    const backdrop = h("div", { class: "backdrop", dataset: { key: "bg" } }, bgFile ? h("div", { class: "img", style: { backgroundImage: this.img(bgFile) } }) : null, h("div", { class: "veil" }));
+    // Patch instead of replace: the same screen keeps its nodes (scroll, focus, running animations, taps in flight).
+    morph(this.root, backdrop, main, nav, overlays, toasts);
+    if (key !== this.scrollKey) { const live = this.root.querySelector<HTMLElement>("main.screen"); if (live) live.scrollTop = this.scrollPos.get(key) ?? 0; }
     this.scrollKey = key;
   }
 }

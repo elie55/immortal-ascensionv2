@@ -6,7 +6,7 @@
  */
 import { h, fmt } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
-import { header, subbar, section, bar, cta } from "../core/kit.ts";
+import { header, subbar, section, bar, cta, powerTone } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
 import type { App } from "../../app.ts";
 import type { Dungeon } from "../../content/index.ts";
@@ -41,7 +41,7 @@ export function dungeonHubScreen(app: App): Screen {
         return h("div", { class: ["glass dungeon-card", !can.ok && "locked"] },
           h("div", { class: "dc-art", style: { backgroundImage: app.img(c.art(d.id, "card")) } }, h("span", { class: "tag", style: { position: "absolute", left: "8px", top: "8px" } }, d.kind.replace("_", " "))),
           h("div", { class: "dc-body" },
-            h("div", { class: "row between" }, h("div", { class: "title", style: { fontSize: "14px" } }, d.name), h("span", { class: ["tag", cp >= d.rec_cp ? "jade" : "red"] }, `Rec. ${fmt.int(d.rec_cp)}`)),
+            h("div", { class: "row between" }, h("div", { class: "title", style: { fontSize: "calc(14rem / 15)" } }, d.name), h("span", { class: ["tag", powerTone(cp, d.rec_cp)] }, `Rec. ${fmt.int(d.rec_cp)}`)),
             h("div", { class: "muted" }, isRealm ? `${d.realm_nodes!.filter((n) => n.waves?.length).length} trials · ${d.realm_nodes!.filter((n) => n.kind === "hidden").length} hidden · ${d.entry.energy_cost} energy per run` : `${d.waves!.length} waves · ${d.entry.energy_cost ? `${d.entry.energy_cost} energy` : "free"} · ${daily}`),
             rec?.clears ? h("div", { class: "muted" }, `Cleared ×${rec.clears}`) : null,
             d.entry.party.companions_allowed && h("div", { class: "muted pink-t" }, `♥ Up to ${d.entry.party.max_companions} Dao companions`),
@@ -71,6 +71,7 @@ function towerHero(app: App, d: Dungeon) {
   const bf = towerFloor(c, d, bossFloor);
   const ms = d.tower!.milestones.find((m) => m.floor > best);
   const can = canStart(s, c, { kind: "tower", id: d.id, floor: next }, app.now());
+  const cp = computeStats(s, c).cp;
   return h("div", { class: "glass gold tower-hero", style: { backgroundImage: app.img(c.art(d.id, "card")) } },
     h("div", { class: "th-shade" }),
     h("div", { class: "th-body" },
@@ -78,8 +79,8 @@ function towerHero(app: App, d: Dungeon) {
       h("button", { class: "th-title", onClick: () => app.router.push(towerScreen(app, d.id)) }, d.name, d.name_cn && h("span", { class: "cn" }, ` ${d.name_cn}`)),
       h("div", { class: "th-stats" },
         h("div", { class: "glass" }, h("span", null, "Best floor"), h("b", null, String(best))),
-        h("div", { class: "glass" }, h("span", null, `Next · floor ${next}`), h("b", { class: "jade-t" }, `Rec. ${fmt.int(nf.power)}`)),
-        h("div", { class: "glass" }, h("span", null, `Boss · floor ${bossFloor}`), h("b", { class: "red-t" }, `Rec. ${fmt.int(bf.power)}`))),
+        h("div", { class: "glass" }, h("span", null, `Next · floor ${next}`), h("b", { class: `${powerTone(cp, nf.power)}-t` }, `Rec. ${fmt.int(nf.power)}`)),
+        h("div", { class: "glass" }, h("span", null, `Boss · floor ${bossFloor}`), h("b", { class: `${powerTone(cp, bf.power)}-t` }, `Rec. ${fmt.int(bf.power)}`))),
       h("div", { class: "row between", style: { marginTop: "8px", gap: "8px" } },
         h("span", { class: "muted" }, ms ? `Floor ${ms.floor} first clear: ` : "All milestones claimed", ms && rewardsLine(app, ms.rewards)),
         h("button", { class: "btn gold", disabled: !can.ok, onClick: () => startEncounter(app, { kind: "tower", id: d.id, floor: next }) }, best >= d.tower!.floors ? "Summit" : `Climb › Floor ${next}`)),
@@ -210,8 +211,8 @@ function nodeCard(app: App, id: string, key: string, select: (k: string) => void
   const ev = n.event ? c.get<any>(n.event) : null;
   const head = h("div", { class: "row" },
     h("div", { class: "grow" }, h("div", { class: "muted up" }, `${NODE_LABEL[n.kind] ?? n.kind}${state === "cleared" ? " · ✓" : state === "locked" ? " · locked" : run?.at === key ? " · you are here" : ""}`),
-      h("div", { class: "title", style: { fontSize: "16px" } }, state === "hidden" ? "???" : n.name)),
-    enemies.length > 0 && h("span", { class: ["tag", cp >= enemyCp ? "jade" : "red"] }, `Rec. ${fmt.int(enemyCp)}`));
+      h("div", { class: "title", style: { fontSize: "calc(16rem / 15)" } }, state === "hidden" ? "???" : n.name)),
+    enemies.length > 0 && h("span", { class: ["tag", powerTone(cp, enemyCp)] }, `Rec. ${fmt.int(enemyCp)}`));
   let body: any = null;
   if (state === "hidden") body = h("div", { class: "muted" }, n.hidden ? `Something is sealed here… (${n.hidden.condition})` : "Something is sealed here…");
   else if (state === "locked") body = h("div", { class: "muted" }, n.kind === "exit" ? "Defeat the guardian to open the way out." : "Clear a connected room first.");

@@ -21,9 +21,10 @@ import { adventureScreen } from "./ui/screens/adventure.ts";
 import { offlineModal } from "./ui/screens/offline.ts";
 import { rankUpModal } from "./ui/screens/rank.ts";
 import { questStatus } from "./engine/progression.ts";
+import { bestLoadout } from "./engine/actions.ts";
 import type { DomainEvent } from "./engine/events.ts";
 
-export const VERSION = "0.4.0";
+export const VERSION = "0.4.1";
 
 export class App {
   content!: ContentIndex;
@@ -119,10 +120,19 @@ export class App {
 
   private enterGame(tab: Tab = "cultivate"): void {
     this.router.store.update((s) => { s.tab = tab; s.stacks = { cultivate: [], adventure: [], character: [], inventory: [], sect: [] }; });
-    this.router.badges = (t) => t === "sect" ? this.readyQuests() : 0;
+    this.router.badges = (t) => t === "sect" ? this.readyQuests() : t === "character" && this.betterGear() ? 1 : 0;
     this.game.settle(this.now());
     this.startLoop();
   }
+
+  /** True when the bag holds a loadout with more Combat Power (red dot on Character). Cached per bag/equipment/realm. */
+  betterGear(): boolean {
+    const s = this.game.state;
+    const sig = `${s.inventory.nextUid}|${Object.keys(s.inventory.gear).length}|${JSON.stringify(s.equipped)}|${s.character.realm}|${s.character.stage}|${Object.values(s.inventory.gear).reduce((a, g) => a + g.enhance * 7 + g.main.value + g.affixes.reduce((b, x) => b + x.value, 0), 0)}`;
+    if (sig !== this.gearSig) { this.gearSig = sig; this.gearBetter = bestLoadout(s, this.content).changes.length > 0; }
+    return this.gearBetter;
+  }
+  private gearSig = ""; private gearBetter = false;
 
   /** Quests whose objectives are done and wait for a turn-in. */
   readyQuests(): number { return Object.keys(this.game.state.progress.quests.active).filter((id) => questStatus(this.game.state, this.content, this.content.get<any>(id), this.now()) === "ready").length; }
@@ -130,7 +140,10 @@ export class App {
   /** Toasts and modals for progression events (quests, achievements, relationships, ranks). */
   private announce(events: DomainEvent[]): void {
     const c = this.content;
+    // A quest that is accepted and ready in the same batch gets one toast ("Quest ready"), not two.
+    const readyNow = new Set(events.filter((e) => e.type === "quest_ready").map((e: any) => e.quest));
     for (const e of events) {
+      if (e.type === "quest_accepted" && readyNow.has(e.quest)) continue;
       if (e.type === "quest_ready") this.router.toast(`Quest ready: ${c.get<any>(e.quest).name}`, "good", 3200);
       else if (e.type === "quest_completed") this.router.toast(`Quest complete: ${c.get<any>(e.quest).name}`, "good", 3200);
       else if (e.type === "quest_accepted" && c.get<any>(e.quest).type === "main") this.router.toast(`New quest: ${c.get<any>(e.quest).name}`, "info", 3200);

@@ -3,7 +3,7 @@
  * narration box, choices, Auto / Skip / Log, new-character introductions, and an unlock card at the end of a
  * scene that grants something. Owns its DOM so typing animations survive shell re-renders.
  */
-import { h, replaceChildren } from "../core/dom.ts";
+import { h, morph, keep } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
 import type { Screen } from "../core/router.ts";
 import type { App } from "../../app.ts";
@@ -25,7 +25,7 @@ export function storyScreen(app: App, startId: string, done: () => void): Screen
   const log: LogLine[] = [];
   const met = new Set<string>(Object.keys(app.game.state.relations));
   const reduce = () => app.settings.reducedMotion;
-  const root = h("div", { class: "vn" });
+  const root = keep(h("div", { class: "vn" }));
 
   const speakerName = (sp: string) => sp === "narration" ? "" : sp === "player" ? app.game.state.character.name : c.get<Npc>(sp).name;
   const artFor = (sp: string, expr?: string) => {
@@ -91,7 +91,7 @@ export function storyScreen(app: App, startId: string, done: () => void): Screen
   function openLog() {
     app.router.open({ id: "vn-log", kind: "sheet", render: () => h("div", null,
       h("div", { class: "sec-h" }, h("h3", null, "Dialogue history"), h("span", { class: "hint" }, `${log.length} lines`)),
-      h("div", { class: "rows" }, log.map((l) => h("div", { class: "setrow", style: { display: "block" } }, h("div", { class: "lbl gold-t" }, l.who), h("div", { class: "dim", style: { fontSize: "13px" } }, l.text))))) });
+      h("div", { class: "rows" }, log.map((l) => h("div", { class: "setrow", style: { display: "block" } }, h("div", { class: "lbl gold-t" }, l.who), h("div", { class: "dim", style: { fontSize: "calc(13rem / 15)" } }, l.text))))) });
   }
 
   function topBar() {
@@ -126,13 +126,13 @@ export function storyScreen(app: App, startId: string, done: () => void): Screen
         scene.name_cn && h("div", { class: "cn vn-card-cn" }, scene.name_cn.split("").join(" ")),
         h("div", { class: "vn-seal" }, icon("qi", 54)),
         scene.chapter === "prologue" && h("div", { class: "vn-ribbon" }, h("div", { class: "vn-ribbon-pre" }, "✦ Rank granted ✦"), h("div", { class: "vn-ribbon-t" }, c.get<any>(app.game.state.character.rank).name)),
-        h("div", { class: "dim center", style: { fontSize: "12.5px", margin: "10px 0" } }, scene.lines[0]!.text),
+        h("div", { class: "dim center", style: { fontSize: "calc(12.5rem / 15)", margin: "10px 0" } }, scene.lines[0]!.text),
         h("div", { class: "row", style: { justifyContent: "center", flexWrap: "wrap", gap: "8px" } }, grants.map((g) => h("div", { class: "vn-grant" },
           h("span", { class: "vn-grant-i" }, icon(g.id.startsWith("method.") ? "qi" : g.id.startsWith("sectloc.") ? "temple" : "scroll", 15)),
           h("span", null, h("span", { class: "muted up" }, g.id.startsWith("method.") ? "Method granted" : g.id.startsWith("sectloc.") ? "New area" : "Received"), h("b", null, g.name))))),
         h("div", { class: "vn-tap" }, "Tap to continue")));
     } else {
-      if (art) body.push(h("div", { class: ["vn-figure", isNew && "intro"], style: { backgroundImage: app.img(art) } }));
+      if (art) body.push(h("div", { class: ["vn-figure", isNew && "intro"], dataset: { key: art }, style: { backgroundImage: app.img(art) } }));
       if (isNew && npc) body.push(h("div", { class: "vn-intro" },
         h("span", { class: "tag gold" }, "✦ New character"),
         npc.name_cn && h("div", { class: "vn-intro-cn" }, npc.name_cn.split("").map((ch: string) => h("span", null, ch))),
@@ -156,11 +156,12 @@ export function storyScreen(app: App, startId: string, done: () => void): Screen
       if (!npc) return null;
       return h("div", { class: "vn-plate" },
         h("div", { class: "avatar", style: { backgroundImage: app.img(c.artAny(npc.id, "portrait", "full_body")) } }),
-        h("div", { class: "vn-plate-band" }, h("div", { class: "vn-plate-name" }, ln.speaker === "player" ? app.game.state.character.name : npc.name, npc.name_cn && h("span", { class: "cn" }, ` ${npc.name_cn}`)), npc.title && h("div", { class: "vn-plate-title" }, npc.title)),
+        h("div", { class: "vn-plate-band" }, h("div", { class: "vn-plate-name" }, ln.speaker === "player" ? app.game.state.character.name : npc.name), h("div", { class: "vn-plate-title" }, npc.name_cn && h("span", { class: "cn" }, `${npc.name_cn} `), npc.title)),
         ln.speaker !== "player" && level && h("span", { class: "vn-aff" }, "♥ ", level.name));
     }
 
-    replaceChildren(root, h("div", { class: "vn-bg", style: { backgroundImage: app.img(c.art(scene.id, "cg")) } }), h("div", { class: "vn-shade" }), topBar(), ...body);
+    // Patched, not replaced: typing redraws every 22 ms and must not restart the figure's entrance.
+    morph(root, h("div", { class: "vn-bg", style: { backgroundImage: app.img(c.art(scene.id, "cg")) } }), h("div", { class: "vn-shade" }), topBar(), ...body);
   }
 
   root.addEventListener("click", () => {

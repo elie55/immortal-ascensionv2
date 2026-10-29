@@ -4,7 +4,7 @@
  * the skill bar with cooldown overlays, Auto/Manual and speed controls. Victory and defeat panels per the
  * "victory" / "defeat" mockups. Owns its DOM and animates the engine's event stream.
  */
-import { h, fmt, replaceChildren } from "../core/dom.ts";
+import { h, fmt, replaceChildren, keep } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
 import { RARITY_LABEL } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
@@ -21,7 +21,7 @@ const ELEMENT_COLOR: Record<string, string> = { "elem.wood": "#5fd38a", "elem.fi
 
 export function battleScreen(app: App, enc: Encounter, onExit: () => void): Screen {
   const c = app.content;
-  const root = h("div", { class: "battle" });
+  const root = keep(h("div", { class: "battle" }));
   let battle: Battle = enc.battle!;
   let speed = app.game.state.combat.speed || app.settings.battleSpeed || 1;
   let timer: number | undefined;
@@ -71,7 +71,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const p = battle.player;
     replaceChildren(banner,
       boss && boss.alive ? h("div", { class: "bt-bossbar glass gold" },
-        h("div", { class: "row between" }, h("span", { class: "title", style: { fontSize: "13px" } }, boss.name), h("span", { class: "tag" }, `${boss.boss!.phases[boss.boss!.phase]!.name} · P${boss.boss!.phase + 1}/${boss.boss!.phases.length}`)),
+        h("div", { class: "row between" }, h("span", { class: "title", style: { fontSize: "calc(13rem / 15)" } }, boss.name), h("span", { class: "tag" }, `${boss.boss!.phases[boss.boss!.phase]!.name} · P${boss.boss!.phase + 1}/${boss.boss!.phases.length}`)),
         h("div", { class: "bar thick hp" }, h("i", { style: { width: `${(boss.hp / boss.maxHp * 100).toFixed(1)}%` } }), h("span", null, `${fmt.int(boss.hp)} / ${fmt.int(boss.maxHp)}`)),
         chargeWarn && h("div", { class: "bt-charge" }, icon("warning", 12), ` ${chargeWarn.text}`)) : null,
       phaseBanner && Date.now() < phaseBanner.until ? h("div", { class: "bt-phase" }, phaseBanner.text) : null,
@@ -80,7 +80,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
 
   function renderTop() {
     replaceChildren(top,
-      h("div", { class: "grow" }, h("div", { class: "title", style: { fontSize: "13px" } }, enc.name), h("div", { class: "muted" }, `Wave ${enc.wave + 1} / ${enc.waves.length} · Round ${battle.round}${battle.opts.surviveRounds ? ` / ${battle.opts.surviveRounds}` : ""}`)),
+      h("div", { class: "grow" }, h("div", { class: "title", style: { fontSize: "calc(13rem / 15)" } }, enc.name), h("div", { class: "muted" }, `Wave ${enc.wave + 1} / ${enc.waves.length} · Round ${battle.round}${battle.opts.surviveRounds ? ` / ${battle.opts.surviveRounds}` : ""}`)),
       h("button", { class: "icon-btn", "aria-label": playing ? "Pause" : "Play", onClick: () => { playing = !playing; renderTop(); if (playing) loop(); } }, icon(playing ? "close" : "play", 16)));
   }
 
@@ -106,7 +106,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       ult ? h("div", { class: "bt-ult" }, cell(ult, "ult")) : null);
     replaceChildren(controls,
       h("div", { class: "seg" }, h("button", { class: !manual && "on", onClick: () => setManual(false) }, "Auto"), h("button", { class: manual && "on", onClick: () => setManual(true) }, "Manual")),
-      waiting && manual ? h("span", { class: "gold-t", style: { fontSize: "12px", fontWeight: 800 } }, "Your move · tap a technique") : h("span", { class: "muted" }, log[log.length - 1] ?? ""),
+      waiting && manual ? h("span", { class: "gold-t bt-prompt", style: { fontSize: "calc(12rem / 15)", fontWeight: 800 } }, "Your move") : h("span", { class: "muted" }, log[log.length - 1] ?? ""),
       h("div", { class: "seg" }, [1, 2, 3].map((x) => h("button", { class: speed === x && "on", onClick: () => { speed = x; app.game.state.combat.speed = x as 1 | 2 | 3; app.game.dirty = true; renderSkills(); } }, `${x}×`))));
   }
 
@@ -228,10 +228,10 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
             r.firstClear && Object.keys(r.firstClear).length > 0 && h("div", null, h("div", { class: "muted up", style: { marginTop: "8px" } }, "First clear"), rewardsLine(app, r.firstClear)),
             bestGear && h("div", { class: "muted", style: { marginTop: "6px" } }, `Best drop: ${RARITY_LABEL[bestGear.rarity]} ${c.get<any>(bestGear.base).name} (iLvl ${bestGear.ilvl})`))
         : h("div", null,
-            mainEnemy && h("div", { class: "glass panel", style: { textAlign: "left", marginBottom: "8px" } }, h("div", { class: "row" }, h("span", { class: "ec-ico lg", style: { backgroundImage: app.img(c.art(mainEnemy.id, "icon")) } }), h("div", { class: "grow" }, h("div", { class: "title", style: { fontSize: "14px" } }, mainEnemy.name), h("div", { class: "muted" }, `${c.get<any>(mainEnemy.element).name} · ${c.get<any>(mainEnemy.realm.id).name} ${mainEnemy.realm.stage}`)), h("div", null, h("div", { class: "muted up" }, "Power check"), h("div", { class: r.playerCp >= r.enemyCp ? "jade-t" : "red-t", style: { fontWeight: 900 } }, `${r.playerCp >= r.enemyCp ? "+" : ""}${fmt.int(r.playerCp - r.enemyCp)} CP`)))),
+            mainEnemy && h("div", { class: "glass panel", style: { textAlign: "left", marginBottom: "8px" } }, h("div", { class: "row" }, h("span", { class: "ec-ico lg", style: { backgroundImage: app.img(c.art(mainEnemy.id, "icon")) } }), h("div", { class: "grow" }, h("div", { class: "title", style: { fontSize: "calc(14rem / 15)" } }, mainEnemy.name), h("div", { class: "muted" }, `${c.get<any>(mainEnemy.element).name} · ${c.get<any>(mainEnemy.realm.id).name} ${mainEnemy.realm.stage}`)), h("div", null, h("div", { class: "muted up" }, "Power check"), h("div", { class: r.playerCp >= r.enemyCp ? "jade-t" : "red-t", style: { fontWeight: 900 } }, `${r.playerCp >= r.enemyCp ? "+" : ""}${fmt.int(r.playerCp - r.enemyCp)} CP`)))),
             h("div", { class: "grid-3 res-stats" }, stat("Damage dealt", fmt.compact(sum.dealt)), stat("Rounds", String(first.rounds)), stat("Healing", fmt.compact(sum.healed))),
             h("div", { class: "glass panel", style: { textAlign: "left", marginTop: "8px" } }, h("div", { class: "row" }, icon("shield", 16), h("div", { class: "grow" }, h("b", null, "No penalty"), h("div", { class: "muted" }, "Drops from this run are kept · HP restored partly")))),
-            r.recommendations.length > 0 && h("div", { style: { textAlign: "left", marginTop: "8px" } }, h("div", { class: "sec-h" }, h("h3", null, "Ways to get stronger")), h("div", { class: "rows" }, r.recommendations.map((t) => h("div", { class: "setrow" }, icon("sparkle", 14), h("span", { style: { fontSize: "12.5px" } }, t)))))),
+            r.recommendations.length > 0 && h("div", { style: { textAlign: "left", marginTop: "8px" } }, h("div", { class: "sec-h" }, h("h3", null, "Ways to get stronger")), h("div", { class: "rows" }, r.recommendations.map((t) => h("div", { class: "setrow" }, icon("sparkle", 14), h("span", { style: { fontSize: "calc(12.5rem / 15)" } }, t)))))),
       h("div", { class: "grid-2", style: { marginTop: "12px" } },
         h("button", { class: "btn", onClick: () => { close(); onExit(); } }, icon("back", 14), r.won ? "Map" : "Map"),
         h("button", { class: "btn gold", onClick: again }, r.won ? "Fight again" : "Retry"))) });

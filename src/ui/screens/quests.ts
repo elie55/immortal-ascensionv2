@@ -5,7 +5,7 @@
  */
 import { h, fmt } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
-import { header, subbar, section, bar, seg, npcAvatar } from "../core/kit.ts";
+import { header, subbar, section, bar, seg, npcAvatar, confirmModal } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
 import type { App } from "../../app.ts";
 import { questStatus, questProgress, acceptQuest, turnInQuest, abandonQuest, achievementProgress, nextRank, type QuestStatus } from "../../engine/progression.ts";
@@ -114,7 +114,7 @@ export function questLogScreen(app: App, backTo: string): Screen {
           end: h("button", { class: "btn ghost sm", onClick: () => app.router.push(achievementsScreen(app)) }, icon("fame", 13), "Achievements") }),
         seg(tab, [{ value: "active", label: `Active (${groups.active.length})` }, { value: "available", label: `Available (${groups.available.length})` }, { value: "done", label: "Completed" }], (v) => { tab = v; app.router.refresh(); }),
         shown.length ? shown.map((x) => h("div", { class: "stack" }, questCard(app, x.q),
-          tab === "active" && x.q.type !== "main" && h("button", { class: "link-btn", onClick: () => { const r = app.game.run("quest", app.now(), (st, cc) => abandonQuest(st, cc, x.q.id)); app.router.toast(r.ok ? "Quest abandoned" : r.reason, r.ok ? "info" : "bad"); } }, "Abandon"),
+          tab === "active" && x.q.type !== "main" && h("button", { class: "link-btn", onClick: () => confirmModal(app, { title: "Abandon this quest?", body: `${x.q.name}: its progress is lost. You can take it again from ${x.q.giver.startsWith("sectloc.") || x.q.giver.startsWith("npc.") ? c.get<any>(x.q.giver).name : "its giver"}.`, ok: "Abandon", danger: true }, () => { const r = app.game.run("quest", app.now(), (st, cc) => abandonQuest(st, cc, x.q.id)); app.router.toast(r.ok ? "Quest abandoned" : r.reason, r.ok ? "info" : "bad"); }) }, "Abandon"),
           tab === "available" && h("div", { class: "muted", style: { padding: "0 8px" } }, icon("map", 11), ` Offered by ${x.q.giver.startsWith("sectloc.") || x.q.giver.startsWith("npc.") ? c.get<any>(x.q.giver).name : "—"}`)))
           : h("div", { class: "glass panel center muted" }, tab === "active" ? "No quests in progress. Visit the Mission Hall." : tab === "available" ? "Nothing offered right now." : "No completed quests yet."),
       ];

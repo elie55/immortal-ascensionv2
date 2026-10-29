@@ -39,7 +39,7 @@ export function offlineModal(app: App, r: OfflineReport): Overlay {
         h("div", { class: "m-title" }, "While you were away"),
         h("div", { class: "m-sub" }, `You kept cultivating with ${method.name}`),
         h("div", { class: "glass panel", style: { marginBottom: "10px" } },
-          h("div", { class: "row between" }, h("span", { class: "dim" }, "Time away"), h("b", { class: "tnum", style: { fontSize: "17px" } }, fmt.duration(r.elapsedMs))),
+          h("div", { class: "row between" }, h("span", { class: "dim" }, "Time away"), h("b", { class: "tnum", style: { fontSize: "calc(17rem / 15)" } }, fmt.duration(r.elapsedMs))),
           h("div", { style: { margin: "6px 0 4px" } }, bar(Math.min(1, r.elapsedMs / (capH * 3_600_000)), { cls: "thin" })),
           h("div", { class: "row between muted" }, h("span", null, `Counted: ${fmt.duration(Math.min(r.elapsedMs, capH * 3_600_000))} (${capH} h offline limit)`), r.capped && h("span", null, "The rest isn't counted"))),
         h("div", { class: "glass panel hi qi-gain" },
@@ -56,7 +56,7 @@ export function offlineModal(app: App, r: OfflineReport): Overlay {
             const x = app.game.run("offline breakthroughs", app.now(), (st, ct) => breakThroughAll(st, ct, { now: app.now() }));
             close();
             if (x.ok) minorBurst(app, x.count);
-          } }, h("span", { class: "stack", style: { gap: "0" } }, h("span", null, r.stagesAvailable > 1 ? `Break Through ×${r.stagesAvailable}` : "Break Through"), h("span", { style: { fontSize: "9.5px", opacity: ".8" } }, "Success 100%")))),
+          } }, h("span", { class: "stack", style: { gap: "0" } }, h("span", null, r.stagesAvailable > 1 ? `Break Through ×${r.stagesAvailable}` : "Break Through"), h("span", { style: { fontSize: "calc(10.5rem / 15)", opacity: ".8" } }, "Success 100%")))),
         h("div", { class: "muted center", style: { marginTop: "8px" } }, icon("shield", 11), " Phone clock checked · everything adds up"));
     },
   };

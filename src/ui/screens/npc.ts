@@ -158,7 +158,7 @@ function giftSheet(app: App, npcId: string, say: (who: Line["who"], text: string
           say("note", `♥ ${r.delta > 0 ? "+" : ""}${r.delta} affinity`);
           app.router.toast(`${n.name} ${r.pref === "loved" ? "loves it!" : r.pref === "liked" ? "likes it." : r.pref === "disliked" ? "doesn't like that…" : "accepts it."}`, r.delta > 0 ? "good" : "bad");
           close();
-        } }, "Give Gift", pick && h("span", { class: "cta-s" }, c.get<any>(pick.id).name))));
+        }, style: { flexDirection: "column", gap: "0", lineHeight: 1.15 } }, "Give Gift", pick && h("span", { class: "cta-s", style: { marginLeft: "0" } }, c.get<any>(pick.id).name))));
   } });
 }
 
@@ -203,7 +203,7 @@ function daoModal(app: App, npcId: string, say: (who: Line["who"], text: string)
     return h("div", { class: "center" },
       h("div", { class: "muted up pink-t" }, "道侣 · Dao Companion"),
       h("div", { style: { margin: "10px auto", width: "max-content" } }, npcAvatar(app, npcId, 84)),
-      h("div", { class: "result-title", style: { fontSize: "26px" } }, n.name),
+      h("div", { class: "result-title", style: { fontSize: "calc(26rem / 15)" } }, n.name),
       h("div", { class: "dim", style: { margin: "8px 0" } }, `Ask ${n.name} to walk the path to immortality at your side. Dao companions cultivate with you (×${c.rules.dao.qi_mult} Qi) and fight beside you in adventures and great dungeons.`),
       h("div", { class: "grid-2" },
         h("button", { class: "btn ghost", onClick: close }, "Not yet"),

@@ -13,7 +13,7 @@
     ],
     "map_position": [
       0.26,
-      0.33
+      0.325
     ],
     "art": {
       "background": {
@@ -44,7 +44,7 @@
     "npcs": [],
     "map_position": [
       0.56,
-      0.29
+      0.255
     ],
     "art": {
       "background": {
@@ -78,7 +78,7 @@
     "shop": "shop.scripture_pavilion",
     "map_position": [
       0.68,
-      0.43
+      0.395
     ],
     "art": {
       "background": {
@@ -108,8 +108,8 @@
     ],
     "npcs": [],
     "map_position": [
-      0.47,
-      0.55
+      0.42,
+      0.605
     ],
     "art": {
       "background": {
@@ -143,7 +143,7 @@
     "shop": "shop.merchant_pavilion",
     "map_position": [
       0.7,
-      0.63
+      0.675
     ],
     "art": {
       "background": {
@@ -173,8 +173,8 @@
     ],
     "npcs": [],
     "map_position": [
-      0.62,
-      0.72
+      0.66,
+      0.815
     ],
     "art": {
       "background": {
@@ -207,7 +207,7 @@
     ],
     "map_position": [
       0.22,
-      0.46
+      0.465
     ],
     "art": {
       "background": {
@@ -240,8 +240,8 @@
     ],
     "shop": "shop.beast_garden",
     "map_position": [
-      0.27,
-      0.71
+      0.3,
+      0.745
     ],
     "art": {
       "background": {
@@ -275,8 +275,8 @@
       "npc.elder_wen"
     ],
     "map_position": [
-      0.22,
-      0.8
+      0.24,
+      0.885
     ],
     "art": {
       "background": {
@@ -307,7 +307,7 @@
     "npcs": [],
     "map_position": [
       0.72,
-      0.52
+      0.535
     ],
     "art": {
       "background": {
@@ -341,7 +341,7 @@
     "npcs": [],
     "map_position": [
       0.56,
-      0.12
+      0.08
     ],
     "art": {
       "background": {
@@ -373,8 +373,8 @@
     ],
     "npcs": [],
     "map_position": [
-      0.74,
-      0.2
+      0.72,
+      0.17
     ],
     "art": {
       "background": {

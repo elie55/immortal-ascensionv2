@@ -1,0 +1,22 @@
+[
+ {
+  "key": "contrast|span.stars > i",
+  "why": "empty rating stars are decorative; the filled ones carry the value"
+ },
+ {
+  "key": "contrast|div.hearts > i",
+  "why": "empty bond hearts are decorative; the count is also written as text"
+ },
+ {
+  "key": "contrast|span.cult-bt-",
+  "why": "measured while the breakthrough burst overlay fades out over the button (timing of the audit, not a colour problem)"
+ },
+ {
+  "key": "contrast|div.bt-plate > div.bt-nums",
+  "why": "live battle: unit plates animate between the screenshot and the measurement; numbers sit on the dark plate (checked visually)"
+ },
+ {
+  "key": "contrast|div.spar-ribbon",
+  "why": "in the tour a gift toast is still on screen when the spar card opens and briefly covers the ribbon; readable once it slides away"
+ }
+]

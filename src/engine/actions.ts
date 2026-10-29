@@ -5,7 +5,8 @@
 import type { ContentIndex, Consumable } from "../content/index.ts";
 import type { GameState } from "./state.ts";
 import type { DomainEvent } from "./events.ts";
-import { addItem, removeItem, itemCount, grantGear, equip as equipGear, unequip as unequipGear, type Result, type EquipSlot } from "./inventory.ts";
+import { addItem, removeItem, itemCount, grantGear, equip as equipGear, unequip as unequipGear, meetsRequirements, equippedSlotOf, EQUIP_SLOTS, type Result, type EquipSlot } from "./inventory.ts";
+import { slotOpen } from "./unlock.ts";
 import { addBuff, minorBreakthrough, majorBreakthrough, countAffordableStages, qiBankCap, isBreakthroughItem } from "./cultivation.ts";
 import { computeStats } from "./stats.ts";
 import type { Rewards } from "../../schema/common.ts";
@@ -119,6 +120,48 @@ export function useConsumable(s: GameState, content: ContentIndex, ctx: Ctx, id:
 export function equip(s: GameState, content: ContentIndex, uid: number, slot?: EquipSlot): ActionResult<{ slot: EquipSlot; replaced?: number }> {
   const r = equipGear(s, content, uid, slot);
   return r.ok ? { ok: true, events: [{ type: "equipped", uid, slot: r.slot }], slot: r.slot, replaced: r.replaced } : fail(r.reason);
+}
+
+/**
+ * The loadout with the highest Combat Power from the bag (sets and rings included): each open slot tries every
+ * piece that fits and keeps the best; two passes so set bonuses can settle. Returns the changes without applying
+ * them (the caller applies them; also drives the "better gear" badge).
+ */
+export function bestLoadout(s: GameState, content: ContentIndex): { changes: { slot: EquipSlot; uid: number }[]; cpBefore: number; cpAfter: number } {
+  const start = { ...s.equipped };
+  const cpBefore = computeStats(s, content).cp;
+  let best = cpBefore;
+  for (let pass = 0; pass < 2; pass++) {
+    for (const slot of EQUIP_SLOTS) {
+      if (!slotOpen(s, content, slot).ok) continue;
+      const want = slot.startsWith("ring") ? "ring" : slot;
+      for (const [u, g] of Object.entries(s.inventory.gear)) {
+        const uid = Number(u);
+        if (s.equipped[slot] === uid) continue;
+        const base = content.get<any>(g.base);
+        if (base.slot !== want || !meetsRequirements(s, content, base).ok) continue;
+        const other = equippedSlotOf(s, uid);
+        if (other && other !== slot) continue; // never move a piece from the other ring slot
+        const prev = s.equipped[slot];
+        s.equipped[slot] = uid;
+        const cp = computeStats(s, content).cp;
+        if (cp > best) best = cp;
+        else if (prev === undefined) delete s.equipped[slot]; else s.equipped[slot] = prev;
+      }
+    }
+  }
+  const changes = EQUIP_SLOTS.filter((k) => s.equipped[k] !== start[k] && s.equipped[k] !== undefined).map((k) => ({ slot: k, uid: s.equipped[k]! }));
+  for (const k of EQUIP_SLOTS) { if (start[k] === undefined) delete s.equipped[k]; else s.equipped[k] = start[k]; }
+  return { changes, cpBefore, cpAfter: best };
+}
+
+/** Equip the best loadout (see bestLoadout). */
+export function equipBest(s: GameState, content: ContentIndex): ActionResult<{ changed: number; cpGain: number }> {
+  const plan = bestLoadout(s, content);
+  if (!plan.changes.length) return fail("You are already wearing your best gear");
+  const events: DomainEvent[] = [];
+  for (const ch of plan.changes) { s.equipped[ch.slot] = ch.uid; events.push({ type: "equipped", uid: ch.uid, slot: ch.slot }); }
+  return { ok: true, events, changed: plan.changes.length, cpGain: Math.round(plan.cpAfter - plan.cpBefore) };
 }
 
 export function unequip(s: GameState, _content: ContentIndex, slot: EquipSlot): ActionResult<{ uid: number }> {

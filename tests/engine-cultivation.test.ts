@@ -238,3 +238,23 @@ test("required breakthrough pills cannot be used from the bag and add their bonu
   assert.ok(Math.abs(ch.total - Math.min(1, ch.base + pill)) < 1e-9);
   assert.ok(ch.parts.some((p) => p.label === "Foundation Pill"));
 });
+
+test("equip best: picks the highest-CP loadout from the bag, never lowers CP, and is a no-op when nothing is better", async () => {
+  const { equipBest, bestLoadout } = await import("../src/engine/actions.ts");
+  const s = fresh();
+  const weaponBase = s.inventory.gear[s.equipped.weapon!]!.base;
+  const ringBase = s.inventory.gear[s.equipped.ring_1!]!.base;
+  const strong = grantGear(s, content, { base: weaponBase, rarity: "epic", ilvl: 8 });
+  const ringA = grantGear(s, content, { base: ringBase, rarity: "rare", ilvl: 8 });
+  const ringB = grantGear(s, content, { base: ringBase, rarity: "rare", ilvl: 8 });
+  const before = computeStats(s, content).cp;
+  const plan = bestLoadout(s, content);
+  assert.ok(plan.changes.length >= 2 && plan.cpAfter > before);
+  assert.equal(computeStats(s, content).cp, before, "planning does not change what is worn");
+  const r = equipBest(s, content);
+  assert.ok(r.ok);
+  assert.equal(s.equipped.weapon, strong);
+  assert.ok([s.equipped.ring_1, s.equipped.ring_2].includes(ringA) && [s.equipped.ring_1, s.equipped.ring_2].includes(ringB), "both new rings worn, one per slot");
+  assert.ok(computeStats(s, content).cp > before);
+  assert.equal(equipBest(s, content).ok, false, "second press: already best");
+});
