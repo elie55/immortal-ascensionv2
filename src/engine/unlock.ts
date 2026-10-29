@@ -19,7 +19,7 @@ export function checkUnlock(s: GameState, c: ContentIndex, u: Unlock | undefined
   if (u.rank && c.get<any>(s.character.rank).order < c.get<any>(u.rank).order) reasons.push(`Requires rank ${c.get<any>(u.rank).name}`);
   if (u.sect_fame && s.resources.sect_fame < u.sect_fame) reasons.push(`Requires ${u.sect_fame.toLocaleString("en-US")} Fame`);
   for (const q of u.quests ?? []) if (!s.progress.quests.completed[q]) reasons.push(`Complete “${c.get<any>(q).name}”`);
-  for (const a of u.affinity ?? []) if ((s.relations[a.npc]?.affinity ?? 0) < a.level) reasons.push(`${c.get<any>(a.npc).name} affinity ${a.level}`);
+  for (const a of u.affinity ?? []) if (affinityLevel(c, a.npc, s.relations[a.npc]?.affinity ?? 0).index < a.level) reasons.push(`${c.get<any>(a.npc).name}: ${c.get<any>(a.npc).affinity_levels[a.level]?.name ?? `level ${a.level}`}`);
   for (const r of u.regions ?? []) if (!s.progress.regions[r]) reasons.push(`Discover ${c.get<any>(r).name}`);
   for (const d of u.dungeons_cleared ?? []) if (!s.progress.dungeons[d]?.clears) reasons.push(`Clear ${c.get<any>(d).name}`);
   for (const it of u.items ?? []) if ((s.inventory.stacks[it.id] ?? 0) < it.qty) reasons.push(`Bring ${it.qty}× ${c.get<any>(it.id).name}`);
@@ -41,4 +41,12 @@ export function slotOpen(s: GameState, c: ContentIndex, slot: string): UnlockChe
   const need = c.rules.slot_unlocks?.[slot];
   if (!need) return { ok: true, reasons: [] };
   return realmAtLeast(s, c, need) ? { ok: true, reasons: [] } : { ok: false, reasons: [`Unlocks at ${c.get<any>(need).name}`] };
+}
+
+/** Named affinity level reached with an NPC (index 0 = Stranger). */
+export function affinityLevel(c: ContentIndex, npcId: string, affinity: number): { index: number; name: string; next?: { name: string; threshold: number } } {
+  const lv = c.get<any>(npcId).affinity_levels as { name: string; threshold: number }[];
+  let i = 0;
+  for (let k = 0; k < lv.length; k++) if (affinity >= lv[k]!.threshold) i = k;
+  return { index: i, name: lv[i]!.name, next: lv[i + 1] };
 }

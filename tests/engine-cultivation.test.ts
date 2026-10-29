@@ -211,7 +211,7 @@ test("Game dispatches actions, runs trackers and emits events; eta is finite", (
   s.character.qi = qiNeeded(content.get<any>(s.character.realm), 1);
   const r = g.run("breakthrough", T0, (st, c) => breakThrough(st, c, { now: T0 }));
   assert.ok(r.ok && g.dirtyImportant);
-  assert.deepEqual(seen.filter((t) => t !== "tick"), ["stage_up", "unlock"]);
+  assert.deepEqual(seen.filter((t) => t !== "tick" && !t.startsWith("quest_") && t !== "achievement"), ["stage_up", "unlock"]);
 });
 
 test("grantRewards covers stones, items, gear, techniques, titles and affinity", () => {

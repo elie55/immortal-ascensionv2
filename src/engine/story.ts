@@ -27,7 +27,7 @@ export function completeScene(s: GameState, content: ContentIndex, sceneId: stri
   }
   if (!s.progress.storySeen[sceneId]) for (const u of scene.unlocks) applyUnlock(s, content, u, events);
   s.progress.storySeen[sceneId] = now;
-  events.push({ type: "unlock", id: sceneId });
+  events.push({ type: "story_seen", scene: sceneId });
   return { ok: true, events, next };
 }
 

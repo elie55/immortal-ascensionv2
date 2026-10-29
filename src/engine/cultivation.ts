@@ -119,6 +119,7 @@ export function tick(s: GameState, content: ContentIndex, dtMs: number, now: num
     if (s.character.hp >= maxHp) s.character.hp = undefined;
   }
   s.meta.playtimeMs += dtMs;
+  s.progress.counters.meditation_minutes = (s.progress.counters.meditation_minutes ?? 0) + dt / 60;
   s.meta.lastTickAt = now;
   expireBuffs(s, now, out);
   return out;

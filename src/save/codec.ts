@@ -45,6 +45,8 @@ export const migrations: Record<number, (raw: any) => any> = {
     progress: { ...st.progress, unlocks: st.progress?.unlocks ?? [] },
     combat: st.combat ?? { presets: [{ name: "Balanced", rules: [{ slot: "ultimate", when: "always", target: "default" }, { slot: "heal", when: "hp_below", value: 50, target: "default" }, { slot: "shield", when: "no_shield", target: "default" }, { slot: "damage", when: "always", target: "lowest_hp" }, { slot: "basic", when: "always", target: "default" }] }], active: 0, manual: false, speed: 1 },
   }),
+  // 2 → 3: crafting (furnace, proficiency) and shop restock periods
+  2: (st) => ({ ...st, progress: { ...st.progress, crafting: st.progress?.crafting ?? { furnace: 1, proficiency: 0 }, shopPeriods: st.progress?.shopPeriods ?? {} } }),
 };
 
 export function encode(state: GameState, slot: number, savedAt: number): string {

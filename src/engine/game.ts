@@ -8,6 +8,7 @@ import type { DomainEvent } from "./events.ts";
 import { tick as tickCultivation, applyOffline, type OfflineReport, energyNow } from "./cultivation.ts";
 import { dayKey } from "./state.ts";
 import type { ActionResult } from "./actions.ts";
+import { countEvent, sweep } from "./progression.ts";
 
 export type Listener = (events: DomainEvent[], reason: string) => void;
 export type Tracker = (state: GameState, content: ContentIndex, e: DomainEvent, now: number) => DomainEvent[] | void;
@@ -15,13 +16,24 @@ export type Tracker = (state: GameState, content: ContentIndex, e: DomainEvent, 
 export class Game {
   private listeners = new Set<Listener>();
   private trackers: Tracker[] = [];
+  /** Story scenes whose trigger fired; the UI plays them when the player is idle on a tab. */
+  storyQueue: string[] = [];
+  private announced = new Set<string>();
+  private queuedStories = new Set<string>();
+  private lastSweep = 0;
   /** Set by actions flagged important; the autosave policy reads and clears it. */
   dirtyImportant = false;
   dirty = false;
 
   readonly content: ContentIndex;
   state: GameState;
-  constructor(content: ContentIndex, state: GameState) { this.content = content; this.state = state; }
+  constructor(content: ContentIndex, state: GameState) {
+    this.content = content; this.state = state;
+    this.addTracker((st, _c, e) => { countEvent(st, e); });
+  }
+
+  /** Re-evaluate quests, achievements, ranks and story triggers (e.g. right after loading a save). */
+  settle(now: number): void { this.emit([], "settle", now); }
 
   onChange(l: Listener): () => void { this.listeners.add(l); return () => this.listeners.delete(l); }
   addTracker(t: Tracker): void { this.trackers.push(t); }
@@ -66,18 +78,29 @@ export class Game {
   }
 
   private emit(events: DomainEvent[], reason: string, now: number): void {
-    // Trackers may produce follow-up events (quest completed → rewards → item_gained …); process breadth-first, bounded.
+    // Trackers may produce follow-up events; after each batch the progression sweep runs (quests, achievements,
+    // ranks, story triggers) and may produce more. Bounded to avoid loops.
     const queue = [...events];
     const all: DomainEvent[] = [];
     let guard = 0;
-    while (queue.length && guard++ < 1000) {
-      const e = queue.shift()!;
-      all.push(e);
-      for (const t of this.trackers) {
-        const more = t(this.state, this.content, e, now);
-        if (more?.length) queue.push(...more);
+    for (let pass = 0; pass < 20; pass++) {
+      while (queue.length && guard++ < 2000) {
+        const e = queue.shift()!;
+        all.push(e);
+        for (const t of this.trackers) {
+          const more = t(this.state, this.content, e, now);
+          if (more?.length) queue.push(...more);
+        }
       }
+      // Quiet ticks still sweep every few seconds (meditation-minute objectives advance without events).
+      if (reason === "tick" && !all.length && now - this.lastSweep < 5000) break;
+      this.lastSweep = now;
+      const sw = sweep(this.state, this.content, now, this.announced, this.queuedStories);
+      this.storyQueue.push(...sw.stories);
+      if (!sw.events.length) break;
+      queue.push(...sw.events);
     }
+    if (all.some((e) => e.type === "quest_completed" || e.type === "achievement" || e.type === "rank_up")) this.dirtyImportant = true;
     for (const l of this.listeners) l(all, reason);
   }
 }

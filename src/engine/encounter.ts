@@ -4,7 +4,7 @@
  * consequences, and the domain events that drive quests, achievements and story.
  * An Encounter is a session object (not saved); closing the app mid-fight forfeits that fight only.
  */
-import type { ContentIndex, MapNode, Dungeon, Tribulation, Npc } from "../content/index.ts";
+import type { ContentIndex, MapNode, Dungeon, Tribulation, Npc, Tournament } from "../content/index.ts";
 import type { GameState } from "./state.ts";
 import type { DomainEvent } from "./events.ts";
 import type { Result } from "./inventory.ts";
@@ -23,6 +23,7 @@ export type EncounterSource =
   | { kind: "dungeon"; id: string }
   | { kind: "tribulation"; id: string }
   | { kind: "duel"; npc: string; cp?: number }
+  | { kind: "tournament"; id: string }
   | { kind: "event"; node: string; enemies: string[] };
 
 export interface WaveResult { summary: BattleSummary; drops: Drops; gearUids: number[] }
@@ -61,6 +62,7 @@ export function canStart(s: GameState, c: ContentIndex, src: EncounterSource, no
     return { ok: true, energy: 0 };
   }
   if (src.kind === "event") return { ok: true, energy: 0 };
+  if (src.kind === "tournament") return canEnterTournament(s, c, src.id, now);
   const npc = c.get<Npc>(src.npc);
   if (!npc.duel?.enabled) return { ok: false, reason: "They will not duel" };
   const last = s.relations[src.npc]?.lastDuelAt ?? 0;
@@ -95,6 +97,7 @@ export class Encounter {
       opts.surviveRounds = t.waves.length * c.combat.tribulation.turns_per_wave;
       opts.hazard = { name: "Heavenly Lightning", source: 0, turnsPerWave: c.combat.tribulation.turns_per_wave, waves: t.waves.map((w) => ({ element: w.element, power: c.combat.tribulation.bolt_power * w.dmg_mult, bolts: w.bolts })) };
     } else if (src.kind === "event") { const n = c.get<MapNode>(src.node); this.waves = [src.enemies]; this.name = n.name; this.bg = c.art(n.region, "battle_bg"); }
+    else if (src.kind === "tournament") { const t = c.get<Tournament>(src.id); this.waves = t.rounds.map((r) => [r.opponent]); this.name = t.name; this.bg = c.art("sectloc.proving_arena", "background") ?? c.art("sectloc.sword_grounds", "background"); }
     else { const n = c.get<Npc>(src.npc); this.waves = [[src.npc]]; this.name = `Spar: ${n.name}`; this.bg = c.art("sectloc.sword_grounds", "background"); }
     this.opts = opts;
   }
@@ -106,6 +109,7 @@ export class Encounter {
     if (can.energy) { const sp = spendEnergy(s, c, now, can.energy); if (!sp.ok) return sp; }
     if (src.kind === "dungeon") s.daily.counters[`dungeon:${src.id}`] = (s.daily.counters[`dungeon:${src.id}`] ?? 0) + 1;
     if (src.kind === "tribulation") { const p = (s.progress.tribulations[src.id] ??= { attempts: 0 }); p.attempts++; }
+    if (src.kind === "tournament") { s.daily.counters[`tournament:${src.id}`] = 1; const p = (s.progress.tournaments[src.id] ??= { round: 0, wins: 0 }); p.lastAt = now; }
     const e = new Encounter(s, c, src);
     e.nextWave();
     return { ok: true, encounter: e };
@@ -120,7 +124,7 @@ export class Encounter {
     const beast = buildBeast(this.s, this.c);
     if (beast) units.push(beast);
     for (const id of this.waves[this.wave]!) {
-      if (id.startsWith("npc.")) units.push(buildDuelist(this.c, id, (this.src as any).cp));
+      if (id.startsWith("npc.")) units.push(buildDuelist(this.c, id, this.src.kind === "tournament" ? this.c.get<Tournament>(this.src.id).rounds[this.wave]!.cp : (this.src as any).cp));
       else units.push(buildEnemy(this.c, id, { hpMult: this.opts.enemyHpMult }));
     }
     const opts = { ...this.opts };
@@ -144,12 +148,19 @@ export class Encounter {
         const def = this.c.find<any>(id);
         if (def?.loot) merged = mergeDrops(merged, rollTable(this.s, this.c, def.loot));
         this.events.push({ type: "enemy_defeated", id, boss: id.startsWith("boss.") });
-        this.s.progress.counters[`kills:${id}`] = (this.s.progress.counters[`kills:${id}`] ?? 0) + 1;
+      }
+      if (this.src.kind === "tournament") {
+        // Each round is a fresh bout at full strength; round rewards are paid as you advance.
+        const t = this.c.get<Tournament>(this.src.id);
+        const p = this.s.progress.tournaments[t.id]!;
+        p.round = Math.max(p.round, this.wave + 1);
+        grantRewards(this.s, this.c, t.rounds[this.wave]!.rewards as any, this.events);
+        this.events.push({ type: "tournament_round", tournament: t.id, round: this.wave + 1, won: true });
       }
       if (this.src.kind === "dungeon") { const d = this.c.get<Dungeon>(this.src.id); if (d.rewards.per_wave) merged = mergeDrops(merged, rollTable(this.s, this.c, d.rewards.per_wave)); }
       gearUids = grantDrops(this.s, this.c, merged, this.events).gearUids;
       Object.assign(drops, merged);
-      this.carry = { hp: sum.playerHp, sp: sum.playerSp, ult: sum.playerUlt };
+      this.carry = this.src.kind === "tournament" ? {} : { hp: sum.playerHp, sp: sum.playerSp, ult: sum.playerUlt };
     }
     const wr = { summary: sum, drops, gearUids };
     this.results.push(wr);
@@ -206,13 +217,21 @@ export class Encounter {
         rel.lastDuelAt = now;
         grantRewards(s, c, npc.duel!.win as any, this.events);
         masteryXp += (npc.duel!.win as any).mastery_xp ?? 0;
+        this.events.push({ type: "duel_won", npc: npc.id });
+      } else if (this.src.kind === "tournament") {
+        const t = c.get<Tournament>(this.src.id);
+        const p = s.progress.tournaments[t.id]!;
+        p.wins++;
+        s.progress.trialsCleared[t.id] = now;
+        grantRewards(s, c, t.champion_rewards as any, this.events);
+        this.events.push({ type: "tournament_won", tournament: t.id });
       }
       if (masteryXp > 0) {
         addMasteryXp(s, c, s.character.method, Math.round(masteryXp * c.combat.mastery.method_share), this.events);
         for (const t of s.techniques.actives) if (t) addMasteryXp(s, c, t, Math.round(masteryXp * c.combat.mastery.active_share), this.events);
       }
       s.progress.counters.battles_won = (s.progress.counters.battles_won ?? 0) + 1;
-      this.events.push({ type: "battle_won", source: this.src.kind === "duel" ? this.src.npc : this.src.kind === "event" ? this.src.node : this.src.id });
+      this.events.push({ type: "battle_won", source: srcId(this.src) });
     } else {
       const maxHp = computeStats(s, c).total.hp ?? 1;
       s.character.hp = Math.max(1, Math.round(maxHp * c.combat.defeat.hp_pct_after_defeat / 100));
@@ -225,9 +244,13 @@ export class Encounter {
         const npc = c.get<Npc>(this.src.npc);
         (s.relations[this.src.npc] ??= { affinity: 0, giftsToday: 0, topics: [] }).lastDuelAt = now;
         grantRewards(s, c, npc.duel!.lose as any, this.events);
+      } else if (this.src.kind === "tournament") {
+        const t = c.get<Tournament>(this.src.id);
+        if (t.loss.sect_fame) grantRewards(s, c, { sect_fame: t.loss.sect_fame }, this.events);
+        this.events.push({ type: "tournament_round", tournament: t.id, round: this.wave + 1, won: false });
       }
       s.progress.counters.battles_lost = (s.progress.counters.battles_lost ?? 0) + 1;
-      this.events.push({ type: "battle_lost", source: this.src.kind === "duel" ? this.src.npc : this.src.kind === "event" ? this.src.node : this.src.id });
+      this.events.push({ type: "battle_lost", source: srcId(this.src) });
     }
     const playerCp = computeStats(s, c).cp;
     this.done = { won, source: this.src, waves: this.results, total, firstClear, masteryXp, recommendations: won ? [] : recommend(s, c, playerCp, enemyCp), enemyCp: Math.round(enemyCp), playerCp };
@@ -235,6 +258,20 @@ export class Encounter {
 
   /** Domain events produced so far (drained by the caller after each wave / at the end). */
   drainEvents(): DomainEvent[] { const e = this.events; this.events = []; return e; }
+}
+
+const srcId = (src: EncounterSource) => src.kind === "duel" ? src.npc : src.kind === "event" ? src.node : src.id;
+
+/** Tournaments: entry requirements, one attempt per day, no re-entry once won unless repeatable (then fame gate). */
+export function canEnterTournament(s: GameState, c: ContentIndex, id: string, _now: number): Result<{ energy: number }> {
+  const t = c.get<Tournament>(id);
+  const u = checkUnlock(s, c, t.entry as any);
+  if (!u.ok) return { ok: false, reason: u.reasons[0]! };
+  const won = !!s.progress.trialsCleared[id];
+  if (won && !t.repeatable) return { ok: false, reason: "You are already champion" };
+  if (won && s.resources.sect_fame < t.reentry.sect_fame_required) return { ok: false, reason: `Re-entry needs ${t.reentry.sect_fame_required.toLocaleString("en-US")} Fame` };
+  if (s.daily.counters[`tournament:${id}`]) return { ok: false, reason: "One attempt per day" };
+  return { ok: true, energy: 0 };
 }
 
 /** An NPC opponent built from their duel loadout, scaled to a target CP when given (tournaments). */

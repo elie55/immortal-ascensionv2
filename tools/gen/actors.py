@@ -181,8 +181,51 @@ def npcs():
           ["neutral", "disdain", "respect"], {"duel": duel(["tech.active.swallow_return_sword", "tech.active.azure_strike", "tech.passive.critical_insight", "tech.passive.sword_mastery"], "aggressive")}),
     ]
 
+# Small talk by minimum affinity level (0 Stranger … 4 Dao Companion). The engine picks the best unlocked line
+# the player has not heard today, so dialogue changes as the relationship grows.
+CHAT = {
+    "bai_lingshuang": [
+        (0, "Your stance is too wide. Again."), (0, "If you came to talk, you can talk while you practise."),
+        (1, "You held the form a breath longer today. Do not let it go to your head."),
+        (2, "I brewed too much tea. …Sit, if you like."), (2, "Most disciples stop coming after the first month. You did not."),
+        (3, "When you break through, tell me first. I would rather not hear it from Tang."),
+        (4, "The frost in my sword is quieter when you are near. I do not know what that means yet."),
+    ],
+    "tang_xiaoman": [
+        (0, "Browsing is free! Breathing near the pills is one stone."), (0, "New stock from the caravan — buy before the inner disciples hear."),
+        (1, "Oh, it's you! My favourite customer. Top three, at least."),
+        (2, "I saved you the good batch. Don't tell the others, they'll want discounts too."),
+        (3, "Sometimes I count the coins twice just so I have an excuse to stay up. …Forget I said that."),
+        (4, "You know what's worth more than a lucky coin? Nothing. Except, maybe, you. Don't make me say it twice."),
+    ],
+    "elder_wen": [
+        (0, "Have you eaten? Cultivation on an empty stomach makes for a short road."),
+        (1, "What did you learn this week that you did not expect to learn?"),
+        (2, "Every disciple remembers their trial. You remember the fox. That is why you are here."),
+        (3, "One day you will stand at a gate and decide who may pass. Remember how it felt to be on the other side."),
+    ],
+    "elder_feng": [
+        (0, "The Pavilion is for study, not conversation. Be brief."),
+        (1, "You returned the last manual on time. Few do."),
+        (2, "Your notes in the margins of the Qi Gathering Art were… not wrong."),
+        (3, "I have watched three generations climb. Yours may yet be the one I write about."),
+    ],
+    "qin": [
+        (0, "…The beasts noticed you before I did."), (1, "Yunyun likes you. That is rare. Do not make her regret it."),
+        (2, "Sit. Be still. Let them come to you. That is all the secret there is."),
+        (3, "People ask my family name. The beasts never do. Perhaps that is why I prefer them."),
+    ],
+    "master_gu": [
+        (0, "Bring ore or bring nothing. Talk does not temper steel."), (1, "Hmph. Your last piece held its edge. Decent work keeping it oiled."),
+        (2, "Most disciples want shiny. You want sound. Good."),
+        (3, "I forged my first blade for a girl who never came back from the Tomb. Every blade since has been for her."),
+    ],
+}
+
 def finalize_npcs(lst):
     for n in lst:
+        key = n["id"].split(".")[1]
+        if key in CHAT: n["chat"] = [{"min_level": lv, "text": t} for lv, t in CHAT[key]]
         n.pop("art_extra", None)
         if n.get("duel") or n.get("dao_companion", {}).get("eligible"):
             look = n["art"]["full_body"]["prompt"]

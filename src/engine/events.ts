@@ -20,6 +20,25 @@ export type DomainEvent =
   | { type: "node_cleared"; node: string; region: string; first: boolean }
   | { type: "dungeon_cleared"; dungeon: string; first: boolean }
   | { type: "tribulation_passed"; tribulation: string }
-  | { type: "tribulation_failed"; tribulation: string };
+  | { type: "tribulation_failed"; tribulation: string }
+  | { type: "quest_accepted"; quest: string }
+  | { type: "quest_completed"; quest: string }
+  | { type: "quest_ready"; quest: string }
+  | { type: "achievement"; id: string }
+  | { type: "rank_up"; rank: string }
+  | { type: "story_seen"; scene: string }
+  | { type: "alchemy"; recipe: string; success: boolean; qty: number }
+  | { type: "forge"; recipe: string }
+  | { type: "enhanced"; uid: number; level: number; success: boolean }
+  | { type: "refined"; uid: number; rarity: string; success: boolean }
+  | { type: "reforged"; uid: number }
+  | { type: "gift"; npc: string; item: string; delta: number }
+  | { type: "affinity_level"; npc: string; level: number; name: string }
+  | { type: "talk"; npc: string; topic: string }
+  | { type: "visit"; target: string }
+  | { type: "duel_won"; npc: string }
+  | { type: "purchase"; shop: string; id: string; qty: number }
+  | { type: "tournament_round"; tournament: string; round: number; won: boolean }
+  | { type: "tournament_won"; tournament: string };
 
 export type EventSink = (e: DomainEvent) => void;

@@ -115,6 +115,8 @@ export const Npc = Named.extend({
     answer: z.string().min(1),
   })).default([]),
   quests: z.array(ref("quest")).default([]),
+  /** Small talk: lines unlocked at an affinity level index; the engine rotates them. */
+  chat: z.array(z.object({ min_level: z.number().int().min(0), text: z.string().min(1) })).default([]),
   duel: z.object({
     enabled: z.boolean(),
     loadout: z.array(ref("tech")).min(1),

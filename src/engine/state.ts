@@ -7,7 +7,7 @@ import type { ContentIndex } from "../content/index.ts";
 import { seedRng } from "./rng.ts";
 import { grantGear } from "./inventory.ts";
 
-export const STATE_VERSION = 2;
+export const STATE_VERSION = 3;
 
 export const GearInstanceSchema = z.object({
   base: z.string(), rarity: z.string(), ilvl: z.number().int(), enhance: z.number().int().min(0).max(15),
@@ -98,6 +98,10 @@ export const GameStateSchema = z.object({
     tournaments: z.record(z.string(), z.object({ round: z.number().int(), wins: z.number().int(), lastAt: z.number().optional() })),
     tribulations: z.record(z.string(), z.object({ attempts: z.number().int(), passedAt: z.number().optional(), nextTryAt: z.number().optional() })),
     recipes: z.array(z.string()),
+    /** Alchemy furnace grade and proficiency (accumulated proficiency points). */
+    crafting: z.object({ furnace: z.number().int().min(1), proficiency: z.number().min(0) }),
+    /** Shop id → restock period key the purchase counts belong to. */
+    shopPeriods: z.record(z.string(), z.string()),
     shopPurchases: z.record(z.string(), z.record(z.string(), z.number().int())),
     counters: z.record(z.string(), z.number()),                 // free-form: kills:enemy.x, battles_won, …
     realmsEntered: z.array(z.string()),
@@ -147,7 +151,7 @@ export function newGameState(content: ContentIndex, now: number, opts: { name?: 
     progress: {
       quests: { active: {}, completed: {}, lastCompletedAt: {} }, achievements: {}, storySeen: {}, storyChoices: {},
       regions: { [s.region]: { discoveredAt: now, nodes: {} } }, dungeons: {}, trialsCleared: {}, tournaments: {}, tribulations: {},
-      recipes: [], shopPurchases: {}, counters: {}, realmsEntered: [s.realm.id], unlocks: [],
+      recipes: [], crafting: { furnace: 1, proficiency: 0 }, shopPurchases: {}, shopPeriods: {}, counters: {}, realmsEntered: [s.realm.id], unlocks: [],
     },
     daily: { day: dayKey(now), counters: {} },
     combat: defaultCombat(content),
