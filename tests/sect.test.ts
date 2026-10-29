@@ -320,24 +320,44 @@ test("topics unlock with affinity, pay affinity once; chat pays once a day", () 
 
 // ---------- tournaments ----------
 
-test("tournament: entry gate, rounds as fresh bouts, champion rewards, one attempt per day", () => {
+test("tournament: entry gate, one saved round per entry, champion rewards, loss resets the run", () => {
   const s = fresh(16);
   const t = c.get<any>("tournament.outer_sect");
   assert.equal(canStart(s, c, { kind: "tournament", id: t.id }, T0).ok, false);
   s.character.realm = "realm.core_formation"; s.character.stage = 9;
   s.progress.realmsEntered.push("realm.foundation_establishment", "realm.core_formation");
   s.resources.sect_fame = 5000;
-  s.character.permanent = { atk: 5000, hp: 100000, def: 2000, spd: 50 };
-  const st = Encounter.start(s, c, { kind: "tournament", id: t.id }, T0);
-  assert.ok(st.ok);
-  const enc = st.encounter;
-  const hp: number[] = [];
-  while (!enc.done) { hp.push(enc.battle!.player.hp); enc.battle!.run(); const wr = enc.settleWave(T0); if (wr.summary.result !== "victory") break; if (enc.hasNextWave) enc.nextWave(); }
-  assert.ok(enc.done!.won, "an overpowered cultivator wins");
-  assert.equal(new Set(hp).size, 1, "each round starts at full health");
-  assert.equal(s.progress.tournaments[t.id]!.round, t.rounds.length);
+  const strong = { atk: 5000, hp: 100000, def: 2000, spd: 50 };
+  s.character.permanent = strong;
+  const fight = () => {
+    const st = Encounter.start(s, c, { kind: "tournament", id: t.id }, T0);
+    assert.ok(st.ok);
+    const enc = st.encounter;
+    assert.equal(enc.waves.length, 1);
+    const hp = enc.battle!.player.hp;
+    enc.battle!.run(); enc.settleWave(T0);
+    return { won: enc.done!.won, hp };
+  };
+  const hps: number[] = [];
+  for (let r = 1; r <= t.rounds.length; r++) {
+    const f = fight();
+    assert.ok(f.won, `round ${r}`);
+    hps.push(f.hp);
+    if (r < t.rounds.length) assert.equal(s.progress.tournaments[t.id]!.round, r, "bracket position saved");
+  }
+  assert.equal(new Set(hps).size, 1, "each round starts at full health");
   assert.ok(s.progress.trialsCleared[t.id]);
+  assert.equal(s.progress.tournaments[t.id]!.wins, 1);
   assert.ok(s.techniques.known["tech.ult.heavenly_sword_rain"] !== undefined);
-  const again = canStart(s, c, { kind: "tournament", id: t.id }, T0);
-  assert.ok(!again.ok);
+  // a weak entrant loses round 1: fame lost and run reset
+  const w = fresh(17);
+  w.character.realm = "realm.foundation_establishment"; w.character.stage = 1; w.progress.realmsEntered.push("realm.foundation_establishment");
+  w.resources.sect_fame = 1000;
+  const st = Encounter.start(w, c, { kind: "tournament", id: t.id }, T0);
+  assert.ok(st.ok);
+  st.encounter.battle!.run(); st.encounter.settleWave(T0);
+  assert.ok(!st.encounter.done!.won);
+  assert.equal(w.resources.sect_fame, 1000 + t.loss.sect_fame);
+  assert.equal(w.progress.tournaments[t.id]!.round, 0);
+  if (t.reentry.sect_fame_required > w.resources.sect_fame) assert.equal(canStart(w, c, { kind: "tournament", id: t.id }, T0).ok, false);
 });

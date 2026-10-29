@@ -19,8 +19,11 @@ import { inventoryScreen } from "./ui/screens/inventory.ts";
 import { sectScreen } from "./ui/screens/sect.ts";
 import { adventureScreen } from "./ui/screens/adventure.ts";
 import { offlineModal } from "./ui/screens/offline.ts";
+import { rankUpModal } from "./ui/screens/rank.ts";
+import { questStatus } from "./engine/progression.ts";
+import type { DomainEvent } from "./engine/events.ts";
 
-export const VERSION = "0.2.0";
+export const VERSION = "0.3.0";
 
 export class App {
   content!: ContentIndex;
@@ -110,13 +113,40 @@ export class App {
     this.slot = slot;
     this.game = new Game(this.content, state);
     this.autosave = new Autosave(this.game, this.saves, slot, this.content.rules.autosave_seconds * 1000);
-    this.game.onChange(() => this.router.refresh());
+    this.game.onChange((events) => { this.announce(events); this.router.refresh(); this.maybePlayStory(); });
     (globalThis as any).__ia.game = this.game;
   }
 
   private enterGame(tab: Tab = "cultivate"): void {
     this.router.store.update((s) => { s.tab = tab; s.stacks = { cultivate: [], adventure: [], character: [], inventory: [], sect: [] }; });
+    this.router.badges = (t) => t === "sect" ? this.readyQuests() : 0;
+    this.game.settle(this.now());
     this.startLoop();
+  }
+
+  /** Quests whose objectives are done and wait for a turn-in. */
+  readyQuests(): number { return Object.keys(this.game.state.progress.quests.active).filter((id) => questStatus(this.game.state, this.content, this.content.get<any>(id), this.now()) === "ready").length; }
+
+  /** Toasts and modals for progression events (quests, achievements, relationships, ranks). */
+  private announce(events: DomainEvent[]): void {
+    const c = this.content;
+    for (const e of events) {
+      if (e.type === "quest_ready") this.router.toast(`Quest ready: ${c.get<any>(e.quest).name}`, "good", 3200);
+      else if (e.type === "quest_completed") this.router.toast(`Quest complete: ${c.get<any>(e.quest).name}`, "good", 3200);
+      else if (e.type === "quest_accepted" && c.get<any>(e.quest).type === "main") this.router.toast(`New quest: ${c.get<any>(e.quest).name}`, "info", 3200);
+      else if (e.type === "achievement") this.router.toast(`Achievement: ${c.get<any>(e.id).name}`, "good", 3600);
+      else if (e.type === "affinity_level") this.router.toast(`${c.get<any>(e.npc).name} now sees you as: ${e.name}`, "good", 3600);
+      else if (e.type === "rank_up") this.router.open(rankUpModal(this, e.rank));
+    }
+  }
+
+  /** Play queued story scenes when the player is on a tab screen with nothing on top. */
+  private maybePlayStory(): void {
+    const st = this.router.store.state;
+    if (!this.game.storyQueue.length || st.global.length || st.overlays.length) return;
+    const id = this.game.storyQueue.shift()!;
+    if (this.game.state.progress.storySeen[id]) return;
+    this.playStory(id, () => this.router.refresh());
   }
 
   /** Return to the main menu (saves first). */

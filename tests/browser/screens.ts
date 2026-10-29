@@ -104,6 +104,103 @@ await shot("sect-location");
 await page.getByText("Cultivate here").click();
 check(await page.evaluate(() => (window as any).__ia.game.state.character.location) === "sectloc.meditation_waterfall", "Cultivate here moves cultivation to the waterfall");
 
+// ---------- sect systems ----------
+const toSect = async () => { await page.locator(".nav button", { hasText: "Sect" }).click(); await page.locator(".nav button", { hasText: "Sect" }).click(); await page.waitForSelector('[data-screen="sect"]'); };
+const openLoc = async (name: string) => { await toSect(); await page.locator(".sect-pin", { hasText: name }).click(); await page.waitForSelector('[data-screen^="loc:"]'); };
+const ia = <T>(fn: string) => page.evaluate(fn) as Promise<T>;
+await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.state; s.resources.spirit_stones = 50000; for (const [id, n] of [["mat.lesser_enhancement_stone", 10], ["mat.refining_stone", 10], ["mat.reforging_sand", 10], ["mat.spirit_grass", 20], ["mat.peach_blossom", 10], ["mat.crane_feather", 10], ["gift.ancient_spirit_coin", 2], ["gift.osmanthus_cake", 2]] as const) s.inventory.stacks[id] = n; ia.app.router.refresh(); });
+// Mission Hall
+await openLoc("Mission Hall");
+await page.locator(".setrow", { hasText: "Mission board" }).last().click();
+await page.waitForSelector(".quest-card");
+await shot("mission-hall");
+check(await page.locator(".quest-card").count() > 0, "Mission Hall lists requests");
+// Sword Grounds → Bai: deliver the token, chat, gift, topics, spar card
+await openLoc("Sword Grounds");
+await page.locator(".setrow", { hasText: "Bai Lingshuang" }).first().click();
+await page.waitForSelector('[data-screen="npc:npc.bai_lingshuang"]');
+await page.locator(".npc-act", { hasText: "Chat" }).click();
+await shot("npc-bai-chat");
+check(await page.locator(".chat-bubble").count() >= 2, "chat adds lines to the conversation");
+await page.locator(".npc-act", { hasText: "Requests" }).click();
+await page.waitForSelector(".quest-card");
+await shot("npc-requests");
+await page.locator(".quest-card .btn.gold", { hasText: "Deliver" }).first().click();
+check(await ia<number>("(window.__ia.game.state.progress.quests.completed['quest.main.senior_sister'] ?? 0)") === 1, "delivering Elder Wen's token completes 'Senior Sister'");
+await page.locator(".back").click();
+const aff0 = await ia<number>("window.__ia.game.state.relations['npc.bai_lingshuang'].affinity");
+await page.locator(".npc-act", { hasText: "Gift" }).click();
+await page.waitForSelector(".gift-grid");
+await shot("gift-picker");
+await page.locator(".sheet .btn.gold", { hasText: "Give Gift" }).click();
+check(await ia<number>("window.__ia.game.state.relations['npc.bai_lingshuang'].affinity") > aff0, "a gift raises affinity");
+await page.locator(".npc-act", { hasText: /Ask/ }).click();
+await shot("npc-ask");
+await page.locator(".setrow", { hasText: "The Frost Sword" }).click();
+await page.locator(".npc-act", { hasText: "Duel" }).click();
+await page.waitForSelector(".spar-vs");
+await shot("spar-card");
+await page.locator(".modal .btn", { hasText: "Not now" }).click();
+// Merchant
+await openLoc("Merchant Pavilion");
+await page.locator(".setrow", { hasText: "Merchant" }).last().click();
+await page.waitForSelector(".shop-grid");
+await shot("merchant-pavilion");
+const stones0 = await ia<number>("window.__ia.game.state.resources.spirit_stones");
+await page.locator(".goods").first().click();
+await page.locator(".sheet .btn.gold").click();
+check(await ia<number>("window.__ia.game.state.resources.spirit_stones") < stones0, "buying spends spirit stones");
+await page.locator(".seg button", { hasText: "Sell" }).click();
+await shot("merchant-sell");
+// Scripture Pavilion
+await openLoc("Scripture Pavilion");
+await page.locator(".setrow", { hasText: "Scripture stacks" }).last().click();
+await page.waitForSelector(".shop-grid");
+await shot("scripture-pavilion");
+// Spirit Forge
+await openLoc("Spirit Forge");
+await page.locator(".setrow", { hasText: "Spirit forge" }).last().click();
+await page.waitForSelector(".forge-tabs");
+await shot("forge-enhance");
+await page.locator(".cta", { hasText: "Enhance" }).click();
+check(await ia<number>("Math.max(...Object.values(window.__ia.game.state.inventory.gear).map(g => g.enhance))") >= 1, "enhancing raises a piece to +1");
+for (const t of ["Refine", "Reforge", "Craft"]) { await page.locator(".ftab", { hasText: t }).click(); await shot(`forge-${t.toLowerCase()}`); }
+// Alchemy
+await openLoc("Alchemy Hall");
+await page.locator(".setrow", { hasText: "Alchemy furnace" }).last().click();
+await page.waitForSelector(".alch-ring");
+await shot("alchemy-hall");
+await page.locator(".cta", { hasText: "Refine" }).click();
+await page.waitForSelector(".modal", { timeout: 3000 });
+await shot("alchemy-result");
+check(await ia<number>("window.__ia.game.state.progress.crafting.proficiency") > 0, "refining pills grows proficiency");
+await page.locator(".modal .btn", { hasText: "Continue" }).click();
+// Arena
+await openLoc("Proving Arena");
+await page.locator(".setrow", { hasText: "Tournaments" }).last().click();
+await page.waitForSelector(".bracket");
+await shot("arena-bracket");
+// Quest log + achievements
+await page.locator(".nav button", { hasText: "Cultivate" }).click();
+await page.locator(".cult-tile", { hasText: "Quests" }).click();
+await page.waitForSelector('[data-screen="quests"]');
+await shot("quest-log");
+await page.locator(".btn", { hasText: "Achievements" }).click();
+await shot("achievements");
+await page.locator(".nav button", { hasText: "Cultivate" }).click();   // same tab again: back to the tab root
+// Techniques + auto-battle
+await page.locator(".nav button", { hasText: "Character" }).click();
+await page.locator(".nav button", { hasText: "Character" }).click();
+await page.locator(".btn", { hasText: "Techniques" }).click();
+await page.waitForSelector('[data-screen="techniques"]');
+await shot("techniques");
+await page.locator(".subbar .btn", { hasText: "Auto-battle" }).click();
+await page.locator(".rule-main").nth(1).click();
+await shot("auto-battle");
+await page.locator(".rule-edit .chip", { hasText: "My HP below" }).click();
+check(await ia<string>("window.__ia.game.state.combat.presets[0].rules[1].when") === "hp_below", "auto-battle rule condition edits the preset");
+await page.locator(".nav button", { hasText: "Character" }).click();
+
 // adventure → region map → first battle (auto), victory panel, then a manual turn
 await page.locator(".nav button", { hasText: "Adventure" }).click();
 await shot("adventure");

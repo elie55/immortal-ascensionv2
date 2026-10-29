@@ -97,7 +97,7 @@ export class Encounter {
       opts.surviveRounds = t.waves.length * c.combat.tribulation.turns_per_wave;
       opts.hazard = { name: "Heavenly Lightning", source: 0, turnsPerWave: c.combat.tribulation.turns_per_wave, waves: t.waves.map((w) => ({ element: w.element, power: c.combat.tribulation.bolt_power * w.dmg_mult, bolts: w.bolts })) };
     } else if (src.kind === "event") { const n = c.get<MapNode>(src.node); this.waves = [src.enemies]; this.name = n.name; this.bg = c.art(n.region, "battle_bg"); }
-    else if (src.kind === "tournament") { const t = c.get<Tournament>(src.id); this.waves = t.rounds.map((r) => [r.opponent]); this.name = t.name; this.bg = c.art("sectloc.proving_arena", "background") ?? c.art("sectloc.sword_grounds", "background"); }
+    else if (src.kind === "tournament") { const t = c.get<Tournament>(src.id); const r = s.progress.tournaments[t.id]?.round ?? 0; this.waves = [[t.rounds[r]!.opponent]]; this.name = `${t.name} · ${r + 1 === t.rounds.length ? "Final" : `Round ${r + 1}`}`; this.bg = c.art("sectloc.proving_arena", "background") ?? c.art("sectloc.sword_grounds", "background"); }
     else { const n = c.get<Npc>(src.npc); this.waves = [[src.npc]]; this.name = `Spar: ${n.name}`; this.bg = c.art("sectloc.sword_grounds", "background"); }
     this.opts = opts;
   }
@@ -109,7 +109,7 @@ export class Encounter {
     if (can.energy) { const sp = spendEnergy(s, c, now, can.energy); if (!sp.ok) return sp; }
     if (src.kind === "dungeon") s.daily.counters[`dungeon:${src.id}`] = (s.daily.counters[`dungeon:${src.id}`] ?? 0) + 1;
     if (src.kind === "tribulation") { const p = (s.progress.tribulations[src.id] ??= { attempts: 0 }); p.attempts++; }
-    if (src.kind === "tournament") { s.daily.counters[`tournament:${src.id}`] = 1; const p = (s.progress.tournaments[src.id] ??= { round: 0, wins: 0 }); p.lastAt = now; }
+    if (src.kind === "tournament") { const p = (s.progress.tournaments[src.id] ??= { round: 0, wins: 0 }); p.lastAt = now; }
     const e = new Encounter(s, c, src);
     e.nextWave();
     return { ok: true, encounter: e };
@@ -124,7 +124,7 @@ export class Encounter {
     const beast = buildBeast(this.s, this.c);
     if (beast) units.push(beast);
     for (const id of this.waves[this.wave]!) {
-      if (id.startsWith("npc.")) units.push(buildDuelist(this.c, id, this.src.kind === "tournament" ? this.c.get<Tournament>(this.src.id).rounds[this.wave]!.cp : (this.src as any).cp));
+      if (id.startsWith("npc.")) units.push(buildDuelist(this.c, id, this.src.kind === "tournament" ? this.c.get<Tournament>(this.src.id).rounds[this.s.progress.tournaments[this.src.id]?.round ?? 0]!.cp : (this.src as any).cp));
       else units.push(buildEnemy(this.c, id, { hpMult: this.opts.enemyHpMult }));
     }
     const opts = { ...this.opts };
@@ -149,18 +149,10 @@ export class Encounter {
         if (def?.loot) merged = mergeDrops(merged, rollTable(this.s, this.c, def.loot));
         this.events.push({ type: "enemy_defeated", id, boss: id.startsWith("boss.") });
       }
-      if (this.src.kind === "tournament") {
-        // Each round is a fresh bout at full strength; round rewards are paid as you advance.
-        const t = this.c.get<Tournament>(this.src.id);
-        const p = this.s.progress.tournaments[t.id]!;
-        p.round = Math.max(p.round, this.wave + 1);
-        grantRewards(this.s, this.c, t.rounds[this.wave]!.rewards as any, this.events);
-        this.events.push({ type: "tournament_round", tournament: t.id, round: this.wave + 1, won: true });
-      }
       if (this.src.kind === "dungeon") { const d = this.c.get<Dungeon>(this.src.id); if (d.rewards.per_wave) merged = mergeDrops(merged, rollTable(this.s, this.c, d.rewards.per_wave)); }
       gearUids = grantDrops(this.s, this.c, merged, this.events).gearUids;
       Object.assign(drops, merged);
-      this.carry = this.src.kind === "tournament" ? {} : { hp: sum.playerHp, sp: sum.playerSp, ult: sum.playerUlt };
+      this.carry = { hp: sum.playerHp, sp: sum.playerSp, ult: sum.playerUlt };
     }
     const wr = { summary: sum, drops, gearUids };
     this.results.push(wr);
@@ -219,12 +211,20 @@ export class Encounter {
         masteryXp += (npc.duel!.win as any).mastery_xp ?? 0;
         this.events.push({ type: "duel_won", npc: npc.id });
       } else if (this.src.kind === "tournament") {
+        // One round per entry; the bracket position is saved between bouts.
         const t = c.get<Tournament>(this.src.id);
         const p = s.progress.tournaments[t.id]!;
-        p.wins++;
-        s.progress.trialsCleared[t.id] = now;
-        grantRewards(s, c, t.champion_rewards as any, this.events);
-        this.events.push({ type: "tournament_won", tournament: t.id });
+        grantRewards(s, c, t.rounds[p.round]!.rewards as any, this.events);
+        p.round++;
+        const best = `tournament_best:${t.id}`;
+        s.progress.counters[best] = Math.max(s.progress.counters[best] ?? 0, p.round);
+        this.events.push({ type: "tournament_round", tournament: t.id, round: p.round, won: true });
+        if (p.round >= t.rounds.length) {
+          p.wins++; p.round = 0;
+          s.progress.trialsCleared[t.id] = now;
+          grantRewards(s, c, t.champion_rewards as any, this.events);
+          this.events.push({ type: "tournament_won", tournament: t.id });
+        }
       }
       if (masteryXp > 0) {
         addMasteryXp(s, c, s.character.method, Math.round(masteryXp * c.combat.mastery.method_share), this.events);
@@ -246,8 +246,10 @@ export class Encounter {
         grantRewards(s, c, npc.duel!.lose as any, this.events);
       } else if (this.src.kind === "tournament") {
         const t = c.get<Tournament>(this.src.id);
+        const p = s.progress.tournaments[t.id]!;
+        this.events.push({ type: "tournament_round", tournament: t.id, round: p.round + 1, won: false });
+        p.round = 0;
         if (t.loss.sect_fame) grantRewards(s, c, { sect_fame: t.loss.sect_fame }, this.events);
-        this.events.push({ type: "tournament_round", tournament: t.id, round: this.wave + 1, won: false });
       }
       s.progress.counters.battles_lost = (s.progress.counters.battles_lost ?? 0) + 1;
       this.events.push({ type: "battle_lost", source: srcId(this.src) });
@@ -262,15 +264,18 @@ export class Encounter {
 
 const srcId = (src: EncounterSource) => src.kind === "duel" ? src.npc : src.kind === "event" ? src.node : src.id;
 
-/** Tournaments: entry requirements, one attempt per day, no re-entry once won unless repeatable (then fame gate). */
+/**
+ * Tournaments are fought one round per entry; the bracket position is saved. Losing a round resets the run
+ * and costs fame; starting a new run needs the entry requirements and, after the first attempt, the re-entry fame.
+ */
 export function canEnterTournament(s: GameState, c: ContentIndex, id: string, _now: number): Result<{ energy: number }> {
   const t = c.get<Tournament>(id);
+  const p = s.progress.tournaments[id];
+  if (p && p.round > 0) return { ok: true, energy: 0 };          // continuing a run
+  if (s.progress.trialsCleared[id] && !t.repeatable) return { ok: false, reason: "You are already champion" };
   const u = checkUnlock(s, c, t.entry as any);
   if (!u.ok) return { ok: false, reason: u.reasons[0]! };
-  const won = !!s.progress.trialsCleared[id];
-  if (won && !t.repeatable) return { ok: false, reason: "You are already champion" };
-  if (won && s.resources.sect_fame < t.reentry.sect_fame_required) return { ok: false, reason: `Re-entry needs ${t.reentry.sect_fame_required.toLocaleString("en-US")} Fame` };
-  if (s.daily.counters[`tournament:${id}`]) return { ok: false, reason: "One attempt per day" };
+  if (p?.lastAt && s.resources.sect_fame < t.reentry.sect_fame_required) return { ok: false, reason: `Re-entry needs ${t.reentry.sect_fame_required.toLocaleString("en-US")} Fame` };
   return { ok: true, energy: 0 };
 }
 

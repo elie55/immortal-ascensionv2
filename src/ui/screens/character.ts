@@ -10,6 +10,7 @@ import { computeStats } from "../../engine/stats.ts";
 import { EQUIP_SLOTS, type EquipSlot } from "../../engine/inventory.ts";
 import { slotOpen } from "../../engine/unlock.ts";
 import { gearTile, gearDetail, gearName, gearCp } from "./items.ts";
+import { techniquesScreen, autoBattleScreen } from "./techniques.ts";
 
 const SLOT_LABEL: Record<EquipSlot, string> = { weapon: "Weapon", armor: "Armor", helmet: "Helmet", boots: "Boots", necklace: "Necklace", ring_1: "Ring 1", ring_2: "Ring 2", artifact: "Spiritual Artifact" };
 const LEFT: EquipSlot[] = ["weapon", "armor", "helmet", "boots"];
@@ -41,6 +42,9 @@ export function characterScreen(app: App) {
       h("div", { class: "char-figure", style: { backgroundImage: app.img(c.artAny(s.character.npc, "full_body")) } }, h("div", { class: "char-aura" })),
       h("div", { class: "eq-col" }, RIGHT.map(slot))),
     h("div", { class: "cp-banner" }, icon("sword", 16), h("span", { class: "cp-lbl" }, "Combat Power"), h("span", { class: "cp-val" }, fmt.int(stats.cp))),
+    h("div", { class: "grid-2" },
+      h("button", { class: "btn", onClick: () => app.router.push(techniquesScreen(app, "Character")) }, icon("scroll", 15), "Techniques"),
+      h("button", { class: "btn", onClick: () => app.router.push(autoBattleScreen(app, "Character")) }, icon("auto", 15), "Auto-battle")),
     section("Attributes", h("button", { class: "tag", onClick: () => statsSheet(app, null) }, "Tap a stat for details"),
       h("div", { class: "attr-grid" }, CORE.map((k) => h("button", { class: "attr", onClick: () => statsSheet(app, k) },
         h("span", { class: "attr-ico", style: { background: ATTR_COLOR[k] } }, icon(ATTR_INFO[k]!.icon, 13)),

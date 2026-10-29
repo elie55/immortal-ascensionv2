@@ -3,6 +3,8 @@
  * Breakthrough button, the method panel with the Qi bar and rate, and shortcut tiles.
  */
 import { h, fmt } from "../core/dom.ts";
+import { alchemyScreen } from "./alchemy.ts";
+import { questLogScreen } from "./quests.ts";
 import { icon } from "../core/icons.ts";
 import { header, bar, section } from "../core/kit.ts";
 import type { App } from "../../app.ts";
@@ -58,9 +60,9 @@ export function cultivateScreen(app: App) {
         h("span", null, prog >= 1 ? (final && !ready ? "✦ Bottleneck: complete the requirements" : "✦ Bottleneck reached — Qi is full") : `${fmt.pct(prog * 100, 1)} of this stage`),
         h("span", null, final ? (next ? `Next: ${next.name}` : "Summit reached") : `Next: Stage ${s.character.stage + 1} · ${fmt.compact(c.get<any>(realm.id).qi.base * Math.pow(realm.qi.stage_growth, s.character.stage))} Qi`))),
     h("div", { class: "grid-4 cult-tiles" },
-      shortcut(app, "cauldron", "Alchemy", 0, () => app.router.toast("The Alchemy Hall opens with the sect systems")),
+      shortcut(app, "cauldron", "Alchemy", 0, () => app.router.push(alchemyScreen(app, "Cultivate"))),
       shortcut(app, "paw", "Spirit Beasts", Object.keys(s.inventory.stacks).filter((k) => k.startsWith("egg.")).length, () => app.router.toast("Spirit beasts arrive with the companion systems")),
-      shortcut(app, "scroll", "Quests", 0, () => app.router.toast("The quest log arrives with the quest systems")),
+      shortcut(app, "scroll", "Quests", app.readyQuests(), () => app.router.push(questLogScreen(app, "Cultivate"))),
       shortcut(app, "gear", "Settings", 0, () => app.router.push(settingsScreen(app, "Cultivate")))),
   ];
 }

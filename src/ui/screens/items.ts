@@ -1,5 +1,6 @@
 /** Item presentation shared by Inventory and Character: tiles, names, stat lines, detail panel, compare. */
 import { h, fmt } from "../core/dom.ts";
+import { readBook, studyBlueprint } from "../../engine/crafting.ts";
 import { icon, SLOT_ICON } from "../core/icons.ts";
 import { tile, attrLabel, attrValue, RARITY_LABEL } from "../core/kit.ts";
 import type { App } from "../../app.ts";
@@ -107,7 +108,9 @@ export function stackDetail(app: App, id: string, opts: { onChange?: () => void 
       h("button", { class: "btn ghost", disabled: def.sell_value === undefined || prefix === "qitem", onClick: () => run(() => app.game.run("sell", app.now(), (st, ct) => sellItem(st, ct, id, 1)), `Sold 1 ${def.name}`) }, "Sell 1"),
       usable
         ? h("button", { class: "btn gold", onClick: () => run(() => app.game.run("use", app.now(), (st, ct) => useConsumable(st, ct, { now: app.now() }, id)), `Used ${def.name}`) }, "Use")
-        : h("button", { class: "btn", disabled: true }, prefix === "gift" ? "Give at the Sect" : prefix === "egg" ? "Hatch at the Garden" : prefix === "mat" ? "For crafting" : "Keep")));
+        : prefix === "book" ? h("button", { class: "btn gold", onClick: () => run(() => app.game.run("read", app.now(), (st, ct) => readBook(st, ct, id)), `Learned ${c.get<any>(def.teaches).name}`) }, "Read")
+        : prefix === "blueprint" ? h("button", { class: "btn gold", onClick: () => run(() => app.game.run("study", app.now(), (st, ct) => studyBlueprint(st, ct, id)), "Recipe learned") }, "Study")
+        : h("button", { class: "btn", disabled: true }, prefix === "gift" ? "Give to someone" : prefix === "egg" ? "Hatch at the Garden" : prefix === "mat" ? "For crafting" : "Keep")));
 }
 
 function compareSheet(app: App, a: number, b: number) {

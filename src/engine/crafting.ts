@@ -251,3 +251,15 @@ export function upgradeFurnace(s: GameState, c: ContentIndex): ActionResult<{ gr
 }
 
 export { affinityLevel, checkUnlock };
+
+/** Reading a manual consumes it and teaches its technique or method. */
+export function readBook(s: GameState, c: ContentIndex, id: string): ActionResult<{ teaches: string }> {
+  const b = c.get<any>(id);
+  if (itemCount(s, id) < 1) return fail("You do not have this manual");
+  const t: string = b.teaches;
+  const known = t.startsWith("method.") ? s.character.methodMastery[t] !== undefined : s.techniques.known[t] !== undefined;
+  if (known) return fail("You already know this");
+  removeItems(s, [{ id, qty: 1 }]);
+  if (t.startsWith("method.")) s.character.methodMastery[t] = 0; else s.techniques.known[t] = 0;
+  return { ok: true, events: [{ type: "item_used", id, qty: 1 }, { type: "unlock", id: t }], teaches: t };
+}

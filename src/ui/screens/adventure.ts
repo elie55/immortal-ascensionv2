@@ -3,6 +3,8 @@
  * and node interaction sheets (mockup "node_interactions"). Battles open the battle screen.
  */
 import { h, fmt } from "../core/dom.ts";
+import { visit } from "../../engine/progression.ts";
+import { shopScreen } from "./shop.ts";
 import { icon } from "../core/icons.ts";
 import { header, subbar, section, bar } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
@@ -38,7 +40,7 @@ export function adventureScreen(app: App) {
       const u = checkUnlock(s, c, r.unlock as any);
       const prog = regionProgress(s, c, r.id);
       const cleared = prog.cleared === prog.total && prog.total > 0;
-      return h("button", { class: ["region-card glass", !open && "locked"], onClick: () => open ? app.router.push(regionScreen(app, r.id)) : app.router.toast(u.reasons[0] ?? "Locked") },
+      return h("button", { class: ["region-card glass", !open && "locked"], onClick: () => { if (!open) { app.router.toast(u.reasons[0] ?? "Locked"); return; } app.game.run("visit", app.now(), (st) => visit(st, r.id), false); app.router.push(regionScreen(app, r.id)); } },
         h("div", { class: "rc-art", style: { backgroundImage: app.img(c.art(r.id, "card")) } }, h("span", { class: "rc-num" }, ROMAN[r.order - 1]), !open && h("span", { class: "rc-lock" }, icon("lock", 18)),
           open && h("span", { class: ["rc-state", cleared && "done"] }, cleared ? "Cleared" : s.character.location?.startsWith(`node.${r.id.split(".")[1]}.`) ? "You are here" : `${prog.cleared}/${prog.total}`)),
         h("div", { class: "rc-body" },
@@ -162,7 +164,7 @@ function nodeCard(app: App, n: MapNode, refresh: () => void) {
   } else if (n.kind === "secret_realm") {
     const d = c.get<Dungeon>(n.secret_realm!);
     body.push(h("div", { class: "muted", style: { margin: "6px 0" } }, d.description), h("button", { class: "btn block", disabled: true }, "Secret realms open with the dungeon update"));
-  } else if (n.kind === "merchant") body.push(h("button", { class: "btn block", disabled: true }, "Merchant arrives with the shop update"));
+  } else if (n.kind === "merchant" && (n as any).shop) body.push(h("button", { class: "btn gold block", onClick: () => { app.game.run("visit", app.now(), (st) => visit(st, n.id), false); app.router.push(shopScreen(app, (n as any).shop, c.get<any>(n.region).name)); } }, icon("gem", 14), "Trade"));
   else if (n.kind === "story") body.push(h("button", { class: "btn gold block", onClick: () => app.playStory(n.story!, () => { app.game.run("story node", app.now(), (st2) => { const rec2 = (st2.progress.regions[n.region]!.nodes[n.id] ??= { clears: 0 }); if (!rec2.clears) { rec2.clears = 1; } return { ok: true, events: [{ type: "node_cleared", node: n.id, region: n.region, first: true }] }; }); refresh(); }) }, "Play scene"));
   return h("div", { class: "glass panel gold node-card" }, ...body);
 }

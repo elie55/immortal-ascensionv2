@@ -96,3 +96,32 @@ export function attrValue(k: string, v: number): string {
   const pct = ATTR_INFO[k]?.pct || k.startsWith("elem_");
   return pct ? `${fmt.num(v, 1)}%` : fmt.int(v);
 }
+
+/** Round portrait of an NPC (or an icon fallback). */
+export function npcAvatar(app: App, id: string | undefined, size = 40) {
+  const art = id ? app.content.artAny(id, "portrait", "full_body") : undefined;
+  return h("span", { class: "avatar", style: { width: `${size}px`, height: `${size}px`, backgroundImage: art ? app.img(art) : undefined } }, !art && icon(id?.startsWith("sectloc.") ? "temple" : "person", Math.round(size * 0.5)));
+}
+
+/** "−/qty/+" stepper. */
+export function stepper(value: number, min: number, max: number, onChange: (v: number) => void) {
+  return h("div", { class: "stepper" },
+    h("button", { class: "icon-btn", disabled: value <= min, onClick: () => onChange(Math.max(min, value - 1)), "aria-label": "less" }, "−"),
+    h("b", { class: "tnum" }, String(value)),
+    h("button", { class: "icon-btn", disabled: value >= max, onClick: () => onChange(Math.min(max, value + 1)), "aria-label": "more" }, "+"));
+}
+
+/** Material requirement row: tile name, have/need (red when short). */
+export function needRow(app: App, id: string, need: number, have: number) {
+  const def = app.content.find<any>(id);
+  const art = app.content.art(id, "icon");
+  return h("div", { class: ["need", have < need && "short"] },
+    h("span", { class: ["tile-mini", `r-${def?.rarity ?? "common"}`], style: { backgroundImage: art ? app.img(art) : undefined } }, !art && icon("sparkle", 14)),
+    h("span", { class: "grow" }, def?.name ?? id),
+    h("b", { class: "tnum" }, `${fmt.int(have)} / ${fmt.int(need)}`));
+}
+
+/** Primary call-to-action button (gold), with an optional second line. */
+export function cta(label: string, sub: string | null, onClick: () => void, opts: { disabled?: boolean; cls?: string } = {}) {
+  return h("button", { class: ["btn gold cta", opts.cls], disabled: !!opts.disabled, onClick }, h("span", { class: "cta-l" }, label), sub && h("span", { class: "cta-s" }, sub));
+}

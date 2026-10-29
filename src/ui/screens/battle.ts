@@ -246,3 +246,12 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   return { id: "battle", nav: false, bg: () => enc.bg, render: () => root, onLeave: () => { playing = false; if (timer) clearTimeout(timer); } };
 }
 
+
+/** Start an encounter and open the battle screen; toasts the reason when it cannot start. */
+export function startEncounter(app: App, src: Parameters<typeof EncounterCls.start>[2], onDone?: () => void): boolean {
+  const r = EncounterCls.start(app.game.state, app.content, src, app.now());
+  if (!r.ok) { app.router.toast(r.reason, "bad"); return false; }
+  app.game.dirtyImportant = true;
+  app.router.pushGlobal(battleScreen(app, r.encounter, () => { app.router.popGlobal(); onDone?.(); app.router.refresh(); }));
+  return true;
+}
