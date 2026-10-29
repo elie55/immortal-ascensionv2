@@ -613,5 +613,301 @@
     ],
     "sect_fame": 300,
     "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.granary_clear_t2",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "gift.spirit_stone_pouch",
+        "chance": 0.345,
+        "qty": [
+          2,
+          2
+        ]
+      },
+      {
+        "id": "cons.qi_gathering_pill",
+        "chance": 0.575,
+        "qty": [
+          2,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "qty": 3
+      }
+    ],
+    "spirit_stones": [
+      320,
+      480
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.granary_clear_t3",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "gift.spirit_stone_pouch",
+        "chance": 0.397,
+        "qty": [
+          2,
+          2
+        ]
+      },
+      {
+        "id": "cons.qi_gathering_pill",
+        "chance": 0.661,
+        "qty": [
+          2,
+          4
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "qty": 4
+      }
+    ],
+    "spirit_stones": [
+      512,
+      768
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.granary_clear_t4",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "gift.spirit_stone_pouch",
+        "chance": 0.456,
+        "qty": [
+          2,
+          2
+        ]
+      },
+      {
+        "id": "cons.qi_gathering_pill",
+        "chance": 0.76,
+        "qty": [
+          2,
+          5
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "qty": 5
+      }
+    ],
+    "spirit_stones": [
+      819,
+      1229
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.granary_clear_t5",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "gift.spirit_stone_pouch",
+        "chance": 0.525,
+        "qty": [
+          3,
+          3
+        ]
+      },
+      {
+        "id": "cons.qi_gathering_pill",
+        "chance": 0.875,
+        "qty": [
+          3,
+          6
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.lesser_enhancement_stone",
+        "qty": 6
+      }
+    ],
+    "spirit_stones": [
+      1311,
+      1966
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.mine_clear_t2",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.575,
+        "qty": [
+          2,
+          2
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.345,
+        "qty": [
+          2,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.reforging_sand",
+        "qty": 3
+      },
+      {
+        "id": "mat.spirit_iron_ore",
+        "qty": 4
+      }
+    ],
+    "spirit_stones": [
+      480,
+      720
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.mine_clear_t3",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.661,
+        "qty": [
+          2,
+          2
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.397,
+        "qty": [
+          2,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.reforging_sand",
+        "qty": 4
+      },
+      {
+        "id": "mat.spirit_iron_ore",
+        "qty": 6
+      }
+    ],
+    "spirit_stones": [
+      768,
+      1152
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.mine_clear_t4",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.76,
+        "qty": [
+          2,
+          2
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.456,
+        "qty": [
+          2,
+          2
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.reforging_sand",
+        "qty": 5
+      },
+      {
+        "id": "mat.spirit_iron_ore",
+        "qty": 8
+      }
+    ],
+    "spirit_stones": [
+      1229,
+      1843
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.mine_clear_t5",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.875,
+        "qty": [
+          3,
+          3
+        ]
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "chance": 0.525,
+        "qty": [
+          3,
+          3
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.reforging_sand",
+        "qty": 6
+      },
+      {
+        "id": "mat.spirit_iron_ore",
+        "qty": 9
+      }
+    ],
+    "spirit_stones": [
+      1966,
+      2949
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
   }
 ]

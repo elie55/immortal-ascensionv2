@@ -78,6 +78,9 @@ def loot():
           gear=[GB("dragon_abyss_sword", 0.02, divine=1), GB("demonbane_fan", 0.05, immortal=1), GB("ninefold_hairpin_crown", 0.05, immortal=1), GP(1.0, ["sect"], legendary=100)]),
         L("loot.tribulation.core_formation", [E("mat.dao_insight_crystal", 0.3)], (3000, 5000), [q("mat.spirit_enhancing_stone", 5)], fame=300),
     ]
+    # resource dungeon tiers II–V reuse the tier-I clear table with scaled numbers (see common.tier_loot)
+    for base_id in ["loot.dungeon.granary_clear", "loot.dungeon.mine_clear"]:
+        places += tier_loots(next(x for x in places if x["id"] == base_id))
     return enemies, bosses, places
 
 # ---------------- Recipes ----------------

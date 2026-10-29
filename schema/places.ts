@@ -110,6 +110,17 @@ export const Dungeon = Named.extend({
     clear: ref("loot"),
     first_clear: Rewards.default({}),
   }),
+  /**
+   * resource: difficulty tiers I–V. Tier 1 is the dungeon itself (entry, rec_cp, rewards); tier k needs its realm and
+   * tier k−1 cleared once, scales enemy hp/atk/def/sp_power by stat_mult and uses its own clear table. The daily
+   * limit is shared across tiers.
+   */
+  tiers: z.array(z.object({
+    tier: z.number().int().min(1), name: z.string().min(1),
+    realm: z.object({ id: ref("realm"), stage: z.number().int().min(1).max(9) }),
+    stat_mult: z.number().positive(), rec_cp: z.number().int().positive(),
+    rewards: z.object({ clear: ref("loot"), first_clear: Rewards.default({}) }),
+  })).optional(),
   checkpoints: z.boolean().default(false),
   persistent_hp: z.boolean().default(true),
   art: artBlock(["card", "battle_bg"]),
@@ -119,6 +130,10 @@ export const Dungeon = Named.extend({
   else if (d.kind === "secret_realm") { need(!!d.realm_nodes, "secret realm needs realm_nodes"); need(!!(d.art as Record<string, unknown>).map, "secret realm needs art.map"); }
   else need(!!d.waves && d.waves.length > 0, `${d.kind} dungeon needs waves`);
   if (d.kind === "mega") need(d.entry.party.companions_allowed, "mega dungeon must allow companions");
+  if (d.kind === "resource") {
+    need(!!d.tiers && d.tiers.length >= 2, "resource dungeon needs difficulty tiers");
+    if (d.tiers) { d.tiers.forEach((t, i) => { need(t.tier === i + 1, `tiers must be numbered 1..n (got ${t.tier} at ${i})`); if (i > 0) need(t.stat_mult > d.tiers![i - 1]!.stat_mult && t.rec_cp > d.tiers![i - 1]!.rec_cp, `tier ${t.tier} must be harder than tier ${i}`); }); need(d.tiers[0]!.stat_mult === 1 && d.tiers[0]!.rewards.clear === d.rewards.clear, "tier I is the dungeon itself"); }
+  } else need(!d.tiers, "only resource dungeons have tiers");
   if (d.realm_nodes) {
     const keys = new Set(d.realm_nodes.map((n) => n.key));
     for (const n of d.realm_nodes) for (const c of n.connections) if (!keys.has(c)) ctx.addIssue({ code: "custom", message: `realm node ${n.key} connects to unknown ${c}` });

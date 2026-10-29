@@ -33,7 +33,7 @@ export function beastsScreen(app: App, backTo: string): Screen {
       const found = beastsFound(s);
       return [
         header(app),
-        subbar({ title: "Spirit Beasts", cn: "灵兽", sub: `Companions · ${s.beasts.active !== null ? "1 fights beside you" : "none active"}`, backTo, onBack: () => app.router.back(),
+        subbar({ help: { app, key: "beasts" }, title: "Spirit Beasts", cn: "灵兽", sub: `Companions · ${s.beasts.active !== null ? "1 fights beside you" : "none active"}`, backTo, onBack: () => app.router.back(),
           end: h("div", { class: "found" }, h("div", { class: "muted" }, "Found"), h("b", { class: "gold-t" }, `${found.size} / ${all.length}`)) }),
         b ? activeCard(app, b) : h("div", { class: "glass panel center" }, icon("paw", 26), h("div", { class: "lbl", style: { marginTop: "6px" } }, "No spirit beast yet"), h("div", { class: "muted" }, "Place an egg in an incubator below. Eggs hatch from battles you win.")),
         b && evolutionTrack(app, b),

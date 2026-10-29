@@ -158,3 +158,19 @@ test("export/import moves a slot through text", async () => {
   assert.ok(r.ok && r.state.character.name === "Exported");
   assert.ok(!(await m2.importSlot(1, "junk", T0)).ok);
 });
+
+test("v5 saves migrate: depot, pouch, expansions, tracked quest and hints are added", () => {
+  const s = newGameState(testContent(), T0, { seed: 1 });
+  const raw = JSON.parse(encode(s, 0, T0));
+  raw.v = 5; raw.state.meta.version = 5;
+  delete raw.state.inventory.depot; delete raw.state.inventory.pouch; delete raw.state.inventory.bagExpansions; delete raw.state.inventory.depotExpansions;
+  delete raw.state.progress.quests.tracked; delete raw.state.progress.hintsSeen;
+  raw.checksum = fnv1a(canonical(raw.state));
+  const r = decode(JSON.stringify(raw));
+  assert.ok(r.ok, (r as any).reason);
+  assert.deepEqual(r.state.inventory.depot, { stacks: {}, gear: [] });
+  assert.deepEqual(r.state.inventory.pouch, { stacks: {}, gear: [] });
+  assert.equal(r.state.inventory.bagExpansions, 0);
+  assert.equal(r.state.progress.quests.tracked, null);
+  assert.deepEqual(r.state.progress.hintsSeen, []);
+});

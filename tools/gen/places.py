@@ -57,6 +57,7 @@ def nodes():
 def dungeons():
     D = lambda key, name, cn, kind, desc, cp, entry, rewards, scene, **kw: {
         "id": f"dungeon.{key}", **named(name, desc, cn), "kind": kind, "entry": entry, "rec_cp": cp, "modifiers": [], "rewards": rewards, "checkpoints": kind in ("tower", "mega"), "persistent_hp": True, **kw,
+        **({"tiers": make_tiers(entry["realm"]["id"], entry["realm"]["stage"], cp, rewards["clear"], rewards.get("first_clear", {}))} if kind == "resource" else {}),
         "art": {"card": art(f"assets/dungeons/{key}_card.png", f"{STYLE}. Dungeon card illustration: {scene}. Wide painterly composition, no text.", (1024, 640), False, ["refs/mockups/dungeon_hub.png"]),
                 "battle_bg": bg(f"dungeons/{key}_battle_bg", f"battle backdrop inside {scene}", refs=["refs/mockups/battle_screen.png"]),
                 **({"map": art(f"assets/dungeons/{key}_map.png", f"{STYLE}. Top-down illustrated branching map of {scene}, floating platforms connected by light paths, no text, no icons.", (1080, 1620), False, ["refs/mockups/secret_realm_map.png"])} if kind == "secret_realm" else {})}}

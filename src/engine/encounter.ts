@@ -9,7 +9,7 @@ import type { GameState } from "./state.ts";
 import type { DomainEvent } from "./events.ts";
 import type { Result } from "./inventory.ts";
 import { energyNow, spendEnergy } from "./cultivation.ts";
-import { checkUnlock } from "./unlock.ts";
+import { checkUnlock, realmAtLeast } from "./unlock.ts";
 import { computeStats } from "./stats.ts";
 import { addMasteryXp, grantRewards } from "./actions.ts";
 import { rollTable, grantDrops, mergeDrops, type Drops } from "./loot.ts";
@@ -23,7 +23,7 @@ import type { Combatant, BattleOptions, BattleSummary, AutoRuleResolved } from "
 
 export type EncounterSource =
   | { kind: "node"; id: string }
-  | { kind: "dungeon"; id: string }
+  | { kind: "dungeon"; id: string; tier?: number }
   | { kind: "tribulation"; id: string }
   | { kind: "duel"; npc: string; cp?: number }
   | { kind: "tournament"; id: string }
@@ -38,6 +38,20 @@ export interface EncounterResult {
 }
 
 const emptyDrops = (): Drops => ({ items: [], gear: [], spirit_stones: 0, sect_fame: 0, mastery_xp: 0 });
+
+/** Highest tier of a resource dungeon cleared at least once (0 = none). */
+export function tierCleared(s: GameState, dungeonId: string, tier: number): boolean {
+  const rec = s.progress.dungeons[dungeonId];
+  return tier <= 1 ? (rec?.clears ?? 0) > 0 : (rec?.tierClears?.[tier] ?? 0) > 0;
+}
+/** Can tier `tier` (≥ 2) be entered: its realm reached and the tier below cleared once. */
+export function tierCheck(s: GameState, c: ContentIndex, d: Dungeon, tier: number): Result {
+  const t = d.tiers?.find((x) => x.tier === tier);
+  if (!t) return { ok: false, reason: "No such tier" };
+  if (!tierCleared(s, d.id, tier - 1)) return { ok: false, reason: `Clear tier ${d.tiers![tier - 2]!.name} first` };
+  if (!realmAtLeast(s, c, t.realm.id, t.realm.stage)) return { ok: false, reason: `Requires ${c.get<any>(t.realm.id).name}${t.realm.stage > 1 ? ` ${t.realm.stage}` : ""}` };
+  return { ok: true };
+}
 
 /** Can this encounter start now? Checks unlocks, energy, daily limits and cooldowns. */
 export function canStart(s: GameState, c: ContentIndex, src: EncounterSource, now: number): Result<{ energy: number }> {
@@ -55,6 +69,7 @@ export function canStart(s: GameState, c: ContentIndex, src: EncounterSource, no
     const u = checkUnlock(s, c, d.entry as any);
     if (!u.ok) return { ok: false, reason: u.reasons[0]! };
     if (d.kind === "tower" || d.kind === "secret_realm") return { ok: false, reason: "This dungeon type opens later" };
+    if (src.tier && src.tier > 1) { const t = tierCheck(s, c, d, src.tier); if (!t.ok) return t; }
     if (d.entry.daily_limit && (s.daily.counters[`dungeon:${d.id}`] ?? 0) >= d.entry.daily_limit) return { ok: false, reason: `Daily limit reached (${d.entry.daily_limit})` };
     if (energy < d.entry.energy_cost) return { ok: false, reason: `Needs ${d.entry.energy_cost} energy` };
     return { ok: true, energy: d.entry.energy_cost };
@@ -106,7 +121,10 @@ export class Encounter {
     const opts: BattleOptions = {};
     if (src.kind === "node") { const n = c.get<MapNode>(src.id); this.waves = n.waves!; this.name = n.name; this.bg = c.art(n.region, "battle_bg"); opts.isBossFight = n.kind === "boss"; }
     else if (src.kind === "dungeon") {
-      const d = c.get<Dungeon>(src.id); this.waves = d.waves!.map((w) => w.enemies); this.name = d.name; this.bg = c.art(d.id, "battle_bg");
+      const d = c.get<Dungeon>(src.id); this.waves = d.waves!.map((w) => w.enemies); this.bg = c.art(d.id, "battle_bg");
+      const tier = d.tiers?.find((t) => t.tier === (src.tier ?? 1));
+      this.name = tier && tier.tier > 1 ? `${d.name} · Tier ${tier.name}` : d.name;
+      if (tier) this.statMult = tier.stat_mult;
       for (const m of d.modifiers) { if (m.effect.enemy_dmg_mult) opts.enemyDmgMult = (opts.enemyDmgMult ?? 1) * m.effect.enemy_dmg_mult; if (m.effect.enemy_hp_mult) opts.enemyHpMult = (opts.enemyHpMult ?? 1) * m.effect.enemy_hp_mult; }
       opts.isBossFight = d.kind === "mega";
     } else if (src.kind === "tribulation") {
@@ -217,12 +235,16 @@ export class Encounter {
       } else if (this.src.kind === "dungeon") {
         const d = c.get<Dungeon>(this.src.id);
         const rec = (s.progress.dungeons[d.id] ??= { clears: 0 });
-        const first = rec.clears === 0;
+        const tierN = this.src.tier ?? 1;
+        const tier = tierN > 1 ? d.tiers?.find((t) => t.tier === tierN) : undefined;
+        const first = tier ? !(rec.tierClears?.[tierN]) : rec.clears === 0;
         rec.clears++;
-        const clear = rollTable(s, c, d.rewards.clear);
+        if (tier) { rec.tierClears ??= {}; rec.tierClears[tierN] = (rec.tierClears[tierN] ?? 0) + 1; }
+        const rewards = tier ? tier.rewards : d.rewards;
+        const clear = rollTable(s, c, rewards.clear);
         grantDrops(s, c, clear, this.events);
         Object.assign(total, mergeDrops(total, clear));
-        if (first) { rec.firstClearAt = now; firstClear = d.rewards.first_clear as any; grantRewards(s, c, d.rewards.first_clear as any, this.events); }
+        if (first) { if (!tier) rec.firstClearAt = now; firstClear = rewards.first_clear as any; grantRewards(s, c, rewards.first_clear as any, this.events); }
         s.progress.trialsCleared[d.id] = now;
         this.events.push({ type: "dungeon_cleared", dungeon: d.id, first });
       } else if (this.src.kind === "tribulation") {

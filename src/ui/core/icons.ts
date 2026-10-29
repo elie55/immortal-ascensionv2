@@ -12,6 +12,7 @@ const P: Record<string, string> = {
   back: '<path d="M15 5l-7 7 7 7"/>',
   chevron: '<path d="M9 5l7 7-7 7"/>',
   close: '<path d="M6 6l12 12M18 6 6 18"/>',
+  check: '<path d="M5 12l5 5L20 7"/>',
   plus: '<path d="M12 5v14M5 12h14"/>',
   play: '<path d="M8 5v14l11-7z" fill="currentColor"/>',
   save: '<path d="M5 3h11l3 3v15H5z"/><path d="M8 3v5h7V3"/><path d="M8 21v-7h8v7"/>',

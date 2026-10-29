@@ -7,7 +7,7 @@ import type { ContentIndex } from "../content/index.ts";
 import { seedRng } from "./rng.ts";
 import { grantGear } from "./inventory.ts";
 
-export const STATE_VERSION = 5;
+export const STATE_VERSION = 6;
 
 export const GearInstanceSchema = z.object({
   base: z.string(), rarity: z.string(), ilvl: z.number().int(), enhance: z.number().int().min(0).max(15),
@@ -81,10 +81,16 @@ export const GameStateSchema = z.object({
     energy: z.object({ value: z.number().min(0), updatedAt: z.number() }),
   }),
   inventory: z.object({
-    stacks: z.record(z.string(), z.number().int().min(0)),
-    gear: z.record(z.string(), GearInstanceSchema),            // uid (string key) → instance
+    stacks: z.record(z.string(), z.number().int().min(0)),     // bag stacks
+    gear: z.record(z.string(), GearInstanceSchema),            // uid (string key) → instance (bag, depot, pouch or worn)
     nextUid: z.number().int().min(1),
     lockedGear: z.array(z.number().int()),
+    /** Personal storage in Your Quarters: its own stacks; gear listed by uid (instances stay in `gear`). */
+    depot: z.object({ stacks: z.record(z.string(), z.number().int().min(0)), gear: z.array(z.number().int()) }),
+    /** Overflow pouch: what did not fit in the bag, claimable when there is room. */
+    pouch: z.object({ stacks: z.record(z.string(), z.number().int().min(0)), gear: z.array(z.number().int()) }),
+    bagExpansions: z.number().int().min(0),
+    depotExpansions: z.number().int().min(0),
   }),
   equipped: z.record(z.string(), z.number().int()),            // slot key → gear uid
   buffs: z.array(BuffSchema),
@@ -99,12 +105,15 @@ export const GameStateSchema = z.object({
       active: z.record(z.string(), z.object({ startedAt: z.number(), counters: z.array(z.number()) })),
       completed: z.record(z.string(), z.number()),              // quest id → completion count
       lastCompletedAt: z.record(z.string(), z.number()),        // for repeatable cooldowns
+      /** Quest pinned in the tracker HUD (null = none). */
+      tracked: z.string().nullable(),
     }),
     achievements: z.record(z.string(), z.number()),             // id → unlockedAt
     storySeen: z.record(z.string(), z.number()),
     storyChoices: z.record(z.string(), z.string()),
     regions: z.record(z.string(), z.object({ discoveredAt: z.number(), nodes: z.record(z.string(), z.object({ clears: z.number().int(), firstClearAt: z.number().optional(), revealed: z.boolean().optional(), lastAt: z.number().optional() })) })),
-    dungeons: z.record(z.string(), z.object({ clears: z.number().int(), firstClearAt: z.number().optional(), bestFloor: z.number().int().optional() })),
+    /** Per dungeon: clears, tower best floor, and for tiered resource dungeons the highest tier cleared (tierClears[t]). */
+    dungeons: z.record(z.string(), z.object({ clears: z.number().int(), firstClearAt: z.number().optional(), bestFloor: z.number().int().optional(), tierClears: z.record(z.string(), z.number().int()).optional() })),
     trialsCleared: z.record(z.string(), z.number()),            // boss/dungeon/tournament/tribulation id → at
     tournaments: z.record(z.string(), z.object({ round: z.number().int(), wins: z.number().int(), lastAt: z.number().optional() })),
     tribulations: z.record(z.string(), z.object({ attempts: z.number().int(), passedAt: z.number().optional(), nextTryAt: z.number().optional() })),
@@ -120,6 +129,8 @@ export const GameStateSchema = z.object({
     realmsEntered: z.array(z.string()),
     /** Unlocked features/places granted by story, ranks and realms (sectloc ids, feature keys). */
     unlocks: z.array(z.string()),
+    /** First-time screen hints already shown (hint keys). */
+    hintsSeen: z.array(z.string()),
   }),
   daily: z.object({ day: z.string(), counters: z.record(z.string(), z.number().int()) }),
   combat: z.object({
@@ -156,16 +167,16 @@ export function newGameState(content: ContentIndex, now: number, opts: { name?: 
     },
     techniques: { known: Object.fromEntries(s.techniques.map((t) => [t, 0])), actives: [s.techniques[0] ?? null, null, null, null], passives: [null, null], ultimate: null },
     resources: { spirit_stones: s.spirit_stones, sect_fame: s.sect_fame, contribution: 0, energy: { value: rules.energy.max, updatedAt: now } },
-    inventory: { stacks: {}, gear: {}, nextUid: 1, lockedGear: [] },
+    inventory: { stacks: {}, gear: {}, nextUid: 1, lockedGear: [], depot: { stacks: {}, gear: [] }, pouch: { stacks: {}, gear: [] }, bagExpansions: 0, depotExpansions: 0 },
     equipped: {},
     buffs: [],
     beasts: { owned: {}, active: null, incubating: [], nextUid: 1 },
     companions: { bonded: [], active: [] },
     relations: {},
     progress: {
-      quests: { active: {}, completed: {}, lastCompletedAt: {} }, achievements: {}, storySeen: {}, storyChoices: {},
+      quests: { active: {}, completed: {}, lastCompletedAt: {}, tracked: null }, achievements: {}, storySeen: {}, storyChoices: {},
       regions: { [s.region]: { discoveredAt: now, nodes: {} } }, dungeons: {}, trialsCleared: {}, tournaments: {}, tribulations: {},
-      recipes: [], crafting: { furnace: 1, proficiency: 0 }, realmRuns: {}, shopPurchases: {}, shopPeriods: {}, counters: {}, realmsEntered: [s.realm.id], unlocks: [],
+      recipes: [], crafting: { furnace: 1, proficiency: 0 }, realmRuns: {}, shopPurchases: {}, shopPeriods: {}, counters: {}, realmsEntered: [s.realm.id], unlocks: [], hintsSeen: [],
     },
     daily: { day: dayKey(now), counters: {} },
     combat: defaultCombat(content),

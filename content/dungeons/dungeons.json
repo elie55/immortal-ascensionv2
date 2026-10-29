@@ -45,6 +45,88 @@
         ]
       }
     ],
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "I",
+        "realm": {
+          "id": "realm.qi_condensation",
+          "stage": 2
+        },
+        "stat_mult": 1.0,
+        "rec_cp": 300,
+        "rewards": {
+          "clear": "loot.dungeon.granary_clear",
+          "first_clear": {
+            "spirit_stones": 300
+          }
+        }
+      },
+      {
+        "tier": 2,
+        "name": "II",
+        "realm": {
+          "id": "realm.foundation_establishment",
+          "stage": 1
+        },
+        "stat_mult": 1.5,
+        "rec_cp": 450,
+        "rewards": {
+          "clear": "loot.dungeon.granary_clear_t2",
+          "first_clear": {
+            "spirit_stones": 480
+          }
+        }
+      },
+      {
+        "tier": 3,
+        "name": "III",
+        "realm": {
+          "id": "realm.core_formation",
+          "stage": 1
+        },
+        "stat_mult": 2.25,
+        "rec_cp": 675,
+        "rewards": {
+          "clear": "loot.dungeon.granary_clear_t3",
+          "first_clear": {
+            "spirit_stones": 768
+          }
+        }
+      },
+      {
+        "tier": 4,
+        "name": "IV",
+        "realm": {
+          "id": "realm.nascent_soul",
+          "stage": 1
+        },
+        "stat_mult": 3.375,
+        "rec_cp": 1012,
+        "rewards": {
+          "clear": "loot.dungeon.granary_clear_t4",
+          "first_clear": {
+            "spirit_stones": 1229
+          }
+        }
+      },
+      {
+        "tier": 5,
+        "name": "V",
+        "realm": {
+          "id": "realm.soul_transformation",
+          "stage": 1
+        },
+        "stat_mult": 5.062,
+        "rec_cp": 1519,
+        "rewards": {
+          "clear": "loot.dungeon.granary_clear_t5",
+          "first_clear": {
+            "spirit_stones": 1966
+          }
+        }
+      }
+    ],
     "art": {
       "card": {
         "file": "assets/dungeons/old_granary_cellars_card.webp",
@@ -126,6 +208,118 @@
           "enemy.bamboo_spirit_sprite",
           "enemy.cloud_silk_spider"
         ]
+      }
+    ],
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "I",
+        "realm": {
+          "id": "realm.qi_condensation",
+          "stage": 4
+        },
+        "stat_mult": 1.0,
+        "rec_cp": 450,
+        "rewards": {
+          "clear": "loot.dungeon.mine_clear",
+          "first_clear": {
+            "spirit_stones": 500,
+            "items": [
+              {
+                "id": "mat.refining_stone",
+                "qty": 2
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 2,
+        "name": "II",
+        "realm": {
+          "id": "realm.foundation_establishment",
+          "stage": 1
+        },
+        "stat_mult": 1.5,
+        "rec_cp": 675,
+        "rewards": {
+          "clear": "loot.dungeon.mine_clear_t2",
+          "first_clear": {
+            "spirit_stones": 800,
+            "items": [
+              {
+                "id": "mat.refining_stone",
+                "qty": 2
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 3,
+        "name": "III",
+        "realm": {
+          "id": "realm.core_formation",
+          "stage": 1
+        },
+        "stat_mult": 2.25,
+        "rec_cp": 1012,
+        "rewards": {
+          "clear": "loot.dungeon.mine_clear_t3",
+          "first_clear": {
+            "spirit_stones": 1280,
+            "items": [
+              {
+                "id": "mat.refining_stone",
+                "qty": 2
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 4,
+        "name": "IV",
+        "realm": {
+          "id": "realm.nascent_soul",
+          "stage": 1
+        },
+        "stat_mult": 3.375,
+        "rec_cp": 1519,
+        "rewards": {
+          "clear": "loot.dungeon.mine_clear_t4",
+          "first_clear": {
+            "spirit_stones": 2048,
+            "items": [
+              {
+                "id": "mat.refining_stone",
+                "qty": 2
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 5,
+        "name": "V",
+        "realm": {
+          "id": "realm.soul_transformation",
+          "stage": 1
+        },
+        "stat_mult": 5.062,
+        "rec_cp": 2278,
+        "rewards": {
+          "clear": "loot.dungeon.mine_clear_t5",
+          "first_clear": {
+            "spirit_stones": 3277,
+            "items": [
+              {
+                "id": "mat.refining_stone",
+                "qty": 2
+              }
+            ]
+          }
+        }
       }
     ],
     "art": {

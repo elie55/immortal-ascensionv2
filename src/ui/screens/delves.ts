@@ -10,7 +10,7 @@ import { header, subbar, section, bar, cta, powerTone } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
 import type { App } from "../../app.ts";
 import type { Dungeon } from "../../content/index.ts";
-import { canStart } from "../../engine/encounter.ts";
+import { canStart, tierCheck, tierCleared } from "../../engine/encounter.ts";
 import { computeStats } from "../../engine/stats.ts";
 import { towerFloor, bestFloor, canEnterRealm, enterRealm, realmRun, realmNodeState, realmInteract, realmSummary, abandonRealm, type RealmNodeState } from "../../engine/delves.ts";
 import { startEncounter } from "./battle.ts";
@@ -21,6 +21,9 @@ const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
 const cpChip = (app: App) => h("span", { class: "cp-chip" }, icon("sword", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(computeStats(app.game.state, app.content).cp))));
 
 // ---------- hub ----------
+
+/** Selected tier per resource dungeon (UI only). */
+const tierPick = new Map<string, number>();
 
 export function dungeonHubScreen(app: App): Screen {
   return {
@@ -33,25 +36,39 @@ export function dungeonHubScreen(app: App): Screen {
       const group = (k: string) => all.filter((d) => d.kind === k);
       const card = (d: Dungeon) => {
         const isRealm = d.kind === "secret_realm";
-        const can = isRealm ? canEnterRealm(s, c, d.id, now) : canStart(s, c, { kind: "dungeon", id: d.id }, now);
-        const run = isRealm ? realmRun(s, d.id) : undefined;
         const rec = s.progress.dungeons[d.id];
+        // resource dungeons: tier I–V picker; default to the highest tier that is open
+        const tiers = d.tiers ?? [];
+        const openTier = (t: number) => t <= 1 ? canStart(s, c, { kind: "dungeon", id: d.id }, now).ok || !!rec?.clears : tierCheck(s, c, d, t).ok;
+        if (tiers.length && !tierPick.has(d.id)) tierPick.set(d.id, tiers.filter((t) => openTier(t.tier)).map((t) => t.tier).pop() ?? 1);
+        const tierN = tiers.length ? tierPick.get(d.id)! : 1;
+        const tier = tiers.find((t) => t.tier === tierN);
+        const src = { kind: "dungeon" as const, id: d.id, tier: tierN > 1 ? tierN : undefined };
+        const can = isRealm ? canEnterRealm(s, c, d.id, now) : canStart(s, c, src, now);
+        const run = isRealm ? realmRun(s, d.id) : undefined;
         const daily = d.entry.daily_limit ? `${Math.max(0, d.entry.daily_limit - (s.daily.counters[`dungeon:${d.id}`] ?? 0))}/${d.entry.daily_limit} today` : "Unlimited";
-        const go = () => isRealm ? app.router.push(realmScreen(app, d.id)) : startEncounter(app, { kind: "dungeon", id: d.id });
-        return h("div", { class: ["glass dungeon-card", !can.ok && "locked"] },
+        const go = () => isRealm ? app.router.push(realmScreen(app, d.id)) : startEncounter(app, src);
+        const recCp = tier?.rec_cp ?? d.rec_cp;
+        const firstDone = tier ? tierCleared(s, d.id, tierN) : !!rec?.clears;
+        const fc = tier ? tier.rewards.first_clear : d.rewards.first_clear;
+        return h("div", { class: ["glass dungeon-card", !can.ok && "locked"], dataset: { dungeon: d.id } },
           h("div", { class: "dc-art", style: { backgroundImage: app.img(c.art(d.id, "card")) } }, h("span", { class: "tag", style: { position: "absolute", left: "8px", top: "8px" } }, d.kind.replace("_", " "))),
           h("div", { class: "dc-body" },
-            h("div", { class: "row between" }, h("div", { class: "title", style: { fontSize: "calc(14rem / 15)" } }, d.name), h("span", { class: ["tag", powerTone(cp, d.rec_cp)] }, `Rec. ${fmt.int(d.rec_cp)}`)),
-            h("div", { class: "muted" }, isRealm ? `${d.realm_nodes!.filter((n) => n.waves?.length).length} trials · ${d.realm_nodes!.filter((n) => n.kind === "hidden").length} hidden · ${d.entry.energy_cost} energy per run` : `${d.waves!.length} waves · ${d.entry.energy_cost ? `${d.entry.energy_cost} energy` : "free"} · ${daily}`),
-            rec?.clears ? h("div", { class: "muted" }, `Cleared ×${rec.clears}`) : null,
+            h("div", { class: "row between" }, h("div", { class: "title", style: { fontSize: "calc(14rem / 15)" } }, d.name, tier && tier.tier > 1 && h("span", { class: "cn", style: { marginLeft: "6px", fontSize: "calc(12rem / 15)" } }, tier.name)), h("span", { class: ["tag", powerTone(cp, recCp)] }, `Rec. ${fmt.int(recCp)}`)),
+            tiers.length > 0 && h("div", { class: "tier-row" }, tiers.map((t) => {
+              const open = openTier(t.tier), done = tierCleared(s, d.id, t.tier);
+              return h("button", { class: ["tier", t.tier === tierN && "on", done && "done", !open && "locked"], "aria-label": `Tier ${t.name}`, title: open ? `Rec. CP ${fmt.int(t.rec_cp)}` : (t.tier > 1 ? (tierCheck(s, c, d, t.tier) as any).reason : ""), onClick: () => { tierPick.set(d.id, t.tier); app.router.refresh(); } }, open ? t.name : icon("lock", 11), done && h("i", { class: "tier-done" }, "✓"));
+            })),
+            h("div", { class: "muted" }, isRealm ? `${d.realm_nodes!.filter((n) => n.waves?.length).length} trials · ${d.realm_nodes!.filter((n) => n.kind === "hidden").length} hidden · ${d.entry.energy_cost} energy per run` : `${d.waves!.length} waves · ${d.entry.energy_cost ? `${d.entry.energy_cost} energy` : "free"} · ${daily}${tier && tier.tier > 1 ? ` · rewards ×${(c.get<any>(tier.rewards.clear).spirit_stones[1] / c.get<any>(d.rewards.clear).spirit_stones[1]).toFixed(1)}` : ""}`),
+            rec?.clears ? h("div", { class: "muted" }, `Cleared ×${rec.clears}${tier && tier.tier > 1 ? ` · tier ${tier.name} ×${rec.tierClears?.[tierN] ?? 0}` : ""}`) : null,
             d.entry.party.companions_allowed && h("div", { class: "muted pink-t" }, `♥ Up to ${d.entry.party.max_companions} Dao companions`),
             h("div", { class: "row between", style: { marginTop: "6px" } },
-              h("span", { class: "muted" }, can.ok ? (!rec?.clears && Object.keys(d.rewards.first_clear ?? {}).length ? "First-clear bonus" : "") : can.reason),
-              h("button", { class: ["btn sm", can.ok && "gold"], disabled: !can.ok, onClick: go }, run ? "Resume" : "Enter"))));
+              h("span", { class: "muted" }, can.ok ? (!firstDone && Object.keys(fc ?? {}).length ? "First-clear bonus" : "") : can.reason),
+              h("button", { class: ["btn sm", can.ok && "gold"], disabled: !can.ok, onClick: go }, run ? "Resume" : tier && tier.tier > 1 ? `Enter ${tier.name}` : "Enter"))));
       };
       return [
         header(app),
-        subbar({ title: "Dungeons", cn: "秘境", sub: "Tower · resource · challenge · secret realms · mega", backTo: "Regions", onBack: () => app.router.back(), end: cpChip(app) }),
+        subbar({ help: { app, key: "dungeons" }, title: "Dungeons", cn: "秘境", sub: "Tower · resource · challenge · secret realms · mega", backTo: "Regions", onBack: () => app.router.back(), end: cpChip(app) }),
         tower && towerHero(app, tower),
         section("Resource", "Farm materials and spirit stones", h("div", { class: "rows" }, group("resource").map(card))),
         section("Challenge", "Multi-wave, HP carries over", h("div", { class: "rows" }, group("challenge").map(card))),
@@ -102,7 +119,7 @@ export function towerScreen(app: App, id: string): Screen {
       const can = canStart(s, c, { kind: "tower", id, floor: best + 1 }, app.now());
       return [
         header(app),
-        subbar({ title: d.name, cn: d.name_cn, sub: `Best floor ${best} / ${d.tower!.floors} · no energy, no daily cap`, backTo: "Dungeons", onBack: () => app.router.back(), end: cpChip(app) }),
+        subbar({ help: { app, key: "tower" }, title: d.name, cn: d.name_cn, sub: `Best floor ${best} / ${d.tower!.floors} · no energy, no daily cap`, backTo: "Dungeons", onBack: () => app.router.back(), end: cpChip(app) }),
         h("div", { class: "tower-floors" }, floors.map((f) => {
           const tf = towerFloor(c, d, f);
           const state = f <= best ? "done" : f === best + 1 ? "next" : "locked";
@@ -148,7 +165,7 @@ export function realmScreen(app: App, id: string): Screen {
       const drawn = new Set<string>();
       return [
         header(app),
-        subbar({ title: d.name, cn: d.name_cn, sub: `${run ? "Run in progress" : "Branching realm"} · replayable · first-clear rewards once`, backTo: "Dungeons", onBack: () => app.router.back(), end: cpChip(app) }),
+        subbar({ help: { app, key: "realm" }, title: d.name, cn: d.name_cn, sub: `${run ? "Run in progress" : "Branching realm"} · replayable · first-clear rewards once`, backTo: "Dungeons", onBack: () => app.router.back(), end: cpChip(app) }),
         h("div", { class: "glass realm-status" },
           h("span", null, icon("temple", 13), ` Trials ${sum.trialsDone} / ${sum.trials}`),
           sum.hidden > 0 && h("span", null, icon("info", 13), ` Hidden rooms ${sum.hiddenFound} / ${sum.hidden}`),

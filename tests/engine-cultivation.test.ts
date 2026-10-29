@@ -258,3 +258,50 @@ test("equip best: picks the highest-CP loadout from the bag, never lowers CP, an
   assert.ok(computeStats(s, content).cp > before);
   assert.equal(equipBest(s, content).ok, false, "second press: already best");
 });
+
+test("bag capacity: one slot per stack or piece, worn gear free; overflow goes to the pouch and is claimed when there is room", async () => {
+  const inv = await import("../src/engine/inventory.ts");
+  const act = await import("../src/engine/actions.ts");
+  const s = fresh();
+  const cap = inv.bagCapacity(s, content);
+  assert.equal(cap, content.rules.inventory.bag_slots + content.rules.inventory.slots_per_rank_order * content.get<any>(s.character.rank).order);
+  const used0 = inv.bagUsed(s);
+  assert.equal(used0, Object.keys(s.inventory.stacks).length, "worn starting gear takes no slot");
+  // fill the bag with distinct stacks
+  const mats = ["mat", "cons", "gift", "bfood", "book"].flatMap((p) => content.byPrefix<any>(p).map((m) => m.id)).filter((id) => !s.inventory.stacks[id]);
+  const extra = mats.pop()!;
+  let i = 0;
+  while (inv.bagUsed(s) < cap && i < mats.length) { addItem(s, content, mats[i]!, 1); i++; }
+  if (inv.bagUsed(s) < cap) { const b = s.inventory.gear[s.equipped.weapon!]!.base; while (inv.bagUsed(s) < cap) grantGear(s, content, { base: b, rarity: "common", ilvl: 1 }); }
+  assert.equal(inv.bagFree(s, content), 0);
+  // a new stack does not fit → pouch; an existing stack still merges
+  const r = addItem(s, content, extra, 3);
+  assert.equal(r.pouched, 3); assert.equal(s.inventory.pouch.stacks[extra], 3); assert.equal(itemCount(s, extra), 0);
+  const existing = mats[0]!; addItem(s, content, existing, 2); assert.equal(itemCount(s, existing), 3);
+  const base = s.inventory.gear[s.equipped.weapon!]!.base;
+  const uid = grantGear(s, content, { base, rarity: "rare", ilvl: 3 });
+  assert.equal(inv.gearPlace(s, uid), "pouch");
+  assert.equal(equip(s, content, uid).ok, false, "pouch gear cannot be worn until claimed");
+  assert.equal(act.claimOverflow(s, content).ok, false, "nothing fits while the bag is full");
+  // unequipping into a full bag is refused; freeing a slot lets the pouch drain
+  assert.equal(unequip(s, content, "weapon").ok, false);
+  assert.ok(act.storeItem(s, content, existing, 3).ok, "deposit frees a bag slot");
+  assert.equal(inv.depotUsed(s), 1);
+  const cl = act.claimOverflow(s, content);
+  assert.ok(cl.ok && cl.moved === 1 && cl.left === 1, `one of two pouch entries claimed: ${JSON.stringify(cl)}`);
+  assert.ok(act.takeItem(s, content, existing, 3).ok === false, "withdraw refused while the bag is full again");
+  // expansions: cost grows, capacity grows, max respected
+  s.resources.spirit_stones = 10_000_000;
+  const c0 = inv.expansionCost(s, content, "bag")!;
+  assert.ok(act.buyExpansion(s, content, "bag").ok);
+  assert.equal(inv.bagCapacity(s, content), cap + content.rules.inventory.expansion_slots);
+  assert.equal(inv.expansionCost(s, content, "bag"), Math.round(c0 * content.rules.inventory.expansion_cost_growth));
+  for (let k = 1; k < content.rules.inventory.bag_expansions_max; k++) assert.ok(act.buyExpansion(s, content, "bag").ok);
+  assert.equal(act.buyExpansion(s, content, "bag").ok, false, "max expansions");
+  assert.ok(act.claimOverflow(s, content).ok && inv.pouchCount(s) === 0);
+  // depot gear round trip
+  const g2 = grantGear(s, content, { base, rarity: "common", ilvl: 1 });
+  assert.ok(act.storeGear(s, content, g2).ok && inv.gearPlace(s, g2) === "depot");
+  assert.equal(equip(s, content, g2).ok, false, "depot gear cannot be worn");
+  assert.ok(act.takeGear(s, content, g2).ok && inv.gearPlace(s, g2) === "bag");
+});

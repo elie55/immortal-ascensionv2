@@ -56,6 +56,29 @@ export function enhance(s: GameState, c: ContentIndex, uid: number): ActionResul
   return { ok: true, events, success, level: g.enhance };
 }
 
+/**
+ * Enhance up to `times` attempts in a row (stop on failure when `stopOnFail`, when materials run out, or at +15).
+ * One action, one summary: how many attempts, how many succeeded, the level reached and what was spent.
+ */
+export function enhanceMany(s: GameState, c: ContentIndex, uid: number, times: number, stopOnFail = true, until = 15): ActionResult<{ attempts: number; successes: number; level: number; stones: number }> {
+  const g = gear(s, uid);
+  if (!g) return fail("No such item");
+  const events: DomainEvent[] = [];
+  let attempts = 0, successes = 0, stones = 0;
+  for (let i = 0; i < times && g.enhance < until; i++) {
+    const cost = enhanceCost(c, g);
+    if (!cost) break;
+    if (pay(s, cost, events)) break; // cannot afford the next attempt
+    attempts++; stones += cost.stones;
+    const success = nextFloat(s.rng) < cost.chance;
+    if (success) { g.enhance++; successes++; }
+    events.push({ type: "enhanced", uid, level: g.enhance, success });
+    if (!success && stopOnFail) break;
+  }
+  if (!attempts) return fail(enhanceCost(c, g) ? "Cannot afford an attempt" : "Already at +15");
+  return { ok: true, events, attempts, successes, level: g.enhance, stones };
+}
+
 // ---------- refinement (one rarity up, capped at mythic and the base's range) ----------
 
 export function refineCap(c: ContentIndex, g: GearInstance): string {

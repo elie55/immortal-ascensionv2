@@ -19,12 +19,13 @@ import { inventoryScreen } from "./ui/screens/inventory.ts";
 import { sectScreen } from "./ui/screens/sect.ts";
 import { adventureScreen } from "./ui/screens/adventure.ts";
 import { offlineModal } from "./ui/screens/offline.ts";
-import { rankUpModal } from "./ui/screens/rank.ts";
+import { celebrateEvent } from "./ui/screens/celebrate.ts";
 import { questStatus } from "./engine/progression.ts";
 import { bestLoadout } from "./engine/actions.ts";
+import { grantGear } from "./engine/inventory.ts";
 import type { DomainEvent } from "./engine/events.ts";
 
-export const VERSION = "0.4.1";
+export const VERSION = "0.5.0";
 
 export class App {
   content!: ContentIndex;
@@ -56,7 +57,7 @@ export class App {
     await this.refreshSlots();
     this.router.pushGlobal(mainMenuScreen(this));
     this.installLifecycle();
-    (globalThis as any).__ia = Object.assign((globalThis as any).__ia ?? {}, { app: this, content: this.content });
+    (globalThis as any).__ia = Object.assign((globalThis as any).__ia ?? {}, { app: this, content: this.content, engine: { grantGear } });
   }
 
   async refreshSlots(): Promise<void> {
@@ -144,12 +145,11 @@ export class App {
     const readyNow = new Set(events.filter((e) => e.type === "quest_ready").map((e: any) => e.quest));
     for (const e of events) {
       if (e.type === "quest_accepted" && readyNow.has(e.quest)) continue;
+      if (celebrateEvent(this, e)) continue; // milestones get their own screen (queued, one at a time)
       if (e.type === "quest_ready") this.router.toast(`Quest ready: ${c.get<any>(e.quest).name}`, "good", 3200);
       else if (e.type === "quest_completed") this.router.toast(`Quest complete: ${c.get<any>(e.quest).name}`, "good", 3200);
       else if (e.type === "quest_accepted" && c.get<any>(e.quest).type === "main") this.router.toast(`New quest: ${c.get<any>(e.quest).name}`, "info", 3200);
-      else if (e.type === "achievement") this.router.toast(`Achievement: ${c.get<any>(e.id).name}`, "good", 3600);
       else if (e.type === "affinity_level") this.router.toast(`${c.get<any>(e.npc).name} now sees you as: ${e.name}`, "good", 3600);
-      else if (e.type === "rank_up") this.router.open(rankUpModal(this, e.rank));
       else if (e.type === "beast_level") this.router.toast(`${this.game.state.beasts.owned[e.uid]?.name ?? "Your beast"} reached level ${e.level}`, "good");
       else if (e.type === "beast_bond") this.router.toast(`Bond with ${this.game.state.beasts.owned[e.uid]?.name ?? "your beast"} deepened (${e.level})`, "good");
       else if (e.type === "dao_bonded") this.router.toast(`${c.get<any>(e.npc).name} is now your Dao companion`, "good", 4000);

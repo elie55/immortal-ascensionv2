@@ -5,12 +5,12 @@
  */
 import { h, fmt } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
-import { header, subbar, section, needRow, cta, RARITY_LABEL, attrLabel, attrValue, npcAvatar } from "../core/kit.ts";
+import { header, subbar, section, needRow, cta, stepper, RARITY_LABEL, attrLabel, attrValue, npcAvatar } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
 import type { App } from "../../app.ts";
 import type { GearInstance } from "../../engine/state.ts";
-import { EQUIP_SLOTS, equippedSlotOf, itemCount, gearStats } from "../../engine/inventory.ts";
-import { enhance, enhanceCost, refine, refineCost, reforge, reforgeCost, awaken, awakenInfo, craftGear, forgeStatus, studyBlueprint } from "../../engine/crafting.ts";
+import { EQUIP_SLOTS, equippedSlotOf, itemCount, gearStats, gearPlace } from "../../engine/inventory.ts";
+import { enhance, enhanceMany, enhanceCost, refine, refineCost, reforge, reforgeCost, awaken, awakenInfo, craftGear, forgeStatus, studyBlueprint } from "../../engine/crafting.ts";
 import { gearTile, gearName, gearCp } from "./items.ts";
 import { rewardsLine } from "./adventure.ts";
 
@@ -27,6 +27,8 @@ const GU: Record<Tab, string> = {
   craft: "Bring me the materials and the pattern, and I'll show you how it's done.",
 };
 
+let enhTarget = 10;
+
 export function forgeScreen(app: App, backTo: string, start: Tab = "enhance"): Screen {
   let tab: Tab = start;
   let uid: number | undefined;
@@ -36,14 +38,14 @@ export function forgeScreen(app: App, backTo: string, start: Tab = "enhance"): S
     id: "forge", bg: () => app.content.art("sectloc.spirit_forge", "background"),
     render: () => {
       const s = app.game.state, c = app.content;
-      const owned = Object.keys(s.inventory.gear).map(Number);
+      const owned = Object.keys(s.inventory.gear).map(Number).filter((u) => gearPlace(s, u) !== "depot" && gearPlace(s, u) !== "pouch");
       const equipped = EQUIP_SLOTS.map((k) => s.equipped[k]).filter((u): u is number => u !== undefined);
       const bag = owned.filter((u) => !equipped.includes(u)).sort((a, b) => gearCp(app, s.inventory.gear[b]!) - gearCp(app, s.inventory.gear[a]!));
       if (uid === undefined || !s.inventory.gear[uid]) { uid = equipped[0] ?? bag[0]; locks = []; }
       const g = uid !== undefined ? s.inventory.gear[uid] : undefined;
       return [
         header(app),
-        subbar({ title: "Spirit Forge", cn: "灵器坊", sub: `Master Smith Gu · ${TABS.find((t) => t.id === tab)!.label}`, backTo, onBack: () => app.router.back() }),
+        subbar({ help: { app, key: "forge" }, title: "Spirit Forge", cn: "灵器坊", sub: `Master Smith Gu · ${TABS.find((t) => t.id === tab)!.label}`, backTo, onBack: () => app.router.back() }),
         h("div", { class: "forge-tabs" }, TABS.map((t) => h("button", { class: ["glass ftab", t.id === tab && "on"], onClick: () => { tab = t.id; locks = []; app.router.refresh(); } }, icon(t.icon, 18), h("span", null, t.label)))),
         h("div", { class: "glass gu-line" }, npcAvatar(app, "npc.master_gu", 28), h("div", null, h("div", { class: "muted" }, "Master Gu"), h("div", { class: "dim" }, `“${GU[tab]}”`))),
         tab === "craft" ? craftPanel(app, () => recipe, (r) => { recipe = r; app.router.refresh(); }) : [
@@ -94,6 +96,16 @@ function tabPanel(app: App, tab: Tab, uid: number, g: GearInstance, locks: numbe
         h("div", { class: "row between", style: { marginTop: "8px" } }, h("span", { class: "muted" }, "Success chance"), h("b", { class: cost.chance < 1 ? "gold-t" : "jade-t" }, pct(cost.chance))),
         cost.chance < 1 && h("div", { class: "muted" }, "On failure the materials are spent; the level is kept.")),
       costBlock(app, cost.stones, cost.items),
+      // several attempts in one press: ×5 (stops at the first failure) or up to a target level (keeps going)
+      (() => {
+        const target = Math.min(15, Math.max(enhTarget, g.enhance + 1));
+        const many = (times: number, stopOnFail: boolean, label: string, until = 15) => run("enhance", () => enhanceMany(app.game.state, c, uid, times, stopOnFail, until), (r) => [`${label}: ${r.successes}/${r.attempts} succeeded · now +${r.level} · ${fmt.int(r.stones)} stones spent`, r.successes ? "good" : "bad"]);
+        return h("div", { class: "glass panel", style: { padding: "8px 10px" } },
+          h("div", { class: "row between" }, h("span", { class: "muted" }, "Several attempts at once"), h("span", { class: "muted" }, "materials are spent on failures too")),
+          h("div", { class: "row between", style: { marginTop: "6px", gap: "8px", flexWrap: "wrap" } },
+            h("button", { class: "btn sm", onClick: () => many(5, true, "×5") }, "Enhance ×5", h("span", { class: "cta-s" }, "stops on failure")),
+            h("div", { class: "row", style: { gap: "6px", flexWrap: "wrap" } }, h("span", { class: "muted" }, "to"), stepper(target, g.enhance + 1, 15, (v) => { enhTarget = v; app.router.refresh(); }), h("button", { class: "btn sm gold", onClick: () => many(60, false, `To +${target}`, target) }, `+${target}`))));
+      })(),
       cta(`Enhance to +${g.enhance + 1}`, `${pct(cost.chance)} success`, () => run("enhance", () => enhance(app.game.state, c, uid), (r) => r.success ? [`Enhanced to +${r.level}!`, "good"] : ["The steel resisted. Try again.", "bad"]), { disabled: !affordable(app, cost.stones, cost.items) }),
     ];
   }

@@ -8,7 +8,8 @@ import { icon } from "../core/icons.ts";
 import { header, subbar, section, bar, seg, npcAvatar, confirmModal } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
 import type { App } from "../../app.ts";
-import { questStatus, questProgress, acceptQuest, turnInQuest, abandonQuest, achievementProgress, nextRank, type QuestStatus } from "../../engine/progression.ts";
+import { questDestination, objectiveDestination, setTracked } from "../navigate.ts";
+import { questStatus, questProgress, acceptQuest, turnInQuest, abandonQuest, achievementProgress, nextRank, type QuestStatus, turnInAll } from "../../engine/progression.ts";
 import { itemCount } from "../../engine/inventory.ts";
 import { rewardsLine } from "./adventure.ts";
 
@@ -36,7 +37,13 @@ export function questCard(app: App, q: any, opts: { where?: string } = {}) {
   let action: any = null;
   if (st === "available" && (here || !opts.where)) action = h("button", { class: "btn jade sm", onClick: () => run(() => acceptQuest(app.game.state, c, q.id, app.now()), q.type === "main" ? "" : `Accepted: ${q.name}`) }, "Accept");
   else if (st === "ready" && canTurnIn) action = h("button", { class: "btn gold sm", onClick: () => run(() => turnInQuest(app.game.state, c, q.id, app.now()), "") }, deliver ? "Deliver" : "Turn in");
-  else if (st === "active" || st === "ready") action = h("button", { class: "btn ghost sm", onClick: () => app.router.toast(st === "ready" ? `Report to ${q.turn_in === "auto" ? "—" : c.get<any>(q.turn_in).name}` : q.hint) }, icon("map", 13), "Track");
+  else if (st === "active" || st === "ready") {
+    const tracked = s.progress.quests.tracked === q.id;
+    const dest = questDestination(app, q);
+    action = h("div", { class: "row", style: { gap: "6px" } },
+      h("button", { class: ["btn ghost sm", tracked && "on-track"], "aria-pressed": String(tracked), onClick: () => { setTracked(app, tracked ? null : q.id); app.router.toast(tracked ? "Stopped tracking" : `Tracking: ${q.name}`, "info"); } }, icon(tracked ? "check" : "map", 13), tracked ? "Tracked" : "Track"),
+      dest && h("button", { class: "btn jade sm", onClick: () => { if (!tracked) setTracked(app, q.id); dest.go(); } }, "Go ▸"));
+  }
   else if (st === "cooldown") action = h("span", { class: "tag" }, icon("clock", 11), " ", fmt.duration(q.repeatable.cooldown_min * 60_000 - (now - (s.progress.quests.lastCompletedAt[q.id] ?? 0))));
   const total = prog.reduce((n: number, p: any) => n + p.need, 0), have = prog.reduce((n: number, p: any) => n + p.have, 0);
   return h("article", { class: ["glass quest-card", st === "ready" && "ready", q.type === "main" && "main"] },
@@ -51,7 +58,7 @@ export function questCard(app: App, q: any, opts: { where?: string } = {}) {
       const shown = (o.type === "deliver" || o.type === "collect") ? Math.min(itemCount(s, o.item), o.count) : p.have;
       return h("div", { class: ["q-obj", p.done && "done"] },
         h("span", { class: ["tile-mini", `r-${item?.rarity ?? "common"}`], style: { backgroundImage: art ? app.img(art) : undefined } }, !art && icon(p.done ? "sparkle" : "chevron", 12)),
-        h("div", { class: "grow" }, h("div", null, p.label), o.item && h("div", { class: "muted" }, q.hint)),
+        h("div", { class: "grow" }, h("div", null, p.label), h("div", { class: "muted" }, (st === "active" || st === "ready") && !p.done ? (objectiveDestination(app, o)?.where ?? q.hint) : o.item ? q.hint : "")),
         h("b", { class: "tnum" }, `${fmt.int(shown)}/${fmt.int(p.need)}`));
     })),
     h("div", { class: "row between q-foot" }, rewardsLine(app, q.rewards), h("div", { class: "row", style: { gap: "6px" } }, total > 1 && (st === "active" || st === "ready") && h("span", { class: "muted nowrap" }, `${fmt.int(have)} / ${fmt.int(total)}`), action)));
@@ -82,7 +89,7 @@ export function missionHallScreen(app: App, giver = "sectloc.mission_hall"): Scr
       const active = list.filter((x) => x.st === "active" || x.st === "ready").length;
       return [
         header(app),
-        subbar({ title: loc.name, cn: loc.name_cn, sub: "Requests from masters & seniors", backTo: "Sect", onBack: () => app.router.back(),
+        subbar({ help: { app, key: "missions" }, title: loc.name, cn: loc.name_cn, sub: "Requests from masters & seniors", backTo: "Sect", onBack: () => app.router.back(),
           end: rank && h("div", { class: "fame-mini" }, h("div", { class: "muted" }, "Sect Fame"), bar(s.resources.sect_fame / rank.rank.fame_required, { cls: "gold thin" }), h("div", { class: "tnum gold-t" }, `${fmt.int(s.resources.sect_fame)} / ${fmt.int(rank.rank.fame_required)}`)) }),
         h("div", { class: "board-head" }, h("div", null, h("div", { class: "board-t" }, "Request Board", h("span", { class: "cn" }, "悬赏榜")), h("div", { class: "muted" }, "Deliver materials from your adventures to earn Fame")),
           h("span", { class: "glass tag" }, `Taken ${active}/${list.length}`)),
@@ -110,10 +117,12 @@ export function questLogScreen(app: App, backTo: string): Screen {
       const shown = groups[tab];
       return [
         header(app),
-        subbar({ title: "Quest Log", cn: "任务", sub: `${groups.active.length} in progress · ${Object.keys(s.progress.quests.completed).length} completed`, backTo, onBack: () => app.router.back(),
+        subbar({ help: { app, key: "quests" }, title: "Quest Log", cn: "任务", sub: `${groups.active.length} in progress · ${Object.keys(s.progress.quests.completed).length} completed`, backTo, onBack: () => app.router.back(),
           end: h("button", { class: "btn ghost sm", onClick: () => app.router.push(achievementsScreen(app)) }, icon("fame", 13), "Achievements") }),
-        seg(tab, [{ value: "active", label: `Active (${groups.active.length})` }, { value: "available", label: `Available (${groups.available.length})` }, { value: "done", label: "Completed" }], (v) => { tab = v; app.router.refresh(); }),
-        shown.length ? shown.map((x) => h("div", { class: "stack" }, questCard(app, x.q),
+        h("div", { class: "row between" },
+          seg(tab, [{ value: "active", label: `Active (${groups.active.length})` }, { value: "available", label: `Available (${groups.available.length})` }, { value: "done", label: "Completed" }], (v) => { tab = v; app.router.refresh(); }),
+          (() => { const ready = groups.active.filter((x) => x.st === "ready").length; return ready > 0 && h("button", { class: "btn gold sm", onClick: () => { const r = app.game.run("quest", app.now(), (st, cc) => turnInAll(st, cc, app.now())); app.router.toast(r.ok ? `Turned in ${(r as any).count} quest${(r as any).count > 1 ? "s" : ""}` : r.reason, r.ok ? "good" : "bad"); } }, icon("check", 13), `Turn in all (${ready})`); })()),
+        shown.length ? shown.map((x) => h("div", { class: "stack" }, questCard(app, x.q, tab === "active" ? { where: x.q.turn_in } : {}),
           tab === "active" && x.q.type !== "main" && h("button", { class: "link-btn", onClick: () => confirmModal(app, { title: "Abandon this quest?", body: `${x.q.name}: its progress is lost. You can take it again from ${x.q.giver.startsWith("sectloc.") || x.q.giver.startsWith("npc.") ? c.get<any>(x.q.giver).name : "its giver"}.`, ok: "Abandon", danger: true }, () => { const r = app.game.run("quest", app.now(), (st, cc) => abandonQuest(st, cc, x.q.id)); app.router.toast(r.ok ? "Quest abandoned" : r.reason, r.ok ? "info" : "bad"); }) }, "Abandon"),
           tab === "available" && h("div", { class: "muted", style: { padding: "0 8px" } }, icon("map", 11), ` Offered by ${x.q.giver.startsWith("sectloc.") || x.q.giver.startsWith("npc.") ? c.get<any>(x.q.giver).name : "—"}`)))
           : h("div", { class: "glass panel center muted" }, tab === "active" ? "No quests in progress. Visit the Mission Hall." : tab === "available" ? "Nothing offered right now." : "No completed quests yet."),

@@ -31,7 +31,7 @@ export function alchemyScreen(app: App, backTo: string): Screen {
       const effects = out.effects ? Object.entries(out.effects).map(([k, v]: any) => k === "qi" ? `+${fmt.compact(v)} Qi` : k === "hp_pct" ? `heals ${v}% HP` : k === "breakthrough_chance_bonus" ? `+${Math.round(v * 100)}% breakthrough` : k === "cultivation_boost" ? `×${v.mult} Qi for ${v.minutes} min` : k === "permanent" ? "permanent attributes" : k).join(" · ") : "";
       return [
         header(app),
-        subbar({ title: "Alchemy Hall", cn: "丹药房", sub: "Refine pills from your materials", backTo, onBack: () => app.router.back() }),
+        subbar({ help: { app, key: "alchemy" }, title: "Alchemy Hall", cn: "丹药房", sub: "Refine pills from your materials", backTo, onBack: () => app.router.back() }),
         h("div", { class: "alch-top" },
           h("button", { class: "glass chip-pill", onClick: () => furnaceSheet(app) }, icon("cauldron", 14), `${f.name}`, h("span", { class: "tag gold" }, `Grade ${fmt.roman(f.grade)}`)),
           h("div", { class: "alch-ring", style: { "--p": `${Math.round(chance * 100)}` } as any }, h("div", null, h("div", { class: "muted up" }, "Success"), h("b", null, `${Math.round(chance * 100)}%`), h("div", { class: "muted" }, "per load"))),

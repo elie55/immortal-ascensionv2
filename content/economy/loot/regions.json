@@ -502,6 +502,162 @@
     "mastery_xp": 0
   },
   {
+    "id": "loot.dungeon.ember_forge_ruins_clear_t2",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.69,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.69,
+        "qty": [
+          2,
+          4
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.magma_iron_ore",
+        "qty": 8
+      },
+      {
+        "id": "mat.fire_bud",
+        "qty": 8
+      }
+    ],
+    "spirit_stones": [
+      2160,
+      3600
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.ember_forge_ruins_clear_t3",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.793,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.793,
+        "qty": [
+          2,
+          6
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.magma_iron_ore",
+        "qty": 10
+      },
+      {
+        "id": "mat.fire_bud",
+        "qty": 10
+      }
+    ],
+    "spirit_stones": [
+      3456,
+      5760
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.ember_forge_ruins_clear_t4",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.913,
+        "qty": [
+          2,
+          5
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.913,
+        "qty": [
+          2,
+          8
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.magma_iron_ore",
+        "qty": 12
+      },
+      {
+        "id": "mat.fire_bud",
+        "qty": 12
+      }
+    ],
+    "spirit_stones": [
+      5530,
+      9216
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.ember_forge_ruins_clear_t5",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 1.0,
+        "qty": [
+          3,
+          6
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 1.0,
+        "qty": [
+          3,
+          9
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.magma_iron_ore",
+        "qty": 15
+      },
+      {
+        "id": "mat.fire_bud",
+        "qty": 15
+      }
+    ],
+    "spirit_stones": [
+      8847,
+      14746
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
     "id": "loot.enemy.snow_fox_spirit",
     "mode": "independent",
     "rolls": 1,
@@ -1980,6 +2136,162 @@
     "mastery_xp": 0
   },
   {
+    "id": "loot.dungeon.blood_river_prison_clear_t2",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.69,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.69,
+        "qty": [
+          2,
+          4
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.demon_iron",
+        "qty": 8
+      },
+      {
+        "id": "mat.blood_lotus",
+        "qty": 8
+      }
+    ],
+    "spirit_stones": [
+      8640,
+      14400
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.blood_river_prison_clear_t3",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.793,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.793,
+        "qty": [
+          2,
+          6
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.demon_iron",
+        "qty": 10
+      },
+      {
+        "id": "mat.blood_lotus",
+        "qty": 10
+      }
+    ],
+    "spirit_stones": [
+      13824,
+      23040
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.blood_river_prison_clear_t4",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.913,
+        "qty": [
+          2,
+          5
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.913,
+        "qty": [
+          2,
+          8
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.demon_iron",
+        "qty": 12
+      },
+      {
+        "id": "mat.blood_lotus",
+        "qty": 12
+      }
+    ],
+    "spirit_stones": [
+      22118,
+      36864
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.blood_river_prison_clear_t5",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 1.0,
+        "qty": [
+          3,
+          6
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 1.0,
+        "qty": [
+          3,
+          9
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.demon_iron",
+        "qty": 15
+      },
+      {
+        "id": "mat.blood_lotus",
+        "qty": 15
+      }
+    ],
+    "spirit_stones": [
+      35389,
+      58982
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
     "id": "loot.boss.moon_devourer",
     "mode": "independent",
     "rolls": 1,
@@ -2593,6 +2905,162 @@
     "spirit_stones": [
       7350,
       12250
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.thunder_pine_sanctum_clear_t2",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.69,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.69,
+        "qty": [
+          2,
+          4
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.skystone",
+        "qty": 8
+      },
+      {
+        "id": "mat.celestial_peach",
+        "qty": 8
+      }
+    ],
+    "spirit_stones": [
+      11760,
+      19600
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.thunder_pine_sanctum_clear_t3",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.793,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.793,
+        "qty": [
+          2,
+          6
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.skystone",
+        "qty": 10
+      },
+      {
+        "id": "mat.celestial_peach",
+        "qty": 10
+      }
+    ],
+    "spirit_stones": [
+      18816,
+      31360
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.thunder_pine_sanctum_clear_t4",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.913,
+        "qty": [
+          2,
+          5
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.913,
+        "qty": [
+          2,
+          8
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.skystone",
+        "qty": 12
+      },
+      {
+        "id": "mat.celestial_peach",
+        "qty": 12
+      }
+    ],
+    "spirit_stones": [
+      30106,
+      50176
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.thunder_pine_sanctum_clear_t5",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 1.0,
+        "qty": [
+          3,
+          6
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 1.0,
+        "qty": [
+          3,
+          9
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.skystone",
+        "qty": 15
+      },
+      {
+        "id": "mat.celestial_peach",
+        "qty": 15
+      }
+    ],
+    "spirit_stones": [
+      48169,
+      80282
     ],
     "sect_fame": 0,
     "mastery_xp": 0
@@ -3588,6 +4056,162 @@
     "mastery_xp": 0
   },
   {
+    "id": "loot.dungeon.glass_labyrinth_clear_t2",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.69,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.69,
+        "qty": [
+          2,
+          4
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.storm_glass",
+        "qty": 8
+      },
+      {
+        "id": "mat.thunderroot",
+        "qty": 8
+      }
+    ],
+    "spirit_stones": [
+      19440,
+      32400
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.glass_labyrinth_clear_t3",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.793,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.793,
+        "qty": [
+          2,
+          6
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.storm_glass",
+        "qty": 10
+      },
+      {
+        "id": "mat.thunderroot",
+        "qty": 10
+      }
+    ],
+    "spirit_stones": [
+      31104,
+      51840
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.glass_labyrinth_clear_t4",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.913,
+        "qty": [
+          2,
+          5
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.913,
+        "qty": [
+          2,
+          8
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.storm_glass",
+        "qty": 12
+      },
+      {
+        "id": "mat.thunderroot",
+        "qty": 12
+      }
+    ],
+    "spirit_stones": [
+      49766,
+      82944
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.glass_labyrinth_clear_t5",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 1.0,
+        "qty": [
+          3,
+          6
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 1.0,
+        "qty": [
+          3,
+          9
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.storm_glass",
+        "qty": 15
+      },
+      {
+        "id": "mat.thunderroot",
+        "qty": 15
+      }
+    ],
+    "spirit_stones": [
+      79626,
+      132710
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
     "id": "loot.enemy.coral_naga",
     "mode": "independent",
     "rolls": 1,
@@ -4564,6 +5188,162 @@
     "spirit_stones": [
       18150,
       30250
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.buried_star_temple_clear_t2",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.69,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.69,
+        "qty": [
+          2,
+          4
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.star_metal",
+        "qty": 8
+      },
+      {
+        "id": "mat.desert_star_flower",
+        "qty": 8
+      }
+    ],
+    "spirit_stones": [
+      29040,
+      48400
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.buried_star_temple_clear_t3",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.793,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.793,
+        "qty": [
+          2,
+          6
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.star_metal",
+        "qty": 10
+      },
+      {
+        "id": "mat.desert_star_flower",
+        "qty": 10
+      }
+    ],
+    "spirit_stones": [
+      46464,
+      77440
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.buried_star_temple_clear_t4",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.913,
+        "qty": [
+          2,
+          5
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.913,
+        "qty": [
+          2,
+          8
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.star_metal",
+        "qty": 12
+      },
+      {
+        "id": "mat.desert_star_flower",
+        "qty": 12
+      }
+    ],
+    "spirit_stones": [
+      74342,
+      123904
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.buried_star_temple_clear_t5",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 1.0,
+        "qty": [
+          3,
+          6
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 1.0,
+        "qty": [
+          3,
+          9
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.star_metal",
+        "qty": 15
+      },
+      {
+        "id": "mat.desert_star_flower",
+        "qty": 15
+      }
+    ],
+    "spirit_stones": [
+      118948,
+      198246
     ],
     "sect_fame": 0,
     "mastery_xp": 0
@@ -5666,6 +6446,162 @@
     "spirit_stones": [
       25350,
       42250
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.immortal_peach_garden_clear_t2",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.69,
+        "qty": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.69,
+        "qty": [
+          2,
+          4
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.immortal_jade",
+        "qty": 8
+      },
+      {
+        "id": "mat.immortal_peach_blossom",
+        "qty": 8
+      }
+    ],
+    "spirit_stones": [
+      40560,
+      67600
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.immortal_peach_garden_clear_t3",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.793,
+        "qty": [
+          2,
+          4
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.793,
+        "qty": [
+          2,
+          6
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.immortal_jade",
+        "qty": 10
+      },
+      {
+        "id": "mat.immortal_peach_blossom",
+        "qty": 10
+      }
+    ],
+    "spirit_stones": [
+      64896,
+      108160
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.immortal_peach_garden_clear_t4",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 0.913,
+        "qty": [
+          2,
+          5
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 0.913,
+        "qty": [
+          2,
+          8
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.immortal_jade",
+        "qty": 12
+      },
+      {
+        "id": "mat.immortal_peach_blossom",
+        "qty": 12
+      }
+    ],
+    "spirit_stones": [
+      103834,
+      173056
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
+    "id": "loot.dungeon.immortal_peach_garden_clear_t5",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [
+      {
+        "id": "mat.refining_stone",
+        "chance": 1.0,
+        "qty": [
+          3,
+          6
+        ]
+      },
+      {
+        "id": "mat.reforging_sand",
+        "chance": 1.0,
+        "qty": [
+          3,
+          9
+        ]
+      }
+    ],
+    "guaranteed": [
+      {
+        "id": "mat.immortal_jade",
+        "qty": 15
+      },
+      {
+        "id": "mat.immortal_peach_blossom",
+        "qty": 15
+      }
+    ],
+    "spirit_stones": [
+      166134,
+      276890
     ],
     "sect_fame": 0,
     "mastery_xp": 0

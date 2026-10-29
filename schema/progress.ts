@@ -202,6 +202,19 @@ export const CultivationRules = z.object({
   dao: z.object({ affinity_level: z.number().int().min(1), qi_mult: z.number().min(1), stat_scale: z.number().positive() }),
   /** Equipment slots that open at a realm (slot key → realm id). */
   slot_unlocks: z.record(z.string(), ref("realm")).default({}),
+  /**
+   * Bag and depot capacity in slots: one slot per item stack (any quantity up to its stack_limit) or per gear piece;
+   * worn gear takes none. Capacity = base + slots_per_rank_order · rank order + expansion_slots · expansions bought
+   * (expansion n costs expansion_cost_base · expansion_cost_growth^n stones). Drops that do not fit wait in the
+   * overflow pouch until there is room; nothing is lost. page_size = slots per inventory page.
+   */
+  inventory: z.object({
+    bag_slots: z.number().int().positive(), depot_slots: z.number().int().positive(),
+    slots_per_rank_order: z.number().int().min(0), expansion_slots: z.number().int().positive(),
+    bag_expansions_max: z.number().int().min(0), depot_expansions_max: z.number().int().min(0),
+    expansion_cost_base: z.number().int().positive(), expansion_cost_growth: z.number().positive(),
+    page_size: z.number().int().positive(),
+  }).default({ bag_slots: 100, depot_slots: 200, slots_per_rank_order: 10, expansion_slots: 20, bag_expansions_max: 5, depot_expansions_max: 10, expansion_cost_base: 500, expansion_cost_growth: 2, page_size: 20 }),
 });
 export type CultivationRules = z.infer<typeof CultivationRules>;
 

@@ -102,5 +102,16 @@
     "affinity_level": 4,
     "qi_mult": 1.1,
     "stat_scale": 0.75
+  },
+  "inventory": {
+    "bag_slots": 100,
+    "depot_slots": 200,
+    "slots_per_rank_order": 10,
+    "expansion_slots": 20,
+    "bag_expansions_max": 5,
+    "depot_expansions_max": 10,
+    "expansion_cost_base": 500,
+    "expansion_cost_growth": 2.0,
+    "page_size": 20
   }
 }

@@ -9,6 +9,8 @@ import type { App } from "../../app.ts";
 import { computeStats } from "../../engine/stats.ts";
 import { EQUIP_SLOTS, type EquipSlot } from "../../engine/inventory.ts";
 import { slotOpen } from "../../engine/unlock.ts";
+import { gearPlace } from "../../engine/inventory.ts";
+import { hintBar, helpButton } from "../help.ts";
 import { equipBest } from "../../engine/actions.ts";
 import { gearTile, gearDetail, gearName, gearCp } from "./items.ts";
 import { techniquesScreen, autoBattleScreen } from "./techniques.ts";
@@ -35,9 +37,10 @@ export function characterScreen(app: App) {
   };
   return [
     header(app),
+    hintBar(app, "character"),
     h("div", { class: "row char-chips" },
       h("span", { class: "glass chip-pill" }, icon("qi", 14), `${realm.name} · Stage ${s.character.stage}`),
-      h("span", { class: "glass chip-pill" }, icon("root", 14), root.name)),
+      h("span", { class: "glass chip-pill" }, icon("root", 14), root.name), helpButton(app, "character")),
     h("div", { class: "char-stage" },
       h("div", { class: "eq-col" }, LEFT.map(slot)),
       h("div", { class: "char-figure", style: { backgroundImage: app.img(c.artAny(s.character.npc, "full_body")) } }, h("div", { class: "char-aura" })),
@@ -64,7 +67,7 @@ function slotSheet(app: App, k: EquipSlot) {
   app.router.open({ id: "slot", kind: "sheet", render: () => {
     const s = app.game.state, c = app.content;
     const want = k.startsWith("ring") ? "ring" : k;
-    const options = Object.entries(s.inventory.gear).map(([u, g]) => [Number(u), g] as const).filter(([, g]) => c.get<any>(g.base).slot === want).sort((a, b) => gearCp(app, b[1]) - gearCp(app, a[1]));
+    const options = Object.entries(s.inventory.gear).map(([u, g]) => [Number(u), g] as const).filter(([u, g]) => c.get<any>(g.base).slot === want && (gearPlace(s, u) === "bag" || gearPlace(s, u) === "worn")).sort((a, b) => gearCp(app, b[1]) - gearCp(app, a[1]));
     if (selected === undefined && options.length) selected = options[0]![0];
     return h("div", { class: "stack" },
       h("div", { class: "sec-h" }, h("h3", null, SLOT_LABEL[k]), h("span", { class: "hint" }, `${options.length} piece${options.length === 1 ? "" : "s"} owned`)),

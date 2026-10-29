@@ -101,3 +101,60 @@ BEAST_STAGE_LOOK = {
 
 def beast_stage(path, look, stage, stage_name):
     return battle(path, f"{look}, shown {BEAST_STAGE_LOOK[stage]} ({stage_name})", (768, 768), ["refs/mockups/spirit_beasts.png"], creature=True)
+
+# ---------- resource dungeon tiers ----------
+# A resource dungeon has five tiers (I–V). Tier k needs the realm k−1 steps above the entry realm and the tier
+# below cleared once; its enemies carry TIER_STAT_MULT^(k−1) on hp/atk/def/sp_power (speed follows the realm's
+# enemy curve) and its clear table is the tier-I table with TIER_REWARD_MULT^(k−1) stones and bigger quantities,
+# chances and gear rarity weights. Item ids never change, so every tier stays inside the interconnected database.
+# Provisional balance: the multipliers are placeholders until a simulation pass measures them.
+REALM_ORDER = ["qi_condensation", "foundation_establishment", "core_formation", "nascent_soul", "soul_transformation", "spirit_severing",
+               "dao_integration", "tribulation_transcendence", "mahayana", "immortal_ascension", "earth_immortal", "heavenly_immortal",
+               "golden_immortal", "immortal_king", "immortal_emperor"]
+TIERS = 5
+TIER_STAT_MULT = 1.5
+TIER_REWARD_MULT = 1.6
+TIER_NAMES = ["I", "II", "III", "IV", "V"]
+RAR_STEPS = ["common", "uncommon", "rare", "epic", "legendary", "mythic", "immortal"]  # divine: mega dungeons only
+
+def _shift_weights(w, steps):
+    """Move rarity weight mass up by `steps` ranks (never into divine)."""
+    out = {}
+    for r, v in w.items():
+        i = min(len(RAR_STEPS) - 1, RAR_STEPS.index(r) + steps)
+        out[RAR_STEPS[i]] = out.get(RAR_STEPS[i], 0) + v
+    return out
+
+def tier_loot(base, k):
+    """Clear table of tier k (k ≥ 2) derived from the tier-I table `base`."""
+    f = TIER_REWARD_MULT ** (k - 1)
+    q = 1 + 0.5 * (k - 1)
+    ents = []
+    for e in base["entries"]:
+        e2 = dict(e)
+        if "chance" in e2: e2["chance"] = round(min(1.0, e2["chance"] * (1.15 ** (k - 1))), 3)
+        if "qty" in e2: e2["qty"] = [max(1, round(e2["qty"][0] * q)), max(1, round(e2["qty"][1] * q))]
+        if "rarity_weights" in e2: e2["rarity_weights"] = _shift_weights(e2["rarity_weights"], (k - 1) // 2)
+        ents.append(e2)
+    d = {**base, "id": f"{base['id']}_t{k}", "entries": ents,
+         "guaranteed": [{"id": g["id"], "qty": max(1, round(g["qty"] * q))} for g in base.get("guaranteed", [])],
+         "spirit_stones": [round(base["spirit_stones"][0] * f), round(base["spirit_stones"][1] * f)],
+         "sect_fame": round(base.get("sect_fame", 0) * f), "mastery_xp": round(base.get("mastery_xp", 0) * f)}
+    if "ilvl" in base: d["ilvl"] = [base["ilvl"][0] + 4 * (k - 1), base["ilvl"][1] + 4 * (k - 1)]
+    return d
+
+def make_tiers(entry_realm_id, entry_stage, base_cp, clear_loot_id, first_clear):
+    """Tier list for a resource dungeon. first_clear stones/fame scale with the tier (items stay the same)."""
+    o = REALM_ORDER.index(entry_realm_id.split(".")[1])
+    tiers = []
+    for k in range(1, TIERS + 1):
+        ro = min(len(REALM_ORDER) - 1, o + k - 1)
+        fc = {kk: (round(v * TIER_REWARD_MULT ** (k - 1)) if isinstance(v, (int, float)) else v) for kk, v in first_clear.items()} if k > 1 else first_clear
+        tiers.append({"tier": k, "name": TIER_NAMES[k - 1], "realm": {"id": f"realm.{REALM_ORDER[ro]}", "stage": entry_stage if k == 1 else 1},
+                      "stat_mult": round(TIER_STAT_MULT ** (k - 1), 3), "rec_cp": round(base_cp * TIER_STAT_MULT ** (k - 1)),
+                      "rewards": {"clear": clear_loot_id if k == 1 else f"{clear_loot_id}_t{k}", "first_clear": fc}})
+    return tiers
+
+def tier_loots(base):
+    """Clear tables of tiers II–V derived from the tier-I table."""
+    return [tier_loot(base, k) for k in range(2, TIERS + 1)]

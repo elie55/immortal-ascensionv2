@@ -2,15 +2,17 @@
 import { h, fmt, type Child } from "./dom.ts";
 import { icon } from "./icons.ts";
 import type { App } from "../../app.ts";
+import { trackerChip } from "../navigate.ts";
+import { hintBar, helpButton } from "../help.ts";
 
 /** Top bar: portrait, name, sect/rank line, spirit stones. */
 export function header(app: App, opts: { sub?: string } = {}) {
   const s = app.game.state;
   const rank = app.content.get<any>(s.character.rank);
-  return h("header", { class: "hdr glass" },
+  return [h("header", { class: "hdr glass" },
     h("div", { class: "avatar", style: { backgroundImage: app.img(app.content.artAny(s.character.npc, "portrait", "full_body")) } }),
     h("div", { class: "who" }, h("div", { class: "name" }, s.character.name), h("div", { class: "sub" }, opts.sub ?? `Azure Cloud Sect · ${rank.name}`)),
-    stones(s.resources.spirit_stones));
+    stones(s.resources.spirit_stones)), trackerChip(app)];
 }
 
 export function stones(n: number) {
@@ -18,11 +20,13 @@ export function stones(n: number) {
 }
 
 /** Sub-header with a back chip, title (+ Chinese), subtitle and optional trailing element. */
-export function subbar(o: { title: string; cn?: string; sub?: string; backTo?: string; onBack?: () => void; end?: Child }) {
-  return h("div", { class: "subbar glass" },
+export function subbar(o: { title: string; cn?: string; sub?: string; backTo?: string; onBack?: () => void; end?: Child; help?: { app: App; key: string } }) {
+  const bar = h("div", { class: "subbar glass" },
     o.onBack && h("button", { class: "back", onClick: o.onBack, "aria-label": "Back" }, icon("back", 14), h("span", null, "Back to", h("b", null, o.backTo ?? "Back"))),
     h("div", { class: "grow" }, h("div", { class: "t" }, o.title, o.cn && h("span", { class: "cn" }, o.cn)), o.sub && h("div", { class: "s" }, o.sub)),
+    o.help && helpButton(o.help.app, o.help.key),
     o.end && h("div", { class: "end" }, o.end));
+  return o.help ? [bar, hintBar(o.help.app, o.help.key)] : bar;
 }
 
 export function section(title: string, hint: Child, ...children: Child[]) {
@@ -138,4 +142,30 @@ export function confirmModal(app: App, o: { title: string; body: string; ok: str
     h("div", { class: "grid-2" },
       h("button", { class: "btn", onClick: close }, "Cancel"),
       h("button", { class: ["btn", o.danger ? "danger" : "gold"], onClick: () => { close(); onOk(); } }, o.ok))) });
+}
+
+/**
+ * Grid of fixed-size pages (rules.inventory.page_size slots each): every slot is drawn, empty ones as dashed
+ * placeholders, so the capacity is visible. Page tabs underneath. `capacity` = total slots (pages = ⌈capacity / size⌉).
+ */
+export function pagedGrid(app: App, tiles: Child[], capacity: number, page: number, onPage: (p: number) => void, opts: { cols?: number } = {}) {
+  const size = app.content.rules.inventory.page_size;
+  const pages = Math.max(1, Math.ceil(Math.max(capacity, tiles.length) / size));
+  const cur = Math.min(page, pages - 1);
+  const slice = tiles.slice(cur * size, cur * size + size);
+  const slotsHere = Math.min(size, Math.max(0, capacity - cur * size));
+  const empties = Math.max(0, slotsHere - slice.length);
+  return h("div", { class: "paged" },
+    h("div", { class: "inv-grid", style: opts.cols ? { gridTemplateColumns: `repeat(${opts.cols}, minmax(0, 1fr))` } : undefined }, slice, Array.from({ length: empties }, () => h("div", { class: "slot-empty-ph", "aria-hidden": "true" }))),
+    pages > 1 && h("div", { class: "pager" },
+      h("button", { class: "icon-btn", disabled: cur === 0, "aria-label": "Previous page", onClick: () => onPage(cur - 1) }, icon("back", 14)),
+      h("div", { class: "pager-nums" }, Array.from({ length: pages }, (_, i) => h("button", { class: ["pg", i === cur && "on"], onClick: () => onPage(i) }, String(i + 1)))),
+      h("button", { class: "icon-btn", disabled: cur >= pages - 1, "aria-label": "Next page", onClick: () => onPage(cur + 1) }, icon("chevron", 14))));
+}
+
+/** "used / capacity slots" meter. */
+export function capacityMeter(used: number, cap: number, label: string) {
+  const full = used >= cap;
+  return h("div", { class: ["cap-meter", full && "full"] },
+    h("span", { class: "muted" }, label), bar(cap ? used / cap : 0, { cls: full ? "thin pink" : "thin" }), h("b", { class: ["tnum", full && "red-t"] }, `${used} / ${cap}`));
 }

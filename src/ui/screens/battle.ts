@@ -66,16 +66,17 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   function renderUnits() {
     unitEls.clear();
     replaceChildren(enemyRow, battle.units.filter((u) => u.side === "enemy" && (u.alive || u.kind === "boss")).map(unitCard));
-    replaceChildren(allyRow, battle.units.filter((u) => u.side === "ally").map(unitCard));
+    const allies = battle.units.filter((u) => u.side === "ally");
+    allyRow.className = `bt-allies n${Math.min(4, allies.length)}`;
+    replaceChildren(allyRow, allies.map(unitCard));
     const boss = battle.units.find((u) => u.kind === "boss");
-    const p = battle.player;
+    const p = battle.player; void p;
     replaceChildren(banner,
       boss && boss.alive ? h("div", { class: "bt-bossbar glass gold" },
         h("div", { class: "row between" }, h("span", { class: "title", style: { fontSize: "calc(13rem / 15)" } }, boss.name), h("span", { class: "tag" }, `${boss.boss!.phases[boss.boss!.phase]!.name} · P${boss.boss!.phase + 1}/${boss.boss!.phases.length}`)),
         h("div", { class: "bar thick hp" }, h("i", { style: { width: `${(boss.hp / boss.maxHp * 100).toFixed(1)}%` } }), h("span", null, `${fmt.int(boss.hp)} / ${fmt.int(boss.maxHp)}`)),
         chargeWarn && h("div", { class: "bt-charge" }, icon("warning", 12), ` ${chargeWarn.text}`)) : null,
-      phaseBanner && Date.now() < phaseBanner.until ? h("div", { class: "bt-phase" }, phaseBanner.text) : null,
-      h("div", { class: "bt-ultgauge" }, h("i", { style: { width: `${p.ult}%` } }), h("span", null, p.ult >= 100 ? "ULTIMATE READY" : `Ultimate ${Math.floor(p.ult)}%`)));
+      phaseBanner && Date.now() < phaseBanner.until ? h("div", { class: "bt-phase" }, phaseBanner.text) : null);
   }
 
   function renderTop() {
@@ -94,11 +95,11 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       const cd = p.cooldowns[s.id] ?? 0;
       const usable = battle.canUse(p, s);
       const art = s.id === "basic" ? undefined : c.art(s.id, "icon");
-      return h("button", { class: ["bt-skill", cls, usable && waiting && "ready", !usable && "off"], disabled: !(manual && waiting && usable), onClick: () => choose(s),
+      return h("button", { class: ["bt-skill", cls, usable && waiting && "ready", !usable && "off", s.kind === "ultimate" && p.ult >= 100 && "charged"], style: s.kind === "ultimate" ? { "--ult": `${Math.min(100, p.ult)}%` } : undefined, disabled: !(manual && waiting && usable), onClick: () => choose(s),
         title: `${s.name}${s.spCost ? ` · ${s.spCost} SP` : ""}${s.cooldown ? ` · CD ${s.cooldown}` : ""}` },
         h("span", { class: "sk-art", style: { backgroundImage: app.img(art), borderColor: ELEMENT_COLOR[s.element] } }, !art && icon(s.kind === "ultimate" ? "sparkle" : "sword", 20)),
         cd > 0 && h("span", { class: "sk-cd" }, String(cd)),
-        s.kind === "ultimate" ? h("span", { class: "sk-cost" }, `${Math.floor(p.ult)}%`) : s.spCost > 0 && h("span", { class: "sk-cost" }, `${s.spCost} SE`),
+        s.kind === "ultimate" ? h("span", { class: ["sk-ult-pct", p.ult >= 100 && "ready"] }, p.ult >= 100 ? "READY" : `${Math.floor(p.ult)}%`) : s.spCost > 0 && h("span", { class: "sk-cost" }, `${s.spCost} SE`),
         h("span", { class: "sk-name" }, s.name));
     };
     replaceChildren(skillBar,

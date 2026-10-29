@@ -58,14 +58,19 @@ Defects D-15 to D-27 are listed in [`QA_DEFECT_LOG.md`](QA_DEFECT_LOG.md). The m
 - **Contrast warnings** (ratio 3–4.5 : 1) are mostly muted secondary text on lighter glass, and labels with a text shadow over art. None is unreadable.
 - **Ellipsis notes** mark long names shortened in tight spots (skill names in the battle bar, NPC titles in the story nameplate). Tapping shows the full name.
 
-## Proposals that change game flow (need the owner's decision)
+## Flow changes (approved and built in v0.5.0)
 
-1. **Turn in all ready quests from the Quest Log.** Today a quest is handed in at its giver, which is the design in the spec.
-2. **Enhance ×5 / Enhance to +N at the Spirit Forge.** It spends materials in one press; it would stop on failure.
-3. **Sell by rarity at the Merchant**, e.g. "Sell all common gear". Locked and equipped pieces would always be kept.
-4. **Item names under the tiles in the Merchant's Sell grid.** Today the name only shows after tapping.
-5. **A one-line hint the first time each system screen opens**, plus a (?) with details on the Forge, Alchemy and Auto-battle screens.
-6. **A pan-able sect map** when more locations are added (the current 12 fit).
+1. **Turn in all** ready quests from the Quest Log (`turnInAll`).
+2. **Enhance ×5** (stops at the first failure) and **Enhance to +N** at the Spirit Forge (`enhanceMany`).
+3. **Sell all Common / Uncommon / Rare** gear at the Merchant; locked and worn pieces never included; confirmation first.
+4. Item names under the tiles in the Merchant's Sell grid.
+5. A one-line **first-time hint** on every system screen (remembered in the save) and a **(?)** help sheet in the title bar (`src/ui/help.ts`).
+
+Also in v0.5.0: quest **tracking** with a HUD chip and *Go ▸* that leads to the place (`src/ui/navigate.ts`),
+**celebration screens** for evolution, tournament, achievements, tower milestones, Fame/realm unlocks and new regions
+(`src/ui/screens/celebrate.ts`), the battle screen's ally cards filling the width (solo = one wide card) with the
+Ultimate charge on its button, resource dungeon **tiers I–V**, and the **100-slot bag / 200-slot depot** with 20-slot
+pages (`docs/INVENTORY.md`).
 
 ## Still to check
 

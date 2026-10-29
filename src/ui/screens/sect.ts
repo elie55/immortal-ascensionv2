@@ -20,6 +20,8 @@ import { alchemyScreen } from "./alchemy.ts";
 import { forgeScreen } from "./forge.ts";
 import { arenaScreen } from "./tournament.ts";
 import { beastsScreen } from "./beasts.ts";
+import { depotScreen } from "./inventory.ts";
+import { depotUsed, depotCapacity } from "../../engine/inventory.ts";
 import type { App as AppT } from "../../app.ts";
 
 /** Open a sect location (records the visit for quests and story triggers). */
@@ -40,6 +42,7 @@ function activity(app: AppT, f: string, loc: any): { go?: () => void; tag: strin
     case "tournament": return { go: () => app.router.push(arenaScreen(app, back)), tag: "Enter" };
     case "duels": { const n = (loc.npcs as string[]).find((x) => app.content.get<any>(x).duel?.enabled); return n ? { go: () => app.router.push(npcScreen(app, n, back)), tag: "Spar", note: `Spar with ${app.content.get<any>(n).name}` } : { tag: "Soon" }; }
     case "beasts": return { go: () => app.router.push(beastsScreen(app, back)), tag: "Open", note: "Hatch eggs, raise and evolve your beasts" };
+    case "storage": return { go: () => app.router.push(depotScreen(app, back)), tag: "Open", note: `Depot ${depotUsed(app.game.state)} / ${depotCapacity(app.game.state, app.content)} slots · keep what you do not carry` };
     case "rest": return { go: () => { app.game.run("rest", app.now(), (st) => { delete st.character.hp; return { ok: true, events: [] }; }, false); app.router.toast("You rest and recover fully", "good"); }, tag: "Rest", note: "Recover all HP" };
     default: return { tag: "Soon" };
   }

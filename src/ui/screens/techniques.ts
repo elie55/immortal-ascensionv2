@@ -33,7 +33,7 @@ export function techniquesScreen(app: App, backTo: string): Screen {
       };
       return [
         header(app),
-        subbar({ title: "Techniques", cn: "功法", sub: `${Object.keys(s.techniques.known).length} known`, backTo, onBack: () => app.router.back(),
+        subbar({ help: { app, key: "techniques" }, title: "Techniques", cn: "功法", sub: `${Object.keys(s.techniques.known).length} known`, backTo, onBack: () => app.router.back(),
           end: h("button", { class: "btn gold sm", onClick: () => app.router.push(autoBattleScreen(app, "Techniques")) }, icon("auto", 13), "Auto-battle") }),
         section("Cultivation method", `${methods.length} learned`,
           h("div", { class: "rows" }, methods.map((m) => {
@@ -114,7 +114,7 @@ export function autoBattleScreen(app: App, backTo: string): Screen {
       const rules = preset.rules;
       return [
         header(app),
-        subbar({ title: "Auto-Battle", cn: "自动战斗", sub: "Highest ready rule fires first", backTo, onBack: () => app.router.back() }),
+        subbar({ help: { app, key: "autobattle" }, title: "Auto-Battle", cn: "自动战斗", sub: "Highest ready rule fires first", backTo, onBack: () => app.router.back() }),
         h("div", { class: "row between glass", style: { padding: "5px 8px", borderRadius: "999px" } },
           seg(s.combat.active, s.combat.presets.map((p, i) => ({ value: i, label: p.name })), (v) => { app.game.run("preset", app.now(), (st) => { st.combat.active = v; return { ok: true, events: [] }; }); open = null; }),
           s.combat.presets.length < 3 && h("button", { class: "icon-btn", "aria-label": "New preset", onClick: () => { app.game.run("preset", app.now(), (st) => { const names = ["Balanced", "Boss", "Farming"]; const name = names.find((n) => !st.combat.presets.some((p) => p.name === n)) ?? `Preset ${st.combat.presets.length + 1}`; st.combat.presets.push({ name, rules: preset.rules.map((r) => ({ ...r })) }); st.combat.active = st.combat.presets.length - 1; return { ok: true, events: [] }; }); app.router.toast("Preset copied — edit it for its purpose", "good"); } }, icon("plus", 14)),

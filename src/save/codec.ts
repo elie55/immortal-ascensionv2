@@ -55,6 +55,12 @@ export const migrations: Record<number, (raw: any) => any> = {
   },
   // 4 → 5: saved secret realm runs
   4: (st) => ({ ...st, progress: { ...st.progress, realmRuns: st.progress?.realmRuns ?? {} } }),
+  // 5 → 6: bag capacity, depot, overflow pouch, expansions; tracked quest; dungeon tiers; hints seen
+  5: (st) => ({
+    ...st,
+    inventory: { ...st.inventory, depot: st.inventory?.depot ?? { stacks: {}, gear: [] }, pouch: st.inventory?.pouch ?? { stacks: {}, gear: [] }, bagExpansions: st.inventory?.bagExpansions ?? 0, depotExpansions: st.inventory?.depotExpansions ?? 0 },
+    progress: { ...st.progress, quests: { ...st.progress?.quests, tracked: st.progress?.quests?.tracked ?? null }, hintsSeen: st.progress?.hintsSeen ?? [] },
+  }),
 };
 
 export function encode(state: GameState, slot: number, savedAt: number): string {

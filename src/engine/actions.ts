@@ -5,7 +5,7 @@
 import type { ContentIndex, Consumable } from "../content/index.ts";
 import type { GameState } from "./state.ts";
 import type { DomainEvent } from "./events.ts";
-import { addItem, removeItem, itemCount, grantGear, equip as equipGear, unequip as unequipGear, meetsRequirements, equippedSlotOf, EQUIP_SLOTS, type Result, type EquipSlot } from "./inventory.ts";
+import { addItem, removeItem, itemCount, grantGear, equip as equipGear, unequip as unequipGear, meetsRequirements, equippedSlotOf, gearPlace, EQUIP_SLOTS, deposit, withdraw, depositGear, withdrawGear, claimPouch, expand, type Result, type EquipSlot } from "./inventory.ts";
 import { slotOpen } from "./unlock.ts";
 import { addBuff, minorBreakthrough, majorBreakthrough, countAffordableStages, qiBankCap, isBreakthroughItem } from "./cultivation.ts";
 import { computeStats } from "./stats.ts";
@@ -138,6 +138,8 @@ export function bestLoadout(s: GameState, content: ContentIndex): { changes: { s
       for (const [u, g] of Object.entries(s.inventory.gear)) {
         const uid = Number(u);
         if (s.equipped[slot] === uid) continue;
+        const place = gearPlace(s, uid);
+        if (place === "depot" || place === "pouch") continue; // only what is in the bag (or worn elsewhere)
         const base = content.get<any>(g.base);
         if (base.slot !== want || !meetsRequirements(s, content, base).ok) continue;
         const other = equippedSlotOf(s, uid);
@@ -165,7 +167,7 @@ export function equipBest(s: GameState, content: ContentIndex): ActionResult<{ c
 }
 
 export function unequip(s: GameState, _content: ContentIndex, slot: EquipSlot): ActionResult<{ uid: number }> {
-  const r = unequipGear(s, slot);
+  const r = unequipGear(s, slot, _content);
   return r.ok ? { ok: true, events: [], uid: r.uid } : fail(r.reason);
 }
 
@@ -197,3 +199,18 @@ export function setLoadout(s: GameState, content: ContentIndex, kind: "actives" 
 }
 
 export type { Result };
+
+// ---------- bag, depot and overflow pouch ----------
+const wrap = (r: Result): ActionResult => (r.ok ? { ok: true, events: [] } : fail(r.reason));
+export const storeItem = (s: GameState, c: ContentIndex, id: string, qty: number): ActionResult => wrap(deposit(s, c, id, qty));
+export const takeItem = (s: GameState, c: ContentIndex, id: string, qty: number): ActionResult => wrap(withdraw(s, c, id, qty));
+export const storeGear = (s: GameState, c: ContentIndex, uid: number): ActionResult => wrap(depositGear(s, c, uid));
+export const takeGear = (s: GameState, c: ContentIndex, uid: number): ActionResult => wrap(withdrawGear(s, c, uid));
+export function claimOverflow(s: GameState, c: ContentIndex): ActionResult<{ moved: number; left: number }> {
+  const r = claimPouch(s, c);
+  return r.ok ? { ok: true, events: [], moved: r.moved, left: r.left } : fail(r.reason);
+}
+export function buyExpansion(s: GameState, c: ContentIndex, which: "bag" | "depot"): ActionResult<{ slots: number; cost: number }> {
+  const r = expand(s, c, which);
+  return r.ok ? { ok: true, events: [{ type: "currency", currency: "spirit_stones", delta: -r.cost }], slots: r.slots, cost: r.cost } : fail(r.reason);
+}

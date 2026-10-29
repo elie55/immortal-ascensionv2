@@ -113,3 +113,35 @@ test("losing a realm battle keeps the run: the node stays open and HP is low", (
     assert.ok(realmRun(s, ORIGIN)!.hp! > 0);
   } else assert.equal(realmNodeState(s, c, ORIGIN, "gate"), "cleared");
 });
+
+test("resource dungeon tiers: gated by the tier below and its realm, stronger enemies, bigger rewards, shared daily limit", async () => {
+  const { tierCheck, tierCleared } = await import("../src/engine/encounter.ts");
+  const d = c.get<any>("dungeon.old_granary_cellars");
+  assert.equal(d.tiers.length, 5);
+  assert.ok(d.tiers[1].stat_mult > 1 && d.tiers[4].rec_cp > d.tiers[1].rec_cp);
+  const s = strong();
+  s.daily.counters = {};
+  // tier II is closed until tier I is cleared once
+  assert.equal(canStart(s, c, { kind: "dungeon", id: d.id, tier: 2 }, T0).ok, false);
+  assert.ok(fight(s, { kind: "dungeon", id: d.id }));
+  assert.ok(tierCleared(s, d.id, 1) && tierCheck(s, c, d, 2).ok);
+  // tier V needs a later realm
+  assert.equal(tierCheck(s, c, d, 5).ok, false);
+  // enemies carry the tier multiplier
+  const e1 = Encounter.start(s, c, { kind: "dungeon", id: d.id }, T0); assert.ok(e1.ok); const hp1 = e1.encounter.battle!.units.find((u) => u.side === "enemy")!.maxHp;
+  s.daily.counters = {};
+  const e2 = Encounter.start(s, c, { kind: "dungeon", id: d.id, tier: 2 }, T0); assert.ok(e2.ok); const hp2 = e2.encounter.battle!.units.find((u) => u.side === "enemy")!.maxHp;
+  assert.ok(Math.abs(hp2 / hp1 - d.tiers[1].stat_mult) < 0.02, `tier II hp ×${(hp2 / hp1).toFixed(2)}`);
+  // clearing tier II: records tierClears, pays its own first clear, counts toward the shared daily limit
+  s.daily.counters = {};
+  const stones = s.resources.spirit_stones;
+  assert.ok(fight(s, { kind: "dungeon", id: d.id, tier: 2 }));
+  assert.equal(s.progress.dungeons[d.id]!.tierClears![2], 1);
+  assert.ok(s.resources.spirit_stones - stones >= d.tiers[1].rewards.first_clear.spirit_stones, "tier II first clear paid");
+  assert.ok(tierCheck(s, c, d, 3).ok);
+  assert.equal(s.daily.counters[`dungeon:${d.id}`], 1);
+  // loot tables of higher tiers are the tier-I table scaled, same item ids
+  const base = c.get<any>(d.rewards.clear), t3 = c.get<any>(d.tiers[2].rewards.clear);
+  assert.deepEqual(t3.entries.map((e: any) => e.id ?? "gear"), base.entries.map((e: any) => e.id ?? "gear"));
+  assert.ok(t3.spirit_stones[1] > base.spirit_stones[1] * 2);
+});

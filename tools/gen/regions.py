@@ -251,6 +251,7 @@ def region(rd, prev):
     if dkind == "resource":
         out["loot"].append({"id": wave_loot, "mode": "independent", "rolls": 1, "entries": [{"id": M(ore), "chance": 0.6, "qty": [1, 3]}, {"id": "mat.spirit_enhancing_stone", "chance": 0.4, "qty": [1, 2]}], "guaranteed": [], "spirit_stones": [20 * n * n, 40 * n * n], "sect_fame": 0, "mastery_xp": 0})
         out["loot"].append({"id": clear_loot, "mode": "independent", "rolls": 1, "entries": [{"id": "mat.refining_stone", "chance": 0.6, "qty": [1, 2]}, {"id": "mat.reforging_sand", "chance": 0.6, "qty": [1, 3]}], "guaranteed": [q2(M(ore), 5), q2(M(herb), 5)], "spirit_stones": [150 * n * n, 250 * n * n], "sect_fame": 0, "mastery_xp": 0})
+        out["loot"] += tier_loots(out["loot"][-1])
     else:
         out["loot"].append({"id": wave_loot, "mode": "independent", "rolls": 1, "entries": [{"id": M(mon), "chance": 0.6, "qty": [1, 2]}], "guaranteed": [], "spirit_stones": [20 * n * n, 40 * n * n], "sect_fame": 0, "mastery_xp": 0})
         out["loot"].append({"id": clear_loot, "mode": "independent", "rolls": 1, "ilvl": [blo + 4, bhi + 2], "entries": [{"id": M(cry), "chance": 0.7, "qty": [1, 2]}, {"gear": {"pool": {"tags": [key]}}, "rarity_weights": weights(n, [(1, 60), (2, 30), (3, 10)]), "chance": 0.6}],
@@ -262,6 +263,7 @@ def region(rd, prev):
                             "waves": [{"enemies": [eids[0], eids[1]]}, {"enemies": [eids[1], eids[2]]}, {"enemies": [eids[3]]}, {"enemies": [f"boss.{dbk}"]}] if dkind == "resource"
                                      else [{"enemies": [eids[0], eids[1]]}, {"enemies": [eids[2], eids[4]]}, {"enemies": [eids[3]]}, {"enemies": [f"boss.{dbk}"]}],
                             "modifiers": [], "rewards": {"per_wave": wave_loot, "clear": clear_loot, "first_clear": {"spirit_stones": 300 * n * n, "sect_fame": 30 * n, "gear": [{"base": gids[1], "rarity": R[R.index(lo_r) + 1], "ilvl": bhi}]}},
+                            **({"tiers": make_tiers(realm_id(rmin), 3, round(cb * 1.3), clear_loot, {"spirit_stones": 300 * n * n, "sect_fame": 30 * n, "gear": [{"base": gids[1], "rarity": R[R.index(lo_r) + 1], "ilvl": bhi}]})} if dkind == "resource" else {}),
                             "checkpoints": False, "persistent_hp": True,
                             "art": {"card": art(f"assets/dungeons/{dk}_card.png", f"{STYLE}. Dungeon card illustration: {dscene}. Wide painterly composition, no text.", (1024, 640), False, ["refs/mockups/dungeon_hub.png"]),
                                     "battle_bg": bg(f"dungeons/{dk}_battle_bg", f"battle backdrop inside {dscene}", refs=["refs/mockups/battle_screen.png"])}})

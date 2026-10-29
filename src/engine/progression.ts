@@ -12,7 +12,7 @@ import type { DomainEvent } from "./events.ts";
 import type { ActionResult } from "./actions.ts";
 import { grantRewards } from "./actions.ts";
 import { checkUnlock, realmAtLeast, affinityLevel } from "./unlock.ts";
-import { itemCount, removeItems } from "./inventory.ts";
+import { itemCount, removeItems, gearPlace } from "./inventory.ts";
 import { applyUnlock } from "./story.ts";
 
 type Objective = Quest["objectives"][number];
@@ -60,7 +60,7 @@ export function evalObjective(s: GameState, c: ContentIndex, o: Objective, basel
     case "reach_realm": return flag(realmAtLeast(s, c, o.realm, o.stage), `Reach ${name(c, o.realm)}${o.stage > 1 ? ` ${o.stage}` : ""}`);
     case "learn": return flag(o.target.startsWith("method.") ? s.character.methodMastery[o.target] !== undefined : s.techniques.known[o.target] !== undefined, `Learn ${name(c, o.target)}`);
     case "enhance": {
-      const uids = o.slot ? [s.equipped[o.slot]].filter((u): u is number => u !== undefined) : Object.keys(s.inventory.gear).map(Number);
+      const uids = o.slot ? [s.equipped[o.slot]].filter((u): u is number => u !== undefined) : Object.keys(s.inventory.gear).map(Number).filter((u) => gearPlace(s, u) === "bag" || gearPlace(s, u) === "worn");
       const best = Math.max(0, ...uids.map((u) => s.inventory.gear[u]?.enhance ?? 0));
       return { label: `Enhance ${o.slot ? `your ${o.slot}` : "a piece of gear"} to +${o.level}`, have: Math.min(best, o.level), need: o.level, done: best >= o.level };
     }
@@ -101,7 +101,21 @@ export function acceptQuest(s: GameState, c: ContentIndex, id: string, now: numb
   const st = questStatus(s, c, q, now);
   if (st !== "available") return { ok: false, reason: st === "locked" ? (checkUnlock(s, c, q.prereqs as any).reasons[0] ?? "Locked") : st === "cooldown" ? "Not available again yet" : "Already taken" };
   s.progress.quests.active[id] = { startedAt: now, counters: q.objectives.map((o) => { const k = counterKey(o); return k ? counter(s, k) : 0; }) };
+  if (!s.progress.quests.tracked && q.type === "main") s.progress.quests.tracked = id; // main quests pin themselves until the player picks another
   return { ok: true, events: [{ type: "quest_accepted", quest: id }] };
+}
+
+/** Turn in every ready quest from the Quest Log (no walk to the giver). Returns how many were handed in. */
+export function turnInAll(s: GameState, c: ContentIndex, now: number): ActionResult<{ count: number }> {
+  const events: DomainEvent[] = [];
+  let count = 0;
+  for (const id of Object.keys(s.progress.quests.active)) {
+    const q = c.get<Quest>(id);
+    if (questStatus(s, c, q, now) !== "ready") continue;
+    const r = turnInQuest(s, c, id, now);
+    if (r.ok) { count++; events.push(...r.events); }
+  }
+  return count ? { ok: true, events, count } : { ok: false, reason: "No quest is ready to turn in" };
 }
 
 export function abandonQuest(s: GameState, c: ContentIndex, id: string): ActionResult {
@@ -119,6 +133,7 @@ export function turnInQuest(s: GameState, c: ContentIndex, id: string, now: numb
   if (consume.length && !removeItems(s, consume)) return { ok: false, reason: "Items missing" };
   const events: DomainEvent[] = consume.map((x) => ({ type: "item_used", id: x.id, qty: x.qty }));
   delete s.progress.quests.active[id];
+  if (s.progress.quests.tracked === id) s.progress.quests.tracked = null;
   s.progress.quests.completed[id] = (s.progress.quests.completed[id] ?? 0) + 1;
   s.progress.quests.lastCompletedAt[id] = now;
   bump(s, "quests_completed");
@@ -231,6 +246,14 @@ export function sweep(s: GameState, c: ContentIndex, now: number, announced: Set
     if (achievementProgress(s, c, a).done) { s.progress.achievements[a.id] = now; grantRewards(s, c, a.rewards, events); events.push({ type: "achievement", id: a.id }); }
   }
   while (promote(s, c, events)) { /* multiple ranks in a row are possible after a long absence */ }
+  // Places gated by Sect Fame or realm (sect locations, secret realms) announce themselves once when they open.
+  for (const p of [...c.byPrefix<any>("sectloc"), ...c.byPrefix<any>("dungeon").filter((d) => d.kind === "secret_realm")]) {
+    const u = p.unlock ?? p.entry;
+    if (!u || (!u.sect_fame && !u.realm && !u.rank)) continue;
+    const key = `opened:${p.id}`;
+    if (s.progress.unlocks.includes(key)) continue;
+    if (checkUnlock(s, c, u).ok) { s.progress.unlocks.push(key); events.push({ type: "place_opened", id: p.id, by: u.sect_fame ? "fame" : u.rank ? "rank" : "realm" }); }
+  }
   const stories: string[] = [];
   for (const sc of c.byPrefix<StoryScene>("story")) {
     if (s.progress.storySeen[sc.id] || queued.has(sc.id) || sc.trigger.on === "new_game" || sc.trigger.on === "chained") continue;

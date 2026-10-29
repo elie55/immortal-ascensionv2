@@ -61,6 +61,128 @@
         ]
       }
     },
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "I",
+        "realm": {
+          "id": "realm.foundation_establishment",
+          "stage": 3
+        },
+        "stat_mult": 1.0,
+        "rec_cp": 1820,
+        "rewards": {
+          "clear": "loot.dungeon.ember_forge_ruins_clear",
+          "first_clear": {
+            "spirit_stones": 2700,
+            "sect_fame": 90,
+            "gear": [
+              {
+                "base": "gear.blazeforge_plate",
+                "rarity": "rare",
+                "ilvl": 28
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 2,
+        "name": "II",
+        "realm": {
+          "id": "realm.core_formation",
+          "stage": 1
+        },
+        "stat_mult": 1.5,
+        "rec_cp": 2730,
+        "rewards": {
+          "clear": "loot.dungeon.ember_forge_ruins_clear_t2",
+          "first_clear": {
+            "spirit_stones": 4320,
+            "sect_fame": 144,
+            "gear": [
+              {
+                "base": "gear.blazeforge_plate",
+                "rarity": "rare",
+                "ilvl": 28
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 3,
+        "name": "III",
+        "realm": {
+          "id": "realm.nascent_soul",
+          "stage": 1
+        },
+        "stat_mult": 2.25,
+        "rec_cp": 4095,
+        "rewards": {
+          "clear": "loot.dungeon.ember_forge_ruins_clear_t3",
+          "first_clear": {
+            "spirit_stones": 6912,
+            "sect_fame": 230,
+            "gear": [
+              {
+                "base": "gear.blazeforge_plate",
+                "rarity": "rare",
+                "ilvl": 28
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 4,
+        "name": "IV",
+        "realm": {
+          "id": "realm.soul_transformation",
+          "stage": 1
+        },
+        "stat_mult": 3.375,
+        "rec_cp": 6142,
+        "rewards": {
+          "clear": "loot.dungeon.ember_forge_ruins_clear_t4",
+          "first_clear": {
+            "spirit_stones": 11059,
+            "sect_fame": 369,
+            "gear": [
+              {
+                "base": "gear.blazeforge_plate",
+                "rarity": "rare",
+                "ilvl": 28
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 5,
+        "name": "V",
+        "realm": {
+          "id": "realm.spirit_severing",
+          "stage": 1
+        },
+        "stat_mult": 5.062,
+        "rec_cp": 9214,
+        "rewards": {
+          "clear": "loot.dungeon.ember_forge_ruins_clear_t5",
+          "first_clear": {
+            "spirit_stones": 17695,
+            "sect_fame": 590,
+            "gear": [
+              {
+                "base": "gear.blazeforge_plate",
+                "rarity": "rare",
+                "ilvl": 28
+              }
+            ]
+          }
+        }
+      }
+    ],
     "checkpoints": false,
     "persistent_hp": true,
     "art": {
@@ -344,6 +466,128 @@
         ]
       }
     },
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "I",
+        "realm": {
+          "id": "realm.nascent_soul",
+          "stage": 3
+        },
+        "stat_mult": 1.0,
+        "rec_cp": 10270,
+        "rewards": {
+          "clear": "loot.dungeon.blood_river_prison_clear",
+          "first_clear": {
+            "spirit_stones": 10800,
+            "sect_fame": 180,
+            "gear": [
+              {
+                "base": "gear.crimsonvow_hood",
+                "rarity": "epic",
+                "ilvl": 52
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 2,
+        "name": "II",
+        "realm": {
+          "id": "realm.soul_transformation",
+          "stage": 1
+        },
+        "stat_mult": 1.5,
+        "rec_cp": 15405,
+        "rewards": {
+          "clear": "loot.dungeon.blood_river_prison_clear_t2",
+          "first_clear": {
+            "spirit_stones": 17280,
+            "sect_fame": 288,
+            "gear": [
+              {
+                "base": "gear.crimsonvow_hood",
+                "rarity": "epic",
+                "ilvl": 52
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 3,
+        "name": "III",
+        "realm": {
+          "id": "realm.spirit_severing",
+          "stage": 1
+        },
+        "stat_mult": 2.25,
+        "rec_cp": 23108,
+        "rewards": {
+          "clear": "loot.dungeon.blood_river_prison_clear_t3",
+          "first_clear": {
+            "spirit_stones": 27648,
+            "sect_fame": 461,
+            "gear": [
+              {
+                "base": "gear.crimsonvow_hood",
+                "rarity": "epic",
+                "ilvl": 52
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 4,
+        "name": "IV",
+        "realm": {
+          "id": "realm.dao_integration",
+          "stage": 1
+        },
+        "stat_mult": 3.375,
+        "rec_cp": 34661,
+        "rewards": {
+          "clear": "loot.dungeon.blood_river_prison_clear_t4",
+          "first_clear": {
+            "spirit_stones": 44237,
+            "sect_fame": 737,
+            "gear": [
+              {
+                "base": "gear.crimsonvow_hood",
+                "rarity": "epic",
+                "ilvl": 52
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 5,
+        "name": "V",
+        "realm": {
+          "id": "realm.tribulation_transcendence",
+          "stage": 1
+        },
+        "stat_mult": 5.062,
+        "rec_cp": 51992,
+        "rewards": {
+          "clear": "loot.dungeon.blood_river_prison_clear_t5",
+          "first_clear": {
+            "spirit_stones": 70779,
+            "sect_fame": 1180,
+            "gear": [
+              {
+                "base": "gear.crimsonvow_hood",
+                "rarity": "epic",
+                "ilvl": 52
+              }
+            ]
+          }
+        }
+      }
+    ],
     "checkpoints": false,
     "persistent_hp": true,
     "art": {
@@ -626,6 +870,128 @@
         ]
       }
     },
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "I",
+        "realm": {
+          "id": "realm.soul_transformation",
+          "stage": 3
+        },
+        "stat_mult": 1.0,
+        "rec_cp": 16120,
+        "rewards": {
+          "clear": "loot.dungeon.thunder_pine_sanctum_clear",
+          "first_clear": {
+            "spirit_stones": 14700,
+            "sect_fame": 210,
+            "gear": [
+              {
+                "base": "gear.skyward_vestments",
+                "rarity": "epic",
+                "ilvl": 60
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 2,
+        "name": "II",
+        "realm": {
+          "id": "realm.spirit_severing",
+          "stage": 1
+        },
+        "stat_mult": 1.5,
+        "rec_cp": 24180,
+        "rewards": {
+          "clear": "loot.dungeon.thunder_pine_sanctum_clear_t2",
+          "first_clear": {
+            "spirit_stones": 23520,
+            "sect_fame": 336,
+            "gear": [
+              {
+                "base": "gear.skyward_vestments",
+                "rarity": "epic",
+                "ilvl": 60
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 3,
+        "name": "III",
+        "realm": {
+          "id": "realm.dao_integration",
+          "stage": 1
+        },
+        "stat_mult": 2.25,
+        "rec_cp": 36270,
+        "rewards": {
+          "clear": "loot.dungeon.thunder_pine_sanctum_clear_t3",
+          "first_clear": {
+            "spirit_stones": 37632,
+            "sect_fame": 538,
+            "gear": [
+              {
+                "base": "gear.skyward_vestments",
+                "rarity": "epic",
+                "ilvl": 60
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 4,
+        "name": "IV",
+        "realm": {
+          "id": "realm.tribulation_transcendence",
+          "stage": 1
+        },
+        "stat_mult": 3.375,
+        "rec_cp": 54405,
+        "rewards": {
+          "clear": "loot.dungeon.thunder_pine_sanctum_clear_t4",
+          "first_clear": {
+            "spirit_stones": 60211,
+            "sect_fame": 860,
+            "gear": [
+              {
+                "base": "gear.skyward_vestments",
+                "rarity": "epic",
+                "ilvl": 60
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 5,
+        "name": "V",
+        "realm": {
+          "id": "realm.mahayana",
+          "stage": 1
+        },
+        "stat_mult": 5.062,
+        "rec_cp": 81608,
+        "rewards": {
+          "clear": "loot.dungeon.thunder_pine_sanctum_clear_t5",
+          "first_clear": {
+            "spirit_stones": 96338,
+            "sect_fame": 1376,
+            "gear": [
+              {
+                "base": "gear.skyward_vestments",
+                "rarity": "epic",
+                "ilvl": 60
+              }
+            ]
+          }
+        }
+      }
+    ],
     "checkpoints": false,
     "persistent_hp": true,
     "art": {
@@ -815,6 +1181,128 @@
         ]
       }
     },
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "I",
+        "realm": {
+          "id": "realm.dao_integration",
+          "stage": 3
+        },
+        "stat_mult": 1.0,
+        "rec_cp": 40300,
+        "rewards": {
+          "clear": "loot.dungeon.glass_labyrinth_clear",
+          "first_clear": {
+            "spirit_stones": 24300,
+            "sect_fame": 270,
+            "gear": [
+              {
+                "base": "gear.stormcall_helm",
+                "rarity": "legendary",
+                "ilvl": 76
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 2,
+        "name": "II",
+        "realm": {
+          "id": "realm.tribulation_transcendence",
+          "stage": 1
+        },
+        "stat_mult": 1.5,
+        "rec_cp": 60450,
+        "rewards": {
+          "clear": "loot.dungeon.glass_labyrinth_clear_t2",
+          "first_clear": {
+            "spirit_stones": 38880,
+            "sect_fame": 432,
+            "gear": [
+              {
+                "base": "gear.stormcall_helm",
+                "rarity": "legendary",
+                "ilvl": 76
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 3,
+        "name": "III",
+        "realm": {
+          "id": "realm.mahayana",
+          "stage": 1
+        },
+        "stat_mult": 2.25,
+        "rec_cp": 90675,
+        "rewards": {
+          "clear": "loot.dungeon.glass_labyrinth_clear_t3",
+          "first_clear": {
+            "spirit_stones": 62208,
+            "sect_fame": 691,
+            "gear": [
+              {
+                "base": "gear.stormcall_helm",
+                "rarity": "legendary",
+                "ilvl": 76
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 4,
+        "name": "IV",
+        "realm": {
+          "id": "realm.immortal_ascension",
+          "stage": 1
+        },
+        "stat_mult": 3.375,
+        "rec_cp": 136012,
+        "rewards": {
+          "clear": "loot.dungeon.glass_labyrinth_clear_t4",
+          "first_clear": {
+            "spirit_stones": 99533,
+            "sect_fame": 1106,
+            "gear": [
+              {
+                "base": "gear.stormcall_helm",
+                "rarity": "legendary",
+                "ilvl": 76
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 5,
+        "name": "V",
+        "realm": {
+          "id": "realm.earth_immortal",
+          "stage": 1
+        },
+        "stat_mult": 5.062,
+        "rec_cp": 204019,
+        "rewards": {
+          "clear": "loot.dungeon.glass_labyrinth_clear_t5",
+          "first_clear": {
+            "spirit_stones": 159252,
+            "sect_fame": 1769,
+            "gear": [
+              {
+                "base": "gear.stormcall_helm",
+                "rarity": "legendary",
+                "ilvl": 76
+              }
+            ]
+          }
+        }
+      }
+    ],
     "checkpoints": false,
     "persistent_hp": true,
     "art": {
@@ -1004,6 +1492,128 @@
         ]
       }
     },
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "I",
+        "realm": {
+          "id": "realm.mahayana",
+          "stage": 3
+        },
+        "stat_mult": 1.0,
+        "rec_cp": 94900,
+        "rewards": {
+          "clear": "loot.dungeon.buried_star_temple_clear",
+          "first_clear": {
+            "spirit_stones": 36300,
+            "sect_fame": 330,
+            "gear": [
+              {
+                "base": "gear.starborn_robe",
+                "rarity": "mythic",
+                "ilvl": 92
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 2,
+        "name": "II",
+        "realm": {
+          "id": "realm.immortal_ascension",
+          "stage": 1
+        },
+        "stat_mult": 1.5,
+        "rec_cp": 142350,
+        "rewards": {
+          "clear": "loot.dungeon.buried_star_temple_clear_t2",
+          "first_clear": {
+            "spirit_stones": 58080,
+            "sect_fame": 528,
+            "gear": [
+              {
+                "base": "gear.starborn_robe",
+                "rarity": "mythic",
+                "ilvl": 92
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 3,
+        "name": "III",
+        "realm": {
+          "id": "realm.earth_immortal",
+          "stage": 1
+        },
+        "stat_mult": 2.25,
+        "rec_cp": 213525,
+        "rewards": {
+          "clear": "loot.dungeon.buried_star_temple_clear_t3",
+          "first_clear": {
+            "spirit_stones": 92928,
+            "sect_fame": 845,
+            "gear": [
+              {
+                "base": "gear.starborn_robe",
+                "rarity": "mythic",
+                "ilvl": 92
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 4,
+        "name": "IV",
+        "realm": {
+          "id": "realm.heavenly_immortal",
+          "stage": 1
+        },
+        "stat_mult": 3.375,
+        "rec_cp": 320288,
+        "rewards": {
+          "clear": "loot.dungeon.buried_star_temple_clear_t4",
+          "first_clear": {
+            "spirit_stones": 148685,
+            "sect_fame": 1352,
+            "gear": [
+              {
+                "base": "gear.starborn_robe",
+                "rarity": "mythic",
+                "ilvl": 92
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 5,
+        "name": "V",
+        "realm": {
+          "id": "realm.golden_immortal",
+          "stage": 1
+        },
+        "stat_mult": 5.062,
+        "rec_cp": 480431,
+        "rewards": {
+          "clear": "loot.dungeon.buried_star_temple_clear_t5",
+          "first_clear": {
+            "spirit_stones": 237896,
+            "sect_fame": 2163,
+            "gear": [
+              {
+                "base": "gear.starborn_robe",
+                "rarity": "mythic",
+                "ilvl": 92
+              }
+            ]
+          }
+        }
+      }
+    ],
     "checkpoints": false,
     "persistent_hp": true,
     "art": {
@@ -1380,6 +1990,128 @@
         ]
       }
     },
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "I",
+        "realm": {
+          "id": "realm.earth_immortal",
+          "stage": 3
+        },
+        "stat_mult": 1.0,
+        "rec_cp": 195000,
+        "rewards": {
+          "clear": "loot.dungeon.immortal_peach_garden_clear",
+          "first_clear": {
+            "spirit_stones": 50700,
+            "sect_fame": 390,
+            "gear": [
+              {
+                "base": "gear.jadeclaw_boots",
+                "rarity": "mythic",
+                "ilvl": 108
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 2,
+        "name": "II",
+        "realm": {
+          "id": "realm.heavenly_immortal",
+          "stage": 1
+        },
+        "stat_mult": 1.5,
+        "rec_cp": 292500,
+        "rewards": {
+          "clear": "loot.dungeon.immortal_peach_garden_clear_t2",
+          "first_clear": {
+            "spirit_stones": 81120,
+            "sect_fame": 624,
+            "gear": [
+              {
+                "base": "gear.jadeclaw_boots",
+                "rarity": "mythic",
+                "ilvl": 108
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 3,
+        "name": "III",
+        "realm": {
+          "id": "realm.golden_immortal",
+          "stage": 1
+        },
+        "stat_mult": 2.25,
+        "rec_cp": 438750,
+        "rewards": {
+          "clear": "loot.dungeon.immortal_peach_garden_clear_t3",
+          "first_clear": {
+            "spirit_stones": 129792,
+            "sect_fame": 998,
+            "gear": [
+              {
+                "base": "gear.jadeclaw_boots",
+                "rarity": "mythic",
+                "ilvl": 108
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 4,
+        "name": "IV",
+        "realm": {
+          "id": "realm.immortal_king",
+          "stage": 1
+        },
+        "stat_mult": 3.375,
+        "rec_cp": 658125,
+        "rewards": {
+          "clear": "loot.dungeon.immortal_peach_garden_clear_t4",
+          "first_clear": {
+            "spirit_stones": 207667,
+            "sect_fame": 1597,
+            "gear": [
+              {
+                "base": "gear.jadeclaw_boots",
+                "rarity": "mythic",
+                "ilvl": 108
+              }
+            ]
+          }
+        }
+      },
+      {
+        "tier": 5,
+        "name": "V",
+        "realm": {
+          "id": "realm.immortal_emperor",
+          "stage": 1
+        },
+        "stat_mult": 5.062,
+        "rec_cp": 987188,
+        "rewards": {
+          "clear": "loot.dungeon.immortal_peach_garden_clear_t5",
+          "first_clear": {
+            "spirit_stones": 332268,
+            "sect_fame": 2556,
+            "gear": [
+              {
+                "base": "gear.jadeclaw_boots",
+                "rarity": "mythic",
+                "ilvl": 108
+              }
+            ]
+          }
+        }
+      }
+    ],
     "checkpoints": false,
     "persistent_hp": true,
     "art": {

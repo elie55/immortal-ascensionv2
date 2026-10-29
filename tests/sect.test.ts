@@ -362,3 +362,19 @@ test("tournament: entry gate, one saved round per entry, champion rewards, loss 
   assert.equal(w.progress.tournaments[t.id]!.round, 0);
   if (t.reentry.sect_fame_required > w.resources.sect_fame) assert.equal(canStart(w, c, { kind: "tournament", id: t.id }, T0).ok, false);
 });
+
+test("enhance several times at once: ×N stops at the first failure, 'to +N' stops at the target, both report spending", async () => {
+  const { enhanceMany } = await import("../src/engine/crafting.ts");
+  const s = fresh();
+  s.resources.spirit_stones = 1e9;
+  addItem(s, c, "mat.lesser_enhancement_stone", 999); addItem(s, c, "mat.spirit_enhancing_stone", 999); addItem(s, c, "mat.refining_stone", 999);
+  const uid = s.equipped.weapon!;
+  const r = enhanceMany(s, c, uid, 3, false, 3);
+  assert.ok(r.ok && r.level === 3 && r.successes === 3, `to +3: ${JSON.stringify(r)}`);  // +1..+3 are 100% in the table
+  const g = s.inventory.gear[uid]!;
+  const r2 = enhanceMany(s, c, uid, 5, true);
+  assert.ok(r2.ok && r2.attempts <= 5 && r2.level === g.enhance && r2.stones > 0);
+  const r3 = enhanceMany(s, c, uid, 100, false, 15);
+  assert.ok(r3.ok && r3.level === 15, `to +15: ${JSON.stringify(r3)}`);
+  assert.equal(enhanceMany(s, c, uid, 5).ok, false, "already +15");
+});

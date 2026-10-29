@@ -4,6 +4,8 @@ export type DomainEvent =
   | { type: "realm_reached"; realm: string }
   | { type: "breakthrough_failed"; realm: string; qiLost: number }
   | { type: "unlock"; id: string }
+  /** A sect location or secret realm became enterable (Fame, rank or realm reached). */
+  | { type: "place_opened"; id: string; by: "fame" | "rank" | "realm" }
   | { type: "item_gained"; id: string; qty: number }
   | { type: "item_used"; id: string; qty: number }
   | { type: "gear_gained"; uid: number; base: string; rarity: string; ilvl: number }

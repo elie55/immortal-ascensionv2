@@ -47,8 +47,19 @@ const shot = async (name: string) => {
 };
 /** waitForSelector that leaves FAILED.png in the output folder when the flow breaks. */
 const need = async (sel: string, opts: Parameters<Page["waitForSelector"]>[1] = {}) => { try { return await page.waitForSelector(sel, opts); } catch (e) { await page.screenshot({ path: join(OUT, "FAILED.png") }).catch(() => {}); throw e; } };
+/** Close every celebration screen on top (achievements, unlocks, ranks), screenshotting the first one under `name`. */
+const dismissCelebrations = async (name?: string) => {
+  for (let i = 0; i < 6; i++) {
+    const m = page.locator(".modal-backdrop[data-key='ov:celebrate'], .modal-backdrop[data-key='ov:rank-up']");
+    if (!(await m.count())) return;
+    if (name && i === 0) await shot(name);
+    await m.locator(".btn", { hasText: /^(Later|Continue|Accept the honour)$/ }).first().click();
+    await page.waitForTimeout(250);
+  }
+};
 const check = (cond: unknown, msg: string) => { if (!cond) { console.error("FAIL:", msg); process.exitCode = 1; } else console.log("ok  ", msg); };
 const screen = (p: Page) => p.locator("main.screen").getAttribute("data-screen");
+const ia = <T>(fn: string) => page.evaluate(fn) as Promise<T>;
 
 await page.goto(url);
 await need('[data-screen="menu"]');
@@ -133,11 +144,24 @@ await page.locator(".sect-pin", { hasText: "Meditation Waterfall" }).click();
 await shot("sect-location");
 await page.getByText("Cultivate here").click();
 check(await page.evaluate(() => (window as any).__ia.game.state.character.location) === "sectloc.meditation_waterfall", "Cultivate here moves cultivation to the waterfall");
+// Your Quarters → Storage chest: store a stack, take it back (bag ↔ depot, 20 slots a page)
+await page.locator(".nav button", { hasText: "Sect" }).click(); await page.locator(".nav button", { hasText: "Sect" }).click(); await need('[data-screen="sect"]');
+await page.locator(".sect-pin", { hasText: "Your Quarters" }).click(); await need('[data-screen^="loc:"]');
+await page.locator(".setrow", { hasText: "Storage chest" }).last().click(); await need('[data-screen="depot"]');
+await shot("depot");
+check(await page.locator(".slot-empty-ph").count() > 0 && await page.locator(".pg").count() >= 5, "the bag is drawn as pages of 20 slots with empty slots visible");
+await page.locator(".inv-grid .tile").first().click();
+await page.locator(".item-detail .btn.gold").click();
+check(await ia<number>("Object.keys(window.__ia.game.state.inventory.depot.stacks).length") === 1, "Store all moves a stack into the depot");
+await page.locator(".seg button", { hasText: /^Depot/ }).click();
+await page.locator(".inv-grid .tile").first().click();
+await page.locator(".item-detail .btn.gold").click();
+check(await ia<number>("Object.keys(window.__ia.game.state.inventory.depot.stacks).length") === 0, "Take all brings it back to the bag");
+await page.locator(".nav button", { hasText: "Sect" }).click();
 
 // ---------- sect systems ----------
 const toSect = async () => { await page.locator(".nav button", { hasText: "Sect" }).click(); await page.locator(".nav button", { hasText: "Sect" }).click(); await need('[data-screen="sect"]'); };
 const openLoc = async (name: string) => { await toSect(); await page.locator(".sect-pin", { hasText: name }).click(); await need('[data-screen^="loc:"]'); };
-const ia = <T>(fn: string) => page.evaluate(fn) as Promise<T>;
 await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.state; s.resources.spirit_stones = 50000; for (const [id, n] of [["mat.lesser_enhancement_stone", 10], ["mat.refining_stone", 10], ["mat.reforging_sand", 10], ["mat.spirit_grass", 20], ["mat.peach_blossom", 10], ["mat.crane_feather", 10], ["gift.ancient_spirit_coin", 2], ["gift.osmanthus_cake", 2]] as const) s.inventory.stacks[id] = n; ia.app.router.refresh(); });
 // Mission Hall
 await openLoc("Mission Hall");
@@ -182,6 +206,10 @@ await page.locator(".sheet .btn.gold").click();
 check(await ia<number>("window.__ia.game.state.resources.spirit_stones") < stones0, "buying spends spirit stones");
 await page.locator(".seg button", { hasText: "Sell" }).click();
 await shot("merchant-sell");
+await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.state; const b = s.inventory.gear[s.equipped.weapon].base; const { grantGear } = ia.engine; grantGear(s, ia.content, { base: b, rarity: "common", ilvl: 2 }); grantGear(s, ia.content, { base: b, rarity: "common", ilvl: 3 }); ia.app.router.refresh(); });
+await page.locator(".btn", { hasText: /^Sell all Common/ }).click();
+await page.locator(".modal .btn.danger").click();
+check(await ia<number>("(() => { const s = window.__ia.game.state; const worn = new Set(Object.values(s.equipped)); return Object.entries(s.inventory.gear).filter(([u, g]) => g.rarity === 'common' && !worn.has(Number(u))).length; })()") === 0, "Sell all Common sells the spare common pieces (worn ones stay)");
 // Scripture Pavilion
 await openLoc("Scripture Pavilion");
 await page.locator(".setrow", { hasText: "Scripture stacks" }).last().click();
@@ -194,6 +222,8 @@ await need(".forge-tabs");
 await shot("forge-enhance");
 await page.locator(".cta", { hasText: "Enhance" }).click();
 check(await ia<number>("Math.max(...Object.values(window.__ia.game.state.inventory.gear).map(g => g.enhance))") >= 1, "enhancing raises a piece to +1");
+await page.locator(".btn", { hasText: "Enhance ×5" }).click();
+check(await ia<number>("Math.max(...Object.values(window.__ia.game.state.inventory.gear).map(g => g.enhance))") >= 2, "Enhance ×5 runs several attempts in one press");
 for (const t of ["Refine", "Reforge", "Craft"]) { await page.locator(".ftab", { hasText: t }).click(); await shot(`forge-${t.toLowerCase()}`); }
 // Alchemy
 await openLoc("Alchemy Hall");
@@ -215,6 +245,20 @@ await page.locator(".nav button", { hasText: "Cultivate" }).click();
 await page.locator(".cult-tile", { hasText: "Quests" }).click();
 await need('[data-screen="quests"]');
 await shot("quest-log");
+{
+  const done0 = await ia<number>("Object.keys(window.__ia.game.state.progress.quests.completed).length");
+  if (await page.locator(".btn", { hasText: "Turn in all" }).count()) { await page.locator(".btn", { hasText: "Turn in all" }).click(); check(await ia<number>("Object.keys(window.__ia.game.state.progress.quests.completed).length") > done0, "Turn in all hands in every ready quest from the log"); }
+  await page.locator(".quest-card .btn", { hasText: /^Track$/ }).first().click();
+  check(await ia<string | null>("window.__ia.game.state.progress.quests.tracked") !== null && await page.locator(".tracker").count() === 1, "Track pins the quest in the tracker under the header");
+  await shot("quest-tracked");
+  await page.locator(".tracker").first().click();
+  await page.waitForTimeout(400);
+  check(await screen(page) !== "quests", `the tracker's Go leads to the quest's place (${await screen(page)})`);
+  await page.locator(".tracker .tr-x").first().click();
+  check(await ia<string | null>("window.__ia.game.state.progress.quests.tracked") === null, "× stops tracking");
+  await page.locator(".nav button", { hasText: "Cultivate" }).click(); await page.locator(".nav button", { hasText: "Cultivate" }).click();
+  await page.locator(".cult-tile", { hasText: "Quests" }).click(); await need('[data-screen="quests"]');
+}
 await page.locator(".btn", { hasText: "Achievements" }).click();
 await shot("achievements");
 await page.locator(".nav button", { hasText: "Cultivate" }).click();   // same tab again: back to the tab root
@@ -244,6 +288,8 @@ await page.locator(".beast-cell.egg.ready").click();
 await need(".modal.celebrate");
 await shot("beast-hatched");
 await page.locator(".modal .btn", { hasText: "Welcome" }).click();
+await dismissCelebrations("celebration-achievement");
+check(await page.evaluate(() => (window as any).__ia.game.state.progress.achievements["ach.beasts.beast_friend"] > 0), "hatching unlocks Beast Friend (celebration shown)");
 check(await ia<string>("window.__ia.game.state.beasts.owned[window.__ia.game.state.beasts.active]?.beast") === "beast.yunyun", "YunYun hatches and becomes the active companion");
 await shot("beasts");
 await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.inventory.stacks["bfood.spirit_fruit"] = 30; ia.app.router.refresh(); });
@@ -313,6 +359,7 @@ await page.locator(".nav button", { hasText: "Adventure" }).click();
 await page.locator(".chips .chip", { hasText: "Dungeons" }).click();
 await need(".tower-hero");
 await shot("dungeon-hub");
+check(await page.locator(".dungeon-card").first().locator(".tier").count() === 5 && await page.locator(".dungeon-card").first().locator(".tier.locked").count() === 4, "resource dungeons show tiers I–V, higher tiers locked until the one below is cleared");
 await page.locator(".tower-hero .btn.gold").click();
 await need(".battle");
 await untilResult();
@@ -323,6 +370,10 @@ await need(".tower-floors");
 await shot("tower");
 await page.locator(".back").click();
 await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.state; s.progress.quests.completed["quest.main.bamboo_sovereign"] = 1; if (!s.progress.realmsEntered.includes("realm.foundation_establishment")) s.progress.realmsEntered.push("realm.foundation_establishment"); s.character.realm = "realm.foundation_establishment"; s.character.stage = 3; ia.app.router.refresh(); });
+await page.evaluate(() => { const ia = (window as any).__ia; ia.game.settle(Date.now()); }); // sweep: realm reached → achievement + "Origin Secret Realm opened" celebrations
+await page.waitForTimeout(300);
+await dismissCelebrations("celebration-unlock");
+check(await page.evaluate(() => (window as any).__ia.game.state.progress.unlocks.includes("opened:dungeon.origin_secret_realm")), "reaching the realm announces the secret realm once");
 await page.locator(".dungeon-card", { hasText: "Origin Secret Realm" }).locator(".btn").click();
 await need(".realm-map");
 await page.locator(".cta", { hasText: "Enter the realm" }).click();
@@ -331,6 +382,7 @@ await page.locator(".realm-card .btn.gold", { hasText: "Enter" }).click();
 await need(".battle");
 await untilResult();
 await page.locator(".modal .btn", { hasText: /Map/ }).click();
+await dismissCelebrations();
 await need(".realm-map");
 check(await ia<boolean>("window.__ia.game.state.progress.realmRuns['dungeon.origin_secret_realm'].cleared.includes('gate')"), "winning the gate trial opens the realm's branches");
 await shot("secret-realm-progress");

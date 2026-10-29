@@ -95,6 +95,7 @@ export function buildGraph(db: Database) {
       case "dungeon":
         if (d.rewards.per_wave) addAll(lootOwners, d.rewards.per_wave, e.id);
         addAll(lootOwners, d.rewards.clear, e.id);
+        for (const t of d.tiers ?? []) addAll(lootOwners, t.rewards.clear, e.id);
         for (const n of d.realm_nodes ?? []) if (n.chest) addAll(lootOwners, n.chest, e.id);
         break;
       case "tribulation": addAll(lootOwners, d.rewards, e.id); break;
@@ -182,6 +183,7 @@ export function buildGraph(db: Database) {
         break;
       case "dungeon":
         for (const id of rewardIds(d.rewards.first_clear)) grant(id, `dungeon:${e.id}`);
+        for (const t of d.tiers ?? []) { for (const id of rewardIds(t.rewards.first_clear)) grant(id, `dungeon:${e.id}:t${t.tier}`); use(t.realm.id, `dungeon:${e.id}:t${t.tier}`); }
         for (const w of d.waves ?? []) for (const en of w.enemies) appear(en, `dungeon:${e.id}`);
         if (d.tower) {
           for (const en of d.tower.enemy_pool) appear(en, `dungeon:${e.id}`);
