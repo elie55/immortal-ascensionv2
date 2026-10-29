@@ -224,3 +224,17 @@ test("grantRewards covers stones, items, gear, techniques, titles and affinity",
   assert.equal(s.techniques.known["tech.active.flame_palm"], 0);
   assert.equal(s.relations["npc.bai_lingshuang"]!.affinity, 5);
 });
+
+test("required breakthrough pills cannot be used from the bag and add their bonus automatically", async () => {
+  const { majorChance } = await import("../src/engine/cultivation.ts");
+  const s = fresh();
+  addItem(s, content, "cons.foundation_pill", 1);
+  const r = useConsumable(s, content, { now: T0 }, "cons.foundation_pill");
+  assert.ok(!r.ok && /breakthrough/.test(r.reason));
+  assert.equal(itemCount(s, "cons.foundation_pill"), 1);
+  s.character.stage = 9;
+  const ch = majorChance(s, content);
+  const pill = content.get<any>("cons.foundation_pill").effects.breakthrough_chance_bonus;
+  assert.ok(Math.abs(ch.total - Math.min(1, ch.base + pill)) < 1e-9);
+  assert.ok(ch.parts.some((p) => p.label === "Foundation Pill"));
+});

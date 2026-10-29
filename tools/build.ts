@@ -50,6 +50,7 @@ export function buildContent(): { entities: number; bytes: number } {
 function copyStatic() {
   copyFileSync(join(ROOT, "src/ui/index.html"), join(DIST, "index.html"));
   copyFileSync(join(ROOT, "src/ui/theme.css"), join(DIST, "theme.css"));
+  cpSync(join(ROOT, "src/ui/fonts"), join(DIST, "fonts"), { recursive: true });
   const assets = join(ROOT, "assets");
   if (existsSync(assets)) cpSync(assets, join(DIST, "assets"), { recursive: true, filter: (s) => !s.endsWith("APPROVED.txt") });
 }

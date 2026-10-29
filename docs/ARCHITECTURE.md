@@ -10,7 +10,7 @@ Decisions for the game client (29 Oct 2026). The content database and its valida
 | Language | TypeScript (strict) everywhere: schemas, tools, engine, UI | One type system from content JSON to the screen. Node ≥ 22.18 runs it natively for tools and tests. |
 | Bundler | **esbuild** (`tools/build.ts`) | One dependency, sub-second builds, no config churn. Output is plain `dist/` (HTML + JS + CSS + assets + `content.json`). |
 | UI rendering | **DOM + CSS** for every screen, **Canvas 2D** for the battle stage, map overlays and particle effects | The mockups are panel/list/portrait screens: DOM gives free text layout, scrolling, accessibility and 9:16 responsiveness. The battle scene needs sprites, hit effects and speed scaling: canvas. |
-| UI framework | None. `src/ui/core` is a ~250-line view layer: `h()` element builder, a `Store` with subscriptions, a screen router with a modal stack | Zero runtime dependencies keeps the APK small and makes every behaviour inspectable. The engine never touches the DOM, so the UI layer can be swapped later without touching game logic. |
+| UI framework | None. `src/ui/core` is a small view layer: `h()` element builder, `Store`, a router (5 tab stacks + a global stack for menu/story, modals, bottom sheets, toasts), a component kit (`kit.ts`) and an inline SVG icon set (`icons.ts`). Fonts (Cinzel, Nunito, Cormorant Garamond, OFL) are bundled in `src/ui/fonts/` | Zero runtime dependencies keeps the APK small and makes every behaviour inspectable. The engine never touches the DOM, so the UI layer can be swapped later without touching game logic. |
 | State | One `GameState` object (the save model) owned by `Game`; engine functions mutate it and emit domain events; the UI re-renders the active screen on change | A single unified state is a spec requirement and makes autosave trivial. |
 | Persistence | `src/save`: versioned JSON save files with checksum, zod validation, migrations, `.bak` rollback; storage adapter over `localStorage` now, Capacitor `Preferences`/`Filesystem` when packaged | Saves must survive crashes, corrupted writes and schema changes. |
 | Tests | `node --test` for engine and save logic (deterministic: injected clock + seeded RNG); Playwright for browser smoke and mobile-viewport screenshots | Gameplay rules are testable without a browser. |
@@ -159,7 +159,7 @@ boot → load content.json → ContentIndex
 
 ```bash
 npm run check          # validate content, unit tests, typecheck, build
-npm run test:browser   # build + Playwright smoke (390×844): ticking, breakthrough, reload, offline report, clock guard
+npm run test:browser   # build + Playwright tour (390×844): menu, prologue, every tab and sheet, settings, saves, offline report, clock guard; screenshots in .tmp/screens/
 npm run dev            # rebuild on change and serve http://localhost:5173
 ```
 

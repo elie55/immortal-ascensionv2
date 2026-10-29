@@ -166,7 +166,7 @@
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_adult": {
         "file": "assets/beasts/yunyun_adult.webp",

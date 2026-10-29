@@ -6,7 +6,7 @@ import type { ContentIndex, Consumable } from "../content/index.ts";
 import type { GameState } from "./state.ts";
 import type { DomainEvent } from "./events.ts";
 import { addItem, removeItem, itemCount, grantGear, equip as equipGear, unequip as unequipGear, type Result, type EquipSlot } from "./inventory.ts";
-import { addBuff, minorBreakthrough, majorBreakthrough, countAffordableStages, qiBankCap } from "./cultivation.ts";
+import { addBuff, minorBreakthrough, majorBreakthrough, countAffordableStages, qiBankCap, isBreakthroughItem } from "./cultivation.ts";
 import { computeStats } from "./stats.ts";
 import type { Rewards } from "../../schema/common.ts";
 
@@ -93,6 +93,7 @@ export function useConsumable(s: GameState, content: ContentIndex, ctx: Ctx, id:
   const def = content.find<Consumable>(id);
   if (!def || !id.startsWith("cons.")) return fail("Not a consumable");
   if (itemCount(s, id) < qty) return fail("Not enough items");
+  if (isBreakthroughItem(content, id)) return fail("Kept for your breakthrough: it is used automatically");
   const cd = s.character.cooldowns[id] ?? 0;
   if (cd > ctx.now) return fail(`Ready in ${Math.ceil((cd - ctx.now) / 60000)} min`);
   const e = def.effects;

@@ -101,6 +101,8 @@ export const GameStateSchema = z.object({
     shopPurchases: z.record(z.string(), z.record(z.string(), z.number().int())),
     counters: z.record(z.string(), z.number()),                 // free-form: kills:enemy.x, battles_won, …
     realmsEntered: z.array(z.string()),
+    /** Unlocked features/places granted by story, ranks and realms (sectloc ids, feature keys). */
+    unlocks: z.array(z.string()),
   }),
   daily: z.object({ day: z.string(), counters: z.record(z.string(), z.number().int()) }),
   rng: z.object({ a: z.number().int(), b: z.number().int() }),
@@ -134,7 +136,7 @@ export function newGameState(content: ContentIndex, now: number, opts: { name?: 
     progress: {
       quests: { active: {}, completed: {}, lastCompletedAt: {} }, achievements: {}, storySeen: {}, storyChoices: {},
       regions: { [s.region]: { discoveredAt: now, nodes: {} } }, dungeons: {}, trialsCleared: {}, tournaments: {}, tribulations: {},
-      recipes: [], shopPurchases: {}, counters: {}, realmsEntered: [s.realm.id],
+      recipes: [], shopPurchases: {}, counters: {}, realmsEntered: [s.realm.id], unlocks: [],
     },
     daily: { day: dayKey(now), counters: {} },
     rng: seedRng(opts.seed ?? (now >>> 0)),

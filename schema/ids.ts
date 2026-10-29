@@ -14,6 +14,7 @@ export const PREFIXES = [
   "region", "node", "dungeon", "tribulation",
   "sectloc", "rank", "shop", "loot", "alchemy", "forge",
   "quest", "ach", "tournament", "story", "event", "title",
+  "ui",
 ] as const;
 export type Prefix = (typeof PREFIXES)[number];
 

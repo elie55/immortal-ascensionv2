@@ -15,9 +15,10 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 
 def latest(root, variant, rel):
-    c = glob.glob(os.path.join(root, variant, rel + "_*_.png"))
-    c = [p for p in c if re.fullmatch(re.escape(os.path.basename(rel)) + r"_\d{5}_\.png", os.path.basename(p))]
-    return max(c) if c else None
+    """Highest-numbered render for an asset (ComfyUI PNG or a WebP from a browser-packed batch zip)."""
+    c = glob.glob(os.path.join(root, variant, rel + "_*_.png")) + glob.glob(os.path.join(root, variant, rel + "_*_.webp"))
+    c = [p for p in c if re.fullmatch(re.escape(os.path.basename(rel)) + r"_\d{5}_\.(png|webp)", os.path.basename(p))]
+    return max(c, key=lambda p: os.path.basename(p).rsplit(".", 1)[0]) if c else None
 
 
 def fit(im, w, h):
@@ -37,6 +38,11 @@ def main():
     ap.add_argument("--only", default="", help="only asset paths starting with this (after assets/)")
     ap.add_argument("--out", default=ROOT, help="write assets under this root (default: repo)")
     a = ap.parse_args()
+    if a.root.endswith(".zip"):  # batch packed in the browser on the owner's PC (tools/art/comfy_pack.js)
+        import zipfile, tempfile
+        tmp = tempfile.mkdtemp(prefix="ia-batch-")
+        zipfile.ZipFile(a.root).extractall(tmp)
+        a.root = tmp
     jobs = json.load(open(os.path.join(ROOT, ".tmp/art-jobs.json")))["jobs"]
     done = []
     for j in jobs:

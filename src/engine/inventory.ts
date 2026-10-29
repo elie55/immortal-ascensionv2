@@ -90,6 +90,8 @@ export function equip(s: GameState, content: ContentIndex, uid: number, slot?: E
   if (!req.ok) return req;
   const keys = slotKeysFor(base.slot);
   const target = slot && keys.includes(slot) ? slot : (keys.find((k) => s.equipped[k] === undefined) ?? keys[0]!);
+  const gate = content.rules.slot_unlocks?.[target];
+  if (gate && content.get<any>(s.character.realm).order < content.get<any>(gate).order) return { ok: false, reason: `Unlocks at ${content.get<any>(gate).name}` };
   const already = equippedSlotOf(s, uid);
   if (already) delete s.equipped[already];
   const replaced = s.equipped[target];

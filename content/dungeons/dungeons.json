@@ -58,7 +58,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/old_granary_cellars_battle_bg.webp",
@@ -72,7 +72,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -141,7 +141,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/spirit_stone_mine_battle_bg.webp",
@@ -155,7 +155,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -231,7 +231,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/green_labyrinth_battle_bg.webp",
@@ -245,7 +245,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -389,7 +389,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/heaven_piercing_tower_battle_bg.webp",
@@ -403,7 +403,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -586,7 +586,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/origin_secret_realm_battle_bg.webp",
@@ -600,7 +600,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/dungeons/origin_secret_realm_map.webp",
@@ -614,7 +614,7 @@
         "references": [
           "refs/mockups/secret_realm_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -704,7 +704,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/abyss_of_the_nine_heavens_battle_bg.webp",
@@ -718,7 +718,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   }

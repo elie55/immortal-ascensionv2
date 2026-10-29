@@ -78,7 +78,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/ember_forge_ruins_battle_bg.webp",
@@ -92,7 +92,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -174,7 +174,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/glacier_caverns_battle_bg.webp",
@@ -188,7 +188,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -270,7 +270,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/hall_of_ten_thousand_blades_battle_bg.webp",
@@ -284,7 +284,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -367,7 +367,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/blood_river_prison_battle_bg.webp",
@@ -381,7 +381,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -540,7 +540,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/crimson_moon_secret_realm_battle_bg.webp",
@@ -554,7 +554,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/dungeons/crimson_moon_secret_realm_map.webp",
@@ -568,7 +568,7 @@
         "references": [
           "refs/mockups/secret_realm_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -651,7 +651,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/thunder_pine_sanctum_battle_bg.webp",
@@ -665,7 +665,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -747,7 +747,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/sunken_star_palace_battle_bg.webp",
@@ -761,7 +761,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -844,7 +844,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/glass_labyrinth_battle_bg.webp",
@@ -858,7 +858,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -940,7 +940,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/coral_labyrinth_battle_bg.webp",
@@ -954,7 +954,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1037,7 +1037,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/buried_star_temple_battle_bg.webp",
@@ -1051,7 +1051,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1210,7 +1210,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/pharaohs_star_vault_battle_bg.webp",
@@ -1224,7 +1224,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/dungeons/pharaohs_star_vault_map.webp",
@@ -1238,7 +1238,7 @@
         "references": [
           "refs/mockups/secret_realm_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1320,7 +1320,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/trial_of_nine_flames_battle_bg.webp",
@@ -1334,7 +1334,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1417,7 +1417,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/immortal_peach_garden_battle_bg.webp",
@@ -1431,7 +1431,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1513,7 +1513,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/hall_of_verdicts_battle_bg.webp",
@@ -1527,7 +1527,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1609,7 +1609,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/hall_of_five_elements_battle_bg.webp",
@@ -1623,7 +1623,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1713,7 +1713,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/dragon_king_palace_battle_bg.webp",
@@ -1727,7 +1727,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1817,7 +1817,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/fallen_heaven_ruins_battle_bg.webp",
@@ -1831,7 +1831,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -1921,7 +1921,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/ten_thousand_laws_hall_battle_bg.webp",
@@ -1935,7 +1935,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -2025,7 +2025,7 @@
         "references": [
           "refs/mockups/dungeon_hub.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/dungeons/primordial_chaos_abyss_battle_bg.webp",
@@ -2039,7 +2039,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   }

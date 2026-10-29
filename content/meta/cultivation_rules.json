@@ -35,7 +35,9 @@
   "tick_seconds": 1,
   "location_qi_mult": {
     "sect_default": 1.0,
-    "meditation_waterfall": 1.25
+    "meditation_waterfall": 1.25,
+    "inner_sect_peak": 1.4,
+    "frozen_lotus_valley": 1.35
   },
   "base_stats": {
     "hp": 360,
@@ -74,5 +76,8 @@
     "crit_dmg": 150,
     "acc": 90
   },
-  "mastery_bonus_per_level": 0.03
+  "mastery_bonus_per_level": 0.03,
+  "slot_unlocks": {
+    "artifact": "realm.foundation_establishment"
+  }
 }

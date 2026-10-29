@@ -42,7 +42,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/blazing_mountain_map.webp",
@@ -56,7 +56,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/blazing_mountain_battle_bg.webp",
@@ -70,7 +70,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -117,7 +117,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/frozen_lotus_valley_map.webp",
@@ -131,7 +131,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/frozen_lotus_valley_battle_bg.webp",
@@ -145,7 +145,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -192,7 +192,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/ancient_sword_tomb_map.webp",
@@ -206,7 +206,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/ancient_sword_tomb_battle_bg.webp",
@@ -220,7 +220,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -267,7 +267,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/demon_territory_map.webp",
@@ -281,7 +281,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/demon_territory_battle_bg.webp",
@@ -295,7 +295,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -342,7 +342,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/celestial_mountains_map.webp",
@@ -356,7 +356,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/celestial_mountains_battle_bg.webp",
@@ -370,7 +370,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -417,7 +417,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/nine_heavens_map.webp",
@@ -431,7 +431,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/nine_heavens_battle_bg.webp",
@@ -445,7 +445,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -492,7 +492,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/thunderclap_wastes_map.webp",
@@ -506,7 +506,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/thunderclap_wastes_battle_bg.webp",
@@ -520,7 +520,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -567,7 +567,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/sunken_dragon_sea_map.webp",
@@ -581,7 +581,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/sunken_dragon_sea_battle_bg.webp",
@@ -595,7 +595,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -642,7 +642,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/starfall_desert_map.webp",
@@ -656,7 +656,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/starfall_desert_battle_bg.webp",
@@ -670,7 +670,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -717,7 +717,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/gate_of_ascension_map.webp",
@@ -731,7 +731,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/gate_of_ascension_battle_bg.webp",
@@ -745,7 +745,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -792,7 +792,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/jade_immortal_realm_map.webp",
@@ -806,7 +806,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/jade_immortal_realm_battle_bg.webp",
@@ -820,7 +820,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -867,7 +867,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/golden_palace_of_laws_map.webp",
@@ -881,7 +881,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/golden_palace_of_laws_battle_bg.webp",
@@ -895,7 +895,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -942,7 +942,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/throne_of_the_immortal_emperor_map.webp",
@@ -956,7 +956,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/throne_of_the_immortal_emperor_battle_bg.webp",
@@ -970,7 +970,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   }

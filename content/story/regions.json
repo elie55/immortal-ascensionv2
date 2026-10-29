@@ -34,7 +34,7 @@
         "references": [
           "refs/mockups/prologue.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -112,7 +112,7 @@
         "references": [
           "refs/mockups/prologue.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -190,7 +190,7 @@
         "references": [
           "refs/mockups/prologue.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },

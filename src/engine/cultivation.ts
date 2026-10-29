@@ -220,6 +220,30 @@ export function canAttemptMajor(s: GameState, content: ContentIndex): boolean {
 
 export interface MajorOptions { /** Extra success chance from a breakthrough pill already consumed (0–1). */ pillBonus?: number }
 
+export interface MajorChance { base: number; parts: { label: string; bonus: number }[]; total: number }
+
+/** Success chance of the next major breakthrough: base + bonuses of the required pills it consumes + banked pill bonus, capped. */
+export function majorChance(s: GameState, content: ContentIndex, banked = s.character.breakthroughBonus): MajorChance {
+  const next = content.nextRealm(s.character.realm);
+  if (!next) return { base: 0, parts: [], total: 0 };
+  const mb = next.major_breakthrough;
+  const parts: { label: string; bonus: number }[] = [];
+  for (const q of mb.requirements) {
+    const def = content.get<any>(q.id);
+    const b = def.effects?.breakthrough_chance_bonus;
+    if (b) parts.push({ label: def.name, bonus: b * q.qty });
+  }
+  if (banked > 0) parts.push({ label: "Pill effect", bonus: banked });
+  const cap = content.rules.major_breakthrough.pill_bonus_cap;
+  const bonus = Math.min(cap, parts.reduce((a, p) => a + p.bonus, 0));
+  return { base: mb.success_base, parts, total: Math.min(1, mb.success_base + bonus) };
+}
+
+/** Items a future major breakthrough consumes: using them from the bag would block progress. */
+export function isBreakthroughItem(content: ContentIndex, id: string): boolean {
+  return content.realms.some((r) => r.major_breakthrough.requirements.some((q) => q.id === id));
+}
+
 /**
  * Stage 9 → next realm stage 1. Consumes the next realm's requirement items on attempt; rolls its
  * success_base (+ pill bonus, capped). Failure keeps the realm and burns a share of the Qi.
@@ -234,7 +258,7 @@ export function majorBreakthrough(s: GameState, content: ContentIndex, opts: Maj
   const mb = next.major_breakthrough;
   if (!hasItems(s, mb.requirements)) return { ok: false, reason: "Missing materials" };
   const rules = content.rules.major_breakthrough;
-  const p = Math.min(1, mb.success_base + Math.min(opts.pillBonus ?? 0, rules.pill_bonus_cap));
+  const p = majorChance(s, content, opts.pillBonus ?? 0).total;
   const events: DomainEvent[] = [];
   removeItems(s, mb.requirements);
   for (const q of mb.requirements) events.push({ type: "item_used", id: q.id, qty: q.qty });

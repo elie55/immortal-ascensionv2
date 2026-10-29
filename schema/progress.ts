@@ -184,5 +184,16 @@ export const CultivationRules = z.object({
   /** Subtracted before weighting so a default value adds no CP (crit 5, crit_dmg 150, acc 90). */
   cp_baseline: z.record(z.string(), z.number()).default({}),
   mastery_bonus_per_level: z.number().default(0.03),
+  /** Equipment slots that open at a realm (slot key → realm id). */
+  slot_unlocks: z.record(z.string(), ref("realm")).default({}),
 });
 export type CultivationRules = z.infer<typeof CultivationRules>;
+
+// ---------- UI art (screens that are not tied to a game entity) ----------
+
+export const UiArt = Named.extend({
+  id: ref("ui"),
+  /** Which screen uses it (documentation; the client looks art up by id). */
+  screen: z.string().min(1),
+  art: artBlock([]),
+}).refine((u) => Object.keys(u.art).length > 0, "ui entry needs at least one art asset");

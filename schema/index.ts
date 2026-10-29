@@ -13,7 +13,7 @@ import { Enemy, Boss, Beast, Npc } from "./actors.ts";
 import { Region, Node, Dungeon, Tribulation, SectLocation, Rank, Event } from "./places.ts";
 import { Shop, LootTable, AlchemyRecipe, ForgeRecipe, Furnace } from "./economy.ts";
 import { GearRules } from "./gear-math.ts";
-import { Quest, Achievement, Tournament, StoryScene, StartingState, ContentTargets, CultivationRules } from "./progress.ts";
+import { Quest, Achievement, Tournament, StoryScene, StartingState, ContentTargets, CultivationRules, UiArt } from "./progress.ts";
 
 export interface Collection {
   prefix: Prefix;
@@ -62,6 +62,7 @@ export const COLLECTIONS: Collection[] = [
   { prefix: "quest", files: "content/quests/*.json", schema: Quest, label: "Quests" },
   { prefix: "ach", files: "content/achievements/achievements*.json", schema: Achievement, label: "Achievements" },
   { prefix: "story", files: "content/story/*.json", schema: StoryScene, label: "Story scenes" },
+  { prefix: "ui", files: "content/ui/*.json", schema: UiArt, label: "UI art" },
 ];
 
 /** Single-object files (not arrays, no IDs). */

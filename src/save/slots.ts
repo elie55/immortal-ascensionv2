@@ -12,7 +12,7 @@ export const SLOT_COUNT = 4;
 
 export interface SlotSummary {
   slot: number; name: string; npc: string; realm: string; stage: number; rank: string;
-  playtimeMs: number; savedAt: number; createdAt: number; regions: number; questsDone: number;
+  playtimeMs: number; savedAt: number; createdAt: number; regions: number; questsDone: number; sectFame: number;
 }
 
 export interface Settings {
@@ -40,6 +40,7 @@ export class SaveManager {
       slot, name: state.character.name, npc: state.character.npc, realm: state.character.realm, stage: state.character.stage,
       rank: state.character.rank, playtimeMs: state.meta.playtimeMs, savedAt, createdAt: state.meta.createdAt,
       regions: Object.keys(state.progress.regions).length, questsDone: Object.keys(state.progress.quests.completed).length,
+      sectFame: state.resources.sect_fame,
     };
   }
 
@@ -69,6 +70,12 @@ export class SaveManager {
     const r2 = tryText(bak);
     if (r2?.ok) return { ok: true, state: r2.state, savedAt: r2.savedAt, recoveredFromBackup: true, migratedFrom: r2.migratedFrom };
     return { ok: false, empty: false, reason: r1 && !r1.ok ? r1.reason : "missing", backupReason: r2 && !r2.ok ? r2.reason : undefined, raw: main ?? bak ?? undefined };
+  }
+
+  /** Whether a slot has a readable backup copy (shown as "Backup OK"). */
+  async hasBackup(slot: number): Promise<boolean> {
+    const t = await this.storage.get(`slot:${slot}:bak`);
+    return !!t && decode(t).ok;
   }
 
   async delete(slot: number): Promise<void> {

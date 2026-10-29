@@ -1,63 +1,107 @@
 /**
- * Screen router: five main tabs, a stack of sub-screens inside the active tab, and a modal stack above
- * everything. Screens are render functions; the shell re-renders the top screen on game change.
+ * Navigation: five main tabs (each with its own stack of sub-screens), a global stack above the tabs for
+ * fullscreen flows (main menu, save slots, story), plus modals, bottom sheets and toasts.
+ * Screens are render functions; the shell re-renders the visible screen when the game changes.
  */
 import { h, replaceChildren, Store, type Child } from "./dom.ts";
+import { icon } from "./icons.ts";
 
 export type Tab = "cultivate" | "adventure" | "character" | "inventory" | "sect";
 export const TABS: { id: Tab; label: string; icon: string }[] = [
-  { id: "cultivate", label: "Cultivate", icon: "☯" }, { id: "adventure", label: "Adventure", icon: "⚔" }, { id: "character", label: "Character", icon: "👤" },
-  { id: "inventory", label: "Inventory", icon: "🎒" }, { id: "sect", label: "Sect", icon: "⛩" },
+  { id: "cultivate", label: "Cultivate", icon: "lotus" }, { id: "adventure", label: "Adventure", icon: "brush" }, { id: "character", label: "Character", icon: "person" },
+  { id: "inventory", label: "Inventory", icon: "pouch" }, { id: "sect", label: "Sect", icon: "temple" },
 ];
 
-export interface Screen { id: string; render: () => Child; title?: string; /** hide the bottom nav (battle, story) */ fullscreen?: boolean }
-export interface Modal { id: string; render: (close: () => void) => Child; dismissible?: boolean }
+export interface Screen {
+  id: string;
+  render: () => Child;
+  /** Background art file (assets/…); falls back to the shell default. */
+  bg?: string | (() => string | undefined);
+  /** Show the bottom nav (default: true for tab screens, false for global screens). */
+  nav?: boolean;
+  /** Called when the screen is removed from a stack. */
+  onLeave?: () => void;
+}
+export interface Overlay { id: string; kind: "modal" | "sheet"; render: (close: () => void) => Child; dismissible?: boolean; cls?: string }
 
-export interface UiState { tab: Tab; stacks: Record<Tab, Screen[]>; modals: Modal[]; toasts: { id: number; text: string; kind: "info" | "good" | "bad" }[] }
+export interface UiState { tab: Tab; stacks: Record<Tab, Screen[]>; global: Screen[]; overlays: Overlay[]; toasts: { id: number; text: string; kind: "info" | "good" | "bad" }[] }
 
 export class Router {
   readonly store: Store<UiState>;
   private root: HTMLElement;
   private toastId = 0;
-  private renderTab: (tab: Tab) => Screen;
+  private tabRoot: (tab: Tab) => Screen;
+  defaultBg: () => string | undefined = () => undefined;
+  badges: (tab: Tab) => number = () => 0;
+  img: (file?: string) => string = (f) => (f ? `url("./${f}")` : "none");
+  private scrollKey = "";
+  private scrollPos = new Map<string, number>();
 
-  constructor(root: HTMLElement, renderTab: (tab: Tab) => Screen, initial: Tab = "cultivate") {
-    this.root = root; this.renderTab = renderTab;
-    this.store = new Store<UiState>({ tab: initial, stacks: { cultivate: [], adventure: [], character: [], inventory: [], sect: [] }, modals: [], toasts: [] });
+  constructor(root: HTMLElement, tabRoot: (tab: Tab) => Screen, initial: Tab = "cultivate") {
+    this.root = root; this.tabRoot = tabRoot;
+    this.store = new Store<UiState>({ tab: initial, stacks: { cultivate: [], adventure: [], character: [], inventory: [], sect: [] }, global: [], overlays: [], toasts: [] });
     this.store.subscribe(() => this.render());
   }
 
   get tab(): Tab { return this.store.state.tab; }
-  setTab(tab: Tab): void { this.store.set({ tab }); }
+  setTab(tab: Tab): void { this.store.update((s) => { if (s.tab === tab) { s.stacks[tab].forEach((x) => x.onLeave?.()); s.stacks[tab] = []; } s.tab = tab; }); }
   push(screen: Screen): void { this.store.update((s) => s.stacks[s.tab].push(screen)); }
-  pop(): void { this.store.update((s) => { s.stacks[s.tab].pop(); }); }
-  popTo(id: string): void { this.store.update((s) => { const st = s.stacks[s.tab]; const i = st.findIndex((x) => x.id === id); if (i >= 0) st.length = i + 1; }); }
-  resetTab(tab: Tab): void { this.store.update((s) => { s.stacks[tab] = []; s.tab = tab; }); }
-  openModal(m: Modal): void { this.store.update((s) => s.modals.push(m)); }
-  closeModal(id?: string): void { this.store.update((s) => { if (!id) s.modals.pop(); else s.modals = s.modals.filter((m) => m.id !== id); }); }
-  toast(text: string, kind: "info" | "good" | "bad" = "info", ms = 2200): void {
+  pop(): void { this.store.update((s) => { s.stacks[s.tab].pop()?.onLeave?.(); }); }
+  replace(screen: Screen): void { this.store.update((s) => { s.stacks[s.tab].pop()?.onLeave?.(); s.stacks[s.tab].push(screen); }); }
+  pushGlobal(screen: Screen): void { this.store.update((s) => s.global.push(screen)); }
+  popGlobal(): void { this.store.update((s) => { s.global.pop()?.onLeave?.(); }); }
+  clearGlobal(): void { this.store.update((s) => { s.global.forEach((x) => x.onLeave?.()); s.global = []; }); }
+  /** Back: closes the top overlay, else pops global, else pops the tab stack. Returns false when there was nothing to go back from. */
+  back(): boolean {
+    const s = this.store.state;
+    if (s.overlays.length) { const o = s.overlays[s.overlays.length - 1]!; if (o.dismissible !== false) this.close(o.id); return true; }
+    if (s.global.length > 1 || (s.global.length === 1 && s.global[0]!.id !== "menu")) { this.popGlobal(); return true; }
+    if (s.stacks[s.tab].length) { this.pop(); return true; }
+    if (s.tab !== "cultivate" && !s.global.length) { this.setTab("cultivate"); return true; }
+    return false;
+  }
+  open(o: Overlay): void { this.store.update((s) => { s.overlays = s.overlays.filter((x) => x.id !== o.id); s.overlays.push(o); }); }
+  close(id?: string): void { this.store.update((s) => { if (!id) s.overlays.pop(); else s.overlays = s.overlays.filter((m) => m.id !== id); }); }
+  hasOverlay(id: string): boolean { return this.store.state.overlays.some((o) => o.id === id); }
+  toast(text: string, kind: "info" | "good" | "bad" = "info", ms = 2400): void {
     const id = ++this.toastId;
-    this.store.update((s) => s.toasts.push({ id, text, kind }));
+    this.store.update((s) => { s.toasts = [...s.toasts.slice(-2), { id, text, kind }]; });
     setTimeout(() => this.store.update((s) => { s.toasts = s.toasts.filter((t) => t.id !== id); }), ms);
   }
-  /** Re-render without changing navigation (game state changed). */
   refresh(): void { this.render(); }
 
-  private top(): Screen {
+  current(): { screen: Screen; global: boolean } {
     const s = this.store.state;
+    if (s.global.length) return { screen: s.global[s.global.length - 1]!, global: true };
     const st = s.stacks[s.tab];
-    return st.length ? st[st.length - 1]! : this.renderTab(s.tab);
+    return { screen: st.length ? st[st.length - 1]! : this.tabRoot(s.tab), global: false };
   }
 
   private render(): void {
     const s = this.store.state;
-    const screen = this.top();
-    const nav = screen.fullscreen ? null : h("nav", { class: "tabbar" }, TABS.map((t) =>
-      h("button", { class: ["tab", t.id === s.tab && "active"], onClick: () => this.resetTab(t.id), "aria-label": t.label },
-        h("span", { class: "tab-icon" }, t.icon), h("span", { class: "tab-label" }, t.label))));
-    const modals = s.modals.map((m, i) => h("div", { class: "modal-backdrop", onClick: (e: MouseEvent) => { if (e.target === e.currentTarget && m.dismissible !== false && i === s.modals.length - 1) this.closeModal(m.id); } },
-      h("div", { class: "modal" }, m.render(() => this.closeModal(m.id)))));
+    const { screen, global } = this.current();
+    const showNav = screen.nav ?? !global;
+    // keep scroll position across re-renders of the same screen
+    const prevMain = this.root.querySelector<HTMLElement>("main.screen");
+    if (prevMain) this.scrollPos.set(this.scrollKey, prevMain.scrollTop);
+    const key = `${global ? "g" : s.tab}:${screen.id}`;
+    const bgFile = (typeof screen.bg === "function" ? screen.bg() : screen.bg) ?? this.defaultBg();
+    const main = h("main", { class: ["screen", !showNav && "fullscreen"], dataset: { screen: screen.id } }, screen.render());
+    const nav = showNav ? h("nav", { class: "nav glass" }, TABS.map((t) => {
+      const n = this.badges(t.id);
+      return h("button", { class: t.id === s.tab && "on", onClick: () => this.setTab(t.id), "aria-label": t.label }, icon(t.icon, 24), t.label, n > 0 && h("span", { class: "badge" }, String(n)));
+    })) : null;
+    const overlays = s.overlays.map((o, i) => {
+      const top = i === s.overlays.length - 1;
+      const close = () => this.close(o.id);
+      if (o.kind === "sheet") return [h("div", { class: "sheet-backdrop", onClick: () => { if (top && o.dismissible !== false) close(); } }), h("div", { class: ["sheet glass", o.cls] }, h("div", { class: "grab" }), o.render(close))];
+      return h("div", { class: "modal-backdrop", onClick: (e: MouseEvent) => { if (top && e.target === e.currentTarget && o.dismissible !== false) close(); } },
+        h("div", { class: ["modal glass gold", o.cls] }, o.render(close)));
+    });
     const toasts = h("div", { class: "toasts" }, s.toasts.map((t) => h("div", { class: ["toast", t.kind] }, t.text)));
-    replaceChildren(this.root, h("main", { class: ["screen", screen.fullscreen && "fullscreen"], dataset: { screen: screen.id } }, screen.render()), nav, modals, toasts);
+    const backdrop = h("div", { class: "backdrop" }, bgFile ? h("div", { class: "img", style: { backgroundImage: this.img(bgFile) } }) : null, h("div", { class: "veil" }));
+    replaceChildren(this.root, backdrop, main, nav, overlays, toasts);
+    if (key === this.scrollKey) main.scrollTop = this.scrollPos.get(key) ?? 0;
+    this.scrollKey = key;
   }
 }

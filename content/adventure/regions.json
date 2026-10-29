@@ -30,7 +30,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/mortal_plains_map.webp",
@@ -44,7 +44,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/mortal_plains_battle_bg.webp",
@@ -58,7 +58,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -101,7 +101,7 @@
         "references": [
           "refs/mockups/world_regions.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "map": {
         "file": "assets/regions/azure_bamboo_forest_map.webp",
@@ -115,7 +115,7 @@
         "references": [
           "refs/mockups/region_node_map.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle_bg": {
         "file": "assets/regions/azure_bamboo_forest_battle_bg.webp",
@@ -129,7 +129,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   }

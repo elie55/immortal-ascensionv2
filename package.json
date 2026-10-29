@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit",
     "build": "node tools/build.ts",
     "dev": "node tools/build.ts --watch",
-    "test:browser": "node tools/build.ts && node tests/browser/smoke.ts",
+    "test:browser": "node tools/build.ts && node tests/browser/screens.ts",
     "check": "npm run validate && npm test && npm run typecheck && npm run build"
   },
   "dependencies": {

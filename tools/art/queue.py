@@ -50,6 +50,10 @@ def char_ref(job):
     m0 = re.match(r"assets/npcs/([^/]+)/full_body\.webp", job["file"])
     if m0 and m0.group(1) in MOCKUP_CHARS:
         return f"ia_style/{MOCKUP_CHARS[m0.group(1)]}"
+    for r in job.get("references", []):
+        mr = re.match(r"assets/npcs/([^/]+)/full_body\.webp$", r)
+        if mr and job["file"] != r and os.path.exists(os.path.join(ROOT, r)):
+            return f"ia_chars/{mr.group(1)}.png"
     m = re.match(r"assets/npcs/([^/]+)/(portrait|expression_\w+|battle)\.webp", job["file"])
     if m:
         fb = os.path.join(ROOT, "assets/npcs", m.group(1), "full_body.webp")
