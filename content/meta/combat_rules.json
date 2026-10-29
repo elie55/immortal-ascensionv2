@@ -29,7 +29,9 @@
   "status": {
     "default_reflect_pct": 20,
     "shield_from_status_pct": 15,
-    "control_resist_cap": 0.75
+    "control_resist_cap": 0.75,
+    "control_immunity_turns": 2,
+    "boss_control_mult": 0.5
   },
   "companions": {
     "beast_level_stat_pct": 2.5,
@@ -41,7 +43,7 @@
   },
   "tribulation": {
     "turns_per_wave": 3,
-    "bolt_power": 90
+    "bolt_power": 25
   },
   "auto_default": [
     {
@@ -73,5 +75,20 @@
   "mastery": {
     "method_share": 1.0,
     "active_share": 0.5
+  },
+  "caps": {
+    "crit": 75,
+    "crit_dmg": 400,
+    "eva": 60,
+    "acc": 150,
+    "cdr": 50,
+    "dmg_red": 60,
+    "life_steal": 35,
+    "armor_pen": 60,
+    "heal_bonus": 100,
+    "shield_str": 100,
+    "status_res": 75,
+    "elem_diff": 60,
+    "spd_exp": 0.7
   }
 }

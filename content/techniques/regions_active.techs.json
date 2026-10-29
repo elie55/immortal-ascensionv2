@@ -162,7 +162,7 @@
     "applies": [
       {
         "status": "status.freeze",
-        "chance": 0.35,
+        "chance": 0.2,
         "turns": 2
       }
     ],

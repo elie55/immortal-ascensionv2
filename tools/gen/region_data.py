@@ -71,7 +71,7 @@ REGIONS = [
        event=("frozen_reflection", "Frozen Reflection", "冰中倒影", "In the ice of the lake, your reflection moves a moment after you do.", "a frozen lake reflecting an aurora and a lone figure, the reflection subtly wrong",
               "Touch the reflection.", "Walk away without looking back."),
        tech=("glacial_spear_rain", "Glacial Spear Rain", "冰枪雨", "water", "epic", "Ice spears fall on all enemies. 130% ATK, Slows.", 130, 30, 4, "slow", 0.8),
-       etech=("frost_lotus_bloom", "Frost Lotus Bloom", "冰莲开", "water", "A lotus of ice blooms and freezes the area.", 150, "freeze", 0.35),
+       etech=("frost_lotus_bloom", "Frost Lotus Bloom", "冰莲开", "water", "A lotus of ice blooms and freezes the area.", 150, "freeze", 0.2),
        passive=("frost_body", "Frost Body", "冰肌诀", "water", "rare", "Water resistance +12%, Freeze resistance.", {"elem_res.water": 12, "status_res": 5}),
        method=("ice_lotus_heart_art", "Ice Lotus Heart Art", "冰莲心法", "water", "epic", "heaven", 1.65, {"elem_dmg.water": 12, "sp_energy": 20}, "Still the heart like a lotus under ice. Favoured by the Frost Sword lineage."),
        gear=[("frostlotus_circlet", "Frostlotus Circlet", "冰莲冠", "helmet", None, "a delicate silver circlet with a small blue ice lotus at the front", "elem_res.water"),

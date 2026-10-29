@@ -29,6 +29,9 @@ export const GearRules = z.object({
   affix_pools: z.record(Slot, z.array(AffixDef).min(5)),
   special_pool: z.array(GearEffect).min(3),
   cp_weights: z.object({ main: z.number().positive(), special: z.number().positive(), affix: z.record(z.string(), z.number().positive()).default({}) }),
+  /** Percentage-like stats grow gently with item level: top = value · rarity_mult · (1 + bounded_scale · L / ilvl_cap). Flat stats use `scale`. */
+  bounded_stats: z.array(z.string()).default(["crit", "crit_dmg", "acc", "eva", "spd", "cdr", "dmg_red", "life_steal", "armor_pen", "heal_bonus", "shield_str", "status_res", "elem_dmg", "elem_res"]),
+  bounded_scale: z.number().min(0).default(1),
   content_bands: z.object({ region_per_order: z.number().int().positive(), region_span: z.number().int().positive(), tower_base: z.number().int().nonnegative(), mega_min: z.number().int().positive() }),
 });
 export type GearRules = z.infer<typeof GearRules>;
@@ -38,6 +41,9 @@ const rr = (rules: GearRules, r: Rarity): RRule => rules.rarity[r] as RRule;
 const pool = (rules: GearRules, slot: Slot): Affix[] => (rules.affix_pools[slot] ?? []) as Affix[];
 
 export const scale = (rules: GearRules, L: number) => 1 + rules.scale.a * L + rules.scale.b * L * L;
+export const isBounded = (rules: GearRules, stat: string) => rules.bounded_stats.includes(stat) || rules.bounded_stats.includes(stat.split(".")[0]!);
+/** Item-level multiplier for a stat: flat stats follow `scale`, bounded (percentage-like) stats a gentle linear ramp. */
+export const statScale = (rules: GearRules, stat: string, L: number) => isBounded(rules, stat) ? 1 + rules.bounded_scale * Math.min(1, L / rules.ilvl_cap) : scale(rules, L);
 
 /** Lowest roll for a rarity at an item level. Rises with ilvl. */
 export function rollFloor(rules: GearRules, r: Rarity, L: number): number {
@@ -45,13 +51,13 @@ export function rollFloor(rules: GearRules, r: Rarity, L: number): number {
   return f + (0.95 - f) * Math.min(1, L / rules.ilvl_cap) * rules.floor_ilvl_bonus;
 }
 
-export function mainStatRange(rules: GearRules, mainValue: number, r: Rarity, L: number): [number, number] {
-  const top = mainValue * scale(rules, L) * rr(rules, r).main_mult;
+export function mainStatRange(rules: GearRules, mainValue: number, r: Rarity, L: number, stat = "atk"): [number, number] {
+  const top = mainValue * statScale(rules, stat, L) * rr(rules, r).main_mult;
   return [top * rollFloor(rules, r, L), top];
 }
 
-export function affixRange(rules: GearRules, affixValue: number, r: Rarity, L: number): [number, number] {
-  const top = affixValue * scale(rules, L) * rr(rules, r).affix_mult;
+export function affixRange(rules: GearRules, affixValue: number, r: Rarity, L: number, stat = "atk"): [number, number] {
+  const top = affixValue * statScale(rules, stat, L) * rr(rules, r).affix_mult;
   return [top * rollFloor(rules, r, L), top];
 }
 
@@ -91,7 +97,7 @@ export function rollInstance(
     if (i < 0) return;
     const def = avail.splice(i, 1)[0]!;
     const r = roll();
-    picked.push({ stat, roll: r, value: round2(affixRange(rules, def.value, rarity, L)[1] * r) });
+    picked.push({ stat, roll: r, value: round2(affixRange(rules, def.value, rarity, L, stat)[1] * r) });
   };
   if (base.signature_affix && rule.affixes > 0) take(base.signature_affix);
   while (picked.length < rule.affixes && avail.length) {
@@ -106,7 +112,7 @@ export function rollInstance(
   }
   return {
     base: base.id, rarity, ilvl: L, enhance: 0,
-    main: { stat: mainStat, roll: mr, value: round2(mainStatRange(rules, base.main_value, rarity, L)[1] * mr) },
+    main: { stat: mainStat, roll: mr, value: round2(mainStatRange(rules, base.main_value, rarity, L, mainStat)[1] * mr) },
     affixes: picked, specials, awakened: false,
   };
 }
@@ -123,16 +129,18 @@ export function refineInstance(rules: GearRules, inst: GearInstance, base: Param
   const affixes = inst.affixes.map((a) => {
     const def = pool(rules, base.slot).find((p) => p.stat === a.stat)!;
     const r = carry(a.roll);
-    return { ...a, roll: r, value: round2(affixRange(rules, def.value, next, L)[1] * r) };
+    return { ...a, roll: r, value: round2(affixRange(rules, def.value, next, L, a.stat)[1] * r) };
   });
   for (const a of fresh.affixes) if (affixes.length < rr(rules, next).affixes && !affixes.some((x) => x.stat === a.stat)) affixes.push(a);
-  return { ...fresh, enhance: inst.enhance, awakened: inst.awakened, main: { ...fresh.main, roll: mr, value: round2(mainStatRange(rules, base.main_value, next, L)[1] * mr) }, affixes, specials: fresh.specials.length >= inst.specials.length ? fresh.specials : inst.specials };
+  return { ...fresh, enhance: inst.enhance, awakened: inst.awakened, main: { ...fresh.main, roll: mr, value: round2(mainStatRange(rules, base.main_value, next, L, fresh.main.stat)[1] * mr) }, affixes, specials: fresh.specials.length >= inst.specials.length ? fresh.specials : inst.specials };
 }
 
 export function instanceCp(rules: GearRules, inst: GearInstance, enhanceMult = 1): number {
   const w = rules.cp_weights;
-  let cp = inst.main.value * enhanceMult * w.main;
-  for (const a of inst.affixes) cp += a.value * enhanceMult * (w.affix[a.stat] ?? 1);
+  // A percentage stat is worth more on a higher-level item (it multiplies more flat power), so its CP follows the flat curve.
+  const lvl = (stat: string) => isBounded(rules, stat) ? scale(rules, inst.ilvl) / statScale(rules, stat, inst.ilvl) : 1;
+  let cp = inst.main.value * enhanceMult * w.main * lvl(inst.main.stat);
+  for (const a of inst.affixes) cp += a.value * enhanceMult * (w.affix[a.stat] ?? 1) * lvl(a.stat);
   cp += inst.specials.length * w.special;
   return Math.round(cp);
 }

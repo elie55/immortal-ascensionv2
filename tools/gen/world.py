@@ -102,7 +102,7 @@ def statuses():
         S("burning", "Burning", "dot", 2, {}, {"pct_atk": 30}, "Takes fire damage each turn.", "stack", 3),
         S("poison", "Poison", "dot", 3, {"heal_bonus": -30}, {"pct_atk": 20}, "Takes nature damage each turn and heals less.", "stack", 5),
         S("bleeding", "Bleeding", "dot", 3, {}, {"pct_max_hp": 4}, "Loses a portion of max HP each turn."),
-        S("freeze", "Freeze", "control", 1, {"spd": -100}, None, "Cannot act. Fire damage breaks the ice."),
+        S("freeze", "Freeze", "control", 1, {"spd": -25}, None, "Cannot act; moves slower once thawed."),
         S("stun", "Stun", "control", 1, {}, None, "Skips the next turn."),
         S("silence", "Silence", "control", 2, {}, None, "Cannot use techniques; basic attacks only."),
         S("slow", "Slow", "debuff", 2, {"spd": -30}, None, "Speed reduced."),

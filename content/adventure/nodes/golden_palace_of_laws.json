@@ -13,7 +13,7 @@
       "node.golden_palace_of_laws.gathering",
       "node.golden_palace_of_laws.outskirts"
     ],
-    "rec_cp": 1468059,
+    "rec_cp": 135000,
     "first_clear": {
       "spirit_stones": 2940
     },
@@ -44,7 +44,7 @@
       "node.golden_palace_of_laws.west_path",
       "node.golden_palace_of_laws.cache"
     ],
-    "rec_cp": 1679459,
+    "rec_cp": 154440,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 12,
@@ -78,7 +78,7 @@
       "node.golden_palace_of_laws.cache",
       "node.golden_palace_of_laws.east_path"
     ],
-    "rec_cp": 1585504,
+    "rec_cp": 145800,
     "first_clear": {
       "spirit_stones": 2940
     },
@@ -109,7 +109,7 @@
       "node.golden_palace_of_laws.gathering",
       "node.golden_palace_of_laws.lair"
     ],
-    "rec_cp": 1644226,
+    "rec_cp": 151200,
     "first_clear": {
       "spirit_stones": 2940
     },
@@ -141,7 +141,7 @@
       "node.golden_palace_of_laws.outskirts",
       "node.golden_palace_of_laws.crossroads"
     ],
-    "rec_cp": 1873243,
+    "rec_cp": 172260,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 12,
@@ -161,7 +161,7 @@
       "node.golden_palace_of_laws.outskirts",
       "node.golden_palace_of_laws.ridge"
     ],
-    "rec_cp": 1761671,
+    "rec_cp": 162000,
     "first_clear": {
       "spirit_stones": 2940
     },
@@ -192,7 +192,7 @@
       "node.golden_palace_of_laws.west_path",
       "node.golden_palace_of_laws.deep_path"
     ],
-    "rec_cp": 3458747,
+    "rec_cp": 267840,
     "first_clear": {
       "spirit_stones": 7840,
       "items": [
@@ -225,7 +225,7 @@
       "node.golden_palace_of_laws.deep_path",
       "node.golden_palace_of_laws.sanctum"
     ],
-    "rec_cp": 2067027,
+    "rec_cp": 190080,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 12,
@@ -245,7 +245,7 @@
       "node.golden_palace_of_laws.east_path",
       "node.golden_palace_of_laws.sanctum"
     ],
-    "rec_cp": 1937838,
+    "rec_cp": 178200,
     "first_clear": {
       "spirit_stones": 2940
     },
@@ -276,7 +276,7 @@
       "node.golden_palace_of_laws.crossroads",
       "node.golden_palace_of_laws.den"
     ],
-    "rec_cp": 1996560,
+    "rec_cp": 183600,
     "first_clear": {
       "spirit_stones": 2940
     },
@@ -309,7 +309,7 @@
       "node.golden_palace_of_laws.hidden_grove",
       "node.golden_palace_of_laws.approach"
     ],
-    "rec_cp": 2260811,
+    "rec_cp": 207900,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 12,
@@ -333,7 +333,7 @@
       "node.golden_palace_of_laws.deep_path",
       "node.golden_palace_of_laws.throne"
     ],
-    "rec_cp": 4016609,
+    "rec_cp": 311040,
     "first_clear": {
       "spirit_stones": 7840,
       "items": [
@@ -369,7 +369,7 @@
       "node.golden_palace_of_laws.sanctum",
       "node.golden_palace_of_laws.approach"
     ],
-    "rec_cp": 2390000,
+    "rec_cp": 219780,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 12,
@@ -394,7 +394,7 @@
       "node.golden_palace_of_laws.hidden_grove",
       "node.golden_palace_of_laws.throne"
     ],
-    "rec_cp": 2231450,
+    "rec_cp": 205200,
     "first_clear": {
       "spirit_stones": 2940
     },
@@ -425,7 +425,7 @@
       "node.golden_palace_of_laws.den",
       "node.golden_palace_of_laws.approach"
     ],
-    "rec_cp": 9618723,
+    "rec_cp": 315900,
     "first_clear": {
       "spirit_stones": 29400,
       "sect_fame": 560
@@ -434,8 +434,8 @@
     "energy_cost": 12,
     "waves": [
       [
-        "enemy.scroll_golem",
-        "enemy.nine_tailed_shadow"
+        "enemy.law_enforcer",
+        "enemy.golden_crow"
       ],
       [
         "boss.arbiter_of_laws"

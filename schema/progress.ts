@@ -234,12 +234,26 @@ export const CombatRules = z.object({
   }),
   spirit_energy: z.object({ regen_pct_per_turn: z.number().min(0), basic_attack_restore: z.number().min(0) }),
   ultimate: z.object({ gain_per_action: z.number().min(0), gain_per_damage_taken_pct: z.number().min(0), gain_per_kill: z.number().min(0) }),
-  status: z.object({ default_reflect_pct: z.number().min(0), shield_from_status_pct: z.number().min(0), control_resist_cap: z.number().min(0).max(1) }),
+  status: z.object({
+    default_reflect_pct: z.number().min(0), shield_from_status_pct: z.number().min(0), control_resist_cap: z.number().min(0).max(1),
+    /** After a control effect ends the unit is immune to control for this many of its own turns (bosses +1). */
+    control_immunity_turns: z.number().int().min(0).default(2),
+    /** Multiplier on control chances against bosses. */
+    boss_control_mult: z.number().min(0).max(1).default(0.5),
+  }),
   companions: z.object({ beast_level_stat_pct: z.number().min(0), beast_active_cooldown: z.number().int().min(0) }),
   defeat: z.object({ hp_pct_after_defeat: z.number().min(0).max(100), energy_refund_pct: z.number().min(0).max(100) }),
   tribulation: z.object({ turns_per_wave: z.number().int().positive(), bolt_power: z.number().positive() }),
   recovery: z.object({ hp_pct_per_min: z.number().min(0) }),
   mastery: z.object({ method_share: z.number().min(0), active_share: z.number().min(0) }),
+  /** Hard caps on percentage stats as used in combat (values in %). Keeps gear scaling from breaking the formulas. */
+  caps: z.object({
+    crit: z.number().min(0).max(100).default(75), crit_dmg: z.number().min(100).default(400), eva: z.number().min(0).max(95).default(60), acc: z.number().min(50).default(150),
+    cdr: z.number().min(0).max(90).default(50), dmg_red: z.number().min(0).max(95).default(60), life_steal: z.number().min(0).max(100).default(35), armor_pen: z.number().min(0).max(100).default(60),
+    heal_bonus: z.number().min(0).default(100), shield_str: z.number().min(0).default(100), status_res: z.number().min(0).max(95).default(75), elem_diff: z.number().min(0).default(60),
+    /** Turn gauge: effective speed = min_speed + (spd − min)^spd_exp · k, so speed matters without linear runaway. */
+    spd_exp: z.number().min(0.3).max(1).default(1),
+  }).default({}),
   auto_default: z.array(AutoRule).min(1),
 });
 export type CombatRules = z.infer<typeof CombatRules>;

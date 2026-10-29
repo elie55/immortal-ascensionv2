@@ -23,7 +23,7 @@ import { rankUpModal } from "./ui/screens/rank.ts";
 import { questStatus } from "./engine/progression.ts";
 import type { DomainEvent } from "./engine/events.ts";
 
-export const VERSION = "0.3.0";
+export const VERSION = "0.4.0";
 
 export class App {
   content!: ContentIndex;

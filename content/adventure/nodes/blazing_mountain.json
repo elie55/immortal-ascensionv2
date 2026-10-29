@@ -13,7 +13,7 @@
       "node.blazing_mountain.gathering",
       "node.blazing_mountain.outskirts"
     ],
-    "rec_cp": 546,
+    "rec_cp": 1400,
     "first_clear": {
       "spirit_stones": 135
     },
@@ -44,7 +44,7 @@
       "node.blazing_mountain.west_path",
       "node.blazing_mountain.cache"
     ],
-    "rec_cp": 625,
+    "rec_cp": 1602,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 6,
@@ -78,7 +78,7 @@
       "node.blazing_mountain.cache",
       "node.blazing_mountain.east_path"
     ],
-    "rec_cp": 590,
+    "rec_cp": 1512,
     "first_clear": {
       "spirit_stones": 135
     },
@@ -109,7 +109,7 @@
       "node.blazing_mountain.gathering",
       "node.blazing_mountain.lair"
     ],
-    "rec_cp": 612,
+    "rec_cp": 1568,
     "first_clear": {
       "spirit_stones": 135
     },
@@ -141,7 +141,7 @@
       "node.blazing_mountain.outskirts",
       "node.blazing_mountain.crossroads"
     ],
-    "rec_cp": 697,
+    "rec_cp": 1786,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 6,
@@ -161,7 +161,7 @@
       "node.blazing_mountain.outskirts",
       "node.blazing_mountain.ridge"
     ],
-    "rec_cp": 655,
+    "rec_cp": 1680,
     "first_clear": {
       "spirit_stones": 135
     },
@@ -192,7 +192,7 @@
       "node.blazing_mountain.west_path",
       "node.blazing_mountain.deep_path"
     ],
-    "rec_cp": 1286,
+    "rec_cp": 2778,
     "first_clear": {
       "spirit_stones": 360,
       "items": [
@@ -225,7 +225,7 @@
       "node.blazing_mountain.deep_path",
       "node.blazing_mountain.sanctum"
     ],
-    "rec_cp": 769,
+    "rec_cp": 1971,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 6,
@@ -245,7 +245,7 @@
       "node.blazing_mountain.east_path",
       "node.blazing_mountain.sanctum"
     ],
-    "rec_cp": 721,
+    "rec_cp": 1848,
     "first_clear": {
       "spirit_stones": 135
     },
@@ -276,7 +276,7 @@
       "node.blazing_mountain.crossroads",
       "node.blazing_mountain.den"
     ],
-    "rec_cp": 743,
+    "rec_cp": 1904,
     "first_clear": {
       "spirit_stones": 135
     },
@@ -309,7 +309,7 @@
       "node.blazing_mountain.hidden_grove",
       "node.blazing_mountain.approach"
     ],
-    "rec_cp": 841,
+    "rec_cp": 2156,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 6,
@@ -333,7 +333,7 @@
       "node.blazing_mountain.deep_path",
       "node.blazing_mountain.throne"
     ],
-    "rec_cp": 1494,
+    "rec_cp": 3226,
     "first_clear": {
       "spirit_stones": 360,
       "items": [
@@ -369,7 +369,7 @@
       "node.blazing_mountain.sanctum",
       "node.blazing_mountain.approach"
     ],
-    "rec_cp": 889,
+    "rec_cp": 2279,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 6,
@@ -394,7 +394,7 @@
       "node.blazing_mountain.hidden_grove",
       "node.blazing_mountain.throne"
     ],
-    "rec_cp": 830,
+    "rec_cp": 2128,
     "first_clear": {
       "spirit_stones": 135
     },
@@ -425,7 +425,7 @@
       "node.blazing_mountain.den",
       "node.blazing_mountain.approach"
     ],
-    "rec_cp": 3577,
+    "rec_cp": 3276,
     "first_clear": {
       "spirit_stones": 1350,
       "sect_fame": 120
@@ -434,8 +434,8 @@
     "energy_cost": 6,
     "waves": [
       [
-        "enemy.magma_golem",
-        "enemy.flame_lion"
+        "enemy.ember_salamander",
+        "enemy.ash_vulture"
       ],
       [
         "boss.molten_ape_king"

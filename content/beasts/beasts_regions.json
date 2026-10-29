@@ -15,9 +15,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 328,
-          "atk": 33,
-          "def": 22,
+          "hp": 840,
+          "atk": 84,
+          "def": 56,
           "spd": 12
         },
         "active": "btech.ember_salamander_pup.flame_burst",
@@ -39,9 +39,9 @@
         ],
         "evolve_cost_stones": 1800,
         "stats": {
-          "hp": 983,
-          "atk": 98,
-          "def": 66,
+          "hp": 2520,
+          "atk": 252,
+          "def": 168,
           "spd": 14
         },
         "active": "btech.ember_salamander_pup.flame_burst",
@@ -63,9 +63,9 @@
         ],
         "evolve_cost_stones": 4800,
         "stats": {
-          "hp": 2621,
-          "atk": 262,
-          "def": 175,
+          "hp": 6720,
+          "atk": 672,
+          "def": 448,
           "spd": 19
         },
         "active": "btech.ember_salamander_pup.flame_burst",
@@ -176,9 +176,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 328,
-          "atk": 33,
-          "def": 22,
+          "hp": 840,
+          "atk": 84,
+          "def": 56,
           "spd": 12
         },
         "active": "btech.azure_wolf.steel_talon",
@@ -200,9 +200,9 @@
         ],
         "evolve_cost_stones": 1800,
         "stats": {
-          "hp": 983,
-          "atk": 98,
-          "def": 66,
+          "hp": 2520,
+          "atk": 252,
+          "def": 168,
           "spd": 14
         },
         "active": "btech.azure_wolf.steel_talon",
@@ -224,9 +224,9 @@
         ],
         "evolve_cost_stones": 4800,
         "stats": {
-          "hp": 2621,
-          "atk": 262,
-          "def": 175,
+          "hp": 6720,
+          "atk": 672,
+          "def": 448,
           "spd": 19
         },
         "active": "btech.azure_wolf.steel_talon",
@@ -337,9 +337,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 672,
-          "atk": 67,
-          "def": 45,
+          "hp": 780,
+          "atk": 78,
+          "def": 52,
           "spd": 13
         },
         "active": "btech.snow_crane.tidal_pulse",
@@ -361,9 +361,9 @@
         ],
         "evolve_cost_stones": 2400,
         "stats": {
-          "hp": 2016,
-          "atk": 202,
-          "def": 134,
+          "hp": 2340,
+          "atk": 234,
+          "def": 156,
           "spd": 15
         },
         "active": "btech.snow_crane.tidal_pulse",
@@ -385,9 +385,9 @@
         ],
         "evolve_cost_stones": 6400,
         "stats": {
-          "hp": 5376,
-          "atk": 538,
-          "def": 358,
+          "hp": 6240,
+          "atk": 624,
+          "def": 416,
           "spd": 20
         },
         "active": "btech.snow_crane.tidal_pulse",
@@ -498,9 +498,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 672,
-          "atk": 67,
-          "def": 45,
+          "hp": 780,
+          "atk": 78,
+          "def": 52,
           "spd": 13
         },
         "active": "btech.frost_otter.tidal_pulse",
@@ -522,9 +522,9 @@
         ],
         "evolve_cost_stones": 2400,
         "stats": {
-          "hp": 2016,
-          "atk": 202,
-          "def": 134,
+          "hp": 2340,
+          "atk": 234,
+          "def": 156,
           "spd": 15
         },
         "active": "btech.frost_otter.tidal_pulse",
@@ -546,9 +546,9 @@
         ],
         "evolve_cost_stones": 6400,
         "stats": {
-          "hp": 5376,
-          "atk": 538,
-          "def": 358,
+          "hp": 6240,
+          "atk": 624,
+          "def": 416,
           "spd": 20
         },
         "active": "btech.frost_otter.tidal_pulse",
@@ -659,9 +659,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 1378,
-          "atk": 138,
-          "def": 92,
+          "hp": 1620,
+          "atk": 162,
+          "def": 108,
           "spd": 14
         },
         "active": "btech.jade_serpent.thorn_lash",
@@ -683,9 +683,9 @@
         ],
         "evolve_cost_stones": 3000,
         "stats": {
-          "hp": 4133,
-          "atk": 413,
-          "def": 276,
+          "hp": 4860,
+          "atk": 486,
+          "def": 324,
           "spd": 16
         },
         "active": "btech.jade_serpent.thorn_lash",
@@ -707,9 +707,9 @@
         ],
         "evolve_cost_stones": 8000,
         "stats": {
-          "hp": 11021,
-          "atk": 1102,
-          "def": 735,
+          "hp": 12960,
+          "atk": 1296,
+          "def": 864,
           "spd": 21
         },
         "active": "btech.jade_serpent.thorn_lash",
@@ -820,9 +820,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 2824,
-          "atk": 282,
-          "def": 188,
+          "hp": 4740,
+          "atk": 474,
+          "def": 316,
           "spd": 15
         },
         "active": "btech.blood_moon_wolf.flame_burst",
@@ -844,9 +844,9 @@
         ],
         "evolve_cost_stones": 3600,
         "stats": {
-          "hp": 8473,
-          "atk": 847,
-          "def": 565,
+          "hp": 14220,
+          "atk": 1422,
+          "def": 948,
           "spd": 17
         },
         "active": "btech.blood_moon_wolf.flame_burst",
@@ -868,9 +868,9 @@
         ],
         "evolve_cost_stones": 9600,
         "stats": {
-          "hp": 22594,
-          "atk": 2259,
-          "def": 1506,
+          "hp": 37920,
+          "atk": 3792,
+          "def": 2528,
           "spd": 22
         },
         "active": "btech.blood_moon_wolf.flame_burst",
@@ -981,9 +981,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 2824,
-          "atk": 282,
-          "def": 188,
+          "hp": 4740,
+          "atk": 474,
+          "def": 316,
           "spd": 15
         },
         "active": "btech.ghost_lantern_moth.flame_burst",
@@ -1005,9 +1005,9 @@
         ],
         "evolve_cost_stones": 3600,
         "stats": {
-          "hp": 8473,
-          "atk": 847,
-          "def": 565,
+          "hp": 14220,
+          "atk": 1422,
+          "def": 948,
           "spd": 17
         },
         "active": "btech.ghost_lantern_moth.flame_burst",
@@ -1029,9 +1029,9 @@
         ],
         "evolve_cost_stones": 9600,
         "stats": {
-          "hp": 22594,
-          "atk": 2259,
-          "def": 1506,
+          "hp": 37920,
+          "atk": 3792,
+          "def": 2528,
           "spd": 22
         },
         "active": "btech.ghost_lantern_moth.flame_burst",
@@ -1142,9 +1142,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 5789,
-          "atk": 579,
-          "def": 386,
+          "hp": 7440,
+          "atk": 744,
+          "def": 496,
           "spd": 16
         },
         "active": "btech.thunder_tiger.steel_talon",
@@ -1166,9 +1166,9 @@
         ],
         "evolve_cost_stones": 4200,
         "stats": {
-          "hp": 17368,
-          "atk": 1737,
-          "def": 1158,
+          "hp": 22320,
+          "atk": 2232,
+          "def": 1488,
           "spd": 18
         },
         "active": "btech.thunder_tiger.steel_talon",
@@ -1190,9 +1190,9 @@
         ],
         "evolve_cost_stones": 11200,
         "stats": {
-          "hp": 46315,
-          "atk": 4632,
-          "def": 3088,
+          "hp": 59520,
+          "atk": 5952,
+          "def": 3968,
           "spd": 23
         },
         "active": "btech.thunder_tiger.steel_talon",
@@ -1214,9 +1214,9 @@
         ],
         "evolve_cost_stones": 28000,
         "stats": {
-          "hp": 115788,
-          "atk": 11579,
-          "def": 7719,
+          "hp": 148800,
+          "atk": 14880,
+          "def": 9920,
           "spd": 35
         },
         "active": "btech.thunder_tiger.steel_talon",
@@ -1341,9 +1341,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 11868,
-          "atk": 1187,
-          "def": 791,
+          "hp": 8940,
+          "atk": 894,
+          "def": 596,
           "spd": 17
         },
         "active": "btech.cloud_qilin.stone_rampart",
@@ -1365,9 +1365,9 @@
         ],
         "evolve_cost_stones": 4800,
         "stats": {
-          "hp": 35604,
-          "atk": 3560,
-          "def": 2374,
+          "hp": 26820,
+          "atk": 2682,
+          "def": 1788,
           "spd": 19
         },
         "active": "btech.cloud_qilin.stone_rampart",
@@ -1389,9 +1389,9 @@
         ],
         "evolve_cost_stones": 12800,
         "stats": {
-          "hp": 94944,
-          "atk": 9494,
-          "def": 6330,
+          "hp": 71520,
+          "atk": 7152,
+          "def": 4768,
           "spd": 24
         },
         "active": "btech.cloud_qilin.stone_rampart",
@@ -1413,9 +1413,9 @@
         ],
         "evolve_cost_stones": 32000,
         "stats": {
-          "hp": 237360,
-          "atk": 23736,
-          "def": 15824,
+          "hp": 178800,
+          "atk": 17880,
+          "def": 11920,
           "spd": 36
         },
         "active": "btech.cloud_qilin.stone_rampart",
@@ -1540,9 +1540,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 24329,
-          "atk": 2433,
-          "def": 1622,
+          "hp": 18600,
+          "atk": 1860,
+          "def": 1240,
           "spd": 18
         },
         "active": "btech.storm_roc.steel_talon",
@@ -1564,9 +1564,9 @@
         ],
         "evolve_cost_stones": 5400,
         "stats": {
-          "hp": 72986,
-          "atk": 7299,
-          "def": 4866,
+          "hp": 55800,
+          "atk": 5580,
+          "def": 3720,
           "spd": 20
         },
         "active": "btech.storm_roc.steel_talon",
@@ -1588,9 +1588,9 @@
         ],
         "evolve_cost_stones": 14400,
         "stats": {
-          "hp": 194630,
-          "atk": 19463,
-          "def": 12975,
+          "hp": 148800,
+          "atk": 14880,
+          "def": 9920,
           "spd": 25
         },
         "active": "btech.storm_roc.steel_talon",
@@ -1612,9 +1612,9 @@
         ],
         "evolve_cost_stones": 36000,
         "stats": {
-          "hp": 486576,
-          "atk": 48658,
-          "def": 32438,
+          "hp": 372000,
+          "atk": 37200,
+          "def": 24800,
           "spd": 37
         },
         "active": "btech.storm_roc.steel_talon",
@@ -1739,9 +1739,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 24329,
-          "atk": 2433,
-          "def": 1622,
+          "hp": 18600,
+          "atk": 1860,
+          "def": 1240,
           "spd": 18
         },
         "active": "btech.lightning_eel.tidal_pulse",
@@ -1763,9 +1763,9 @@
         ],
         "evolve_cost_stones": 5400,
         "stats": {
-          "hp": 72986,
-          "atk": 7299,
-          "def": 4866,
+          "hp": 55800,
+          "atk": 5580,
+          "def": 3720,
           "spd": 20
         },
         "active": "btech.lightning_eel.tidal_pulse",
@@ -1787,9 +1787,9 @@
         ],
         "evolve_cost_stones": 14400,
         "stats": {
-          "hp": 194630,
-          "atk": 19463,
-          "def": 12975,
+          "hp": 148800,
+          "atk": 14880,
+          "def": 9920,
           "spd": 25
         },
         "active": "btech.lightning_eel.tidal_pulse",
@@ -1811,9 +1811,9 @@
         ],
         "evolve_cost_stones": 36000,
         "stats": {
-          "hp": 486576,
-          "atk": 48658,
-          "def": 32438,
+          "hp": 372000,
+          "atk": 37200,
+          "def": 24800,
           "spd": 37
         },
         "active": "btech.lightning_eel.tidal_pulse",
@@ -1938,9 +1938,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 49874,
-          "atk": 4987,
-          "def": 3325,
+          "hp": 31200,
+          "atk": 3120,
+          "def": 2080,
           "spd": 19
         },
         "active": "btech.black_tortoise.tidal_pulse",
@@ -1962,9 +1962,9 @@
         ],
         "evolve_cost_stones": 6000,
         "stats": {
-          "hp": 149623,
-          "atk": 14962,
-          "def": 9975,
+          "hp": 93600,
+          "atk": 9360,
+          "def": 6240,
           "spd": 21
         },
         "active": "btech.black_tortoise.tidal_pulse",
@@ -1986,9 +1986,9 @@
         ],
         "evolve_cost_stones": 16000,
         "stats": {
-          "hp": 398995,
-          "atk": 39900,
-          "def": 26600,
+          "hp": 249600,
+          "atk": 24960,
+          "def": 16640,
           "spd": 26
         },
         "active": "btech.black_tortoise.tidal_pulse",
@@ -2010,9 +2010,9 @@
         ],
         "evolve_cost_stones": 40000,
         "stats": {
-          "hp": 997488,
-          "atk": 99749,
-          "def": 66499,
+          "hp": 624000,
+          "atk": 62400,
+          "def": 41600,
           "spd": 38
         },
         "active": "btech.black_tortoise.tidal_pulse",
@@ -2137,9 +2137,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 102243,
-          "atk": 10224,
-          "def": 6816,
+          "hp": 43800,
+          "atk": 4380,
+          "def": 2920,
           "spd": 20
         },
         "active": "btech.sand_dragon.stone_rampart",
@@ -2161,9 +2161,9 @@
         ],
         "evolve_cost_stones": 6600,
         "stats": {
-          "hp": 306729,
-          "atk": 30673,
-          "def": 20449,
+          "hp": 131400,
+          "atk": 13140,
+          "def": 8760,
           "spd": 22
         },
         "active": "btech.sand_dragon.stone_rampart",
@@ -2185,9 +2185,9 @@
         ],
         "evolve_cost_stones": 17600,
         "stats": {
-          "hp": 817944,
-          "atk": 81794,
-          "def": 54530,
+          "hp": 350400,
+          "atk": 35040,
+          "def": 23360,
           "spd": 27
         },
         "active": "btech.sand_dragon.stone_rampart",
@@ -2209,9 +2209,9 @@
         ],
         "evolve_cost_stones": 44000,
         "stats": {
-          "hp": 2044860,
-          "atk": 204486,
-          "def": 136324,
+          "hp": 876000,
+          "atk": 87600,
+          "def": 58400,
           "spd": 39
         },
         "active": "btech.sand_dragon.stone_rampart",
@@ -2336,9 +2336,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 102243,
-          "atk": 10224,
-          "def": 6816,
+          "hp": 43800,
+          "atk": 4380,
+          "def": 2920,
           "spd": 20
         },
         "active": "btech.starlight_deer.thorn_lash",
@@ -2360,9 +2360,9 @@
         ],
         "evolve_cost_stones": 6600,
         "stats": {
-          "hp": 306729,
-          "atk": 30673,
-          "def": 20449,
+          "hp": 131400,
+          "atk": 13140,
+          "def": 8760,
           "spd": 22
         },
         "active": "btech.starlight_deer.thorn_lash",
@@ -2384,9 +2384,9 @@
         ],
         "evolve_cost_stones": 17600,
         "stats": {
-          "hp": 817944,
-          "atk": 81794,
-          "def": 54530,
+          "hp": 350400,
+          "atk": 35040,
+          "def": 23360,
           "spd": 27
         },
         "active": "btech.starlight_deer.thorn_lash",
@@ -2408,9 +2408,9 @@
         ],
         "evolve_cost_stones": 44000,
         "stats": {
-          "hp": 2044860,
-          "atk": 204486,
-          "def": 136324,
+          "hp": 876000,
+          "atk": 87600,
+          "def": 58400,
           "spd": 39
         },
         "active": "btech.starlight_deer.thorn_lash",
@@ -2535,9 +2535,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 209598,
-          "atk": 20960,
-          "def": 13973,
+          "hp": 63000,
+          "atk": 6300,
+          "def": 4200,
           "spd": 21
         },
         "active": "btech.vermilion_bird.flame_burst",
@@ -2559,9 +2559,9 @@
         ],
         "evolve_cost_stones": 7200,
         "stats": {
-          "hp": 628794,
-          "atk": 62879,
-          "def": 41920,
+          "hp": 189000,
+          "atk": 18900,
+          "def": 12600,
           "spd": 23
         },
         "active": "btech.vermilion_bird.flame_burst",
@@ -2583,9 +2583,9 @@
         ],
         "evolve_cost_stones": 19200,
         "stats": {
-          "hp": 1676784,
-          "atk": 167678,
-          "def": 111786,
+          "hp": 504000,
+          "atk": 50400,
+          "def": 33600,
           "spd": 28
         },
         "active": "btech.vermilion_bird.flame_burst",
@@ -2607,9 +2607,9 @@
         ],
         "evolve_cost_stones": 48000,
         "stats": {
-          "hp": 4191960,
-          "atk": 419196,
-          "def": 279464,
+          "hp": 1260000,
+          "atk": 126000,
+          "def": 84000,
           "spd": 40
         },
         "active": "btech.vermilion_bird.flame_burst",
@@ -2734,9 +2734,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 429676,
-          "atk": 42968,
-          "def": 28645,
+          "hp": 90000,
+          "atk": 9000,
+          "def": 6000,
           "spd": 22
         },
         "active": "btech.white_tiger.steel_talon",
@@ -2758,9 +2758,9 @@
         ],
         "evolve_cost_stones": 7800,
         "stats": {
-          "hp": 1289027,
-          "atk": 128903,
-          "def": 85935,
+          "hp": 270000,
+          "atk": 27000,
+          "def": 18000,
           "spd": 24
         },
         "active": "btech.white_tiger.steel_talon",
@@ -2782,9 +2782,9 @@
         ],
         "evolve_cost_stones": 20800,
         "stats": {
-          "hp": 3437405,
-          "atk": 343740,
-          "def": 229160,
+          "hp": 720000,
+          "atk": 72000,
+          "def": 48000,
           "spd": 29
         },
         "active": "btech.white_tiger.steel_talon",
@@ -2806,9 +2806,9 @@
         ],
         "evolve_cost_stones": 52000,
         "stats": {
-          "hp": 8593512,
-          "atk": 859351,
-          "def": 572901,
+          "hp": 1800000,
+          "atk": 180000,
+          "def": 120000,
           "spd": 41
         },
         "active": "btech.white_tiger.steel_talon",
@@ -2933,9 +2933,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 880835,
-          "atk": 88084,
-          "def": 58722,
+          "hp": 81000,
+          "atk": 8100,
+          "def": 5400,
           "spd": 23
         },
         "active": "btech.nine_tailed_fox.flame_burst",
@@ -2957,9 +2957,9 @@
         ],
         "evolve_cost_stones": 8400,
         "stats": {
-          "hp": 2642506,
-          "atk": 264251,
-          "def": 176167,
+          "hp": 243000,
+          "atk": 24300,
+          "def": 16200,
           "spd": 25
         },
         "active": "btech.nine_tailed_fox.flame_burst",
@@ -2981,9 +2981,9 @@
         ],
         "evolve_cost_stones": 22400,
         "stats": {
-          "hp": 7046683,
-          "atk": 704668,
-          "def": 469779,
+          "hp": 648000,
+          "atk": 64800,
+          "def": 43200,
           "spd": 30
         },
         "active": "btech.nine_tailed_fox.flame_burst",
@@ -3005,9 +3005,9 @@
         ],
         "evolve_cost_stones": 56000,
         "stats": {
-          "hp": 17616708,
-          "atk": 1761671,
-          "def": 1174447,
+          "hp": 1620000,
+          "atk": 162000,
+          "def": 108000,
           "spd": 42
         },
         "active": "btech.nine_tailed_fox.flame_burst",
@@ -3132,9 +3132,9 @@
         "evolve_materials": [],
         "evolve_cost_stones": 0,
         "stats": {
-          "hp": 1805713,
-          "atk": 180571,
-          "def": 120381,
+          "hp": 156000,
+          "atk": 15600,
+          "def": 10400,
           "spd": 24
         },
         "active": "btech.azure_dragon.tidal_pulse",
@@ -3156,9 +3156,9 @@
         ],
         "evolve_cost_stones": 9000,
         "stats": {
-          "hp": 5417138,
-          "atk": 541714,
-          "def": 361143,
+          "hp": 468000,
+          "atk": 46800,
+          "def": 31200,
           "spd": 26
         },
         "active": "btech.azure_dragon.tidal_pulse",
@@ -3180,9 +3180,9 @@
         ],
         "evolve_cost_stones": 24000,
         "stats": {
-          "hp": 14445701,
-          "atk": 1444570,
-          "def": 963047,
+          "hp": 1248000,
+          "atk": 124800,
+          "def": 83200,
           "spd": 31
         },
         "active": "btech.azure_dragon.tidal_pulse",
@@ -3204,9 +3204,9 @@
         ],
         "evolve_cost_stones": 60000,
         "stats": {
-          "hp": 36114252,
-          "atk": 3611425,
-          "def": 2407617,
+          "hp": 3120000,
+          "atk": 312000,
+          "def": 208000,
           "spd": 43
         },
         "active": "btech.azure_dragon.tidal_pulse",

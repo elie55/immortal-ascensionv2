@@ -11,18 +11,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 7338,
-      "atk": 642,
-      "def": 298,
-      "spd": 16,
+      "hp": 5152,
+      "atk": 451,
+      "def": 209,
+      "spd": 41,
       "crit": 13,
       "crit_dmg": 165,
       "acc": 93,
       "eva": 6,
-      "sp_power": 459,
+      "sp_power": 322,
       "sp_energy": 130
     },
-    "cp": 2293,
+    "cp": 1610,
     "techniques": [
       "tech.active.magma_slam",
       "tech.active.blazing_comet"
@@ -33,7 +33,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.molten_ape_king",
-    "mastery_xp": 97,
+    "mastery_xp": 80,
     "phases": [
       {
         "name": "Awakening",
@@ -134,18 +134,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 5590,
-      "atk": 489,
-      "def": 227,
-      "spd": 16,
+      "hp": 5376,
+      "atk": 470,
+      "def": 218,
+      "spd": 41,
       "crit": 13,
       "crit_dmg": 165,
       "acc": 93,
       "eva": 6,
-      "sp_power": 349,
+      "sp_power": 336,
       "sp_energy": 130
     },
-    "cp": 1747,
+    "cp": 1680,
     "techniques": [
       "tech.active.magma_slam",
       "tech.active.stone_shell"
@@ -156,7 +156,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.forge_wraith",
-    "mastery_xp": 83,
+    "mastery_xp": 82,
     "phases": [
       {
         "name": "Guardian",
@@ -240,18 +240,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 15053,
-      "atk": 1317,
-      "def": 612,
-      "spd": 18,
+      "hp": 5616,
+      "atk": 491,
+      "def": 228,
+      "spd": 48,
       "crit": 14,
       "crit_dmg": 170,
       "acc": 94,
       "eva": 7,
-      "sp_power": 941,
+      "sp_power": 351,
       "sp_energy": 140
     },
-    "cp": 4704,
+    "cp": 1755,
     "techniques": [
       "tech.active.frost_lotus_bloom",
       "tech.active.glacial_spear_rain"
@@ -262,7 +262,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.lotus_frost_queen",
-    "mastery_xp": 157,
+    "mastery_xp": 83,
     "phases": [
       {
         "name": "Awakening",
@@ -363,18 +363,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 11469,
-      "atk": 1004,
-      "def": 466,
-      "spd": 18,
+      "hp": 6240,
+      "atk": 546,
+      "def": 254,
+      "spd": 48,
       "crit": 14,
       "crit_dmg": 170,
       "acc": 94,
       "eva": 7,
-      "sp_power": 717,
+      "sp_power": 390,
       "sp_energy": 140
     },
-    "cp": 3584,
+    "cp": 1950,
     "techniques": [
       "tech.active.frost_lotus_bloom",
       "tech.active.stone_shell"
@@ -385,7 +385,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.glacier_titan",
-    "mastery_xp": 129,
+    "mastery_xp": 88,
     "phases": [
       {
         "name": "Guardian",
@@ -469,18 +469,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 30858,
-      "atk": 2700,
-      "def": 1254,
-      "spd": 20,
+      "hp": 12960,
+      "atk": 1134,
+      "def": 526,
+      "spd": 57,
       "crit": 15,
       "crit_dmg": 175,
       "acc": 95,
       "eva": 7,
-      "sp_power": 1929,
+      "sp_power": 810,
       "sp_energy": 150
     },
-    "cp": 9643,
+    "cp": 4050,
     "techniques": [
       "tech.active.sword_tempest",
       "tech.active.ten_thousand_sword_return"
@@ -491,7 +491,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.sword_sovereign_remnant",
-    "mastery_xp": 281,
+    "mastery_xp": 141,
     "phases": [
       {
         "name": "Awakening",
@@ -592,18 +592,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 23510,
-      "atk": 2057,
-      "def": 955,
-      "spd": 20,
+      "hp": 12960,
+      "atk": 1134,
+      "def": 526,
+      "spd": 57,
       "crit": 15,
       "crit_dmg": 175,
       "acc": 95,
       "eva": 7,
-      "sp_power": 1469,
+      "sp_power": 810,
       "sp_energy": 150
     },
-    "cp": 7347,
+    "cp": 4050,
     "techniques": [
       "tech.active.sword_tempest",
       "tech.active.stone_shell"
@@ -614,7 +614,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.blade_storm_avatar",
-    "mastery_xp": 223,
+    "mastery_xp": 141,
     "phases": [
       {
         "name": "Guardian",
@@ -698,18 +698,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 63261,
-      "atk": 5535,
-      "def": 2570,
-      "spd": 22,
+      "hp": 31600,
+      "atk": 2765,
+      "def": 1284,
+      "spd": 83,
       "crit": 16,
       "crit_dmg": 180,
       "acc": 96,
       "eva": 8,
-      "sp_power": 3954,
+      "sp_power": 1975,
       "sp_energy": 160
     },
-    "cp": 19769,
+    "cp": 9875,
     "techniques": [
       "tech.active.blood_drain",
       "tech.active.crimson_moon_slash"
@@ -720,7 +720,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.crimson_moon_matriarch",
-    "mastery_xp": 534,
+    "mastery_xp": 286,
     "phases": [
       {
         "name": "Awakening",
@@ -821,18 +821,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 48198,
-      "atk": 4217,
-      "def": 1958,
-      "spd": 22,
+      "hp": 30336,
+      "atk": 2654,
+      "def": 1232,
+      "spd": 83,
       "crit": 16,
       "crit_dmg": 180,
       "acc": 96,
       "eva": 8,
-      "sp_power": 3012,
+      "sp_power": 1896,
       "sp_energy": 160
     },
-    "cp": 15062,
+    "cp": 9480,
     "techniques": [
       "tech.active.blood_drain",
       "tech.active.stone_shell"
@@ -843,7 +843,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.prison_warden_gu_ling",
-    "mastery_xp": 416,
+    "mastery_xp": 277,
     "phases": [
       {
         "name": "Guardian",
@@ -927,18 +927,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 75312,
-      "atk": 6590,
-      "def": 3060,
-      "spd": 22,
+      "hp": 88480,
+      "atk": 7742,
+      "def": 3594,
+      "spd": 83,
       "crit": 16,
       "crit_dmg": 180,
       "acc": 96,
       "eva": 8,
-      "sp_power": 4707,
+      "sp_power": 5530,
       "sp_energy": 160
     },
-    "cp": 23535,
+    "cp": 27650,
     "techniques": [
       "tech.active.blood_drain",
       "tech.active.crimson_moon_slash"
@@ -949,7 +949,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.moon_devourer",
-    "mastery_xp": 628,
+    "mastery_xp": 731,
     "phases": [
       {
         "name": "Watcher",
@@ -1035,18 +1035,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 129683,
-      "atk": 11347,
-      "def": 5268,
-      "spd": 24,
+      "hp": 31744,
+      "atk": 2778,
+      "def": 1290,
+      "spd": 103,
       "crit": 17,
       "crit_dmg": 185,
       "acc": 97,
       "eva": 8,
-      "sp_power": 8105,
+      "sp_power": 1984,
       "sp_energy": 170
     },
-    "cp": 40526,
+    "cp": 9920,
     "techniques": [
       "tech.active.celestial_spear",
       "tech.active.heavenly_thunder_palm"
@@ -1057,7 +1057,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.celestial_stair_guardian",
-    "mastery_xp": 1053,
+    "mastery_xp": 288,
     "phases": [
       {
         "name": "Awakening",
@@ -1158,18 +1158,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 98806,
-      "atk": 8646,
-      "def": 4014,
-      "spd": 24,
+      "hp": 47616,
+      "atk": 4166,
+      "def": 1934,
+      "spd": 103,
       "crit": 17,
       "crit_dmg": 185,
       "acc": 97,
       "eva": 8,
-      "sp_power": 6175,
+      "sp_power": 2976,
       "sp_energy": 170
     },
-    "cp": 30877,
+    "cp": 14880,
     "techniques": [
       "tech.active.celestial_spear",
       "tech.active.stone_shell"
@@ -1180,7 +1180,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.pine_thunder_sage",
-    "mastery_xp": 811,
+    "mastery_xp": 412,
     "phases": [
       {
         "name": "Guardian",
@@ -1264,18 +1264,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 265843,
-      "atk": 23261,
-      "def": 10800,
-      "spd": 26,
+      "hp": 66752,
+      "atk": 5841,
+      "def": 2712,
+      "spd": 129,
       "crit": 18,
       "crit_dmg": 190,
       "acc": 98,
       "eva": 9,
-      "sp_power": 16615,
+      "sp_power": 4172,
       "sp_energy": 180
     },
-    "cp": 83076,
+    "cp": 20860,
     "techniques": [
       "tech.active.cloud_lightning",
       "tech.active.starfall_sword"
@@ -1286,7 +1286,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.heavenly_gate_keeper",
-    "mastery_xp": 2116,
+    "mastery_xp": 561,
     "phases": [
       {
         "name": "Awakening",
@@ -1387,18 +1387,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 202547,
-      "atk": 17723,
-      "def": 8228,
-      "spd": 26,
+      "hp": 71520,
+      "atk": 6258,
+      "def": 2906,
+      "spd": 129,
       "crit": 18,
       "crit_dmg": 190,
       "acc": 98,
       "eva": 9,
-      "sp_power": 12659,
+      "sp_power": 4470,
       "sp_energy": 180
     },
-    "cp": 63296,
+    "cp": 22350,
     "techniques": [
       "tech.active.cloud_lightning",
       "tech.active.stone_shell"
@@ -1409,7 +1409,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.star_palace_regent",
-    "mastery_xp": 1622,
+    "mastery_xp": 598,
     "phases": [
       {
         "name": "Guardian",
@@ -1493,18 +1493,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 544966,
-      "atk": 47685,
-      "def": 22139,
-      "spd": 28,
+      "hp": 198400,
+      "atk": 17360,
+      "def": 8060,
+      "spd": 172,
       "crit": 19,
       "crit_dmg": 195,
       "acc": 99,
       "eva": 9,
-      "sp_power": 34060,
+      "sp_power": 12400,
       "sp_energy": 190
     },
-    "cp": 170302,
+    "cp": 62000,
     "techniques": [
       "tech.active.chain_lightning",
       "tech.active.violet_thunder_spear"
@@ -1515,7 +1515,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.nine_bolt_thunder_emperor",
-    "mastery_xp": 4297,
+    "mastery_xp": 1590,
     "phases": [
       {
         "name": "Awakening",
@@ -1616,18 +1616,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 415213,
-      "atk": 36331,
-      "def": 16868,
-      "spd": 28,
+      "hp": 119040,
+      "atk": 10416,
+      "def": 4836,
+      "spd": 172,
       "crit": 19,
       "crit_dmg": 195,
       "acc": 99,
       "eva": 9,
-      "sp_power": 25951,
+      "sp_power": 7440,
       "sp_energy": 190
     },
-    "cp": 129754,
+    "cp": 37200,
     "techniques": [
       "tech.active.chain_lightning",
       "tech.active.stone_shell"
@@ -1638,7 +1638,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.mirror_thunder_beast",
-    "mastery_xp": 3283,
+    "mastery_xp": 970,
     "phases": [
       {
         "name": "Guardian",
@@ -1722,18 +1722,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 1117187,
-      "atk": 97754,
-      "def": 45386,
-      "spd": 30,
+      "hp": 257920,
+      "atk": 22568,
+      "def": 10478,
+      "spd": 201,
       "crit": 20,
       "crit_dmg": 200,
       "acc": 100,
       "eva": 10,
-      "sp_power": 69824,
+      "sp_power": 16120,
       "sp_energy": 200
     },
-    "cp": 349121,
+    "cp": 80600,
     "techniques": [
       "tech.active.whirlpool_crush",
       "tech.active.tidal_dragon_fist"
@@ -1744,7 +1744,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.drowned_dragon_lord",
-    "mastery_xp": 8768,
+    "mastery_xp": 2055,
     "phases": [
       {
         "name": "Awakening",
@@ -1845,18 +1845,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 851190,
-      "atk": 74479,
-      "def": 34580,
-      "spd": 30,
+      "hp": 249600,
+      "atk": 21840,
+      "def": 10140,
+      "spd": 201,
       "crit": 20,
       "crit_dmg": 200,
       "acc": 100,
       "eva": 10,
-      "sp_power": 53199,
+      "sp_power": 15600,
       "sp_energy": 200
     },
-    "cp": 265997,
+    "cp": 78000,
     "techniques": [
       "tech.active.whirlpool_crush",
       "tech.active.stone_shell"
@@ -1867,7 +1867,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.coral_queen",
-    "mastery_xp": 6689,
+    "mastery_xp": 1990,
     "phases": [
       {
         "name": "Guardian",
@@ -1951,18 +1951,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 2290243,
-      "atk": 200396,
-      "def": 93041,
-      "spd": 32,
+      "hp": 350400,
+      "atk": 30660,
+      "def": 14235,
+      "spd": 236,
       "crit": 21,
       "crit_dmg": 205,
       "acc": 101,
       "eva": 10,
-      "sp_power": 143140,
+      "sp_power": 21900,
       "sp_energy": 210
     },
-    "cp": 715701,
+    "cp": 109500,
     "techniques": [
       "tech.active.sand_burial",
       "tech.active.meteor_impact"
@@ -1973,7 +1973,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.starfall_pharaoh",
-    "mastery_xp": 17932,
+    "mastery_xp": 2777,
     "phases": [
       {
         "name": "Awakening",
@@ -2074,18 +2074,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 1744947,
-      "atk": 152683,
-      "def": 70888,
-      "spd": 32,
+      "hp": 280320,
+      "atk": 24528,
+      "def": 11388,
+      "spd": 236,
       "crit": 21,
       "crit_dmg": 205,
       "acc": 101,
       "eva": 10,
-      "sp_power": 109059,
+      "sp_power": 17520,
       "sp_energy": 210
     },
-    "cp": 545296,
+    "cp": 87600,
     "techniques": [
       "tech.active.sand_burial",
       "tech.active.stone_shell"
@@ -2096,7 +2096,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.temple_star_priest",
-    "mastery_xp": 13672,
+    "mastery_xp": 2230,
     "phases": [
       {
         "name": "Guardian",
@@ -2180,18 +2180,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 2726480,
-      "atk": 238567,
-      "def": 110763,
-      "spd": 32,
+      "hp": 817600,
+      "atk": 71540,
+      "def": 33215,
+      "spd": 236,
       "crit": 21,
       "crit_dmg": 205,
       "acc": 101,
       "eva": 10,
-      "sp_power": 170405,
+      "sp_power": 51100,
       "sp_energy": 210
     },
-    "cp": 852025,
+    "cp": 255500,
     "techniques": [
       "tech.active.sand_burial",
       "tech.active.meteor_impact"
@@ -2202,7 +2202,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.vault_sphinx",
-    "mastery_xp": 21340,
+    "mastery_xp": 6427,
     "phases": [
       {
         "name": "Watcher",
@@ -2288,18 +2288,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 4694995,
-      "atk": 410812,
-      "def": 190734,
-      "spd": 34,
+      "hp": 638400,
+      "atk": 55860,
+      "def": 25935,
+      "spd": 293,
       "crit": 22,
       "crit_dmg": 210,
       "acc": 102,
       "eva": 11,
-      "sp_power": 293437,
+      "sp_power": 39900,
       "sp_energy": 220
     },
-    "cp": 1467186,
+    "cp": 199500,
     "techniques": [
       "tech.active.judgement_flame",
       "tech.active.vermilion_rebirth"
@@ -2310,7 +2310,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.vermilion_gatekeeper",
-    "mastery_xp": 36719,
+    "mastery_xp": 5027,
     "phases": [
       {
         "name": "Awakening",
@@ -2411,18 +2411,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 3577139,
-      "atk": 313000,
-      "def": 145321,
-      "spd": 34,
+      "hp": 504000,
+      "atk": 44100,
+      "def": 20475,
+      "spd": 293,
       "crit": 22,
       "crit_dmg": 210,
       "acc": 102,
       "eva": 11,
-      "sp_power": 223571,
+      "sp_power": 31500,
       "sp_energy": 220
     },
-    "cp": 1117856,
+    "cp": 157500,
     "techniques": [
       "tech.active.judgement_flame",
       "tech.active.stone_shell"
@@ -2433,7 +2433,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.flame_trial_master",
-    "mastery_xp": 27986,
+    "mastery_xp": 3977,
     "phases": [
       {
         "name": "Guardian",
@@ -2517,18 +2517,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 9624733,
-      "atk": 842164,
-      "def": 391005,
-      "spd": 36,
+      "hp": 792000,
+      "atk": 69300,
+      "def": 32175,
+      "spd": 334,
       "crit": 23,
       "crit_dmg": 215,
       "acc": 103,
       "eva": 11,
-      "sp_power": 601546,
+      "sp_power": 49500,
       "sp_energy": 230
     },
-    "cp": 3007729,
+    "cp": 247500,
     "techniques": [
       "tech.active.immortal_prune",
       "tech.active.jade_tiger_claw"
@@ -2539,7 +2539,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.white_tiger_sovereign",
-    "mastery_xp": 75233,
+    "mastery_xp": 6227,
     "phases": [
       {
         "name": "Awakening",
@@ -2640,18 +2640,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 7333130,
-      "atk": 641649,
-      "def": 297908,
-      "spd": 36,
+      "hp": 576000,
+      "atk": 50400,
+      "def": 23400,
+      "spd": 334,
       "crit": 23,
       "crit_dmg": 215,
       "acc": 103,
       "eva": 11,
-      "sp_power": 458321,
+      "sp_power": 36000,
       "sp_energy": 230
     },
-    "cp": 2291603,
+    "cp": 180000,
     "techniques": [
       "tech.active.immortal_prune",
       "tech.active.stone_shell"
@@ -2662,7 +2662,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.peach_tree_ancestor",
-    "mastery_xp": 57330,
+    "mastery_xp": 4540,
     "phases": [
       {
         "name": "Guardian",
@@ -2746,18 +2746,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 19730714,
-      "atk": 1726437,
-      "def": 801560,
-      "spd": 38,
+      "hp": 604800,
+      "atk": 52920,
+      "def": 24570,
+      "spd": 402,
       "crit": 24,
       "crit_dmg": 220,
       "acc": 104,
       "eva": 12,
-      "sp_power": 1233170,
+      "sp_power": 37800,
       "sp_energy": 240
     },
-    "cp": 6165848,
+    "cp": 189000,
     "techniques": [
       "tech.active.law_chain",
       "tech.active.verdict_of_heaven"
@@ -2768,7 +2768,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.arbiter_of_laws",
-    "mastery_xp": 154186,
+    "mastery_xp": 4765,
     "phases": [
       {
         "name": "Awakening",
@@ -2869,18 +2869,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 15032925,
-      "atk": 1315381,
-      "def": 610713,
-      "spd": 38,
+      "hp": 648000,
+      "atk": 56700,
+      "def": 26325,
+      "spd": 402,
       "crit": 24,
       "crit_dmg": 220,
       "acc": 104,
       "eva": 12,
-      "sp_power": 939558,
+      "sp_power": 40500,
       "sp_energy": 240
     },
-    "cp": 4697789,
+    "cp": 202500,
     "techniques": [
       "tech.active.law_chain",
       "tech.active.stone_shell"
@@ -2891,7 +2891,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.chief_magistrate",
-    "mastery_xp": 117484,
+    "mastery_xp": 5102,
     "phases": [
       {
         "name": "Guardian",
@@ -2975,18 +2975,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 40447962,
-      "atk": 3539197,
-      "def": 1643198,
-      "spd": 40,
+      "hp": 1414400,
+      "atk": 123760,
+      "def": 57460,
+      "spd": 494,
       "crit": 25,
       "crit_dmg": 225,
       "acc": 105,
       "eva": 12,
-      "sp_power": 2527998,
+      "sp_power": 88400,
       "sp_energy": 250
     },
-    "cp": 12639988,
+    "cp": 442000,
     "techniques": [
       "tech.active.starlight_tide",
       "tech.active.emperors_five_element_seal"
@@ -2997,7 +2997,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.first_emperor_remnant",
-    "mastery_xp": 316039,
+    "mastery_xp": 11090,
     "phases": [
       {
         "name": "Awakening",
@@ -3098,18 +3098,18 @@
       "stage": 7
     },
     "stats": {
-      "hp": 30817494,
-      "atk": 2696531,
-      "def": 1251961,
-      "spd": 40,
+      "hp": 1248000,
+      "atk": 109200,
+      "def": 50700,
+      "spd": 494,
       "crit": 25,
       "crit_dmg": 225,
       "acc": 105,
       "eva": 12,
-      "sp_power": 1926093,
+      "sp_power": 78000,
       "sp_energy": 250
     },
-    "cp": 9630467,
+    "cp": 390000,
     "techniques": [
       "tech.active.starlight_tide",
       "tech.active.stone_shell"
@@ -3120,7 +3120,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.five_element_ancestor",
-    "mastery_xp": 240801,
+    "mastery_xp": 9790,
     "phases": [
       {
         "name": "Guardian",
@@ -3204,18 +3204,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 2393971,
-      "atk": 209472,
-      "def": 97255,
-      "spd": 30,
+      "hp": 532480,
+      "atk": 46592,
+      "def": 21632,
+      "spd": 201,
       "crit": 20,
       "crit_dmg": 200,
       "acc": 100,
       "eva": 10,
-      "sp_power": 149623,
+      "sp_power": 33280,
       "sp_energy": 200
     },
-    "cp": 748116,
+    "cp": 166400,
     "techniques": [
       "tech.active.whirlpool_crush",
       "tech.active.tidal_dragon_fist",
@@ -3227,7 +3227,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.dragon_king_ao",
-    "mastery_xp": 18742,
+    "mastery_xp": 4200,
     "phases": [
       {
         "name": "Dominion",
@@ -3261,8 +3261,8 @@
         ],
         "summons": [],
         "enrage": {
-          "atk_mult": 1.6,
-          "spd_mult": 1.3
+          "atk_mult": 1.3,
+          "spd_mult": 1.2
         },
         "charged_attack": {
           "tech": "tech.active.tidal_dragon_fist",
@@ -3330,18 +3330,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 10060704,
-      "atk": 880312,
-      "def": 408716,
-      "spd": 34,
+      "hp": 1075200,
+      "atk": 94080,
+      "def": 43680,
+      "spd": 293,
       "crit": 22,
       "crit_dmg": 210,
       "acc": 102,
       "eva": 11,
-      "sp_power": 628794,
+      "sp_power": 67200,
       "sp_energy": 220
     },
-    "cp": 3143970,
+    "cp": 336000,
     "techniques": [
       "tech.active.judgement_flame",
       "tech.active.vermilion_rebirth",
@@ -3353,7 +3353,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.fallen_heaven_lord",
-    "mastery_xp": 78639,
+    "mastery_xp": 8440,
     "phases": [
       {
         "name": "Dominion",
@@ -3387,8 +3387,8 @@
         ],
         "summons": [],
         "enrage": {
-          "atk_mult": 1.6,
-          "spd_mult": 1.3
+          "atk_mult": 1.3,
+          "spd_mult": 1.2
         },
         "charged_attack": {
           "tech": "tech.active.vermilion_rebirth",
@@ -3456,18 +3456,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 42280099,
-      "atk": 3699509,
-      "def": 1717629,
-      "spd": 38,
+      "hp": 1382400,
+      "atk": 120960,
+      "def": 56160,
+      "spd": 402,
       "crit": 24,
       "crit_dmg": 220,
       "acc": 104,
       "eva": 12,
-      "sp_power": 2642506,
+      "sp_power": 86400,
       "sp_energy": 240
     },
-    "cp": 13212531,
+    "cp": 432000,
     "techniques": [
       "tech.active.law_chain",
       "tech.active.verdict_of_heaven",
@@ -3479,7 +3479,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.law_sovereign",
-    "mastery_xp": 330353,
+    "mastery_xp": 10840,
     "phases": [
       {
         "name": "Dominion",
@@ -3513,8 +3513,8 @@
         ],
         "summons": [],
         "enrage": {
-          "atk_mult": 1.6,
-          "spd_mult": 1.3
+          "atk_mult": 1.3,
+          "spd_mult": 1.2
         },
         "charged_attack": {
           "tech": "tech.active.verdict_of_heaven",
@@ -3582,18 +3582,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 86674205,
-      "atk": 7583993,
-      "def": 3521140,
-      "spd": 40,
+      "hp": 2662400,
+      "atk": 232960,
+      "def": 108160,
+      "spd": 494,
       "crit": 25,
       "crit_dmg": 225,
       "acc": 105,
       "eva": 12,
-      "sp_power": 5417138,
+      "sp_power": 166400,
       "sp_energy": 250
     },
-    "cp": 27085689,
+    "cp": 832000,
     "techniques": [
       "tech.active.starlight_tide",
       "tech.active.emperors_five_element_seal",
@@ -3605,7 +3605,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.chaos_progenitor",
-    "mastery_xp": 677182,
+    "mastery_xp": 20840,
     "phases": [
       {
         "name": "Dominion",
@@ -3639,8 +3639,8 @@
         ],
         "summons": [],
         "enrage": {
-          "atk_mult": 1.6,
-          "spd_mult": 1.3
+          "atk_mult": 1.3,
+          "spd_mult": 1.2
         },
         "charged_attack": {
           "tech": "tech.active.emperors_five_element_seal",
@@ -3707,18 +3707,18 @@
       "stage": 1
     },
     "stats": {
-      "hp": 75312,
-      "atk": 6590,
-      "def": 3060,
-      "spd": 22,
+      "hp": 37920,
+      "atk": 3318,
+      "def": 1540,
+      "spd": 83,
       "crit": 16,
       "crit_dmg": 180,
       "acc": 96,
       "eva": 8,
-      "sp_power": 4707,
+      "sp_power": 2370,
       "sp_energy": 160
     },
-    "cp": 23535,
+    "cp": 11850,
     "techniques": [
       "tech.active.heavenly_bolt",
       "tech.active.thunder_judgment"
@@ -3729,7 +3729,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.soul_transformation_tribulation_spirit",
-    "mastery_xp": 628,
+    "mastery_xp": 336,
     "phases": [
       {
         "name": "First Wave",
@@ -3816,18 +3816,18 @@
       "stage": 1
     },
     "stats": {
-      "hp": 648768,
-      "atk": 56767,
-      "def": 26356,
-      "spd": 28,
+      "hp": 148800,
+      "atk": 13020,
+      "def": 6045,
+      "spd": 172,
       "crit": 19,
       "crit_dmg": 195,
       "acc": 99,
       "eva": 9,
-      "sp_power": 40548,
+      "sp_power": 9300,
       "sp_energy": 190
     },
-    "cp": 202740,
+    "cp": 46500,
     "techniques": [
       "tech.active.heavenly_bolt",
       "tech.active.thunder_judgment"
@@ -3838,7 +3838,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.tribulation_transcendence_tribulation_spirit",
-    "mastery_xp": 5108,
+    "mastery_xp": 1202,
     "phases": [
       {
         "name": "First Wave",
@@ -3925,18 +3925,18 @@
       "stage": 1
     },
     "stats": {
-      "hp": 2726480,
-      "atk": 238567,
-      "def": 110763,
-      "spd": 32,
+      "hp": 350400,
+      "atk": 30660,
+      "def": 14235,
+      "spd": 236,
       "crit": 21,
       "crit_dmg": 205,
       "acc": 101,
       "eva": 10,
-      "sp_power": 170405,
+      "sp_power": 21900,
       "sp_energy": 210
     },
-    "cp": 852025,
+    "cp": 109500,
     "techniques": [
       "tech.active.heavenly_bolt",
       "tech.active.thunder_judgment"
@@ -3947,7 +3947,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.immortal_ascension_tribulation_spirit",
-    "mastery_xp": 21340,
+    "mastery_xp": 2777,
     "phases": [
       {
         "name": "First Wave",
@@ -4034,18 +4034,18 @@
       "stage": 1
     },
     "stats": {
-      "hp": 23488944,
-      "atk": 2055283,
-      "def": 954238,
-      "spd": 38,
+      "hp": 648000,
+      "atk": 56700,
+      "def": 26325,
+      "spd": 402,
       "crit": 24,
       "crit_dmg": 220,
       "acc": 104,
       "eva": 12,
-      "sp_power": 1468059,
+      "sp_power": 40500,
       "sp_energy": 240
     },
-    "cp": 7340295,
+    "cp": 202500,
     "techniques": [
       "tech.active.heavenly_bolt",
       "tech.active.thunder_judgment"
@@ -4056,7 +4056,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.golden_immortal_tribulation_spirit",
-    "mastery_xp": 183547,
+    "mastery_xp": 5102,
     "phases": [
       {
         "name": "First Wave",
@@ -4143,18 +4143,18 @@
       "stage": 1
     },
     "stats": {
-      "hp": 98712288,
-      "atk": 8637325,
-      "def": 4010187,
-      "spd": 42,
+      "hp": 1728000,
+      "atk": 151200,
+      "def": 70200,
+      "spd": 575,
       "crit": 26,
       "crit_dmg": 230,
       "acc": 106,
       "eva": 13,
-      "sp_power": 6169518,
+      "sp_power": 108000,
       "sp_energy": 260
     },
-    "cp": 30847590,
+    "cp": 540000,
     "techniques": [
       "tech.active.heavenly_bolt",
       "tech.active.thunder_judgment"
@@ -4165,7 +4165,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.immortal_emperor_tribulation_spirit",
-    "mastery_xp": 771229,
+    "mastery_xp": 13540,
     "phases": [
       {
         "name": "First Wave",

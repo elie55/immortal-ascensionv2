@@ -60,6 +60,15 @@
         "unlock": {}
       },
       {
+        "id": "mat.spirit_enhancing_stone",
+        "price": 400,
+        "currency": "spirit_stones",
+        "qty": 10,
+        "unlock": {
+          "sect_fame": 800
+        }
+      },
+      {
         "id": "mat.refining_stone",
         "price": 200,
         "currency": "spirit_stones",

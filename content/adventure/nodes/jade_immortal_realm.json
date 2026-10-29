@@ -13,7 +13,7 @@
       "node.jade_immortal_realm.gathering",
       "node.jade_immortal_realm.outskirts"
     ],
-    "rec_cp": 716126,
+    "rec_cp": 150000,
     "first_clear": {
       "spirit_stones": 2535
     },
@@ -44,7 +44,7 @@
       "node.jade_immortal_realm.west_path",
       "node.jade_immortal_realm.cache"
     ],
-    "rec_cp": 819248,
+    "rec_cp": 171600,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 11,
@@ -78,7 +78,7 @@
       "node.jade_immortal_realm.cache",
       "node.jade_immortal_realm.east_path"
     ],
-    "rec_cp": 773416,
+    "rec_cp": 162000,
     "first_clear": {
       "spirit_stones": 2535
     },
@@ -109,7 +109,7 @@
       "node.jade_immortal_realm.gathering",
       "node.jade_immortal_realm.lair"
     ],
-    "rec_cp": 802061,
+    "rec_cp": 168000,
     "first_clear": {
       "spirit_stones": 2535
     },
@@ -141,7 +141,7 @@
       "node.jade_immortal_realm.outskirts",
       "node.jade_immortal_realm.crossroads"
     ],
-    "rec_cp": 913777,
+    "rec_cp": 191400,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 11,
@@ -161,7 +161,7 @@
       "node.jade_immortal_realm.outskirts",
       "node.jade_immortal_realm.ridge"
     ],
-    "rec_cp": 859351,
+    "rec_cp": 180000,
     "first_clear": {
       "spirit_stones": 2535
     },
@@ -192,7 +192,7 @@
       "node.jade_immortal_realm.west_path",
       "node.jade_immortal_realm.deep_path"
     ],
-    "rec_cp": 1687193,
+    "rec_cp": 297600,
     "first_clear": {
       "spirit_stones": 6760,
       "items": [
@@ -225,7 +225,7 @@
       "node.jade_immortal_realm.deep_path",
       "node.jade_immortal_realm.sanctum"
     ],
-    "rec_cp": 1008305,
+    "rec_cp": 211200,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 11,
@@ -245,7 +245,7 @@
       "node.jade_immortal_realm.east_path",
       "node.jade_immortal_realm.sanctum"
     ],
-    "rec_cp": 945286,
+    "rec_cp": 198000,
     "first_clear": {
       "spirit_stones": 2535
     },
@@ -276,7 +276,7 @@
       "node.jade_immortal_realm.crossroads",
       "node.jade_immortal_realm.den"
     ],
-    "rec_cp": 973931,
+    "rec_cp": 204000,
     "first_clear": {
       "spirit_stones": 2535
     },
@@ -309,7 +309,7 @@
       "node.jade_immortal_realm.hidden_grove",
       "node.jade_immortal_realm.approach"
     ],
-    "rec_cp": 1102834,
+    "rec_cp": 231000,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 11,
@@ -333,7 +333,7 @@
       "node.jade_immortal_realm.deep_path",
       "node.jade_immortal_realm.throne"
     ],
-    "rec_cp": 1959321,
+    "rec_cp": 345600,
     "first_clear": {
       "spirit_stones": 6760,
       "items": [
@@ -369,7 +369,7 @@
       "node.jade_immortal_realm.sanctum",
       "node.jade_immortal_realm.approach"
     ],
-    "rec_cp": 1165853,
+    "rec_cp": 244200,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 11,
@@ -394,7 +394,7 @@
       "node.jade_immortal_realm.hidden_grove",
       "node.jade_immortal_realm.throne"
     ],
-    "rec_cp": 1088512,
+    "rec_cp": 228000,
     "first_clear": {
       "spirit_stones": 2535
     },
@@ -425,7 +425,7 @@
       "node.jade_immortal_realm.den",
       "node.jade_immortal_realm.approach"
     ],
-    "rec_cp": 4692058,
+    "rec_cp": 351000,
     "first_clear": {
       "spirit_stones": 25350,
       "sect_fame": 520
@@ -434,8 +434,8 @@
     "energy_cost": 11,
     "waves": [
       [
-        "enemy.waterfall_spirit",
-        "enemy.jade_guardian_beast"
+        "enemy.jade_tiger",
+        "enemy.immortal_gardener"
       ],
       [
         "boss.white_tiger_sovereign"

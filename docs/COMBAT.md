@@ -91,9 +91,16 @@ cancels the charge. `weaknesses` add damage from those elements.
 HP, SP and ultimate carry between waves; loot is granted after each wave so a quit mid-dungeon keeps it.
 Outside battle HP recovers `recovery.hp_pct_per_min` per minute.
 
-## Balance baseline (starting gear, Battle sim in tests)
+## Caps, speed and control (balance pass)
 
-A fresh Lin beats one Field Bandit ≥ 80 % of the time and never a Core Formation boss. At each region's
-realm (stage 5) with starting gear she wins 50–100 % against that region's normal enemies, which leaves
-room for gear and technique upgrades to matter. Tuning happens in `combat_rules.json` and the content
-generators, not in code.
+Every percentage stat is capped in combat (`combat_rules.caps`: crit 75, eva 60, acc 150, cdr 50, dmg_red 60,
+life steal 35, armor pen 60, elemental difference ±60 …). Speed is compressed in the turn gauge
+(`1 + (spd − 1)^0.7 · 10^0.3`) and enemies' speed follows the player's curve per region, so speed matters without
+deciding fights. After a stun/freeze/silence wears off the unit is immune to control for 2 turns (bosses 3), and
+bosses resist control at ×0.5 chance. Freeze skips the turn and slows the thawed unit by 25 % (it no longer
+zeroes speed).
+
+## Balance
+
+Targets, archetypes and results: `docs/qa/BALANCE_MODEL.md` and `docs/qa/BALANCE_SIMULATION_RESULTS.md`.
+`tests/balance.test.ts` guards them; `node tools/balance/sim.ts` prints the full tables.

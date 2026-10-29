@@ -91,13 +91,13 @@
   {
     "id": "status.freeze",
     "name": "Freeze",
-    "description": "Cannot act. Fire damage breaks the ice.",
+    "description": "Cannot act; moves slower once thawed.",
     "kind": "control",
     "stacking": "refresh",
     "max_stacks": 1,
     "default_turns": 1,
     "modifiers": {
-      "spd": -100
+      "spd": -25
     },
     "art": {
       "icon": {
@@ -107,7 +107,7 @@
           128
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Freeze': Cannot act. Fire damage breaks the ice. Bold readable symbol, glowing rim, plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round status-effect icon for 'Freeze': Cannot act; moves slower once thawed. Bold readable symbol, glowing rim, plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"

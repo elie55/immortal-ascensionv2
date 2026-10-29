@@ -317,7 +317,8 @@ export function buildDuelist(c: ContentIndex, npcId: string, cp?: number): Comba
   const npc = c.get<Npc>(npcId);
   const target = cp ?? npc.cp ?? 1000;
   // Stat block shaped from CP (inverse of the enemy formulas the generators use).
-  const stats = { hp: target * 3.2, atk: target * 0.28, def: target * 0.13, spd: 12 + Math.log2(Math.max(2, target)), crit: 8, crit_dmg: 150, acc: 92, eva: 6, sp_power: target * 0.2, sp_energy: 150 };
+  // Speed follows the player's own speed curve (≈ 10 + 0.05·cp^0.78) so duels are decided by builds, not by action economy.
+  const stats = { hp: target * 3.2, atk: target * 0.28, def: target * 0.13, spd: 10 + 0.05 * Math.pow(target, 0.78), crit: 8, crit_dmg: 150, acc: 92, eva: 6, sp_power: target * 0.2, sp_energy: 150 };
   const techniques = (npc.duel?.loadout ?? []).filter((t) => t.startsWith("tech.active") || t.startsWith("tech.ult"));
   return buildEnemyFrom(c, npcId, { name: npc.name, element: npc.elements?.[0] ?? "elem.metal", realm: npc.realm ?? { id: "realm.qi_condensation" }, stats, cp: target, techniques: techniques.length ? techniques : ["tech.active.flame_palm"], ai: { strategy: npc.duel?.strategy ?? "aggressive", rules: [] } }, { kind: "enemy", art: c.artAny(npcId, "battle", "full_body") });
 }

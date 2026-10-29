@@ -13,7 +13,7 @@
       "node.thunderclap_wastes.gathering",
       "node.thunderclap_wastes.outskirts"
     ],
-    "rec_cp": 40548,
+    "rec_cp": 31000,
     "first_clear": {
       "spirit_stones": 1215
     },
@@ -44,7 +44,7 @@
       "node.thunderclap_wastes.west_path",
       "node.thunderclap_wastes.cache"
     ],
-    "rec_cp": 46387,
+    "rec_cp": 35464,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 9,
@@ -78,7 +78,7 @@
       "node.thunderclap_wastes.cache",
       "node.thunderclap_wastes.east_path"
     ],
-    "rec_cp": 43792,
+    "rec_cp": 33480,
     "first_clear": {
       "spirit_stones": 1215
     },
@@ -109,7 +109,7 @@
       "node.thunderclap_wastes.gathering",
       "node.thunderclap_wastes.lair"
     ],
-    "rec_cp": 45414,
+    "rec_cp": 34720,
     "first_clear": {
       "spirit_stones": 1215
     },
@@ -141,7 +141,7 @@
       "node.thunderclap_wastes.outskirts",
       "node.thunderclap_wastes.crossroads"
     ],
-    "rec_cp": 51739,
+    "rec_cp": 39556,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 9,
@@ -161,7 +161,7 @@
       "node.thunderclap_wastes.outskirts",
       "node.thunderclap_wastes.ridge"
     ],
-    "rec_cp": 48658,
+    "rec_cp": 37200,
     "first_clear": {
       "spirit_stones": 1215
     },
@@ -192,7 +192,7 @@
       "node.thunderclap_wastes.west_path",
       "node.thunderclap_wastes.deep_path"
     ],
-    "rec_cp": 95531,
+    "rec_cp": 61504,
     "first_clear": {
       "spirit_stones": 3240,
       "items": [
@@ -225,7 +225,7 @@
       "node.thunderclap_wastes.deep_path",
       "node.thunderclap_wastes.sanctum"
     ],
-    "rec_cp": 57092,
+    "rec_cp": 43648,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 9,
@@ -245,7 +245,7 @@
       "node.thunderclap_wastes.east_path",
       "node.thunderclap_wastes.sanctum"
     ],
-    "rec_cp": 53523,
+    "rec_cp": 40920,
     "first_clear": {
       "spirit_stones": 1215
     },
@@ -276,7 +276,7 @@
       "node.thunderclap_wastes.crossroads",
       "node.thunderclap_wastes.den"
     ],
-    "rec_cp": 55145,
+    "rec_cp": 42160,
     "first_clear": {
       "spirit_stones": 1215
     },
@@ -309,7 +309,7 @@
       "node.thunderclap_wastes.hidden_grove",
       "node.thunderclap_wastes.approach"
     ],
-    "rec_cp": 62444,
+    "rec_cp": 47740,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 9,
@@ -333,7 +333,7 @@
       "node.thunderclap_wastes.deep_path",
       "node.thunderclap_wastes.throne"
     ],
-    "rec_cp": 110939,
+    "rec_cp": 71424,
     "first_clear": {
       "spirit_stones": 3240,
       "items": [
@@ -369,7 +369,7 @@
       "node.thunderclap_wastes.sanctum",
       "node.thunderclap_wastes.approach"
     ],
-    "rec_cp": 66012,
+    "rec_cp": 50468,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 9,
@@ -394,7 +394,7 @@
       "node.thunderclap_wastes.hidden_grove",
       "node.thunderclap_wastes.throne"
     ],
-    "rec_cp": 61633,
+    "rec_cp": 47120,
     "first_clear": {
       "spirit_stones": 1215
     },
@@ -425,7 +425,7 @@
       "node.thunderclap_wastes.den",
       "node.thunderclap_wastes.approach"
     ],
-    "rec_cp": 265670,
+    "rec_cp": 72540,
     "first_clear": {
       "spirit_stones": 12150,
       "sect_fame": 360
@@ -434,8 +434,8 @@
     "energy_cost": 9,
     "waves": [
       [
-        "enemy.storm_wraith",
-        "enemy.lightning_roc"
+        "enemy.thunder_beetle",
+        "enemy.glass_scorpion"
       ],
       [
         "boss.nine_bolt_thunder_emperor"

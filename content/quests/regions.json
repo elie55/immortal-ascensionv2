@@ -27,7 +27,7 @@
     },
     "next": "quest.main.blazing_mountain_sovereign",
     "difficulty": 1,
-    "rec_cp": 546,
+    "rec_cp": 1400,
     "hint": "Adventure · Blazing Mountain",
     "art": {
       "icon": {
@@ -84,7 +84,7 @@
       ]
     },
     "difficulty": 2,
-    "rec_cp": 2293,
+    "rec_cp": 2100,
     "hint": "Adventure · Blazing Mountain · Throne",
     "art": {
       "icon": {
@@ -132,7 +132,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 1,
-    "rec_cp": 546,
+    "rec_cp": 1400,
     "hint": "Blazing Mountain · enemies drop it",
     "art": {
       "icon": {
@@ -184,7 +184,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 2,
-    "rec_cp": 1037,
+    "rec_cp": 2240,
     "hint": "Blazing Mountain · Lair / Den",
     "art": {
       "icon": {
@@ -237,7 +237,7 @@
       ]
     },
     "difficulty": 2,
-    "rec_cp": 1365,
+    "rec_cp": 3500,
     "hint": "Adventure · Dungeons · Ember Forge Ruins",
     "art": {
       "icon": {
@@ -342,7 +342,7 @@
     },
     "next": "quest.main.frozen_lotus_valley_sovereign",
     "difficulty": 2,
-    "rec_cp": 1120,
+    "rec_cp": 1300,
     "hint": "Adventure · Frozen Lotus Valley",
     "art": {
       "icon": {
@@ -399,7 +399,7 @@
       ]
     },
     "difficulty": 3,
-    "rec_cp": 4704,
+    "rec_cp": 1950,
     "hint": "Adventure · Frozen Lotus Valley · Throne",
     "art": {
       "icon": {
@@ -447,7 +447,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 2,
-    "rec_cp": 1120,
+    "rec_cp": 1300,
     "hint": "Frozen Lotus Valley · enemies drop it",
     "art": {
       "icon": {
@@ -499,7 +499,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 3,
-    "rec_cp": 2128,
+    "rec_cp": 2080,
     "hint": "Frozen Lotus Valley · Lair / Den",
     "art": {
       "icon": {
@@ -552,7 +552,7 @@
       ]
     },
     "difficulty": 3,
-    "rec_cp": 2800,
+    "rec_cp": 3250,
     "hint": "Adventure · Dungeons · Glacier Caverns",
     "art": {
       "icon": {
@@ -657,7 +657,7 @@
     },
     "next": "quest.main.ancient_sword_tomb_sovereign",
     "difficulty": 2,
-    "rec_cp": 2296,
+    "rec_cp": 2700,
     "hint": "Adventure · Ancient Sword Tomb",
     "art": {
       "icon": {
@@ -714,7 +714,7 @@
       ]
     },
     "difficulty": 3,
-    "rec_cp": 9643,
+    "rec_cp": 4050,
     "hint": "Adventure · Ancient Sword Tomb · Throne",
     "art": {
       "icon": {
@@ -762,7 +762,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 2,
-    "rec_cp": 2296,
+    "rec_cp": 2700,
     "hint": "Ancient Sword Tomb · enemies drop it",
     "art": {
       "icon": {
@@ -814,7 +814,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 3,
-    "rec_cp": 4362,
+    "rec_cp": 4320,
     "hint": "Ancient Sword Tomb · Lair / Den",
     "art": {
       "icon": {
@@ -867,7 +867,7 @@
       ]
     },
     "difficulty": 3,
-    "rec_cp": 5740,
+    "rec_cp": 6750,
     "hint": "Adventure · Dungeons · Hall of Ten Thousand Blades",
     "art": {
       "icon": {
@@ -972,7 +972,7 @@
     },
     "next": "quest.main.demon_territory_sovereign",
     "difficulty": 2,
-    "rec_cp": 4707,
+    "rec_cp": 7900,
     "hint": "Adventure · Demon Territory",
     "art": {
       "icon": {
@@ -1029,7 +1029,7 @@
       ]
     },
     "difficulty": 3,
-    "rec_cp": 19769,
+    "rec_cp": 11850,
     "hint": "Adventure · Demon Territory · Throne",
     "art": {
       "icon": {
@@ -1077,7 +1077,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 2,
-    "rec_cp": 4707,
+    "rec_cp": 7900,
     "hint": "Demon Territory · enemies drop it",
     "art": {
       "icon": {
@@ -1129,7 +1129,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 3,
-    "rec_cp": 8943,
+    "rec_cp": 12640,
     "hint": "Demon Territory · Lair / Den",
     "art": {
       "icon": {
@@ -1182,7 +1182,7 @@
       ]
     },
     "difficulty": 3,
-    "rec_cp": 11768,
+    "rec_cp": 19750,
     "hint": "Adventure · Dungeons · Blood River Prison",
     "art": {
       "icon": {
@@ -1287,7 +1287,7 @@
     },
     "next": "quest.main.celestial_mountains_sovereign",
     "difficulty": 2,
-    "rec_cp": 9649,
+    "rec_cp": 12400,
     "hint": "Adventure · Celestial Mountains",
     "art": {
       "icon": {
@@ -1344,7 +1344,7 @@
       ]
     },
     "difficulty": 3,
-    "rec_cp": 40526,
+    "rec_cp": 18600,
     "hint": "Adventure · Celestial Mountains · Throne",
     "art": {
       "icon": {
@@ -1392,7 +1392,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 2,
-    "rec_cp": 9649,
+    "rec_cp": 12400,
     "hint": "Celestial Mountains · enemies drop it",
     "art": {
       "icon": {
@@ -1444,7 +1444,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 3,
-    "rec_cp": 18333,
+    "rec_cp": 19840,
     "hint": "Celestial Mountains · Lair / Den",
     "art": {
       "icon": {
@@ -1497,7 +1497,7 @@
       ]
     },
     "difficulty": 3,
-    "rec_cp": 24122,
+    "rec_cp": 31000,
     "hint": "Adventure · Dungeons · Thunder Pine Sanctum",
     "art": {
       "icon": {
@@ -1602,7 +1602,7 @@
     },
     "next": "quest.main.nine_heavens_sovereign",
     "difficulty": 3,
-    "rec_cp": 19780,
+    "rec_cp": 14900,
     "hint": "Adventure · Nine Heavens",
     "art": {
       "icon": {
@@ -1659,7 +1659,7 @@
       ]
     },
     "difficulty": 4,
-    "rec_cp": 83076,
+    "rec_cp": 22350,
     "hint": "Adventure · Nine Heavens · Throne",
     "art": {
       "icon": {
@@ -1707,7 +1707,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 3,
-    "rec_cp": 19780,
+    "rec_cp": 14900,
     "hint": "Nine Heavens · enemies drop it",
     "art": {
       "icon": {
@@ -1759,7 +1759,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 4,
-    "rec_cp": 37582,
+    "rec_cp": 23840,
     "hint": "Nine Heavens · Lair / Den",
     "art": {
       "icon": {
@@ -1812,7 +1812,7 @@
       ]
     },
     "difficulty": 4,
-    "rec_cp": 49450,
+    "rec_cp": 37250,
     "hint": "Adventure · Dungeons · Sunken Star Palace",
     "art": {
       "icon": {
@@ -1917,7 +1917,7 @@
     },
     "next": "quest.main.thunderclap_wastes_sovereign",
     "difficulty": 3,
-    "rec_cp": 40548,
+    "rec_cp": 31000,
     "hint": "Adventure · Thunderclap Wastes",
     "art": {
       "icon": {
@@ -1974,7 +1974,7 @@
       ]
     },
     "difficulty": 4,
-    "rec_cp": 170302,
+    "rec_cp": 46500,
     "hint": "Adventure · Thunderclap Wastes · Throne",
     "art": {
       "icon": {
@@ -2022,7 +2022,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 3,
-    "rec_cp": 40548,
+    "rec_cp": 31000,
     "hint": "Thunderclap Wastes · enemies drop it",
     "art": {
       "icon": {
@@ -2074,7 +2074,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 4,
-    "rec_cp": 77041,
+    "rec_cp": 49600,
     "hint": "Thunderclap Wastes · Lair / Den",
     "art": {
       "icon": {
@@ -2127,7 +2127,7 @@
       ]
     },
     "difficulty": 4,
-    "rec_cp": 101370,
+    "rec_cp": 77500,
     "hint": "Adventure · Dungeons · Glass Labyrinth",
     "art": {
       "icon": {
@@ -2232,7 +2232,7 @@
     },
     "next": "quest.main.sunken_dragon_sea_sovereign",
     "difficulty": 3,
-    "rec_cp": 83124,
+    "rec_cp": 52000,
     "hint": "Adventure · Sunken Dragon Sea",
     "art": {
       "icon": {
@@ -2289,7 +2289,7 @@
       ]
     },
     "difficulty": 4,
-    "rec_cp": 349121,
+    "rec_cp": 78000,
     "hint": "Adventure · Sunken Dragon Sea · Throne",
     "art": {
       "icon": {
@@ -2337,7 +2337,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 3,
-    "rec_cp": 83124,
+    "rec_cp": 52000,
     "hint": "Sunken Dragon Sea · enemies drop it",
     "art": {
       "icon": {
@@ -2389,7 +2389,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 4,
-    "rec_cp": 157936,
+    "rec_cp": 83200,
     "hint": "Sunken Dragon Sea · Lair / Den",
     "art": {
       "icon": {
@@ -2442,7 +2442,7 @@
       ]
     },
     "difficulty": 4,
-    "rec_cp": 207810,
+    "rec_cp": 130000,
     "hint": "Adventure · Dungeons · Coral Labyrinth",
     "art": {
       "icon": {
@@ -2547,7 +2547,7 @@
     },
     "next": "quest.main.starfall_desert_sovereign",
     "difficulty": 3,
-    "rec_cp": 170405,
+    "rec_cp": 73000,
     "hint": "Adventure · Starfall Desert",
     "art": {
       "icon": {
@@ -2604,7 +2604,7 @@
       ]
     },
     "difficulty": 4,
-    "rec_cp": 715701,
+    "rec_cp": 109500,
     "hint": "Adventure · Starfall Desert · Throne",
     "art": {
       "icon": {
@@ -2652,7 +2652,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 3,
-    "rec_cp": 170405,
+    "rec_cp": 73000,
     "hint": "Starfall Desert · enemies drop it",
     "art": {
       "icon": {
@@ -2704,7 +2704,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 4,
-    "rec_cp": 323770,
+    "rec_cp": 116800,
     "hint": "Starfall Desert · Lair / Den",
     "art": {
       "icon": {
@@ -2757,7 +2757,7 @@
       ]
     },
     "difficulty": 4,
-    "rec_cp": 426012,
+    "rec_cp": 182500,
     "hint": "Adventure · Dungeons · Buried Star Temple",
     "art": {
       "icon": {
@@ -2862,7 +2862,7 @@
     },
     "next": "quest.main.gate_of_ascension_sovereign",
     "difficulty": 4,
-    "rec_cp": 349330,
+    "rec_cp": 105000,
     "hint": "Adventure · Gate of Ascension",
     "art": {
       "icon": {
@@ -2919,7 +2919,7 @@
       ]
     },
     "difficulty": 5,
-    "rec_cp": 1467186,
+    "rec_cp": 157500,
     "hint": "Adventure · Gate of Ascension · Throne",
     "art": {
       "icon": {
@@ -2967,7 +2967,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 4,
-    "rec_cp": 349330,
+    "rec_cp": 105000,
     "hint": "Gate of Ascension · enemies drop it",
     "art": {
       "icon": {
@@ -3019,7 +3019,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 5,
-    "rec_cp": 663727,
+    "rec_cp": 168000,
     "hint": "Gate of Ascension · Lair / Den",
     "art": {
       "icon": {
@@ -3072,7 +3072,7 @@
       ]
     },
     "difficulty": 5,
-    "rec_cp": 873325,
+    "rec_cp": 262500,
     "hint": "Adventure · Dungeons · Trial of Nine Flames",
     "art": {
       "icon": {
@@ -3177,7 +3177,7 @@
     },
     "next": "quest.main.jade_immortal_realm_sovereign",
     "difficulty": 4,
-    "rec_cp": 716126,
+    "rec_cp": 150000,
     "hint": "Adventure · Jade Immortal Realm",
     "art": {
       "icon": {
@@ -3234,7 +3234,7 @@
       ]
     },
     "difficulty": 5,
-    "rec_cp": 3007729,
+    "rec_cp": 225000,
     "hint": "Adventure · Jade Immortal Realm · Throne",
     "art": {
       "icon": {
@@ -3282,7 +3282,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 4,
-    "rec_cp": 716126,
+    "rec_cp": 150000,
     "hint": "Jade Immortal Realm · enemies drop it",
     "art": {
       "icon": {
@@ -3334,7 +3334,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 5,
-    "rec_cp": 1360639,
+    "rec_cp": 240000,
     "hint": "Jade Immortal Realm · Lair / Den",
     "art": {
       "icon": {
@@ -3387,7 +3387,7 @@
       ]
     },
     "difficulty": 5,
-    "rec_cp": 1790315,
+    "rec_cp": 375000,
     "hint": "Adventure · Dungeons · Immortal Peach Garden",
     "art": {
       "icon": {
@@ -3492,7 +3492,7 @@
     },
     "next": "quest.main.golden_palace_of_laws_sovereign",
     "difficulty": 4,
-    "rec_cp": 1468059,
+    "rec_cp": 135000,
     "hint": "Adventure · Golden Palace of Laws",
     "art": {
       "icon": {
@@ -3549,7 +3549,7 @@
       ]
     },
     "difficulty": 5,
-    "rec_cp": 6165848,
+    "rec_cp": 202500,
     "hint": "Adventure · Golden Palace of Laws · Throne",
     "art": {
       "icon": {
@@ -3597,7 +3597,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 4,
-    "rec_cp": 1468059,
+    "rec_cp": 135000,
     "hint": "Golden Palace of Laws · enemies drop it",
     "art": {
       "icon": {
@@ -3649,7 +3649,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 5,
-    "rec_cp": 2789312,
+    "rec_cp": 216000,
     "hint": "Golden Palace of Laws · Lair / Den",
     "art": {
       "icon": {
@@ -3702,7 +3702,7 @@
       ]
     },
     "difficulty": 5,
-    "rec_cp": 3670148,
+    "rec_cp": 337500,
     "hint": "Adventure · Dungeons · Hall of Verdicts",
     "art": {
       "icon": {
@@ -3807,7 +3807,7 @@
     },
     "next": "quest.main.throne_of_the_immortal_emperor_sovereign",
     "difficulty": 4,
-    "rec_cp": 3009521,
+    "rec_cp": 260000,
     "hint": "Adventure · Throne of the Immortal Emperor",
     "art": {
       "icon": {
@@ -3864,7 +3864,7 @@
       ]
     },
     "difficulty": 5,
-    "rec_cp": 12639988,
+    "rec_cp": 390000,
     "hint": "Adventure · Throne of the Immortal Emperor · Throne",
     "art": {
       "icon": {
@@ -3911,7 +3911,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 4,
-    "rec_cp": 3009521,
+    "rec_cp": 260000,
     "hint": "Throne of the Immortal Emperor · enemies drop it",
     "art": {
       "icon": {
@@ -3963,7 +3963,7 @@
       "cooldown_min": 1440
     },
     "difficulty": 5,
-    "rec_cp": 5718090,
+    "rec_cp": 416000,
     "hint": "Throne of the Immortal Emperor · Lair / Den",
     "art": {
       "icon": {
@@ -4016,7 +4016,7 @@
       ]
     },
     "difficulty": 5,
-    "rec_cp": 7523802,
+    "rec_cp": 650000,
     "hint": "Adventure · Dungeons · Hall of Five Elements",
     "art": {
       "icon": {

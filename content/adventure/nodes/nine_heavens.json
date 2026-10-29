@@ -13,7 +13,7 @@
       "node.nine_heavens.gathering",
       "node.nine_heavens.outskirts"
     ],
-    "rec_cp": 19780,
+    "rec_cp": 14900,
     "first_clear": {
       "spirit_stones": 960
     },
@@ -44,7 +44,7 @@
       "node.nine_heavens.west_path",
       "node.nine_heavens.cache"
     ],
-    "rec_cp": 22628,
+    "rec_cp": 17046,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 9,
@@ -78,7 +78,7 @@
       "node.nine_heavens.cache",
       "node.nine_heavens.east_path"
     ],
-    "rec_cp": 21362,
+    "rec_cp": 16092,
     "first_clear": {
       "spirit_stones": 960
     },
@@ -109,7 +109,7 @@
       "node.nine_heavens.gathering",
       "node.nine_heavens.lair"
     ],
-    "rec_cp": 22154,
+    "rec_cp": 16688,
     "first_clear": {
       "spirit_stones": 960
     },
@@ -141,7 +141,7 @@
       "node.nine_heavens.outskirts",
       "node.nine_heavens.crossroads"
     ],
-    "rec_cp": 25239,
+    "rec_cp": 19012,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 9,
@@ -161,7 +161,7 @@
       "node.nine_heavens.outskirts",
       "node.nine_heavens.ridge"
     ],
-    "rec_cp": 23736,
+    "rec_cp": 17880,
     "first_clear": {
       "spirit_stones": 960
     },
@@ -192,7 +192,7 @@
       "node.nine_heavens.west_path",
       "node.nine_heavens.deep_path"
     ],
-    "rec_cp": 46602,
+    "rec_cp": 29562,
     "first_clear": {
       "spirit_stones": 2560,
       "items": [
@@ -225,7 +225,7 @@
       "node.nine_heavens.deep_path",
       "node.nine_heavens.sanctum"
     ],
-    "rec_cp": 27850,
+    "rec_cp": 20979,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 9,
@@ -245,7 +245,7 @@
       "node.nine_heavens.east_path",
       "node.nine_heavens.sanctum"
     ],
-    "rec_cp": 26110,
+    "rec_cp": 19668,
     "first_clear": {
       "spirit_stones": 960
     },
@@ -276,7 +276,7 @@
       "node.nine_heavens.crossroads",
       "node.nine_heavens.den"
     ],
-    "rec_cp": 26901,
+    "rec_cp": 20264,
     "first_clear": {
       "spirit_stones": 960
     },
@@ -309,7 +309,7 @@
       "node.nine_heavens.hidden_grove",
       "node.nine_heavens.approach"
     ],
-    "rec_cp": 30461,
+    "rec_cp": 22946,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 9,
@@ -333,7 +333,7 @@
       "node.nine_heavens.deep_path",
       "node.nine_heavens.throne"
     ],
-    "rec_cp": 54118,
+    "rec_cp": 34330,
     "first_clear": {
       "spirit_stones": 2560,
       "items": [
@@ -369,7 +369,7 @@
       "node.nine_heavens.sanctum",
       "node.nine_heavens.approach"
     ],
-    "rec_cp": 32202,
+    "rec_cp": 24257,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 9,
@@ -394,7 +394,7 @@
       "node.nine_heavens.hidden_grove",
       "node.nine_heavens.throne"
     ],
-    "rec_cp": 30066,
+    "rec_cp": 22648,
     "first_clear": {
       "spirit_stones": 960
     },
@@ -425,7 +425,7 @@
       "node.nine_heavens.den",
       "node.nine_heavens.approach"
     ],
-    "rec_cp": 129599,
+    "rec_cp": 34866,
     "first_clear": {
       "spirit_stones": 9600,
       "sect_fame": 320
@@ -434,8 +434,8 @@
     "energy_cost": 9,
     "waves": [
       [
-        "enemy.heaven_eagle",
-        "enemy.fallen_immortal"
+        "enemy.cloud_jellyfish",
+        "enemy.starlight_sentinel"
       ],
       [
         "boss.heavenly_gate_keeper"

@@ -31,12 +31,15 @@ const rIdx = (r: string) => RARITIES.indexOf(r as any);
 
 // ---------- enhancement (+1 … +15) ----------
 
+/** Item-level factor on stone costs (enhancement.ilvl_cost): early gear is cheap to upgrade, endgame gear costs real money. */
+export const ilvlCost = (c: ContentIndex, ilvl: number) => Math.pow(Math.max(1, ilvl) / c.singletons.enhancement.ilvl_cost.ref, c.singletons.enhancement.ilvl_cost.exp);
+
 export function enhanceCost(c: ContentIndex, g: GearInstance): Cost | null {
   const t = c.singletons.enhancement;
   const row = t.levels[g.enhance];
   if (!row) return null;
   const mult = t.rarity_cost_mult[g.rarity as keyof typeof t.rarity_cost_mult] ?? 1;
-  return { stones: Math.round(row.stones_base * mult), items: row.materials, chance: row.success };
+  return { stones: Math.max(1, Math.round(row.stones_base * mult * ilvlCost(c, g.ilvl))), items: row.materials, chance: row.success };
 }
 
 export function enhance(s: GameState, c: ContentIndex, uid: number): ActionResult<{ success: boolean; level: number }> {
@@ -92,7 +95,7 @@ export function reforgeCost(c: ContentIndex, g: GearInstance, locked: number[]):
     const have = items.find((x) => x.id === l.id);
     if (have) have.qty += l.qty * locked.length; else if (locked.length) items.push({ id: l.id, qty: l.qty * locked.length });
   }
-  return { stones: Math.round(t.stones_base * mult), items, chance: 1, maxLocks: Math.min(t.max_secondary_stats, Math.max(0, g.affixes.length - 1)) };
+  return { stones: Math.max(1, Math.round(t.stones_base * mult * Math.max(0.25, ilvlCost(c, g.ilvl)))), items, chance: 1, maxLocks: Math.min(t.max_secondary_stats, Math.max(0, g.affixes.length - 1)) };
 }
 
 export function reforge(s: GameState, c: ContentIndex, uid: number, locked: number[]): ActionResult {

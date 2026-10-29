@@ -146,6 +146,8 @@ export const EnhancementTable = z.object({
     success: z.number().min(0).max(1).default(1),
   })).length(15),
   rarity_cost_mult: z.record(Rarity, z.number().positive()),
+  /** Stones × (ilvl / ref)^exp, so costs follow the region's income. */
+  ilvl_cost: z.object({ ref: z.number().positive(), exp: z.number().min(0) }).default({ ref: 103, exp: 1.14 }),
 });
 
 /** Refinement: chance to raise rarity by one step, capped at mythic. */

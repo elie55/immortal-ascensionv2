@@ -290,7 +290,7 @@
         "boss.thousand_node_bamboo_dragon"
       ],
       "boss_every": 10,
-      "cp_growth_per_floor": 1.07,
+      "cp_growth_per_floor": 1.091,
       "milestones": [
         {
           "floor": 5,
@@ -371,6 +371,49 @@
                 "rarity": "mythic",
                 "ilvl": 53
               }
+            ]
+          }
+        },
+        {
+          "floor": 75,
+          "rewards": {
+            "spirit_stones": 60000,
+            "items": [
+              {
+                "id": "mat.dao_insight_crystal",
+                "qty": 6
+              },
+              {
+                "id": "mat.awakening_crystal",
+                "qty": 2
+              },
+              {
+                "id": "mat.spirit_enhancing_stone",
+                "qty": 20
+              }
+            ]
+          }
+        },
+        {
+          "floor": 100,
+          "rewards": {
+            "spirit_stones": 200000,
+            "items": [
+              {
+                "id": "mat.dao_insight_crystal",
+                "qty": 12
+              },
+              {
+                "id": "mat.awakening_crystal",
+                "qty": 4
+              },
+              {
+                "id": "mat.spirit_enhancing_stone",
+                "qty": 40
+              }
+            ],
+            "titles": [
+              "title.tower_conqueror"
             ]
           }
         }

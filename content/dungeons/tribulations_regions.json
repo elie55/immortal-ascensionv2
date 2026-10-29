@@ -8,23 +8,23 @@
     "spirit": "boss.soul_transformation_tribulation_spirit",
     "waves": [
       {
-        "bolts": 3,
+        "bolts": 2,
         "dmg_mult": 1.0,
         "element": "elem.metal"
       },
       {
-        "bolts": 4,
+        "bolts": 2,
+        "dmg_mult": 1.2,
+        "element": "elem.metal"
+      },
+      {
+        "bolts": 3,
         "dmg_mult": 1.4,
         "element": "elem.metal"
       },
       {
-        "bolts": 5,
-        "dmg_mult": 1.8,
-        "element": "elem.metal"
-      },
-      {
-        "bolts": 6,
-        "dmg_mult": 2.2,
+        "bolts": 3,
+        "dmg_mult": 1.6,
         "element": "elem.metal"
       }
     ],
@@ -60,23 +60,23 @@
     "spirit": "boss.tribulation_transcendence_tribulation_spirit",
     "waves": [
       {
-        "bolts": 3,
+        "bolts": 2,
         "dmg_mult": 1.0,
         "element": "elem.metal"
       },
       {
-        "bolts": 4,
+        "bolts": 2,
+        "dmg_mult": 1.2,
+        "element": "elem.metal"
+      },
+      {
+        "bolts": 3,
         "dmg_mult": 1.4,
         "element": "elem.metal"
       },
       {
-        "bolts": 5,
-        "dmg_mult": 1.8,
-        "element": "elem.metal"
-      },
-      {
-        "bolts": 6,
-        "dmg_mult": 2.2,
+        "bolts": 3,
+        "dmg_mult": 1.6,
         "element": "elem.metal"
       }
     ],
@@ -112,28 +112,28 @@
     "spirit": "boss.immortal_ascension_tribulation_spirit",
     "waves": [
       {
-        "bolts": 3,
+        "bolts": 2,
         "dmg_mult": 1.0,
         "element": "elem.fire"
       },
       {
-        "bolts": 4,
+        "bolts": 2,
+        "dmg_mult": 1.2,
+        "element": "elem.fire"
+      },
+      {
+        "bolts": 3,
         "dmg_mult": 1.4,
         "element": "elem.fire"
       },
       {
-        "bolts": 5,
+        "bolts": 3,
+        "dmg_mult": 1.6,
+        "element": "elem.fire"
+      },
+      {
+        "bolts": 4,
         "dmg_mult": 1.8,
-        "element": "elem.fire"
-      },
-      {
-        "bolts": 6,
-        "dmg_mult": 2.2,
-        "element": "elem.fire"
-      },
-      {
-        "bolts": 7,
-        "dmg_mult": 2.6,
         "element": "elem.fire"
       }
     ],
@@ -169,28 +169,28 @@
     "spirit": "boss.golden_immortal_tribulation_spirit",
     "waves": [
       {
-        "bolts": 3,
+        "bolts": 2,
         "dmg_mult": 1.0,
         "element": "elem.fire"
       },
       {
-        "bolts": 4,
+        "bolts": 2,
+        "dmg_mult": 1.2,
+        "element": "elem.fire"
+      },
+      {
+        "bolts": 3,
         "dmg_mult": 1.4,
         "element": "elem.fire"
       },
       {
-        "bolts": 5,
+        "bolts": 3,
+        "dmg_mult": 1.6,
+        "element": "elem.fire"
+      },
+      {
+        "bolts": 4,
         "dmg_mult": 1.8,
-        "element": "elem.fire"
-      },
-      {
-        "bolts": 6,
-        "dmg_mult": 2.2,
-        "element": "elem.fire"
-      },
-      {
-        "bolts": 7,
-        "dmg_mult": 2.6,
         "element": "elem.fire"
       }
     ],
@@ -226,33 +226,33 @@
     "spirit": "boss.immortal_emperor_tribulation_spirit",
     "waves": [
       {
-        "bolts": 3,
+        "bolts": 2,
         "dmg_mult": 1.0,
         "element": "elem.water"
       },
       {
-        "bolts": 4,
+        "bolts": 2,
+        "dmg_mult": 1.2,
+        "element": "elem.water"
+      },
+      {
+        "bolts": 3,
         "dmg_mult": 1.4,
         "element": "elem.water"
       },
       {
-        "bolts": 5,
+        "bolts": 3,
+        "dmg_mult": 1.6,
+        "element": "elem.water"
+      },
+      {
+        "bolts": 4,
         "dmg_mult": 1.8,
         "element": "elem.water"
       },
       {
-        "bolts": 6,
-        "dmg_mult": 2.2,
-        "element": "elem.water"
-      },
-      {
-        "bolts": 7,
-        "dmg_mult": 2.6,
-        "element": "elem.water"
-      },
-      {
-        "bolts": 8,
-        "dmg_mult": 3.0,
+        "bolts": 4,
+        "dmg_mult": 2.0,
         "element": "elem.water"
       }
     ],

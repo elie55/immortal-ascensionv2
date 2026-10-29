@@ -17,10 +17,21 @@ def band(n):
     lo = 8 * (n - 1) + 1
     return lo, lo + 11
 
-def cp_base(n): return round(130 * 2.05 ** (n - 1))
+# Normal-enemy CP per region. Derived from the balance simulation (tools/balance/sim.ts): the "fitted" archetype's
+# normal battle nodes won ≈90 % of the time (tools/balance/calibrate.ts --target 0.9). Smoothed to be non-decreasing.
+# Regions 1–2 are hand-seeded in actors.py. Re-derive after changing realms, gear rules or bands; see docs/qa/BALANCE_MODEL.md.
+CP_BASE = {3: 1400, 4: 1300, 5: 2700, 6: 7900, 7: 12400, 8: 14900, 9: 31000, 10: 52000, 11: 73000, 12: 105000, 13: 150000, 14: 135000, 15: 260000, 16: 360000}
+def cp_base(n): return CP_BASE.get(n) or round(130 * 2.05 ** (n - 1))
+# Region boss stat multiplier on cp_base: calibrated so the fitted archetype wins the boss node ≈45 % on the first try
+# (tools/balance/calibrate.ts --kind boss --target 0.45). Bosses also summon, enrage and charge, which is why it is below 2.
+BOSS_MULT = {3: 1.15, 4: 1.35, 5: 1.5, 6: 1.25, 7: 0.8, 8: 1.4, 9: 2.0, 10: 1.55, 11: 1.5, 12: 1.9, 13: 1.65, 14: 1.4, 15: 1.7}
+def boss_mult(n): return BOSS_MULT.get(n, 1.5)
 
-def stats_for(cp, n, crit_bonus=0, eva_bonus=0):
-    return {"hp": round(cp * 3.2), "atk": round(cp * 0.28), "def": round(cp * 0.13), "spd": 10 + 2 * n, "crit": 5 + n + crit_bonus, "crit_dmg": 150 + 5 * n,
+# Enemy speed per region: between an idle cultivator's (stage 9, no gear) and a fitted player's speed in that region
+# (measured with tools/balance/sim_lib.ts archetypes), so speed is a stat that matters without deciding every fight.
+ENEMY_SPD = {1: 16, 2: 26, 3: 36, 4: 42, 5: 50, 6: 72, 7: 90, 8: 112, 9: 150, 10: 175, 11: 205, 12: 255, 13: 290, 14: 350, 15: 430, 16: 500}
+def stats_for(cp, n, crit_bonus=0, eva_bonus=0, spd_mult=1.0):
+    return {"hp": round(cp * 3.2), "atk": round(cp * 0.28), "def": round(cp * 0.13), "spd": round(ENEMY_SPD.get(n, 6 + 10 * n) * spd_mult), "crit": 5 + n + crit_bonus, "crit_dmg": 150 + 5 * n,
             "acc": 90 + n, "eva": 5 + n // 2 + eva_bonus, "sp_power": round(cp * 0.2), "sp_energy": 100 + 10 * n}
 
 def rrange(n):
@@ -113,7 +124,7 @@ def region(rd, prev):
     generic = {"beast": "tech.active.savage_bite", "human": "tech.active.bandit_slash", "demonic": "tech.active.bandit_slash"}
     eids = []
     for i, ((k, name, cn, kind, el, look, desc), role) in enumerate(zip(ens, roles)):
-        mult = {"normal": 1 + 0.15 * i, "elite": 1.9, "special": 1.5}[role]
+        mult = {"normal": 1 + 0.15 * i, "elite": 1.6, "special": 1.5}[role]
         cp = round(cb * mult)
         stage = {"normal": 2 + i, "elite": 6, "special": 5}[role]
         techs = [f"tech.active.{ek}", generic.get(kind, "tech.active.stone_shell")]
@@ -138,7 +149,7 @@ def region(rd, prev):
 
     # ---------- region boss ----------
     bk, bname, bcn, bel, blook, bdesc, bweak = rd["boss"]
-    bcp = round(cb * 4.2)
+    bcp = round(cb * boss_mult(n))
     boss_id = f"boss.{bk}"
     phases = [{"name": "Awakening", "hp_threshold": 1.0, "techniques": [f"tech.active.{ek}"], "summons": []},
               {"name": "Wrath", "hp_threshold": 0.6, "techniques": [f"tech.active.{ek}", f"tech.active.{tk}"], "summons": [{"enemy": eids[0], "count": 2}]},
@@ -229,7 +240,7 @@ def region(rd, prev):
 
     # ---------- dungeon ----------
     dk, dname, dcn, dkind, dscene, (dbk, dbname, dbcn, dbel, dblook, dbweak) = rd["dungeon"]
-    dbcp = round(cb * 3.2)
+    dbcp = round(cb * (1.2 if dkind == "resource" else 1.5))
     out["bosses"].append(boss_entry(dbk, dbname, dbcn, "dungeon", dbel, rmax, 7, dbcp, n, [f"tech.active.{ek}", "tech.active.stone_shell"],
                                     [{"name": "Guardian", "hp_threshold": 1.0, "techniques": [f"tech.active.{ek}"], "summons": []},
                                      {"name": "Fury", "hp_threshold": 0.4, "techniques": [f"tech.active.{ek}", "tech.active.stone_shell"], "summons": [], "enrage": {"atk_mult": 1.35, "spd_mult": 1.15}}],
@@ -247,7 +258,9 @@ def region(rd, prev):
     out["dungeons"].append({"id": f"dungeon.{dk}", **named(dname, f"A {dkind} dungeon of the {rd['name']}. Its master guards the final hall.", dcn), "kind": dkind,
                             "entry": {"realm": {"id": realm_id(rmin), "stage": 3}, "regions": [f"region.{key}"], "energy_cost": 10 + 2 * n, **({"daily_limit": 3} if dkind == "resource" else {}),
                                       "party": {"companions_allowed": False, "max_companions": 0}},
-                            "rec_cp": round(cb * 2.5), "waves": [{"enemies": [eids[0], eids[1]]}, {"enemies": [eids[1], eids[2], eids[0]]}, {"enemies": [eids[3], eids[4]]}, {"enemies": [f"boss.{dbk}"]}],
+                            "rec_cp": round(cb * (1.3 if dkind == "resource" else 1.8)),
+                            "waves": [{"enemies": [eids[0], eids[1]]}, {"enemies": [eids[1], eids[2]]}, {"enemies": [eids[3]]}, {"enemies": [f"boss.{dbk}"]}] if dkind == "resource"
+                                     else [{"enemies": [eids[0], eids[1]]}, {"enemies": [eids[2], eids[4]]}, {"enemies": [eids[3]]}, {"enemies": [f"boss.{dbk}"]}],
                             "modifiers": [], "rewards": {"per_wave": wave_loot, "clear": clear_loot, "first_clear": {"spirit_stones": 300 * n * n, "sect_fame": 30 * n, "gear": [{"base": gids[1], "rarity": R[R.index(lo_r) + 1], "ilvl": bhi}]}},
                             "checkpoints": False, "persistent_hp": True,
                             "art": {"card": art(f"assets/dungeons/{dk}_card.png", f"{STYLE}. Dungeon card illustration: {dscene}. Wide painterly composition, no text.", (1024, 640), False, ["refs/mockups/dungeon_hub.png"]),
@@ -257,7 +270,7 @@ def region(rd, prev):
     sr = rd.get("secret_realm")
     if sr:
         sk2, sname, scn, sscene, (sbk, sbname, sbcn, sbel, sblook, sbweak), sbeast = sr
-        sbcp = round(cb * 5)
+        sbcp = round(cb * 3.5)
         out["bosses"].append(boss_entry(sbk, sbname, sbcn, "secret_realm", sbel, rmax, 9, sbcp, n, [f"tech.active.{ek}", f"tech.active.{tk}"],
                                         [{"name": "Watcher", "hp_threshold": 1.0, "techniques": [f"tech.active.{ek}"], "summons": []},
                                          {"name": "Devourer", "hp_threshold": 0.5, "techniques": [f"tech.active.{ek}", f"tech.active.{tk}"], "summons": [{"enemy": eids[3], "count": 1}], "shield_pct": 15}],
@@ -269,7 +282,7 @@ def region(rd, prev):
         out["loot"].append({"id": f"loot.dungeon.{sk2}_clear", "mode": "independent", "rolls": 1, "entries": [{"id": "mat.dao_insight_crystal", "chance": 0.5, "qty": [1, 2]}], "guaranteed": [q2(M(cry), 2)], "spirit_stones": [200 * n * n, 300 * n * n], "sect_fame": 40 * n, "mastery_xp": 0})
         out["dungeons"].append({"id": f"dungeon.{sk2}", **named(sname, f"A secret realm hidden in the {rd['name']}. Branching paths, a sealed vault and a guardian.", scn), "kind": "secret_realm",
                                 "entry": {"realm": {"id": realm_id(rmin), "stage": 5}, "quests": [f"quest.main.{key}_sovereign"], "energy_cost": 25, "party": {"companions_allowed": False, "max_companions": 0}},
-                                "rec_cp": round(cb * 4), "modifiers": [], "rewards": {"clear": f"loot.dungeon.{sk2}_clear", "first_clear": {"spirit_stones": 500 * n * n, "sect_fame": 60 * n}},
+                                "rec_cp": round(cb * 3.2), "modifiers": [], "rewards": {"clear": f"loot.dungeon.{sk2}_clear", "first_clear": {"spirit_stones": 500 * n * n, "sect_fame": 60 * n}},
                                 "checkpoints": False, "persistent_hp": True,
                                 "realm_nodes": [
                                     {"key": "gate", "name": "Realm Gate", "kind": "battle", "position": [0.5, 0.92], "connections": ["left", "right"], "waves": [[eids[0], eids[1]]]},
@@ -288,7 +301,7 @@ def region(rd, prev):
     for idx, slot, kind, pos in NODE_TEMPLATE:
         if idx == 10 and sr: kind = "secret_realm"
         nid = f"node.{key}.{slot}"
-        rec = round(cb * {"battle": 1.0, "elite": 1.9, "boss": 4.2}.get(kind, 1.1) * (1 + idx * 0.04))
+        rec = round(cb * {"battle": 1.0, "elite": 1.6, "boss": 1.5}.get(kind, 1.1) * (1 + idx * 0.04))
         d = {"id": nid, **named(f"{rd['name']} {NODE_NAMES[slot]}", f"{NODE_NAMES[slot]} of the {rd['name']}."), "region": f"region.{key}", "kind": kind, "position": list(pos),
              "connections": [], "rec_cp": rec, "first_clear": {}, "replayable": kind not in ("chest", "story"), "energy_cost": 5 + n // 2}
         if kind == "battle":
@@ -299,7 +312,7 @@ def region(rd, prev):
             d["waves"] = [[eids[3]]] if idx == 6 else [[eids[0], eids[1]], [eids[3]]]
             d["first_clear"] = {"spirit_stones": 40 * n * n, "items": [q2(M(cry), 1)]}
         elif kind == "boss":
-            d["waves"] = [[eids[2], eids[3]], [boss_id]]
+            d["waves"] = [[eids[0], eids[1]], [boss_id]]
             d["first_clear"] = {"spirit_stones": 150 * n * n, "sect_fame": 40 * n}
         elif kind == "gather":
             d["gather"] = {"items": [q2(M(herb), 3), q2(M(ore), 2)], "energy_cost": 5, "cooldown_min": 45}
@@ -351,13 +364,13 @@ def region(rd, prev):
         {"id": sovereign, **named(f"Sovereign of the {rd['name']}", f"Defeat {bname}, master of the {rd['name']}.", None), "type": "main", "giver": "system", "turn_in": "auto",
          "prereqs": {"quests": [arrival], "realm": {"id": realm_id(rmin), "stage": 5}}, "objectives": [{"type": "defeat", "target": boss_id, "count": 1}],
          "rewards": {"spirit_stones": 400 * n * n, "sect_fame": 80 * n, "techniques": [f"tech.active.{tk}"], "gear": [{"base": gids[0], "rarity": R[R.index(lo_r) + 1], "ilvl": bhi}]},
-         "difficulty": min(5, 2 + n // 4), "rec_cp": bcp, "hint": f"Adventure · {rd['name']} · Throne", "art": qicon("main", f"{key}_sovereign", rd["name"])},
+         "difficulty": min(5, 2 + n // 4), "rec_cp": round(cb * 1.5), "hint": f"Adventure · {rd['name']} · Throne", "art": qicon("main", f"{key}_sovereign", rd["name"])},
         {"id": f"quest.mission.{key}_{mon}", **named(f"{rd['mats'][2][1]} Requisition", f"The Mission Hall needs five {rd['mats'][2][1]} from the {rd['name']}.", None), "type": "mission",
          "giver": "sectloc.mission_hall", "turn_in": "sectloc.mission_hall", "prereqs": {"regions": [f"region.{key}"]}, "objectives": [{"type": "deliver", "item": M(mon), "count": 5, "to": "sectloc.mission_hall"}],
          "rewards": {"spirit_stones": 60 * n * n, "sect_fame": 15 * n}, "repeatable": {"cooldown_min": 1440}, "difficulty": min(5, 1 + n // 4), "rec_cp": cb, "hint": f"{rd['name']} · enemies drop it", "art": qicon("mission", f"{key}_{mon}", rd["name"])},
         {"id": f"quest.combat.{key}_elite_hunt", **named(f"Hunt: {ens[3][1]}", f"Defeat three {ens[3][1]}s in the {rd['name']}.", None), "type": "combat",
          "giver": "sectloc.mission_hall", "turn_in": "sectloc.mission_hall", "prereqs": {"regions": [f"region.{key}"]}, "objectives": [{"type": "defeat", "target": eids[3], "count": 3}],
-         "rewards": {"spirit_stones": 80 * n * n, "sect_fame": 20 * n, "items": [q2("mat.spirit_enhancing_stone", 2)]}, "repeatable": {"cooldown_min": 1440}, "difficulty": min(5, 2 + n // 4), "rec_cp": round(cb * 1.9),
+         "rewards": {"spirit_stones": 80 * n * n, "sect_fame": 20 * n, "items": [q2("mat.spirit_enhancing_stone", 2)]}, "repeatable": {"cooldown_min": 1440}, "difficulty": min(5, 2 + n // 4), "rec_cp": round(cb * 1.6),
          "hint": f"{rd['name']} · Lair / Den", "art": qicon("combat", f"{key}_elite_hunt", rd["name"])},
         {"id": f"quest.dungeon.{key}_{dk}", **named(f"Trial: {dname}", f"Elder Feng wants proof you can clear the {dname}.", None), "type": "dungeon",
          "giver": "npc.elder_feng", "turn_in": "npc.elder_feng", "prereqs": {"regions": [f"region.{key}"], "realm": {"id": realm_id(rmin), "stage": 3}}, "objectives": [{"type": "clear", "target": f"dungeon.{dk}", "count": 1}],
@@ -374,7 +387,7 @@ def region(rd, prev):
 
 def boss_entry(k, name, cn, kind, el, realm, stage, cp, n, techs, phases, desc, look, weak, region_key):
     return {"id": f"boss.{k}", **named(name, desc, cn), "kind": kind, "element": f"elem.{el}", "realm": {"id": realm_id(realm), "stage": stage},
-            "stats": stats_for(cp, n, 5), "cp": cp, "techniques": techs, "ai": {"strategy": "guardian" if kind != "region" else "berserker", "rules": []}, "resistances": {},
+            "stats": stats_for(cp, n, 5, 0, 1.15), "cp": cp, "techniques": techs, "ai": {"strategy": "guardian" if kind != "region" else "berserker", "rules": []}, "resistances": {},
             "loot": f"loot.boss.{k}", "mastery_xp": 40 + cp // 40, "phases": phases, "weaknesses": [f"elem.{w}" for w in weak],
             "art": {"icon": icon(f"bosses/{region_key}/{k}_icon", f"the head of {look}", None, ["refs/mockups/battle_screen.png"]),
                     "battle": battle(f"bosses/{region_key}/{k}_battle", look, (1024, 1024), ["refs/mockups/battle_screen.png"]),
@@ -444,11 +457,11 @@ def endgame():
     for n, k, name, cn, rank, scene, (bk, bn, bcn, bel, blook, bweak), uniques in MEGAS:
         rd = regmap[n]; key = rd["key"]; rmin, rmax = rd["realms"]; cb = cp_base(n); blo, bhi = band(n)
         eids = [f"enemy.{e[0]}" for e in rd["enemies"]]
-        bcp = round(cb * 9)
+        bcp = round(cb * 3.2)
         out["bosses"].append(boss_entry(bk, bn, bcn, "mega", bel, rmax, 9, bcp, n, [f"tech.active.{rd['etech'][0]}", f"tech.active.{rd['tech'][0]}", "tech.active.stone_shell"],
                                         [{"name": "Dominion", "hp_threshold": 1.0, "techniques": [f"tech.active.{rd['etech'][0]}"], "summons": []},
                                          {"name": "Cataclysm", "hp_threshold": 0.66, "techniques": [f"tech.active.{rd['etech'][0]}", f"tech.active.{rd['tech'][0]}"], "summons": [{"enemy": eids[3], "count": 2}], "shield_pct": 15},
-                                         {"name": "Annihilation", "hp_threshold": 0.33, "techniques": [f"tech.active.{rd['tech'][0]}", "tech.active.stone_shell"], "summons": [], "enrage": {"atk_mult": 1.6, "spd_mult": 1.3},
+                                         {"name": "Annihilation", "hp_threshold": 0.33, "techniques": [f"tech.active.{rd['tech'][0]}", "tech.active.stone_shell"], "summons": [], "enrage": {"atk_mult": 1.3, "spd_mult": 1.2},
                                           "charged_attack": {"tech": f"tech.active.{rd['tech'][0]}", "turns_to_charge": 2}}],
                                         f"Master of the {name}. Only Dao Companions standing together have a chance.", blook, bweak, "special"))
         out["loot"].append({"id": f"loot.boss.{bk}", "mode": "independent", "rolls": 1, "ilvl": [bhi, bhi + 4], "entries": [{"id": "mat.awakening_crystal", "chance": 0.6, "qty": [1, 2]}, {"id": "mat.dao_insight_crystal", "chance": 0.8, "qty": [2, 4]},
@@ -468,8 +481,8 @@ def endgame():
                                         {"id": "mat.awakening_crystal", "chance": 0.8, "qty": [1, 3]}], "guaranteed": [q2("mat.dao_insight_crystal", 3)], "spirit_stones": [1000 * n * n, 1600 * n * n], "sect_fame": 150 * n, "mastery_xp": 0})
         out["dungeons"].append({"id": f"dungeon.{k}", **named(name, f"A mega dungeon of the {rd['name']}. Bring Dao Companions. Divine treasures sleep here.", cn), "kind": "mega",
                                 "entry": {"realm": {"id": realm_id(rmin), "stage": 5}, "rank": f"rank.{rank}", "energy_cost": 40, "party": {"companions_allowed": True, "max_companions": 2}},
-                                "rec_cp": round(cb * 8), "waves": [{"enemies": [eids[0], eids[1], eids[2]]}, {"enemies": [eids[3], eids[4], eids[3]]}, {"enemies": [f"boss.{rd['dungeon'][5][0]}"]},
-                                                                   {"enemies": [eids[3], eids[3], eids[4], eids[4]]}, {"enemies": [f"boss.{bk}"]}],
+                                "rec_cp": round(cb * 3.5), "waves": [{"enemies": [eids[0], eids[1], eids[2]]}, {"enemies": [eids[3], eids[4]]}, {"enemies": [f"boss.{rd['dungeon'][5][0]}"]},
+                                                                   {"enemies": [eids[3], eids[4], eids[2]]}, {"enemies": [f"boss.{bk}"]}],
                                 "modifiers": [{"id": "abyssal_pressure", "name": "Overwhelming Pressure", "description": "All enemies deal 15% more damage.", "effect": {"enemy_dmg_mult": 1.15}}],
                                 "rewards": {"per_wave": f"loot.dungeon.{k}_wave", "clear": f"loot.dungeon.{k}_clear", "first_clear": {"spirit_stones": 2000 * n * n, "sect_fame": 300 * n}},
                                 "checkpoints": True, "persistent_hp": True,
@@ -479,7 +492,7 @@ def endgame():
     # ---- tribulations ----
     for n, realm, name, cn, el in TRIBS:
         cb = cp_base(n + 1); bk = f"{realm}_tribulation_spirit"
-        out["bosses"].append(boss_entry(bk, f"{name} Spirit", None, "tribulation", el, realm, 1, round(cb * 5), n + 1, ["tech.active.heavenly_bolt", "tech.active.thunder_judgment"],
+        out["bosses"].append(boss_entry(bk, f"{name} Spirit", None, "tribulation", el, realm, 1, round(cb * 1.5), n + 1, ["tech.active.heavenly_bolt", "tech.active.thunder_judgment"],
                                         [{"name": "First Wave", "hp_threshold": 1.0, "techniques": ["tech.active.heavenly_bolt"], "summons": []},
                                          {"name": "Final Wave", "hp_threshold": 0.4, "techniques": ["tech.active.thunder_judgment", "tech.active.heavenly_bolt"], "summons": [], "enrage": {"atk_mult": 1.5, "spd_mult": 1.2},
                                           "charged_attack": {"tech": "tech.active.thunder_judgment", "turns_to_charge": 2}}],
@@ -488,7 +501,7 @@ def endgame():
                             "guaranteed": [q2("mat.spirit_enhancing_stone", 10)], "spirit_stones": [800 * n * n, 1200 * n * n], "sect_fame": 100 * n, "mastery_xp": 0})
         out["loot"].append({"id": f"loot.boss.{bk}", "mode": "independent", "rolls": 1, "entries": [{"id": "mat.dao_insight_crystal", "chance": 0.5, "qty": [1, 2]}], "guaranteed": [], "spirit_stones": [300 * n * n, 500 * n * n], "sect_fame": 0, "mastery_xp": 100 * n})
         out["tribulations"].append({"id": f"tribulation.{realm}", **named(name, f"Waves of heavenly lightning test those who would enter {realm.replace('_', ' ').title()}.", cn), "realm": realm_id(realm), "spirit": f"boss.{bk}",
-                                    "waves": [{"bolts": 3 + i, "dmg_mult": round(1 + 0.4 * i, 2), "element": f"elem.{el}"} for i in range(3 + n // 5)], "modifiers": [],
+                                    "waves": [{"bolts": 2 + i // 2, "dmg_mult": round(1 + 0.2 * i, 2), "element": f"elem.{el}"} for i in range(3 + n // 5)], "modifiers": [],
                                     "failure": {"qi_loss_pct": 0.3, "retry_cooldown_min": 180}, "rewards": f"loot.tribulation.{realm}",
                                     "art": {"battle_bg": bg(f"tribulations/{realm}_bg", f"a peak under a vast vortex of {el}-coloured storm clouds with lightning tearing down, grander than any previous tribulation", refs=["refs/mockups/tribulation.png"])}})
 
@@ -516,14 +529,14 @@ def tournaments():
     return [
         {"id": "tournament.inner_sect", **named("Inner Sect Tournament", "Four rounds among the Inner Disciples. Win to become a Core Disciple.", "核心大比"),
          "entry": {"rank": "rank.inner_disciple", "sect_fame": 4000, "realm": {"id": "realm.core_formation", "stage": 1}},
-         "rounds": [{"opponent": "npc.lu_feiyan", "cp": 2600, "rewards": {"spirit_stones": 1500}}, {"opponent": "npc.su_wanqing", "cp": 2900, "rewards": {"spirit_stones": 2000}},
-                    {"opponent": "npc.han_jinghong", "cp": 3400, "rewards": {"spirit_stones": 2500, "items": [q2("mat.refining_stone", 3)]}}, {"opponent": "npc.mo_lianjue", "cp": 3900, "rewards": {"spirit_stones": 3000}}],
+         "rounds": [{"opponent": "npc.lu_feiyan", "cp": 3500, "rewards": {"spirit_stones": 1500}}, {"opponent": "npc.su_wanqing", "cp": 4500, "rewards": {"spirit_stones": 2000}},
+                    {"opponent": "npc.han_jinghong", "cp": 5500, "rewards": {"spirit_stones": 2500, "items": [q2("mat.refining_stone", 3)]}}, {"opponent": "npc.mo_lianjue", "cp": 6500, "rewards": {"spirit_stones": 3000}}],
          "champion_rewards": {"spirit_stones": 12000, "sect_fame": 1500, "items": [q2("mat.awakening_crystal", 1), q2("mat.dao_insight_crystal", 2)]},
          "loss": {"sect_fame": -400}, "reentry": {"sect_fame_required": 4000}, "repeatable": True},
         {"id": "tournament.core_sect", **named("Core Sect Tournament", "The core disciples' grand contest. The champion becomes a Direct Disciple of an elder.", "亲传大比"),
          "entry": {"rank": "rank.core_disciple", "sect_fame": 9000, "realm": {"id": "realm.nascent_soul", "stage": 1}},
-         "rounds": [{"opponent": "npc.shen_qingxue", "cp": 9000, "rewards": {"spirit_stones": 6000}}, {"opponent": "npc.han_jinghong", "cp": 10500, "rewards": {"spirit_stones": 8000}},
-                    {"opponent": "npc.gu_xuanming", "cp": 12500, "rewards": {"spirit_stones": 10000, "items": [q2("mat.awakening_crystal", 1)]}}, {"opponent": "npc.bai_lingshuang", "cp": 14000, "rewards": {"spirit_stones": 12000}}],
+         "rounds": [{"opponent": "npc.shen_qingxue", "cp": 15000, "rewards": {"spirit_stones": 6000}}, {"opponent": "npc.han_jinghong", "cp": 19000, "rewards": {"spirit_stones": 8000}},
+                    {"opponent": "npc.gu_xuanming", "cp": 24000, "rewards": {"spirit_stones": 10000, "items": [q2("mat.awakening_crystal", 1)]}}, {"opponent": "npc.bai_lingshuang", "cp": 30000, "rewards": {"spirit_stones": 12000}}],
          "champion_rewards": {"spirit_stones": 50000, "sect_fame": 4000, "items": [q2("mat.dao_insight_crystal", 5)]},
          "loss": {"sect_fame": -800}, "reentry": {"sect_fame_required": 9000}, "repeatable": True},
     ]

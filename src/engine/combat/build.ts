@@ -97,7 +97,11 @@ export function buildEnemyFrom(c: ContentIndex, id: string, e: EnemyDef, opts: {
   const isBoss = !!e.phases?.length;
   const base: StatBlock = { ...e.stats };
   // statMult scales an enemy to a target power (Endless Tower floors): HP, attack, defence and spiritual power.
-  if (opts.statMult && opts.statMult !== 1) for (const k of ["hp", "atk", "def", "sp_power"]) if (base[k] !== undefined) base[k] = base[k]! * opts.statMult;
+  if (opts.statMult && opts.statMult !== 1) {
+    for (const k of ["hp", "atk", "def", "sp_power"]) if (base[k] !== undefined) base[k] = base[k]! * opts.statMult;
+    // Speed grows gently with the floor so late floors are not out-acted by a fast cultivator (regions raise enemy speed too).
+    base.spd = (base.spd ?? 10) * Math.pow(opts.statMult, 0.45);
+  }
   const maxHp = Math.max(1, Math.round((base.hp ?? 1) * (opts.hpMult ?? 1)));
   const techIds = isBoss ? [...new Set([...e.phases![0]!.techniques, ...e.techniques])] : e.techniques;
   const skills: Skill[] = [{ ...BASIC, element: e.element, power: c.combat.damage.basic_power, masteryMult: 1 }, ...techIds.map((t: string) => techSkill(c, t, 0))];

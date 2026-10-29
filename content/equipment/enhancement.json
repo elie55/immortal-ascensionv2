@@ -190,5 +190,9 @@
     "mythic": 7.6,
     "immortal": 11.4,
     "divine": 17.1
+  },
+  "ilvl_cost": {
+    "ref": 103,
+    "exp": 1.14
   }
 }

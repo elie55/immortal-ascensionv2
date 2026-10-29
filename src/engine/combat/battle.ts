@@ -9,7 +9,7 @@ import type { Combatant, Skill, BattleEvent, BattleOptions, BattleSummary, Playe
 import { BASIC, buildEnemy } from "./build.ts";
 import { chooseAuto, chooseEnemy, resolveTargets } from "./ai.ts";
 
-const CONTROL = new Set(["status.stun", "status.freeze"]);
+const CONTROL = new Set(["status.stun", "status.freeze", "status.silence"]);
 
 export class Battle {
   readonly c: ContentIndex;
@@ -48,7 +48,10 @@ export class Battle {
     for (const s of u.statuses) { const d = this.statusDefs.get(s.id); const m = d?.modifiers?.[k as keyof typeof d.modifiers]; if (m) pct += m * (d!.stacking === "stack" ? s.stacks : 1); }
     v *= 1 + pct / 100;
     if (u.boss?.phases[u.boss.phase]?.enrage) { const en = u.boss.phases[u.boss.phase]!.enrage!; if (k === "atk") v *= en.atk_mult; if (k === "spd") v *= en.spd_mult; }
-    if (k === "spd") v = Math.max(this.c.combat.turn.min_speed, v);
+    const caps = this.c.combat.caps as Record<string, number>;
+    if (k === "spd") { const mn = this.c.combat.turn.min_speed; v = Math.max(mn, v); if (caps.spd_exp !== 1) v = mn + Math.pow(v - mn, caps.spd_exp) * Math.pow(10, 1 - caps.spd_exp); }
+    else if (caps[k] !== undefined) v = Math.min(caps[k]!, v);
+    else if (k.startsWith("elem_dmg.") || k.startsWith("elem_res.")) v = Math.min(caps.elem_diff!, v);
     return v;
   }
   has(u: Combatant, status: string): StatusInstance | undefined { return u.statuses.find((s) => s.id === status); }
@@ -131,6 +134,7 @@ export class Battle {
     }
     this.emit({ t: "turn", actor: u.uid, round: this.round });
     for (const k of Object.keys(u.cooldowns)) if (u.cooldowns[k]! > 0) u.cooldowns[k]!--;
+    if ((u.controlGuard ?? 0) > 0 && !this.isControlled(u)) u.controlGuard!--;
     if (u.maxSp > 0) this.gainSp(u, Math.round(u.maxSp * this.c.combat.spirit_energy.regen_pct_per_turn / 100));
     for (const sp of u.specials) {
       if (sp.kind === "sp_restore") this.gainSp(u, sp.value ?? 0);
@@ -154,7 +158,12 @@ export class Battle {
     for (const st of u.statuses) st.turns--;
     const expired = u.statuses.filter((s) => s.turns <= 0);
     u.statuses = u.statuses.filter((s) => s.turns > 0);
-    for (const s of expired) { this.emit({ t: "status", actor: u.uid, target: u.uid, status: s.id, result: "expired" }); if (s.id === "status.shield" && !u.statuses.some((x) => x.id === "status.shield")) u.shield = 0; }
+    for (const s of expired) {
+      this.emit({ t: "status", actor: u.uid, target: u.uid, status: s.id, result: "expired" });
+      if (s.id === "status.shield" && !u.statuses.some((x) => x.id === "status.shield")) u.shield = 0;
+      // Diminishing returns on control: after a stun/freeze/silence wears off the unit cannot be controlled again for a few of its turns.
+      if (CONTROL.has(s.id)) u.controlGuard = Math.max(u.controlGuard ?? 0, this.c.combat.status.control_immunity_turns + (u.boss ? 1 : 0));
+    }
     this.checkEnd();
   }
 
@@ -208,7 +217,7 @@ export class Battle {
 
   private cooldownFor(u: Combatant, s: Skill): number {
     const cdr = this.eff(u, "cdr");
-    return Math.max(1, Math.round(s.cooldown * (1 - Math.min(0.6, cdr / 100))));
+    return Math.max(1, Math.round(s.cooldown * (1 - cdr / 100)));
   }
 
   private lastHitLanded = false;
@@ -223,7 +232,7 @@ export class Battle {
     raw *= this.elementMult(a, d, skill.element);
     const crit = chance(this.rng, Math.max(0, Math.min(1, this.eff(a, "crit") / 100)));
     if (crit) raw *= Math.max(100, this.eff(a, "crit_dmg") || R.crit_dmg_default) / 100;
-    const defEff = this.eff(d, "def") * (1 - Math.min(0.9, this.eff(a, "armor_pen") / 100));
+    const defEff = this.eff(d, "def") * (1 - this.eff(a, "armor_pen") / 100);
     const atk = Math.max(1, this.eff(a, "atk"));
     raw *= atk / (atk + defEff * R.def_factor);
     raw *= 1 + (nextFloat(this.rng) * 2 - 1) * R.variance;
@@ -258,7 +267,8 @@ export class Battle {
     if (ea && ed) { if (ea.overcomes === d.element) m += R.element_advantage; else if (ed.overcomes === element) m -= R.element_advantage; }
     if (d.boss?.weaknesses.includes(element)) m += R.boss_weakness_bonus;
     const el = element.split(".")[1];
-    if (el && el !== "none") m += (this.eff(a, `elem_dmg.${el}`) - this.eff(d, `elem_res.${el}`) - (d.resistances[`elem_res.${el}`] ?? d.resistances[el] ?? 0)) / 100;
+    const cap = this.c.combat.caps.elem_diff / 100;
+    if (el && el !== "none") m += Math.max(-cap, Math.min(cap, (this.eff(a, `elem_dmg.${el}`) - this.eff(d, `elem_res.${el}`) - (d.resistances[`elem_res.${el}`] ?? d.resistances[el] ?? 0)) / 100));
     return Math.max(0.1, m);
   }
 
@@ -269,7 +279,7 @@ export class Battle {
     let amt = amount;
     if (this.has(d, "status.invuln")) amt = 0;
     else {
-      if (!o.trueDamage) amt = Math.round(amt * (1 - Math.min(0.8, this.eff(d, "dmg_red") / 100)));
+      if (!o.trueDamage) amt = Math.round(amt * (1 - this.eff(d, "dmg_red") / 100));
       if (amt > 0 && amt < R.min_damage) amt = R.min_damage;
     }
     let absorbed = 0;
@@ -319,8 +329,10 @@ export class Battle {
     if (!def || !tgt.alive) return;
     const hostile = def.kind === "debuff" || def.kind === "control" || def.kind === "dot";
     if (hostile) {
+      if (CONTROL.has(status) && (tgt.controlGuard ?? 0) > 0) { this.emit({ t: "status", actor: src.uid, target: tgt.uid, status, result: "immune" }); return; }
       const res = Math.min(this.c.combat.status.control_resist_cap, this.eff(tgt, "status_res") / 100);
-      if (!chance(this.rng, p * (1 - res))) { this.emit({ t: "status", actor: src.uid, target: tgt.uid, status, result: "resisted" }); return; }
+      const bossMult = CONTROL.has(status) && tgt.boss ? this.c.combat.status.boss_control_mult : 1;
+      if (!chance(this.rng, p * (1 - res) * bossMult)) { this.emit({ t: "status", actor: src.uid, target: tgt.uid, status, result: "resisted" }); return; }
     } else if (p < 1 && !chance(this.rng, p)) return;
     const cur = this.has(tgt, status);
     const dur = Math.max(1, turns || def.default_turns);

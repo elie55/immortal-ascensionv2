@@ -15,7 +15,7 @@
     "rounds": [
       {
         "opponent": "npc.zhao_lie",
-        "cp": 980,
+        "cp": 1200,
         "rewards": {
           "spirit_stones": 200,
           "items": [
@@ -28,7 +28,7 @@
       },
       {
         "opponent": "npc.shen_qingxue",
-        "cp": 1010,
+        "cp": 1500,
         "rewards": {
           "spirit_stones": 300,
           "items": [
@@ -41,7 +41,7 @@
       },
       {
         "opponent": "npc.tie_shanhe",
-        "cp": 1560,
+        "cp": 1900,
         "rewards": {
           "spirit_stones": 400,
           "items": [
@@ -58,7 +58,7 @@
       },
       {
         "opponent": "npc.mo_lianjue",
-        "cp": 1700,
+        "cp": 2400,
         "rewards": {
           "spirit_stones": 600,
           "items": [

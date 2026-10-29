@@ -9,7 +9,7 @@ def shops():
         {"id": "shop.merchant_pavilion", **named("Merchant Pavilion", "Tang Xiaoman's stock. Better goods with higher Sect Fame.", "百宝阁"), "owner": "npc.tang_xiaoman", "restock": "daily",
          "affinity_discount": {"npc": "npc.tang_xiaoman", "pct_per_level": 3}, "fame_discount_pct_per_500": 5, "buys_items": True,
          "stock": [S("cons.qi_gathering_pill", 38), S("cons.blossom_healing_pill", 55), S("cons.spirit_condensing_pill", 114, unlock={"sect_fame": 500}), S("cons.spirit_tea", 25),
-                   S("mat.spirit_grass", 5, qty=20), S("mat.spirit_iron_ore", 57, qty=10), S("mat.lesser_enhancement_stone", 30), S("mat.refining_stone", 200, qty=5, unlock={"sect_fame": 500}), S("mat.reforging_sand", 150, qty=10, unlock={"sect_fame": 500}),
+                   S("mat.spirit_grass", 5, qty=20), S("mat.spirit_iron_ore", 57, qty=10), S("mat.lesser_enhancement_stone", 30), S("mat.spirit_enhancing_stone", 400, qty=10, unlock={"sect_fame": 800}), S("mat.refining_stone", 200, qty=5, unlock={"sect_fame": 500}), S("mat.reforging_sand", 150, qty=10, unlock={"sect_fame": 500}),
                    G("bamboo_sword", "common", 3, 60), G("bamboo_robe", "common", 3, 80), G("reed_hat", "common", 3, 50), G("cloudstep_boots", "common", 3, 143), G("jade_pendant", "common", 3, 90), G("azure_iron_war_ring", "common", 3, 70), G("cloud_talisman", "common", 3, 65),
                    G("azure_iron_sword", "uncommon", 6, 171, unlock={"sect_fame": 300}), G("azure_cloud_robe", "uncommon", 6, 190, unlock={"sect_fame": 300}),
                    S("gift.candied_hawthorn", 15), S("gift.osmanthus_cake", 20), S("gift.sword_polish_cloth", 40), S("gift.fine_ledger_book", 120, unlock={"sect_fame": 500})]},
@@ -179,10 +179,10 @@ def achievements():
 def tournaments():
     return [{"id": "tournament.outer_sect", **named("Outer Sect Tournament", "Four rounds in the Proving Arena. Win all four to become an Inner Disciple. Lose any round: −200 Fame; re-enter at 1,000 Fame.", "内门大比"),
              "entry": {"rank": "rank.outer_disciple", "sect_fame": 1000, "realm": {"id": "realm.foundation_establishment", "stage": 1}},
-             "rounds": [{"opponent": "npc.zhao_lie", "cp": 980, "rewards": {"spirit_stones": 200, "items": [q("mat.sword_rain_fragment", 3)]}},
-                        {"opponent": "npc.shen_qingxue", "cp": 1010, "rewards": {"spirit_stones": 300, "items": [q("mat.sword_rain_fragment", 3)]}},
-                        {"opponent": "npc.tie_shanhe", "cp": 1560, "rewards": {"spirit_stones": 400, "items": [q("mat.sword_rain_fragment", 2), q("gift.fine_ledger_book", 1)]}},
-                        {"opponent": "npc.mo_lianjue", "cp": 1700, "rewards": {"spirit_stones": 600, "items": [q("mat.sword_rain_fragment", 2)]}}],
+             "rounds": [{"opponent": "npc.zhao_lie", "cp": 1200, "rewards": {"spirit_stones": 200, "items": [q("mat.sword_rain_fragment", 3)]}},
+                        {"opponent": "npc.shen_qingxue", "cp": 1500, "rewards": {"spirit_stones": 300, "items": [q("mat.sword_rain_fragment", 3)]}},
+                        {"opponent": "npc.tie_shanhe", "cp": 1900, "rewards": {"spirit_stones": 400, "items": [q("mat.sword_rain_fragment", 2), q("gift.fine_ledger_book", 1)]}},
+                        {"opponent": "npc.mo_lianjue", "cp": 2400, "rewards": {"spirit_stones": 600, "items": [q("mat.sword_rain_fragment", 2)]}}],
              "champion_rewards": {"spirit_stones": 3000, "sect_fame": 500, "items": [q("cons.foundation_pill", 2)], "techniques": ["tech.ult.heavenly_sword_rain"], "titles": ["title.outer_sect_champion"]},
              "loss": {"sect_fame": -200}, "reentry": {"sect_fame_required": 1000}, "repeatable": True}]
 

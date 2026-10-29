@@ -113,6 +113,7 @@ def titles():
     return [
         {"id": "title.path_of_the_cultivator", **named("Path of the Cultivator", "Granted on completing Foundation Establishment.", "修行之路"), "bonuses": {"sp_energy": 10}},
         {"id": "title.outer_sect_champion", **named("Outer Sect Champion", "Victor of the Outer Sect Tournament.", "外门魁首"), "bonuses": {"atk": 20}},
+        {"id": "title.tower_conqueror", **named("Tower Conqueror", "Reached the summit of the Heaven-Piercing Tower.", "通天者"), "bonuses": {"hp": 2000, "spd": 10}},
     ]
 
 # ---------------- Equipment (docs/GEAR.md) ----------------
@@ -224,7 +225,9 @@ def enhancement():
         mats = [q("mat.lesser_enhancement_stone", lv)] if lv <= 5 else [q("mat.spirit_enhancing_stone", lv - 4)]
         levels.append({"level": lv, "stat_mult": round(1 + lv * 0.08, 2), "stones_base": 50 * lv * lv, "materials": mats, "success": 1.0 if lv <= 9 else round(1 - (lv - 9) * 0.1, 2)})
     rm = {"common": 1, "uncommon": 1.5, "rare": 2.25, "epic": 3.4, "legendary": 5.1, "mythic": 7.6, "immortal": 11.4, "divine": 17.1}
-    return {"levels": levels, "rarity_cost_mult": rm}
+    # Stone cost also scales with item level so that +10 on a full set costs about a week of that region's farming
+    # at every region (derived from tools/balance/sim.ts economy table; see docs/qa/BALANCE_MODEL.md).
+    return {"levels": levels, "rarity_cost_mult": rm, "ilvl_cost": {"ref": 103, "exp": 1.14}}
 
 def refinement():
     ch = {"common": 0.8, "uncommon": 0.6, "rare": 0.4, "epic": 0.25, "legendary": 0.1}

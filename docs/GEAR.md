@@ -138,3 +138,11 @@ and affixes. Examples: Reed Witch's Whisper Ring (epic), Dragon Abyss Sword (div
 // a fixed gear grant (shop, reward, starting state, forge output)
 { "base": "gear.azure_iron_sword", "rarity": "uncommon", "ilvl": 6 }
 ```
+
+## Percentage stats (balance pass)
+
+Stats listed in `rules.bounded_stats` (crit, crit_dmg, acc, eva, spd, cdr, dmg_red, life_steal, armor_pen, heal_bonus,
+shield_str, status_res, elemental) use a gentle item-level ramp `1 + L/ilvl_cap` instead of the flat curve, so a
++5 % crit affix stays a few percent at endgame instead of 50 %. Their CP contribution still follows the flat curve
+(a percentage is worth more on a stronger character), which keeps the rarity-ordering invariant. Enhancement
+stone costs scale with item level (`enhancement.ilvl_cost`).

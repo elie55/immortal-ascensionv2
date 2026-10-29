@@ -15,21 +15,21 @@
     "rounds": [
       {
         "opponent": "npc.lu_feiyan",
-        "cp": 2600,
+        "cp": 3500,
         "rewards": {
           "spirit_stones": 1500
         }
       },
       {
         "opponent": "npc.su_wanqing",
-        "cp": 2900,
+        "cp": 4500,
         "rewards": {
           "spirit_stones": 2000
         }
       },
       {
         "opponent": "npc.han_jinghong",
-        "cp": 3400,
+        "cp": 5500,
         "rewards": {
           "spirit_stones": 2500,
           "items": [
@@ -42,7 +42,7 @@
       },
       {
         "opponent": "npc.mo_lianjue",
-        "cp": 3900,
+        "cp": 6500,
         "rewards": {
           "spirit_stones": 3000
         }
@@ -86,21 +86,21 @@
     "rounds": [
       {
         "opponent": "npc.shen_qingxue",
-        "cp": 9000,
+        "cp": 15000,
         "rewards": {
           "spirit_stones": 6000
         }
       },
       {
         "opponent": "npc.han_jinghong",
-        "cp": 10500,
+        "cp": 19000,
         "rewards": {
           "spirit_stones": 8000
         }
       },
       {
         "opponent": "npc.gu_xuanming",
-        "cp": 12500,
+        "cp": 24000,
         "rewards": {
           "spirit_stones": 10000,
           "items": [
@@ -113,7 +113,7 @@
       },
       {
         "opponent": "npc.bai_lingshuang",
-        "cp": 14000,
+        "cp": 30000,
         "rewards": {
           "spirit_stones": 12000
         }

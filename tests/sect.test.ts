@@ -181,7 +181,8 @@ test("enhancement climbs to +15 with costs scaled by rarity; failures keep the l
   const uid = grantGear(s, c, { base: "gear.bamboo_sword", rarity: "rare", ilvl: 5 });
   const g = s.inventory.gear[uid]!;
   const cost = enhanceCost(c, g)!;
-  assert.equal(cost.stones, Math.round(c.singletons.enhancement.levels[0]!.stones_base * 2.25));
+  const ilvlFactor = Math.pow(5 / c.singletons.enhancement.ilvl_cost.ref, c.singletons.enhancement.ilvl_cost.exp);
+  assert.equal(cost.stones, Math.max(1, Math.round(c.singletons.enhancement.levels[0]!.stones_base * 2.25 * ilvlFactor)), "rare × ilvl factor");
   let fails = 0;
   for (const u of [uid, ...[1, 2, 3].map(() => grantGear(s, c, { base: "gear.bamboo_sword", rarity: "rare", ilvl: 5 }))]) {
     let guard = 0;

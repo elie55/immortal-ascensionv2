@@ -13,7 +13,7 @@
       "node.ancient_sword_tomb.gathering",
       "node.ancient_sword_tomb.outskirts"
     ],
-    "rec_cp": 2296,
+    "rec_cp": 2700,
     "first_clear": {
       "spirit_stones": 375
     },
@@ -44,7 +44,7 @@
       "node.ancient_sword_tomb.west_path",
       "node.ancient_sword_tomb.cache"
     ],
-    "rec_cp": 2627,
+    "rec_cp": 3089,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 7,
@@ -78,7 +78,7 @@
       "node.ancient_sword_tomb.cache",
       "node.ancient_sword_tomb.east_path"
     ],
-    "rec_cp": 2480,
+    "rec_cp": 2916,
     "first_clear": {
       "spirit_stones": 375
     },
@@ -109,7 +109,7 @@
       "node.ancient_sword_tomb.gathering",
       "node.ancient_sword_tomb.lair"
     ],
-    "rec_cp": 2572,
+    "rec_cp": 3024,
     "first_clear": {
       "spirit_stones": 375
     },
@@ -141,7 +141,7 @@
       "node.ancient_sword_tomb.outskirts",
       "node.ancient_sword_tomb.crossroads"
     ],
-    "rec_cp": 2930,
+    "rec_cp": 3445,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 7,
@@ -161,7 +161,7 @@
       "node.ancient_sword_tomb.outskirts",
       "node.ancient_sword_tomb.ridge"
     ],
-    "rec_cp": 2755,
+    "rec_cp": 3240,
     "first_clear": {
       "spirit_stones": 375
     },
@@ -192,7 +192,7 @@
       "node.ancient_sword_tomb.west_path",
       "node.ancient_sword_tomb.deep_path"
     ],
-    "rec_cp": 5409,
+    "rec_cp": 5357,
     "first_clear": {
       "spirit_stones": 1000,
       "items": [
@@ -225,7 +225,7 @@
       "node.ancient_sword_tomb.deep_path",
       "node.ancient_sword_tomb.sanctum"
     ],
-    "rec_cp": 3233,
+    "rec_cp": 3802,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 7,
@@ -245,7 +245,7 @@
       "node.ancient_sword_tomb.east_path",
       "node.ancient_sword_tomb.sanctum"
     ],
-    "rec_cp": 3031,
+    "rec_cp": 3564,
     "first_clear": {
       "spirit_stones": 375
     },
@@ -276,7 +276,7 @@
       "node.ancient_sword_tomb.crossroads",
       "node.ancient_sword_tomb.den"
     ],
-    "rec_cp": 3123,
+    "rec_cp": 3672,
     "first_clear": {
       "spirit_stones": 375
     },
@@ -309,7 +309,7 @@
       "node.ancient_sword_tomb.hidden_grove",
       "node.ancient_sword_tomb.approach"
     ],
-    "rec_cp": 3536,
+    "rec_cp": 4158,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 7,
@@ -333,7 +333,7 @@
       "node.ancient_sword_tomb.deep_path",
       "node.ancient_sword_tomb.throne"
     ],
-    "rec_cp": 6282,
+    "rec_cp": 6221,
     "first_clear": {
       "spirit_stones": 1000,
       "items": [
@@ -369,7 +369,7 @@
       "node.ancient_sword_tomb.sanctum",
       "node.ancient_sword_tomb.approach"
     ],
-    "rec_cp": 3738,
+    "rec_cp": 4396,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 7,
@@ -394,7 +394,7 @@
       "node.ancient_sword_tomb.hidden_grove",
       "node.ancient_sword_tomb.throne"
     ],
-    "rec_cp": 3490,
+    "rec_cp": 4104,
     "first_clear": {
       "spirit_stones": 375
     },
@@ -425,7 +425,7 @@
       "node.ancient_sword_tomb.den",
       "node.ancient_sword_tomb.approach"
     ],
-    "rec_cp": 15043,
+    "rec_cp": 6318,
     "first_clear": {
       "spirit_stones": 3750,
       "sect_fame": 200
@@ -434,8 +434,8 @@
     "energy_cost": 7,
     "waves": [
       [
-        "enemy.sword_qi_wisp",
-        "enemy.headless_general"
+        "enemy.rusted_sword_spirit",
+        "enemy.tomb_guardian_statue"
       ],
       [
         "boss.sword_sovereign_remnant"

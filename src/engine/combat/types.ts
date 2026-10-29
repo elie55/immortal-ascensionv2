@@ -61,6 +61,8 @@ export interface Combatant {
   specials: GearSpecial[];
   resistances: Record<string, number>;
   boss?: BossProfile;
+  /** Turns of control immunity left after a stun/freeze/silence wore off. */
+  controlGuard?: number;
   ai: { strategy: string; rules: string[] } | null;   // null = player (manual or auto rules)
   alive: boolean;
   turns: number;         // own turns taken

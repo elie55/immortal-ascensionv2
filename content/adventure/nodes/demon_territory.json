@@ -13,7 +13,7 @@
       "node.demon_territory.gathering",
       "node.demon_territory.outskirts"
     ],
-    "rec_cp": 4707,
+    "rec_cp": 7900,
     "first_clear": {
       "spirit_stones": 540
     },
@@ -44,7 +44,7 @@
       "node.demon_territory.west_path",
       "node.demon_territory.cache"
     ],
-    "rec_cp": 5385,
+    "rec_cp": 9038,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 8,
@@ -78,7 +78,7 @@
       "node.demon_territory.cache",
       "node.demon_territory.east_path"
     ],
-    "rec_cp": 5084,
+    "rec_cp": 8532,
     "first_clear": {
       "spirit_stones": 540
     },
@@ -109,7 +109,7 @@
       "node.demon_territory.gathering",
       "node.demon_territory.lair"
     ],
-    "rec_cp": 5272,
+    "rec_cp": 8848,
     "first_clear": {
       "spirit_stones": 540
     },
@@ -141,7 +141,7 @@
       "node.demon_territory.outskirts",
       "node.demon_territory.crossroads"
     ],
-    "rec_cp": 6006,
+    "rec_cp": 10080,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 8,
@@ -161,7 +161,7 @@
       "node.demon_territory.outskirts",
       "node.demon_territory.ridge"
     ],
-    "rec_cp": 5648,
+    "rec_cp": 9480,
     "first_clear": {
       "spirit_stones": 540
     },
@@ -192,7 +192,7 @@
       "node.demon_territory.west_path",
       "node.demon_territory.deep_path"
     ],
-    "rec_cp": 11090,
+    "rec_cp": 15674,
     "first_clear": {
       "spirit_stones": 1440,
       "items": [
@@ -225,7 +225,7 @@
       "node.demon_territory.deep_path",
       "node.demon_territory.sanctum"
     ],
-    "rec_cp": 6627,
+    "rec_cp": 11123,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 8,
@@ -245,7 +245,7 @@
       "node.demon_territory.east_path",
       "node.demon_territory.sanctum"
     ],
-    "rec_cp": 6213,
+    "rec_cp": 10428,
     "first_clear": {
       "spirit_stones": 540
     },
@@ -276,7 +276,7 @@
       "node.demon_territory.crossroads",
       "node.demon_territory.den"
     ],
-    "rec_cp": 6402,
+    "rec_cp": 10744,
     "first_clear": {
       "spirit_stones": 540
     },
@@ -309,7 +309,7 @@
       "node.demon_territory.hidden_grove",
       "node.demon_territory.approach"
     ],
-    "rec_cp": 7249,
+    "rec_cp": 12166,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 8,
@@ -329,7 +329,7 @@
       "node.demon_territory.deep_path",
       "node.demon_territory.throne"
     ],
-    "rec_cp": 12878,
+    "rec_cp": 18202,
     "first_clear": {
       "spirit_stones": 1440,
       "items": [
@@ -365,7 +365,7 @@
       "node.demon_territory.sanctum",
       "node.demon_territory.approach"
     ],
-    "rec_cp": 7663,
+    "rec_cp": 12861,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 8,
@@ -390,7 +390,7 @@
       "node.demon_territory.hidden_grove",
       "node.demon_territory.throne"
     ],
-    "rec_cp": 7155,
+    "rec_cp": 12008,
     "first_clear": {
       "spirit_stones": 540
     },
@@ -421,7 +421,7 @@
       "node.demon_territory.den",
       "node.demon_territory.approach"
     ],
-    "rec_cp": 30840,
+    "rec_cp": 18486,
     "first_clear": {
       "spirit_stones": 5400,
       "sect_fame": 240
@@ -430,8 +430,8 @@
     "energy_cost": 8,
     "waves": [
       [
-        "enemy.shadow_assassin",
-        "enemy.demon_general"
+        "enemy.blood_imp",
+        "enemy.bone_hound"
       ],
       [
         "boss.crimson_moon_matriarch"

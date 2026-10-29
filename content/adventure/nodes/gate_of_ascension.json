@@ -13,7 +13,7 @@
       "node.gate_of_ascension.gathering",
       "node.gate_of_ascension.outskirts"
     ],
-    "rec_cp": 349330,
+    "rec_cp": 105000,
     "first_clear": {
       "spirit_stones": 2160
     },
@@ -44,7 +44,7 @@
       "node.gate_of_ascension.west_path",
       "node.gate_of_ascension.cache"
     ],
-    "rec_cp": 399634,
+    "rec_cp": 120120,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 11,
@@ -78,7 +78,7 @@
       "node.gate_of_ascension.cache",
       "node.gate_of_ascension.east_path"
     ],
-    "rec_cp": 377276,
+    "rec_cp": 113400,
     "first_clear": {
       "spirit_stones": 2160
     },
@@ -109,7 +109,7 @@
       "node.gate_of_ascension.gathering",
       "node.gate_of_ascension.lair"
     ],
-    "rec_cp": 391250,
+    "rec_cp": 117600,
     "first_clear": {
       "spirit_stones": 2160
     },
@@ -141,7 +141,7 @@
       "node.gate_of_ascension.outskirts",
       "node.gate_of_ascension.crossroads"
     ],
-    "rec_cp": 445745,
+    "rec_cp": 133980,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 11,
@@ -161,7 +161,7 @@
       "node.gate_of_ascension.outskirts",
       "node.gate_of_ascension.ridge"
     ],
-    "rec_cp": 419196,
+    "rec_cp": 126000,
     "first_clear": {
       "spirit_stones": 2160
     },
@@ -192,7 +192,7 @@
       "node.gate_of_ascension.west_path",
       "node.gate_of_ascension.deep_path"
     ],
-    "rec_cp": 823021,
+    "rec_cp": 208320,
     "first_clear": {
       "spirit_stones": 5760,
       "items": [
@@ -225,7 +225,7 @@
       "node.gate_of_ascension.deep_path",
       "node.gate_of_ascension.sanctum"
     ],
-    "rec_cp": 491857,
+    "rec_cp": 147840,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 11,
@@ -245,7 +245,7 @@
       "node.gate_of_ascension.east_path",
       "node.gate_of_ascension.sanctum"
     ],
-    "rec_cp": 461116,
+    "rec_cp": 138600,
     "first_clear": {
       "spirit_stones": 2160
     },
@@ -276,7 +276,7 @@
       "node.gate_of_ascension.crossroads",
       "node.gate_of_ascension.den"
     ],
-    "rec_cp": 475089,
+    "rec_cp": 142800,
     "first_clear": {
       "spirit_stones": 2160
     },
@@ -309,7 +309,7 @@
       "node.gate_of_ascension.hidden_grove",
       "node.gate_of_ascension.approach"
     ],
-    "rec_cp": 537968,
+    "rec_cp": 161700,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 11,
@@ -333,7 +333,7 @@
       "node.gate_of_ascension.deep_path",
       "node.gate_of_ascension.throne"
     ],
-    "rec_cp": 955767,
+    "rec_cp": 241920,
     "first_clear": {
       "spirit_stones": 5760,
       "items": [
@@ -369,7 +369,7 @@
       "node.gate_of_ascension.sanctum",
       "node.gate_of_ascension.approach"
     ],
-    "rec_cp": 568709,
+    "rec_cp": 170940,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 11,
@@ -394,7 +394,7 @@
       "node.gate_of_ascension.hidden_grove",
       "node.gate_of_ascension.throne"
     ],
-    "rec_cp": 530982,
+    "rec_cp": 159600,
     "first_clear": {
       "spirit_stones": 2160
     },
@@ -425,7 +425,7 @@
       "node.gate_of_ascension.den",
       "node.gate_of_ascension.approach"
     ],
-    "rec_cp": 2288810,
+    "rec_cp": 245700,
     "first_clear": {
       "spirit_stones": 21600,
       "sect_fame": 480
@@ -434,8 +434,8 @@
     "energy_cost": 11,
     "waves": [
       [
-        "enemy.cloud_lion",
-        "enemy.ascension_judge"
+        "enemy.phoenix_flame_spirit",
+        "enemy.chain_warden"
       ],
       [
         "boss.vermilion_gatekeeper"

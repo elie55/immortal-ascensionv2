@@ -11,18 +11,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 1747,
-      "atk": 153,
-      "def": 71,
-      "spd": 16,
+      "hp": 4480,
+      "atk": 392,
+      "def": 182,
+      "spd": 36,
       "crit": 8,
       "crit_dmg": 165,
       "acc": 93,
       "eva": 6,
-      "sp_power": 109,
+      "sp_power": 280,
       "sp_energy": 130
     },
-    "cp": 546,
+    "cp": 1400,
     "techniques": [
       "tech.active.magma_slam",
       "tech.active.savage_bite"
@@ -33,7 +33,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.ember_salamander",
-    "mastery_xp": 20,
+    "mastery_xp": 38,
     "art": {
       "icon": {
         "file": "assets/enemies/blazing_mountain/ember_salamander_icon.webp",
@@ -77,18 +77,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 2010,
-      "atk": 176,
-      "def": 82,
-      "spd": 16,
+      "hp": 5152,
+      "atk": 451,
+      "def": 209,
+      "spd": 36,
       "crit": 8,
       "crit_dmg": 165,
       "acc": 93,
       "eva": 6,
-      "sp_power": 126,
+      "sp_power": 322,
       "sp_energy": 130
     },
-    "cp": 628,
+    "cp": 1610,
     "techniques": [
       "tech.active.magma_slam",
       "tech.active.savage_bite"
@@ -99,7 +99,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.ash_vulture",
-    "mastery_xp": 22,
+    "mastery_xp": 42,
     "art": {
       "icon": {
         "file": "assets/enemies/blazing_mountain/ash_vulture_icon.webp",
@@ -143,18 +143,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 2272,
-      "atk": 199,
-      "def": 92,
-      "spd": 16,
+      "hp": 5824,
+      "atk": 510,
+      "def": 237,
+      "spd": 36,
       "crit": 8,
       "crit_dmg": 165,
       "acc": 93,
       "eva": 6,
-      "sp_power": 142,
+      "sp_power": 364,
       "sp_energy": 130
     },
-    "cp": 710,
+    "cp": 1820,
     "techniques": [
       "tech.active.magma_slam",
       "tech.active.stone_shell"
@@ -165,7 +165,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.magma_golem",
-    "mastery_xp": 24,
+    "mastery_xp": 46,
     "art": {
       "icon": {
         "file": "assets/enemies/blazing_mountain/magma_golem_icon.webp",
@@ -209,18 +209,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 3318,
-      "atk": 290,
-      "def": 135,
-      "spd": 16,
+      "hp": 7168,
+      "atk": 627,
+      "def": 291,
+      "spd": 36,
       "crit": 13,
       "crit_dmg": 165,
       "acc": 93,
       "eva": 6,
-      "sp_power": 207,
+      "sp_power": 448,
       "sp_energy": 130
     },
-    "cp": 1037,
+    "cp": 2240,
     "techniques": [
       "tech.active.magma_slam",
       "tech.active.blazing_comet"
@@ -231,7 +231,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.flame_lion",
-    "mastery_xp": 30,
+    "mastery_xp": 54,
     "art": {
       "icon": {
         "file": "assets/enemies/blazing_mountain/flame_lion_icon.webp",
@@ -275,18 +275,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 2621,
-      "atk": 229,
-      "def": 106,
-      "spd": 16,
+      "hp": 6720,
+      "atk": 588,
+      "def": 273,
+      "spd": 36,
       "crit": 8,
       "crit_dmg": 165,
       "acc": 93,
       "eva": 6,
-      "sp_power": 164,
+      "sp_power": 420,
       "sp_energy": 130
     },
-    "cp": 819,
+    "cp": 2100,
     "techniques": [
       "tech.active.magma_slam",
       "tech.active.bandit_slash"
@@ -297,7 +297,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.caravan_raider",
-    "mastery_xp": 26,
+    "mastery_xp": 52,
     "art": {
       "icon": {
         "file": "assets/enemies/blazing_mountain/caravan_raider_icon.webp",
@@ -341,18 +341,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 3584,
-      "atk": 314,
-      "def": 146,
-      "spd": 18,
+      "hp": 4160,
+      "atk": 364,
+      "def": 169,
+      "spd": 42,
       "crit": 9,
       "crit_dmg": 170,
       "acc": 94,
       "eva": 7,
-      "sp_power": 224,
+      "sp_power": 260,
       "sp_energy": 140
     },
-    "cp": 1120,
+    "cp": 1300,
     "techniques": [
       "tech.active.frost_lotus_bloom",
       "tech.active.savage_bite"
@@ -363,7 +363,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.snow_fox_spirit",
-    "mastery_xp": 32,
+    "mastery_xp": 36,
     "art": {
       "icon": {
         "file": "assets/enemies/frozen_lotus_valley/snow_fox_spirit_icon.webp",
@@ -407,18 +407,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 4122,
-      "atk": 361,
-      "def": 167,
-      "spd": 18,
+      "hp": 4784,
+      "atk": 419,
+      "def": 194,
+      "spd": 42,
       "crit": 9,
       "crit_dmg": 170,
       "acc": 94,
       "eva": 7,
-      "sp_power": 258,
+      "sp_power": 299,
       "sp_energy": 140
     },
-    "cp": 1288,
+    "cp": 1495,
     "techniques": [
       "tech.active.frost_lotus_bloom",
       "tech.active.stone_shell"
@@ -429,7 +429,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.ice_lotus_guardian",
-    "mastery_xp": 35,
+    "mastery_xp": 39,
     "art": {
       "icon": {
         "file": "assets/enemies/frozen_lotus_valley/ice_lotus_guardian_icon.webp",
@@ -473,18 +473,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 4659,
-      "atk": 408,
-      "def": 189,
-      "spd": 18,
+      "hp": 5408,
+      "atk": 473,
+      "def": 220,
+      "spd": 42,
       "crit": 9,
       "crit_dmg": 170,
       "acc": 94,
       "eva": 7,
-      "sp_power": 291,
+      "sp_power": 338,
       "sp_energy": 140
     },
-    "cp": 1456,
+    "cp": 1690,
     "techniques": [
       "tech.active.frost_lotus_bloom",
       "tech.active.savage_bite"
@@ -495,7 +495,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.frost_yeti",
-    "mastery_xp": 39,
+    "mastery_xp": 43,
     "art": {
       "icon": {
         "file": "assets/enemies/frozen_lotus_valley/frost_yeti_icon.webp",
@@ -539,18 +539,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 6810,
-      "atk": 596,
-      "def": 277,
-      "spd": 18,
+      "hp": 6656,
+      "atk": 582,
+      "def": 270,
+      "spd": 42,
       "crit": 14,
       "crit_dmg": 170,
       "acc": 94,
       "eva": 7,
-      "sp_power": 426,
+      "sp_power": 416,
       "sp_energy": 140
     },
-    "cp": 2128,
+    "cp": 2080,
     "techniques": [
       "tech.active.frost_lotus_bloom",
       "tech.active.glacial_spear_rain"
@@ -561,7 +561,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.frost_wyrm",
-    "mastery_xp": 52,
+    "mastery_xp": 51,
     "art": {
       "icon": {
         "file": "assets/enemies/frozen_lotus_valley/frost_wyrm_icon.webp",
@@ -605,18 +605,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 5376,
-      "atk": 470,
-      "def": 218,
-      "spd": 18,
+      "hp": 6240,
+      "atk": 546,
+      "def": 254,
+      "spd": 42,
       "crit": 9,
       "crit_dmg": 170,
       "acc": 94,
       "eva": 7,
-      "sp_power": 336,
+      "sp_power": 390,
       "sp_energy": 140
     },
-    "cp": 1680,
+    "cp": 1950,
     "techniques": [
       "tech.active.frost_lotus_bloom",
       "tech.active.bandit_slash"
@@ -627,7 +627,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.frozen_cultist",
-    "mastery_xp": 43,
+    "mastery_xp": 49,
     "art": {
       "icon": {
         "file": "assets/enemies/frozen_lotus_valley/frozen_cultist_icon.webp",
@@ -671,18 +671,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 7347,
-      "atk": 643,
-      "def": 298,
-      "spd": 20,
+      "hp": 8640,
+      "atk": 756,
+      "def": 351,
+      "spd": 50,
       "crit": 10,
       "crit_dmg": 175,
       "acc": 95,
       "eva": 7,
-      "sp_power": 459,
+      "sp_power": 540,
       "sp_energy": 150
     },
-    "cp": 2296,
+    "cp": 2700,
     "techniques": [
       "tech.active.sword_tempest",
       "tech.active.stone_shell"
@@ -693,7 +693,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.rusted_sword_spirit",
-    "mastery_xp": 55,
+    "mastery_xp": 64,
     "art": {
       "icon": {
         "file": "assets/enemies/ancient_sword_tomb/rusted_sword_spirit_icon.webp",
@@ -737,18 +737,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 8448,
-      "atk": 739,
-      "def": 343,
-      "spd": 20,
+      "hp": 9936,
+      "atk": 869,
+      "def": 404,
+      "spd": 50,
       "crit": 10,
       "crit_dmg": 175,
       "acc": 95,
       "eva": 7,
-      "sp_power": 528,
+      "sp_power": 621,
       "sp_energy": 150
     },
-    "cp": 2640,
+    "cp": 3105,
     "techniques": [
       "tech.active.sword_tempest",
       "tech.active.stone_shell"
@@ -759,7 +759,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.tomb_guardian_statue",
-    "mastery_xp": 62,
+    "mastery_xp": 72,
     "art": {
       "icon": {
         "file": "assets/enemies/ancient_sword_tomb/tomb_guardian_statue_icon.webp",
@@ -803,18 +803,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 9552,
-      "atk": 836,
-      "def": 388,
-      "spd": 20,
+      "hp": 11232,
+      "atk": 983,
+      "def": 456,
+      "spd": 50,
       "crit": 10,
       "crit_dmg": 175,
       "acc": 95,
       "eva": 7,
-      "sp_power": 597,
+      "sp_power": 702,
       "sp_energy": 150
     },
-    "cp": 2985,
+    "cp": 3510,
     "techniques": [
       "tech.active.sword_tempest",
       "tech.active.stone_shell"
@@ -825,7 +825,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.sword_qi_wisp",
-    "mastery_xp": 69,
+    "mastery_xp": 80,
     "art": {
       "icon": {
         "file": "assets/enemies/ancient_sword_tomb/sword_qi_wisp_icon.webp",
@@ -869,18 +869,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 13958,
-      "atk": 1221,
-      "def": 567,
-      "spd": 20,
+      "hp": 13824,
+      "atk": 1210,
+      "def": 562,
+      "spd": 50,
       "crit": 15,
       "crit_dmg": 175,
       "acc": 95,
       "eva": 7,
-      "sp_power": 872,
+      "sp_power": 864,
       "sp_energy": 150
     },
-    "cp": 4362,
+    "cp": 4320,
     "techniques": [
       "tech.active.sword_tempest",
       "tech.active.ten_thousand_sword_return"
@@ -891,7 +891,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.headless_general",
-    "mastery_xp": 97,
+    "mastery_xp": 96,
     "art": {
       "icon": {
         "file": "assets/enemies/ancient_sword_tomb/headless_general_icon.webp",
@@ -935,18 +935,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 11021,
-      "atk": 964,
-      "def": 448,
-      "spd": 20,
+      "hp": 12960,
+      "atk": 1134,
+      "def": 526,
+      "spd": 50,
       "crit": 10,
       "crit_dmg": 175,
       "acc": 95,
       "eva": 7,
-      "sp_power": 689,
+      "sp_power": 810,
       "sp_energy": 150
     },
-    "cp": 3444,
+    "cp": 4050,
     "techniques": [
       "tech.active.sword_tempest",
       "tech.active.bandit_slash"
@@ -957,7 +957,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.tomb_robber",
-    "mastery_xp": 78,
+    "mastery_xp": 91,
     "art": {
       "icon": {
         "file": "assets/enemies/ancient_sword_tomb/tomb_robber_icon.webp",
@@ -1001,18 +1001,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 15062,
-      "atk": 1318,
-      "def": 612,
-      "spd": 22,
+      "hp": 25280,
+      "atk": 2212,
+      "def": 1027,
+      "spd": 72,
       "crit": 11,
       "crit_dmg": 180,
       "acc": 96,
       "eva": 8,
-      "sp_power": 941,
+      "sp_power": 1580,
       "sp_energy": 160
     },
-    "cp": 4707,
+    "cp": 7900,
     "techniques": [
       "tech.active.blood_drain",
       "tech.active.bandit_slash"
@@ -1023,7 +1023,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.blood_imp",
-    "mastery_xp": 104,
+    "mastery_xp": 168,
     "art": {
       "icon": {
         "file": "assets/enemies/demon_territory/blood_imp_icon.webp",
@@ -1067,18 +1067,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 17322,
-      "atk": 1516,
-      "def": 704,
-      "spd": 22,
+      "hp": 29072,
+      "atk": 2544,
+      "def": 1181,
+      "spd": 72,
       "crit": 11,
       "crit_dmg": 180,
       "acc": 96,
       "eva": 8,
-      "sp_power": 1083,
+      "sp_power": 1817,
       "sp_energy": 160
     },
-    "cp": 5413,
+    "cp": 9085,
     "techniques": [
       "tech.active.blood_drain",
       "tech.active.savage_bite"
@@ -1089,7 +1089,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.bone_hound",
-    "mastery_xp": 118,
+    "mastery_xp": 191,
     "art": {
       "icon": {
         "file": "assets/enemies/demon_territory/bone_hound_icon.webp",
@@ -1133,18 +1133,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 19581,
-      "atk": 1713,
-      "def": 795,
-      "spd": 22,
+      "hp": 32864,
+      "atk": 2876,
+      "def": 1335,
+      "spd": 72,
       "crit": 11,
       "crit_dmg": 180,
       "acc": 96,
       "eva": 8,
-      "sp_power": 1224,
+      "sp_power": 2054,
       "sp_energy": 160
     },
-    "cp": 6119,
+    "cp": 10270,
     "techniques": [
       "tech.active.blood_drain",
       "tech.active.bandit_slash"
@@ -1155,7 +1155,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.shadow_assassin",
-    "mastery_xp": 132,
+    "mastery_xp": 215,
     "art": {
       "icon": {
         "file": "assets/enemies/demon_territory/shadow_assassin_icon.webp",
@@ -1199,18 +1199,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 28618,
-      "atk": 2504,
-      "def": 1163,
-      "spd": 22,
+      "hp": 40448,
+      "atk": 3539,
+      "def": 1643,
+      "spd": 72,
       "crit": 16,
       "crit_dmg": 180,
       "acc": 96,
       "eva": 8,
-      "sp_power": 1789,
+      "sp_power": 2528,
       "sp_energy": 160
     },
-    "cp": 8943,
+    "cp": 12640,
     "techniques": [
       "tech.active.blood_drain",
       "tech.active.crimson_moon_slash"
@@ -1221,7 +1221,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.demon_general",
-    "mastery_xp": 188,
+    "mastery_xp": 262,
     "art": {
       "icon": {
         "file": "assets/enemies/demon_territory/demon_general_icon.webp",
@@ -1265,18 +1265,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 22592,
-      "atk": 1977,
-      "def": 918,
-      "spd": 22,
+      "hp": 37920,
+      "atk": 3318,
+      "def": 1540,
+      "spd": 72,
       "crit": 11,
       "crit_dmg": 180,
       "acc": 96,
       "eva": 8,
-      "sp_power": 1412,
+      "sp_power": 2370,
       "sp_energy": 160
     },
-    "cp": 7060,
+    "cp": 11850,
     "techniques": [
       "tech.active.blood_drain",
       "tech.active.bandit_slash"
@@ -1287,7 +1287,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.blood_sect_disciple",
-    "mastery_xp": 151,
+    "mastery_xp": 247,
     "art": {
       "icon": {
         "file": "assets/enemies/demon_territory/blood_sect_disciple_icon.webp",
@@ -1331,18 +1331,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 30877,
-      "atk": 2702,
-      "def": 1254,
-      "spd": 24,
+      "hp": 39680,
+      "atk": 3472,
+      "def": 1612,
+      "spd": 90,
       "crit": 12,
       "crit_dmg": 185,
       "acc": 97,
       "eva": 8,
-      "sp_power": 1930,
+      "sp_power": 2480,
       "sp_energy": 170
     },
-    "cp": 9649,
+    "cp": 12400,
     "techniques": [
       "tech.active.celestial_spear",
       "tech.active.savage_bite"
@@ -1353,7 +1353,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.thunder_crane",
-    "mastery_xp": 202,
+    "mastery_xp": 258,
     "art": {
       "icon": {
         "file": "assets/enemies/celestial_mountains/thunder_crane_icon.webp",
@@ -1397,18 +1397,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 35507,
-      "atk": 3107,
-      "def": 1442,
-      "spd": 24,
+      "hp": 45632,
+      "atk": 3993,
+      "def": 1854,
+      "spd": 90,
       "crit": 12,
       "crit_dmg": 185,
       "acc": 97,
       "eva": 8,
-      "sp_power": 2219,
+      "sp_power": 2852,
       "sp_energy": 170
     },
-    "cp": 11096,
+    "cp": 14260,
     "techniques": [
       "tech.active.celestial_spear",
       "tech.active.savage_bite"
@@ -1419,7 +1419,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.cloud_ape",
-    "mastery_xp": 231,
+    "mastery_xp": 295,
     "art": {
       "icon": {
         "file": "assets/enemies/celestial_mountains/cloud_ape_icon.webp",
@@ -1463,18 +1463,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 40141,
-      "atk": 3512,
-      "def": 1631,
-      "spd": 24,
+      "hp": 51584,
+      "atk": 4514,
+      "def": 2096,
+      "spd": 90,
       "crit": 12,
       "crit_dmg": 185,
       "acc": 97,
       "eva": 8,
-      "sp_power": 2509,
+      "sp_power": 3224,
       "sp_energy": 170
     },
-    "cp": 12544,
+    "cp": 16120,
     "techniques": [
       "tech.active.celestial_spear",
       "tech.active.stone_shell"
@@ -1485,7 +1485,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.celestial_soldier",
-    "mastery_xp": 260,
+    "mastery_xp": 332,
     "art": {
       "icon": {
         "file": "assets/enemies/celestial_mountains/celestial_soldier_icon.webp",
@@ -1529,18 +1529,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 58666,
-      "atk": 5133,
-      "def": 2383,
-      "spd": 24,
+      "hp": 63488,
+      "atk": 5555,
+      "def": 2579,
+      "spd": 90,
       "crit": 17,
       "crit_dmg": 185,
       "acc": 97,
       "eva": 8,
-      "sp_power": 3667,
+      "sp_power": 3968,
       "sp_energy": 170
     },
-    "cp": 18333,
+    "cp": 19840,
     "techniques": [
       "tech.active.celestial_spear",
       "tech.active.heavenly_thunder_palm"
@@ -1551,7 +1551,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.storm_tiger",
-    "mastery_xp": 376,
+    "mastery_xp": 406,
     "art": {
       "icon": {
         "file": "assets/enemies/celestial_mountains/storm_tiger_icon.webp",
@@ -1595,18 +1595,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 46317,
-      "atk": 4053,
-      "def": 1882,
-      "spd": 24,
+      "hp": 59520,
+      "atk": 5208,
+      "def": 2418,
+      "spd": 90,
       "crit": 12,
       "crit_dmg": 185,
       "acc": 97,
       "eva": 8,
-      "sp_power": 2895,
+      "sp_power": 3720,
       "sp_energy": 170
     },
-    "cp": 14474,
+    "cp": 18600,
     "techniques": [
       "tech.active.celestial_spear",
       "tech.active.bandit_slash"
@@ -1617,7 +1617,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.heaven_seeker",
-    "mastery_xp": 299,
+    "mastery_xp": 382,
     "art": {
       "icon": {
         "file": "assets/enemies/celestial_mountains/heaven_seeker_icon.webp",
@@ -1661,18 +1661,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 63296,
-      "atk": 5538,
-      "def": 2571,
-      "spd": 26,
+      "hp": 47680,
+      "atk": 4172,
+      "def": 1937,
+      "spd": 112,
       "crit": 13,
       "crit_dmg": 190,
       "acc": 98,
       "eva": 9,
-      "sp_power": 3956,
+      "sp_power": 2980,
       "sp_energy": 180
     },
-    "cp": 19780,
+    "cp": 14900,
     "techniques": [
       "tech.active.cloud_lightning",
       "tech.active.savage_bite"
@@ -1683,7 +1683,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.cloud_jellyfish",
-    "mastery_xp": 405,
+    "mastery_xp": 308,
     "art": {
       "icon": {
         "file": "assets/enemies/nine_heavens/cloud_jellyfish_icon.webp",
@@ -1727,18 +1727,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 72790,
-      "atk": 6369,
-      "def": 2957,
-      "spd": 26,
+      "hp": 54832,
+      "atk": 4798,
+      "def": 2228,
+      "spd": 112,
       "crit": 13,
       "crit_dmg": 190,
       "acc": 98,
       "eva": 9,
-      "sp_power": 4549,
+      "sp_power": 3427,
       "sp_energy": 180
     },
-    "cp": 22747,
+    "cp": 17135,
     "techniques": [
       "tech.active.cloud_lightning",
       "tech.active.stone_shell"
@@ -1749,7 +1749,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.starlight_sentinel",
-    "mastery_xp": 464,
+    "mastery_xp": 352,
     "art": {
       "icon": {
         "file": "assets/enemies/nine_heavens/starlight_sentinel_icon.webp",
@@ -1793,18 +1793,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 82285,
-      "atk": 7200,
-      "def": 3343,
-      "spd": 26,
+      "hp": 61984,
+      "atk": 5424,
+      "def": 2518,
+      "spd": 112,
       "crit": 13,
       "crit_dmg": 190,
       "acc": 98,
       "eva": 9,
-      "sp_power": 5143,
+      "sp_power": 3874,
       "sp_energy": 180
     },
-    "cp": 25714,
+    "cp": 19370,
     "techniques": [
       "tech.active.cloud_lightning",
       "tech.active.savage_bite"
@@ -1815,7 +1815,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.heaven_eagle",
-    "mastery_xp": 524,
+    "mastery_xp": 397,
     "art": {
       "icon": {
         "file": "assets/enemies/nine_heavens/heaven_eagle_icon.webp",
@@ -1859,18 +1859,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 120262,
-      "atk": 10523,
-      "def": 4886,
-      "spd": 26,
+      "hp": 76288,
+      "atk": 6675,
+      "def": 3099,
+      "spd": 112,
       "crit": 18,
       "crit_dmg": 190,
       "acc": 98,
       "eva": 9,
-      "sp_power": 7516,
+      "sp_power": 4768,
       "sp_energy": 180
     },
-    "cp": 37582,
+    "cp": 23840,
     "techniques": [
       "tech.active.cloud_lightning",
       "tech.active.starfall_sword"
@@ -1881,7 +1881,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.fallen_immortal",
-    "mastery_xp": 761,
+    "mastery_xp": 486,
     "art": {
       "icon": {
         "file": "assets/enemies/nine_heavens/fallen_immortal_icon.webp",
@@ -1925,18 +1925,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 94944,
-      "atk": 8308,
-      "def": 3857,
-      "spd": 26,
+      "hp": 71520,
+      "atk": 6258,
+      "def": 2906,
+      "spd": 112,
       "crit": 13,
       "crit_dmg": 190,
       "acc": 98,
       "eva": 9,
-      "sp_power": 5934,
+      "sp_power": 4470,
       "sp_energy": 180
     },
-    "cp": 29670,
+    "cp": 22350,
     "techniques": [
       "tech.active.cloud_lightning",
       "tech.active.bandit_slash"
@@ -1947,7 +1947,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.abyss_cultist",
-    "mastery_xp": 603,
+    "mastery_xp": 457,
     "art": {
       "icon": {
         "file": "assets/enemies/nine_heavens/abyss_cultist_icon.webp",
@@ -1991,18 +1991,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 129754,
-      "atk": 11353,
-      "def": 5271,
-      "spd": 28,
+      "hp": 99200,
+      "atk": 8680,
+      "def": 4030,
+      "spd": 150,
       "crit": 14,
       "crit_dmg": 195,
       "acc": 99,
       "eva": 9,
-      "sp_power": 8110,
+      "sp_power": 6200,
       "sp_energy": 190
     },
-    "cp": 40548,
+    "cp": 31000,
     "techniques": [
       "tech.active.chain_lightning",
       "tech.active.savage_bite"
@@ -2013,7 +2013,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.thunder_beetle",
-    "mastery_xp": 820,
+    "mastery_xp": 630,
     "art": {
       "icon": {
         "file": "assets/enemies/thunderclap_wastes/thunder_beetle_icon.webp",
@@ -2057,18 +2057,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 149216,
-      "atk": 13056,
-      "def": 6062,
-      "spd": 28,
+      "hp": 114080,
+      "atk": 9982,
+      "def": 4634,
+      "spd": 150,
       "crit": 14,
       "crit_dmg": 195,
       "acc": 99,
       "eva": 9,
-      "sp_power": 9326,
+      "sp_power": 7130,
       "sp_energy": 190
     },
-    "cp": 46630,
+    "cp": 35650,
     "techniques": [
       "tech.active.chain_lightning",
       "tech.active.savage_bite"
@@ -2079,7 +2079,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.glass_scorpion",
-    "mastery_xp": 942,
+    "mastery_xp": 723,
     "art": {
       "icon": {
         "file": "assets/enemies/thunderclap_wastes/glass_scorpion_icon.webp",
@@ -2123,18 +2123,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 168678,
-      "atk": 14759,
-      "def": 6853,
-      "spd": 28,
+      "hp": 128960,
+      "atk": 11284,
+      "def": 5239,
+      "spd": 150,
       "crit": 14,
       "crit_dmg": 195,
       "acc": 99,
       "eva": 9,
-      "sp_power": 10542,
+      "sp_power": 8060,
       "sp_energy": 190
     },
-    "cp": 52712,
+    "cp": 40300,
     "techniques": [
       "tech.active.chain_lightning",
       "tech.active.stone_shell"
@@ -2145,7 +2145,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.storm_wraith",
-    "mastery_xp": 1064,
+    "mastery_xp": 816,
     "art": {
       "icon": {
         "file": "assets/enemies/thunderclap_wastes/storm_wraith_icon.webp",
@@ -2189,18 +2189,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 246531,
-      "atk": 21571,
-      "def": 10015,
-      "spd": 28,
+      "hp": 158720,
+      "atk": 13888,
+      "def": 6448,
+      "spd": 150,
       "crit": 19,
       "crit_dmg": 195,
       "acc": 99,
       "eva": 9,
-      "sp_power": 15408,
+      "sp_power": 9920,
       "sp_energy": 190
     },
-    "cp": 77041,
+    "cp": 49600,
     "techniques": [
       "tech.active.chain_lightning",
       "tech.active.violet_thunder_spear"
@@ -2211,7 +2211,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.lightning_roc",
-    "mastery_xp": 1550,
+    "mastery_xp": 1002,
     "art": {
       "icon": {
         "file": "assets/enemies/thunderclap_wastes/lightning_roc_icon.webp",
@@ -2255,18 +2255,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 194630,
-      "atk": 17030,
-      "def": 7907,
-      "spd": 28,
+      "hp": 148800,
+      "atk": 13020,
+      "def": 6045,
+      "spd": 150,
       "crit": 14,
       "crit_dmg": 195,
       "acc": 99,
       "eva": 9,
-      "sp_power": 12164,
+      "sp_power": 9300,
       "sp_energy": 190
     },
-    "cp": 60822,
+    "cp": 46500,
     "techniques": [
       "tech.active.chain_lightning",
       "tech.active.bandit_slash"
@@ -2277,7 +2277,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.tribulation_scavenger",
-    "mastery_xp": 1226,
+    "mastery_xp": 940,
     "art": {
       "icon": {
         "file": "assets/enemies/thunderclap_wastes/tribulation_scavenger_icon.webp",
@@ -2321,18 +2321,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 265997,
-      "atk": 23275,
-      "def": 10806,
-      "spd": 30,
+      "hp": 166400,
+      "atk": 14560,
+      "def": 6760,
+      "spd": 175,
       "crit": 15,
       "crit_dmg": 200,
       "acc": 100,
       "eva": 10,
-      "sp_power": 16625,
+      "sp_power": 10400,
       "sp_energy": 200
     },
-    "cp": 83124,
+    "cp": 52000,
     "techniques": [
       "tech.active.whirlpool_crush",
       "tech.active.savage_bite"
@@ -2343,7 +2343,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.coral_naga",
-    "mastery_xp": 1672,
+    "mastery_xp": 1050,
     "art": {
       "icon": {
         "file": "assets/enemies/sunken_dragon_sea/coral_naga_icon.webp",
@@ -2387,18 +2387,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 305898,
-      "atk": 26766,
-      "def": 12427,
-      "spd": 30,
+      "hp": 191360,
+      "atk": 16744,
+      "def": 7774,
+      "spd": 175,
       "crit": 15,
       "crit_dmg": 200,
       "acc": 100,
       "eva": 10,
-      "sp_power": 19119,
+      "sp_power": 11960,
       "sp_energy": 200
     },
-    "cp": 95593,
+    "cp": 59800,
     "techniques": [
       "tech.active.whirlpool_crush",
       "tech.active.savage_bite"
@@ -2409,7 +2409,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.abyssal_angler",
-    "mastery_xp": 1921,
+    "mastery_xp": 1206,
     "art": {
       "icon": {
         "file": "assets/enemies/sunken_dragon_sea/abyssal_angler_icon.webp",
@@ -2453,18 +2453,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 345795,
-      "atk": 30257,
-      "def": 14048,
-      "spd": 30,
+      "hp": 216320,
+      "atk": 18928,
+      "def": 8788,
+      "spd": 175,
       "crit": 15,
       "crit_dmg": 200,
       "acc": 100,
       "eva": 10,
-      "sp_power": 21612,
+      "sp_power": 13520,
       "sp_energy": 200
     },
-    "cp": 108061,
+    "cp": 67600,
     "techniques": [
       "tech.active.whirlpool_crush",
       "tech.active.stone_shell"
@@ -2475,7 +2475,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.bone_dragon_spirit",
-    "mastery_xp": 2171,
+    "mastery_xp": 1362,
     "art": {
       "icon": {
         "file": "assets/enemies/sunken_dragon_sea/bone_dragon_spirit_icon.webp",
@@ -2519,18 +2519,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 505395,
-      "atk": 44222,
-      "def": 20532,
-      "spd": 30,
+      "hp": 266240,
+      "atk": 23296,
+      "def": 10816,
+      "spd": 175,
       "crit": 20,
       "crit_dmg": 200,
       "acc": 100,
       "eva": 10,
-      "sp_power": 31587,
+      "sp_power": 16640,
       "sp_energy": 200
     },
-    "cp": 157936,
+    "cp": 83200,
     "techniques": [
       "tech.active.whirlpool_crush",
       "tech.active.tidal_dragon_fist"
@@ -2541,7 +2541,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.tide_kraken",
-    "mastery_xp": 3168,
+    "mastery_xp": 1674,
     "art": {
       "icon": {
         "file": "assets/enemies/sunken_dragon_sea/tide_kraken_icon.webp",
@@ -2585,18 +2585,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 398995,
-      "atk": 34912,
-      "def": 16209,
-      "spd": 30,
+      "hp": 249600,
+      "atk": 21840,
+      "def": 10140,
+      "spd": 175,
       "crit": 15,
       "crit_dmg": 200,
       "acc": 100,
       "eva": 10,
-      "sp_power": 24937,
+      "sp_power": 15600,
       "sp_energy": 200
     },
-    "cp": 124686,
+    "cp": 78000,
     "techniques": [
       "tech.active.whirlpool_crush",
       "tech.active.bandit_slash"
@@ -2607,7 +2607,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.pirate_cultivator",
-    "mastery_xp": 2503,
+    "mastery_xp": 1570,
     "art": {
       "icon": {
         "file": "assets/enemies/sunken_dragon_sea/pirate_cultivator_icon.webp",
@@ -2651,18 +2651,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 545296,
-      "atk": 47713,
-      "def": 22153,
-      "spd": 32,
+      "hp": 233600,
+      "atk": 20440,
+      "def": 9490,
+      "spd": 205,
       "crit": 16,
       "crit_dmg": 205,
       "acc": 101,
       "eva": 10,
-      "sp_power": 34081,
+      "sp_power": 14600,
       "sp_energy": 210
     },
-    "cp": 170405,
+    "cp": 73000,
     "techniques": [
       "tech.active.sand_burial",
       "tech.active.savage_bite"
@@ -2673,7 +2673,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.sand_wyrm",
-    "mastery_xp": 3418,
+    "mastery_xp": 1470,
     "art": {
       "icon": {
         "file": "assets/enemies/starfall_desert/sand_wyrm_icon.webp",
@@ -2717,18 +2717,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 627091,
-      "atk": 54870,
-      "def": 25476,
-      "spd": 32,
+      "hp": 268640,
+      "atk": 23506,
+      "def": 10914,
+      "spd": 205,
       "crit": 16,
       "crit_dmg": 205,
       "acc": 101,
       "eva": 10,
-      "sp_power": 39193,
+      "sp_power": 16790,
       "sp_energy": 210
     },
-    "cp": 195966,
+    "cp": 83950,
     "techniques": [
       "tech.active.sand_burial",
       "tech.active.savage_bite"
@@ -2739,7 +2739,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.star_scarab",
-    "mastery_xp": 3929,
+    "mastery_xp": 1689,
     "art": {
       "icon": {
         "file": "assets/enemies/starfall_desert/star_scarab_icon.webp",
@@ -2783,18 +2783,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 708883,
-      "atk": 62027,
-      "def": 28798,
-      "spd": 32,
+      "hp": 303680,
+      "atk": 26572,
+      "def": 12337,
+      "spd": 205,
       "crit": 16,
       "crit_dmg": 205,
       "acc": 101,
       "eva": 10,
-      "sp_power": 44305,
+      "sp_power": 18980,
       "sp_energy": 210
     },
-    "cp": 221526,
+    "cp": 94900,
     "techniques": [
       "tech.active.sand_burial",
       "tech.active.stone_shell"
@@ -2805,7 +2805,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.dune_mirage",
-    "mastery_xp": 4440,
+    "mastery_xp": 1908,
     "art": {
       "icon": {
         "file": "assets/enemies/starfall_desert/dune_mirage_icon.webp",
@@ -2849,18 +2849,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 1036064,
-      "atk": 90656,
-      "def": 42090,
-      "spd": 32,
+      "hp": 373760,
+      "atk": 32704,
+      "def": 15184,
+      "spd": 205,
       "crit": 21,
       "crit_dmg": 205,
       "acc": 101,
       "eva": 10,
-      "sp_power": 64754,
+      "sp_power": 23360,
       "sp_energy": 210
     },
-    "cp": 323770,
+    "cp": 116800,
     "techniques": [
       "tech.active.sand_burial",
       "tech.active.meteor_impact"
@@ -2871,7 +2871,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.star_metal_golem",
-    "mastery_xp": 6485,
+    "mastery_xp": 2346,
     "art": {
       "icon": {
         "file": "assets/enemies/starfall_desert/star_metal_golem_icon.webp",
@@ -2915,18 +2915,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 817946,
-      "atk": 71570,
-      "def": 33229,
-      "spd": 32,
+      "hp": 350400,
+      "atk": 30660,
+      "def": 14235,
+      "spd": 205,
       "crit": 16,
       "crit_dmg": 205,
       "acc": 101,
       "eva": 10,
-      "sp_power": 51122,
+      "sp_power": 21900,
       "sp_energy": 210
     },
-    "cp": 255608,
+    "cp": 109500,
     "techniques": [
       "tech.active.sand_burial",
       "tech.active.bandit_slash"
@@ -2937,7 +2937,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.nomad_star_hunter",
-    "mastery_xp": 5122,
+    "mastery_xp": 2200,
     "art": {
       "icon": {
         "file": "assets/enemies/starfall_desert/nomad_star_hunter_icon.webp",
@@ -2981,18 +2981,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 1117856,
-      "atk": 97812,
-      "def": 45413,
-      "spd": 34,
+      "hp": 336000,
+      "atk": 29400,
+      "def": 13650,
+      "spd": 255,
       "crit": 17,
       "crit_dmg": 210,
       "acc": 102,
       "eva": 11,
-      "sp_power": 69866,
+      "sp_power": 21000,
       "sp_energy": 220
     },
-    "cp": 349330,
+    "cp": 105000,
     "techniques": [
       "tech.active.judgement_flame",
       "tech.active.stone_shell"
@@ -3003,7 +3003,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.phoenix_flame_spirit",
-    "mastery_xp": 6996,
+    "mastery_xp": 2110,
     "art": {
       "icon": {
         "file": "assets/enemies/gate_of_ascension/phoenix_flame_spirit_icon.webp",
@@ -3047,18 +3047,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 1285533,
-      "atk": 112484,
-      "def": 52225,
-      "spd": 34,
+      "hp": 386400,
+      "atk": 33810,
+      "def": 15698,
+      "spd": 255,
       "crit": 17,
       "crit_dmg": 210,
       "acc": 102,
       "eva": 11,
-      "sp_power": 80346,
+      "sp_power": 24150,
       "sp_energy": 220
     },
-    "cp": 401729,
+    "cp": 120750,
     "techniques": [
       "tech.active.judgement_flame",
       "tech.active.stone_shell"
@@ -3069,7 +3069,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.chain_warden",
-    "mastery_xp": 8044,
+    "mastery_xp": 2425,
     "art": {
       "icon": {
         "file": "assets/enemies/gate_of_ascension/chain_warden_icon.webp",
@@ -3113,18 +3113,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 1453213,
-      "atk": 127156,
-      "def": 59037,
-      "spd": 34,
+      "hp": 436800,
+      "atk": 38220,
+      "def": 17745,
+      "spd": 255,
       "crit": 17,
       "crit_dmg": 210,
       "acc": 102,
       "eva": 11,
-      "sp_power": 90826,
+      "sp_power": 27300,
       "sp_energy": 220
     },
-    "cp": 454129,
+    "cp": 136500,
     "techniques": [
       "tech.active.judgement_flame",
       "tech.active.savage_bite"
@@ -3135,7 +3135,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.cloud_lion",
-    "mastery_xp": 9092,
+    "mastery_xp": 2740,
     "art": {
       "icon": {
         "file": "assets/enemies/gate_of_ascension/cloud_lion_icon.webp",
@@ -3179,18 +3179,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 2123926,
-      "atk": 185844,
-      "def": 86285,
-      "spd": 34,
+      "hp": 537600,
+      "atk": 47040,
+      "def": 21840,
+      "spd": 255,
       "crit": 22,
       "crit_dmg": 210,
       "acc": 102,
       "eva": 11,
-      "sp_power": 132745,
+      "sp_power": 33600,
       "sp_energy": 220
     },
-    "cp": 663727,
+    "cp": 168000,
     "techniques": [
       "tech.active.judgement_flame",
       "tech.active.vermilion_rebirth"
@@ -3201,7 +3201,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.ascension_judge",
-    "mastery_xp": 13284,
+    "mastery_xp": 3370,
     "art": {
       "icon": {
         "file": "assets/enemies/gate_of_ascension/ascension_judge_icon.webp",
@@ -3245,18 +3245,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 1676784,
-      "atk": 146719,
-      "def": 68119,
-      "spd": 34,
+      "hp": 504000,
+      "atk": 44100,
+      "def": 20475,
+      "spd": 255,
       "crit": 17,
       "crit_dmg": 210,
       "acc": 102,
       "eva": 11,
-      "sp_power": 104799,
+      "sp_power": 31500,
       "sp_energy": 220
     },
-    "cp": 523995,
+    "cp": 157500,
     "techniques": [
       "tech.active.judgement_flame",
       "tech.active.bandit_slash"
@@ -3267,7 +3267,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.failed_ascendant",
-    "mastery_xp": 10489,
+    "mastery_xp": 3160,
     "art": {
       "icon": {
         "file": "assets/enemies/gate_of_ascension/failed_ascendant_icon.webp",
@@ -3311,18 +3311,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 2291603,
-      "atk": 200515,
-      "def": 93096,
-      "spd": 36,
+      "hp": 480000,
+      "atk": 42000,
+      "def": 19500,
+      "spd": 290,
       "crit": 18,
       "crit_dmg": 215,
       "acc": 103,
       "eva": 11,
-      "sp_power": 143225,
+      "sp_power": 30000,
       "sp_energy": 230
     },
-    "cp": 716126,
+    "cp": 150000,
     "techniques": [
       "tech.active.immortal_prune",
       "tech.active.savage_bite"
@@ -3333,7 +3333,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.jade_tiger",
-    "mastery_xp": 14332,
+    "mastery_xp": 3010,
     "art": {
       "icon": {
         "file": "assets/enemies/jade_immortal_realm/jade_tiger_icon.webp",
@@ -3377,18 +3377,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 2635344,
-      "atk": 230593,
-      "def": 107061,
-      "spd": 36,
+      "hp": 552000,
+      "atk": 48300,
+      "def": 22425,
+      "spd": 290,
       "crit": 18,
       "crit_dmg": 215,
       "acc": 103,
       "eva": 11,
-      "sp_power": 164709,
+      "sp_power": 34500,
       "sp_energy": 230
     },
-    "cp": 823545,
+    "cp": 172500,
     "techniques": [
       "tech.active.immortal_prune",
       "tech.active.stone_shell"
@@ -3399,7 +3399,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.immortal_gardener",
-    "mastery_xp": 16480,
+    "mastery_xp": 3460,
     "art": {
       "icon": {
         "file": "assets/enemies/jade_immortal_realm/immortal_gardener_icon.webp",
@@ -3443,18 +3443,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 2979085,
-      "atk": 260670,
-      "def": 121025,
-      "spd": 36,
+      "hp": 624000,
+      "atk": 54600,
+      "def": 25350,
+      "spd": 290,
       "crit": 18,
       "crit_dmg": 215,
       "acc": 103,
       "eva": 11,
-      "sp_power": 186193,
+      "sp_power": 39000,
       "sp_energy": 230
     },
-    "cp": 930964,
+    "cp": 195000,
     "techniques": [
       "tech.active.immortal_prune",
       "tech.active.stone_shell"
@@ -3465,7 +3465,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.waterfall_spirit",
-    "mastery_xp": 18629,
+    "mastery_xp": 3910,
     "art": {
       "icon": {
         "file": "assets/enemies/jade_immortal_realm/waterfall_spirit_icon.webp",
@@ -3509,18 +3509,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 4354045,
-      "atk": 380979,
-      "def": 176883,
-      "spd": 36,
+      "hp": 768000,
+      "atk": 67200,
+      "def": 31200,
+      "spd": 290,
       "crit": 23,
       "crit_dmg": 215,
       "acc": 103,
       "eva": 11,
-      "sp_power": 272128,
+      "sp_power": 48000,
       "sp_energy": 230
     },
-    "cp": 1360639,
+    "cp": 240000,
     "techniques": [
       "tech.active.immortal_prune",
       "tech.active.jade_tiger_claw"
@@ -3531,7 +3531,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.jade_guardian_beast",
-    "mastery_xp": 27222,
+    "mastery_xp": 4810,
     "art": {
       "icon": {
         "file": "assets/enemies/jade_immortal_realm/jade_guardian_beast_icon.webp",
@@ -3575,18 +3575,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 3437405,
-      "atk": 300773,
-      "def": 139645,
-      "spd": 36,
+      "hp": 720000,
+      "atk": 63000,
+      "def": 29250,
+      "spd": 290,
       "crit": 18,
       "crit_dmg": 215,
       "acc": 103,
       "eva": 11,
-      "sp_power": 214838,
+      "sp_power": 45000,
       "sp_energy": 230
     },
-    "cp": 1074189,
+    "cp": 225000,
     "techniques": [
       "tech.active.immortal_prune",
       "tech.active.bandit_slash"
@@ -3597,7 +3597,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.realm_exile",
-    "mastery_xp": 21493,
+    "mastery_xp": 4510,
     "art": {
       "icon": {
         "file": "assets/enemies/jade_immortal_realm/realm_exile_icon.webp",
@@ -3641,18 +3641,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 4697789,
-      "atk": 411057,
-      "def": 190848,
-      "spd": 38,
+      "hp": 432000,
+      "atk": 37800,
+      "def": 17550,
+      "spd": 350,
       "crit": 19,
       "crit_dmg": 220,
       "acc": 104,
       "eva": 12,
-      "sp_power": 293612,
+      "sp_power": 27000,
       "sp_energy": 240
     },
-    "cp": 1468059,
+    "cp": 135000,
     "techniques": [
       "tech.active.law_chain",
       "tech.active.stone_shell"
@@ -3663,7 +3663,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.law_enforcer",
-    "mastery_xp": 29371,
+    "mastery_xp": 2710,
     "art": {
       "icon": {
         "file": "assets/enemies/golden_palace_of_laws/law_enforcer_icon.webp",
@@ -3707,18 +3707,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 5402458,
-      "atk": 472715,
-      "def": 219475,
-      "spd": 38,
+      "hp": 496800,
+      "atk": 43470,
+      "def": 20182,
+      "spd": 350,
       "crit": 19,
       "crit_dmg": 220,
       "acc": 104,
       "eva": 12,
-      "sp_power": 337654,
+      "sp_power": 31050,
       "sp_energy": 240
     },
-    "cp": 1688268,
+    "cp": 155250,
     "techniques": [
       "tech.active.law_chain",
       "tech.active.savage_bite"
@@ -3729,7 +3729,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.golden_crow",
-    "mastery_xp": 33775,
+    "mastery_xp": 3115,
     "art": {
       "icon": {
         "file": "assets/enemies/golden_palace_of_laws/golden_crow_icon.webp",
@@ -3773,18 +3773,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 6107126,
-      "atk": 534374,
-      "def": 248102,
-      "spd": 38,
+      "hp": 561600,
+      "atk": 49140,
+      "def": 22815,
+      "spd": 350,
       "crit": 19,
       "crit_dmg": 220,
       "acc": 104,
       "eva": 12,
-      "sp_power": 381695,
+      "sp_power": 35100,
       "sp_energy": 240
     },
-    "cp": 1908477,
+    "cp": 175500,
     "techniques": [
       "tech.active.law_chain",
       "tech.active.stone_shell"
@@ -3795,7 +3795,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.scroll_golem",
-    "mastery_xp": 38179,
+    "mastery_xp": 3520,
     "art": {
       "icon": {
         "file": "assets/enemies/golden_palace_of_laws/scroll_golem_icon.webp",
@@ -3839,18 +3839,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 8925798,
-      "atk": 781007,
-      "def": 362611,
-      "spd": 38,
+      "hp": 691200,
+      "atk": 60480,
+      "def": 28080,
+      "spd": 350,
       "crit": 24,
       "crit_dmg": 220,
       "acc": 104,
       "eva": 12,
-      "sp_power": 557862,
+      "sp_power": 43200,
       "sp_energy": 240
     },
-    "cp": 2789312,
+    "cp": 216000,
     "techniques": [
       "tech.active.law_chain",
       "tech.active.verdict_of_heaven"
@@ -3861,7 +3861,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.nine_tailed_shadow",
-    "mastery_xp": 55796,
+    "mastery_xp": 4330,
     "art": {
       "icon": {
         "file": "assets/enemies/golden_palace_of_laws/nine_tailed_shadow_icon.webp",
@@ -3905,18 +3905,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 7046682,
-      "atk": 616585,
-      "def": 286271,
-      "spd": 38,
+      "hp": 648000,
+      "atk": 56700,
+      "def": 26325,
+      "spd": 350,
       "crit": 19,
       "crit_dmg": 220,
       "acc": 104,
       "eva": 12,
-      "sp_power": 440418,
+      "sp_power": 40500,
       "sp_energy": 240
     },
-    "cp": 2202088,
+    "cp": 202500,
     "techniques": [
       "tech.active.law_chain",
       "tech.active.bandit_slash"
@@ -3927,7 +3927,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.rebel_immortal",
-    "mastery_xp": 44051,
+    "mastery_xp": 4060,
     "art": {
       "icon": {
         "file": "assets/enemies/golden_palace_of_laws/rebel_immortal_icon.webp",
@@ -3971,18 +3971,18 @@
       "stage": 2
     },
     "stats": {
-      "hp": 9630467,
-      "atk": 842666,
-      "def": 391238,
-      "spd": 40,
+      "hp": 832000,
+      "atk": 72800,
+      "def": 33800,
+      "spd": 430,
       "crit": 20,
       "crit_dmg": 225,
       "acc": 105,
       "eva": 12,
-      "sp_power": 601904,
+      "sp_power": 52000,
       "sp_energy": 250
     },
-    "cp": 3009521,
+    "cp": 260000,
     "techniques": [
       "tech.active.starlight_tide",
       "tech.active.stone_shell"
@@ -3993,7 +3993,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.azure_dragon_guard",
-    "mastery_xp": 60200,
+    "mastery_xp": 5210,
     "art": {
       "icon": {
         "file": "assets/enemies/throne_of_the_immortal_emperor/azure_dragon_guard_icon.webp",
@@ -4037,18 +4037,18 @@
       "stage": 3
     },
     "stats": {
-      "hp": 11075037,
-      "atk": 969066,
-      "def": 449923,
-      "spd": 40,
+      "hp": 956800,
+      "atk": 83720,
+      "def": 38870,
+      "spd": 430,
       "crit": 20,
       "crit_dmg": 225,
       "acc": 105,
       "eva": 12,
-      "sp_power": 692190,
+      "sp_power": 59800,
       "sp_energy": 250
     },
-    "cp": 3460949,
+    "cp": 299000,
     "techniques": [
       "tech.active.starlight_tide",
       "tech.active.stone_shell"
@@ -4059,7 +4059,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.five_element_sentinel",
-    "mastery_xp": 69228,
+    "mastery_xp": 5990,
     "art": {
       "icon": {
         "file": "assets/enemies/throne_of_the_immortal_emperor/five_element_sentinel_icon.webp",
@@ -4103,18 +4103,18 @@
       "stage": 4
     },
     "stats": {
-      "hp": 12519606,
-      "atk": 1095466,
-      "def": 508609,
-      "spd": 40,
+      "hp": 1081600,
+      "atk": 94640,
+      "def": 43940,
+      "spd": 430,
       "crit": 20,
       "crit_dmg": 225,
       "acc": 105,
       "eva": 12,
-      "sp_power": 782475,
+      "sp_power": 67600,
       "sp_energy": 250
     },
-    "cp": 3912377,
+    "cp": 338000,
     "techniques": [
       "tech.active.starlight_tide",
       "tech.active.savage_bite"
@@ -4125,7 +4125,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.star_whale",
-    "mastery_xp": 78257,
+    "mastery_xp": 6770,
     "art": {
       "icon": {
         "file": "assets/enemies/throne_of_the_immortal_emperor/star_whale_icon.webp",
@@ -4169,18 +4169,18 @@
       "stage": 6
     },
     "stats": {
-      "hp": 18297888,
-      "atk": 1601065,
-      "def": 743352,
-      "spd": 40,
+      "hp": 1331200,
+      "atk": 116480,
+      "def": 54080,
+      "spd": 430,
       "crit": 25,
       "crit_dmg": 225,
       "acc": 105,
       "eva": 12,
-      "sp_power": 1143618,
+      "sp_power": 83200,
       "sp_energy": 250
     },
-    "cp": 5718090,
+    "cp": 416000,
     "techniques": [
       "tech.active.starlight_tide",
       "tech.active.emperors_five_element_seal"
@@ -4191,7 +4191,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.emperors_shadow",
-    "mastery_xp": 114371,
+    "mastery_xp": 8330,
     "art": {
       "icon": {
         "file": "assets/enemies/throne_of_the_immortal_emperor/emperors_shadow_icon.webp",
@@ -4235,18 +4235,18 @@
       "stage": 5
     },
     "stats": {
-      "hp": 14445702,
-      "atk": 1263999,
-      "def": 586857,
-      "spd": 40,
+      "hp": 1248000,
+      "atk": 109200,
+      "def": 50700,
+      "spd": 430,
       "crit": 20,
       "crit_dmg": 225,
       "acc": 105,
       "eva": 12,
-      "sp_power": 902856,
+      "sp_power": 78000,
       "sp_energy": 250
     },
-    "cp": 4514282,
+    "cp": 390000,
     "techniques": [
       "tech.active.starlight_tide",
       "tech.active.bandit_slash"
@@ -4257,7 +4257,7 @@
     },
     "resistances": {},
     "loot": "loot.enemy.throne_usurper",
-    "mastery_xp": 90295,
+    "mastery_xp": 7810,
     "art": {
       "icon": {
         "file": "assets/enemies/throne_of_the_immortal_emperor/throne_usurper_icon.webp",

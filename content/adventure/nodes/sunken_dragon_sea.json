@@ -13,7 +13,7 @@
       "node.sunken_dragon_sea.gathering",
       "node.sunken_dragon_sea.outskirts"
     ],
-    "rec_cp": 83124,
+    "rec_cp": 52000,
     "first_clear": {
       "spirit_stones": 1500
     },
@@ -44,7 +44,7 @@
       "node.sunken_dragon_sea.west_path",
       "node.sunken_dragon_sea.cache"
     ],
-    "rec_cp": 95094,
+    "rec_cp": 59488,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 10,
@@ -78,7 +78,7 @@
       "node.sunken_dragon_sea.cache",
       "node.sunken_dragon_sea.east_path"
     ],
-    "rec_cp": 89774,
+    "rec_cp": 56160,
     "first_clear": {
       "spirit_stones": 1500
     },
@@ -109,7 +109,7 @@
       "node.sunken_dragon_sea.gathering",
       "node.sunken_dragon_sea.lair"
     ],
-    "rec_cp": 93099,
+    "rec_cp": 58240,
     "first_clear": {
       "spirit_stones": 1500
     },
@@ -141,7 +141,7 @@
       "node.sunken_dragon_sea.outskirts",
       "node.sunken_dragon_sea.crossroads"
     ],
-    "rec_cp": 106066,
+    "rec_cp": 66352,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 10,
@@ -161,7 +161,7 @@
       "node.sunken_dragon_sea.outskirts",
       "node.sunken_dragon_sea.ridge"
     ],
-    "rec_cp": 99749,
+    "rec_cp": 62400,
     "first_clear": {
       "spirit_stones": 1500
     },
@@ -192,7 +192,7 @@
       "node.sunken_dragon_sea.west_path",
       "node.sunken_dragon_sea.deep_path"
     ],
-    "rec_cp": 195840,
+    "rec_cp": 103168,
     "first_clear": {
       "spirit_stones": 4000,
       "items": [
@@ -225,7 +225,7 @@
       "node.sunken_dragon_sea.deep_path",
       "node.sunken_dragon_sea.sanctum"
     ],
-    "rec_cp": 117039,
+    "rec_cp": 73216,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 10,
@@ -245,7 +245,7 @@
       "node.sunken_dragon_sea.east_path",
       "node.sunken_dragon_sea.sanctum"
     ],
-    "rec_cp": 109724,
+    "rec_cp": 68640,
     "first_clear": {
       "spirit_stones": 1500
     },
@@ -276,7 +276,7 @@
       "node.sunken_dragon_sea.crossroads",
       "node.sunken_dragon_sea.den"
     ],
-    "rec_cp": 113049,
+    "rec_cp": 70720,
     "first_clear": {
       "spirit_stones": 1500
     },
@@ -309,7 +309,7 @@
       "node.sunken_dragon_sea.hidden_grove",
       "node.sunken_dragon_sea.approach"
     ],
-    "rec_cp": 128011,
+    "rec_cp": 80080,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 10,
@@ -333,7 +333,7 @@
       "node.sunken_dragon_sea.deep_path",
       "node.sunken_dragon_sea.throne"
     ],
-    "rec_cp": 227427,
+    "rec_cp": 119808,
     "first_clear": {
       "spirit_stones": 4000,
       "items": [
@@ -369,7 +369,7 @@
       "node.sunken_dragon_sea.sanctum",
       "node.sunken_dragon_sea.approach"
     ],
-    "rec_cp": 135326,
+    "rec_cp": 84656,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 10,
@@ -394,7 +394,7 @@
       "node.sunken_dragon_sea.hidden_grove",
       "node.sunken_dragon_sea.throne"
     ],
-    "rec_cp": 126348,
+    "rec_cp": 79040,
     "first_clear": {
       "spirit_stones": 1500
     },
@@ -425,7 +425,7 @@
       "node.sunken_dragon_sea.den",
       "node.sunken_dragon_sea.approach"
     ],
-    "rec_cp": 544628,
+    "rec_cp": 121680,
     "first_clear": {
       "spirit_stones": 15000,
       "sect_fame": 400
@@ -434,8 +434,8 @@
     "energy_cost": 10,
     "waves": [
       [
-        "enemy.bone_dragon_spirit",
-        "enemy.tide_kraken"
+        "enemy.coral_naga",
+        "enemy.abyssal_angler"
       ],
       [
         "boss.drowned_dragon_lord"

@@ -13,7 +13,7 @@
       "node.throne_of_the_immortal_emperor.gathering",
       "node.throne_of_the_immortal_emperor.outskirts"
     ],
-    "rec_cp": 3009521,
+    "rec_cp": 260000,
     "first_clear": {
       "spirit_stones": 3375
     },
@@ -44,7 +44,7 @@
       "node.throne_of_the_immortal_emperor.west_path",
       "node.throne_of_the_immortal_emperor.cache"
     ],
-    "rec_cp": 3442892,
+    "rec_cp": 297440,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 12,
@@ -78,7 +78,7 @@
       "node.throne_of_the_immortal_emperor.cache",
       "node.throne_of_the_immortal_emperor.east_path"
     ],
-    "rec_cp": 3250283,
+    "rec_cp": 280800,
     "first_clear": {
       "spirit_stones": 3375
     },
@@ -109,7 +109,7 @@
       "node.throne_of_the_immortal_emperor.gathering",
       "node.throne_of_the_immortal_emperor.lair"
     ],
-    "rec_cp": 3370664,
+    "rec_cp": 291200,
     "first_clear": {
       "spirit_stones": 3375
     },
@@ -141,7 +141,7 @@
       "node.throne_of_the_immortal_emperor.outskirts",
       "node.throne_of_the_immortal_emperor.crossroads"
     ],
-    "rec_cp": 3840149,
+    "rec_cp": 331760,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 12,
@@ -161,7 +161,7 @@
       "node.throne_of_the_immortal_emperor.outskirts",
       "node.throne_of_the_immortal_emperor.ridge"
     ],
-    "rec_cp": 3611425,
+    "rec_cp": 312000,
     "first_clear": {
       "spirit_stones": 3375
     },
@@ -192,7 +192,7 @@
       "node.throne_of_the_immortal_emperor.west_path",
       "node.throne_of_the_immortal_emperor.deep_path"
     ],
-    "rec_cp": 7090431,
+    "rec_cp": 515840,
     "first_clear": {
       "spirit_stones": 9000,
       "items": [
@@ -225,7 +225,7 @@
       "node.throne_of_the_immortal_emperor.deep_path",
       "node.throne_of_the_immortal_emperor.sanctum"
     ],
-    "rec_cp": 4237406,
+    "rec_cp": 366080,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 12,
@@ -245,7 +245,7 @@
       "node.throne_of_the_immortal_emperor.east_path",
       "node.throne_of_the_immortal_emperor.sanctum"
     ],
-    "rec_cp": 3972568,
+    "rec_cp": 343200,
     "first_clear": {
       "spirit_stones": 3375
     },
@@ -276,7 +276,7 @@
       "node.throne_of_the_immortal_emperor.crossroads",
       "node.throne_of_the_immortal_emperor.den"
     ],
-    "rec_cp": 4092949,
+    "rec_cp": 353600,
     "first_clear": {
       "spirit_stones": 3375
     },
@@ -309,7 +309,7 @@
       "node.throne_of_the_immortal_emperor.hidden_grove",
       "node.throne_of_the_immortal_emperor.approach"
     ],
-    "rec_cp": 4634662,
+    "rec_cp": 400400,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 12,
@@ -333,7 +333,7 @@
       "node.throne_of_the_immortal_emperor.deep_path",
       "node.throne_of_the_immortal_emperor.throne"
     ],
-    "rec_cp": 8234049,
+    "rec_cp": 599040,
     "first_clear": {
       "spirit_stones": 9000,
       "items": [
@@ -369,7 +369,7 @@
       "node.throne_of_the_immortal_emperor.sanctum",
       "node.throne_of_the_immortal_emperor.approach"
     ],
-    "rec_cp": 4899500,
+    "rec_cp": 423280,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 12,
@@ -394,7 +394,7 @@
       "node.throne_of_the_immortal_emperor.hidden_grove",
       "node.throne_of_the_immortal_emperor.throne"
     ],
-    "rec_cp": 4574472,
+    "rec_cp": 395200,
     "first_clear": {
       "spirit_stones": 3375
     },
@@ -425,7 +425,7 @@
       "node.throne_of_the_immortal_emperor.den",
       "node.throne_of_the_immortal_emperor.approach"
     ],
-    "rec_cp": 19718382,
+    "rec_cp": 608400,
     "first_clear": {
       "spirit_stones": 33750,
       "sect_fame": 600
@@ -434,8 +434,8 @@
     "energy_cost": 12,
     "waves": [
       [
-        "enemy.star_whale",
-        "enemy.emperors_shadow"
+        "enemy.azure_dragon_guard",
+        "enemy.five_element_sentinel"
       ],
       [
         "boss.first_emperor_remnant"

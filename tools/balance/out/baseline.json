@@ -1,0 +1,3031 @@
+{
+ "seeds": 8,
+ "generatedAt": "2026-10-29T20:38:37.321Z",
+ "regions": [
+  {
+   "region": "region.mortal_plains",
+   "order": 1,
+   "realm": "realm.qi_condensation",
+   "cp": {
+    "bare": 409,
+    "fitted": 816,
+    "geared": 1324
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 100,
+      "rounds": 8.1,
+      "hp": 73,
+      "n": 24,
+      "text": "100% (8.1r, hp 73%)"
+     },
+     "elite": {
+      "win": 63,
+      "rounds": 9.6,
+      "hp": 16,
+      "n": 8,
+      "text": "63% (9.6r, hp 16%)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 14.6,
+      "hp": null,
+      "n": 8,
+      "text": "0% (14.6r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 5.3,
+      "hp": 100,
+      "n": 24,
+      "text": "100% (5.3r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 6,
+      "hp": 99,
+      "n": 8,
+      "text": "100% (6.0r, hp 99%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 13.6,
+      "hp": 94,
+      "n": 8,
+      "text": "100% (13.6r, hp 94%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 4.7,
+      "hp": 100,
+      "n": 24,
+      "text": "100% (4.7r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 4,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (4.0r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 9.5,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (9.5r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.old_granary_cellars": {
+      "win": 100,
+      "rounds": 21.5,
+      "text": "100% (21.5r, hp 22%)"
+     },
+     "dungeon.spirit_stone_mine": {
+      "win": 0,
+      "rounds": 20.5,
+      "text": "0% (20.5r)"
+     }
+    },
+    "fitted": {
+     "dungeon.old_granary_cellars": {
+      "win": 100,
+      "rounds": 13,
+      "text": "100% (13.0r, hp 100%)"
+     },
+     "dungeon.spirit_stone_mine": {
+      "win": 100,
+      "rounds": 14.5,
+      "text": "100% (14.5r, hp 100%)"
+     }
+    },
+    "geared": {
+     "dungeon.old_granary_cellars": {
+      "win": 100,
+      "rounds": 10.8,
+      "text": "100% (10.8r, hp 100%)"
+     },
+     "dungeon.spirit_stone_mine": {
+      "win": 100,
+      "rounds": 12,
+      "text": "100% (12.0r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {},
+   "tower": {
+    "fitted": {
+     "stall": 27,
+     "recAt": 2323
+    },
+    "geared": {
+     "stall": 40,
+     "recAt": 5598
+    }
+   }
+  },
+  {
+   "region": "region.azure_bamboo_forest",
+   "order": 2,
+   "realm": "realm.qi_condensation",
+   "cp": {
+    "bare": 409,
+    "fitted": 828,
+    "geared": 3038
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 46,
+      "rounds": 10.5,
+      "hp": 22,
+      "n": 24,
+      "text": "46% (10.5r, hp 22%)"
+     },
+     "elite": {
+      "win": 13,
+      "rounds": 4.8,
+      "hp": 17,
+      "n": 16,
+      "text": "13% (4.8r, hp 17%)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 14.9,
+      "hp": null,
+      "n": 8,
+      "text": "0% (14.9r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 4.3,
+      "hp": 100,
+      "n": 24,
+      "text": "100% (4.3r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 3,
+      "hp": 99,
+      "n": 16,
+      "text": "100% (3.0r, hp 99%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 19.1,
+      "hp": 89,
+      "n": 8,
+      "text": "100% (19.1r, hp 89%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 3.4,
+      "hp": 100,
+      "n": 24,
+      "text": "100% (3.4r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 2,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (2.0r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 8,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (8.0r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.spirit_stone_mine": {
+      "win": 0,
+      "rounds": 20.5,
+      "text": "0% (20.5r)"
+     },
+     "dungeon.green_labyrinth": {
+      "win": 0,
+      "rounds": 5.8,
+      "text": "0% (5.8r)"
+     }
+    },
+    "fitted": {
+     "dungeon.spirit_stone_mine": {
+      "win": 100,
+      "rounds": 6.8,
+      "text": "100% (6.8r, hp 100%)"
+     },
+     "dungeon.green_labyrinth": {
+      "win": 100,
+      "rounds": 10,
+      "text": "100% (10.0r, hp 100%)"
+     }
+    },
+    "geared": {
+     "dungeon.spirit_stone_mine": {
+      "win": 100,
+      "rounds": 6,
+      "text": "100% (6.0r, hp 100%)"
+     },
+     "dungeon.green_labyrinth": {
+      "win": 100,
+      "rounds": 6,
+      "text": "100% (6.0r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {},
+   "tower": {
+    "fitted": {
+     "stall": 29,
+     "recAt": 2660
+    },
+    "geared": {
+     "stall": 51,
+     "recAt": 11783
+    }
+   }
+  },
+  {
+   "region": "region.blazing_mountain",
+   "order": 3,
+   "realm": "realm.foundation_establishment",
+   "cp": {
+    "bare": 1242,
+    "fitted": 2253,
+    "geared": 5522
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 13,
+      "rounds": 14.1,
+      "hp": 15,
+      "n": 56,
+      "text": "13% (14.1r, hp 15%)"
+     },
+     "elite": {
+      "win": 13,
+      "rounds": 11.3,
+      "hp": 21,
+      "n": 16,
+      "text": "13% (11.3r, hp 21%)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 8,
+      "hp": null,
+      "n": 8,
+      "text": "0% (8.0r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 6.1,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (6.1r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 4.8,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (4.8r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 12.4,
+      "hp": 93,
+      "n": 8,
+      "text": "100% (12.4r, hp 93%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 4,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (4.0r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 3,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (3.0r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 6.3,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (6.3r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.ember_forge_ruins": {
+      "win": 0,
+      "rounds": 13.8,
+      "text": "0% (13.8r)"
+     }
+    },
+    "fitted": {
+     "dungeon.ember_forge_ruins": {
+      "win": 100,
+      "rounds": 19.5,
+      "text": "100% (19.5r, hp 99%)"
+     }
+    },
+    "geared": {
+     "dungeon.ember_forge_ruins": {
+      "win": 100,
+      "rounds": 8,
+      "text": "100% (8.0r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {},
+   "tower": {
+    "fitted": {
+     "stall": 40,
+     "recAt": 5598
+    },
+    "geared": {
+     "stall": 69,
+     "recAt": 39825
+    }
+   }
+  },
+  {
+   "region": "region.frozen_lotus_valley",
+   "order": 4,
+   "realm": "realm.foundation_establishment",
+   "cp": {
+    "bare": 1242,
+    "fitted": 2792,
+    "geared": 9184
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 0,
+      "rounds": 2.3,
+      "hp": null,
+      "n": 56,
+      "text": "0% (2.3r)"
+     },
+     "elite": {
+      "win": 0,
+      "rounds": 2.8,
+      "hp": null,
+      "n": 16,
+      "text": "0% (2.8r)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 1.1,
+      "hp": null,
+      "n": 8,
+      "text": "0% (1.1r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 7.9,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (7.9r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 6.9,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (6.9r, hp 100%)"
+     },
+     "boss": {
+      "win": 88,
+      "rounds": 17.5,
+      "hp": 81,
+      "n": 8,
+      "text": "88% (17.5r, hp 81%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 5.7,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (5.7r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 3.6,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (3.6r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 5,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (5.0r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.glacier_caverns": {
+      "win": 0,
+      "rounds": 2,
+      "text": "0% (2.0r)"
+     }
+    },
+    "fitted": {
+     "dungeon.glacier_caverns": {
+      "win": 100,
+      "rounds": 20.8,
+      "text": "100% (20.8r, hp 100%)"
+     }
+    },
+    "geared": {
+     "dungeon.glacier_caverns": {
+      "win": 100,
+      "rounds": 10.3,
+      "text": "100% (10.3r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {
+    "fitted": {
+     "id": "tribulation.core_formation",
+     "win": 100,
+     "text": "100% (6.9r, hp 90%)"
+    },
+    "geared": {
+     "id": "tribulation.core_formation",
+     "win": 100,
+     "text": "100% (2.0r, hp 100%)"
+    }
+   },
+   "tower": {
+    "fitted": {
+     "stall": 49,
+     "recAt": 10292
+    },
+    "geared": {
+     "stall": 89,
+     "recAt": 154111
+    }
+   }
+  },
+  {
+   "region": "region.ancient_sword_tomb",
+   "order": 5,
+   "realm": "realm.core_formation",
+   "cp": {
+    "bare": 3256,
+    "fitted": 5399,
+    "geared": 16472
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 0,
+      "rounds": 5.8,
+      "hp": null,
+      "n": 56,
+      "text": "0% (5.8r)"
+     },
+     "elite": {
+      "win": 0,
+      "rounds": 5.3,
+      "hp": null,
+      "n": 16,
+      "text": "0% (5.3r)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 3.3,
+      "hp": null,
+      "n": 8,
+      "text": "0% (3.3r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 9.3,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (9.3r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 7.3,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (7.3r, hp 100%)"
+     },
+     "boss": {
+      "win": 63,
+      "rounds": 17.5,
+      "hp": 90,
+      "n": 8,
+      "text": "63% (17.5r, hp 90%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 5.7,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (5.7r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 3.6,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (3.6r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 5,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (5.0r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.hall_of_ten_thousand_blades": {
+      "win": 0,
+      "rounds": 5.8,
+      "text": "0% (5.8r)"
+     }
+    },
+    "fitted": {
+     "dungeon.hall_of_ten_thousand_blades": {
+      "win": 100,
+      "rounds": 22,
+      "text": "100% (22.0r, hp 100%)"
+     }
+    },
+    "geared": {
+     "dungeon.hall_of_ten_thousand_blades": {
+      "win": 100,
+      "rounds": 10.5,
+      "text": "100% (10.5r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {
+    "fitted": {
+     "id": "tribulation.core_formation",
+     "win": 100,
+     "text": "100% (4.8r, hp 95%)"
+    },
+    "geared": {
+     "id": "tribulation.core_formation",
+     "win": 100,
+     "text": "100% (2.0r, hp 100%)"
+    }
+   },
+   "tower": {
+    "fitted": {
+     "stall": 63,
+     "recAt": 26537
+    },
+    "geared": {
+     "stall": 100,
+     "recAt": 324380
+    }
+   }
+  },
+  {
+   "region": "region.demon_territory",
+   "order": 6,
+   "realm": "realm.nascent_soul",
+   "cp": {
+    "bare": 6988,
+    "fitted": 11624,
+    "geared": 24127
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 0,
+      "rounds": 11.2,
+      "hp": null,
+      "n": 56,
+      "text": "0% (11.2r)"
+     },
+     "elite": {
+      "win": 0,
+      "rounds": 10.2,
+      "hp": null,
+      "n": 16,
+      "text": "0% (10.2r)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 6.5,
+      "hp": null,
+      "n": 8,
+      "text": "0% (6.5r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 6,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (6.0r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 4.1,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (4.1r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 7.4,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (7.4r, hp 100%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 5.8,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (5.8r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 3.5,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (3.5r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 5,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (5.0r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.blood_river_prison": {
+      "win": 0,
+      "rounds": 11.8,
+      "text": "0% (11.8r)"
+     }
+    },
+    "fitted": {
+     "dungeon.blood_river_prison": {
+      "win": 100,
+      "rounds": 12.3,
+      "text": "100% (12.3r, hp 100%)"
+     }
+    },
+    "geared": {
+     "dungeon.blood_river_prison": {
+      "win": 100,
+      "rounds": 10,
+      "text": "100% (10.0r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {},
+   "tower": {
+    "fitted": {
+     "stall": 90,
+     "recAt": 164898
+    },
+    "geared": {
+     "stall": 100,
+     "recAt": 324380
+    }
+   }
+  },
+  {
+   "region": "region.celestial_mountains",
+   "order": 7,
+   "realm": "realm.soul_transformation",
+   "cp": {
+    "bare": 12972,
+    "fitted": 18799,
+    "geared": 34020
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 0,
+      "rounds": 8.9,
+      "hp": null,
+      "n": 56,
+      "text": "0% (8.9r)"
+     },
+     "elite": {
+      "win": 0,
+      "rounds": 8.1,
+      "hp": null,
+      "n": 16,
+      "text": "0% (8.1r)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 4.8,
+      "hp": null,
+      "n": 8,
+      "text": "0% (4.8r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 4.3,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (4.3r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 3.5,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (3.5r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 6,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (6.0r, hp 100%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 4.1,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (4.1r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 3.1,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (3.1r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 4,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (4.0r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.thunder_pine_sanctum": {
+      "win": 0,
+      "rounds": 12,
+      "text": "0% (12.0r)"
+     }
+    },
+    "fitted": {
+     "dungeon.thunder_pine_sanctum": {
+      "win": 100,
+      "rounds": 8.8,
+      "text": "100% (8.8r, hp 100%)"
+     }
+    },
+    "geared": {
+     "dungeon.thunder_pine_sanctum": {
+      "win": 100,
+      "rounds": 8.5,
+      "text": "100% (8.5r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {
+    "fitted": {
+     "id": "tribulation.soul_transformation",
+     "win": 100,
+     "text": "100% (2.5r, hp 98%)"
+    },
+    "geared": {
+     "id": "tribulation.soul_transformation",
+     "win": 100,
+     "text": "100% (2.0r, hp 100%)"
+    }
+   },
+   "tower": {
+    "fitted": {
+     "stall": 100,
+     "recAt": 324380
+    },
+    "geared": {
+     "stall": 100,
+     "recAt": 324380
+    }
+   }
+  },
+  {
+   "region": "region.nine_heavens",
+   "order": 8,
+   "realm": "realm.spirit_severing",
+   "cp": {
+    "bare": 21749,
+    "fitted": 28934,
+    "geared": 57368
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 0,
+      "rounds": 8.4,
+      "hp": null,
+      "n": 56,
+      "text": "0% (8.4r)"
+     },
+     "elite": {
+      "win": 0,
+      "rounds": 9.3,
+      "hp": null,
+      "n": 16,
+      "text": "0% (9.3r)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 3.8,
+      "hp": null,
+      "n": 8,
+      "text": "0% (3.8r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 5.3,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (5.3r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 4,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (4.0r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 9.5,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (9.5r, hp 100%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 2.8,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (2.8r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 2,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (2.0r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 3,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (3.0r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.abyss_of_the_nine_heavens": {
+      "win": 0,
+      "rounds": 7,
+      "text": "0% (7.0r)"
+     },
+     "dungeon.sunken_star_palace": {
+      "win": 0,
+      "rounds": 10,
+      "text": "0% (10.0r)"
+     }
+    },
+    "fitted": {
+     "dungeon.abyss_of_the_nine_heavens": {
+      "win": 100,
+      "rounds": 16.8,
+      "text": "100% (16.8r, hp 100%)"
+     },
+     "dungeon.sunken_star_palace": {
+      "win": 100,
+      "rounds": 8.3,
+      "text": "100% (8.3r, hp 100%)"
+     }
+    },
+    "geared": {
+     "dungeon.abyss_of_the_nine_heavens": {
+      "win": 100,
+      "rounds": 6.5,
+      "text": "100% (6.5r, hp 100%)"
+     },
+     "dungeon.sunken_star_palace": {
+      "win": 100,
+      "rounds": 5.5,
+      "text": "100% (5.5r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {},
+   "tower": {
+    "fitted": {
+     "stall": 100,
+     "recAt": 324380
+    },
+    "geared": {
+     "stall": 100,
+     "recAt": 324380
+    }
+   }
+  },
+  {
+   "region": "region.thunderclap_wastes",
+   "order": 9,
+   "realm": "realm.dao_integration",
+   "cp": {
+    "bare": 33858,
+    "fitted": 49427,
+    "geared": 77606
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 0,
+      "rounds": 9.1,
+      "hp": null,
+      "n": 56,
+      "text": "0% (9.1r)"
+     },
+     "elite": {
+      "win": 0,
+      "rounds": 6,
+      "hp": null,
+      "n": 16,
+      "text": "0% (6.0r)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 4.5,
+      "hp": null,
+      "n": 8,
+      "text": "0% (4.5r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 4.1,
+      "hp": 98,
+      "n": 56,
+      "text": "100% (4.1r, hp 98%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 3.1,
+      "hp": 99,
+      "n": 16,
+      "text": "100% (3.1r, hp 99%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 5.8,
+      "hp": 98,
+      "n": 8,
+      "text": "100% (5.8r, hp 98%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 2.8,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (2.8r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 2.2,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (2.2r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 3.3,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (3.3r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.glass_labyrinth": {
+      "win": 0,
+      "rounds": 8,
+      "text": "0% (8.0r)"
+     }
+    },
+    "fitted": {
+     "dungeon.glass_labyrinth": {
+      "win": 100,
+      "rounds": 8.5,
+      "text": "100% (8.5r, hp 98%)"
+     }
+    },
+    "geared": {
+     "dungeon.glass_labyrinth": {
+      "win": 100,
+      "rounds": 5.8,
+      "text": "100% (5.8r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {},
+   "tower": {
+    "fitted": {
+     "stall": 100,
+     "recAt": 324380
+    },
+    "geared": {
+     "stall": 100,
+     "recAt": 324380
+    }
+   }
+  },
+  {
+   "region": "region.sunken_dragon_sea",
+   "order": 10,
+   "realm": "realm.tribulation_transcendence",
+   "cp": {
+    "bare": 49831,
+    "fitted": 68605,
+    "geared": 101976
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 0,
+      "rounds": 5.9,
+      "hp": null,
+      "n": 56,
+      "text": "0% (5.9r)"
+     },
+     "elite": {
+      "win": 0,
+      "rounds": 5.2,
+      "hp": null,
+      "n": 16,
+      "text": "0% (5.2r)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 5,
+      "hp": null,
+      "n": 8,
+      "text": "0% (5.0r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 4.3,
+      "hp": 98,
+      "n": 56,
+      "text": "100% (4.3r, hp 98%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 3,
+      "hp": 98,
+      "n": 16,
+      "text": "100% (3.0r, hp 98%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 4.8,
+      "hp": 98,
+      "n": 8,
+      "text": "100% (4.8r, hp 98%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 3.3,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (3.3r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 2.1,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (2.1r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 3.3,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (3.3r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.coral_labyrinth": {
+      "win": 0,
+      "rounds": 5,
+      "text": "0% (5.0r)"
+     },
+     "dungeon.dragon_king_palace": {
+      "win": 0,
+      "rounds": 5,
+      "text": "0% (5.0r)"
+     }
+    },
+    "fitted": {
+     "dungeon.coral_labyrinth": {
+      "win": 100,
+      "rounds": 9,
+      "text": "100% (9.0r, hp 98%)"
+     },
+     "dungeon.dragon_king_palace": {
+      "win": 100,
+      "rounds": 15,
+      "text": "100% (15.0r, hp 98%)"
+     }
+    },
+    "geared": {
+     "dungeon.coral_labyrinth": {
+      "win": 100,
+      "rounds": 6.5,
+      "text": "100% (6.5r, hp 100%)"
+     },
+     "dungeon.dragon_king_palace": {
+      "win": 100,
+      "rounds": 7.8,
+      "text": "100% (7.8r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {
+    "fitted": {
+     "id": "tribulation.tribulation_transcendence",
+     "win": 100,
+     "text": "100% (2.1r, hp 97%)"
+    },
+    "geared": {
+     "id": "tribulation.tribulation_transcendence",
+     "win": 100,
+     "text": "100% (1.8r, hp 100%)"
+    }
+   },
+   "tower": {
+    "fitted": {
+     "stall": 100,
+     "recAt": 324380
+    },
+    "geared": {
+     "stall": 100,
+     "recAt": 324380
+    }
+   }
+  },
+  {
+   "region": "region.starfall_desert",
+   "order": 11,
+   "realm": "realm.mahayana",
+   "cp": {
+    "bare": 70210,
+    "fitted": 92126,
+    "geared": 133803
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 0,
+      "rounds": 6.6,
+      "hp": null,
+      "n": 56,
+      "text": "0% (6.6r)"
+     },
+     "elite": {
+      "win": 0,
+      "rounds": 6.3,
+      "hp": null,
+      "n": 16,
+      "text": "0% (6.3r)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 6.5,
+      "hp": null,
+      "n": 8,
+      "text": "0% (6.5r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 4.6,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (4.6r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 3.7,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (3.7r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 5.4,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (5.4r, hp 100%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 3.1,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (3.1r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 2.5,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (2.5r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 3,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (3.0r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.buried_star_temple": {
+      "win": 0,
+      "rounds": 6,
+      "text": "0% (6.0r)"
+     }
+    },
+    "fitted": {
+     "dungeon.buried_star_temple": {
+      "win": 100,
+      "rounds": 9.3,
+      "text": "100% (9.3r, hp 100%)"
+     }
+    },
+    "geared": {
+     "dungeon.buried_star_temple": {
+      "win": 100,
+      "rounds": 5.5,
+      "text": "100% (5.5r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {},
+   "tower": {
+    "fitted": {
+     "stall": 100,
+     "recAt": 324380
+    },
+    "geared": {
+     "stall": 100,
+     "recAt": 324380
+    }
+   }
+  },
+  {
+   "region": "region.gate_of_ascension",
+   "order": 12,
+   "realm": "realm.immortal_ascension",
+   "cp": {
+    "bare": 95534,
+    "fitted": 134283,
+    "geared": 170369
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 0,
+      "rounds": 5.2,
+      "hp": null,
+      "n": 56,
+      "text": "0% (5.2r)"
+     },
+     "elite": {
+      "win": 0,
+      "rounds": 5,
+      "hp": null,
+      "n": 16,
+      "text": "0% (5.0r)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 5,
+      "hp": null,
+      "n": 8,
+      "text": "0% (5.0r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 3.8,
+      "hp": 99,
+      "n": 56,
+      "text": "100% (3.8r, hp 99%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 2.8,
+      "hp": 99,
+      "n": 16,
+      "text": "100% (2.8r, hp 99%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 10.8,
+      "hp": 99,
+      "n": 8,
+      "text": "100% (10.8r, hp 99%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 3.4,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (3.4r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 2.3,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (2.3r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 3.8,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (3.8r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.trial_of_nine_flames": {
+      "win": 0,
+      "rounds": 5,
+      "text": "0% (5.0r)"
+     },
+     "dungeon.fallen_heaven_ruins": {
+      "win": 0,
+      "rounds": 5,
+      "text": "0% (5.0r)"
+     }
+    },
+    "fitted": {
+     "dungeon.trial_of_nine_flames": {
+      "win": 100,
+      "rounds": 7.3,
+      "text": "100% (7.3r, hp 99%)"
+     },
+     "dungeon.fallen_heaven_ruins": {
+      "win": 100,
+      "rounds": 19.3,
+      "text": "100% (19.3r, hp 99%)"
+     }
+    },
+    "geared": {
+     "dungeon.trial_of_nine_flames": {
+      "win": 100,
+      "rounds": 7,
+      "text": "100% (7.0r, hp 100%)"
+     },
+     "dungeon.fallen_heaven_ruins": {
+      "win": 100,
+      "rounds": 10,
+      "text": "100% (10.0r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {
+    "fitted": {
+     "id": "tribulation.immortal_ascension",
+     "win": 50,
+     "text": "50% (1.8r, hp 92%)"
+    },
+    "geared": {
+     "id": "tribulation.immortal_ascension",
+     "win": 50,
+     "text": "50% (1.5r, hp 94%)"
+    }
+   },
+   "tower": {
+    "fitted": {
+     "stall": 100,
+     "recAt": 324380
+    },
+    "geared": {
+     "stall": 100,
+     "recAt": 324380
+    }
+   }
+  },
+  {
+   "region": "region.jade_immortal_realm",
+   "order": 13,
+   "realm": "realm.earth_immortal",
+   "cp": {
+    "bare": 126335,
+    "fitted": 171557,
+    "geared": 210540
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 0,
+      "rounds": 6,
+      "hp": null,
+      "n": 56,
+      "text": "0% (6.0r)"
+     },
+     "elite": {
+      "win": 0,
+      "rounds": 6,
+      "hp": null,
+      "n": 16,
+      "text": "0% (6.0r)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 6,
+      "hp": null,
+      "n": 8,
+      "text": "0% (6.0r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 4.3,
+      "hp": 99,
+      "n": 56,
+      "text": "100% (4.3r, hp 99%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 4.4,
+      "hp": 99,
+      "n": 16,
+      "text": "100% (4.4r, hp 99%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 13.3,
+      "hp": 99,
+      "n": 8,
+      "text": "100% (13.3r, hp 99%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 3.1,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (3.1r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 3.2,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (3.2r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 6.5,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (6.5r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.immortal_peach_garden": {
+      "win": 0,
+      "rounds": 6,
+      "text": "0% (6.0r)"
+     }
+    },
+    "fitted": {
+     "dungeon.immortal_peach_garden": {
+      "win": 100,
+      "rounds": 13,
+      "text": "100% (13.0r, hp 99%)"
+     }
+    },
+    "geared": {
+     "dungeon.immortal_peach_garden": {
+      "win": 100,
+      "rounds": 9.5,
+      "text": "100% (9.5r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {},
+   "tower": {
+    "fitted": {
+     "stall": 100,
+     "recAt": 324380
+    },
+    "geared": {
+     "stall": 100,
+     "recAt": 324380
+    }
+   }
+  },
+  {
+   "region": "region.golden_palace_of_laws",
+   "order": 14,
+   "realm": "realm.heavenly_immortal",
+   "cp": {
+    "bare": 163155,
+    "fitted": 214229,
+    "geared": 303474
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 0,
+      "rounds": 7,
+      "hp": null,
+      "n": 56,
+      "text": "0% (7.0r)"
+     },
+     "elite": {
+      "win": 0,
+      "rounds": 7,
+      "hp": null,
+      "n": 16,
+      "text": "0% (7.0r)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 7,
+      "hp": null,
+      "n": 8,
+      "text": "0% (7.0r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 6.8,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (6.8r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 8.6,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (8.6r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 10,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (10.0r, hp 100%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 4.1,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (4.1r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 4.3,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (4.3r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 4.1,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (4.1r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.hall_of_verdicts": {
+      "win": 0,
+      "rounds": 7,
+      "text": "0% (7.0r)"
+     },
+     "dungeon.ten_thousand_laws_hall": {
+      "win": 0,
+      "rounds": 7,
+      "text": "0% (7.0r)"
+     }
+    },
+    "fitted": {
+     "dungeon.hall_of_verdicts": {
+      "win": 75,
+      "rounds": 45,
+      "text": "75% (45.0r, hp 100%)"
+     },
+     "dungeon.ten_thousand_laws_hall": {
+      "win": 50,
+      "rounds": 89,
+      "text": "50% (89.0r, hp 100%)"
+     }
+    },
+    "geared": {
+     "dungeon.hall_of_verdicts": {
+      "win": 100,
+      "rounds": 14,
+      "text": "100% (14.0r, hp 100%)"
+     },
+     "dungeon.ten_thousand_laws_hall": {
+      "win": 75,
+      "rounds": 38.8,
+      "text": "75% (38.8r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {
+    "fitted": {
+     "id": "tribulation.golden_immortal",
+     "win": 0,
+     "text": "0% (1.0r)"
+    },
+    "geared": {
+     "id": "tribulation.golden_immortal",
+     "win": 13,
+     "text": "13% (2.0r, hp 100%)"
+    }
+   },
+   "tower": {
+    "fitted": {
+     "stall": 100,
+     "recAt": 324380
+    },
+    "geared": {
+     "stall": 100,
+     "recAt": 324380
+    }
+   }
+  },
+  {
+   "region": "region.throne_of_the_immortal_emperor",
+   "order": 15,
+   "realm": "realm.immortal_king",
+   "cp": {
+    "bare": 256998,
+    "fitted": 318997,
+    "geared": 436436
+   },
+   "battles": {
+    "bare": {
+     "normal": {
+      "win": 0,
+      "rounds": 10,
+      "hp": null,
+      "n": 56,
+      "text": "0% (10.0r)"
+     },
+     "elite": {
+      "win": 0,
+      "rounds": 10,
+      "hp": null,
+      "n": 16,
+      "text": "0% (10.0r)"
+     },
+     "boss": {
+      "win": 0,
+      "rounds": 10,
+      "hp": null,
+      "n": 8,
+      "text": "0% (10.0r)"
+     }
+    },
+    "fitted": {
+     "normal": {
+      "win": 100,
+      "rounds": 5.7,
+      "hp": 99,
+      "n": 56,
+      "text": "100% (5.7r, hp 99%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 4.1,
+      "hp": 99,
+      "n": 16,
+      "text": "100% (4.1r, hp 99%)"
+     },
+     "boss": {
+      "win": 88,
+      "rounds": 37.1,
+      "hp": 99,
+      "n": 8,
+      "text": "88% (37.1r, hp 99%)"
+     }
+    },
+    "geared": {
+     "normal": {
+      "win": 100,
+      "rounds": 4.8,
+      "hp": 100,
+      "n": 56,
+      "text": "100% (4.8r, hp 100%)"
+     },
+     "elite": {
+      "win": 100,
+      "rounds": 2.6,
+      "hp": 100,
+      "n": 16,
+      "text": "100% (2.6r, hp 100%)"
+     },
+     "boss": {
+      "win": 100,
+      "rounds": 12.3,
+      "hp": 100,
+      "n": 8,
+      "text": "100% (12.3r, hp 100%)"
+     }
+    }
+   },
+   "dungeons": {
+    "bare": {
+     "dungeon.hall_of_five_elements": {
+      "win": 0,
+      "rounds": 10,
+      "text": "0% (10.0r)"
+     },
+     "dungeon.primordial_chaos_abyss": {
+      "win": 0,
+      "rounds": 10,
+      "text": "0% (10.0r)"
+     }
+    },
+    "fitted": {
+     "dungeon.hall_of_five_elements": {
+      "win": 100,
+      "rounds": 27.3,
+      "text": "100% (27.3r, hp 99%)"
+     },
+     "dungeon.primordial_chaos_abyss": {
+      "win": 50,
+      "rounds": 71.5,
+      "text": "50% (71.5r, hp 99%)"
+     }
+    },
+    "geared": {
+     "dungeon.hall_of_five_elements": {
+      "win": 100,
+      "rounds": 11.5,
+      "text": "100% (11.5r, hp 100%)"
+     },
+     "dungeon.primordial_chaos_abyss": {
+      "win": 100,
+      "rounds": 38.8,
+      "text": "100% (38.8r, hp 100%)"
+     }
+    }
+   },
+   "tribulation": {
+    "fitted": {
+     "id": "tribulation.immortal_emperor",
+     "win": 0,
+     "text": "0% (2.6r)"
+    },
+    "geared": {
+     "id": "tribulation.immortal_emperor",
+     "win": 25,
+     "text": "25% (2.3r, hp 99%)"
+    }
+   },
+   "tower": {
+    "fitted": {
+     "stall": 100,
+     "recAt": 324380
+    },
+    "geared": {
+     "stall": 100,
+     "recAt": 324380
+    }
+   }
+  }
+ ],
+ "cultivation": [
+  {
+   "realm": "realm.qi_condensation",
+   "order": 1,
+   "idle_hours": 3.3,
+   "optimized_hours": 1,
+   "stage9_qi": 1323.8884522546882,
+   "offline_12h_share": 2.9
+  },
+  {
+   "realm": "realm.foundation_establishment",
+   "order": 2,
+   "idle_hours": 4.7,
+   "optimized_hours": 1.5,
+   "stage9_qi": 36868.15808201688,
+   "offline_12h_share": 2.06
+  },
+  {
+   "realm": "realm.core_formation",
+   "order": 3,
+   "idle_hours": 6.4,
+   "optimized_hours": 2,
+   "stage9_qi": 489438.4326000002,
+   "offline_12h_share": 1.5
+  },
+  {
+   "realm": "realm.nascent_soul",
+   "order": 4,
+   "idle_hours": 7.8,
+   "optimized_hours": 2.5,
+   "stage9_qi": 6485183.463413516,
+   "offline_12h_share": 1.23
+  },
+  {
+   "realm": "realm.soul_transformation",
+   "order": 5,
+   "idle_hours": 9.4,
+   "optimized_hours": 3,
+   "stage9_qi": 81210281.08922265,
+   "offline_12h_share": 1.02
+  },
+  {
+   "realm": "realm.spirit_severing",
+   "order": 6,
+   "idle_hours": 11.2,
+   "optimized_hours": 3.5,
+   "stage9_qi": 952918196.2272807,
+   "offline_12h_share": 0.86
+  },
+  {
+   "realm": "realm.dao_integration",
+   "order": 7,
+   "idle_hours": 12.9,
+   "optimized_hours": 4.1,
+   "stage9_qi": 10728836059.570312,
+   "offline_12h_share": 0.74
+  },
+  {
+   "realm": "realm.tribulation_transcendence",
+   "order": 8,
+   "idle_hours": 15.5,
+   "optimized_hours": 4.9,
+   "stage9_qi": 119209289550.78125,
+   "offline_12h_share": 0.62
+  },
+  {
+   "realm": "realm.mahayana",
+   "order": 9,
+   "idle_hours": 17.3,
+   "optimized_hours": 5.4,
+   "stage9_qi": 1229691474654.1343,
+   "offline_12h_share": 0.55
+  },
+  {
+   "realm": "realm.immortal_ascension",
+   "order": 10,
+   "idle_hours": 20.6,
+   "optimized_hours": 6.5,
+   "stage9_qi": 13414816087136.01,
+   "offline_12h_share": 0.47
+  },
+  {
+   "realm": "realm.earth_immortal",
+   "order": 11,
+   "idle_hours": 22.9,
+   "optimized_hours": 7.2,
+   "stage9_qi": 136211645513483.47,
+   "offline_12h_share": 0.42
+  },
+  {
+   "realm": "realm.heavenly_immortal",
+   "order": 12,
+   "idle_hours": 26,
+   "optimized_hours": 8.2,
+   "stage9_qi": 1466894643991360.5,
+   "offline_12h_share": 0.37
+  },
+  {
+   "realm": "realm.golden_immortal",
+   "order": 13,
+   "idle_hours": 28.3,
+   "optimized_hours": 8.9,
+   "stage9_qi": 14723121638191178,
+   "offline_12h_share": 0.34
+  },
+  {
+   "realm": "realm.immortal_king",
+   "order": 14,
+   "idle_hours": 32.1,
+   "optimized_hours": 10.1,
+   "stage9_qi": 157046630807372580,
+   "offline_12h_share": 0.3
+  },
+  {
+   "realm": "realm.immortal_emperor",
+   "order": 15,
+   "idle_hours": 34.4,
+   "optimized_hours": 10.8,
+   "stage9_qi": 1562290815361453000,
+   "offline_12h_share": 0.28
+  }
+ ],
+ "economy": [
+  {
+   "region": "region.mortal_plains",
+   "order": 1,
+   "stones_per_clear": 28.6,
+   "energy_per_clear": 5,
+   "clears_per_day": 68,
+   "stones_per_day": 1943,
+   "enhance_weapon_to_10": 43315,
+   "days_for_8_slots_plus10": 178.3,
+   "region_tech_price": 620,
+   "qi_pill": 38,
+   "mat_sell": null
+  },
+  {
+   "region": "region.azure_bamboo_forest",
+   "order": 2,
+   "stones_per_clear": 53,
+   "energy_per_clear": 5,
+   "clears_per_day": 68,
+   "stones_per_day": 3603,
+   "enhance_weapon_to_10": 43315,
+   "days_for_8_slots_plus10": 96.2,
+   "region_tech_price": 620,
+   "qi_pill": 38,
+   "mat_sell": null
+  },
+  {
+   "region": "region.blazing_mountain",
+   "order": 3,
+   "stones_per_clear": 268.8,
+   "energy_per_clear": 6,
+   "clears_per_day": 57,
+   "stones_per_day": 15229,
+   "enhance_weapon_to_10": 43315,
+   "days_for_8_slots_plus10": 22.8,
+   "region_tech_price": 3750,
+   "qi_pill": 38,
+   "mat_sell": 72
+  },
+  {
+   "region": "region.frozen_lotus_valley",
+   "order": 4,
+   "stones_per_clear": 478,
+   "energy_per_clear": 7,
+   "clears_per_day": 49,
+   "stones_per_day": 23216,
+   "enhance_weapon_to_10": 43315,
+   "days_for_8_slots_plus10": 14.9,
+   "region_tech_price": 3750,
+   "qi_pill": 38,
+   "mat_sell": 128
+  },
+  {
+   "region": "region.ancient_sword_tomb",
+   "order": 5,
+   "stones_per_clear": 746.9,
+   "energy_per_clear": 7,
+   "clears_per_day": 49,
+   "stones_per_day": 36276,
+   "enhance_weapon_to_10": 65450,
+   "days_for_8_slots_plus10": 14.4,
+   "region_tech_price": 7500,
+   "qi_pill": 38,
+   "mat_sell": 200
+  },
+  {
+   "region": "region.demon_territory",
+   "order": 6,
+   "stones_per_clear": 1075.5,
+   "energy_per_clear": 8,
+   "clears_per_day": 43,
+   "stones_per_day": 45707,
+   "enhance_weapon_to_10": 65450,
+   "days_for_8_slots_plus10": 11.5,
+   "region_tech_price": 10800,
+   "qi_pill": 38,
+   "mat_sell": 288
+  },
+  {
+   "region": "region.celestial_mountains",
+   "order": 7,
+   "stones_per_clear": 1463.8,
+   "energy_per_clear": 8,
+   "clears_per_day": 43,
+   "stones_per_day": 62210,
+   "enhance_weapon_to_10": 65450,
+   "days_for_8_slots_plus10": 8.4,
+   "region_tech_price": 14700,
+   "qi_pill": 38,
+   "mat_sell": 392
+  },
+  {
+   "region": "region.nine_heavens",
+   "order": 8,
+   "stones_per_clear": 1911.9,
+   "energy_per_clear": 9,
+   "clears_per_day": 38,
+   "stones_per_day": 72228,
+   "enhance_weapon_to_10": 98175,
+   "days_for_8_slots_plus10": 10.9,
+   "region_tech_price": 19200,
+   "qi_pill": 38,
+   "mat_sell": 512
+  },
+  {
+   "region": "region.thunderclap_wastes",
+   "order": 9,
+   "stones_per_clear": 2419.8,
+   "energy_per_clear": 9,
+   "clears_per_day": 38,
+   "stones_per_day": 91415,
+   "enhance_weapon_to_10": 98175,
+   "days_for_8_slots_plus10": 8.6,
+   "region_tech_price": 24300,
+   "qi_pill": 38,
+   "mat_sell": 648
+  },
+  {
+   "region": "region.sunken_dragon_sea",
+   "order": 10,
+   "stones_per_clear": 2987.5,
+   "energy_per_clear": 10,
+   "clears_per_day": 34,
+   "stones_per_day": 101574,
+   "enhance_weapon_to_10": 98175,
+   "days_for_8_slots_plus10": 7.7,
+   "region_tech_price": 30000,
+   "qi_pill": 38,
+   "mat_sell": 800
+  },
+  {
+   "region": "region.starfall_desert",
+   "order": 11,
+   "stones_per_clear": 3614.8,
+   "energy_per_clear": 10,
+   "clears_per_day": 34,
+   "stones_per_day": 122903,
+   "enhance_weapon_to_10": 146300,
+   "days_for_8_slots_plus10": 9.5,
+   "region_tech_price": 36300,
+   "qi_pill": 38,
+   "mat_sell": 968
+  },
+  {
+   "region": "region.gate_of_ascension",
+   "order": 12,
+   "stones_per_clear": 4301.9,
+   "energy_per_clear": 11,
+   "clears_per_day": 31,
+   "stones_per_day": 132968,
+   "enhance_weapon_to_10": 146300,
+   "days_for_8_slots_plus10": 8.8,
+   "region_tech_price": 43200,
+   "qi_pill": 38,
+   "mat_sell": 1152
+  },
+  {
+   "region": "region.jade_immortal_realm",
+   "order": 13,
+   "stones_per_clear": 5048.9,
+   "energy_per_clear": 11,
+   "clears_per_day": 31,
+   "stones_per_day": 156056,
+   "enhance_weapon_to_10": 146300,
+   "days_for_8_slots_plus10": 7.5,
+   "region_tech_price": 50700,
+   "qi_pill": 38,
+   "mat_sell": 1352
+  },
+  {
+   "region": "region.golden_palace_of_laws",
+   "order": 14,
+   "stones_per_clear": 5855.4,
+   "energy_per_clear": 12,
+   "clears_per_day": 28,
+   "stones_per_day": 165902,
+   "enhance_weapon_to_10": 146300,
+   "days_for_8_slots_plus10": 7.1,
+   "region_tech_price": 58800,
+   "qi_pill": 38,
+   "mat_sell": 1568
+  },
+  {
+   "region": "region.throne_of_the_immortal_emperor",
+   "order": 15,
+   "stones_per_clear": 6721.8,
+   "energy_per_clear": 12,
+   "clears_per_day": 28,
+   "stones_per_day": 190451,
+   "enhance_weapon_to_10": 146300,
+   "days_for_8_slots_plus10": 6.1,
+   "region_tech_price": 67500,
+   "qi_pill": 38,
+   "mat_sell": 1800
+  }
+ ],
+ "breakthrough": [
+  {
+   "to": "realm.foundation_establishment",
+   "item": "cons.foundation_pill",
+   "qty": 1,
+   "best_per_clear": 0,
+   "clears_needed": null,
+   "loot": [],
+   "shops": [],
+   "alchemy": [
+    "alchemy.foundation_pill"
+   ],
+   "quests": [
+    "quest.main.bamboo_sovereign"
+   ]
+  },
+  {
+   "to": "realm.core_formation",
+   "item": "cons.core_condensing_pill",
+   "qty": 1,
+   "best_per_clear": 0,
+   "clears_needed": null,
+   "loot": [],
+   "shops": [],
+   "alchemy": [
+    "alchemy.core_condensing_pill"
+   ],
+   "quests": []
+  },
+  {
+   "to": "realm.core_formation",
+   "item": "mat.bamboo_dragon_scale",
+   "qty": 3,
+   "best_per_clear": 0.6,
+   "clears_needed": 5,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.60/roll via boss.thousand_node_bamboo_dragon)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": []
+  },
+  {
+   "to": "realm.nascent_soul",
+   "item": "mat.dao_insight_crystal",
+   "qty": 2,
+   "best_per_clear": 4,
+   "clears_needed": 1,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.03/roll via boss.thousand_node_bamboo_dragon)",
+    "loot.boss.tribulation_thunder_spirit (0.50/roll via boss.tribulation_thunder_spirit)",
+    "loot.boss.nine_headed_abyss_serpent (2.40/roll via boss.nine_headed_abyss_serpent)",
+    "loot.dungeon.abyss_clear (4.00/roll via dungeon.abyss_of_the_nine_heavens)",
+    "loot.tribulation.core_formation (0.30/roll via )",
+    "loot.boss.molten_ape_king (0.16/roll via boss.molten_ape_king)",
+    "loot.boss.lotus_frost_queen (0.18/roll via boss.lotus_frost_queen)",
+    "loot.boss.sword_sovereign_remnant (0.20/roll via boss.sword_sovereign_remnant)",
+    "loot.boss.crimson_moon_matriarch (0.22/roll via boss.crimson_moon_matriarch)",
+    "loot.dungeon.crimson_moon_secret_realm_clear (0.75/roll via dungeon.crimson_moon_secret_realm)",
+    "loot.boss.celestial_stair_guardian (0.24/roll via boss.celestial_stair_guardian)",
+    "loot.boss.heavenly_gate_keeper (0.26/roll via boss.heavenly_gate_keeper)",
+    "loot.boss.nine_bolt_thunder_emperor (0.28/roll via boss.nine_bolt_thunder_emperor)",
+    "loot.boss.drowned_dragon_lord (0.30/roll via boss.drowned_dragon_lord)",
+    "loot.boss.starfall_pharaoh (0.32/roll via boss.starfall_pharaoh)",
+    "loot.dungeon.pharaohs_star_vault_clear (0.75/roll via dungeon.pharaohs_star_vault)",
+    "loot.boss.vermilion_gatekeeper (0.34/roll via boss.vermilion_gatekeeper)",
+    "loot.boss.white_tiger_sovereign (0.36/roll via boss.white_tiger_sovereign)",
+    "loot.boss.arbiter_of_laws (0.38/roll via boss.arbiter_of_laws)",
+    "loot.boss.first_emperor_remnant (0.40/roll via boss.first_emperor_remnant)",
+    "loot.boss.dragon_king_ao (2.40/roll via boss.dragon_king_ao)",
+    "loot.dungeon.dragon_king_palace_clear (3.00/roll via dungeon.dragon_king_palace)",
+    "loot.boss.fallen_heaven_lord (2.40/roll via boss.fallen_heaven_lord)",
+    "loot.dungeon.fallen_heaven_ruins_clear (3.00/roll via dungeon.fallen_heaven_ruins)",
+    "loot.boss.law_sovereign (2.40/roll via boss.law_sovereign)",
+    "loot.dungeon.ten_thousand_laws_hall_clear (3.00/roll via dungeon.ten_thousand_laws_hall)",
+    "loot.boss.chaos_progenitor (2.40/roll via boss.chaos_progenitor)",
+    "loot.dungeon.primordial_chaos_abyss_clear (3.00/roll via dungeon.primordial_chaos_abyss)",
+    "loot.tribulation.soul_transformation (1.40/roll via )",
+    "loot.boss.soul_transformation_tribulation_spirit (0.75/roll via boss.soul_transformation_tribulation_spirit)",
+    "loot.tribulation.tribulation_transcendence (1.40/roll via )",
+    "loot.boss.tribulation_transcendence_tribulation_spirit (0.75/roll via boss.tribulation_transcendence_tribulation_spirit)",
+    "loot.tribulation.immortal_ascension (1.40/roll via )",
+    "loot.boss.immortal_ascension_tribulation_spirit (0.75/roll via boss.immortal_ascension_tribulation_spirit)",
+    "loot.tribulation.golden_immortal (1.40/roll via )",
+    "loot.boss.golden_immortal_tribulation_spirit (0.75/roll via boss.golden_immortal_tribulation_spirit)",
+    "loot.tribulation.immortal_emperor (1.40/roll via )",
+    "loot.boss.immortal_emperor_tribulation_spirit (0.75/roll via boss.immortal_emperor_tribulation_spirit)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": [
+    "quest.cultivation.reach_nascent_soul",
+    "quest.cultivation.reach_soul_transformation",
+    "quest.cultivation.reach_spirit_severing",
+    "quest.cultivation.reach_dao_integration",
+    "quest.cultivation.reach_tribulation_transcendence",
+    "quest.cultivation.reach_mahayana",
+    "quest.cultivation.reach_immortal_ascension",
+    "quest.cultivation.reach_earth_immortal",
+    "quest.cultivation.reach_heavenly_immortal",
+    "quest.cultivation.reach_golden_immortal",
+    "quest.cultivation.reach_immortal_king",
+    "quest.cultivation.reach_immortal_emperor"
+   ]
+  },
+  {
+   "to": "realm.soul_transformation",
+   "item": "mat.dao_insight_crystal",
+   "qty": 3,
+   "best_per_clear": 4,
+   "clears_needed": 1,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.03/roll via boss.thousand_node_bamboo_dragon)",
+    "loot.boss.tribulation_thunder_spirit (0.50/roll via boss.tribulation_thunder_spirit)",
+    "loot.boss.nine_headed_abyss_serpent (2.40/roll via boss.nine_headed_abyss_serpent)",
+    "loot.dungeon.abyss_clear (4.00/roll via dungeon.abyss_of_the_nine_heavens)",
+    "loot.tribulation.core_formation (0.30/roll via )",
+    "loot.boss.molten_ape_king (0.16/roll via boss.molten_ape_king)",
+    "loot.boss.lotus_frost_queen (0.18/roll via boss.lotus_frost_queen)",
+    "loot.boss.sword_sovereign_remnant (0.20/roll via boss.sword_sovereign_remnant)",
+    "loot.boss.crimson_moon_matriarch (0.22/roll via boss.crimson_moon_matriarch)",
+    "loot.dungeon.crimson_moon_secret_realm_clear (0.75/roll via dungeon.crimson_moon_secret_realm)",
+    "loot.boss.celestial_stair_guardian (0.24/roll via boss.celestial_stair_guardian)",
+    "loot.boss.heavenly_gate_keeper (0.26/roll via boss.heavenly_gate_keeper)",
+    "loot.boss.nine_bolt_thunder_emperor (0.28/roll via boss.nine_bolt_thunder_emperor)",
+    "loot.boss.drowned_dragon_lord (0.30/roll via boss.drowned_dragon_lord)",
+    "loot.boss.starfall_pharaoh (0.32/roll via boss.starfall_pharaoh)",
+    "loot.dungeon.pharaohs_star_vault_clear (0.75/roll via dungeon.pharaohs_star_vault)",
+    "loot.boss.vermilion_gatekeeper (0.34/roll via boss.vermilion_gatekeeper)",
+    "loot.boss.white_tiger_sovereign (0.36/roll via boss.white_tiger_sovereign)",
+    "loot.boss.arbiter_of_laws (0.38/roll via boss.arbiter_of_laws)",
+    "loot.boss.first_emperor_remnant (0.40/roll via boss.first_emperor_remnant)",
+    "loot.boss.dragon_king_ao (2.40/roll via boss.dragon_king_ao)",
+    "loot.dungeon.dragon_king_palace_clear (3.00/roll via dungeon.dragon_king_palace)",
+    "loot.boss.fallen_heaven_lord (2.40/roll via boss.fallen_heaven_lord)",
+    "loot.dungeon.fallen_heaven_ruins_clear (3.00/roll via dungeon.fallen_heaven_ruins)",
+    "loot.boss.law_sovereign (2.40/roll via boss.law_sovereign)",
+    "loot.dungeon.ten_thousand_laws_hall_clear (3.00/roll via dungeon.ten_thousand_laws_hall)",
+    "loot.boss.chaos_progenitor (2.40/roll via boss.chaos_progenitor)",
+    "loot.dungeon.primordial_chaos_abyss_clear (3.00/roll via dungeon.primordial_chaos_abyss)",
+    "loot.tribulation.soul_transformation (1.40/roll via )",
+    "loot.boss.soul_transformation_tribulation_spirit (0.75/roll via boss.soul_transformation_tribulation_spirit)",
+    "loot.tribulation.tribulation_transcendence (1.40/roll via )",
+    "loot.boss.tribulation_transcendence_tribulation_spirit (0.75/roll via boss.tribulation_transcendence_tribulation_spirit)",
+    "loot.tribulation.immortal_ascension (1.40/roll via )",
+    "loot.boss.immortal_ascension_tribulation_spirit (0.75/roll via boss.immortal_ascension_tribulation_spirit)",
+    "loot.tribulation.golden_immortal (1.40/roll via )",
+    "loot.boss.golden_immortal_tribulation_spirit (0.75/roll via boss.golden_immortal_tribulation_spirit)",
+    "loot.tribulation.immortal_emperor (1.40/roll via )",
+    "loot.boss.immortal_emperor_tribulation_spirit (0.75/roll via boss.immortal_emperor_tribulation_spirit)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": [
+    "quest.cultivation.reach_nascent_soul",
+    "quest.cultivation.reach_soul_transformation",
+    "quest.cultivation.reach_spirit_severing",
+    "quest.cultivation.reach_dao_integration",
+    "quest.cultivation.reach_tribulation_transcendence",
+    "quest.cultivation.reach_mahayana",
+    "quest.cultivation.reach_immortal_ascension",
+    "quest.cultivation.reach_earth_immortal",
+    "quest.cultivation.reach_heavenly_immortal",
+    "quest.cultivation.reach_golden_immortal",
+    "quest.cultivation.reach_immortal_king",
+    "quest.cultivation.reach_immortal_emperor"
+   ]
+  },
+  {
+   "to": "realm.spirit_severing",
+   "item": "mat.dao_insight_crystal",
+   "qty": 4,
+   "best_per_clear": 4,
+   "clears_needed": 1,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.03/roll via boss.thousand_node_bamboo_dragon)",
+    "loot.boss.tribulation_thunder_spirit (0.50/roll via boss.tribulation_thunder_spirit)",
+    "loot.boss.nine_headed_abyss_serpent (2.40/roll via boss.nine_headed_abyss_serpent)",
+    "loot.dungeon.abyss_clear (4.00/roll via dungeon.abyss_of_the_nine_heavens)",
+    "loot.tribulation.core_formation (0.30/roll via )",
+    "loot.boss.molten_ape_king (0.16/roll via boss.molten_ape_king)",
+    "loot.boss.lotus_frost_queen (0.18/roll via boss.lotus_frost_queen)",
+    "loot.boss.sword_sovereign_remnant (0.20/roll via boss.sword_sovereign_remnant)",
+    "loot.boss.crimson_moon_matriarch (0.22/roll via boss.crimson_moon_matriarch)",
+    "loot.dungeon.crimson_moon_secret_realm_clear (0.75/roll via dungeon.crimson_moon_secret_realm)",
+    "loot.boss.celestial_stair_guardian (0.24/roll via boss.celestial_stair_guardian)",
+    "loot.boss.heavenly_gate_keeper (0.26/roll via boss.heavenly_gate_keeper)",
+    "loot.boss.nine_bolt_thunder_emperor (0.28/roll via boss.nine_bolt_thunder_emperor)",
+    "loot.boss.drowned_dragon_lord (0.30/roll via boss.drowned_dragon_lord)",
+    "loot.boss.starfall_pharaoh (0.32/roll via boss.starfall_pharaoh)",
+    "loot.dungeon.pharaohs_star_vault_clear (0.75/roll via dungeon.pharaohs_star_vault)",
+    "loot.boss.vermilion_gatekeeper (0.34/roll via boss.vermilion_gatekeeper)",
+    "loot.boss.white_tiger_sovereign (0.36/roll via boss.white_tiger_sovereign)",
+    "loot.boss.arbiter_of_laws (0.38/roll via boss.arbiter_of_laws)",
+    "loot.boss.first_emperor_remnant (0.40/roll via boss.first_emperor_remnant)",
+    "loot.boss.dragon_king_ao (2.40/roll via boss.dragon_king_ao)",
+    "loot.dungeon.dragon_king_palace_clear (3.00/roll via dungeon.dragon_king_palace)",
+    "loot.boss.fallen_heaven_lord (2.40/roll via boss.fallen_heaven_lord)",
+    "loot.dungeon.fallen_heaven_ruins_clear (3.00/roll via dungeon.fallen_heaven_ruins)",
+    "loot.boss.law_sovereign (2.40/roll via boss.law_sovereign)",
+    "loot.dungeon.ten_thousand_laws_hall_clear (3.00/roll via dungeon.ten_thousand_laws_hall)",
+    "loot.boss.chaos_progenitor (2.40/roll via boss.chaos_progenitor)",
+    "loot.dungeon.primordial_chaos_abyss_clear (3.00/roll via dungeon.primordial_chaos_abyss)",
+    "loot.tribulation.soul_transformation (1.40/roll via )",
+    "loot.boss.soul_transformation_tribulation_spirit (0.75/roll via boss.soul_transformation_tribulation_spirit)",
+    "loot.tribulation.tribulation_transcendence (1.40/roll via )",
+    "loot.boss.tribulation_transcendence_tribulation_spirit (0.75/roll via boss.tribulation_transcendence_tribulation_spirit)",
+    "loot.tribulation.immortal_ascension (1.40/roll via )",
+    "loot.boss.immortal_ascension_tribulation_spirit (0.75/roll via boss.immortal_ascension_tribulation_spirit)",
+    "loot.tribulation.golden_immortal (1.40/roll via )",
+    "loot.boss.golden_immortal_tribulation_spirit (0.75/roll via boss.golden_immortal_tribulation_spirit)",
+    "loot.tribulation.immortal_emperor (1.40/roll via )",
+    "loot.boss.immortal_emperor_tribulation_spirit (0.75/roll via boss.immortal_emperor_tribulation_spirit)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": [
+    "quest.cultivation.reach_nascent_soul",
+    "quest.cultivation.reach_soul_transformation",
+    "quest.cultivation.reach_spirit_severing",
+    "quest.cultivation.reach_dao_integration",
+    "quest.cultivation.reach_tribulation_transcendence",
+    "quest.cultivation.reach_mahayana",
+    "quest.cultivation.reach_immortal_ascension",
+    "quest.cultivation.reach_earth_immortal",
+    "quest.cultivation.reach_heavenly_immortal",
+    "quest.cultivation.reach_golden_immortal",
+    "quest.cultivation.reach_immortal_king",
+    "quest.cultivation.reach_immortal_emperor"
+   ]
+  },
+  {
+   "to": "realm.dao_integration",
+   "item": "mat.dao_insight_crystal",
+   "qty": 5,
+   "best_per_clear": 4,
+   "clears_needed": 2,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.03/roll via boss.thousand_node_bamboo_dragon)",
+    "loot.boss.tribulation_thunder_spirit (0.50/roll via boss.tribulation_thunder_spirit)",
+    "loot.boss.nine_headed_abyss_serpent (2.40/roll via boss.nine_headed_abyss_serpent)",
+    "loot.dungeon.abyss_clear (4.00/roll via dungeon.abyss_of_the_nine_heavens)",
+    "loot.tribulation.core_formation (0.30/roll via )",
+    "loot.boss.molten_ape_king (0.16/roll via boss.molten_ape_king)",
+    "loot.boss.lotus_frost_queen (0.18/roll via boss.lotus_frost_queen)",
+    "loot.boss.sword_sovereign_remnant (0.20/roll via boss.sword_sovereign_remnant)",
+    "loot.boss.crimson_moon_matriarch (0.22/roll via boss.crimson_moon_matriarch)",
+    "loot.dungeon.crimson_moon_secret_realm_clear (0.75/roll via dungeon.crimson_moon_secret_realm)",
+    "loot.boss.celestial_stair_guardian (0.24/roll via boss.celestial_stair_guardian)",
+    "loot.boss.heavenly_gate_keeper (0.26/roll via boss.heavenly_gate_keeper)",
+    "loot.boss.nine_bolt_thunder_emperor (0.28/roll via boss.nine_bolt_thunder_emperor)",
+    "loot.boss.drowned_dragon_lord (0.30/roll via boss.drowned_dragon_lord)",
+    "loot.boss.starfall_pharaoh (0.32/roll via boss.starfall_pharaoh)",
+    "loot.dungeon.pharaohs_star_vault_clear (0.75/roll via dungeon.pharaohs_star_vault)",
+    "loot.boss.vermilion_gatekeeper (0.34/roll via boss.vermilion_gatekeeper)",
+    "loot.boss.white_tiger_sovereign (0.36/roll via boss.white_tiger_sovereign)",
+    "loot.boss.arbiter_of_laws (0.38/roll via boss.arbiter_of_laws)",
+    "loot.boss.first_emperor_remnant (0.40/roll via boss.first_emperor_remnant)",
+    "loot.boss.dragon_king_ao (2.40/roll via boss.dragon_king_ao)",
+    "loot.dungeon.dragon_king_palace_clear (3.00/roll via dungeon.dragon_king_palace)",
+    "loot.boss.fallen_heaven_lord (2.40/roll via boss.fallen_heaven_lord)",
+    "loot.dungeon.fallen_heaven_ruins_clear (3.00/roll via dungeon.fallen_heaven_ruins)",
+    "loot.boss.law_sovereign (2.40/roll via boss.law_sovereign)",
+    "loot.dungeon.ten_thousand_laws_hall_clear (3.00/roll via dungeon.ten_thousand_laws_hall)",
+    "loot.boss.chaos_progenitor (2.40/roll via boss.chaos_progenitor)",
+    "loot.dungeon.primordial_chaos_abyss_clear (3.00/roll via dungeon.primordial_chaos_abyss)",
+    "loot.tribulation.soul_transformation (1.40/roll via )",
+    "loot.boss.soul_transformation_tribulation_spirit (0.75/roll via boss.soul_transformation_tribulation_spirit)",
+    "loot.tribulation.tribulation_transcendence (1.40/roll via )",
+    "loot.boss.tribulation_transcendence_tribulation_spirit (0.75/roll via boss.tribulation_transcendence_tribulation_spirit)",
+    "loot.tribulation.immortal_ascension (1.40/roll via )",
+    "loot.boss.immortal_ascension_tribulation_spirit (0.75/roll via boss.immortal_ascension_tribulation_spirit)",
+    "loot.tribulation.golden_immortal (1.40/roll via )",
+    "loot.boss.golden_immortal_tribulation_spirit (0.75/roll via boss.golden_immortal_tribulation_spirit)",
+    "loot.tribulation.immortal_emperor (1.40/roll via )",
+    "loot.boss.immortal_emperor_tribulation_spirit (0.75/roll via boss.immortal_emperor_tribulation_spirit)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": [
+    "quest.cultivation.reach_nascent_soul",
+    "quest.cultivation.reach_soul_transformation",
+    "quest.cultivation.reach_spirit_severing",
+    "quest.cultivation.reach_dao_integration",
+    "quest.cultivation.reach_tribulation_transcendence",
+    "quest.cultivation.reach_mahayana",
+    "quest.cultivation.reach_immortal_ascension",
+    "quest.cultivation.reach_earth_immortal",
+    "quest.cultivation.reach_heavenly_immortal",
+    "quest.cultivation.reach_golden_immortal",
+    "quest.cultivation.reach_immortal_king",
+    "quest.cultivation.reach_immortal_emperor"
+   ]
+  },
+  {
+   "to": "realm.tribulation_transcendence",
+   "item": "mat.dao_insight_crystal",
+   "qty": 6,
+   "best_per_clear": 4,
+   "clears_needed": 2,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.03/roll via boss.thousand_node_bamboo_dragon)",
+    "loot.boss.tribulation_thunder_spirit (0.50/roll via boss.tribulation_thunder_spirit)",
+    "loot.boss.nine_headed_abyss_serpent (2.40/roll via boss.nine_headed_abyss_serpent)",
+    "loot.dungeon.abyss_clear (4.00/roll via dungeon.abyss_of_the_nine_heavens)",
+    "loot.tribulation.core_formation (0.30/roll via )",
+    "loot.boss.molten_ape_king (0.16/roll via boss.molten_ape_king)",
+    "loot.boss.lotus_frost_queen (0.18/roll via boss.lotus_frost_queen)",
+    "loot.boss.sword_sovereign_remnant (0.20/roll via boss.sword_sovereign_remnant)",
+    "loot.boss.crimson_moon_matriarch (0.22/roll via boss.crimson_moon_matriarch)",
+    "loot.dungeon.crimson_moon_secret_realm_clear (0.75/roll via dungeon.crimson_moon_secret_realm)",
+    "loot.boss.celestial_stair_guardian (0.24/roll via boss.celestial_stair_guardian)",
+    "loot.boss.heavenly_gate_keeper (0.26/roll via boss.heavenly_gate_keeper)",
+    "loot.boss.nine_bolt_thunder_emperor (0.28/roll via boss.nine_bolt_thunder_emperor)",
+    "loot.boss.drowned_dragon_lord (0.30/roll via boss.drowned_dragon_lord)",
+    "loot.boss.starfall_pharaoh (0.32/roll via boss.starfall_pharaoh)",
+    "loot.dungeon.pharaohs_star_vault_clear (0.75/roll via dungeon.pharaohs_star_vault)",
+    "loot.boss.vermilion_gatekeeper (0.34/roll via boss.vermilion_gatekeeper)",
+    "loot.boss.white_tiger_sovereign (0.36/roll via boss.white_tiger_sovereign)",
+    "loot.boss.arbiter_of_laws (0.38/roll via boss.arbiter_of_laws)",
+    "loot.boss.first_emperor_remnant (0.40/roll via boss.first_emperor_remnant)",
+    "loot.boss.dragon_king_ao (2.40/roll via boss.dragon_king_ao)",
+    "loot.dungeon.dragon_king_palace_clear (3.00/roll via dungeon.dragon_king_palace)",
+    "loot.boss.fallen_heaven_lord (2.40/roll via boss.fallen_heaven_lord)",
+    "loot.dungeon.fallen_heaven_ruins_clear (3.00/roll via dungeon.fallen_heaven_ruins)",
+    "loot.boss.law_sovereign (2.40/roll via boss.law_sovereign)",
+    "loot.dungeon.ten_thousand_laws_hall_clear (3.00/roll via dungeon.ten_thousand_laws_hall)",
+    "loot.boss.chaos_progenitor (2.40/roll via boss.chaos_progenitor)",
+    "loot.dungeon.primordial_chaos_abyss_clear (3.00/roll via dungeon.primordial_chaos_abyss)",
+    "loot.tribulation.soul_transformation (1.40/roll via )",
+    "loot.boss.soul_transformation_tribulation_spirit (0.75/roll via boss.soul_transformation_tribulation_spirit)",
+    "loot.tribulation.tribulation_transcendence (1.40/roll via )",
+    "loot.boss.tribulation_transcendence_tribulation_spirit (0.75/roll via boss.tribulation_transcendence_tribulation_spirit)",
+    "loot.tribulation.immortal_ascension (1.40/roll via )",
+    "loot.boss.immortal_ascension_tribulation_spirit (0.75/roll via boss.immortal_ascension_tribulation_spirit)",
+    "loot.tribulation.golden_immortal (1.40/roll via )",
+    "loot.boss.golden_immortal_tribulation_spirit (0.75/roll via boss.golden_immortal_tribulation_spirit)",
+    "loot.tribulation.immortal_emperor (1.40/roll via )",
+    "loot.boss.immortal_emperor_tribulation_spirit (0.75/roll via boss.immortal_emperor_tribulation_spirit)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": [
+    "quest.cultivation.reach_nascent_soul",
+    "quest.cultivation.reach_soul_transformation",
+    "quest.cultivation.reach_spirit_severing",
+    "quest.cultivation.reach_dao_integration",
+    "quest.cultivation.reach_tribulation_transcendence",
+    "quest.cultivation.reach_mahayana",
+    "quest.cultivation.reach_immortal_ascension",
+    "quest.cultivation.reach_earth_immortal",
+    "quest.cultivation.reach_heavenly_immortal",
+    "quest.cultivation.reach_golden_immortal",
+    "quest.cultivation.reach_immortal_king",
+    "quest.cultivation.reach_immortal_emperor"
+   ]
+  },
+  {
+   "to": "realm.mahayana",
+   "item": "mat.dao_insight_crystal",
+   "qty": 7,
+   "best_per_clear": 4,
+   "clears_needed": 2,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.03/roll via boss.thousand_node_bamboo_dragon)",
+    "loot.boss.tribulation_thunder_spirit (0.50/roll via boss.tribulation_thunder_spirit)",
+    "loot.boss.nine_headed_abyss_serpent (2.40/roll via boss.nine_headed_abyss_serpent)",
+    "loot.dungeon.abyss_clear (4.00/roll via dungeon.abyss_of_the_nine_heavens)",
+    "loot.tribulation.core_formation (0.30/roll via )",
+    "loot.boss.molten_ape_king (0.16/roll via boss.molten_ape_king)",
+    "loot.boss.lotus_frost_queen (0.18/roll via boss.lotus_frost_queen)",
+    "loot.boss.sword_sovereign_remnant (0.20/roll via boss.sword_sovereign_remnant)",
+    "loot.boss.crimson_moon_matriarch (0.22/roll via boss.crimson_moon_matriarch)",
+    "loot.dungeon.crimson_moon_secret_realm_clear (0.75/roll via dungeon.crimson_moon_secret_realm)",
+    "loot.boss.celestial_stair_guardian (0.24/roll via boss.celestial_stair_guardian)",
+    "loot.boss.heavenly_gate_keeper (0.26/roll via boss.heavenly_gate_keeper)",
+    "loot.boss.nine_bolt_thunder_emperor (0.28/roll via boss.nine_bolt_thunder_emperor)",
+    "loot.boss.drowned_dragon_lord (0.30/roll via boss.drowned_dragon_lord)",
+    "loot.boss.starfall_pharaoh (0.32/roll via boss.starfall_pharaoh)",
+    "loot.dungeon.pharaohs_star_vault_clear (0.75/roll via dungeon.pharaohs_star_vault)",
+    "loot.boss.vermilion_gatekeeper (0.34/roll via boss.vermilion_gatekeeper)",
+    "loot.boss.white_tiger_sovereign (0.36/roll via boss.white_tiger_sovereign)",
+    "loot.boss.arbiter_of_laws (0.38/roll via boss.arbiter_of_laws)",
+    "loot.boss.first_emperor_remnant (0.40/roll via boss.first_emperor_remnant)",
+    "loot.boss.dragon_king_ao (2.40/roll via boss.dragon_king_ao)",
+    "loot.dungeon.dragon_king_palace_clear (3.00/roll via dungeon.dragon_king_palace)",
+    "loot.boss.fallen_heaven_lord (2.40/roll via boss.fallen_heaven_lord)",
+    "loot.dungeon.fallen_heaven_ruins_clear (3.00/roll via dungeon.fallen_heaven_ruins)",
+    "loot.boss.law_sovereign (2.40/roll via boss.law_sovereign)",
+    "loot.dungeon.ten_thousand_laws_hall_clear (3.00/roll via dungeon.ten_thousand_laws_hall)",
+    "loot.boss.chaos_progenitor (2.40/roll via boss.chaos_progenitor)",
+    "loot.dungeon.primordial_chaos_abyss_clear (3.00/roll via dungeon.primordial_chaos_abyss)",
+    "loot.tribulation.soul_transformation (1.40/roll via )",
+    "loot.boss.soul_transformation_tribulation_spirit (0.75/roll via boss.soul_transformation_tribulation_spirit)",
+    "loot.tribulation.tribulation_transcendence (1.40/roll via )",
+    "loot.boss.tribulation_transcendence_tribulation_spirit (0.75/roll via boss.tribulation_transcendence_tribulation_spirit)",
+    "loot.tribulation.immortal_ascension (1.40/roll via )",
+    "loot.boss.immortal_ascension_tribulation_spirit (0.75/roll via boss.immortal_ascension_tribulation_spirit)",
+    "loot.tribulation.golden_immortal (1.40/roll via )",
+    "loot.boss.golden_immortal_tribulation_spirit (0.75/roll via boss.golden_immortal_tribulation_spirit)",
+    "loot.tribulation.immortal_emperor (1.40/roll via )",
+    "loot.boss.immortal_emperor_tribulation_spirit (0.75/roll via boss.immortal_emperor_tribulation_spirit)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": [
+    "quest.cultivation.reach_nascent_soul",
+    "quest.cultivation.reach_soul_transformation",
+    "quest.cultivation.reach_spirit_severing",
+    "quest.cultivation.reach_dao_integration",
+    "quest.cultivation.reach_tribulation_transcendence",
+    "quest.cultivation.reach_mahayana",
+    "quest.cultivation.reach_immortal_ascension",
+    "quest.cultivation.reach_earth_immortal",
+    "quest.cultivation.reach_heavenly_immortal",
+    "quest.cultivation.reach_golden_immortal",
+    "quest.cultivation.reach_immortal_king",
+    "quest.cultivation.reach_immortal_emperor"
+   ]
+  },
+  {
+   "to": "realm.immortal_ascension",
+   "item": "mat.dao_insight_crystal",
+   "qty": 8,
+   "best_per_clear": 4,
+   "clears_needed": 2,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.03/roll via boss.thousand_node_bamboo_dragon)",
+    "loot.boss.tribulation_thunder_spirit (0.50/roll via boss.tribulation_thunder_spirit)",
+    "loot.boss.nine_headed_abyss_serpent (2.40/roll via boss.nine_headed_abyss_serpent)",
+    "loot.dungeon.abyss_clear (4.00/roll via dungeon.abyss_of_the_nine_heavens)",
+    "loot.tribulation.core_formation (0.30/roll via )",
+    "loot.boss.molten_ape_king (0.16/roll via boss.molten_ape_king)",
+    "loot.boss.lotus_frost_queen (0.18/roll via boss.lotus_frost_queen)",
+    "loot.boss.sword_sovereign_remnant (0.20/roll via boss.sword_sovereign_remnant)",
+    "loot.boss.crimson_moon_matriarch (0.22/roll via boss.crimson_moon_matriarch)",
+    "loot.dungeon.crimson_moon_secret_realm_clear (0.75/roll via dungeon.crimson_moon_secret_realm)",
+    "loot.boss.celestial_stair_guardian (0.24/roll via boss.celestial_stair_guardian)",
+    "loot.boss.heavenly_gate_keeper (0.26/roll via boss.heavenly_gate_keeper)",
+    "loot.boss.nine_bolt_thunder_emperor (0.28/roll via boss.nine_bolt_thunder_emperor)",
+    "loot.boss.drowned_dragon_lord (0.30/roll via boss.drowned_dragon_lord)",
+    "loot.boss.starfall_pharaoh (0.32/roll via boss.starfall_pharaoh)",
+    "loot.dungeon.pharaohs_star_vault_clear (0.75/roll via dungeon.pharaohs_star_vault)",
+    "loot.boss.vermilion_gatekeeper (0.34/roll via boss.vermilion_gatekeeper)",
+    "loot.boss.white_tiger_sovereign (0.36/roll via boss.white_tiger_sovereign)",
+    "loot.boss.arbiter_of_laws (0.38/roll via boss.arbiter_of_laws)",
+    "loot.boss.first_emperor_remnant (0.40/roll via boss.first_emperor_remnant)",
+    "loot.boss.dragon_king_ao (2.40/roll via boss.dragon_king_ao)",
+    "loot.dungeon.dragon_king_palace_clear (3.00/roll via dungeon.dragon_king_palace)",
+    "loot.boss.fallen_heaven_lord (2.40/roll via boss.fallen_heaven_lord)",
+    "loot.dungeon.fallen_heaven_ruins_clear (3.00/roll via dungeon.fallen_heaven_ruins)",
+    "loot.boss.law_sovereign (2.40/roll via boss.law_sovereign)",
+    "loot.dungeon.ten_thousand_laws_hall_clear (3.00/roll via dungeon.ten_thousand_laws_hall)",
+    "loot.boss.chaos_progenitor (2.40/roll via boss.chaos_progenitor)",
+    "loot.dungeon.primordial_chaos_abyss_clear (3.00/roll via dungeon.primordial_chaos_abyss)",
+    "loot.tribulation.soul_transformation (1.40/roll via )",
+    "loot.boss.soul_transformation_tribulation_spirit (0.75/roll via boss.soul_transformation_tribulation_spirit)",
+    "loot.tribulation.tribulation_transcendence (1.40/roll via )",
+    "loot.boss.tribulation_transcendence_tribulation_spirit (0.75/roll via boss.tribulation_transcendence_tribulation_spirit)",
+    "loot.tribulation.immortal_ascension (1.40/roll via )",
+    "loot.boss.immortal_ascension_tribulation_spirit (0.75/roll via boss.immortal_ascension_tribulation_spirit)",
+    "loot.tribulation.golden_immortal (1.40/roll via )",
+    "loot.boss.golden_immortal_tribulation_spirit (0.75/roll via boss.golden_immortal_tribulation_spirit)",
+    "loot.tribulation.immortal_emperor (1.40/roll via )",
+    "loot.boss.immortal_emperor_tribulation_spirit (0.75/roll via boss.immortal_emperor_tribulation_spirit)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": [
+    "quest.cultivation.reach_nascent_soul",
+    "quest.cultivation.reach_soul_transformation",
+    "quest.cultivation.reach_spirit_severing",
+    "quest.cultivation.reach_dao_integration",
+    "quest.cultivation.reach_tribulation_transcendence",
+    "quest.cultivation.reach_mahayana",
+    "quest.cultivation.reach_immortal_ascension",
+    "quest.cultivation.reach_earth_immortal",
+    "quest.cultivation.reach_heavenly_immortal",
+    "quest.cultivation.reach_golden_immortal",
+    "quest.cultivation.reach_immortal_king",
+    "quest.cultivation.reach_immortal_emperor"
+   ]
+  },
+  {
+   "to": "realm.earth_immortal",
+   "item": "mat.dao_insight_crystal",
+   "qty": 9,
+   "best_per_clear": 4,
+   "clears_needed": 3,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.03/roll via boss.thousand_node_bamboo_dragon)",
+    "loot.boss.tribulation_thunder_spirit (0.50/roll via boss.tribulation_thunder_spirit)",
+    "loot.boss.nine_headed_abyss_serpent (2.40/roll via boss.nine_headed_abyss_serpent)",
+    "loot.dungeon.abyss_clear (4.00/roll via dungeon.abyss_of_the_nine_heavens)",
+    "loot.tribulation.core_formation (0.30/roll via )",
+    "loot.boss.molten_ape_king (0.16/roll via boss.molten_ape_king)",
+    "loot.boss.lotus_frost_queen (0.18/roll via boss.lotus_frost_queen)",
+    "loot.boss.sword_sovereign_remnant (0.20/roll via boss.sword_sovereign_remnant)",
+    "loot.boss.crimson_moon_matriarch (0.22/roll via boss.crimson_moon_matriarch)",
+    "loot.dungeon.crimson_moon_secret_realm_clear (0.75/roll via dungeon.crimson_moon_secret_realm)",
+    "loot.boss.celestial_stair_guardian (0.24/roll via boss.celestial_stair_guardian)",
+    "loot.boss.heavenly_gate_keeper (0.26/roll via boss.heavenly_gate_keeper)",
+    "loot.boss.nine_bolt_thunder_emperor (0.28/roll via boss.nine_bolt_thunder_emperor)",
+    "loot.boss.drowned_dragon_lord (0.30/roll via boss.drowned_dragon_lord)",
+    "loot.boss.starfall_pharaoh (0.32/roll via boss.starfall_pharaoh)",
+    "loot.dungeon.pharaohs_star_vault_clear (0.75/roll via dungeon.pharaohs_star_vault)",
+    "loot.boss.vermilion_gatekeeper (0.34/roll via boss.vermilion_gatekeeper)",
+    "loot.boss.white_tiger_sovereign (0.36/roll via boss.white_tiger_sovereign)",
+    "loot.boss.arbiter_of_laws (0.38/roll via boss.arbiter_of_laws)",
+    "loot.boss.first_emperor_remnant (0.40/roll via boss.first_emperor_remnant)",
+    "loot.boss.dragon_king_ao (2.40/roll via boss.dragon_king_ao)",
+    "loot.dungeon.dragon_king_palace_clear (3.00/roll via dungeon.dragon_king_palace)",
+    "loot.boss.fallen_heaven_lord (2.40/roll via boss.fallen_heaven_lord)",
+    "loot.dungeon.fallen_heaven_ruins_clear (3.00/roll via dungeon.fallen_heaven_ruins)",
+    "loot.boss.law_sovereign (2.40/roll via boss.law_sovereign)",
+    "loot.dungeon.ten_thousand_laws_hall_clear (3.00/roll via dungeon.ten_thousand_laws_hall)",
+    "loot.boss.chaos_progenitor (2.40/roll via boss.chaos_progenitor)",
+    "loot.dungeon.primordial_chaos_abyss_clear (3.00/roll via dungeon.primordial_chaos_abyss)",
+    "loot.tribulation.soul_transformation (1.40/roll via )",
+    "loot.boss.soul_transformation_tribulation_spirit (0.75/roll via boss.soul_transformation_tribulation_spirit)",
+    "loot.tribulation.tribulation_transcendence (1.40/roll via )",
+    "loot.boss.tribulation_transcendence_tribulation_spirit (0.75/roll via boss.tribulation_transcendence_tribulation_spirit)",
+    "loot.tribulation.immortal_ascension (1.40/roll via )",
+    "loot.boss.immortal_ascension_tribulation_spirit (0.75/roll via boss.immortal_ascension_tribulation_spirit)",
+    "loot.tribulation.golden_immortal (1.40/roll via )",
+    "loot.boss.golden_immortal_tribulation_spirit (0.75/roll via boss.golden_immortal_tribulation_spirit)",
+    "loot.tribulation.immortal_emperor (1.40/roll via )",
+    "loot.boss.immortal_emperor_tribulation_spirit (0.75/roll via boss.immortal_emperor_tribulation_spirit)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": [
+    "quest.cultivation.reach_nascent_soul",
+    "quest.cultivation.reach_soul_transformation",
+    "quest.cultivation.reach_spirit_severing",
+    "quest.cultivation.reach_dao_integration",
+    "quest.cultivation.reach_tribulation_transcendence",
+    "quest.cultivation.reach_mahayana",
+    "quest.cultivation.reach_immortal_ascension",
+    "quest.cultivation.reach_earth_immortal",
+    "quest.cultivation.reach_heavenly_immortal",
+    "quest.cultivation.reach_golden_immortal",
+    "quest.cultivation.reach_immortal_king",
+    "quest.cultivation.reach_immortal_emperor"
+   ]
+  },
+  {
+   "to": "realm.heavenly_immortal",
+   "item": "mat.dao_insight_crystal",
+   "qty": 10,
+   "best_per_clear": 4,
+   "clears_needed": 3,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.03/roll via boss.thousand_node_bamboo_dragon)",
+    "loot.boss.tribulation_thunder_spirit (0.50/roll via boss.tribulation_thunder_spirit)",
+    "loot.boss.nine_headed_abyss_serpent (2.40/roll via boss.nine_headed_abyss_serpent)",
+    "loot.dungeon.abyss_clear (4.00/roll via dungeon.abyss_of_the_nine_heavens)",
+    "loot.tribulation.core_formation (0.30/roll via )",
+    "loot.boss.molten_ape_king (0.16/roll via boss.molten_ape_king)",
+    "loot.boss.lotus_frost_queen (0.18/roll via boss.lotus_frost_queen)",
+    "loot.boss.sword_sovereign_remnant (0.20/roll via boss.sword_sovereign_remnant)",
+    "loot.boss.crimson_moon_matriarch (0.22/roll via boss.crimson_moon_matriarch)",
+    "loot.dungeon.crimson_moon_secret_realm_clear (0.75/roll via dungeon.crimson_moon_secret_realm)",
+    "loot.boss.celestial_stair_guardian (0.24/roll via boss.celestial_stair_guardian)",
+    "loot.boss.heavenly_gate_keeper (0.26/roll via boss.heavenly_gate_keeper)",
+    "loot.boss.nine_bolt_thunder_emperor (0.28/roll via boss.nine_bolt_thunder_emperor)",
+    "loot.boss.drowned_dragon_lord (0.30/roll via boss.drowned_dragon_lord)",
+    "loot.boss.starfall_pharaoh (0.32/roll via boss.starfall_pharaoh)",
+    "loot.dungeon.pharaohs_star_vault_clear (0.75/roll via dungeon.pharaohs_star_vault)",
+    "loot.boss.vermilion_gatekeeper (0.34/roll via boss.vermilion_gatekeeper)",
+    "loot.boss.white_tiger_sovereign (0.36/roll via boss.white_tiger_sovereign)",
+    "loot.boss.arbiter_of_laws (0.38/roll via boss.arbiter_of_laws)",
+    "loot.boss.first_emperor_remnant (0.40/roll via boss.first_emperor_remnant)",
+    "loot.boss.dragon_king_ao (2.40/roll via boss.dragon_king_ao)",
+    "loot.dungeon.dragon_king_palace_clear (3.00/roll via dungeon.dragon_king_palace)",
+    "loot.boss.fallen_heaven_lord (2.40/roll via boss.fallen_heaven_lord)",
+    "loot.dungeon.fallen_heaven_ruins_clear (3.00/roll via dungeon.fallen_heaven_ruins)",
+    "loot.boss.law_sovereign (2.40/roll via boss.law_sovereign)",
+    "loot.dungeon.ten_thousand_laws_hall_clear (3.00/roll via dungeon.ten_thousand_laws_hall)",
+    "loot.boss.chaos_progenitor (2.40/roll via boss.chaos_progenitor)",
+    "loot.dungeon.primordial_chaos_abyss_clear (3.00/roll via dungeon.primordial_chaos_abyss)",
+    "loot.tribulation.soul_transformation (1.40/roll via )",
+    "loot.boss.soul_transformation_tribulation_spirit (0.75/roll via boss.soul_transformation_tribulation_spirit)",
+    "loot.tribulation.tribulation_transcendence (1.40/roll via )",
+    "loot.boss.tribulation_transcendence_tribulation_spirit (0.75/roll via boss.tribulation_transcendence_tribulation_spirit)",
+    "loot.tribulation.immortal_ascension (1.40/roll via )",
+    "loot.boss.immortal_ascension_tribulation_spirit (0.75/roll via boss.immortal_ascension_tribulation_spirit)",
+    "loot.tribulation.golden_immortal (1.40/roll via )",
+    "loot.boss.golden_immortal_tribulation_spirit (0.75/roll via boss.golden_immortal_tribulation_spirit)",
+    "loot.tribulation.immortal_emperor (1.40/roll via )",
+    "loot.boss.immortal_emperor_tribulation_spirit (0.75/roll via boss.immortal_emperor_tribulation_spirit)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": [
+    "quest.cultivation.reach_nascent_soul",
+    "quest.cultivation.reach_soul_transformation",
+    "quest.cultivation.reach_spirit_severing",
+    "quest.cultivation.reach_dao_integration",
+    "quest.cultivation.reach_tribulation_transcendence",
+    "quest.cultivation.reach_mahayana",
+    "quest.cultivation.reach_immortal_ascension",
+    "quest.cultivation.reach_earth_immortal",
+    "quest.cultivation.reach_heavenly_immortal",
+    "quest.cultivation.reach_golden_immortal",
+    "quest.cultivation.reach_immortal_king",
+    "quest.cultivation.reach_immortal_emperor"
+   ]
+  },
+  {
+   "to": "realm.golden_immortal",
+   "item": "mat.dao_insight_crystal",
+   "qty": 11,
+   "best_per_clear": 4,
+   "clears_needed": 3,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.03/roll via boss.thousand_node_bamboo_dragon)",
+    "loot.boss.tribulation_thunder_spirit (0.50/roll via boss.tribulation_thunder_spirit)",
+    "loot.boss.nine_headed_abyss_serpent (2.40/roll via boss.nine_headed_abyss_serpent)",
+    "loot.dungeon.abyss_clear (4.00/roll via dungeon.abyss_of_the_nine_heavens)",
+    "loot.tribulation.core_formation (0.30/roll via )",
+    "loot.boss.molten_ape_king (0.16/roll via boss.molten_ape_king)",
+    "loot.boss.lotus_frost_queen (0.18/roll via boss.lotus_frost_queen)",
+    "loot.boss.sword_sovereign_remnant (0.20/roll via boss.sword_sovereign_remnant)",
+    "loot.boss.crimson_moon_matriarch (0.22/roll via boss.crimson_moon_matriarch)",
+    "loot.dungeon.crimson_moon_secret_realm_clear (0.75/roll via dungeon.crimson_moon_secret_realm)",
+    "loot.boss.celestial_stair_guardian (0.24/roll via boss.celestial_stair_guardian)",
+    "loot.boss.heavenly_gate_keeper (0.26/roll via boss.heavenly_gate_keeper)",
+    "loot.boss.nine_bolt_thunder_emperor (0.28/roll via boss.nine_bolt_thunder_emperor)",
+    "loot.boss.drowned_dragon_lord (0.30/roll via boss.drowned_dragon_lord)",
+    "loot.boss.starfall_pharaoh (0.32/roll via boss.starfall_pharaoh)",
+    "loot.dungeon.pharaohs_star_vault_clear (0.75/roll via dungeon.pharaohs_star_vault)",
+    "loot.boss.vermilion_gatekeeper (0.34/roll via boss.vermilion_gatekeeper)",
+    "loot.boss.white_tiger_sovereign (0.36/roll via boss.white_tiger_sovereign)",
+    "loot.boss.arbiter_of_laws (0.38/roll via boss.arbiter_of_laws)",
+    "loot.boss.first_emperor_remnant (0.40/roll via boss.first_emperor_remnant)",
+    "loot.boss.dragon_king_ao (2.40/roll via boss.dragon_king_ao)",
+    "loot.dungeon.dragon_king_palace_clear (3.00/roll via dungeon.dragon_king_palace)",
+    "loot.boss.fallen_heaven_lord (2.40/roll via boss.fallen_heaven_lord)",
+    "loot.dungeon.fallen_heaven_ruins_clear (3.00/roll via dungeon.fallen_heaven_ruins)",
+    "loot.boss.law_sovereign (2.40/roll via boss.law_sovereign)",
+    "loot.dungeon.ten_thousand_laws_hall_clear (3.00/roll via dungeon.ten_thousand_laws_hall)",
+    "loot.boss.chaos_progenitor (2.40/roll via boss.chaos_progenitor)",
+    "loot.dungeon.primordial_chaos_abyss_clear (3.00/roll via dungeon.primordial_chaos_abyss)",
+    "loot.tribulation.soul_transformation (1.40/roll via )",
+    "loot.boss.soul_transformation_tribulation_spirit (0.75/roll via boss.soul_transformation_tribulation_spirit)",
+    "loot.tribulation.tribulation_transcendence (1.40/roll via )",
+    "loot.boss.tribulation_transcendence_tribulation_spirit (0.75/roll via boss.tribulation_transcendence_tribulation_spirit)",
+    "loot.tribulation.immortal_ascension (1.40/roll via )",
+    "loot.boss.immortal_ascension_tribulation_spirit (0.75/roll via boss.immortal_ascension_tribulation_spirit)",
+    "loot.tribulation.golden_immortal (1.40/roll via )",
+    "loot.boss.golden_immortal_tribulation_spirit (0.75/roll via boss.golden_immortal_tribulation_spirit)",
+    "loot.tribulation.immortal_emperor (1.40/roll via )",
+    "loot.boss.immortal_emperor_tribulation_spirit (0.75/roll via boss.immortal_emperor_tribulation_spirit)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": [
+    "quest.cultivation.reach_nascent_soul",
+    "quest.cultivation.reach_soul_transformation",
+    "quest.cultivation.reach_spirit_severing",
+    "quest.cultivation.reach_dao_integration",
+    "quest.cultivation.reach_tribulation_transcendence",
+    "quest.cultivation.reach_mahayana",
+    "quest.cultivation.reach_immortal_ascension",
+    "quest.cultivation.reach_earth_immortal",
+    "quest.cultivation.reach_heavenly_immortal",
+    "quest.cultivation.reach_golden_immortal",
+    "quest.cultivation.reach_immortal_king",
+    "quest.cultivation.reach_immortal_emperor"
+   ]
+  },
+  {
+   "to": "realm.immortal_king",
+   "item": "mat.dao_insight_crystal",
+   "qty": 12,
+   "best_per_clear": 4,
+   "clears_needed": 3,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.03/roll via boss.thousand_node_bamboo_dragon)",
+    "loot.boss.tribulation_thunder_spirit (0.50/roll via boss.tribulation_thunder_spirit)",
+    "loot.boss.nine_headed_abyss_serpent (2.40/roll via boss.nine_headed_abyss_serpent)",
+    "loot.dungeon.abyss_clear (4.00/roll via dungeon.abyss_of_the_nine_heavens)",
+    "loot.tribulation.core_formation (0.30/roll via )",
+    "loot.boss.molten_ape_king (0.16/roll via boss.molten_ape_king)",
+    "loot.boss.lotus_frost_queen (0.18/roll via boss.lotus_frost_queen)",
+    "loot.boss.sword_sovereign_remnant (0.20/roll via boss.sword_sovereign_remnant)",
+    "loot.boss.crimson_moon_matriarch (0.22/roll via boss.crimson_moon_matriarch)",
+    "loot.dungeon.crimson_moon_secret_realm_clear (0.75/roll via dungeon.crimson_moon_secret_realm)",
+    "loot.boss.celestial_stair_guardian (0.24/roll via boss.celestial_stair_guardian)",
+    "loot.boss.heavenly_gate_keeper (0.26/roll via boss.heavenly_gate_keeper)",
+    "loot.boss.nine_bolt_thunder_emperor (0.28/roll via boss.nine_bolt_thunder_emperor)",
+    "loot.boss.drowned_dragon_lord (0.30/roll via boss.drowned_dragon_lord)",
+    "loot.boss.starfall_pharaoh (0.32/roll via boss.starfall_pharaoh)",
+    "loot.dungeon.pharaohs_star_vault_clear (0.75/roll via dungeon.pharaohs_star_vault)",
+    "loot.boss.vermilion_gatekeeper (0.34/roll via boss.vermilion_gatekeeper)",
+    "loot.boss.white_tiger_sovereign (0.36/roll via boss.white_tiger_sovereign)",
+    "loot.boss.arbiter_of_laws (0.38/roll via boss.arbiter_of_laws)",
+    "loot.boss.first_emperor_remnant (0.40/roll via boss.first_emperor_remnant)",
+    "loot.boss.dragon_king_ao (2.40/roll via boss.dragon_king_ao)",
+    "loot.dungeon.dragon_king_palace_clear (3.00/roll via dungeon.dragon_king_palace)",
+    "loot.boss.fallen_heaven_lord (2.40/roll via boss.fallen_heaven_lord)",
+    "loot.dungeon.fallen_heaven_ruins_clear (3.00/roll via dungeon.fallen_heaven_ruins)",
+    "loot.boss.law_sovereign (2.40/roll via boss.law_sovereign)",
+    "loot.dungeon.ten_thousand_laws_hall_clear (3.00/roll via dungeon.ten_thousand_laws_hall)",
+    "loot.boss.chaos_progenitor (2.40/roll via boss.chaos_progenitor)",
+    "loot.dungeon.primordial_chaos_abyss_clear (3.00/roll via dungeon.primordial_chaos_abyss)",
+    "loot.tribulation.soul_transformation (1.40/roll via )",
+    "loot.boss.soul_transformation_tribulation_spirit (0.75/roll via boss.soul_transformation_tribulation_spirit)",
+    "loot.tribulation.tribulation_transcendence (1.40/roll via )",
+    "loot.boss.tribulation_transcendence_tribulation_spirit (0.75/roll via boss.tribulation_transcendence_tribulation_spirit)",
+    "loot.tribulation.immortal_ascension (1.40/roll via )",
+    "loot.boss.immortal_ascension_tribulation_spirit (0.75/roll via boss.immortal_ascension_tribulation_spirit)",
+    "loot.tribulation.golden_immortal (1.40/roll via )",
+    "loot.boss.golden_immortal_tribulation_spirit (0.75/roll via boss.golden_immortal_tribulation_spirit)",
+    "loot.tribulation.immortal_emperor (1.40/roll via )",
+    "loot.boss.immortal_emperor_tribulation_spirit (0.75/roll via boss.immortal_emperor_tribulation_spirit)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": [
+    "quest.cultivation.reach_nascent_soul",
+    "quest.cultivation.reach_soul_transformation",
+    "quest.cultivation.reach_spirit_severing",
+    "quest.cultivation.reach_dao_integration",
+    "quest.cultivation.reach_tribulation_transcendence",
+    "quest.cultivation.reach_mahayana",
+    "quest.cultivation.reach_immortal_ascension",
+    "quest.cultivation.reach_earth_immortal",
+    "quest.cultivation.reach_heavenly_immortal",
+    "quest.cultivation.reach_golden_immortal",
+    "quest.cultivation.reach_immortal_king",
+    "quest.cultivation.reach_immortal_emperor"
+   ]
+  },
+  {
+   "to": "realm.immortal_emperor",
+   "item": "mat.dao_insight_crystal",
+   "qty": 13,
+   "best_per_clear": 4,
+   "clears_needed": 4,
+   "loot": [
+    "loot.boss.thousand_node_bamboo_dragon (0.03/roll via boss.thousand_node_bamboo_dragon)",
+    "loot.boss.tribulation_thunder_spirit (0.50/roll via boss.tribulation_thunder_spirit)",
+    "loot.boss.nine_headed_abyss_serpent (2.40/roll via boss.nine_headed_abyss_serpent)",
+    "loot.dungeon.abyss_clear (4.00/roll via dungeon.abyss_of_the_nine_heavens)",
+    "loot.tribulation.core_formation (0.30/roll via )",
+    "loot.boss.molten_ape_king (0.16/roll via boss.molten_ape_king)",
+    "loot.boss.lotus_frost_queen (0.18/roll via boss.lotus_frost_queen)",
+    "loot.boss.sword_sovereign_remnant (0.20/roll via boss.sword_sovereign_remnant)",
+    "loot.boss.crimson_moon_matriarch (0.22/roll via boss.crimson_moon_matriarch)",
+    "loot.dungeon.crimson_moon_secret_realm_clear (0.75/roll via dungeon.crimson_moon_secret_realm)",
+    "loot.boss.celestial_stair_guardian (0.24/roll via boss.celestial_stair_guardian)",
+    "loot.boss.heavenly_gate_keeper (0.26/roll via boss.heavenly_gate_keeper)",
+    "loot.boss.nine_bolt_thunder_emperor (0.28/roll via boss.nine_bolt_thunder_emperor)",
+    "loot.boss.drowned_dragon_lord (0.30/roll via boss.drowned_dragon_lord)",
+    "loot.boss.starfall_pharaoh (0.32/roll via boss.starfall_pharaoh)",
+    "loot.dungeon.pharaohs_star_vault_clear (0.75/roll via dungeon.pharaohs_star_vault)",
+    "loot.boss.vermilion_gatekeeper (0.34/roll via boss.vermilion_gatekeeper)",
+    "loot.boss.white_tiger_sovereign (0.36/roll via boss.white_tiger_sovereign)",
+    "loot.boss.arbiter_of_laws (0.38/roll via boss.arbiter_of_laws)",
+    "loot.boss.first_emperor_remnant (0.40/roll via boss.first_emperor_remnant)",
+    "loot.boss.dragon_king_ao (2.40/roll via boss.dragon_king_ao)",
+    "loot.dungeon.dragon_king_palace_clear (3.00/roll via dungeon.dragon_king_palace)",
+    "loot.boss.fallen_heaven_lord (2.40/roll via boss.fallen_heaven_lord)",
+    "loot.dungeon.fallen_heaven_ruins_clear (3.00/roll via dungeon.fallen_heaven_ruins)",
+    "loot.boss.law_sovereign (2.40/roll via boss.law_sovereign)",
+    "loot.dungeon.ten_thousand_laws_hall_clear (3.00/roll via dungeon.ten_thousand_laws_hall)",
+    "loot.boss.chaos_progenitor (2.40/roll via boss.chaos_progenitor)",
+    "loot.dungeon.primordial_chaos_abyss_clear (3.00/roll via dungeon.primordial_chaos_abyss)",
+    "loot.tribulation.soul_transformation (1.40/roll via )",
+    "loot.boss.soul_transformation_tribulation_spirit (0.75/roll via boss.soul_transformation_tribulation_spirit)",
+    "loot.tribulation.tribulation_transcendence (1.40/roll via )",
+    "loot.boss.tribulation_transcendence_tribulation_spirit (0.75/roll via boss.tribulation_transcendence_tribulation_spirit)",
+    "loot.tribulation.immortal_ascension (1.40/roll via )",
+    "loot.boss.immortal_ascension_tribulation_spirit (0.75/roll via boss.immortal_ascension_tribulation_spirit)",
+    "loot.tribulation.golden_immortal (1.40/roll via )",
+    "loot.boss.golden_immortal_tribulation_spirit (0.75/roll via boss.golden_immortal_tribulation_spirit)",
+    "loot.tribulation.immortal_emperor (1.40/roll via )",
+    "loot.boss.immortal_emperor_tribulation_spirit (0.75/roll via boss.immortal_emperor_tribulation_spirit)"
+   ],
+   "shops": [],
+   "alchemy": [],
+   "quests": [
+    "quest.cultivation.reach_nascent_soul",
+    "quest.cultivation.reach_soul_transformation",
+    "quest.cultivation.reach_spirit_severing",
+    "quest.cultivation.reach_dao_integration",
+    "quest.cultivation.reach_tribulation_transcendence",
+    "quest.cultivation.reach_mahayana",
+    "quest.cultivation.reach_immortal_ascension",
+    "quest.cultivation.reach_earth_immortal",
+    "quest.cultivation.reach_heavenly_immortal",
+    "quest.cultivation.reach_golden_immortal",
+    "quest.cultivation.reach_immortal_king",
+    "quest.cultivation.reach_immortal_emperor"
+   ]
+  }
+ ]
+}

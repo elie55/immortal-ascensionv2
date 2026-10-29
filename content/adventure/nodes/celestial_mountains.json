@@ -13,7 +13,7 @@
       "node.celestial_mountains.gathering",
       "node.celestial_mountains.outskirts"
     ],
-    "rec_cp": 9649,
+    "rec_cp": 12400,
     "first_clear": {
       "spirit_stones": 735
     },
@@ -44,7 +44,7 @@
       "node.celestial_mountains.west_path",
       "node.celestial_mountains.cache"
     ],
-    "rec_cp": 11038,
+    "rec_cp": 14186,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 8,
@@ -78,7 +78,7 @@
       "node.celestial_mountains.cache",
       "node.celestial_mountains.east_path"
     ],
-    "rec_cp": 10421,
+    "rec_cp": 13392,
     "first_clear": {
       "spirit_stones": 735
     },
@@ -109,7 +109,7 @@
       "node.celestial_mountains.gathering",
       "node.celestial_mountains.lair"
     ],
-    "rec_cp": 10807,
+    "rec_cp": 13888,
     "first_clear": {
       "spirit_stones": 735
     },
@@ -141,7 +141,7 @@
       "node.celestial_mountains.outskirts",
       "node.celestial_mountains.crossroads"
     ],
-    "rec_cp": 12312,
+    "rec_cp": 15822,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 8,
@@ -161,7 +161,7 @@
       "node.celestial_mountains.outskirts",
       "node.celestial_mountains.ridge"
     ],
-    "rec_cp": 11579,
+    "rec_cp": 14880,
     "first_clear": {
       "spirit_stones": 735
     },
@@ -192,7 +192,7 @@
       "node.celestial_mountains.west_path",
       "node.celestial_mountains.deep_path"
     ],
-    "rec_cp": 22733,
+    "rec_cp": 24602,
     "first_clear": {
       "spirit_stones": 1960,
       "items": [
@@ -225,7 +225,7 @@
       "node.celestial_mountains.deep_path",
       "node.celestial_mountains.sanctum"
     ],
-    "rec_cp": 13586,
+    "rec_cp": 17459,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 8,
@@ -245,7 +245,7 @@
       "node.celestial_mountains.east_path",
       "node.celestial_mountains.sanctum"
     ],
-    "rec_cp": 12737,
+    "rec_cp": 16368,
     "first_clear": {
       "spirit_stones": 735
     },
@@ -276,7 +276,7 @@
       "node.celestial_mountains.crossroads",
       "node.celestial_mountains.den"
     ],
-    "rec_cp": 13123,
+    "rec_cp": 16864,
     "first_clear": {
       "spirit_stones": 735
     },
@@ -309,7 +309,7 @@
       "node.celestial_mountains.hidden_grove",
       "node.celestial_mountains.approach"
     ],
-    "rec_cp": 14859,
+    "rec_cp": 19096,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 8,
@@ -333,7 +333,7 @@
       "node.celestial_mountains.deep_path",
       "node.celestial_mountains.throne"
     ],
-    "rec_cp": 26400,
+    "rec_cp": 28570,
     "first_clear": {
       "spirit_stones": 1960,
       "items": [
@@ -369,7 +369,7 @@
       "node.celestial_mountains.sanctum",
       "node.celestial_mountains.approach"
     ],
-    "rec_cp": 15709,
+    "rec_cp": 20187,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 8,
@@ -394,7 +394,7 @@
       "node.celestial_mountains.hidden_grove",
       "node.celestial_mountains.throne"
     ],
-    "rec_cp": 14666,
+    "rec_cp": 18848,
     "first_clear": {
       "spirit_stones": 735
     },
@@ -425,7 +425,7 @@
       "node.celestial_mountains.den",
       "node.celestial_mountains.approach"
     ],
-    "rec_cp": 63220,
+    "rec_cp": 29016,
     "first_clear": {
       "spirit_stones": 7350,
       "sect_fame": 280
@@ -434,8 +434,8 @@
     "energy_cost": 8,
     "waves": [
       [
-        "enemy.celestial_soldier",
-        "enemy.storm_tiger"
+        "enemy.thunder_crane",
+        "enemy.cloud_ape"
       ],
       [
         "boss.celestial_stair_guardian"

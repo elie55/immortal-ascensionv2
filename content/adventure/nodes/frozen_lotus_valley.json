@@ -13,7 +13,7 @@
       "node.frozen_lotus_valley.gathering",
       "node.frozen_lotus_valley.outskirts"
     ],
-    "rec_cp": 1120,
+    "rec_cp": 1300,
     "first_clear": {
       "spirit_stones": 240
     },
@@ -44,7 +44,7 @@
       "node.frozen_lotus_valley.west_path",
       "node.frozen_lotus_valley.cache"
     ],
-    "rec_cp": 1281,
+    "rec_cp": 1487,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 7,
@@ -78,7 +78,7 @@
       "node.frozen_lotus_valley.cache",
       "node.frozen_lotus_valley.east_path"
     ],
-    "rec_cp": 1210,
+    "rec_cp": 1404,
     "first_clear": {
       "spirit_stones": 240
     },
@@ -109,7 +109,7 @@
       "node.frozen_lotus_valley.gathering",
       "node.frozen_lotus_valley.lair"
     ],
-    "rec_cp": 1254,
+    "rec_cp": 1456,
     "first_clear": {
       "spirit_stones": 240
     },
@@ -141,7 +141,7 @@
       "node.frozen_lotus_valley.outskirts",
       "node.frozen_lotus_valley.crossroads"
     ],
-    "rec_cp": 1429,
+    "rec_cp": 1659,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 7,
@@ -161,7 +161,7 @@
       "node.frozen_lotus_valley.outskirts",
       "node.frozen_lotus_valley.ridge"
     ],
-    "rec_cp": 1344,
+    "rec_cp": 1560,
     "first_clear": {
       "spirit_stones": 240
     },
@@ -192,7 +192,7 @@
       "node.frozen_lotus_valley.west_path",
       "node.frozen_lotus_valley.deep_path"
     ],
-    "rec_cp": 2639,
+    "rec_cp": 2579,
     "first_clear": {
       "spirit_stones": 640,
       "items": [
@@ -225,7 +225,7 @@
       "node.frozen_lotus_valley.deep_path",
       "node.frozen_lotus_valley.sanctum"
     ],
-    "rec_cp": 1577,
+    "rec_cp": 1830,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 7,
@@ -245,7 +245,7 @@
       "node.frozen_lotus_valley.east_path",
       "node.frozen_lotus_valley.sanctum"
     ],
-    "rec_cp": 1478,
+    "rec_cp": 1716,
     "first_clear": {
       "spirit_stones": 240
     },
@@ -276,7 +276,7 @@
       "node.frozen_lotus_valley.crossroads",
       "node.frozen_lotus_valley.den"
     ],
-    "rec_cp": 1523,
+    "rec_cp": 1768,
     "first_clear": {
       "spirit_stones": 240
     },
@@ -309,7 +309,7 @@
       "node.frozen_lotus_valley.hidden_grove",
       "node.frozen_lotus_valley.approach"
     ],
-    "rec_cp": 1725,
+    "rec_cp": 2002,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 7,
@@ -333,7 +333,7 @@
       "node.frozen_lotus_valley.deep_path",
       "node.frozen_lotus_valley.throne"
     ],
-    "rec_cp": 3064,
+    "rec_cp": 2995,
     "first_clear": {
       "spirit_stones": 640,
       "items": [
@@ -369,7 +369,7 @@
       "node.frozen_lotus_valley.sanctum",
       "node.frozen_lotus_valley.approach"
     ],
-    "rec_cp": 1823,
+    "rec_cp": 2116,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 7,
@@ -394,7 +394,7 @@
       "node.frozen_lotus_valley.hidden_grove",
       "node.frozen_lotus_valley.throne"
     ],
-    "rec_cp": 1702,
+    "rec_cp": 1976,
     "first_clear": {
       "spirit_stones": 240
     },
@@ -425,7 +425,7 @@
       "node.frozen_lotus_valley.den",
       "node.frozen_lotus_valley.approach"
     ],
-    "rec_cp": 7338,
+    "rec_cp": 3042,
     "first_clear": {
       "spirit_stones": 2400,
       "sect_fame": 160
@@ -434,8 +434,8 @@
     "energy_cost": 7,
     "waves": [
       [
-        "enemy.frost_yeti",
-        "enemy.frost_wyrm"
+        "enemy.snow_fox_spirit",
+        "enemy.ice_lotus_guardian"
       ],
       [
         "boss.lotus_frost_queen"

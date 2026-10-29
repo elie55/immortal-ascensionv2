@@ -16,5 +16,15 @@
     "bonuses": {
       "atk": 20
     }
+  },
+  {
+    "id": "title.tower_conqueror",
+    "name": "Tower Conqueror",
+    "description": "Reached the summit of the Heaven-Piercing Tower.",
+    "name_cn": "通天者",
+    "bonuses": {
+      "hp": 2000,
+      "spd": 10
+    }
   }
 ]

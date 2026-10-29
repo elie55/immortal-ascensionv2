@@ -13,7 +13,7 @@
       "node.starfall_desert.gathering",
       "node.starfall_desert.outskirts"
     ],
-    "rec_cp": 170405,
+    "rec_cp": 73000,
     "first_clear": {
       "spirit_stones": 1815
     },
@@ -44,7 +44,7 @@
       "node.starfall_desert.west_path",
       "node.starfall_desert.cache"
     ],
-    "rec_cp": 194943,
+    "rec_cp": 83512,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 10,
@@ -78,7 +78,7 @@
       "node.starfall_desert.cache",
       "node.starfall_desert.east_path"
     ],
-    "rec_cp": 184037,
+    "rec_cp": 78840,
     "first_clear": {
       "spirit_stones": 1815
     },
@@ -109,7 +109,7 @@
       "node.starfall_desert.gathering",
       "node.starfall_desert.lair"
     ],
-    "rec_cp": 190854,
+    "rec_cp": 81760,
     "first_clear": {
       "spirit_stones": 1815
     },
@@ -141,7 +141,7 @@
       "node.starfall_desert.outskirts",
       "node.starfall_desert.crossroads"
     ],
-    "rec_cp": 217437,
+    "rec_cp": 93148,
     "first_clear": {},
     "replayable": false,
     "energy_cost": 10,
@@ -161,7 +161,7 @@
       "node.starfall_desert.outskirts",
       "node.starfall_desert.ridge"
     ],
-    "rec_cp": 204486,
+    "rec_cp": 87600,
     "first_clear": {
       "spirit_stones": 1815
     },
@@ -192,7 +192,7 @@
       "node.starfall_desert.west_path",
       "node.starfall_desert.deep_path"
     ],
-    "rec_cp": 401474,
+    "rec_cp": 144832,
     "first_clear": {
       "spirit_stones": 4840,
       "items": [
@@ -225,7 +225,7 @@
       "node.starfall_desert.deep_path",
       "node.starfall_desert.sanctum"
     ],
-    "rec_cp": 239930,
+    "rec_cp": 102784,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 10,
@@ -245,7 +245,7 @@
       "node.starfall_desert.east_path",
       "node.starfall_desert.sanctum"
     ],
-    "rec_cp": 224935,
+    "rec_cp": 96360,
     "first_clear": {
       "spirit_stones": 1815
     },
@@ -276,7 +276,7 @@
       "node.starfall_desert.crossroads",
       "node.starfall_desert.den"
     ],
-    "rec_cp": 231751,
+    "rec_cp": 99280,
     "first_clear": {
       "spirit_stones": 1815
     },
@@ -309,7 +309,7 @@
       "node.starfall_desert.hidden_grove",
       "node.starfall_desert.approach"
     ],
-    "rec_cp": 262424,
+    "rec_cp": 112420,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 10,
@@ -329,7 +329,7 @@
       "node.starfall_desert.deep_path",
       "node.starfall_desert.throne"
     ],
-    "rec_cp": 466228,
+    "rec_cp": 168192,
     "first_clear": {
       "spirit_stones": 4840,
       "items": [
@@ -365,7 +365,7 @@
       "node.starfall_desert.sanctum",
       "node.starfall_desert.approach"
     ],
-    "rec_cp": 277419,
+    "rec_cp": 118844,
     "first_clear": {},
     "replayable": true,
     "energy_cost": 10,
@@ -390,7 +390,7 @@
       "node.starfall_desert.hidden_grove",
       "node.starfall_desert.throne"
     ],
-    "rec_cp": 259016,
+    "rec_cp": 110960,
     "first_clear": {
       "spirit_stones": 1815
     },
@@ -421,7 +421,7 @@
       "node.starfall_desert.den",
       "node.starfall_desert.approach"
     ],
-    "rec_cp": 1116494,
+    "rec_cp": 170820,
     "first_clear": {
       "spirit_stones": 18150,
       "sect_fame": 440
@@ -430,8 +430,8 @@
     "energy_cost": 10,
     "waves": [
       [
-        "enemy.dune_mirage",
-        "enemy.star_metal_golem"
+        "enemy.sand_wyrm",
+        "enemy.star_scarab"
       ],
       [
         "boss.starfall_pharaoh"
