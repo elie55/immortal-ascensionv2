@@ -25,6 +25,28 @@ If a task gets stuck (same bug survives 2+ attempts), stop and suggest switching
 
 Owner is on the Max 20x plan; still avoid unnecessary Fable usage.
 
+## Database: everything must be interconnected (owner's standing instruction)
+
+The content database is fully referential. Nothing may point to something that does not exist,
+and nothing may exist without a purpose and a way to obtain it.
+
+- Every entity has a stable unique ID (e.g. `item.ore.spirit_iron`, `enemy.azure_bamboo_wolf`).
+  Cross-references use IDs only, never names.
+- **Quests** may only reference existing enemies, items/materials, NPCs, locations, techniques,
+  realms and other quests (prerequisites/chains).
+- **Crafting / alchemy / forging recipes** may only use existing materials and produce existing items;
+  every recipe must have an existing unlock source (blueprint, NPC, rank...).
+- **Loot tables** (enemies, bosses, dungeons, chests, nodes) may only drop existing materials and gear,
+  and only gear of rarities allowed there (Divine: Mega Dungeons only).
+- **Shops, gifts, rewards, achievements, spirit beast evolution, sect promotions, dungeon unlocks,
+  technique requirements, breakthrough requirements, NPC relationship requirements** — same rule.
+- Reverse rule: every item/material must have at least one acquisition source AND at least one use
+  (crafting, quest, gift, consumption, selling counts only for junk). Every enemy appears somewhere.
+  Every quest is completable from a reachable state.
+- Every entry has an art block (file path, prompt, reference images, status).
+- A validator script checks all of the above and must pass before any commit that changes content
+  (run in CI too). Broken or orphaned references are build errors, not warnings.
+
 ## Art pipeline
 
 - ComfyUI Desktop on the owner's PC (RTX 3080 10 GB, 32 GB RAM).
