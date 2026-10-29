@@ -133,8 +133,8 @@ def region(rd, prev):
         out["enemies"].append({"id": eid, **named(name, desc, cn), "kind": kind, "element": f"elem.{el}", "realm": {"id": realm_id(rmin), "stage": stage},
                                "stats": stats_for(cp, n, 5 if role == "elite" else 0), "cp": cp, "techniques": techs,
                                "ai": {"strategy": {"normal": "aggressive", "elite": "berserker", "special": "trickster"}[role], "rules": []}, "resistances": {}, "loot": f"loot.enemy.{k}", "mastery_xp": 10 + cp // 50,
-                               "art": {"icon": icon(f"enemies/{key}/{k}_icon", f"the head and shoulders of {look}", None, ["refs/mockups/battle_screen.png"]),
-                                       "battle": battle(f"enemies/{key}/{k}_battle", look, refs=["refs/mockups/battle_screen.png"])}})
+                               "art": {"icon": icon(f"enemies/{key}/{k}_icon", f"the {'head' if kind == 'beast' else 'head and shoulders'} of {look}", None, ["refs/mockups/battle_screen.png"]),
+                                       "battle": battle(f"enemies/{key}/{k}_battle", look, refs=["refs/mockups/battle_screen.png"], creature=kind == "beast")}})
         P = lambda c, offs: {"gear": {"pool": {"tags": [key]}}, "rarity_weights": weights(n, offs), "chance": c}
         if role == "normal":
             ents = [{"id": M(mon), "chance": 0.45, "qty": [1, 2]}, {"id": M(herb), "chance": 0.15, "qty": [1, 1]}, P(0.05, [(0, 85), (1, 15)])]

@@ -45,9 +45,13 @@ def bg(path, desc, size=(1080, 1920), refs=None):
     return art(f"assets/{path}.png", f"{STYLE}. Full-screen vertical background: {desc}. Painterly depth, "
                f"atmospheric light, no characters, no text.", size, False, refs or ["refs/mockups/sect_map.png"])
 
-def battle(path, desc, size=(768, 1024), refs=None):
+# Creatures must not turn into people: "head to feet" made the model add riders, fairies and humans to animals.
+CREATURE = "the whole animal in frame from head to tail, a lone creature with no humans, riders or people"
+
+def battle(path, desc, size=(768, 1024), refs=None, creature=False):
+    body = CREATURE if creature else "complete figure head to feet"
     return art(f"assets/{path}.png", f"{STYLE}. Full-body combat illustration of {desc}, dynamic idle pose facing left, "
-               f"complete figure head to feet, isolated on plain background, no text.", size, True, refs or [])
+               f"{body}, isolated on plain background, no text.", size, True, refs or [])
 
 def portrait(path, desc, refs=None):
     return art(f"assets/{path}.png", f"{STYLE}. Bust portrait of {desc}, facing slightly left, soft expression, "
@@ -86,4 +90,4 @@ BEAST_STAGE_LOOK = {
 }
 
 def beast_stage(path, look, stage, stage_name):
-    return battle(path, f"{look}, shown {BEAST_STAGE_LOOK[stage]} ({stage_name})", (768, 768), ["refs/mockups/spirit_beasts.png"])
+    return battle(path, f"{look}, shown {BEAST_STAGE_LOOK[stage]} ({stage_name})", (768, 768), ["refs/mockups/spirit_beasts.png"], creature=True)

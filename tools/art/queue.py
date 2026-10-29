@@ -70,7 +70,7 @@ def gen_size(w, h, mp=1.05):
     return int(round(gw / 16) * 16), int(round(gh / 16) * 16)
 
 
-def entry(job, variant="ref", tag=""):
+def entry(job, variant="ref", tag="", reroll=0):
     w, h = job["size"]
     gw, gh = gen_size(w, h)
     cref = char_ref(job)
@@ -84,7 +84,8 @@ def entry(job, variant="ref", tag=""):
     if job.get("transparent"):
         prompt += " Plain flat light-grey background."
     rel = os.path.splitext(job["file"][len("assets/"):])[0]
-    seed = int(hashlib.sha1(job["file"].encode()).hexdigest()[:8], 16)
+    # Same file → same seed, so a render is reproducible; --reroll N draws a different one with the same prompt.
+    seed = int(hashlib.sha1((job["file"] + (f"#{reroll}" if reroll else "")).encode()).hexdigest()[:8], 16)
     return {"entity": job["entity"], "key": job["key"], "file": job["file"], "prompt": prompt, "ref": ref,
             "w": gw, "h": gh, "transparent": bool(job.get("transparent")), "seed": seed,
             "prefix": (f"{OUT_ROOT}/{rel}" if variant == "ref" else f"{OUT_ROOT}_{variant}/{rel}") + (f"_{tag}" if tag else "")}
@@ -101,6 +102,7 @@ def main():
     ap.add_argument("--skip-existing", action="store_true")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--tag", default="", help="suffix for output names (pilot rounds)")
+    ap.add_argument("--reroll", type=int, default=0, help="new seed for the same prompt (bad draw: frame, stray object, bad cut-out)")
     a = ap.parse_args()
     jobs = json.load(open(os.path.join(ROOT, ".tmp/art-jobs.json")))["jobs"]
     ids = set(filter(None, a.ids.split(","))); files = set(filter(None, a.files.split(",")))
@@ -109,7 +111,7 @@ def main():
            and (not prefixes or j["file"][len("assets/"):].startswith(prefixes)) and (not keys or j["key"] in keys)
            and not (a.skip_existing and os.path.exists(os.path.join(ROOT, j["file"])))]
     if a.limit: sel = sel[:a.limit]
-    q = [entry(j, a.variant, a.tag) for j in sel]
+    q = [entry(j, a.variant, a.tag, a.reroll) for j in sel]
     os.makedirs(os.path.join(ROOT, ".tmp/queues"), exist_ok=True)
     path = os.path.join(ROOT, ".tmp/queues", f"{a.name}.json")
     json.dump(q, open(path, "w"), ensure_ascii=False)

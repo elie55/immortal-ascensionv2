@@ -78,7 +78,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle": {
         "file": "assets/bosses/mortal_plains/plains_bandit_chief_battle.webp",
@@ -92,7 +92,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "intro": {
         "file": "assets/bosses/mortal_plains/plains_bandit_chief_intro.webp",
@@ -199,7 +199,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle": {
         "file": "assets/bosses/azure_bamboo_forest/thousand_node_bamboo_dragon_battle.webp",
@@ -213,7 +213,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "intro": {
         "file": "assets/bosses/azure_bamboo_forest/thousand_node_bamboo_dragon_intro.webp",
@@ -304,7 +304,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle": {
         "file": "assets/bosses/special/guardian_of_the_origin_battle.webp",
@@ -318,7 +318,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "intro": {
         "file": "assets/bosses/special/guardian_of_the_origin_intro.webp",
@@ -427,7 +427,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle": {
         "file": "assets/bosses/special/tribulation_thunder_spirit_battle.webp",
@@ -441,7 +441,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "intro": {
         "file": "assets/bosses/special/tribulation_thunder_spirit_intro.webp",
@@ -554,7 +554,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle": {
         "file": "assets/bosses/special/nine_headed_abyss_serpent_battle.webp",
@@ -568,7 +568,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "intro": {
         "file": "assets/bosses/special/nine_headed_abyss_serpent_intro.webp",
@@ -656,7 +656,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle": {
         "file": "assets/bosses/special/tower_warden_battle.webp",
@@ -670,7 +670,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "intro": {
         "file": "assets/bosses/special/tower_warden_intro.webp",

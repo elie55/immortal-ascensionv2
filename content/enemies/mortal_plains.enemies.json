@@ -46,7 +46,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle": {
         "file": "assets/enemies/mortal_plains/field_bandit_battle.webp",
@@ -60,7 +60,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -107,12 +107,12 @@
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a large bristly brown wild boar with yellow tusks and glowing orange eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head of a large bristly brown wild boar with yellow tusks and glowing orange eyes. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle": {
         "file": "assets/enemies/mortal_plains/wild_boar_battle.webp",
@@ -121,12 +121,12 @@
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a large bristly brown wild boar with yellow tusks and glowing orange eyes, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a large bristly brown wild boar with yellow tusks and glowing orange eyes, dynamic idle pose facing left, the whole animal in frame from head to tail, a lone creature with no humans, riders or people, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -172,12 +172,12 @@
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a nimble silver-grey monkey with jade-green eyes crouched on a branch, wind swirling around its paws. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head of a nimble silver-grey monkey with jade-green eyes crouched on a branch, wind swirling around its paws. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle": {
         "file": "assets/enemies/mortal_plains/spirit_monkey_battle.webp",
@@ -186,12 +186,12 @@
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a nimble silver-grey monkey with jade-green eyes crouched on a branch, wind swirling around its paws, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a nimble silver-grey monkey with jade-green eyes crouched on a branch, wind swirling around its paws, dynamic idle pose facing left, the whole animal in frame from head to tail, a lone creature with no humans, riders or people, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -237,12 +237,12 @@
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a lean grey wolf with pale yellow eyes and bared fangs, mid-snarl. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head of a lean grey wolf with pale yellow eyes and bared fangs, mid-snarl. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle": {
         "file": "assets/enemies/mortal_plains/grey_wolf_battle.webp",
@@ -251,12 +251,12 @@
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a lean grey wolf with pale yellow eyes and bared fangs, mid-snarl, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a lean grey wolf with pale yellow eyes and bared fangs, mid-snarl, dynamic idle pose facing left, the whole animal in frame from head to tail, a lone creature with no humans, riders or people, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   }

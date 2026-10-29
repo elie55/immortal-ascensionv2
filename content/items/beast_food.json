@@ -21,7 +21,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "xp": 40,
@@ -53,7 +53,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "xp": 35,

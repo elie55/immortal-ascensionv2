@@ -163,8 +163,13 @@ def quests():
     ]
 
 def achievements():
+    # The medal shows a picture, never the achievement's name: quoting it made the model letter it onto the medal.
+    EMBLEM = {"foundation_laid": "a white lotus blooming on a solid jade foundation stone", "mortal_plains_charted": "a map of green plains, farm fields and a winding road",
+              "hundred_victories": "a fan of many crossed swords radiating like a sunburst", "boss_hunter_i": "a horned demon skull pierced by a single sword",
+              "hidden_paths": "a misty forest path leading to a glowing hidden doorway", "beast_friend": "a small fluffy spirit-beast cub curled around a cracked egg",
+              "inner_disciple": "a jade sect token carved with a sword and cloud crest", "untouched": "a tall pagoda tower piercing the clouds"}
     A = lambda key, cat, name, cn, desc, cond, rewards, hidden=False: {"id": f"ach.{cat}.{key}", **named(name, desc, cn), "category": cat, "condition": cond, "rewards": rewards, "hidden": hidden,
-        "art": {"icon": icon(f"achievements/{cat}_{key}", f"an achievement medal for '{name}': {desc}", "epic", ["refs/mockups/achievements.png"])}}
+        "art": {"icon": icon(f"achievements/{cat}_{key}", f"a round achievement medal whose face shows {EMBLEM[key]}, a purely pictorial medal with no letters, characters or writing anywhere", "epic", ["refs/mockups/achievements.png"])}}
     return [
         A("foundation_laid", "cultivation", "Foundation Laid", "筑基", "Reach Foundation Establishment.", {"type": "objective", "objective": {"type": "reach_realm", "realm": "realm.foundation_establishment", "stage": 1}}, {"spirit_stones": 500, "titles": ["title.path_of_the_cultivator"]}),
         A("mortal_plains_charted", "exploration", "Mortal Plains Charted", "踏遍平原", "Clear every node in the Mortal Plains.", {"type": "objective", "objective": {"type": "explore", "region": "region.mortal_plains", "nodes": 10}}, {"spirit_stones": 300, "items": [q("mat.refining_stone", 2)]}),

@@ -21,7 +21,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "hatches_into": "beast.yunyun",
@@ -50,7 +50,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "hatches_into": "beast.flame_fox",

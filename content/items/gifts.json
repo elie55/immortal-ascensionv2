@@ -21,7 +21,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "base_affinity": 5,
@@ -84,7 +84,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "base_affinity": 10,
@@ -240,7 +240,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "base_affinity": -3,
@@ -334,7 +334,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "base_affinity": 8,

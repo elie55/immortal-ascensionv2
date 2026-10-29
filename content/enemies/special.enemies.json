@@ -47,7 +47,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle": {
         "file": "assets/enemies/special/abyss_spawn_battle.webp",
@@ -61,7 +61,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -112,7 +112,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       },
       "battle": {
         "file": "assets/enemies/special/thunder_wisp_battle.webp",
@@ -126,7 +126,7 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   }

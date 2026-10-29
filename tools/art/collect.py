@@ -55,7 +55,7 @@ def main():
         im = fit(im, *j["size"])
         if not a.dry:
             dst = os.path.join(a.out, j["file"]); os.makedirs(os.path.dirname(dst), exist_ok=True)
-            im.save(dst, "WEBP", quality=90, method=6)
+            im.save(dst, "WEBP", quality=90, method=4)
         done.append((j["file"], im))
     print(f"collected {len(done)} images")
     if a.sheet and done:

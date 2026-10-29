@@ -7,8 +7,8 @@ def stats(hp, atk, df, spd, crit=5, acc=90, eva=5, spp=0, spe=100):
 def enemy(key, name, cn, kind, elem, realm, stage, st, cp, techs, strat, desc, look, region):
     return {"id": f"enemy.{key}", **named(name, desc, cn), "kind": kind, "element": f"elem.{elem}", "realm": {"id": f"realm.{realm}", "stage": stage},
             "stats": st, "cp": cp, "techniques": techs, "ai": {"strategy": strat, "rules": []}, "resistances": {}, "loot": f"loot.enemy.{key}", "mastery_xp": 10 + cp // 50,
-            "art": {"icon": icon(f"enemies/{region}/{key}_icon", f"the head and shoulders of {look}", None, ["refs/mockups/battle_screen.png"], (256, 256)),
-                    "battle": battle(f"enemies/{region}/{key}_battle", f"{look}", refs=["refs/mockups/battle_screen.png"])}}
+            "art": {"icon": icon(f"enemies/{region}/{key}_icon", f"the {'head' if kind == 'beast' else 'head and shoulders'} of {look}", None, ["refs/mockups/battle_screen.png"], (256, 256)),
+                    "battle": battle(f"enemies/{region}/{key}_battle", f"{look}", refs=["refs/mockups/battle_screen.png"], creature=kind == "beast")}}
 
 def enemies():
     P, F = "mortal_plains", "azure_bamboo_forest"

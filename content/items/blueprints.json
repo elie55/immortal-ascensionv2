@@ -21,7 +21,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "unlocks": "forge.rimeglass_spear"
@@ -48,7 +48,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "unlocks": "alchemy.frost_heart_elixir"
@@ -75,7 +75,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "unlocks": "forge.demonbane_fan"

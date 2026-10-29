@@ -1,7 +1,9 @@
 // Runs in the browser pane on the owner's PC, at http://127.0.0.1:8188 (ComfyUI's own origin).
 // Loads a queue file from ComfyUI's input folder (ia/<name>.json) and queues one Qwen-Image-Edit 2511
 // graph per entry. Paste as-is with QUEUE_NAME set; returns {queued, errors}.
+// FRONT = true puts the jobs ahead of everything already waiting (fixes and rerolls during a long run).
 const QUEUE_NAME = "__QUEUE__";
+const FRONT = false;
 const MODEL = "qwen_image_edit_2511_fp8_e4m3fn_scaled_lightning_comfyui_4steps_v1.0.safetensors";
 const q = await fetch(`/view?filename=${QUEUE_NAME}.json&subfolder=ia&type=input&t=${Date.now()}`).then(r => r.json());
 function graph(e) {
@@ -33,7 +35,7 @@ function graph(e) {
 let queued = 0; const errors = [];
 for (const e of q) {
   const r = await fetch("/prompt", { method: "POST", headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ prompt: graph(e), client_id: "ia-art", extra_data: { extra_pnginfo: { ia: { entity: e.entity, file: e.file } } } }) });
+    body: JSON.stringify({ prompt: graph(e), client_id: "ia-art", front: FRONT, extra_data: { extra_pnginfo: { ia: { entity: e.entity, file: e.file } } } }) });
   if (r.ok) queued++; else errors.push([e.file, (await r.text()).slice(0, 400)]);
 }
 ({ queued, errors: errors.slice(0, 5), total: q.length });

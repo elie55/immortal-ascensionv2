@@ -21,7 +21,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "teaches": "tech.active.crescent_wind_blade"
@@ -48,7 +48,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "teaches": "tech.active.ripple_mending"
@@ -75,7 +75,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "teaches": "method.nine_yang_scripture"
@@ -102,7 +102,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "teaches": "tech.active.verdant_vine_bind"
@@ -129,7 +129,7 @@
         "references": [
           "refs/mockups/inventory_icons.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "teaches": "tech.active.iron_wall_stance"

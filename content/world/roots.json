@@ -27,7 +27,7 @@
         "references": [
           "refs/mockups/spirit_root.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -64,7 +64,7 @@
         "references": [
           "refs/mockups/spirit_root.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -101,7 +101,7 @@
         "references": [
           "refs/mockups/spirit_root.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -138,7 +138,7 @@
         "references": [
           "refs/mockups/spirit_root.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   },
@@ -178,7 +178,7 @@
         "references": [
           "refs/mockups/spirit_root.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     }
   }

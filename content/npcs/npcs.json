@@ -256,7 +256,7 @@
         "references": [
           "refs/mockups/prologue_bai.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "gifts": {
@@ -547,7 +547,7 @@
           "refs/mockups/tang_talk.png",
           "refs/mockups/merchant_pavilion.png"
         ],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "gifts": {
@@ -1325,7 +1325,7 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of Zhao Lie in combat stance, same design as the reference, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "duel": {
@@ -1425,7 +1425,7 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of Shen Qingxue in combat stance, same design as the reference, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "duel": {
@@ -1526,7 +1526,7 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of Tie Shanhe in combat stance, same design as the reference, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "duel": {
@@ -1640,7 +1640,7 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of Mo Lianjue in combat stance, same design as the reference, dynamic idle pose facing left, complete figure head to feet, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
-        "status": "planned"
+        "status": "generated"
       }
     },
     "duel": {

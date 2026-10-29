@@ -136,6 +136,8 @@ test("generated art whose file is missing is an error", () => {
   const dir = scenario("content/world/elements.json", () => {});
   const p = join(dir, "content/world/roots.json");
   const roots = JSON.parse(readFileSync(p, "utf8"));
+  // Point at a file that can never exist: real roots art gets generated as the art run progresses.
+  roots[0].art.illustration.file = "assets/world/roots/__never_generated__.webp";
   roots[0].art.illustration.status = "generated";
   writeFileSync(p, JSON.stringify(roots));
   assert.ok(rulesOf(dir).rules.has("art-missing"));
