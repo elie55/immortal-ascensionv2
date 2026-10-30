@@ -1,0 +1,52 @@
+{
+ "id": "npc.lin_xueyao",
+ "body": "assets/anim/npc.lin_xueyao/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  19,
+  94,
+  722,
+  967
+ ],
+ "ground": [
+  370,
+  967
+ ],
+ "facing": 1,
+ "archetype": "humanoid",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 548,
+ "chest": 376,
+ "neck": 271,
+ "weapon": {
+  "file": "assets/anim/npc.lin_xueyao/weapon.webp",
+  "size": [
+   310,
+   241
+  ],
+  "offset": [
+   239,
+   334
+  ],
+  "pivot": [
+   509.7,
+   371.0
+  ]
+ },
+ "blink": {
+  "file": "assets/anim/npc.lin_xueyao/blink.webp",
+  "rect": [
+   375,
+   180,
+   67,
+   30
+  ]
+ },
+ "weights": "assets/anim/npc.lin_xueyao/weights.png"
+}

@@ -227,9 +227,10 @@ def finalize_npcs(lst):
         key = n["id"].split(".")[1]
         if key in CHAT: n["chat"] = [{"min_level": lv, "text": t} for lv, t in CHAT[key]]
         n.pop("art_extra", None)
-        if n.get("duel") or n.get("dao_companion", {}).get("eligible"):
-            look = n["art"]["full_body"]["prompt"]
-            n["art"]["battle"] = battle(f"npcs/{n['id'].split('.')[1]}/battle", f"{n['name']} in combat stance, same design as the reference", refs=n["art"]["full_body"]["references"])
+        if n["role"] == "protagonist" or n.get("duel") or n.get("dao_companion", {}).get("eligible"):
+            # the protagonist and Dao companions fight on the player's side (facing right); duel opponents face left
+            ally = n["role"] == "protagonist" or n.get("dao_companion", {}).get("eligible")
+            n["art"]["battle"] = battle(f"npcs/{n['id'].split('.')[1]}/battle", f"{n['name']} in combat stance, same design as the reference, sword drawn", refs=n["art"]["full_body"]["references"], facing="right" if ally else "left")
     return lst
 
 if __name__ == "__main__":

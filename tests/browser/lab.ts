@@ -151,6 +151,84 @@ async function idle(name: string) {
   if (foesShown) throw new Error(`${foesShown} defeated foe(s) still visible behind the victory screen`);
 }
 
+/**
+ * Animation prototype (docs/ANIMATION.md): Lin vs the Field Bandit with both rigs. Records a video of a manual
+ * fight at the given speed, snapshots the puppet canvas at key moments and checks the rig really animates:
+ * the canvas is painted, changes between frames while idle (breathing/breeze), the attack's contact comes
+ * after the swing starts, and the defeated foe dissolves.
+ */
+async function animProto(name: string, speed: 1 | 2 | 3 = 1) {
+  const ctx2 = await browser.newContext({ viewport: { width: VW, height: VH }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, recordVideo: { dir: join(OUT, "video"), size: { width: VW, height: VH } } });
+  const pg = await ctx2.newPage();
+  const errs: string[] = []; pg.on("pageerror", (e) => errs.push(e.message));
+  const st = labState(1, "fitted"); // trades blows with the bandit, so both rigs attack and get hit
+  st.progress.regions["region.mortal_plains"] = { discoveredAt: T0, nodes: { "node.mortal_plains.village_road": { clears: 1 } } } as any;
+  await pg.goto(url); await pg.waitForSelector('[data-screen="menu"]');
+  await pg.evaluate(([text, t]) => (window as any).__ia.dev.load(text, t), [encode(st, 0, T0), "adventure"] as const);
+  await pg.waitForTimeout(400);
+  for (let i = 0; i < 6; i++) { const m = pg.locator(".modal-backdrop"); if (!(await m.count())) break; const b = m.locator(".btn", { hasText: /^(Later|Continue|Accept the honour|Got it|Close)$/ }).first(); if (!(await b.count())) break; await b.click(); await pg.waitForTimeout(200); }
+  await pg.evaluate((sp) => { const g = (window as any).__ia.game.state; g.combat.speed = sp; g.combat.manual = true; }, speed);
+  await pg.evaluate((s) => (window as any).__ia.dev.fight(s), { kind: "node", id: "node.mortal_plains.village_road" });
+  await pg.waitForSelector(".bt-puppets", { timeout: 15_000 });
+  await pg.waitForFunction(() => document.querySelectorAll(".spr.rigged").length >= 2, null, { timeout: 15_000 });
+  // draw a frame and read it back in the same task (the drawing buffer is cleared once it is composited)
+  const painted = () => pg.evaluate(() => { const st = (window as any).__ia.anim; st.draw(16); const cv = document.querySelector<HTMLCanvasElement>(".bt-puppets")!; const g = cv.getContext("webgl2")!; const px = new Uint8Array(cv.width * cv.height * 4); g.readPixels(0, 0, cv.width, cv.height, g.RGBA, g.UNSIGNED_BYTE, px); let n = 0, sum = 0; for (let i = 3; i < px.length; i += 4) if (px[i]! > 8) { n++; sum += px[i - 3]! + px[i - 2]! + px[i - 1]!; } return { n, sum }; });
+  await pg.waitForSelector(".bt-skill.ready", { timeout: 30_000 });
+  await pg.waitForTimeout(900);
+  const a = await painted(); await pg.waitForTimeout(700); const b = await painted();
+  await pg.screenshot({ path: join(OUT, `${name}-1-idle.png`) });
+  if (a.n < 2000) throw new Error(`puppet canvas is empty (${a.n} px)`);
+  if (a.sum === b.sum) throw new Error("idle rig does not move (identical frames 700 ms apart)");
+  // a manual attack: the swing must begin before the hit lands
+  const t0 = Date.now();
+  await pg.locator(".bt-skill.basic.ready").first().click();
+  await pg.waitForFunction(() => !!document.querySelector(".bt-float.dmg, .dmg"), null, { timeout: 10_000 }).catch(() => {});
+  await pg.waitForTimeout(120 / speed); await pg.screenshot({ path: join(OUT, `${name}-2-strike.png`) });
+  const hitAt = Date.now() - t0;
+  if (hitAt < 200 / speed) throw new Error(`hit landed ${hitAt} ms after the tap: no wind-up at ${speed}×`);
+  // let Auto finish the fight (a strong character may already have cleared the wave): the foe dissolves, the victory cheer plays
+  let auto = false;
+  for (let w = 0; w < 6; w++) {
+    if (!auto && !(await pg.locator(".modal-backdrop").count())) { await pg.locator(".bt-controls .seg button", { hasText: "Auto" }).click(); auto = true; }
+    await pg.waitForSelector(".modal-backdrop", { timeout: 120_000 });
+    const next = pg.locator(".modal-backdrop button", { hasText: "Next wave" });
+    if (await next.count()) { await pg.waitForTimeout(400); await next.click(); await pg.waitForTimeout(300); continue; }
+    break;
+  }
+  await pg.waitForTimeout(900); await pg.screenshot({ path: join(OUT, `${name}-3-victory.png`) });
+  const foesLeft = await pg.evaluate(() => [...document.querySelectorAll(".bt-foe-u")].filter((e) => !e.classList.contains("dead")).length);
+  if (foesLeft) throw new Error(`${foesLeft} foe box(es) not marked dead after victory`);
+  if (errs.length) throw new Error(`page errors: ${errs.join(" | ")}`);
+  const video = pg.video(); await ctx2.close();
+  if (video) { const vp = await video.path(); const { renameSync } = await import("node:fs"); renameSync(vp, join(OUT, "video", `${name}.webm`)); console.log("video", join(OUT, "video", `${name}.webm`)); }
+}
+
+/** Settings paths of the animation layer: Low quality = no canvas, the still sprites with their CSS motion; Reduce motion = rig without sway. */
+async function animSettings(name: string) {
+  const st = labState(1, "fitted");
+  st.progress.regions["region.mortal_plains"] = { discoveredAt: T0, nodes: { "node.mortal_plains.village_road": { clears: 1 } } } as any;
+  for (const [label, patch, expectCanvas] of [["low", { animationQuality: "low" }, false], ["reduced", { animationQuality: "high", reducedMotion: true }, true]] as const) {
+    await boot(st, "adventure"); await dismiss();
+    await page.evaluate((p) => (window as any).__ia.app.setSettings(p), patch as any);
+    await page.evaluate(() => { const g = (window as any).__ia.game.state; g.combat.speed = 1; g.combat.manual = true; });
+    await page.evaluate((s) => (window as any).__ia.dev.fight(s), { kind: "node", id: "node.mortal_plains.village_road" });
+    await page.waitForSelector(".bt-skill.ready", { timeout: 30_000 }); await page.waitForTimeout(1200);
+    const hasCanvas = await page.evaluate(() => !!document.querySelector(".bt-puppets"));
+    if (hasCanvas !== expectCanvas) throw new Error(`${label}: puppet canvas ${hasCanvas ? "present" : "absent"}`);
+    if (label === "reduced") {
+      const a = await page.evaluate(() => { const st = (window as any).__ia.anim; st.draw(16); const cv = document.querySelector<HTMLCanvasElement>(".bt-puppets")!; const g = cv.getContext("webgl2")!; const px = new Uint8Array(cv.width * cv.height * 4); g.readPixels(0, 0, cv.width, cv.height, g.RGBA, g.UNSIGNED_BYTE, px); let s = 0; for (let i = 0; i < px.length; i += 16) s += px[i]! + px[i + 1]! + px[i + 2]!; return s; });
+      await page.waitForTimeout(900);
+      const b = await page.evaluate(() => { const st = (window as any).__ia.anim; st.draw(16); const cv = document.querySelector<HTMLCanvasElement>(".bt-puppets")!; const g = cv.getContext("webgl2")!; const px = new Uint8Array(cv.width * cv.height * 4); g.readPixels(0, 0, cv.width, cv.height, g.RGBA, g.UNSIGNED_BYTE, px); let s = 0; for (let i = 0; i < px.length; i += 16) s += px[i]! + px[i + 1]! + px[i + 2]!; return s; });
+      if (a !== b) throw new Error("reduced motion: the idle rig still moves");
+    } else {
+      const still = await page.evaluate(() => getComputedStyle(document.querySelector(".bt-ally-u .spr")!).backgroundImage !== "none");
+      if (!still) throw new Error("low quality: the still sprite is hidden");
+    }
+    await shot(`${name}-${label}`);
+    await page.evaluate(() => (window as any).__ia.app.setSettings({ animationQuality: "high", reducedMotion: false }));
+  }
+}
+
 /** The owner's first-fight case: early character, First Hunt tracked, Village Road won → victory screen. */
 async function firstVictory(name: string) {
   const st = labState(1, "fitted");
@@ -326,6 +404,10 @@ const SCEN: Record<string, () => Promise<void>> = {
   idle: () => idle("idle"),
   firstwin: () => firstVictory("firstwin"),
   questmap: () => questMap("questmap"),
+  anim: () => animProto("anim", 1),
+  anim2: () => animProto("anim2", 2),
+  anim3: () => animProto("anim3", 3),
+  animsettings: () => animSettings("animsettings"),
   chief: () => fight("chief", 1, { kind: "node", id: nodeOf(1, "boss") }, { arch: "geared", companions: ["npc.bai_lingshuang"] }),
   elite: () => fight("elite", 3, { kind: "node", id: nodeOf(3, "elite") }),
   boss: () => fight("boss", 2, { kind: "node", id: nodeOf(2, "boss") }, { companions: ["npc.bai_lingshuang"] }),

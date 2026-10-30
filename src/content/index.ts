@@ -85,6 +85,15 @@ export class ContentIndex {
     const a = this.find(id)?.art?.[key];
     return a && a.status !== "planned" ? a.file : undefined;
   }
+  /** The animation rig that animates a given art file, if one is built (docs/ANIMATION.md). */
+  animFor(artFile: string): { rig: string; art: string; archetype: string } | undefined {
+    if (!this._anim) {
+      this._anim = new Map();
+      for (const e of Object.values(this.entities) as any[]) if (e.anim && e.art?.[e.anim.art]) this._anim.set(e.art[e.anim.art].file, e.anim);
+    }
+    return this._anim.get(artFile);
+  }
+  private _anim?: Map<string, { rig: string; art: string; archetype: string }>;
   /** First generated art among several keys (e.g. portrait, then full_body). */
   artAny(id: string, ...keys: string[]): string | undefined {
     for (const k of keys) { const f = this.art(id, k); if (f) return f; }

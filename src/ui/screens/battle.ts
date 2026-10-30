@@ -10,6 +10,8 @@
  */
 import { h, fmt, replaceChildren, keep } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
+import { AnimStage } from "../anim/stage.ts";
+import type { RigDef } from "../anim/rig.ts";
 import { RARITY_LABEL } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
 import type { App } from "../../app.ts";
@@ -110,6 +112,8 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   const banner = h("div", { class: "bt-banner" });
   const fx = h("div", { class: "bt-fx", "aria-hidden": "true" });
   const stage = h("div", { class: "bt-stage" }, foes, party, order, banner, fx);
+  // rigged figures are painted on a canvas over the stage (docs/ANIMATION.md); the .spr boxes keep layout and taps
+  const puppets = new AnimStage(stage, { quality: app.settings.animationQuality, reducedMotion: app.settings.reducedMotion, img: (f) => `./${f}` });
   const prompt = h("div", { class: "bt-prompt-slot" });
   const cards = h("div", { class: "bt-cards" });
   const actions = h("div", { class: "bt-actions" });
@@ -141,6 +145,23 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     });
   }
 
+  /** Puppet for a unit whose art has a rig: loaded once per rig, attached when the textures are ready. */
+  function attachRig(u: Combatant, art: HTMLElement, sprite: HTMLElement, z: number) {
+    if (!puppets.ok || !u.art) return;
+    const block = c.animFor(u.art); if (!block) return;
+    loadRig(block.rig).then((def) => { if (def && views.get(u.uid)?.spriteArt === art) return puppets.add(u.uid, def, art, sprite, z, glowRgb(u.element), u.side); })
+      .then(() => { if (puppets.has(u.uid) && u.alive) puppets.play(u.uid, "enter", speed); })
+      .catch(() => { /* no rig: the still sprite stays */ });
+  }
+  const rigCache = new Map<string, Promise<RigDef | null>>();
+  function loadRig(path: string): Promise<RigDef | null> {
+    let p = rigCache.get(path);
+    if (!p) { p = fetch(`./${path}`).then((r) => (r.ok ? r.json() : null)).catch(() => null); rigCache.set(path, p); }
+    return p;
+  }
+  const glowRgb = (el: string): [number, number, number] => { const hex = (ELEMENT_COLOR[el] ?? "#ffe9a8").replace("#", ""); const n = parseInt(hex.length === 3 ? hex.split("").map((ch) => ch + ch).join("") : hex, 16); return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255]; };
+  const rigged = (uid: number) => puppets.has(uid);
+
   function makeView(u: Combatant): View {
     const art = h("div", { class: "spr", style: { backgroundImage: app.img(u.art) } }, !u.art && h("span", { class: "bt-sprite-ph" }, icon(u.side === "ally" ? "person" : "sword", 40)));
     if (u.side === "enemy") {
@@ -149,11 +170,13 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         h("div", { class: "ground" }), h("div", { class: "aura" }), art, h("div", { class: "fu-mini" }, h("b", null, u.name), mini.el), h("div", { class: "fu-mark" }), h("div", { class: "fu-warn" }, "!"));
       sprite.classList.add("enter"); setTimeout(() => sprite.classList.remove("enter"), 900);
       foes.appendChild(sprite);
+      attachRig(u, art, sprite, 5);
       return { uid: u.uid, sprite, spriteArt: art, mini };
     }
     const sprite = h("div", { class: ["bt-ally-u", u.kind], dataset: { uid: String(u.uid) } }, h("div", { class: "ground" }), h("div", { class: "aura" }), art, h("div", { class: "fu-warn" }, "!"));
     sprite.classList.add("enter"); setTimeout(() => sprite.classList.remove("enter"), 900);
     party.appendChild(sprite);
+    attachRig(u, art, sprite, u.kind === "player" ? 14 : 13);
     const cardBar = hpBar("card");
     const spBar = h("div", { class: "bar sp" }, h("i"));
     const status = h("div", { class: "bc-status" });
@@ -176,7 +199,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   function renderUnits() {
     // views for new units (summons, next wave) and removal of gone ones
     for (const u of battle.units) if (!views.has(u.uid)) views.set(u.uid, makeView(u));
-    for (const [uid, v] of views) if (!battle.units.some((u) => u.uid === uid)) { v.sprite.remove(); v.card?.remove(); views.delete(uid); }
+    for (const [uid, v] of views) if (!battle.units.some((u) => u.uid === uid)) { v.sprite.remove(); v.card?.remove(); views.delete(uid); puppets.remove(uid); }
     const focus = focusFoe();
     const threats = new Set(battle.units.filter((u) => u.side === "enemy" && u.alive && u.telegraph).flatMap((u) => u.telegraph!.targets));
     const charging = battle.units.find((u) => u.side === "enemy" && u.alive && u.boss?.charging && u.boss.charging.turnsLeft <= 1);
@@ -188,7 +211,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const slots = FOE_SLOTS[Math.min(5, Math.max(1, ordered.length))]!;
     ordered.forEach((u, i) => {
       const v = views.get(u.uid)!; const sl = slots[Math.min(i, slots.length - 1)]!;
-      v.sprite.style.setProperty("--x", `${sl.x}%`); v.sprite.style.setProperty("--s", String(sl.s)); v.sprite.style.setProperty("--y", `${sl.y}px`); v.sprite.style.zIndex = String(sl.z);
+      v.sprite.style.setProperty("--x", `${sl.x}%`); v.sprite.style.setProperty("--s", String(sl.s)); v.sprite.style.setProperty("--y", `${sl.y}px`); v.sprite.style.zIndex = String(sl.z); puppets.setZ(u.uid, sl.z);
       v.sprite.classList.toggle("focus", u === focus && ordered.length > 1);
       v.sprite.classList.toggle("multi", ordered.length > 1);
       v.sprite.classList.toggle("winding", !!u.telegraph || (!!u.boss?.charging && u.boss.charging.turnsLeft <= 1));
@@ -367,6 +390,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   const hitTimers = new Map<number, number>();
   function hitFlash(uid: number, big = false) {
     const v = views.get(uid); if (!v) return;
+    if (rigged(uid)) { puppets.play(uid, big ? "hitBig" : "hit", speed); return; }
     v.spriteArt.classList.remove("hit", "hit-big"); void v.spriteArt.offsetWidth; v.spriteArt.classList.add(big ? "hit-big" : "hit");
     // the flash is a one-shot: drop the class once it has played so nothing can replay it later
     clearTimeout(hitTimers.get(uid)); hitTimers.set(uid, window.setTimeout(() => v.spriteArt.classList.remove("hit", "hit-big"), 520));
@@ -442,23 +466,34 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
           const element = sk?.element ?? a?.element ?? "elem.none";
           const isUlt = sk?.kind === "ultimate";
           const tech = e.skill !== "basic" && e.skill !== "counter";
-          v?.sprite.classList.add("acting"); setTimeout(() => v?.sprite.classList.remove("acting"), dur(420));
+          const puppet = rigged(e.actor);
+          if (!puppet) { v?.sprite.classList.add("acting"); setTimeout(() => v?.sprite.classList.remove("acting"), dur(420)); }
           if (tech) castRing(e.actor, element);
           if (a && isUlt) await cutIn(a, e.name);
-          else if (e.heavy || e.charged) { showSkillName(e.name, "heavy"); screenFlash("red"); await wait(520); }
-          else if (tech) { showSkillName(e.name, a?.side === "enemy" ? "foe" : ""); await wait(300); }
-          else await wait(160);
+          else if (e.heavy || e.charged) { showSkillName(e.name, "heavy"); screenFlash("red"); if (!puppet) await wait(520); }
+          else if (tech) { showSkillName(e.name, a?.side === "enemy" ? "foe" : ""); if (!puppet) await wait(300); }
+          else if (!puppet) await wait(160);
+          let swung = false;
+          if (puppet && a) {
+            // the rig's own timing: a swing for strikes, a casting pose for spells, heals and shields; the effect leaves at contact
+            const armed = c.animFor(a.art ?? "")?.archetype === "humanoid";
+            const clip = isUlt ? "ult" : sk && sk.power > 0 && (!tech || armed) ? "attack" : "cast";
+            swung = clip === "attack";
+            puppets.setGlow(e.actor, glowRgb(element));
+            await puppets.play(e.actor, clip, speed).contact;
+          }
           // travel: a bolt to a single target, a wave over several
           const hostile = e.targets.filter((t) => unit(t)?.side !== a?.side);
           if (a && sk && sk.power > 0 && hostile.length) {
-            if (hostile.length === 1 && !isUlt) await projectile(e.actor, hostile[0]!, element);
+            if (swung) { /* a melee swing: the blow lands at the contact frame, nothing flies */ }
+            else if (hostile.length === 1 && !isUlt) await projectile(e.actor, hostile[0]!, element);
             else { wave(a.side === "ally" ? "enemy" : "ally", element); await wait(260); }
           }
           if (tech) { caption = `${name(e.actor)}: ${e.name}`; renderTop(); }
           break;
         }
         case "hit": {
-          if (e.dodged) float(e.target, "Miss", "miss");
+          if (e.dodged) { float(e.target, "Miss", "miss"); if (rigged(e.target)) puppets.play(e.target, "dodge", speed); }
           else {
             const big = e.amount >= (unit(e.target)?.maxHp ?? 1) * 0.25;
             float(e.target, fmt.int(e.amount), e.crit ? "dmg crit" : e.kind === "dot" ? "dmg dot" : unit(e.target)?.side === "ally" ? "dmg taken" : "dmg", e.crit ? "CRITICAL!" : undefined);
@@ -473,9 +508,10 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         case "status": if ((e.result === "applied" || e.result === "stacked") && e.status !== "status.shield") float(e.target, c.get<any>(e.status).name, "status"); else if (e.result === "resisted") float(e.target, "Resisted", "miss"); else if (e.result === "immune" && c.get<any>(e.status).kind === "control") float(e.target, "Immune", "miss"); renderUnits(); await wait(110); break;
         case "death": {
           const v = views.get(e.target);
-          v?.sprite.classList.add("dying"); v?.card?.classList.add("dead");
+          v?.card?.classList.add("dead");
           caption = `${name(e.target)} is defeated`; renderTop();
-          await wait(500);
+          if (rigged(e.target)) await puppets.play(e.target, "defeat", speed).done;
+          else { v?.sprite.classList.add("dying"); await wait(500); }
           if (v && unit(e.target)?.side === "enemy") v.gone = true;
           if (selectedTarget === e.target) selectedTarget = undefined;
           renderUnits(); break;
@@ -500,11 +536,13 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   async function loop() {
     if (busy) return; busy = true;
     try {
-      // a turn waiting for manual input only stops the loop in Manual; switching to Auto lets the rules play it
-      while (playing && !battle.result && !(battle.manual && battle.needsInput)) {
+      // Show whatever the engine already produced (a manual action may have ended the battle by itself), then
+      // keep stepping; a turn waiting for manual input only stops the loop in Manual (Auto plays it).
+      for (;;) {
+        const pending = battle.drain();
+        if (pending.length) { await animate(pending); renderUnits(); renderSkills(); }
+        if (!playing || battle.result || (battle.manual && battle.needsInput)) break;
         battle.step();
-        await animate(battle.drain());
-        renderUnits(); renderSkills();
       }
       if (battle.manual && battle.needsInput) { renderOrder(); renderSkills(); }
       if (battle.result) await finishWave();
@@ -524,7 +562,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       h("div", { class: "cn m-cn" }, "小 胜"), h("div", { class: "m-title" }, `Wave ${enc.wave} cleared`),
       h("div", { class: "m-sub" }, `${enc.waves.length - enc.wave} wave${enc.waves.length - enc.wave > 1 ? "s" : ""} to go · HP ${fmt.int(wr.summary.playerHp)}`),
       dropsBlock(wr.drops, wr.gearUids),
-      h("button", { class: "btn gold block", style: { marginTop: "12px" }, onClick: async () => { close(); battle = enc.nextWave(); selectedTarget = undefined; for (const v of views.values()) { v.sprite.remove(); v.card?.remove(); } views.clear(); renderAll(); await showIntro(); loop(); } }, "Continue ▸ Next wave")) });
+      h("button", { class: "btn gold block", style: { marginTop: "12px" }, onClick: async () => { close(); battle = enc.nextWave(); selectedTarget = undefined; for (const [uid, v] of views) { v.sprite.remove(); v.card?.remove(); puppets.remove(uid); } views.clear(); renderAll(); await showIntro(); loop(); } }, "Continue ▸ Next wave")) });
   }
 
   function dropsBlock(d: { items: { id: string; qty: number }[]; spirit_stones: number; sect_fame: number }, gearUids: number[]) {
@@ -550,7 +588,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     for (const a of (stake.affinity ?? []) as { npc: string; delta: number }[]) rows.push([`${c.get<any>(a.npc).name} · affinity`, `${a.delta >= 0 ? "+" : ""}${a.delta}`]);
     if (stake.sect_fame) rows.push(["Sect Fame", `+${stake.sect_fame}`]);
     if (stake.spirit_stones) rows.push(["Spirit Stones", `+${fmt.int(stake.spirit_stones)}`]);
-    root.classList.add("won");
+    root.classList.add("won"); cheer();
     app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "victory spar", render: (close) => h("div", { class: "center" },
       h("div", { class: "res-head" }, h("div", { class: "res-rays", "aria-hidden": "true" }), h("div", { class: ["result-title", r.won ? "win" : "lose"] }, r.won ? "Victory" : "Defeated"), h("div", { class: "cn res-cn" }, r.won ? "切磋 · 胜" : "切磋 · 负"),
         h("div", { class: "res-ribbon" }, h("span", null, `Friendly spar · vs ${n.name}`))),
@@ -576,7 +614,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const again = () => { app.router.close("result"); const src = enc.src; onExit(); const re = EncounterCls.start(s, c, src, app.now()); if (!re.ok) { app.router.toast(re.reason, "bad"); return; } app.router.pushGlobal(battleScreen(app, re.encounter, () => { app.router.popGlobal(); app.router.refresh(); })); };
     // overlays re-render every tick: their content must be built inside render, never a node made once and reused
     // (a reused node is moved out of the live modal by the next render and morph leaves an empty shell behind)
-    if (r.won) { root.classList.add("won"); return app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "victory", render: (close) => h("div", { class: "center" },
+    if (r.won) { root.classList.add("won"); cheer(); return app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "victory", render: (close) => h("div", { class: "center" },
       h("div", { class: "res-head" },
         h("div", { class: "res-rays", "aria-hidden": "true" }),
         h("div", { class: "result-title win" }, trib ? "Tribulation passed" : "Victory"),
@@ -649,13 +687,14 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   }
   const stat = (l: string, v: string) => h("div", null, h("span", null, l), h("b", null, v));
 
+  function cheer() { for (const u of battle.units) if (u.side === "ally" && u.alive && rigged(u.uid)) puppets.play(u.uid, "victory", 1); }
   function renderAll() { renderTop(); renderModes(); renderUnits(); renderSkills(); }
   renderAll();
-  if ((globalThis as any).__ia) (globalThis as any).__ia.enc = enc; // test lab hook
+  if ((globalThis as any).__ia) { (globalThis as any).__ia.enc = enc; (globalThis as any).__ia.anim = puppets; } // test lab hooks
   // start after mount so effect positions resolve
   timer = window.setTimeout(async () => { await showIntro(); loop(); }, 250);
 
-  return { id: "battle", nav: false, bg: () => enc.bg, render: () => root, onLeave: () => { playing = false; if (timer) clearTimeout(timer); } };
+  return { id: "battle", nav: false, bg: () => enc.bg, render: () => root, onLeave: () => { playing = false; if (timer) clearTimeout(timer); puppets.dispose(); } };
 }
 
 

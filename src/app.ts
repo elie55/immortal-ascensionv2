@@ -28,7 +28,7 @@ import { decode } from "./save/codec.ts";
 import { startEncounter } from "./ui/screens/battle.ts";
 import type { DomainEvent } from "./engine/events.ts";
 
-export const VERSION = "0.7.1";
+export const VERSION = "0.8.0";
 
 export class App {
   content!: ContentIndex;

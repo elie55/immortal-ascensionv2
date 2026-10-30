@@ -35,6 +35,7 @@ established language.
 | World regions | world_regions | tour 48, lab sweep | ✔ | Chinese name on its own line |
 | Region map + node card | region_node_map, node_interactions | tour 49–50, lab sweep | ✔ | painted pins with names; generated regions renamed |
 | Battle (solo, party, multi, elite warning, boss, manual) | battle_screen | tour 51–53, lab solo/elite/boss/party/multi/bossintro | ✔ | full redesign; intros, effects, cut-in, warnings |
+| Battle animation rigs (Lin, Field Bandit) | — | lab anim / anim2 / anim3 / animsettings (video) | ◐ prototype | cutout rigs on WebGL: breath, breeze, blink, swing with contact sync, hit, dissolve, victory; Low quality and Reduce motion paths; cast awaits the owner's approval before the batch |
 | Victory | victory | tour 52, lab | ✔ | title over the scene, framed rewards |
 | Defeat | defeat | lab defeat | ✔ | foe card, power check, ways to get stronger |
 | Tribulation | tribulation | lab tribulation | ✔ | wave pips, lightning, "Tribulation passed" |

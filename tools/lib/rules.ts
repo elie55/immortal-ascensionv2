@@ -1,4 +1,4 @@
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { type Database, type Entity, type Issue } from "./load.ts";
 import { looksLikeId, prefixOf, ITEM_PREFIXES, type Prefix } from "../../schema/ids.ts";
@@ -571,6 +571,7 @@ export function runRules(db: Database): Issue[] {
   const files = new Map<string, string>();
   for (const e of all) {
     for (const [key, asset] of Object.entries<any>(e.data.art ?? {})) checkArt(ctx, `${e.id}.art.${key}`, asset, files);
+    if (e.data.anim) checkAnim(ctx, e);
     if (e.prefix === "gear") for (const [r, v] of Object.entries<any>(e.data.rarities)) for (const [key, asset] of Object.entries<any>(v.art)) checkArt(ctx, `${e.id}.${r}.art.${key}`, asset, files);
   }
 
@@ -604,6 +605,22 @@ function hasUse(e: Entity, g: ReturnType<typeof buildGraph>): boolean {
     default:
       return [...(g.uses.get(e.id) ?? [])].some((u) => !u.startsWith("shop:"));
   }
+}
+
+/** An animation rig must be built for this very entity, animate one of its generated art keys, and have all its layers on disk. */
+function checkAnim(ctx: Ctx, e: Entity) {
+  const a = e.data.anim; const where = `${e.id}.anim`;
+  if (a.rig !== `assets/anim/${e.id}/rig.json`) ctx.err("anim-rig", where, `rig path must be assets/anim/${e.id}/rig.json`);
+  const art = e.data.art?.[a.art];
+  if (!art) ctx.err("anim-art", where, `animates art key "${a.art}" which the entity does not have`);
+  else if (art.status === "planned") ctx.err("anim-art", where, `animates "${a.art}" but that image is not generated`);
+  const path = join(ctx.db.root, a.rig);
+  if (!existsSync(path)) { ctx.err("anim-missing", where, `${a.rig} does not exist`); return; }
+  let rig: any;
+  try { rig = JSON.parse(readFileSync(path, "utf8")); } catch { ctx.err("anim-rig", where, `${a.rig} is not valid JSON`); return; }
+  for (const f of [rig.body, rig.weapon?.file, rig.blink?.file, rig.weights].filter(Boolean) as string[]) if (!existsSync(join(ctx.db.root, f))) ctx.err("anim-missing", where, `layer ${f} does not exist`);
+  if (rig.archetype !== a.archetype) ctx.err("anim-rig", where, `archetype ${a.archetype} differs from the rig's ${rig.archetype}`);
+  if (!Array.isArray(rig.bbox) || !Array.isArray(rig.ground) || !rig.size) ctx.err("anim-rig", where, "rig lacks size/bbox/ground");
 }
 
 function checkArt(ctx: Ctx, where: string, asset: any, files: Map<string, string>) {

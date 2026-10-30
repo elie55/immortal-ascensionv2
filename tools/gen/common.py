@@ -46,6 +46,15 @@ ICON_LOOK = {
     "ten_thousand_gold_rain": "a square technique icon of a torrent of gold coins pouring down from a violet sky onto the ground",
 }
 
+def anim_block(entity):
+    """Attach the animation rig (assets/anim/<id>/rig.json) when tools/anim/build.py has produced one."""
+    rig = os.path.join(ROOT, "assets", "anim", entity["id"], "rig.json")
+    if not os.path.exists(rig): entity.pop("anim", None); return entity
+    r = json.load(open(rig))
+    key = "battle" if "battle" in entity.get("art", {}) else "full_body"
+    entity["anim"] = {"rig": f"assets/anim/{entity['id']}/rig.json", "art": key, "archetype": r["archetype"]}
+    return entity
+
 def flavor(desc):
     """The sentences of a description that carry imagery (no numbers), for art prompts."""
     import re
@@ -65,10 +74,12 @@ def bg(path, desc, size=(1080, 1920), refs=None):
 # Creatures must not turn into people: "head to feet" made the model add riders, fairies and humans to animals.
 CREATURE = "the whole animal in frame from head to tail, a lone creature with no humans, riders or people"
 
-def battle(path, desc, size=(768, 1024), refs=None, creature=False):
+def battle(path, desc, size=(768, 1024), refs=None, creature=False, facing="left"):
+    """Combat sprite. Enemies face left; the player's side faces right (facing matters for the animation rig:
+    the weapon swings toward the foe). Side view, weapon clearly separate from the body, so the rig can cut it out."""
     body = CREATURE if creature else "complete figure head to feet"
-    return art(f"assets/{path}.png", f"{STYLE}. Full-body combat illustration of {desc}, dynamic idle pose facing left, "
-               f"{body}, isolated on plain background, no text.", size, True, refs or [])
+    return art(f"assets/{path}.png", f"{STYLE}. Full-body combat illustration of {desc}, dynamic idle pose in three-quarter view facing {facing}, "
+               f"{body}, weapon held ready and clearly visible away from the body, isolated on plain background, no text.", size, True, refs or [])
 
 def portrait(path, desc, refs=None):
     return art(f"assets/{path}.png", f"{STYLE}. Bust portrait of {desc}, facing slightly left, soft expression, "
@@ -121,6 +132,9 @@ def chain_links(nodes):
 def write(rel, data):
     p = os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(p), exist_ok=True)
+    if isinstance(data, list):  # combatants get their animation rig when one has been built
+        for e in data:
+            if isinstance(e, dict) and str(e.get("id", "")).split(".")[0] in ("enemy", "boss", "npc", "beast"): anim_block(e)
     with open(p, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")

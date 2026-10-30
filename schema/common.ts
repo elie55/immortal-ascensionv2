@@ -134,6 +134,18 @@ export const ArtAsset = z.object({
 export type ArtAsset = z.infer<typeof ArtAsset>;
 
 /**
+ * Animation rig built from the figure's battle sprite (docs/ANIMATION.md): `rig` is the rig.json under
+ * assets/anim/<id>/, `art` the art key it animates (the rig replaces that still image in battle).
+ * Added by the generators when the rig folder exists, so content never points at a rig that is not built.
+ */
+export const AnimBlock = z.object({
+  rig: z.string().regex(/^assets\/anim\/[a-z0-9_.\-]+\/rig\.json$/, "assets/anim/<id>/rig.json"),
+  art: z.string().min(1),
+  archetype: z.enum(["humanoid", "humanoid_unarmed", "quadruped", "flying", "serpent", "large"]),
+});
+export type AnimBlock = z.infer<typeof AnimBlock>;
+
+/**
  * Build an `art` object schema: the given keys are required; any extra key
  * (e.g. `expression_smile`, `battle_juvenile`) must also be a valid ArtAsset.
  */

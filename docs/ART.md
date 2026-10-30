@@ -60,3 +60,12 @@ entity's short key); status icons describe a concrete object (`STATUS_LOOK` in t
 
 Shipped art is lossy WebP (quality 90, alpha kept): about a tenth of PNG, native on Android.
 Raw ComfyUI PNGs stay on the PC in `ComfyUI-Shared/output/IA/`.
+
+## Animation layers
+
+Combat rigs (docs/ANIMATION.md) need, per figure, six small edits of its battle sprite: `noweapon`, `tag_weapon`,
+`tag_hands`, `eyesclosed`, `tag_eyes`, `tag_hair`, `tag_cloth` (queued by `tools/anim/edits.py`, same submit script,
+outputs in `output/IA_anim/<id>/`). `tools/anim/build.py` registers each edit onto the sprite and cuts the layers
+into `assets/anim/<id>/`; generators then attach the entity's `anim` block. The protagonist's `battle` art faces right
+(the player's side); enemies face left.
+

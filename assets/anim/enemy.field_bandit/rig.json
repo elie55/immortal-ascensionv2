@@ -1,0 +1,52 @@
+{
+ "id": "enemy.field_bandit",
+ "body": "assets/anim/enemy.field_bandit/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  66,
+  60,
+  697,
+  1005
+ ],
+ "ground": [
+  382,
+  1005
+ ],
+ "facing": -1,
+ "archetype": "humanoid",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 551,
+ "chest": 348,
+ "neck": 234,
+ "weapon": {
+  "file": "assets/anim/enemy.field_bandit/weapon.webp",
+  "size": [
+   510,
+   264
+  ],
+  "offset": [
+   65,
+   519
+  ],
+  "pivot": [
+   529.3,
+   583.5
+  ]
+ },
+ "blink": {
+  "file": "assets/anim/enemy.field_bandit/blink.webp",
+  "rect": [
+   323,
+   132,
+   40,
+   36
+  ]
+ },
+ "weights": "assets/anim/enemy.field_bandit/weights.png"
+}
