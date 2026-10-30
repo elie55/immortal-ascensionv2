@@ -128,8 +128,8 @@ export function depotScreen(app: App, backTo: string): Screen {
       else { const n = all ? e.qty : 1; run(() => app.game.run("depot", app.now(), (st, ct) => dui.side === "bag" ? storeItem(st, ct, e.id, n) : takeItem(st, ct, e.id, n)), `${dui.side === "bag" ? "Stored" : "Took"} ${n} × ${e.name}`); }
     };
     const tileOf = (e: Entry) => e.kind === "gear"
-      ? gearTile(app, e.uid, { named: true, selected: e.key === dui.selected, onClick: () => { dui.selected = e.key; refresh(); } })
-      : stackTile(app, e.id, { named: true, selected: e.key === dui.selected, onClick: () => { dui.selected = e.key; refresh(); } });
+      ? gearTile(app, e.uid, { selected: e.key === dui.selected, onClick: () => { dui.selected = e.key; refresh(); } })
+      : stackTile(app, e.id, { selected: e.key === dui.selected, onClick: () => { dui.selected = e.key; refresh(); } });   // the dock names the selection, as in the bag
     const bulk = (what: "mat" | "all") => {
       let n = 0;
       for (const e of entriesOf(app, "bag")) {

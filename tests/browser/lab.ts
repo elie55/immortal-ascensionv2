@@ -430,6 +430,8 @@ const SCEN: Record<string, () => Promise<void>> = {
   gearwin: () => gearVictory("gearwin"),
   questmap: () => questMap("questmap"),
   sectmap: () => screen("sectmap", 1, "0", { tab: "sect" }),
+  regions: () => screen("regions", 4, "0", { tab: "adventure" }),
+  dungeons: () => screen("dungeons", 4, `window.__ia.dev.open("dungeons")`, { tab: "adventure" }),
   // a bag with more than one page (24 slots a page): page 1, then the pager's page 2
   bagfull: () => screen("bagfull-1", 3, "0", { tab: "inventory", mutate: (s) => { for (const m of [...c.byPrefix<any>("mat"), ...c.byPrefix<any>("cons")].slice(0, 40)) s.inventory.stacks[m.id] = 3; } }).then(async () => {
     await page.locator(".pager .pg", { hasText: "2" }).click(); await page.waitForTimeout(400); await shot("bagfull-2");

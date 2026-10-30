@@ -52,7 +52,7 @@ export function dungeonHubScreen(app: App): Screen {
         const firstDone = tier ? tierCleared(s, d.id, tierN) : !!rec?.clears;
         const fc = tier ? tier.rewards.first_clear : d.rewards.first_clear;
         return h("div", { class: ["glass dungeon-card", !can.ok && "locked"], dataset: { dungeon: d.id } },
-          h("div", { class: "dc-art", style: { backgroundImage: app.img(c.art(d.id, "card")) } }, h("span", { class: "tag", style: { position: "absolute", left: "8px", top: "8px" } }, d.kind.replace("_", " "))),
+          h("div", { class: "dc-art", style: { backgroundImage: app.img(c.art(d.id, "card")) } }),   // the section names the kind
           h("div", { class: "dc-body" },
             h("div", { class: "row between" }, h("div", { class: "title", style: { fontSize: "calc(14rem / 15)" } }, d.name, tier && tier.tier > 1 && h("span", { class: "cn", style: { marginLeft: "6px", fontSize: "calc(12rem / 15)" } }, tier.name)), h("span", { class: ["tag", powerTone(cp, recCp)] }, `Rec. ${fmt.int(recCp)}`)),
             tiers.length > 0 && h("div", { class: "tier-row" }, tiers.map((t) => {
@@ -68,7 +68,7 @@ export function dungeonHubScreen(app: App): Screen {
       };
       return [
         header(app),
-        subbar({ help: { app, key: "dungeons" }, title: "Dungeons", cn: "秘境", sub: "Tower · resource · challenge · secret realms · mega", end: cpChip(app) }),
+        subbar({ help: { app, key: "dungeons" }, title: "Dungeons", cn: "秘境", sub: "Tower · resource · challenge · realms", end: cpChip(app) }),
         worldSwitch(app, "dungeons"),
         tower && towerHero(app, tower),
         section("Resource", "Farm materials and spirit stones", h("div", { class: "rows" }, group("resource").map(card))),
@@ -120,7 +120,7 @@ export function towerScreen(app: App, id: string): Screen {
       const can = canStart(s, c, { kind: "tower", id, floor: best + 1 }, app.now());
       return [
         header(app),
-        subbar({ help: { app, key: "tower" }, title: d.name, cn: d.name_cn, sub: `Best floor ${best} / ${d.tower!.floors} · no energy cost`, backTo: "Dungeons", onBack: () => app.router.back(), end: cpChip(app) }),
+        subbar({ help: { app, key: "tower" }, title: d.name, cn: d.name_cn, sub: `Best floor ${best} / ${d.tower!.floors}`, backTo: "Dungeons", onBack: () => app.router.back(), end: cpChip(app) }),
         // the climb as a spine of floor medallions, highest on top (review 55; mockups arena_bracket, secret_realm_map)
         h("div", { class: "tw-spine" }, floors.map((f) => {
           const tf = towerFloor(c, d, f);

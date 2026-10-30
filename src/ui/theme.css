@@ -1159,7 +1159,7 @@ button.tag { min-height: 32px; padding: 4px 12px; }
 .ach { align-items: center; padding: 9px 10px; } .ach-ico { width: 42px; height: 42px; border-radius: 50%; }
 .ach-body { min-width: 0; } .ach-top { display: flex; align-items: center; gap: 8px; } .ach-top .lbl { flex: 1; min-width: 0; }
 .ach .lbl, .ach .desc { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .ach .desc { font-size: calc(11.5rem / 15); }
-.ach-chip { flex: none; max-width: 46%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: calc(10rem / 15); } .ach-chip i { font-style: normal; opacity: .75; }
+.ach-chip { flex: 0 1 auto; display: inline-block; min-width: 0; max-width: 46%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: calc(10rem / 15); line-height: 1.6; } .ach-chip svg { vertical-align: -1px; } .ach-chip i { font-style: normal; opacity: .75; }
 .ach-bar { display: flex; align-items: center; gap: 8px; margin-top: 5px; } .ach-bar .bar { flex: 1; } .ach-bar b { flex: none; font-size: calc(10.5rem / 15); color: var(--text-2); }
 .ach.got { background: linear-gradient(180deg, rgba(60,48,20,.55), rgba(24,22,44,.75)); } .ach.secret .ach-ico { border-style: dashed; }
 .ach-cats .chip { gap: 5px; } .ach-n { font-style: normal; font-size: calc(9.5rem / 15); opacity: .7; }
@@ -1193,7 +1193,7 @@ button.tag { min-height: 32px; padding: 4px 12px; }
 .ar-head { font-family: var(--f-title); font-size: calc(18rem / 15); font-weight: 800; } .ar-head b { color: var(--jade); }
 .ar-items { display: flex; flex-direction: column; gap: 5px; text-align: left; padding: 8px; border-radius: 12px; background: rgba(4,10,34,.45); border: 1px solid var(--edge); }
 .ar-item { display: flex; align-items: center; gap: 8px; font-size: calc(12rem / 15); } .ar-item .tile-mini { width: 28px; height: 28px; }
-.npc-requests { margin-top: 10px; } .npc-requests > .sec-h { padding: 0 4px; } .npc-requests .quest-card:first-of-type { margin-top: 6px; }
+.npc-requests { margin-top: 10px; } .npc-requests > .sec-h { padding: 0 4px; text-shadow: 0 1px 4px #000, 0 0 12px rgba(0,0,30,.9); } .npc-requests > .sec-h .hint { color: #e4e8ff; } .npc-requests .quest-card:first-of-type { margin-top: 6px; }
 /* empty states: an icon, what is missing, how to get it, and the button that goes there */
 .empty-state { text-align: center; padding: 18px 14px; } .empty-state .dim { font-size: calc(12.5rem / 15); line-height: 1.45; max-width: 300px; margin: 0 auto; }
 .es-ico { width: 54px; height: 54px; margin: 0 auto 8px; border-radius: 50%; display: grid; place-items: center; color: var(--gold-hi); background: radial-gradient(circle, rgba(255,224,138,.18), rgba(255,224,138,0) 70%); border: 1px solid var(--gold-line); }
@@ -1411,9 +1411,9 @@ html, body { font-variant-numeric: tabular-nums; }
 .recipe-card { position: relative; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 8px 4px 7px; border-radius: 12px; text-align: center; color: var(--text);
   background: radial-gradient(90% 70% at 50% 30%, var(--rbg1, #2a3466), var(--rbg2, #111940)); border: 1px solid color-mix(in srgb, var(--rc1, #6c7aa8) 70%, transparent); box-shadow: 0 0 10px var(--rglow, transparent); }
 .recipe-card.sel { outline: 2px solid var(--gold-hi); outline-offset: 1px; box-shadow: 0 0 16px rgba(255,214,120,.45); }
-.rc-art { width: 52px; height: 52px; display: grid; place-items: center; background: center/contain no-repeat; color: var(--text-3); filter: drop-shadow(0 3px 5px rgba(0,0,0,.5)); }
-.rc-name { font-size: calc(11.5rem / 15); font-weight: 700; line-height: 1.15; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-.rc-sub { font-size: calc(10.5rem / 15); color: var(--text-3); line-height: 1.15; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.recipe-card .rc-art { width: 52px; height: 52px; display: grid; place-items: center; background: center/contain no-repeat; color: var(--text-3); filter: drop-shadow(0 3px 5px rgba(0,0,0,.5)); }
+.recipe-card .rc-name { font-size: calc(11.5rem / 15); font-weight: 700; line-height: 1.15; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.recipe-card .rc-sub { font-size: calc(10.5rem / 15); color: var(--text-3); line-height: 1.15; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 .recipe-card.sealed { background: linear-gradient(180deg, #2a2418, #15120c); border-color: rgba(200,170,110,.35); box-shadow: none; }
 .recipe-card.sealed .rc-art { filter: grayscale(1) brightness(.45); }
 .recipe-card.sealed .rc-name { color: #d8c9a4; }
@@ -1878,3 +1878,46 @@ html, body { font-variant-numeric: tabular-nums; }
 .vn-note { margin-top: 8px; text-align: center; font-size: calc(12rem / 15); color: var(--text-2); }
 /* a lesson's end in battle */
 .modal.practice-done { text-align: center; }
+
+/* ============ World Regions: painted cards with the text on a dark foot (mockup world_regions) ============ */
+.region-grid { gap: 10px; }
+.region-card { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 164px; border-radius: 14px; border: 1px solid rgba(255,214,140,.38); box-shadow: 0 6px 16px rgba(0,0,20,.45), inset 0 1px 0 rgba(255,240,200,.12); background: #0b1236; }
+.region-card .rc-art { position: absolute; inset: 0; height: auto; background-size: cover; background-position: center 30%; }
+.region-card .rc-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,10,32,.15) 0, rgba(6,10,32,0) 22%, rgba(6,10,32,.72) 52%, rgba(6,10,36,.96) 78%); }
+.region-card .rc-num { z-index: 1; left: 8px; top: 8px; min-width: 26px; height: 26px; font-family: var(--f-label); font-weight: 400; font-size: calc(12rem / 15); color: #ffe7a8; background: rgba(6,10,34,.78); border: 1.5px solid rgba(255,214,140,.8); }
+.region-card .rc-lock { z-index: 1; right: 8px; top: 8px; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; color: #e8dcc0; background: rgba(6,10,34,.78); border: 1px solid rgba(255,214,140,.45); }
+.region-card .rc-state { z-index: 1; top: 8px; right: 8px; bottom: auto; font-family: var(--f-label); font-weight: 400; letter-spacing: .06em; text-transform: uppercase; font-size: calc(10.5rem / 15); color: #ffe7a8; border-color: rgba(255,214,140,.7); }
+.region-card .rc-state.done { color: #9ff2d4; border-color: rgba(79,224,176,.8); }
+.region-card .rc-body { position: relative; z-index: 1; padding: 0 10px 10px; margin-top: 40px; }   /* clears the numeral when large text makes the card grow */
+.region-card .rc-name { font-family: var(--f-label); font-weight: 400; font-size: calc(15rem / 15); line-height: 1.15; color: #fff6dc; text-shadow: 0 1px 4px #000; }
+.region-card .rc-cn { font-size: calc(11rem / 15); color: var(--gold-hi); margin: 1px 0 3px; }
+.region-card .rc-body .muted { font-size: calc(11.5rem / 15); line-height: 1.3; color: #c9cfee; text-shadow: 0 1px 3px #000; }
+.region-card.locked { border-color: rgba(190,200,240,.25); }
+.region-card.locked .rc-art { filter: grayscale(.55) brightness(.62); }
+.region-card.locked .rc-name { color: #dfe3f5; }
+
+/* ============ Scripture Pavilion: five floor plaques (mockup scripture_pavilion) ============ */
+.floor-tabs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; margin: 8px 0 4px; }
+.floor-tab { position: relative; display: flex; flex-direction: column; align-items: center; gap: 1px; min-height: 76px; padding: 6px 2px 5px; border-radius: 10px; color: #fff6dc; text-align: center;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--fr) 38%, #1a2466), #0d1440 80%); border: 1px solid color-mix(in srgb, var(--fr) 60%, transparent); box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 3px 8px rgba(0,0,20,.4); }
+.floor-tab.fr-uncommon { --fr: #4fe0b0; } .floor-tab.fr-rare { --fr: #5aa2ff; } .floor-tab.fr-epic { --fr: #b07cff; } .floor-tab.fr-legendary { --fr: #ffb347; } .floor-tab.fr-mythic { --fr: #ff6b8a; }
+.floor-tab .ft-n { position: absolute; left: 4px; top: 3px; font-family: var(--f-label); font-size: calc(10rem / 15); color: var(--gold-hi); }
+.floor-tab .ft-cn { margin-top: 8px; font-family: var(--f-brush), serif; font-size: calc(19rem / 15); line-height: 1; color: #fff; text-shadow: 0 0 8px color-mix(in srgb, var(--fr) 70%, transparent); }
+.floor-tab .ft-l { font-family: var(--f-label); font-size: calc(10.5rem / 15); letter-spacing: .02em; line-height: 1.1; }
+.floor-tab .ft-c { font-size: calc(10rem / 15); color: #c9cfee; line-height: 1.1; }
+.floor-tab.on { border-color: var(--gold-hi); box-shadow: 0 0 0 1px rgba(255,214,120,.6), 0 0 14px rgba(255,214,120,.35), inset 0 1px 0 rgba(255,255,255,.2); }
+.floor-tab.on::after { content: ""; position: absolute; left: 22%; right: 22%; bottom: -1px; height: 2px; border-radius: 2px; background: var(--gold-hi); }
+.floor-tab.empty { opacity: .5; filter: grayscale(.6); }
+
+/* ============ Dungeons (mockup dungeon_hub): the tower painting shows, Rec. on one line ============ */
+.tower-hero { background-position: right center; background-size: cover; }
+.th-shade { background: linear-gradient(90deg, rgba(8,14,44,.92) 0%, rgba(8,14,44,.62) 48%, rgba(8,14,44,.12) 100%), linear-gradient(0deg, rgba(8,14,44,.55), transparent 45%); }
+.dungeon-card .dc-body .tag { white-space: nowrap; }
+.dungeon-card .dc-body { min-width: 0; } .dungeon-card .dc-body > .row.between { flex-wrap: wrap; gap: 6px; } .dungeon-card .dc-body > .row.between > .btn { margin-left: auto; }
+@media (max-width: 380px) { .dungeon-card .dc-art { width: 92px; } }
+.dungeon-card { border: 1px solid rgba(255,214,140,.28); }
+.dungeon-card .dc-art { box-shadow: inset -12px 0 18px -10px rgba(6,10,32,.9); }
+
+/* offline report: sessions and eggs (mockup offline_gains) */
+.off-acts .setrow { gap: 10px; }
+.off-ico { flex: none; width: 34px; height: 34px; border-radius: 8px; display: grid; place-items: center; background: #13226e center/cover no-repeat; border: 1px solid rgba(190,210,255,.4); color: var(--gold-hi); }

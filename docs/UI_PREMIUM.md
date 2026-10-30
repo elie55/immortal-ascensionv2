@@ -37,6 +37,17 @@ to check it. Styles live at the end of `src/ui/theme.css` under "PREMIUM LAYER",
 | G5 Empty/locked | Locked slots get a gold seal, undiscovered beasts a silhouette and a hint, empty battle slots are hidden, empty technique sockets are quiet. | — |
 | G7 Motion | Reduce motion hides the decorative layers (qi spiral, light pillar, forge sparks, ceremony array); Low animation quality stops the idle loops (CTA sheen, rotating rays and arrays). | `app.ts` (`anim-low` class), theme.css |
 
+## Phase 4 (every other screen against its mockup)
+
+| Screen | What changed | Where |
+|---|---|---|
+| World Regions | Painted region cards, full-bleed art with the text on a dark foot, numeral and lock/state chips on top (the forge's recipe-card styles had leaked into them and shrunk the art to a thumbnail; they are now scoped to `.recipe-card`). | `adventure.ts`, theme.css |
+| Scripture Pavilion | Five floor plaques (1F Foundations → 5F Sanctum, coloured by rarity, "n to learn"); the list shows one floor, by default the first with something left to learn. | `shop.ts` |
+| Dungeons | The tower painting shows through its card; no repeated kind tag on the art; Rec. on one line; Enter wraps under the text on small phones with large text. | `delves.ts` |
+| While you were away | Lists what else was going on: sessions and boosts (finished or time left) and eggs waiting in their nests (they hatch from wins, not time). | `offline.ts` |
+| Storage Chest | Tiles without names, like the bag (the dock names the selection). | `inventory.ts` |
+| Achievements, NPC requests, tower | Reward chips shorten with "…"; the Requests header stays legible over the portrait; the tower's sub-line fits one line. | `quests.ts`, `npc.ts`, `delves.ts` |
+
 ## Prologue (new game, built from the owner's 11 mockups in `refs/mockups/prologue/`)
 
 | Scene | What it shows | Where |

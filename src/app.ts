@@ -21,7 +21,7 @@ import { sectScreen } from "./ui/screens/sect.ts";
 import { adventureScreen, regionScreen } from "./ui/screens/adventure.ts";
 import { achievementsScreen, missionHallScreen, questLogScreen } from "./ui/screens/quests.ts";
 import { alchemyScreen } from "./ui/screens/alchemy.ts";
-import { towerScreen } from "./ui/screens/delves.ts";
+import { towerScreen, dungeonHubScreen } from "./ui/screens/delves.ts";
 import { offlineModal } from "./ui/screens/offline.ts";
 import { celebrateEvent } from "./ui/screens/celebrate.ts";
 import { questStatus } from "./engine/progression.ts";
@@ -72,7 +72,7 @@ export class App {
         load: (text: string, tab: Tab = "cultivate") => { const r = decode(text); if (!r.ok) throw new Error(r.reason); this.attach(r.state, 0); this.router.clearGlobal(); this.enterGame(tab); },
         fight: (src: Parameters<typeof startEncounter>[1]) => startEncounter(this, src),
         region: (id: string, select?: string) => this.router.push(regionScreen(this, id, select)),
-        open: (name: "achievements" | "missions" | "quests" | "alchemy" | "tower") => this.router.push(name === "achievements" ? achievementsScreen(this) : name === "missions" ? missionHallScreen(this) : name === "alchemy" ? alchemyScreen(this, "Sect")
+        open: (name: "achievements" | "missions" | "quests" | "alchemy" | "tower" | "dungeons") => this.router.push(name === "achievements" ? achievementsScreen(this) : name === "dungeons" ? dungeonHubScreen(this) : name === "missions" ? missionHallScreen(this) : name === "alchemy" ? alchemyScreen(this, "Sect")
           : name === "tower" ? towerScreen(this, this.content.byPrefix<any>("dungeon").find((d) => d.tower)!.id) : questLogScreen(this, "Cultivate")),
       } });
   }

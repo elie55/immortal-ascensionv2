@@ -36,6 +36,7 @@ const techRarity = (t: any) => t.rarity ?? (t.kind === "ultimate" ? "legendary" 
 export function shopScreen(app: App, shopId: string, backTo: string): Screen {
   let tab: "goods" | "sell" | "rumours" = "goods";
   let sellSel: string | number | null = null;
+  let floorSel: number | null = null;   // Scripture Pavilion: the floor shown
   return {
     id: `shop:${shopId}`, bg: () => { const sh = app.content.get<any>(shopId); const loc = sh.owner ? app.content.get<any>(sh.owner).location : undefined; return loc ? app.content.art(loc, "background") : undefined; },
     render: () => {
@@ -63,9 +64,23 @@ export function shopScreen(app: App, shopId: string, backTo: string): Screen {
               h("span", { class: "muted" }, restock === null ? "Limited stock never returns" : `Restocks in ${fmt.duration(restock)}`),
               disc > 0 ? h("span", { class: "tag gold" }, icon("fame", 10), ` −${disc}%`) : shop.fame_discount_pct_per_500 ? h("span", { class: "muted" }, `−${shop.fame_discount_pct_per_500}% per 500 Fame`) : null),
             isPavilion
-              ? h("div", { class: "manual-list" }, floors(app, rows).map(({ floor, name, cn, rarity, items }) => [
-                  h("div", { class: "floor-h" }, h("span", { class: "floor-n" }, `Floor ${floor}`), h("b", null, name), h("span", { class: "cn" }, cn), h("span", { class: "muted", style: { marginLeft: "auto" } }, `${items.length} manual${items.length > 1 ? "s" : ""}`)),
-                  ...items.map((r) => manualRow(app, shopId, r))]))
+              ? (() => {
+                  // five floor plaques (mockup scripture_pavilion); the list shows one floor, by default the first with something to learn
+                  const fl = floors(app, rows);
+                  const cur = fl.find((f) => f.floor === floorSel) ?? fl.find((f) => f.items.some((r) => !r.owned && !r.locked)) ?? fl[0]!;
+                  return [
+                    h("div", { class: "floor-tabs", role: "tablist" }, FLOORS.map(([name, short, cn, rar], i) => {
+                      const f = fl.find((x) => x.floor === i + 1);
+                      const left = f ? f.items.filter((r) => !r.owned).length : 0;
+                      return h("button", { class: ["floor-tab", `fr-${rar}`, f === cur && "on", !f && "empty"], role: "tab", "aria-selected": String(f === cur), "aria-label": `Floor ${i + 1}, ${name}`, disabled: !f, onClick: () => { floorSel = i + 1; app.router.refresh(); } },
+                        h("span", { class: "ft-n" }, `${i + 1}F`), h("span", { class: "ft-cn" }, cn.slice(0, 2)), h("span", { class: "ft-l" }, short),
+                        h("span", { class: "ft-c" }, !f ? "Empty" : left ? `${left} to learn` : "All learned"));
+                    })),
+                    h("div", { class: "manual-list" },
+                      h("div", { class: "floor-h" }, h("span", { class: "floor-n" }, `Floor ${cur.floor}`), h("b", null, cur.name), h("span", { class: "cn" }, cur.cn), h("span", { class: "muted", style: { marginLeft: "auto" } }, `${cur.items.length} manual${cur.items.length > 1 ? "s" : ""}`)),
+                      cur.items.map((r) => manualRow(app, shopId, r))),
+                  ];
+                })()
               : h("div", { class: "shop-grid" }, rows.map((r) => goodsCard(app, shopId, r))),
           ] : tab === "rumours" ? rumoursPanel(app, shopId) : sellPanel(app, () => sellSel, (v) => { sellSel = v; app.router.refresh(); }),
         ),
@@ -107,6 +122,8 @@ function rumoursPanel(app: App, shopId: string) {
 
 /** Scripture Pavilion floors (mockup): manuals grouped by rarity, lowest first. */
 const FLOOR_NAMES: Record<string, [string, string]> = { common: ["Hall of Foundations", "筑基堂"], uncommon: ["Hall of Foundations", "筑基堂"], rare: ["Hall of Rare Arts", "珍艺阁"], epic: ["Hall of Profound Arts", "玄艺阁"], legendary: ["Hall of Mysteries", "秘典阁"], mythic: ["Feng's Sanctum", "冯老静室"], immortal: ["Feng's Sanctum", "冯老静室"], divine: ["Feng's Sanctum", "冯老静室"] };
+/** The five floors as plaques: hall name, short label, Chinese name, rarity colour. */
+const FLOORS: [string, string, string, string][] = [["Hall of Foundations", "Foundations", "筑基堂", "uncommon"], ["Hall of Rare Arts", "Rare Arts", "珍艺阁", "rare"], ["Hall of Profound Arts", "Profound", "玄艺阁", "epic"], ["Hall of Mysteries", "Mysteries", "秘典阁", "legendary"], ["Feng's Sanctum", "Sanctum", "冯老静室", "mythic"]];
 /** The pavilion's five halls, one per floor: Foundations (common, uncommon), Rare, Profound, Mysteries, Feng's Sanctum. */
 const FLOOR_OF: Record<string, number> = { common: 1, uncommon: 1, rare: 2, epic: 3, legendary: 4, mythic: 5, immortal: 5, divine: 5 };
 function floors(app: App, rows: ShopRow[]) {

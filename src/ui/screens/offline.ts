@@ -48,6 +48,20 @@ export function offlineModal(app: App, r: OfflineReport): Overlay {
               h("div", { class: "muted" }, `Stage ${s.character.stage} is ${full ? "full" : fmt.pct(prog * 100, 0)} · ${fmt.compact(s.character.qi)} / ${fmt.compact(need)} Qi`))),
           h("div", { style: { marginTop: "8px" } }, bar(prog, { label: full ? (r.stagesAvailable > 1 ? `${r.stagesAvailable} stages ready` : "Ready to break through") : undefined })),
           full && h("div", { class: "muted", style: { marginTop: "6px" } }, icon("info", 12), " Qi stops at a bottleneck. Break through to keep growing.")),
+        // what else was going on (mockup offline_gains): sessions and boosts, eggs waiting in their nests
+        (s.buffs.length > 0 || s.beasts.incubating.length > 0) && h("div", { class: "rows off-acts", style: { marginTop: "10px" } },
+          s.buffs.map((b) => {
+            const def = c.find<any>(b.id), done = b.expiresAt <= app.now(), art = def && c.art(b.id, "icon");
+            return h("div", { class: "setrow" }, h("span", { class: "off-ico", style: art ? { backgroundImage: app.img(art) } : undefined }, !art && icon("qi", 16)),
+              h("div", { class: "grow" }, h("div", { class: "lbl" }, def?.name ?? b.label), h("div", { class: "desc" }, `${b.label}${b.qi_mult ? ` · +${Math.round((b.qi_mult - 1) * 100)}% Qi` : ""}${done ? " · finished" : ` · ${fmt.duration(b.expiresAt - app.now())} left`}`)),
+              h("span", { class: ["tag", done ? "jade" : "gold"] }, done ? "Done" : "Active"));
+          }),
+          s.beasts.incubating.map((x) => {
+            const egg = c.get<any>(x.egg), art = c.art(x.egg, "icon");
+            return h("div", { class: "setrow" }, h("span", { class: "off-ico", style: art ? { backgroundImage: app.img(art) } : undefined }, !art && icon("paw", 16)),
+              h("div", { class: "grow" }, h("div", { class: "lbl" }, `${egg.name} · ${x.wins} / ${x.need} wins`), h("div", { class: "desc" }, "Eggs hatch from battles you win, not from time away")),
+              h("span", { class: "tag" }, "Waiting"));
+          })),
         h("div", { class: "rows", style: { margin: "10px 0 12px" } },
           h("div", { class: "setrow" }, icon("clock", 18), h("div", { class: "grow" }, h("div", { class: "lbl" }, `Offline efficiency ${Math.round(c.rules.offline.efficiency * 100)}%`), h("div", { class: "desc" }, "Active play cultivates faster than time away")))),
         h("div", { class: "grid-2" },
