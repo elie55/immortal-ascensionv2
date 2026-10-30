@@ -81,6 +81,8 @@ async function fight(name: string, n: number, src: any, opts: { companions?: str
   await page.evaluate(() => { const st = (window as any).__ia.game.state; st.combat.speed = 1; st.combat.manual = true; });
   await page.evaluate((s) => (window as any).__ia.dev.fight(s), src);
   await page.waitForSelector(".battle");
+  await page.waitForTimeout(650);
+  await shot(`${name}-0-intro`);
   await page.waitForSelector(".bt-skill.ready", { timeout: 30_000 });
   await page.waitForTimeout(500);
   await shot(`${name}-1-start`);
@@ -90,8 +92,12 @@ async function fight(name: string, n: number, src: any, opts: { companions?: str
     if (!ready) break;
     await page.waitForTimeout(300);
     if (!warned && await page.locator(".bt-warn").count()) { warned = true; await shot(`${name}-2-warning`); }
+    if (t === 2) await page.evaluate(() => { const b = (window as any).__ia.enc.battle; b.player.ult = 100; }); // charge the ultimate for the cut-in shot
+    if (t === 2) { await page.locator(".bt-skill.basic.ready").first().click(); await page.waitForTimeout(100); continue; }
+    const ultb = page.locator(".bt-ultbtn.ready");
+    if (await ultb.count()) { await ultb.click(); await page.waitForTimeout(450); await shot(`${name}-3b-ultimate`); await page.waitForTimeout(900); await shot(`${name}-3c-ultimate-hit`); continue; }
     const tech = page.locator(".bt-skill.ready:not(.basic)").first();
-    if (!hit && await tech.count()) { await tech.click(); await page.waitForTimeout(650); await shot(`${name}-3-hit`); hit = true; continue; }
+    if (!hit && await tech.count()) { await tech.click(); await page.waitForTimeout(420); await shot(`${name}-3-hit`); hit = true; continue; }
     await page.locator(".bt-skill.basic.ready").first().click();
     if (await page.locator(".modal-backdrop").count()) break;
   }
@@ -118,13 +124,34 @@ async function screen(name: string, n: number, go: string, opts: { arch?: "fitte
   await shot(name);
 }
 
+/** Auto-play to the wave that holds the boss and screenshot its intro. */
+async function bossIntro(name: string, n: number, src: any) {
+  await boot(labState(n, "geared", ["npc.bai_lingshuang"]));
+  await dismiss();
+  await page.evaluate(() => { const st = (window as any).__ia.game.state; st.combat.speed = 1; st.combat.manual = false; });
+  await page.evaluate((s) => (window as any).__ia.dev.fight(s), src);
+  await page.waitForSelector(".battle");
+  for (let i = 0; i < 4; i++) {
+    await page.waitForSelector(".modal-backdrop", { timeout: 120_000 });
+    const next = page.locator(".modal-backdrop .btn", { hasText: "Next wave" });
+    if (!(await next.count())) break;
+    await next.click();
+    await page.waitForTimeout(900); await shot(`${name}-intro-a`);
+    await page.waitForTimeout(1200); await shot(`${name}-intro-b`);
+    await page.waitForTimeout(2500); await shot(`${name}-fight`);
+  }
+  await shot(`${name}-end`);
+}
+
 const SCEN: Record<string, () => Promise<void>> = {
+  bossintro: () => bossIntro("bossintro", 1, { kind: "node", id: nodeOf(1, "boss") }),
   waterfall: () => screen("waterfall", 2, `(async () => { const m = await import("./app.js").catch(() => null); })()`, { tab: "sect", mutate: (s) => { s.resources.sect_fame = 600; } }).then(async () => {
     await page.locator(".sect-pin", { hasText: "Meditation Waterfall" }).click(); await page.waitForTimeout(700); await page.locator(".med").scrollIntoViewIfNeeded(); await page.waitForTimeout(300); await shot("waterfall-setup");
     await page.locator(".med-go").click(); await page.waitForTimeout(1200); await page.locator(".med").scrollIntoViewIfNeeded(); await shot("waterfall-active");
     await page.locator(".nav button", { hasText: "Cultivate" }).click(); await page.waitForTimeout(700); await shot("waterfall-cultivate-pill");
   }),
   solo: () => fight("solo", 2, { kind: "node", id: nodeOf(2, "battle") }),
+  chief: () => fight("chief", 1, { kind: "node", id: nodeOf(1, "boss") }, { arch: "geared", companions: ["npc.bai_lingshuang"] }),
   elite: () => fight("elite", 3, { kind: "node", id: nodeOf(3, "elite") }),
   boss: () => fight("boss", 2, { kind: "node", id: nodeOf(2, "boss") }, { companions: ["npc.bai_lingshuang"] }),
   party: () => fight("party", 5, { kind: "node", id: nodeOf(5, "boss") }, { companions: ["npc.bai_lingshuang", "npc.tang_xiaoman"] }),

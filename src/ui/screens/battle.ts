@@ -54,7 +54,7 @@ function hpBar(cls: string, text = true): HpBar {
       else trail.style.width = `${pct.toFixed(2)}%`;
       last = pct;
       sh.style.width = shield > 0 ? `${Math.min(100, shield / Math.max(1, max) * 100).toFixed(2)}%` : "0";
-      if (text) label.textContent = `${fmt.int(hp)} / ${fmt.int(max)}${shield > 0 ? `  ·  ${fmt.compact(shield)} shield` : ""}`;
+      if (text) label.textContent = cls === "big" ? `${fmt.int(hp)} / ${fmt.int(max)}${shield > 0 ? `  ·  ${fmt.compact(shield)} shield` : ""}` : `${fmt.compact(hp)} / ${fmt.compact(max)}${shield > 0 ? ` +${fmt.compact(shield)}` : ""}`;
     },
   };
 }
@@ -93,7 +93,16 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   const dock = h("div", { class: "bt-dock" }, prompt, cards, actions);
   const danger = h("div", { class: "bt-danger", "aria-hidden": "true" });
   const flash = h("div", { class: "bt-flash", "aria-hidden": "true" });
-  root.append(h("div", { class: "bt-bg", style: { backgroundImage: app.img(enc.bg) } }), h("div", { class: "bt-vignette" }), danger, hud, stage, dock, flash);
+  const intro = h("div", { class: "bt-intro", "aria-hidden": "true" });
+  const mainFoe = enc.waves.flat().map((id) => c.find<any>(id)).filter(Boolean).sort((a, b) => b.cp - a.cp)[0];
+  const tone = ELEMENT_COLOR[mainFoe?.element ?? "elem.none"] ?? "#c9cfe3";
+  root.style.setProperty("--tone", tone);
+  root.append(
+    h("div", { class: "bt-bg", style: { backgroundImage: app.img(enc.bg) } }),
+    h("div", { class: "bt-light", "aria-hidden": "true" }),
+    h("div", { class: "bt-fog", "aria-hidden": "true" }, h("i"), h("i"), h("i")),
+    h("div", { class: "bt-motes", "aria-hidden": "true" }, Array.from({ length: 18 }, (_, i) => h("i", { style: { "--i": String(i), left: `${(i * 37 + 11) % 100}%`, "--d": `${7 + (i * 1.7) % 6}s`, "--s": `${3 + (i * 5) % 5}px`, "--dl": `${-(i * 1.3) % 9}s` } }))),
+    h("div", { class: "bt-vignette" }), danger, hud, stage, dock, intro, flash);
 
   // ---------- per-unit views (created once, updated in place) ----------
   interface View { uid: number; sprite: HTMLElement; spriteArt: HTMLElement; mini?: HpBar; card?: HTMLElement; cardBar?: HpBar; spBar?: HTMLElement; status?: HTMLElement; gone?: boolean }
@@ -114,11 +123,13 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     if (u.side === "enemy") {
       const mini = hpBar("mini", false);
       const sprite = h("div", { class: ["bt-foe-u", u.kind, u.elite && "elite"], dataset: { uid: String(u.uid) }, onClick: () => { if (u.alive) { selectedTarget = u.uid; renderUnits(); } } },
-        h("div", { class: "aura" }), art, h("div", { class: "fu-mini" }, h("b", null, u.name), mini.el), h("div", { class: "fu-mark" }), h("div", { class: "fu-warn" }, "!"));
+        h("div", { class: "ground" }), h("div", { class: "aura" }), art, h("div", { class: "fu-mini" }, h("b", null, u.name), mini.el), h("div", { class: "fu-mark" }), h("div", { class: "fu-warn" }, "!"));
+      sprite.classList.add("enter"); setTimeout(() => sprite.classList.remove("enter"), 900);
       foes.appendChild(sprite);
       return { uid: u.uid, sprite, spriteArt: art, mini };
     }
-    const sprite = h("div", { class: ["bt-ally-u", u.kind], dataset: { uid: String(u.uid) } }, h("div", { class: "aura" }), art, h("div", { class: "fu-warn" }, "!"));
+    const sprite = h("div", { class: ["bt-ally-u", u.kind], dataset: { uid: String(u.uid) } }, h("div", { class: "ground" }), h("div", { class: "aura" }), art, h("div", { class: "fu-warn" }, "!"));
+    sprite.classList.add("enter"); setTimeout(() => sprite.classList.remove("enter"), 900);
     party.appendChild(sprite);
     const cardBar = hpBar("card");
     const spBar = h("div", { class: "bar sp" }, h("i"));
@@ -323,7 +334,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const el = h("div", { class: ["bt-slash", big && "big"], style: { left: `${p.x}px`, top: `${p.y}px`, "--el": ELEMENT_COLOR[element] ?? "#fff", "--rot": `${-35 + Math.random() * 70}deg` } }, h("i"), h("b"));
     fx.appendChild(el); setTimeout(() => el.remove(), 520);
   }
-  function hitFlash(uid: number) { const v = views.get(uid); if (!v) return; v.spriteArt.classList.remove("hit"); void v.spriteArt.offsetWidth; v.spriteArt.classList.add("hit"); }
+  function hitFlash(uid: number, big = false) { const v = views.get(uid); if (!v) return; v.spriteArt.classList.remove("hit", "hit-big"); void v.spriteArt.offsetWidth; v.spriteArt.classList.add(big ? "hit-big" : "hit"); }
   function screenFlash(kind: "red" | "gold" | "white") { flash.className = "bt-flash"; void flash.offsetWidth; flash.className = `bt-flash ${kind}`; }
   function shake(big = false) {
     if (app.settings.reducedMotion || !app.settings.screenShake) return;
@@ -332,18 +343,76 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   }
   function showSkillName(text: string, kind: "" | "foe" | "heavy" | "ult" = "") { fx.querySelectorAll(".bt-skillname").forEach((x) => x.remove()); const el = h("div", { class: ["bt-skillname", kind] }, text); fx.appendChild(el); setTimeout(() => el.remove(), dur(1000) + 100); }
 
+  // ---------- skill presentation ----------
+  function castRing(uid: number, element: string) {
+    const v = views.get(uid); if (!v) return;
+    v.sprite.style.setProperty("--el", ELEMENT_COLOR[element] ?? "#fff");
+    v.sprite.classList.remove("casting"); void v.sprite.offsetWidth; v.sprite.classList.add("casting");
+    setTimeout(() => v.sprite.classList.remove("casting"), dur(700));
+  }
+  /** A glowing bolt from the actor to the target (single-target techniques). */
+  function projectile(from: number, to: number, element: string): Promise<void> {
+    const a = centerOf(from), b = centerOf(to); if (!a || !b) return Promise.resolve();
+    const el = h("div", { class: "bt-bolt", style: { left: `${a.x}px`, top: `${a.y}px`, "--el": ELEMENT_COLOR[element] ?? "#fff", "--dx": `${b.x - a.x}px`, "--dy": `${b.y - a.y}px`, "--rot": `${Math.atan2(b.y - a.y, b.x - a.x)}rad`, animationDuration: `${dur(320)}ms` } }, h("i"), h("b"));
+    fx.appendChild(el);
+    return new Promise((r) => setTimeout(() => { el.remove(); r(); }, dur(300)));
+  }
+  /** An element-coloured shockwave over one side of the field (area techniques). */
+  function wave(side: "ally" | "enemy", element: string) {
+    const el = h("div", { class: ["bt-wave", side], style: { "--el": ELEMENT_COLOR[element] ?? "#fff" } }, h("i"), h("i"), h("i"));
+    fx.appendChild(el); setTimeout(() => el.remove(), dur(700) + 50);
+  }
+  function sparkles(uid: number, kind: "heal" | "shield") {
+    const p = centerOf(uid); if (!p) return;
+    const el = h("div", { class: ["bt-spark", kind], style: { left: `${p.x}px`, top: `${p.y}px` } }, Array.from({ length: kind === "heal" ? 9 : 1 }, (_, i) => h("i", { style: { "--i": String(i), "--a": `${(i * 40 + 20) % 360}deg` } })));
+    fx.appendChild(el); setTimeout(() => el.remove(), dur(900) + 50);
+  }
+  /** Ultimate cut-in: the caster's portrait sweeps across a gold band. */
+  function cutIn(u: Combatant, skillName: string): Promise<void> {
+    const el = h("div", { class: ["bt-cutin", u.side], style: { "--el": ELEMENT_COLOR[u.element] ?? "#fff" } },
+      h("div", { class: "ci-band" }), h("div", { class: "ci-por", style: { backgroundImage: app.img(u.side === "ally" ? c.artAny(u.id, "battle", "full_body", "portrait") : u.art) } }),
+      h("div", { class: "ci-text" }, h("span", { class: "ci-pre" }, u.side === "ally" ? "Ultimate" : "Devastating art"), h("b", null, skillName), h("span", { class: "ci-who" }, u.name)));
+    fx.appendChild(el); screenFlash("gold");
+    return new Promise((r) => setTimeout(() => { el.remove(); r(); }, dur(1250)));
+  }
+  /** Wave start: a sweeping band with the foes' names; bosses get their intro art. */
+  function showIntro(): Promise<void> {
+    const foesNow = battle.units.filter((u) => u.side === "enemy" && u.alive);
+    const boss = foesNow.find((u) => u.kind === "boss");
+    const bossArt = boss && c.artAny(boss.id, "intro", "battle");
+    const names = [...new Map(foesNow.map((u) => [u.id, u])).values()].map((u) => `${u.name}${foesNow.filter((x) => x.id === u.id).length > 1 ? ` ×${foesNow.filter((x) => x.id === u.id).length}` : ""}`).join(" · ");
+    replaceChildren(intro, boss
+      ? h("div", { class: "bi-boss" }, h("div", { class: "bi-art", style: { backgroundImage: app.img(bossArt) } }), h("div", { class: "bi-veil" }),
+          h("div", { class: "bi-text" }, h("span", { class: "bi-pre" }, enc.wave + 1 < enc.waves.length ? "Guardian" : "Sovereign of this place"), h("b", null, boss.name), c.get<any>(boss.id).name_cn && h("span", { class: "cn bi-cn" }, c.get<any>(boss.id).name_cn), h("span", { class: "bi-sub" }, `${c.get<any>(boss.element).name} · ${boss.boss!.phases.length} phases`)))
+      : h("div", { class: "bi-wave" }, h("span", { class: "bi-pre" }, `Wave ${enc.wave + 1} / ${enc.waves.length}`), h("b", null, names)));
+    intro.classList.add("on");
+    const ms = boss ? 2300 : 1250;
+    return new Promise((r) => setTimeout(() => { intro.classList.remove("on"); setTimeout(() => replaceChildren(intro), 400); r(); }, dur(ms)));
+  }
+
   async function animate(events: BattleEvent[]) {
     for (const e of events) {
       switch (e.t) {
         case "turn": renderTop(); renderOrder(); break;
         case "action": {
           const a = unit(e.actor); const v = views.get(e.actor);
+          const sk = a?.skills.find((s) => s.id === e.skill);
+          const element = sk?.element ?? a?.element ?? "elem.none";
+          const isUlt = sk?.kind === "ultimate";
+          const tech = e.skill !== "basic" && e.skill !== "counter";
           v?.sprite.classList.add("acting"); setTimeout(() => v?.sprite.classList.remove("acting"), dur(420));
-          if (e.heavy || e.charged) { showSkillName(e.name, "heavy"); screenFlash("red"); await wait(520); }
-          else if (a?.side === "ally" && a.kind === "player" && a.skills.find((s) => s.id === e.skill)?.kind === "ultimate") { showSkillName(e.name, "ult"); screenFlash("gold"); await wait(560); }
-          else if (e.skill !== "basic" && e.skill !== "counter") { showSkillName(e.name, a?.side === "enemy" ? "foe" : ""); await wait(360); }
-          else await wait(200);
-          if (e.skill !== "basic" && e.skill !== "counter") { caption = `${name(e.actor)}: ${e.name}`; renderTop(); }
+          if (tech) castRing(e.actor, element);
+          if (a && isUlt) await cutIn(a, e.name);
+          else if (e.heavy || e.charged) { showSkillName(e.name, "heavy"); screenFlash("red"); await wait(520); }
+          else if (tech) { showSkillName(e.name, a?.side === "enemy" ? "foe" : ""); await wait(300); }
+          else await wait(160);
+          // travel: a bolt to a single target, a wave over several
+          const hostile = e.targets.filter((t) => unit(t)?.side !== a?.side);
+          if (a && sk && sk.power > 0 && hostile.length) {
+            if (hostile.length === 1 && !isUlt) await projectile(e.actor, hostile[0]!, element);
+            else { wave(a.side === "ally" ? "enemy" : "ally", element); await wait(260); }
+          }
+          if (tech) { caption = `${name(e.actor)}: ${e.name}`; renderTop(); }
           break;
         }
         case "hit": {
@@ -352,14 +421,14 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
             const big = e.amount >= (unit(e.target)?.maxHp ?? 1) * 0.25;
             float(e.target, fmt.int(e.amount), e.crit ? "dmg crit" : e.kind === "dot" ? "dmg dot" : unit(e.target)?.side === "ally" ? "dmg taken" : "dmg", e.crit ? "CRITICAL!" : undefined);
             if (e.absorbed) float(e.target, `${fmt.int(e.absorbed)} blocked`, "shield");
-            if (e.kind !== "dot") { slash(e.target, e.element, e.crit || big); hitFlash(e.target); }
+            if (e.kind !== "dot") { slash(e.target, e.element, e.crit || big); hitFlash(e.target, e.crit || big); }
             if (e.crit || big) shake(big && unit(e.target)?.side === "ally");
           }
           renderUnits(); await wait(e.crit ? 280 : 170); break;
         }
-        case "heal": float(e.target, `+${fmt.int(e.amount)}`, "heal"); renderUnits(); await wait(160); break;
-        case "shield": float(e.target, `Shield ${fmt.int(e.amount)}`, "shield"); renderUnits(); await wait(160); break;
-        case "status": if (e.result === "applied" || e.result === "stacked") float(e.target, c.get<any>(e.status).name, "status"); else if (e.result === "resisted") float(e.target, "Resisted", "miss"); else if (e.result === "immune" && c.get<any>(e.status).kind === "control") float(e.target, "Immune", "miss"); renderUnits(); await wait(110); break;
+        case "heal": if (e.kind === "heal") sparkles(e.target, "heal"); float(e.target, `+${fmt.int(e.amount)}`, "heal"); renderUnits(); await wait(e.kind === "heal" ? 260 : 140); break;
+        case "shield": sparkles(e.target, "shield"); float(e.target, `Shield ${fmt.int(e.amount)}`, "shield"); renderUnits(); await wait(240); break;
+        case "status": if ((e.result === "applied" || e.result === "stacked") && e.status !== "status.shield") float(e.target, c.get<any>(e.status).name, "status"); else if (e.result === "resisted") float(e.target, "Resisted", "miss"); else if (e.result === "immune" && c.get<any>(e.status).kind === "control") float(e.target, "Immune", "miss"); renderUnits(); await wait(110); break;
         case "death": {
           const v = views.get(e.target);
           v?.sprite.classList.add("dying"); v?.card?.classList.add("dead");
@@ -412,7 +481,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       h("div", { class: "cn m-cn" }, "小 胜"), h("div", { class: "m-title" }, `Wave ${enc.wave} cleared`),
       h("div", { class: "m-sub" }, `${enc.waves.length - enc.wave} wave${enc.waves.length - enc.wave > 1 ? "s" : ""} to go · HP ${fmt.int(wr.summary.playerHp)}`),
       dropsBlock(wr.drops, wr.gearUids),
-      h("button", { class: "btn gold block", style: { marginTop: "12px" }, onClick: () => { close(); battle = enc.nextWave(); selectedTarget = undefined; for (const v of views.values()) { v.sprite.remove(); v.card?.remove(); } views.clear(); renderAll(); loop(); } }, "Continue ▸ Next wave")) });
+      h("button", { class: "btn gold block", style: { marginTop: "12px" }, onClick: async () => { close(); battle = enc.nextWave(); selectedTarget = undefined; for (const v of views.values()) { v.sprite.remove(); v.card?.remove(); } views.clear(); renderAll(); await showIntro(); loop(); } }, "Continue ▸ Next wave")) });
   }
 
   function dropsBlock(d: { items: { id: string; qty: number }[]; spirit_stones: number; sect_fame: number }, gearUids: number[]) {
@@ -478,8 +547,9 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
 
   function renderAll() { renderTop(); renderModes(); renderUnits(); renderSkills(); }
   renderAll();
+  if ((globalThis as any).__ia) (globalThis as any).__ia.enc = enc; // test lab hook
   // start after mount so effect positions resolve
-  timer = window.setTimeout(() => loop(), 350);
+  timer = window.setTimeout(async () => { await showIntro(); loop(); }, 250);
 
   return { id: "battle", nav: false, bg: () => enc.bg, render: () => root, onLeave: () => { playing = false; if (timer) clearTimeout(timer); } };
 }
