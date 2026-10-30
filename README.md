@@ -25,6 +25,11 @@ npm test
 npm run art:jobs      # → .tmp/art-jobs.json
 npm run build         # → dist/ (Capacitor webDir)
 npm run dev           # watch + serve on http://localhost:5173
+```
+
+**Play in the browser:** https://elie55.github.io/immortal-ascensionv2/ (deployed by `.github/workflows/pages.yml` on every push to `main`).
+
+```bash
 npm run test:browser  # Playwright smoke test of the playable shell
 python3 tools/make-refs.py refs/originals   # needs the six mockup boards in refs/originals/
 (cd tools/gen && for f in world items actors places progress regions; do PYTHONPATH=. python3 $f.py; done)  # regenerate content
