@@ -139,7 +139,7 @@ await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.s
 await page.locator(".nav button", { hasText: "Inventory" }).click();
 await need('[data-screen="inventory"]');
 await shot("inventory");
-await page.locator(".chip", { hasText: "Pills" }).click();
+await page.locator(".inv-tab", { hasText: "Pills" }).click();
 await shot("inventory-pills");
 
 // sect

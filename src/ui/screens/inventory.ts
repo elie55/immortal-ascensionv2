@@ -16,7 +16,7 @@ import { claimOverflow, buyExpansion, storeItem, takeItem, storeGear, takeGear }
 import { gearTile, stackTile, gearDetail, stackDetail, gearName, gearCp } from "./items.ts";
 
 type Cat = "all" | "gear" | "mat" | "pill" | "gift" | "quest";
-const CATS: { id: Cat; label: string }[] = [{ id: "all", label: "All" }, { id: "gear", label: "Gear" }, { id: "mat", label: "Materials" }, { id: "pill", label: "Pills" }, { id: "gift", label: "Gifts" }, { id: "quest", label: "Quest" }];
+const CATS: { id: Cat; label: string; icon: string }[] = [{ id: "all", label: "All", icon: "pouch" }, { id: "gear", label: "Gear", icon: "sword" }, { id: "mat", label: "Materials", icon: "sparkle" }, { id: "pill", label: "Pills", icon: "cauldron" }, { id: "gift", label: "Gifts", icon: "star" }, { id: "quest", label: "Quest", icon: "scroll" }];
 const catOf = (id: string): Cat => { const p = id.split(".")[0]; return p === "mat" ? "mat" : p === "cons" ? "pill" : p === "gift" ? "gift" : p === "qitem" ? "quest" : "mat"; };
 
 export type Entry = { key: string; kind: "gear"; uid: number; rarity: string; name: string; score: number } | { key: string; kind: "stack"; id: string; qty: number; rarity: string; name: string; score: number };
@@ -74,22 +74,23 @@ export function inventoryScreen(app: App) {
   const full = used >= cap;
   return [
     header(app),
-    subbar({ help: { app, key: "inventory" }, title: "Inventory", cn: "行囊", sub: `${entries.length} item${entries.length === 1 ? "" : "s"} in your bag · worn gear is on Character`, end: h("span", { class: "cp-chip" }, icon("cp", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(cp)))) }),
+    subbar({ help: { app, key: "inventory" }, title: "Inventory", cn: "行囊", sub: `${entries.length} item${entries.length === 1 ? "" : "s"} in your bag`, end: h("span", { class: "cp-chip" }, icon("cp", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(cp)))) }),
     pouch > 0 && h("div", { class: "glass panel pouch-bar" }, icon("pouch", 20),
       h("div", { class: "grow" }, h("b", null, `${pouch} drop${pouch > 1 ? "s" : ""} waiting in your overflow pouch`), h("span", null, full ? "Your bag is full: sell, use or store something, then claim them." : "Claim them into your bag.")),
       h("button", { class: ["btn sm", !full && "gold"], onClick: () => { const r = app.game.run("pouch", app.now(), (st, ct) => claimOverflow(st, ct)); app.router.toast(r.ok ? `Claimed ${(r as any).moved} · ${(r as any).left} still waiting` : r.reason, r.ok ? "good" : "bad"); } }, "Claim")),
-    h("div", { class: "chips glass" }, CATS.map((ct) => h("button", { class: ["chip", ui.cat === ct.id && "on"], onClick: () => { ui.cat = ct.id; ui.selected = null; ui.page = 0; refresh(); } }, ct.label))),
-    h("div", { class: "inv-tools" },
-      h("button", { class: ["dd-chip", ui.rarity !== "all" && `r-${ui.rarity} on`], "aria-label": "Filter by rarity", onClick: () => pickSheet(app, "rarity", "Rarity",
-          [{ value: "all", label: "All rarities", count: inCat.length }, ...RARITIES.map((r) => ({ value: r, label: RARITY_LABEL[r]!, count: counts[r]!, rarity: r }))], ui.rarity, (v) => { ui.rarity = v; ui.selected = null; ui.page = 0; refresh(); }) },
-        ui.rarity === "all" ? h("span", { class: "dd-dots" }, RARITIES.filter((r) => counts[r]).slice(0, 4).map((r) => h("i", { class: `r-${r}` }))) : h("i", { class: "pick-dot" }),
-        h("span", null, ui.rarity === "all" ? "All" : RARITY_LABEL[ui.rarity]), h("b", { class: "tnum" }, String(shown.length)), h("span", { class: "dd-car" }, "▾")),
-      h("button", { class: "dd-chip", "aria-label": "Sort order", onClick: () => pickSheet(app, "sort", "Sort by", (Object.keys(SORTS) as (keyof typeof SORTS)[]).map((k) => ({ value: k, label: SORTS[k] })), ui.sort, (v) => { ui.sort = v as typeof ui.sort; refresh(); }) },
-        icon("sort", 11), h("span", null, SORTS[ui.sort]), h("span", { class: "dd-car" }, "▾")),
-      h("span", { class: "grow" }),
-      h("span", { class: ["inv-cap", full && "full"], title: "Bag slots used" }, icon("pouch", 12), h("b", { class: "tnum" }, String(used)), h("span", null, `/ ${cap}`)),
-      expandButton(app, "bag", true)),
+    // one bag panel (owner's review): a tab strip with an icon per category, the filter/sort line, then the slots
     h("div", { class: "glass panel inv-panel" },
+      h("div", { class: "inv-tabs", role: "tablist", "aria-label": "Categories" }, CATS.map((ct) => h("button", { class: ["inv-tab", ui.cat === ct.id && "on"], role: "tab", "aria-selected": ui.cat === ct.id ? "true" : "false", onClick: () => { ui.cat = ct.id; ui.selected = null; ui.page = 0; refresh(); } }, icon(ct.icon, 16), h("span", null, ct.label)))),
+      h("div", { class: "inv-tools" },
+        h("button", { class: ["dd-chip", ui.rarity !== "all" && `r-${ui.rarity} on`], "aria-label": "Filter by rarity", onClick: () => pickSheet(app, "rarity", "Rarity",
+            [{ value: "all", label: "All rarities", count: inCat.length }, ...RARITIES.map((r) => ({ value: r, label: RARITY_LABEL[r]!, count: counts[r]!, rarity: r }))], ui.rarity, (v) => { ui.rarity = v; ui.selected = null; ui.page = 0; refresh(); }) },
+          ui.rarity === "all" ? h("span", { class: "dd-dots" }, RARITIES.filter((r) => counts[r]).slice(0, 4).map((r) => h("i", { class: `r-${r}` }))) : h("i", { class: "pick-dot" }),
+          h("span", null, ui.rarity === "all" ? "All" : RARITY_LABEL[ui.rarity]), h("b", { class: "tnum" }, String(shown.length)), h("span", { class: "dd-car" }, "▾")),
+        h("button", { class: "dd-chip", "aria-label": "Sort order", onClick: () => pickSheet(app, "sort", "Sort by", (Object.keys(SORTS) as (keyof typeof SORTS)[]).map((k) => ({ value: k, label: SORTS[k] })), ui.sort, (v) => { ui.sort = v as typeof ui.sort; refresh(); }) },
+          icon("sort", 11), h("span", null, SORTS[ui.sort]), h("span", { class: "dd-car" }, "▾")),
+        h("span", { class: "grow" }),
+        h("span", { class: ["inv-cap", full && "full"], title: "Bag slots used" }, icon("pouch", 12), h("b", { class: "tnum" }, String(used)), h("span", null, `/ ${cap}`)),
+        expandButton(app, "bag", true)),
       shown.length === 0 && pageCap === shown.length ? h("div", { class: "muted center", style: { padding: "28px 0" } }, "Nothing here yet.")
         : pagedGrid(app, shown.map(tileOf), pageCap, ui.page, (p) => { ui.page = p; refresh(); })),
     sel && h("div", { class: "inv-dock", dataset: { key: "inv-dock" } }, sel.kind === "gear" ? gearDetail(app, sel.uid, { onChange: refresh }) : stackDetail(app, sel.id, { onChange: refresh })),

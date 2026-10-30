@@ -1754,3 +1754,20 @@ html, body { font-variant-numeric: tabular-nums; }
 .sheet .setrow.on { background: rgba(60,90,200,.18); border-bottom-color: var(--cyan-line); }
 /* result modals: what you got rises in one after the other */
 .alch-result > * { animation: rise .4s var(--ease-out) both; } .alch-result > *:nth-child(2) { animation-delay: .12s; } .alch-result > *:nth-child(3) { animation-delay: .24s; } .alch-result > *:nth-child(4) { animation-delay: .36s; } .alch-result > *:nth-child(n+5) { animation-delay: .48s; }
+
+/* ---------- Inventory, owner's review: one bag panel with a tab strip ---------- */
+/* a sub-bar without a back button keeps its title clear of the rounded end */
+.subbar:not(:has(> .back)) { padding-left: 18px; }
+.inv-panel { padding: 4px 8px 10px; }
+.inv-tabs { display: flex; margin: 0 -8px 8px; padding: 0 4px; border-bottom: 1px solid var(--hairline-gold); }
+.inv-tab { position: relative; flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 8px 2px 9px;
+  font-family: var(--f-label); font-size: calc(11.5rem / 15); letter-spacing: .02em; color: var(--text-3); white-space: nowrap; }
+.inv-tab .ico { color: var(--text-3); opacity: .85; }
+.inv-tab.on { color: var(--gold-hi); }
+.inv-tab.on .ico { color: var(--gold-hi); opacity: 1; filter: drop-shadow(0 0 6px rgba(255,200,90,.6)); }
+.inv-tab.on::after { content: ""; position: absolute; left: 18%; right: 18%; bottom: -1px; height: 3px; border-radius: 3px 3px 0 0; background: linear-gradient(90deg, #d99a2f, #ffe9a6, #d99a2f); box-shadow: 0 0 10px rgba(255,200,90,.7); }
+.inv-tab:active { background: rgba(255,255,255,.04); }
+.inv-tools { margin-bottom: 8px; }
+.inv-tools .inv-cap { background: rgba(4,10,34,.5); }
+/* short phones: the docked detail drops its description so more of the bag shows above it */
+@media (max-height: 700px) { .inv-dock .item-detail .dim { display: none; } }
