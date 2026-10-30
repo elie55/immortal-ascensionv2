@@ -44,6 +44,14 @@ def style_ref(job, mode="chars"):
 MOCKUP_CHARS = {"lin_xueyao": "char_lin.png", "bai_lingshuang": "char_bai.png", "elder_wen": "char_elder_wen.png", "tang_xiaoman": "char_tang.png"}
 
 
+# Jobs drawn from a mockup crop (pose and costume as in the approved mockup), with their own reference prompt.
+FILE_REF = {
+    "assets/ui/cultivate_lotus.webp": ("ia_style/cult_lin.png",
+        "Image 1 is the approved reference illustration. Redraw exactly this character in exactly this pose, with the same face, hairstyle, ornaments, outfit, "
+        "colours and flowing jade ribbons, at high resolution with crisp clean detail. Remove the background and the gold button under her. Draw: "),
+}
+
+
 def char_ref(job):
     """Characters seen in the mockups are drawn from their mockup crop; every other portrait/expression/battle
     sprite is drawn from that NPC's own full-body render once it exists."""
@@ -75,7 +83,10 @@ def entry(job, variant="ref", tag="", reroll=0):
     gw, gh = gen_size(w, h)
     cref = char_ref(job)
     sref = None if variant == "noref" else style_ref(job, "all" if variant == "allref" else "chars")
-    if cref:
+    if job["file"] in FILE_REF:
+        ref, pre = FILE_REF[job["file"]]
+        prompt = pre + job["prompt"]
+    elif cref:
         prompt, ref = CHAR_REF_PROMPT + job["prompt"], cref
     elif sref:
         prompt, ref = STYLE_REF_PROMPT + job["prompt"], f"ia_style/{sref}"

@@ -35,11 +35,25 @@
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Vertical illustration: Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, calm gentle face, wearing a white hanfu with pale jade-green layered robes, translucent flowing sleeves and a pink sash, a long sword at her side, seated in lotus meditation pose with eyes closed and hands resting on her knees, floating slightly above a glowing jade lotus platform, soft jade-green qi swirling around her, cherry blossom petals, floating islands with pagodas and waterfalls behind, pale morning sky, centered figure in the middle third, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen vertical background, bright and airy: a pastel sky of soft white clouds above an endless sea of clouds, many floating mountain islands with small waterfalls and green-roofed pagodas fading into blue haze, a large jade-roofed temple on a floating peak in the upper middle distance, pink cherry blossom branches framing the upper left and right corners with drifting petals, soft morning light, gentle pastel blues, lavender and pink, the centre of the picture kept open and light for a character, no characters, no people, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
-          "assets/npcs/lin_xueyao/full_body.webp",
           "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "generated"
+      },
+      "lotus": {
+        "file": "assets/ui/cultivate_lotus.webp",
+        "size": [
+          1024,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body illustration: Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, calm gentle face, wearing a white hanfu with pale jade-green layered robes, translucent flowing sleeves and a pink sash, unarmed with no sword or weapon anywhere, seated cross-legged in lotus meditation pose floating in the air, both eyes fully closed in deep meditation with a calm faint smile, hands resting together in her lap, long black hair flowing outward in soft waves, gold and jade hairpins with small flowers, white hanfu with pale jade-green layered robes and a pink sash, long translucent jade-green ribbons and sleeves swirling around her in elegant curves, a few pink cherry blossom petals and tiny golden sparkles floating around her, complete figure and ribbons in frame, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/style/cult_lin.png",
+          "assets/npcs/lin_xueyao/full_body.webp"
         ],
         "status": "generated"
       },

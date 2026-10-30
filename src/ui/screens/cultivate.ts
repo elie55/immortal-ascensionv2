@@ -41,7 +41,8 @@ export function cultivateScreen(app: App) {
     ? (ready ? `Success chance ${Math.round(chance!.total * 100)}%${chance!.parts.map((p) => ` · ${p.label} +${Math.round(p.bonus * 100)}%`).join("")}` : `Major breakthrough · ${reqs.filter((r) => !r.met).length} requirement${reqs.filter((r) => !r.met).length === 1 ? "" : "s"} missing`)
     : (ready ? (affordable > 1 ? `${affordable} stages ready · Success 100%` : "Success 100%") : `Next stage in ${fmt.duration(etaToNextStage(s, c, now))}`);
 
-  return [
+  const lotus = c.art("ui.cultivate", "lotus");
+  return h("div", { class: "cult-page" },
     header(app),
     h("div", { class: "cult-title" },
       h("div", { class: "cn cult-cn" }, `${realm.name_cn ?? ""} · 第${CN_NUM[s.character.stage]}层`),
@@ -49,9 +50,12 @@ export function cultivateScreen(app: App) {
       h("div", { class: "cult-stage glass" }, `Stage ${s.character.stage} / 9`, pips),
       (() => { const m = activeMeditation(s, c, app.now()); const r = c.rules.meditation_session; if (!m || !r) return null; const left = Math.ceil((m.expiresAt - app.now()) / 1000);
         return h("button", { class: "med-pill", onClick: () => { app.router.clearGlobal(); app.router.setTab("sect"); openLocation(app, r.location); } }, icon("lotus", 13), ` Meditating · +${r.qi_bonus_pct}% Qi · ${Math.floor(left / 60)}:${String(left % 60).padStart(2, "0")}`); })()),
-    h("div", { class: "cult-space", onClick: () => openRateSheet(app) }),
-    h("button", { class: ["btn gold block cult-bt", ready && "ready"], onClick: () => (final ? openMajorSheet(app) : doMinor(app, affordable)) },
-      h("span", { class: "stack", style: { gap: "1px" } }, h("span", { class: "cult-bt-t" }, final ? "Breakthrough" : "Breakthrough"), h("span", { class: "cult-bt-s" }, btSub))),
+    // the meditating figure (mockup cultivation_screen): a cut-out floating over the backdrop, tap for the Qi rate
+    h("div", { class: ["cult-space", lotus && "has-figure"], onClick: () => openRateSheet(app), "aria-label": "Qi rate details" },
+      lotus && h("div", { class: "cult-glow" }), lotus && h("div", { class: "cult-figure", style: { backgroundImage: app.img(lotus) } }),
+      lotus && h("div", { class: "cult-petals", "aria-hidden": "true" }, Array.from({ length: 7 }, (_, i) => h("i", { style: { left: `${10 + i * 13}%`, "--d": `${9 + (i % 3) * 3}s`, "--dl": `${-i * 1.7}s` } })))),
+    h("button", { class: ["btn gold cult-bt", ready && "ready"], onClick: () => (final ? openMajorSheet(app) : doMinor(app, affordable)) },
+      h("span", { class: "stack", style: { gap: "1px" } }, h("span", { class: "cult-bt-t" }, "Breakthrough"), h("span", { class: "cult-bt-s" }, btSub))),
     h("button", { class: "glass panel cult-method", onClick: () => openRateSheet(app) },
       h("div", { class: "row" },
         h("span", { class: "m-ico" }, icon("qi", 22)),
@@ -59,7 +63,7 @@ export function cultivateScreen(app: App) {
           h("div", { class: "title", style: { fontSize: "calc(14rem / 15)", fontVariant: "small-caps" } }, method.name),
           h("div", { class: "muted" }, `${method.element ? c.get<any>(method.element).name + " · " : ""}${method.grade[0].toUpperCase() + method.grade.slice(1)}-grade · Mastery ${Math.round((mastery / method.mastery.max_level) * 100)}%`)),
         h("div", { style: { textAlign: "right" } }, h("div", { class: "jade-t", style: { fontWeight: 800, fontSize: "calc(17rem / 15)" } }, `+${fmt.num(rate.perSecond, rate.perSecond < 10 ? 2 : 1)} Qi/s`), h("div", { class: "muted" }, `${root.name.replace(/ Root$/, "")} ×${root.qi_mult}`))),
-      h("div", { style: { margin: "8px 0 4px" } }, bar(Math.min(1, prog), { cls: "thick", label: `${fmt.int(Math.min(s.character.qi, need))} / ${fmt.int(need)} Qi` })),
+      h("div", { style: { margin: "8px 0 4px" } }, bar(Math.min(1, prog), { cls: "thick qi", label: `${fmt.int(Math.min(s.character.qi, need))} / ${fmt.int(need)} Qi` })),
       h("div", { class: "row between muted" },
         h("span", null, prog >= 1 ? (final && !ready ? "✦ Bottleneck: complete the requirements" : "✦ Bottleneck reached — Qi is full") : `${fmt.pct(prog * 100, 1)} of this stage`),
         h("span", null, final ? (next ? `Next: ${next.name}` : "Summit reached") : `Next: Stage ${s.character.stage + 1} · ${fmt.compact(c.get<any>(realm.id).qi.base * Math.pow(realm.qi.stage_growth, s.character.stage))} Qi`))),
@@ -67,8 +71,7 @@ export function cultivateScreen(app: App) {
       shortcut(app, "cauldron", "Alchemy", 0, () => app.router.push(alchemyScreen(app, "Cultivate"))),
       shortcut(app, "paw", "Spirit Beasts", s.beasts.incubating.filter((x) => x.wins >= x.need).length + (s.beasts.incubating.length < app.content.rules.beasts.incubators && Object.keys(s.inventory.stacks).some((k) => k.startsWith("egg.") && (s.inventory.stacks[k] ?? 0) > 0) ? 1 : 0), () => app.router.push(beastsScreen(app, "Cultivate"))),
       shortcut(app, "scroll", "Quests", app.readyQuests(), () => app.router.push(questLogScreen(app, "Cultivate"))),
-      shortcut(app, "gear", "Settings", 0, () => app.router.push(settingsScreen(app, "Cultivate")))),
-  ];
+      shortcut(app, "gear", "Settings", 0, () => app.router.push(settingsScreen(app, "Cultivate")))));
 }
 
 const SHORTCUT_ART: Record<string, string> = { cauldron: "alchemy", paw: "beasts", scroll: "quests", gear: "settings" };

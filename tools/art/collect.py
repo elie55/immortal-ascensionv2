@@ -21,6 +21,23 @@ def latest(root, variant, rel):
     return max(c, key=lambda p: os.path.basename(p).rsplit(".", 1)[0]) if c else None
 
 
+# Technique icons are drawn as a square tile in the middle of the canvas: trim the empty margin so the tile fills
+# the square it is shown in (battle skill buttons, technique lists). Re-apply to existing files: python3 tools/art/collect.py --retrim
+TRIM_PREFIXES = ("techniques/",)
+
+
+def trim_square(im, pad=0.02):
+    """Crop an RGBA image to its visible content, centred in a square with `pad` margin."""
+    if im.mode != "RGBA": return im
+    bb = im.getchannel("A").point(lambda a: 255 if a > 24 else 0).getbbox()
+    if not bb: return im
+    side = max(bb[2] - bb[0], bb[3] - bb[1]); side = int(side * (1 + 2 * pad))
+    cx, cy = (bb[0] + bb[2]) / 2, (bb[1] + bb[3]) / 2
+    out = Image.new("RGBA", (side, side), (0, 0, 0, 0))
+    out.paste(im.crop((round(cx - side / 2), round(cy - side / 2), round(cx + side / 2), round(cy + side / 2))), (0, 0))
+    return out
+
+
 def fit(im, w, h):
     ar, iar = w / h, im.width / im.height
     if iar > ar:  # too wide
@@ -32,12 +49,20 @@ def fit(im, w, h):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("root"); ap.add_argument("--variant", default="IA"); ap.add_argument("--sheet"); ap.add_argument("--dry", action="store_true")
+    ap.add_argument("root", nargs="?", default=""); ap.add_argument("--variant", default="IA"); ap.add_argument("--sheet"); ap.add_argument("--dry", action="store_true")
     ap.add_argument("--tag", default="", help="pilot-round suffix")
     ap.add_argument("--cell", type=int, default=320); ap.add_argument("--cols", type=int, default=6)
     ap.add_argument("--only", default="", help="only asset paths starting with this (after assets/)")
     ap.add_argument("--out", default=ROOT, help="write assets under this root (default: repo)")
+    ap.add_argument("--retrim", action="store_true", help="trim the margin of existing technique icons in assets/ and exit")
     a = ap.parse_args()
+    if a.retrim:
+        import glob
+        n = 0
+        for f in glob.glob(os.path.join(ROOT, "assets", "techniques", "**", "*.webp"), recursive=True):
+            im = Image.open(f).convert("RGBA"); t = trim_square(im)
+            if t.size != im.size: t.resize(im.size, Image.LANCZOS).save(f, "WEBP", quality=90, method=4); n += 1
+        print(f"retrimmed {n} technique icons"); return
     if a.root.endswith(".zip"):  # batch packed in the browser on the owner's PC (tools/art/comfy_pack.js)
         import zipfile, tempfile
         tmp = tempfile.mkdtemp(prefix="ia-batch-")
@@ -52,6 +77,7 @@ def main():
         if not src: continue
         im = Image.open(src)
         im = im.convert("RGBA" if j.get("transparent") else "RGB")
+        if rel.startswith(TRIM_PREFIXES): im = trim_square(im)
         im = fit(im, *j["size"])
         if not a.dry:
             dst = os.path.join(a.out, j["file"]); os.makedirs(os.path.dirname(dst), exist_ok=True)

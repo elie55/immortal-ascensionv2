@@ -14,9 +14,18 @@ def ui():
                           "looking over an endless sea of clouds with floating mountains, waterfalls and pagodas, sunrise glowing behind distant peaks, empty sky in the upper third for a title, no text.",
                           (1080, 1920), False, [LIN_REF, "refs/mockups/main_menu.png"])}),
         U("cultivate", "Cultivation scene", "Lin Xueyao meditating in lotus pose among floating islands.", "cultivate",
-          {"meditation": art("assets/ui/cultivate_meditation.png", f"{STYLE}. Vertical illustration: {LIN}, seated in lotus meditation pose with eyes closed and hands resting on her knees, floating slightly above a glowing jade lotus platform, "
-                             "soft jade-green qi swirling around her, cherry blossom petals, floating islands with pagodas and waterfalls behind, pale morning sky, centered figure in the middle third, no text.",
-                             (1080, 1920), False, [LIN_REF, "refs/mockups/cultivation_screen.png"]),
+          {# backdrop only (mockup cultivation_screen): the meditating figure is a separate cut-out layered by the screen
+           "meditation": art("assets/ui/cultivate_meditation.png", f"{STYLE}. Full-screen vertical background, bright and airy: a pastel sky of soft white clouds above an endless sea of clouds, "
+                             "many floating mountain islands with small waterfalls and green-roofed pagodas fading into blue haze, a large jade-roofed temple on a floating peak in the upper middle distance, "
+                             "pink cherry blossom branches framing the upper left and right corners with drifting petals, soft morning light, gentle pastel blues, lavender and pink, "
+                             "the centre of the picture kept open and light for a character, no characters, no people, no text.",
+                             (1080, 1920), False, ["refs/mockups/cultivation_screen.png"]),
+           # the meditating figure drawn from the mockup's crop (tools/art/queue.py FILE_REF)
+           "lotus": art("assets/ui/cultivate_lotus.png", f"{STYLE}. Full-body illustration: {LIN.replace(', a long sword at her side', '')}, unarmed with no sword or weapon anywhere, seated cross-legged in lotus meditation pose floating in the air, both eyes fully closed in deep meditation with a calm faint smile, "
+                        "hands resting together in her lap, long black hair flowing outward in soft waves, gold and jade hairpins with small flowers, white hanfu with pale jade-green layered robes and a pink sash, "
+                        "long translucent jade-green ribbons and sleeves swirling around her in elegant curves, a few pink cherry blossom petals and tiny golden sparkles floating around her, "
+                        "complete figure and ribbons in frame, isolated on plain background, no text.",
+                        (1024, 1024), True, ["refs/style/cult_lin.png", LIN_REF]),
            # cut-out pose for the Meditation Waterfall session (mockups meditation_waterfall, waterfall_active)
            "meditation_pose": art("assets/ui/cultivate_meditation_pose.png", f"{STYLE}. Full-body illustration: {LIN}, seated in lotus meditation pose on a flat mossy stone with eyes closed and hands resting in her lap, "
                                   "long hair and sleeves flowing softly, faint jade-green qi wisps around her, complete figure and stone in frame, isolated on plain background, no text.",

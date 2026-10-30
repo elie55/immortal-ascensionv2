@@ -158,7 +158,8 @@ button { cursor: pointer; border: 0; background: none; padding: 0; }
 .rt-common { color: #c9cfe3; } .rt-uncommon { color: #8bea9f; } .rt-rare { color: #86c8ff; } .rt-epic { color: #d1a8ff; } .rt-legendary { color: #ffd27a; } .rt-mythic { color: #ff94aa; } .rt-immortal { color: #fff3cc; } .rt-divine { color: #b8fff7; }
 
 /* ---------- bottom nav ---------- */
-.nav { position: absolute; left: 8px; right: 8px; bottom: calc(8px + var(--safe-bottom)); height: calc(var(--nav-h) - 10px); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; padding: 6px; border-radius: 22px; z-index: 10; }
+/* docked edge to edge at the bottom of every screen; the phone's home-indicator area is part of the bar */
+.nav { position: absolute; left: 0; right: 0; bottom: 0; height: calc(var(--nav-h) + var(--safe-bottom)); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; padding: 7px 8px calc(7px + var(--safe-bottom)); border-radius: 22px 22px 0 0; border-left: 0; border-right: 0; border-bottom: 0; z-index: 10; }
 .nav button { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border-radius: 16px; color: var(--text-2); font-size: calc(11rem / 15); font-weight: 700; }
 .nav button .ico { width: 24px; height: 24px; }
 .nav button.on { color: #fff; background: linear-gradient(180deg, rgba(90,140,255,.55), rgba(40,70,190,.55)); border: 1px solid var(--cyan-line); box-shadow: 0 0 16px rgba(110,170,255,.55), inset 0 1px 0 rgba(255,255,255,.25); }
@@ -494,9 +495,10 @@ button.setrow { width: 100%; color: inherit; }
 @keyframes winding { 0%,100% { filter: drop-shadow(0 0 6px rgba(255,40,60,.9)) drop-shadow(0 0 18px rgba(255,30,60,.6)) brightness(1.05); transform: scale(1); } 50% { filter: drop-shadow(0 0 14px rgba(255,60,80,1)) drop-shadow(0 0 34px rgba(255,20,50,.85)) brightness(1.25) saturate(1.3); transform: scale(1.03); } }
 .bt-foe-u.winding .aura { background: radial-gradient(closest-side, rgba(255,40,70,.85), transparent); animation: aurapulse 1s ease-in-out infinite; } @keyframes aurapulse { 50% { transform: scale(1.25); opacity: .7; } }
 /* party */
-.bt-ally-u { position: absolute; left: var(--x, 50%); bottom: 0; width: calc(52% * var(--s, 1)); height: calc(100% * var(--s, 1)); transform: translateX(-50%); transition: left .45s, opacity .5s; pointer-events: none; }
+/* each ally is centred over its card: the dock has 10px side padding and 6px gaps between the --n equal columns */
+.bt-ally-u { position: absolute; left: calc(10px + (100% - 20px - (var(--n, 1) - 1) * 6px) * (var(--i, 0) + .5) / var(--n, 1) + var(--i, 0) * 6px); bottom: 0; width: min(56%, calc((100% - 20px) / var(--n, 1) * 1.3 * var(--s, 1))); height: calc(100% * var(--s, 1)); transform: translateX(-50%); transition: left .45s, opacity .5s; pointer-events: none; }
 .bt-ally-u .spr { animation: breathe 3.6s ease-in-out infinite; }
-.bt-ally-u.beast { bottom: 40px; }
+.bt-ally-u.beast { bottom: 22px; }
 .bt-ally-u.acting .spr { animation: lunge-up .42s ease; } @keyframes lunge-up { 40% { transform: translateY(-26px) scale(1.05); } }
 .bt-ally-u.dead { opacity: .3; filter: grayscale(1); }
 .bt-ally-u .fu-warn { top: 8%; }
@@ -549,7 +551,7 @@ button.setrow { width: 100%; color: inherit; }
 .bt-prompt { align-self: center; display: inline-flex; align-items: center; gap: 4px; padding: 5px 14px; border-radius: 999px; background: rgba(8,16,48,.92); border: 1px solid var(--gold); color: var(--gold-hi); font-size: calc(12rem / 15); font-weight: 800; box-shadow: 0 0 16px rgba(255,200,90,.4); animation: rise .25s, pulse 1.6s infinite; }
 .bt-prompt span { color: var(--text-2); font-weight: 600; }
 .bt-cards { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 6px; }
-.bt-cards.n1 { --n: 1; } .bt-cards.n2 { --n: 2; } .bt-cards.n3 { --n: 3; } .bt-cards.n4 { grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, .72fr); }
+.bt-cards.n1 { --n: 1; } .bt-cards.n2 { --n: 2; } .bt-cards.n3 { --n: 3; } .bt-cards.n4 { --n: 4; }
 .bt-card { text-align: left; justify-items: stretch; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: 6px; row-gap: 0; min-width: 0; padding: 5px 7px 7px 5px; border-radius: 13px; background: linear-gradient(180deg, rgba(20,30,86,.88), rgba(10,16,52,.9)); border: 1px solid var(--edge-hi); box-shadow: 0 6px 16px rgba(0,0,12,.45), inset 0 1px 0 rgba(255,255,255,.08); transition: box-shadow .3s, border-color .3s; }
 .bt-card.player { border-color: var(--gold-line); }
 .bc-por { width: 34px; height: 34px; flex: none; border-radius: 50%; background: var(--navy-700) center 15%/cover; border: 2px solid var(--gold); box-shadow: 0 0 8px rgba(232,189,92,.35); }
@@ -1051,3 +1053,28 @@ button.tag { min-height: 32px; padding: 4px 12px; }
 .df-way { padding: 9px 10px; } .df-way-ico { width: 38px; height: 38px; flex: none; border-radius: 10px; display: grid; place-items: center; background: radial-gradient(circle at 50% 35%, #2a3a8c, #10184a); border: 1px solid var(--edge-hi); color: var(--gold-hi); }
 .df-gain { flex: none; font-size: calc(12rem / 15); text-align: right; max-width: 30%; }
 .df-actions { margin-top: 12px; }
+
+/* ---------- cultivate (mockup cultivation_screen): figure over the backdrop, pill button over the method panel, short tiles ---------- */
+.cult-page { display: flex; flex-direction: column; min-height: 100%; }
+.cult-page > .cult-space { flex: 1 1 auto; height: auto; min-height: 220px; position: relative; margin: 0 -12px; cursor: pointer; }
+.cult-figure { position: absolute; left: 50%; bottom: -14px; width: min(92%, 400px); height: calc(100% + 26px); transform: translateX(-50%); background: bottom center/contain no-repeat; filter: drop-shadow(0 0 18px rgba(127,240,210,.35)) drop-shadow(0 10px 20px rgba(20,30,90,.35)); animation: cultfloat 6s ease-in-out infinite; pointer-events: none; }
+@keyframes cultfloat { 50% { transform: translateX(-50%) translateY(-8px); } }
+.cult-glow { position: absolute; left: 50%; bottom: -6px; width: 72%; height: 70px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(150,255,225,.55), rgba(127,224,255,.18) 60%, transparent); animation: aurapulse 4s ease-in-out infinite; }
+.cult-petals { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.cult-petals i { position: absolute; top: -12px; width: 9px; height: 7px; border-radius: 60% 0 60% 0; background: linear-gradient(135deg, #ffd6e8, #f5a3c7); opacity: .85; animation: petal var(--d, 10s) linear var(--dl, 0s) infinite; }
+@keyframes petal { 0% { transform: translate(0, 0) rotate(0); opacity: 0; } 10% { opacity: .9; } 100% { transform: translate(60px, 110%) rotate(320deg); opacity: 0; } }
+.reduce-motion .cult-petals { display: none; }
+.cult-page > .cult-bt { position: relative; z-index: 2; display: flex; align-self: center; width: min(58%, 250px); min-height: 50px; margin: 0 auto -22px; padding: 5px 16px; border-radius: 999px; }
+.cult-page .cult-bt-t { font-size: calc(18rem / 15); letter-spacing: .1em; line-height: 1.05; }
+.cult-page .cult-bt-s { font-size: calc(10rem / 15); }
+.cult-page > .cult-method { margin-top: 0; padding: 28px 14px 10px; border-radius: 18px; background: linear-gradient(180deg, rgba(90,110,200,.55), rgba(34,46,120,.72)); border-color: rgba(200,220,255,.5); box-shadow: 0 8px 26px rgba(20,30,90,.35), inset 0 1px 0 rgba(255,255,255,.18); }
+.cult-page .m-ico { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(180deg, #7fe0ff, #2f9fd0); color: #052238; }
+.bar.qi > i { background: linear-gradient(90deg, #4fc8ff, #4fe0b0 55%, #f6f0a0); box-shadow: 0 0 12px rgba(127,240,210,.6); }
+.bar.qi > span { color: #fff; text-shadow: 0 0 2px #04122e, 0 0 4px #04122e, 0 1px 2px #04122e; }
+.cult-page > .cult-tiles { margin-top: 10px; gap: 7px; }
+.cult-page .cult-tile { aspect-ratio: auto; height: 58px; min-height: 0; padding: 0 4px 5px; justify-content: flex-end; border-radius: 14px; overflow: hidden; background: linear-gradient(180deg, rgba(170,195,255,.22), rgba(30,44,120,.7)); border-color: rgba(200,220,255,.4); }
+.cult-page .ct-art { position: absolute; left: 50%; top: 1px; width: 54px; height: 40px; transform: translateX(-50%); flex: none; background: center/contain no-repeat; }
+.cult-page .ct-ico { position: absolute; left: 50%; top: 10px; transform: translateX(-50%); }
+.cult-page .ct-lbl { position: relative; z-index: 1; font-size: calc(12rem / 15); text-transform: none; font-variant: small-caps; letter-spacing: .02em; text-shadow: 0 1px 3px #000, 0 0 6px rgba(0,0,30,.9); white-space: nowrap; }
+.cult-page .cult-tile .badge { top: 3px; right: 4px; }
+@media (max-height: 700px) { .cult-page > .cult-space { min-height: 150px; } .cult-page .cult-tile { height: 54px; } .cult-page .ct-art { width: 48px; height: 36px; } .cult-page > .cult-bt { min-height: 46px; } }

@@ -60,12 +60,8 @@ const FOE_SLOTS: Record<number, { x: number; s: number; y: number; z: number }[]
   4: [{ x: 38, s: 0.8, y: 0, z: 5 }, { x: 66, s: 0.72, y: 8, z: 4 }, { x: 13, s: 0.6, y: 22, z: 3 }, { x: 88, s: 0.6, y: 22, z: 3 }],
   5: [{ x: 50, s: 0.8, y: 0, z: 5 }, { x: 25, s: 0.64, y: 14, z: 4 }, { x: 75, s: 0.64, y: 14, z: 4 }, { x: 9, s: 0.52, y: 28, z: 3 }, { x: 91, s: 0.52, y: 28, z: 3 }],
 };
-/** Party positions: the player in the middle, companions to the sides, the beast in front. */
-const ALLY_SLOTS = (n: number, hasBeast: boolean) => {
-  const people = n - (hasBeast ? 1 : 0);
-  const p = people === 1 ? [{ x: 50, s: 1, z: 3 }] : people === 2 ? [{ x: 38, s: 1, z: 3 }, { x: 72, s: 0.92, z: 2 }] : [{ x: 50, s: 1, z: 3 }, { x: 19, s: 0.9, z: 2 }, { x: 81, s: 0.9, z: 2 }];
-  return { people: p, beast: { x: people === 1 ? 78 : people === 2 ? 14 : 66, s: 0.5, z: 4 } };
-};
+/** Party sprite scale by party size (each character stands above its own card, see .bt-ally-u in theme.css). */
+const ALLY_SCALE = (n: number, beast: boolean) => beast ? (n <= 2 ? 0.62 : 0.56) : n === 1 ? 1 : n === 2 ? 0.96 : 0.9;
 
 interface HpBar { el: HTMLElement; set(hp: number, max: number, shield: number): void }
 /** HP bar with a damage trail: the fill drops at once, a pale trail follows a moment later; heals jump. */
@@ -204,12 +200,14 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     // party
     const allies = battle.units.filter((u) => u.side === "ally");
     const beast = allies.find((u) => u.kind === "beast");
-    const sl = ALLY_SLOTS(allies.length, !!beast);
     const people = allies.filter((u) => u.kind !== "beast").sort((a, b) => (a.kind === "player" ? -1 : b.kind === "player" ? 1 : a.uid - b.uid));
-    people.forEach((u, i) => { const v = views.get(u.uid)!; const p = sl.people[Math.min(i, sl.people.length - 1)]!; v.sprite.style.setProperty("--x", `${p.x}%`); v.sprite.style.setProperty("--s", String(p.s)); v.sprite.style.zIndex = String(p.z); });
-    if (beast) { const v = views.get(beast.uid)!; v.sprite.style.setProperty("--x", `${sl.beast.x}%`); v.sprite.style.setProperty("--s", String(sl.beast.s)); v.sprite.style.zIndex = String(sl.beast.z); }
-    cards.className = `bt-cards n${Math.min(4, allies.length)}`;
-    for (const u of [...people, ...(beast ? [beast] : [])]) cards.appendChild(views.get(u.uid)!.card!); // keep card order
+    // one column per ally, in card order: each character stands above its own card
+    const order = [...people, ...(beast ? [beast] : [])];
+    const nCols = Math.min(4, order.length);
+    party.style.setProperty("--n", String(nCols));
+    order.forEach((u, i) => { const v = views.get(u.uid)!; v.sprite.style.setProperty("--i", String(Math.min(i, nCols - 1))); v.sprite.style.setProperty("--s", String(ALLY_SCALE(order.length, u === beast))); v.sprite.style.zIndex = String(u.kind === "player" ? 4 : 3); });
+    cards.className = `bt-cards n${nCols}`;
+    for (const u of order) cards.appendChild(views.get(u.uid)!.card!); // keep card order
     for (const u of allies) {
       const v = views.get(u.uid)!;
       v.cardBar!.set(u.hp, u.maxHp, u.shield);
