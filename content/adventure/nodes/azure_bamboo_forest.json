@@ -148,7 +148,7 @@
   {
     "id": "node.azure_bamboo_forest.silk_strung_grove",
     "name": "Silk-Strung Grove",
-    "description": "Node 10. Cloud silk hangs between every stalk.",
+    "description": "Cloud silk hangs between every stalk, and something waits at the centre of the web.",
     "region": "region.azure_bamboo_forest",
     "kind": "battle",
     "position": [
