@@ -2,7 +2,7 @@
   {
     "id": "egg.cloud_fox",
     "name": "Cloud Fox Egg",
-    "description": "a round white egg wrapped in soft cloud wisps, faintly warm",
+    "description": "A round white egg wrapped in soft cloud wisps, faintly warm.",
     "name_cn": "云狐蛋",
     "rarity": "uncommon",
     "sell_value": 100,
@@ -31,7 +31,7 @@
   {
     "id": "egg.flame_fox",
     "name": "Flame Fox Egg",
-    "description": "a red-orange egg with ember cracks glowing along its shell",
+    "description": "A red-orange egg with ember cracks glowing along its shell.",
     "name_cn": "焰狐蛋",
     "rarity": "rare",
     "sell_value": 400,

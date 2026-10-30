@@ -47,22 +47,24 @@ export function shopScreen(app: App, shopId: string, backTo: string): Screen {
       const restock = restockIn(shop, now);
       const aff = owner ? affinityLevel(c, owner.id, s.relations[owner.id]?.affinity ?? 0) : null;
       const affVal = owner ? s.relations[owner.id]?.affinity ?? 0 : 0;
+      const isPavilion = rows.length > 0 && rows.every((r) => !("gear" in r.entry) && (r.id.startsWith("tech.") || r.id.startsWith("method.")));
+      const tabs = [{ value: "goods" as const, label: "Goods" }, ...(shop.buys_items ? [{ value: "sell" as const, label: "Sell" }] : []), ...((shop.rumours ?? []).length ? [{ value: "rumours" as const, label: "Rumours" }] : [])];
       return [
         header(app),
-        subbar({ help: { app, key: "shop" }, title: shop.name, cn: shop.name_cn, sub: owner ? `${owner.name} · ${owner.title ?? owner.role}` : shop.description, backTo, onBack: () => app.router.back() }),
+        subbar({ help: { app, key: isPavilion ? "pavilion" : "shop" }, title: shop.name, cn: shop.name_cn, sub: owner ? `${owner.name} · ${owner.title ?? owner.role}` : shop.description, backTo, onBack: () => app.router.back() }),
         owner && h("div", { class: "keeper" },
           h("div", { class: "keeper-art", style: { backgroundImage: app.img(c.artAny(owner.id, "full_body", "portrait")) } }),
           h("div", { class: "glass bubble" }, h("div", { class: "bubble-n" }, owner.name), h("div", null, GREETING[shopId] ?? shop.description),
             aff && h("div", { class: "row", style: { gap: "6px", marginTop: "6px" } }, h("span", { class: "pink-t", style: { fontSize: "calc(11rem / 15)", fontWeight: 700 } }, `♥ ${aff.name}`), h("div", { class: "grow" }, bar(aff.next ? affVal / aff.next.threshold : 1, { cls: "thin pink" })), h("span", { class: "muted tnum" }, aff.next ? `${affVal} / ${aff.next.threshold}` : `${affVal}`)))),
         h("div", { class: "glass panel shop-panel" },
-          seg(tab, [{ value: "goods" as const, label: "Goods" }, ...(shop.buys_items ? [{ value: "sell" as const, label: "Sell" }] : []), ...((shop.rumours ?? []).length ? [{ value: "rumours" as const, label: "Rumours" }] : [])], (v) => { tab = v; sellSel = null; app.router.refresh(); }),
+          tabs.length > 1 && seg(tab, tabs, (v) => { tab = v; sellSel = null; app.router.refresh(); }),
           tab === "goods" ? [
             h("div", { class: "row between shop-meta" },
               h("span", { class: "muted" }, restock === null ? "Limited stock never returns" : `Restocks in ${fmt.duration(restock)}`),
               disc > 0 ? h("span", { class: "tag gold" }, icon("fame", 10), ` −${disc}%`) : shop.fame_discount_pct_per_500 ? h("span", { class: "muted" }, `−${shop.fame_discount_pct_per_500}% per 500 Fame`) : null),
-            rows.length > 0 && rows.every((r) => !("gear" in r.entry) && (r.id.startsWith("tech.") || r.id.startsWith("method.")))
-              ? h("div", { class: "manual-list" }, floors(app, rows).map(({ name, cn, rarity, items }, i) => [
-                  h("div", { class: "floor-h" }, h("span", { class: "floor-n" }, `Floor ${i + 1}`), h("b", null, name), h("span", { class: "cn" }, cn), h("span", { class: `tag rt-${rarity}`, style: { marginLeft: "auto" } }, RARITY_LABEL[rarity] ?? rarity)),
+            isPavilion
+              ? h("div", { class: "manual-list" }, floors(app, rows).map(({ floor, name, cn, rarity, items }) => [
+                  h("div", { class: "floor-h" }, h("span", { class: "floor-n" }, `Floor ${floor}`), h("b", null, name), h("span", { class: "cn" }, cn), h("span", { class: "muted", style: { marginLeft: "auto" } }, `${items.length} manual${items.length > 1 ? "s" : ""}`)),
                   ...items.map((r) => manualRow(app, shopId, r))]))
               : h("div", { class: "shop-grid" }, rows.map((r) => goodsCard(app, shopId, r))),
           ] : tab === "rumours" ? rumoursPanel(app, shopId) : sellPanel(app, () => sellSel, (v) => { sellSel = v; app.router.refresh(); }),
@@ -105,11 +107,15 @@ function rumoursPanel(app: App, shopId: string) {
 
 /** Scripture Pavilion floors (mockup): manuals grouped by rarity, lowest first. */
 const FLOOR_NAMES: Record<string, [string, string]> = { common: ["Hall of Foundations", "筑基堂"], uncommon: ["Hall of Foundations", "筑基堂"], rare: ["Hall of Rare Arts", "珍艺阁"], epic: ["Hall of Profound Arts", "玄艺阁"], legendary: ["Hall of Mysteries", "秘典阁"], mythic: ["Feng's Sanctum", "冯老静室"], immortal: ["Feng's Sanctum", "冯老静室"], divine: ["Feng's Sanctum", "冯老静室"] };
+/** The pavilion's five halls, one per floor: Foundations (common, uncommon), Rare, Profound, Mysteries, Feng's Sanctum. */
+const FLOOR_OF: Record<string, number> = { common: 1, uncommon: 1, rare: 2, epic: 3, legendary: 4, mythic: 5, immortal: 5, divine: 5 };
 function floors(app: App, rows: ShopRow[]) {
-  const order = ["common", "uncommon", "rare", "epic", "legendary", "mythic", "immortal", "divine"];
-  const groups = new Map<string, ShopRow[]>();
-  for (const r of rows) { const k = rowArt(app, r).rarity; (groups.get(k) ?? groups.set(k, []).get(k)!).push(r); }
-  return [...groups.entries()].sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0])).map(([rarity, items]) => ({ rarity, name: FLOOR_NAMES[rarity]?.[0] ?? "Hall", cn: FLOOR_NAMES[rarity]?.[1] ?? "", items }));
+  const groups = new Map<number, ShopRow[]>();
+  for (const r of rows) { const k = FLOOR_OF[rowArt(app, r).rarity] ?? 1; (groups.get(k) ?? groups.set(k, []).get(k)!).push(r); }
+  return [...groups.entries()].sort((a, b) => a[0] - b[0]).map(([floor, items]) => {
+    const rarity = rowArt(app, items[0]!).rarity;
+    return { floor, rarity, name: FLOOR_NAMES[rarity]?.[0] ?? "Hall", cn: FLOOR_NAMES[rarity]?.[1] ?? "", items };
+  });
 }
 
 /** Scripture Pavilion style row (mockup scripture_pavilion): icon, name, element/kind/rarity tags, effect line, price. */
@@ -182,7 +188,7 @@ function sellPanel(app: App, get: () => string | number | null, set: (v: string 
   const junkValue = junk.reduce((n, id) => n + c.get<any>(id).sell_value * (s.inventory.stacks[id] ?? 0), 0);
   return [
     junk.length > 0 && h("button", { class: "btn block", onClick: () => { let total = 0; for (const id of junk) { const r = app.game.run("sell", app.now(), (st, cc) => sellItem(st, cc, id, st.inventory.stacks[id] ?? 0)); if (r.ok) total += (r as any).stones; } app.router.toast(`Sold junk for ${fmt.int(total)} stones`, "good"); } }, icon("trash", 14), `Sell all junk`, h("span", { class: "cta-s" }, icon("gem", 11), ` ${fmt.int(junkValue)}`)),
-    h("div", { class: "muted up", style: { margin: "8px 2px 4px" } }, "Gear (not equipped or locked)"),
+    h("div", { class: "sell-h" }, "Gear", h("span", { class: "muted" }, "not worn, not locked")),
     // sell every spare piece of one rarity in a single press (locked and worn pieces are never included)
     gear.length > 0 && h("div", { class: "row", style: { gap: "5px", flexWrap: "wrap", marginBottom: "6px" } }, ["common", "uncommon", "rare"].map((r) => {
       const uids = gear.filter((u) => s.inventory.gear[u]!.rarity === r);
@@ -190,9 +196,10 @@ function sellPanel(app: App, get: () => string | number | null, set: (v: string 
       const value = uids.reduce((n, u) => n + gearSellValue(c, u, s), 0);
       return h("button", { class: `btn sm ghost rt-${r}`, onClick: () => confirmModal(app, { title: `Sell all ${RARITY_LABEL[r]} gear?`, body: `${uids.length} piece${uids.length > 1 ? "s" : ""} for ${fmt.int(value)} spirit stones. Locked and worn pieces stay. This cannot be undone.`, ok: `Sell ${uids.length}`, danger: true }, () => { const rr = app.game.run("sell", app.now(), (st, cc) => sellGear(st, cc, uids)); app.router.toast(rr.ok ? `Sold ${uids.length} for ${fmt.int((rr as any).stones)} stones` : rr.reason, rr.ok ? "good" : "bad"); set(null); }) }, `Sell all ${RARITY_LABEL[r]} (${uids.length})`);
     })),
-    gear.length ? h("div", { class: "inv-grid" }, gear.map((u) => gearTile(app, u, { named: true, selected: sel === u, onClick: () => set(u) }))) : h("div", { class: "muted" }, "No spare gear."),
-    h("div", { class: "muted up", style: { margin: "10px 2px 4px" } }, "Items"),
-    stacks.length ? h("div", { class: "inv-grid" }, stacks.map((id) => tile({ rarity: c.get<any>(id).rarity ?? "common", art: c.art(id, "icon"), fallbackIcon: ITEM_ICON[id.split(".")[0]!], qty: s.inventory.stacks[id], name: c.get<any>(id).name, selected: sel === id, onClick: () => set(id), img: (f) => app.img(f) }))) : h("div", { class: "muted" }, "Nothing to sell."),
+    gear.length ? h("div", { class: "inv-grid" }, gear.map((u) => gearTile(app, u, { named: true, selected: sel === u, onClick: () => set(u) })))
+      : h("div", { class: "empty-row" }, h("span", { class: "es-ico sm" }, icon("shield", 16)), h("div", null, h("b", null, "No spare gear"), h("div", { class: "muted" }, "Worn and locked pieces never show here."))),
+    h("div", { class: "sell-h" }, "Items", h("span", { class: "muted" }, "junk first")),
+    stacks.length ? h("div", { class: "inv-grid" }, stacks.map((id) => tile({ rarity: c.get<any>(id).rarity ?? "common", art: c.art(id, "icon"), fallbackIcon: ITEM_ICON[id.split(".")[0]!], qty: s.inventory.stacks[id], name: c.get<any>(id).name, selected: sel === id, onClick: () => set(id), img: (f) => app.img(f) }))) : h("div", { class: "empty-row" }, h("span", { class: "es-ico sm" }, icon("pouch", 16)), h("div", null, h("b", null, "Nothing to sell"), h("div", { class: "muted" }, "Materials, pills and junk you carry appear here."))),
     sel !== null && sellBar(app, sel, () => set(null)),
   ];
 }

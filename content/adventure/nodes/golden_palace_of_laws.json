@@ -6,7 +6,7 @@
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
-      0.5,
+      0.593,
       0.93
     ],
     "connections": [
@@ -35,8 +35,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "gather",
     "position": [
-      0.22,
-      0.82
+      0.411,
+      0.882
     ],
     "connections": [
       "node.golden_palace_of_laws.entry",
@@ -68,8 +68,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
-      0.78,
-      0.82
+      0.235,
+      0.825
     ],
     "connections": [
       "node.golden_palace_of_laws.gathering",
@@ -99,8 +99,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
-      0.18,
-      0.66
+      0.208,
+      0.724
     ],
     "connections": [
       "node.golden_palace_of_laws.outskirts",
@@ -130,8 +130,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "chest",
     "position": [
-      0.5,
-      0.72
+      0.381,
+      0.663
     ],
     "connections": [
       "node.golden_palace_of_laws.west_path",
@@ -150,8 +150,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
-      0.82,
-      0.66
+      0.563,
+      0.615
     ],
     "connections": [
       "node.golden_palace_of_laws.cache",
@@ -181,8 +181,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "elite",
     "position": [
-      0.14,
-      0.5
+      0.741,
+      0.561
     ],
     "connections": [
       "node.golden_palace_of_laws.east_path",
@@ -213,8 +213,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "event",
     "position": [
-      0.46,
-      0.53
+      0.812,
+      0.462
     ],
     "connections": [
       "node.golden_palace_of_laws.lair",
@@ -233,8 +233,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
-      0.76,
-      0.5
+      0.645,
+      0.396
     ],
     "connections": [
       "node.golden_palace_of_laws.crossroads",
@@ -263,8 +263,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
-      0.3,
-      0.36
+      0.463,
+      0.347
     ],
     "connections": [
       "node.golden_palace_of_laws.ridge",
@@ -294,8 +294,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "cultivation",
     "position": [
-      0.66,
-      0.36
+      0.284,
+      0.295
     ],
     "connections": [
       "node.golden_palace_of_laws.deep_path",
@@ -318,8 +318,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "elite",
     "position": [
-      0.2,
-      0.2
+      0.172,
+      0.204
     ],
     "connections": [
       "node.golden_palace_of_laws.sanctum",
@@ -355,8 +355,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "hidden",
     "position": [
-      0.84,
-      0.22
+      0.12,
+      0.114
     ],
     "connections": [
       "node.golden_palace_of_laws.den"
@@ -378,8 +378,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
-      0.55,
-      0.24
+      0.329,
+      0.13
     ],
     "connections": [
       "node.golden_palace_of_laws.den",
@@ -409,8 +409,8 @@
     "region": "region.golden_palace_of_laws",
     "kind": "boss",
     "position": [
-      0.5,
-      0.07
+      0.51,
+      0.08
     ],
     "connections": [
       "node.golden_palace_of_laws.approach"

@@ -51,7 +51,7 @@ const goNpc = (app: App, npcId: string): Destination => {
 const goNode = (app: App, n: MapNode): Destination => {
   const step = nextStepTo(app.game.state, app.content, n.id);
   return { where: `${app.content.get<any>(n.region).name} · ${n.name}${step ? ` · next: ${step.name}` : ""}`, tab: "adventure", node: n.id,
-    go: () => { toTab(app, "adventure"); app.router.push(regionScreen(app, n.region, n.id)); focusLater(".node-pin.sel"); } };
+    go: () => { toTab(app, "adventure"); app.router.push(regionScreen(app, n.region, n.id)); focusLater(".mp-node.sel"); } };
 };
 const goRegion = (app: App, region: string): Destination => ({ where: app.content.get<any>(region).name, tab: "adventure", go: () => { toTab(app, "adventure"); app.router.push(regionScreen(app, region)); } });
 const goDungeon = (app: App, id: string): Destination => {

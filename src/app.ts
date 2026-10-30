@@ -18,7 +18,10 @@ import { cultivateScreen } from "./ui/screens/cultivate.ts";
 import { characterScreen } from "./ui/screens/character.ts";
 import { inventoryScreen } from "./ui/screens/inventory.ts";
 import { sectScreen } from "./ui/screens/sect.ts";
-import { adventureScreen } from "./ui/screens/adventure.ts";
+import { adventureScreen, regionScreen } from "./ui/screens/adventure.ts";
+import { achievementsScreen, missionHallScreen, questLogScreen } from "./ui/screens/quests.ts";
+import { alchemyScreen } from "./ui/screens/alchemy.ts";
+import { towerScreen } from "./ui/screens/delves.ts";
 import { offlineModal } from "./ui/screens/offline.ts";
 import { celebrateEvent } from "./ui/screens/celebrate.ts";
 import { questStatus } from "./engine/progression.ts";
@@ -28,7 +31,7 @@ import { decode } from "./save/codec.ts";
 import { startEncounter } from "./ui/screens/battle.ts";
 import type { DomainEvent } from "./engine/events.ts";
 
-export const VERSION = "0.8.0";
+export const VERSION = "0.9.0";
 
 export class App {
   content!: ContentIndex;
@@ -66,6 +69,9 @@ export class App {
       dev: {
         load: (text: string, tab: Tab = "cultivate") => { const r = decode(text); if (!r.ok) throw new Error(r.reason); this.attach(r.state, 0); this.router.clearGlobal(); this.enterGame(tab); },
         fight: (src: Parameters<typeof startEncounter>[1]) => startEncounter(this, src),
+        region: (id: string, select?: string) => this.router.push(regionScreen(this, id, select)),
+        open: (name: "achievements" | "missions" | "quests" | "alchemy" | "tower") => this.router.push(name === "achievements" ? achievementsScreen(this) : name === "missions" ? missionHallScreen(this) : name === "alchemy" ? alchemyScreen(this, "Sect")
+          : name === "tower" ? towerScreen(this, this.content.byPrefix<any>("dungeon").find((d) => d.tower)!.id) : questLogScreen(this, "Cultivate")),
       } });
   }
 
@@ -130,6 +136,7 @@ export class App {
 
   private enterGame(tab: Tab = "cultivate"): void {
     this.router.store.update((s) => { s.tab = tab; s.stacks = { cultivate: [], adventure: [], character: [], inventory: [], sect: [] }; });
+    this.router.holdToasts = () => this.router.current().screen.id === "battle";
     this.router.badges = (t) => t === "sect" ? this.readyQuests() : t === "character" && this.betterGear() ? 1 : 0;
     this.game.settle(this.now());
     this.startLoop();
@@ -201,7 +208,7 @@ export class App {
       case "adventure": return { id: "adventure", render: () => adventureScreen(this) };
       case "character": return { id: "character", render: () => characterScreen(this) };
       case "inventory": return { id: "inventory", render: () => inventoryScreen(this) };
-      case "sect": return { id: "sect", render: () => sectScreen(this), bg: () => this.ui("ui.sect_map", "map") };
+      case "sect": return { id: "sect", render: () => sectScreen(this) };
     }
   }
 

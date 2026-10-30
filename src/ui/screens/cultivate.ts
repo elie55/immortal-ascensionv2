@@ -15,6 +15,7 @@ import { computeStats, masteryLevel, type StatBlock } from "../../engine/stats.t
 import { breakThrough, breakThroughAll, useConsumable, switchMethod, type ActionResult } from "../../engine/actions.ts";
 import { attrLabel, attrValue } from "../core/kit.ts";
 import { settingsScreen } from "./menu.ts";
+import { objectiveDestination } from "../navigate.ts";
 
 const CN_NUM = ["", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
 
@@ -119,21 +120,26 @@ function openMajorSheet(app: App) {
     const ch = majorChance(s, c);
     const ready = reqs.every((r) => r.met);
     const gains = Object.entries(next.realm_bonus as Record<string, number>);
+    const missing = reqs.filter((r) => !r.met);
+    // where to get a missing pill or item: the same lookup the quest tracker uses
+    const getIt = (r: any) => { if (r.kind !== "item" || r.met) return null; const d = objectiveDestination(app, { type: "collect", item: r.id, count: r.need }); return d && h("button", { class: "link-btn jade-t", onClick: () => { close(); d.go(); } }, "Get it ›"); };
+    const medal = (rl: any) => h("span", { class: "rt-medal" }, h("b", { class: "cn" }, (rl.name_cn ?? "").replace(/[期境]$/, "").slice(0, 2)), h("span", null, rl.name));
     return h("div", null,
-      h("div", { class: "cn center", style: { fontSize: "calc(13rem / 15)" } }, `${realm.name_cn ?? ""} → ${next.name_cn ?? ""}`),
-      h("div", { class: "m-title" }, `Ascend to ${next.name}`),
-      h("div", { class: "m-sub" }, next.description),
-      section("Requirements", ready ? "All requirements met" : "Gather what is missing",
-        h("div", { class: "rows" }, reqs.map((r) => h("div", { class: "setrow" },
+      h("div", { class: "realm-trans" }, medal(realm), h("span", { class: "rt-arrow" }, "➜"), medal(next)),
+      h("div", { class: "m-title center" }, `Ascend to ${next.name}`),
+      h("div", { class: "m-sub center" }, next.description),
+      section("Requirements", ready ? "All requirements met" : `${missing.length} missing`,
+        h("div", { class: "rows" }, reqs.map((r) => h("div", { class: ["setrow", r.met && "met"] },
           icon(r.kind === "qi" ? "qi" : r.kind === "item" ? "cauldron" : r.kind === "tribulation" ? "bolt" : "sword", 18),
-          h("div", { class: "grow" }, h("div", { class: "lbl" }, r.label), h("div", { class: "desc" }, r.kind === "qi" ? `${fmt.compact(r.have)} / ${fmt.compact(r.need)}` : r.kind === "tribulation" ? "Survive the heavenly lightning (combat)" : r.kind === "trial" ? "Clear the trial first" : `${r.have} / ${r.need} in your bag`)),
-          h("span", { class: ["tag", r.met ? "jade" : ""] }, r.met ? "Ready" : "Missing"))))),
+          h("div", { class: "grow" }, h("div", { class: "lbl" }, r.label), h("div", { class: "desc tnum" }, r.kind === "qi" ? `${fmt.int(Math.min(r.have, r.need))} / ${fmt.int(r.need)}${r.met ? " ✓" : ""}` : r.kind === "tribulation" ? "Survive the heavenly lightning (combat)" : r.kind === "trial" ? "Clear the trial first" : `${Math.min(r.have, r.need)} / ${r.need} in your bag${r.met ? " ✓" : ""}`)),
+          getIt(r) ?? h("span", { class: ["tag", r.met ? "jade" : ""] }, r.met ? "Ready" : "Missing"))))),
       section("Success chance", `${Math.round(ch.total * 100)}%`,
         h("dl", { class: "kv" }, h("dt", null, "Base"), h("dd", null, `${Math.round(ch.base * 100)}%`), ...ch.parts.flatMap((p) => [h("dt", null, p.label), h("dd", { class: "jade-t" }, `+${Math.round(p.bonus * 100)}%`)])),
         ch.total < 1 && h("div", { class: "muted", style: { marginTop: "6px" } }, `On failure you keep your realm and lose ${Math.round(c.rules.major_breakthrough.fail_qi_loss_pct * 100)}% of the stage's Qi. Required pills are consumed.`)),
       gains.length > 0 && section("You will gain", null, h("div", { class: "row", style: { flexWrap: "wrap", gap: "6px" } }, gains.map(([k, v]) => h("span", { class: "tag gold" }, `${attrLabel(k)} +${attrValue(k, v)}`)))),
+      !ready && h("div", { class: "muted center", style: { margin: "2px 0 6px" } }, `Missing: ${missing.map((r) => r.label).join(", ")}`),
       h("div", { class: "grid-2", style: { marginTop: "4px" } },
-        h("button", { class: "btn", onClick: close }, "Not yet"),
+        h("button", { class: "btn ghost", onClick: close }, "Not yet"),
         h("button", { class: "btn gold", disabled: !ready, onClick: () => {
           close();
           const r = act(app, "major breakthrough", (st, ct) => breakThrough(st, ct, { now: app.now() }));

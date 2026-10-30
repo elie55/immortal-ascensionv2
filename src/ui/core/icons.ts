@@ -32,6 +32,10 @@ const P: Record<string, string> = {
   motion: '<circle cx="12" cy="12" r="8"/><path d="M8 12h8"/>',
   globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
   shield: '<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="M9 12l2 2 4-4"/>',
+  // line glyphs for map medallions (never swapped for painted art, unlike fame/gem)
+  star: '<path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19l1-5.8L3.5 9.2l5.9-.9z" fill="currentColor" fill-opacity=".25"/>',
+  chest: '<path d="M4 10h16v9H4z"/><path d="M4 10c0-3 2-5 5-5h6c3 0 5 2 5 5"/><path d="M4 14h16"/><path d="M11 12.5h2v3h-2z"/>',
+  crown: '<path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 10H5z"/><path d="M5 21h14"/>',
   update: '<path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/>',
   lock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
   unlock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.5-2"/>',

@@ -84,13 +84,13 @@
         "file": "assets/ui/sect_map.webp",
         "size": [
           1080,
-          1920
+          1384
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down three-quarter illustrated map of a xianxia sect built on many small floating islands connected by stone bridges and stairs: a red gate, training terraces with sword racks, a tall library pagoda, a forge with chimney smoke, an arena, a waterfall pool, a merchant pavilion with lanterns, a garden with spirit beasts, an alchemy hall with a cauldron, small living quarters, waterfalls falling into clouds, cherry trees, soft daylight, clear open spaces around each building for labels, no text, no characters.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Three-quarter top-down illustration of the Azure Cloud Sect exactly as in the approved mockup: luminous floating islands among pastel clouds and cherry blossoms, the Inner Sect Peak pavilions at the top, a snowy frozen valley top right, the Mission Hall pagoda, sword training terraces, the Scripture Pavilion pagoda, the forge island, the proving arena, a pool with a fountain, the merchant pavilion with red lanterns, the spirit beast garden with a pond, the alchemy hall with a golden cauldron and small living quarters at the bottom, waterfalls into clouds, stone bridges and stairs, soft bright daylight, no text, no labels, no characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
-          "refs/mockups/sect_map.png"
+          "refs/style/sect_map_art.png"
         ],
         "status": "generated"
       }
@@ -545,6 +545,28 @@
           "refs/mockups/forge_awaken.png"
         ],
         "status": "generated"
+      }
+    }
+  },
+  {
+    "id": "ui.alchemy",
+    "name": "Alchemy Hall furnace",
+    "description": "The sect's great bronze pill furnace.",
+    "screen": "alchemy",
+    "art": {
+      "cauldron": {
+        "file": "assets/ui/alchemy_cauldron.webp",
+        "size": [
+          1024,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. A single large ornate antique bronze alchemy cauldron (ding) on three legs, seen from the front slightly above, dragon handles, a glowing emerald jade medallion on its belly, gold filigree, soft jade-green and pink spirit smoke rising from the open top, warm rim light, the complete cauldron and smoke in frame, isolated on a plain background, no shelves, no room, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/style/alchemy_cauldron.png"
+        ],
+        "status": "planned"
       }
     }
   },

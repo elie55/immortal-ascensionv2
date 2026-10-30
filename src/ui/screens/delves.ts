@@ -120,20 +120,29 @@ export function towerScreen(app: App, id: string): Screen {
       const can = canStart(s, c, { kind: "tower", id, floor: best + 1 }, app.now());
       return [
         header(app),
-        subbar({ help: { app, key: "tower" }, title: d.name, cn: d.name_cn, sub: `Best floor ${best} / ${d.tower!.floors} · no energy, no daily cap`, backTo: "Dungeons", onBack: () => app.router.back(), end: cpChip(app) }),
-        h("div", { class: "tower-floors" }, floors.map((f) => {
+        subbar({ help: { app, key: "tower" }, title: d.name, cn: d.name_cn, sub: `Best floor ${best} / ${d.tower!.floors} · no energy cost`, backTo: "Dungeons", onBack: () => app.router.back(), end: cpChip(app) }),
+        // the climb as a spine of floor medallions, highest on top (review 55; mockups arena_bracket, secret_realm_map)
+        h("div", { class: "tw-spine" }, floors.map((f) => {
           const tf = towerFloor(c, d, f);
           const state = f <= best ? "done" : f === best + 1 ? "next" : "locked";
-          return h("div", { class: ["glass tf", state, tf.boss && "boss"] },
-            h("span", { class: "tf-n" }, String(f)),
-            h("div", { class: "grow" }, h("div", { class: "lbl" }, tf.boss ? c.get<any>(tf.enemies[0]!).name : tf.enemies.map((e) => c.get<any>(e).name).join(" · ")),
+          const foe = tf.enemies[0]!, art = c.art(foe, "icon");
+          return h("div", { class: ["tw-floor", state, tf.boss && "boss"] },
+            h("span", { class: "tw-medal", style: { backgroundImage: art ? app.img(art) : undefined } },
+              h("b", { class: "tw-n" }, String(f)),
+              state === "done" && h("span", { class: "tw-badge done" }, icon("check", 10)), state === "locked" && h("span", { class: "tw-badge lock" }, icon("lock", 9))),
+            h("div", { class: "tw-info" }, h("div", { class: "lbl" }, tf.boss ? c.get<any>(foe).name : tf.enemies.map((e) => c.get<any>(e).name).join(" · ")),
               h("div", { class: "muted" }, `${tf.boss ? "Warden floor · " : ""}${fmt.int(tf.stones)} stones${tf.milestone ? " · milestone" : ""}`)),
-            h("span", { class: ["tag", cp >= tf.power ? "jade" : "red"] }, `CP ${fmt.int(tf.power)}`),
-            state === "done" && h("span", { class: "tag jade" }, "✓"));
+            h("span", { class: ["tag", cp >= tf.power ? "jade" : "red"] }, `CP ${fmt.int(tf.power)}`));
         })),
-        section("Milestones", "Paid the first time you clear the floor", h("div", { class: "rows" }, d.tower!.milestones.map((m) => h("div", { class: ["setrow", best >= m.floor && "on"] },
-          h("b", { class: "tf-n" }, String(m.floor)), h("div", { class: "grow" }, rewardsLine(app, m.rewards)), best >= m.floor ? h("span", { class: "tag jade" }, "Claimed") : h("span", { class: "tag" }, `${m.floor - best} to go`))))),
-        cta(best >= d.tower!.floors ? "Summit reached" : `Climb floor ${best + 1}`, can.ok ? `Rec. CP ${fmt.int(towerFloor(c, d, Math.min(best + 1, d.tower!.floors)).power)} · your CP ${fmt.int(cp)}` : can.reason, () => startEncounter(app, { kind: "tower", id, floor: best + 1 }), { disabled: !can.ok }),
+        h("section", { class: "glass panel" }, h("div", { class: "sec-h" }, h("h3", null, "Milestones"), h("span", { class: "hint" }, "Paid once, the first time you clear the floor")),
+          h("div", { class: "tw-miles" }, d.tower!.milestones.map((m) => {
+            const first = m.rewards.items?.[0]?.id, art = first ? c.art(first, "icon") : undefined;
+            const names = [m.rewards.spirit_stones ? `${fmt.int(m.rewards.spirit_stones)} Spirit Stones` : "", ...(m.rewards.items ?? []).map((q: any) => `${q.qty}× ${c.get<any>(q.id).name}`)].filter(Boolean);
+            return h("button", { class: ["tw-mile", best >= m.floor && "got"], title: names.join(", "), onClick: () => app.router.toast(`Floor ${m.floor}: ${names.join(", ")}`, "info", 3200) },
+              h("span", { class: "tw-mile-art", style: { backgroundImage: art ? app.img(art) : undefined } }, !art && icon("gem", 18)),
+              h("b", null, `Floor ${m.floor}`), h("span", { class: "muted" }, best >= m.floor ? "Claimed" : `${m.floor - best} to go`));
+          }))),
+        h("div", { class: "dock-cta" }, cta(best >= d.tower!.floors ? "Summit reached" : `Climb › Floor ${best + 1}`, can.ok ? `Rec. CP ${fmt.int(towerFloor(c, d, Math.min(best + 1, d.tower!.floors)).power)} · your CP ${fmt.int(cp)}` : can.reason, () => startEncounter(app, { kind: "tower", id, floor: best + 1 }), { disabled: !can.ok })),
       ];
     },
   };

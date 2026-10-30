@@ -17,7 +17,7 @@ import { computeStats } from "../../engine/stats.ts";
 import { questStatus } from "../../engine/progression.ts";
 import { ITEM_ICON } from "./items.ts";
 import { shopScreen } from "./shop.ts";
-import { missionHallScreen } from "./quests.ts";
+import { questCard } from "./quests.ts";
 import { startEncounter } from "./battle.ts";
 import { canBond, bondDao } from "../../engine/companions.ts";
 
@@ -33,7 +33,7 @@ const STRATEGY: Record<string, string> = {
 };
 
 export function npcScreen(app: App, npcId: string, backTo: string): Screen {
-  let mode: "chat" | "ask" = "chat";
+  let mode: "chat" | "ask" | "requests" = "chat";
   return {
     id: `npc:${npcId}`, bg: () => { const n = app.content.get<any>(npcId); return n.location ? app.content.art(n.location, "background") : undefined; },
     render: () => {
@@ -60,7 +60,7 @@ export function npcScreen(app: App, npcId: string, backTo: string): Screen {
         // badge = gifts you carry that she can take today (her remaining daily allowance is shown in the sheet, not here)
         { id: "gift", label: "Gift", icon: "fame", badge: giftsLeft(s, c, npcId) > 0 ? giftable(s, c, npcId).reduce((n, id) => n + itemCount(s, id), 0) : 0, run: () => giftSheet(app, npcId, say) },
         n.shop && { id: "shop", label: "Shop", icon: "gem", run: () => app.router.push(shopScreen(app, n.shop, n.name)) },
-        quests.length && { id: "quests", label: "Requests", icon: "scroll", badge: ready, run: () => app.router.push(missionHallScreen(app, npcId)) },
+        quests.length && { id: "quests", label: "Requests", icon: "scroll", badge: ready, on: mode === "requests", run: () => { mode = "requests"; } },
         canBond(s, c, npcId).ok && { id: "dao", label: "Dao Companion", icon: "fame", on: true, run: () => daoModal(app, npcId, say) },
       ].filter(Boolean) as any[];
       return [
@@ -77,7 +77,9 @@ export function npcScreen(app: App, npcId: string, backTo: string): Screen {
               h("div", { class: "row between" }, h("b", { class: "aff-name" }, lv.name), h("span", { class: "muted tnum" }, `${fmt.int(aff)} / ${fmt.int(maxT)}${lv.next ? ` · ${fmt.int(lv.next.threshold - aff)} to ${lv.next.name}` : ""}`)),
               h("div", { class: "aff-track" }, bar(aff / maxT, { cls: "pink thin" }), levels.slice(1).map((l) => h("span", { class: ["aff-mark", aff >= l.threshold && "on"], style: { left: `${(l.threshold / maxT) * 100}%` } }, h("i", null), h("em", null, l.name))))))),
         h("div", { class: "npc-actions" }, actions.map((a) => h("button", { class: ["glass npc-act", a.on && "on"], onClick: () => { a.run(); app.router.refresh(); } }, icon(a.icon, 18), h("span", null, a.label), a.badge > 0 && h("span", { class: "badge" }, String(a.badge))))),
-        mode === "ask" ? askPanel(app, npcId, (q, a) => { say("me", q); say("npc", a); mode = "chat"; }) : chatPanel(app, npcId, lines),
+        mode === "ask" ? askPanel(app, npcId, (q, a) => { say("me", q); say("npc", a); mode = "chat"; })
+          : mode === "requests" && quests.length ? h("div", { class: "npc-requests" }, h("div", { class: "sec-h" }, h("h3", null, "Requests"), h("span", { class: "hint" }, "Each one done deepens your bond")), quests.map((q) => questCard(app, q, { where: npcId })))
+          : chatPanel(app, npcId, lines),
       ];
     },
   };

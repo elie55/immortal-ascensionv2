@@ -6,7 +6,7 @@
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
-      0.5,
+      0.809,
       0.93
     ],
     "connections": [
@@ -35,8 +35,8 @@
     "region": "region.gate_of_ascension",
     "kind": "gather",
     "position": [
-      0.22,
-      0.82
+      0.666,
+      0.854
     ],
     "connections": [
       "node.gate_of_ascension.entry",
@@ -68,8 +68,8 @@
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
-      0.78,
-      0.82
+      0.493,
+      0.806
     ],
     "connections": [
       "node.gate_of_ascension.gathering",
@@ -99,8 +99,8 @@
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
-      0.18,
-      0.66
+      0.321,
+      0.756
     ],
     "connections": [
       "node.gate_of_ascension.outskirts",
@@ -130,8 +130,8 @@
     "region": "region.gate_of_ascension",
     "kind": "chest",
     "position": [
-      0.5,
-      0.72
+      0.19,
+      0.675
     ],
     "connections": [
       "node.gate_of_ascension.west_path",
@@ -150,8 +150,8 @@
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
-      0.82,
-      0.66
+      0.326,
+      0.596
     ],
     "connections": [
       "node.gate_of_ascension.cache",
@@ -181,8 +181,8 @@
     "region": "region.gate_of_ascension",
     "kind": "elite",
     "position": [
-      0.14,
-      0.5
+      0.498,
+      0.547
     ],
     "connections": [
       "node.gate_of_ascension.east_path",
@@ -213,8 +213,8 @@
     "region": "region.gate_of_ascension",
     "kind": "event",
     "position": [
-      0.46,
-      0.53
+      0.671,
+      0.498
     ],
     "connections": [
       "node.gate_of_ascension.lair",
@@ -233,8 +233,8 @@
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
-      0.76,
-      0.5
+      0.81,
+      0.42
     ],
     "connections": [
       "node.gate_of_ascension.crossroads",
@@ -263,8 +263,8 @@
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
-      0.3,
-      0.36
+      0.682,
+      0.338
     ],
     "connections": [
       "node.gate_of_ascension.ridge",
@@ -294,8 +294,8 @@
     "region": "region.gate_of_ascension",
     "kind": "cultivation",
     "position": [
-      0.66,
-      0.36
+      0.51,
+      0.289
     ],
     "connections": [
       "node.gate_of_ascension.deep_path",
@@ -318,8 +318,8 @@
     "region": "region.gate_of_ascension",
     "kind": "elite",
     "position": [
-      0.2,
-      0.2
+      0.337,
+      0.24
     ],
     "connections": [
       "node.gate_of_ascension.sanctum",
@@ -355,8 +355,8 @@
     "region": "region.gate_of_ascension",
     "kind": "hidden",
     "position": [
-      0.84,
-      0.22
+      0.677,
+      0.15
     ],
     "connections": [
       "node.gate_of_ascension.den"
@@ -378,8 +378,8 @@
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
-      0.55,
-      0.24
+      0.192,
+      0.166
     ],
     "connections": [
       "node.gate_of_ascension.den",
@@ -409,8 +409,8 @@
     "region": "region.gate_of_ascension",
     "kind": "boss",
     "position": [
-      0.5,
-      0.07
+      0.31,
+      0.08
     ],
     "connections": [
       "node.gate_of_ascension.approach"

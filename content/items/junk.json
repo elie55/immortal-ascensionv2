@@ -2,7 +2,7 @@
   {
     "id": "junk.cheap_junk_loot",
     "name": "Cheap Junk Loot",
-    "description": "a jumble of bent nails, torn cloth and a cracked cup",
+    "description": "A jumble of bent nails, torn cloth and a cracked cup.",
     "name_cn": "破烂",
     "rarity": "common",
     "sell_value": 3,
@@ -28,7 +28,7 @@
   {
     "id": "junk.broken_blade",
     "name": "Broken Blade",
-    "description": "a snapped rusty saber blade",
+    "description": "A snapped rusty saber blade.",
     "name_cn": "断刃",
     "rarity": "common",
     "sell_value": 6,

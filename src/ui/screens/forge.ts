@@ -123,7 +123,17 @@ function tabPanel(app: App, tab: Tab, uid: number, g: GearInstance, locks: numbe
     ];
   }
   if (tab === "reforge") {
-    if (!g.affixes.length) return h("div", { class: "glass panel center muted" }, "This piece has no secondary attributes to reforge.");
+    if (!g.affixes.length) {
+      // a real empty state: why, what to do, and the way there (review 31)
+      const withAffixes = Object.entries(app.game.state.inventory.gear).filter(([, x]) => x.affixes.length).map(([u]) => Number(u));
+      return h("div", { class: "glass panel empty-state" },
+        h("span", { class: "es-ico" }, icon("sparkle", 26)),
+        h("div", { class: "es-t" }, "Nothing to reforge on this piece"),
+        h("div", { class: "dim" }, "Secondary attributes come with rarity: refine it to Uncommon to gain its first one, then reforge it here."),
+        h("div", { class: "row", style: { gap: "8px", justifyContent: "center", marginTop: "10px" } },
+          h("button", { class: "btn jade sm", onClick: () => app.router.replace(forgeScreen(app, "Sect", "refine")) }, "Go to Refine"),
+          withAffixes.length > 0 && h("span", { class: "muted" }, `${withAffixes.length} of your pieces can be reforged`)));
+    }
     const cost = reforgeCost(c, g, locks);
     return [
       section("Secondary stats", h("span", null, `Lock up to ${cost.maxLocks}`),

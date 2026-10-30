@@ -6,7 +6,7 @@
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
-      0.5,
+      0.632,
       0.93
     ],
     "connections": [
@@ -35,8 +35,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "gather",
     "position": [
-      0.22,
-      0.82
+      0.472,
+      0.881
     ],
     "connections": [
       "node.thunderclap_wastes.entry",
@@ -68,8 +68,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
-      0.78,
-      0.82
+      0.313,
+      0.83
     ],
     "connections": [
       "node.thunderclap_wastes.gathering",
@@ -99,8 +99,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
-      0.18,
-      0.66
+      0.19,
+      0.75
     ],
     "connections": [
       "node.thunderclap_wastes.outskirts",
@@ -130,8 +130,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "chest",
     "position": [
-      0.5,
-      0.72
+      0.299,
+      0.665
     ],
     "connections": [
       "node.thunderclap_wastes.west_path",
@@ -150,8 +150,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
-      0.82,
-      0.66
+      0.458,
+      0.613
     ],
     "connections": [
       "node.thunderclap_wastes.cache",
@@ -181,8 +181,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "elite",
     "position": [
-      0.14,
-      0.5
+      0.618,
+      0.564
     ],
     "connections": [
       "node.thunderclap_wastes.east_path",
@@ -213,8 +213,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "event",
     "position": [
-      0.46,
-      0.53
+      0.769,
+      0.504
     ],
     "connections": [
       "node.thunderclap_wastes.lair",
@@ -233,8 +233,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
-      0.76,
-      0.5
+      0.765,
+      0.405
     ],
     "connections": [
       "node.thunderclap_wastes.crossroads",
@@ -263,8 +263,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
-      0.3,
-      0.36
+      0.613,
+      0.346
     ],
     "connections": [
       "node.thunderclap_wastes.ridge",
@@ -294,8 +294,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "cultivation",
     "position": [
-      0.66,
-      0.36
+      0.452,
+      0.297
     ],
     "connections": [
       "node.thunderclap_wastes.deep_path",
@@ -318,8 +318,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "elite",
     "position": [
-      0.2,
-      0.2
+      0.294,
+      0.245
     ],
     "connections": [
       "node.thunderclap_wastes.sanctum",
@@ -355,8 +355,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "hidden",
     "position": [
-      0.84,
-      0.22
+      0.634,
+      0.155
     ],
     "connections": [
       "node.thunderclap_wastes.den"
@@ -378,8 +378,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
-      0.55,
-      0.24
+      0.191,
+      0.158
     ],
     "connections": [
       "node.thunderclap_wastes.den",
@@ -409,8 +409,8 @@
     "region": "region.thunderclap_wastes",
     "kind": "boss",
     "position": [
-      0.5,
-      0.07
+      0.318,
+      0.08
     ],
     "connections": [
       "node.thunderclap_wastes.approach"

@@ -6,7 +6,7 @@
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
-      0.5,
+      0.395,
       0.93
     ],
     "connections": [
@@ -35,8 +35,8 @@
     "region": "region.demon_territory",
     "kind": "gather",
     "position": [
-      0.22,
-      0.82
+      0.543,
+      0.873
     ],
     "connections": [
       "node.demon_territory.entry",
@@ -68,8 +68,8 @@
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
-      0.78,
-      0.82
+      0.688,
+      0.813
     ],
     "connections": [
       "node.demon_territory.gathering",
@@ -99,8 +99,8 @@
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
-      0.18,
-      0.66
+      0.802,
+      0.731
     ],
     "connections": [
       "node.demon_territory.outskirts",
@@ -130,8 +130,8 @@
     "region": "region.demon_territory",
     "kind": "chest",
     "position": [
-      0.5,
-      0.72
+      0.75,
+      0.63
     ],
     "connections": [
       "node.demon_territory.west_path",
@@ -150,8 +150,8 @@
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
-      0.82,
-      0.66
+      0.612,
+      0.563
     ],
     "connections": [
       "node.demon_territory.cache",
@@ -181,8 +181,8 @@
     "region": "region.demon_territory",
     "kind": "elite",
     "position": [
-      0.14,
-      0.5
+      0.464,
+      0.506
     ],
     "connections": [
       "node.demon_territory.east_path",
@@ -213,8 +213,8 @@
     "region": "region.demon_territory",
     "kind": "event",
     "position": [
-      0.46,
-      0.53
+      0.319,
+      0.446
     ],
     "connections": [
       "node.demon_territory.lair",
@@ -233,8 +233,8 @@
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
-      0.76,
-      0.5
+      0.201,
+      0.366
     ],
     "connections": [
       "node.demon_territory.crossroads",
@@ -263,8 +263,8 @@
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
-      0.3,
-      0.36
+      0.244,
+      0.264
     ],
     "connections": [
       "node.demon_territory.ridge",
@@ -295,8 +295,8 @@
     "region": "region.demon_territory",
     "kind": "secret_realm",
     "position": [
-      0.66,
-      0.36
+      0.12,
+      0.174
     ],
     "connections": [
       "node.demon_territory.deep_path"
@@ -314,8 +314,8 @@
     "region": "region.demon_territory",
     "kind": "elite",
     "position": [
-      0.2,
-      0.2
+      0.381,
+      0.197
     ],
     "connections": [
       "node.demon_territory.deep_path",
@@ -351,8 +351,8 @@
     "region": "region.demon_territory",
     "kind": "hidden",
     "position": [
-      0.84,
-      0.22
+      0.721,
+      0.257
     ],
     "connections": [
       "node.demon_territory.den"
@@ -374,8 +374,8 @@
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
-      0.55,
-      0.24
+      0.529,
+      0.139
     ],
     "connections": [
       "node.demon_territory.den",
@@ -405,8 +405,8 @@
     "region": "region.demon_territory",
     "kind": "boss",
     "position": [
-      0.5,
-      0.07
+      0.674,
+      0.08
     ],
     "connections": [
       "node.demon_territory.approach"

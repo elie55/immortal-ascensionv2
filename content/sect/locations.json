@@ -12,8 +12,8 @@
       "npc.bai_lingshuang"
     ],
     "map_position": [
-      0.26,
-      0.325
+      0.24,
+      0.365
     ],
     "art": {
       "background": {
@@ -43,8 +43,8 @@
     ],
     "npcs": [],
     "map_position": [
-      0.56,
-      0.255
+      0.55,
+      0.285
     ],
     "art": {
       "background": {
@@ -77,8 +77,8 @@
     ],
     "shop": "shop.scripture_pavilion",
     "map_position": [
-      0.68,
-      0.395
+      0.78,
+      0.445
     ],
     "art": {
       "background": {
@@ -108,8 +108,8 @@
     ],
     "npcs": [],
     "map_position": [
-      0.42,
-      0.605
+      0.5,
+      0.525
     ],
     "art": {
       "background": {
@@ -142,8 +142,8 @@
     ],
     "shop": "shop.merchant_pavilion",
     "map_position": [
-      0.7,
-      0.675
+      0.8,
+      0.605
     ],
     "art": {
       "background": {
@@ -173,8 +173,8 @@
     ],
     "npcs": [],
     "map_position": [
-      0.66,
-      0.815
+      0.58,
+      0.765
     ],
     "art": {
       "background": {
@@ -206,8 +206,8 @@
       "npc.master_gu"
     ],
     "map_position": [
-      0.22,
-      0.465
+      0.76,
+      0.925
     ],
     "art": {
       "background": {
@@ -240,8 +240,8 @@
     ],
     "shop": "shop.beast_garden",
     "map_position": [
-      0.3,
-      0.745
+      0.24,
+      0.685
     ],
     "art": {
       "background": {
@@ -275,8 +275,8 @@
       "npc.elder_wen"
     ],
     "map_position": [
-      0.24,
-      0.885
+      0.22,
+      0.845
     ],
     "art": {
       "background": {
@@ -306,8 +306,8 @@
     ],
     "npcs": [],
     "map_position": [
-      0.72,
-      0.535
+      0.2,
+      0.205
     ],
     "art": {
       "background": {
@@ -340,8 +340,8 @@
     ],
     "npcs": [],
     "map_position": [
-      0.56,
-      0.08
+      0.46,
+      0.045
     ],
     "art": {
       "background": {
@@ -373,8 +373,8 @@
     ],
     "npcs": [],
     "map_position": [
-      0.72,
-      0.17
+      0.78,
+      0.125
     ],
     "art": {
       "background": {

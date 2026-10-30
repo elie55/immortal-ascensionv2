@@ -35,14 +35,14 @@ export function questCard(app: App, q: any, opts: { where?: string } = {}) {
   // Successes are announced by the app (quest_accepted / quest_completed); only failures toast here.
   const run = (fn: () => any, msg: string) => { const r = app.game.run("quest", app.now(), fn); if (!r.ok) app.router.toast(r.reason, "bad"); else if (msg) app.router.toast(msg, "info"); };
   let action: any = null;
-  if (st === "available" && (here || !opts.where)) action = h("button", { class: "btn jade sm", onClick: () => run(() => acceptQuest(app.game.state, c, q.id, app.now()), q.type === "main" ? "" : `Accepted: ${q.name}`) }, "Accept");
+  if (st === "available" && (here || !opts.where)) action = h("button", { class: "btn gold sm", onClick: () => run(() => acceptQuest(app.game.state, c, q.id, app.now()), q.type === "main" ? "" : `Accepted: ${q.name}`) }, "Accept");
   else if (st === "ready" && canTurnIn) action = h("button", { class: "btn gold sm", onClick: () => run(() => turnInQuest(app.game.state, c, q.id, app.now()), "") }, deliver ? "Deliver" : "Turn in");
   else if (st === "active" || st === "ready") {
     const tracked = s.progress.quests.tracked === q.id;
     const dest = questDestination(app, q);
     action = h("div", { class: "row", style: { gap: "6px" } },
       h("button", { class: ["btn ghost sm", tracked && "on-track"], "aria-pressed": String(tracked), onClick: () => { setTracked(app, tracked ? null : q.id); app.router.toast(tracked ? "Stopped tracking" : `Tracking: ${q.name}`, "info"); } }, icon(tracked ? "check" : "map", 13), tracked ? "Tracked" : "Track"),
-      dest && h("button", { class: "btn jade sm", onClick: () => { if (!tracked) setTracked(app, q.id); dest.go(); } }, "Go ▸"));
+      dest && h("button", { class: "btn gold sm", onClick: () => { if (!tracked) setTracked(app, q.id); dest.go(); } }, "Go ▸"));
   }
   else if (st === "cooldown") action = h("span", { class: "tag" }, icon("clock", 11), " ", fmt.duration(q.repeatable.cooldown_min * 60_000 - (now - (s.progress.quests.lastCompletedAt[q.id] ?? 0))));
   const total = prog.reduce((n: number, p: any) => n + p.need, 0), have = prog.reduce((n: number, p: any) => n + p.have, 0);
@@ -77,7 +77,7 @@ function objLabel(app: App, o: any): string {
 
 export function missionHallScreen(app: App, giver = "sectloc.mission_hall"): Screen {
   return {
-    id: `board:${giver}`, bg: () => app.content.art(giver, "background"),
+    id: `board:${giver}`,
     render: () => {
       const s = app.game.state, c = app.content, now = app.now();
       const loc = c.get<any>(giver);
@@ -86,13 +86,22 @@ export function missionHallScreen(app: App, giver = "sectloc.mission_hall"): Scr
       const order: Record<string, number> = { ready: 0, active: 1, available: 2, cooldown: 3 };
       list.sort((a, b) => order[a.st]! - order[b.st]! || a.q.difficulty - b.q.difficulty);
       const rank = nextRank(s, c);
-      const active = list.filter((x) => x.st === "active" || x.st === "ready").length;
+      const taken = list.filter((x) => x.st === "active" || x.st === "ready").length;
+      const later = c.byPrefix<any>("quest").filter((q) => q.giver === giver && questStatus(s, c, q, now) === "locked").length;
+      // Fame lives in the screen header (mockup mission_hall); the hall art is a band behind the board title
+      const fame = rank && h("div", { class: "sb-fame" }, h("div", { class: "row between" }, h("span", null, "Sect Fame"), h("b", { class: "tnum" }, `${fmt.int(s.resources.sect_fame)} / ${fmt.int(rank.rank.fame_required)}`)),
+        bar(Math.min(1, s.resources.sect_fame / rank.rank.fame_required), { cls: "gold thin" }));
       return [
         header(app),
-        subbar({ help: { app, key: "missions" }, title: loc.name, cn: loc.name_cn, sub: "Requests from masters & seniors", backTo: "Sect", onBack: () => app.router.back() }),
-        h("div", { class: "board-head" }, h("div", { class: "grow" }, h("div", { class: "board-t" }, "Request Board", h("span", { class: "cn" }, "悬赏榜")), h("div", { class: "board-sub" }, "Deliver materials from your adventures to earn Fame")),
-          h("div", { class: "board-side" }, h("span", { class: "glass tag" }, `Taken ${active}/${list.length}`), rank && h("div", { class: "glass fame-mini" }, h("div", { class: "muted" }, icon("fame", 11), " Sect Fame"), bar(Math.min(1, s.resources.sect_fame / rank.rank.fame_required), { cls: "gold thin" }), h("div", { class: "tnum gold-t" }, `${fmt.int(s.resources.sect_fame)} / ${fmt.int(rank.rank.fame_required)}`)))),
-        list.length ? list.map((x) => questCard(app, x.q, { where: giver })) : h("div", { class: "glass panel center muted" }, "No requests right now. Explore new regions and rise in rank for more."),
+        subbar({ help: { app, key: "missions" }, title: loc.name, cn: loc.name_cn, sub: "Masters' requests", backTo: "Sect", onBack: () => app.router.back(), end: fame }),
+        h("div", { class: "board-hero", style: { backgroundImage: app.img(c.art(giver, "background")) } },
+          h("div", { class: "board-t" }, "Request Board", h("span", { class: "cn" }, "悬赏榜")),
+          h("div", { class: "row between", style: { alignItems: "flex-end", gap: "8px" } },
+            h("div", { class: "board-sub" }, "Deliver materials from your adventures to earn Fame"),
+            list.length > 0 && h("div", { class: "board-pips", "aria-label": `${taken} of ${list.length} requests taken` }, h("span", null, `Taken ${taken}/${list.length}`),
+              h("span", { class: "pips" }, list.slice(0, 8).map((_x, i) => h("i", { class: i < taken && "on" })))))),
+        list.length ? list.map((x) => questCard(app, x.q, { where: giver })) : h("div", { class: "glass panel center muted" }, "No requests right now."),
+        h("div", { class: "board-more muted" }, icon("scroll", 12), later ? ` ${later} more request${later > 1 ? "s" : ""} will be pinned here as you explore new regions and rise in rank.` : " New requests are pinned here as you explore and rise in rank."),
       ];
     },
   };
@@ -134,6 +143,19 @@ export function questLogScreen(app: App, backTo: string): Screen {
 
 const CAT_ICON: Record<string, string> = { cultivation: "lotus", combat: "sword", exploration: "map", equipment: "gear", alchemy: "cauldron", beasts: "paw", sect: "temple", relationships: "fame", hidden: "lock" };
 
+/** One compact reward chip for a row (mockup achievements): the main reward, "+N" when there are more. */
+function rewardChip(app: App, r: any) {
+  const c = app.content;
+  const bits: { el: any; title: string }[] = [];
+  if (r.spirit_stones) bits.push({ el: [icon("gem", 10), ` ${fmt.int(r.spirit_stones)}`], title: `${fmt.int(r.spirit_stones)} Spirit Stones` });
+  for (const it of r.items ?? []) bits.push({ el: `${c.get<any>(it.id).name} ×${it.qty}`, title: `${it.qty}× ${c.get<any>(it.id).name}` });
+  if (r.sect_fame) bits.push({ el: [icon("fame", 10), ` ${fmt.int(r.sect_fame)}`], title: `${fmt.int(r.sect_fame)} Sect Fame` });
+  for (const t of r.techniques ?? []) bits.push({ el: c.get<any>(t).name, title: c.get<any>(t).name });
+  for (const g of r.gear ?? []) bits.push({ el: c.get<any>(g.base).name, title: c.get<any>(g.base).name });
+  if (!bits.length) return null;
+  return h("span", { class: "tag ach-chip", title: bits.map((b) => b.title).join(", ") }, bits[0]!.el, bits.length > 1 && h("i", null, ` +${bits.length - 1}`));
+}
+
 export function achievementsScreen(app: App): Screen {
   let cat = "all";
   return {
@@ -142,26 +164,36 @@ export function achievementsScreen(app: App): Screen {
       const s = app.game.state, c = app.content;
       const list = c.byPrefix<any>("ach");
       const cats = ["all", ...new Set(list.map((a) => a.category))];
-      const shown = list.filter((a) => cat === "all" || a.category === cat).sort((a, b) => Number(!!s.progress.achievements[b.id]) - Number(!!s.progress.achievements[a.id]));
-      const done = list.filter((a) => s.progress.achievements[a.id]).length;
+      const got = (a: any) => !!s.progress.achievements[a.id];
+      // closest to done first, earned ones last (they are history), hidden ones at the very end
+      const pct = (a: any) => { const p = achievementProgress(s, c, a); return p.have / Math.max(1, p.need); };
+      const shown = list.filter((a) => cat === "all" || a.category === cat)
+        .sort((a, b) => Number(got(a)) - Number(got(b)) || Number(!!a.hidden) - Number(!!b.hidden) || pct(b) - pct(a));
+      const done = list.filter(got).length;
+      const share = done / Math.max(1, list.length);
       return [
         header(app),
-        subbar({ title: "Achievements", cn: "成就", sub: `${done} / ${list.length} unlocked`, backTo: "Quests", onBack: () => app.router.back() }),
+        subbar({ title: "Achievements", cn: "成就", sub: "Milestones · rewards are granted when earned", backTo: "Quests", onBack: () => app.router.back(),
+          end: h("div", { class: "sb-count" }, h("span", null, "Earned"), h("b", { class: "tnum" }, `${done} / ${list.length}`)) }),
         h("div", { class: "glass panel ach-hero" },
           h("span", { class: "ach-trophy", style: app.ui("ui.icons", "sect_fame") ? { backgroundImage: app.img(app.ui("ui.icons", "sect_fame")) } : undefined }, !app.ui("ui.icons", "sect_fame") && icon("fame", 26)),
-          h("div", { class: "grow" }, h("div", { class: "ach-hero-t" }, "Path of the Cultivator"), h("div", { class: "muted" }, `${done} earned · ${list.length - done} remaining`), bar(done / Math.max(1, list.length), { cls: "thin gold", label: `${Math.round(done / Math.max(1, list.length) * 100)}%` })),
-          h("div", { class: "ach-pct" }, h("b", null, String(done)), h("span", { class: "muted" }, `/ ${list.length}`))),
-        h("div", { class: "chips scroll-x" }, cats.map((k) => h("button", { class: ["chip", k === cat && "on"], onClick: () => { cat = k; app.router.refresh(); } }, k === "all" ? "All" : k[0]!.toUpperCase() + k.slice(1)))),
+          h("div", { class: "grow" }, h("div", { class: "ach-hero-t" }, "Path of the Cultivator"), h("div", { class: "muted" }, `${done} earned · ${list.length - done} to go`),
+            h("div", { class: "ach-bar" }, bar(share, { cls: "thin gold" }), h("b", { class: "tnum" }, `${Math.round(share * 100)}%`)))),
+        h("div", { class: "chips scroll-x ach-cats" }, cats.map((k) => {
+          const inCat = list.filter((a) => k === "all" || a.category === k);
+          return h("button", { class: ["chip", k === cat && "on"], onClick: () => { cat = k; app.router.refresh(); } }, k === "all" ? "All" : k[0]!.toUpperCase() + k.slice(1), h("i", { class: "ach-n" }, `${inCat.filter(got).length}/${inCat.length}`));
+        })),
         h("div", { class: "rows" }, shown.map((a) => {
-          const got = s.progress.achievements[a.id];
+          const when = s.progress.achievements[a.id];
           const p = achievementProgress(s, c, a);
-          const secret = a.hidden && !got;
+          const secret = a.hidden && !when;
           const art = c.art(a.id, "icon");
-          return h("div", { class: ["glass ach", got && "got"] },
+          return h("div", { class: ["glass ach", when && "got", secret && "secret"] },
             h("span", { class: "ach-ico", style: { backgroundImage: art && !secret ? app.img(art) : undefined } }, (!art || secret) && icon(secret ? "lock" : CAT_ICON[a.category] ?? "fame", 20)),
-            h("div", { class: "grow" }, h("div", { class: "lbl" }, secret ? "Hidden achievement" : a.name), h("div", { class: "desc" }, secret ? "Keep exploring…" : a.description),
-              !got && !secret && p.need > 1 && h("div", { style: { marginTop: "5px" } }, bar(p.have / p.need, { cls: "thin", label: `${fmt.int(p.have)} / ${fmt.int(p.need)}` }))),
-            h("div", { class: "ach-r" }, got ? h("span", { class: "tag jade" }, "✓ ", new Date(got).toLocaleDateString()) : rewardsLine(app, a.rewards)));
+            h("div", { class: "grow ach-body" },
+              h("div", { class: "ach-top" }, h("div", { class: "lbl" }, secret ? "???" : a.name), when ? h("span", { class: "tag jade ach-chip" }, icon("check", 10), " Earned") : secret ? h("span", { class: "tag ach-chip" }, "???") : rewardChip(app, a.rewards)),
+              h("div", { class: "desc" }, secret ? "Hidden achievement · keep exploring" : a.description),
+              !when && !secret && p.need > 1 && h("div", { class: "ach-bar" }, bar(p.have / p.need, { cls: "thin" }), h("b", { class: "tnum" }, `${fmt.int(Math.min(p.have, p.need))} / ${fmt.int(p.need)}`))));
         })),
       ];
     },

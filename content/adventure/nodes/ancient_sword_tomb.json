@@ -6,7 +6,7 @@
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
-      0.5,
+      0.33,
       0.93
     ],
     "connections": [
@@ -35,8 +35,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "gather",
     "position": [
-      0.22,
-      0.82
+      0.522,
+      0.88
     ],
     "connections": [
       "node.ancient_sword_tomb.entry",
@@ -68,8 +68,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
-      0.78,
-      0.82
+      0.713,
+      0.828
     ],
     "connections": [
       "node.ancient_sword_tomb.gathering",
@@ -99,8 +99,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
-      0.18,
-      0.66
+      0.822,
+      0.733
     ],
     "connections": [
       "node.ancient_sword_tomb.outskirts",
@@ -130,8 +130,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "chest",
     "position": [
-      0.5,
-      0.72
+      0.647,
+      0.663
     ],
     "connections": [
       "node.ancient_sword_tomb.west_path",
@@ -150,8 +150,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
-      0.82,
-      0.66
+      0.454,
+      0.613
     ],
     "connections": [
       "node.ancient_sword_tomb.cache",
@@ -181,8 +181,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "elite",
     "position": [
-      0.14,
-      0.5
+      0.264,
+      0.56
     ],
     "connections": [
       "node.ancient_sword_tomb.east_path",
@@ -213,8 +213,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "event",
     "position": [
-      0.46,
-      0.53
+      0.195,
+      0.46
     ],
     "connections": [
       "node.ancient_sword_tomb.lair",
@@ -233,8 +233,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
-      0.76,
-      0.5
+      0.377,
+      0.396
     ],
     "connections": [
       "node.ancient_sword_tomb.crossroads",
@@ -263,8 +263,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
-      0.3,
-      0.36
+      0.57,
+      0.347
     ],
     "connections": [
       "node.ancient_sword_tomb.ridge",
@@ -294,8 +294,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "cultivation",
     "position": [
-      0.66,
-      0.36
+      0.758,
+      0.291
     ],
     "connections": [
       "node.ancient_sword_tomb.deep_path",
@@ -318,8 +318,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "elite",
     "position": [
-      0.2,
-      0.2
+      0.785,
+      0.188
     ],
     "connections": [
       "node.ancient_sword_tomb.sanctum",
@@ -355,8 +355,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "hidden",
     "position": [
-      0.84,
-      0.22
+      0.88,
+      0.1
     ],
     "connections": [
       "node.ancient_sword_tomb.den"
@@ -378,8 +378,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
-      0.55,
-      0.24
+      0.6,
+      0.129
     ],
     "connections": [
       "node.ancient_sword_tomb.den",
@@ -409,8 +409,8 @@
     "region": "region.ancient_sword_tomb",
     "kind": "boss",
     "position": [
-      0.5,
-      0.07
+      0.407,
+      0.08
     ],
     "connections": [
       "node.ancient_sword_tomb.approach"

@@ -2,7 +2,7 @@
   {
     "id": "blueprint.rimeglass_spear",
     "name": "Blueprint: Rimeglass Spear",
-    "description": "a frost-blue blueprint scroll showing a crystal spear",
+    "description": "A frost-blue blueprint scroll showing a crystal spear.",
     "name_cn": "霜玻璃枪图纸",
     "rarity": "epic",
     "sell_value": 500,
@@ -29,7 +29,7 @@
   {
     "id": "blueprint.frost_heart_elixir",
     "name": "Recipe: Frost Heart Elixir",
-    "description": "an icy recipe slip with a heart-shaped seal",
+    "description": "An icy recipe slip with a heart-shaped seal.",
     "name_cn": "冰心露方",
     "rarity": "epic",
     "sell_value": 400,
@@ -56,7 +56,7 @@
   {
     "id": "blueprint.demonbane_fan",
     "name": "Blueprint: Demonbane Fan",
-    "description": "a crimson blueprint scroll edged with black feathers",
+    "description": "A crimson blueprint scroll edged with black feathers.",
     "name_cn": "斩魔扇图纸",
     "rarity": "legendary",
     "sell_value": 2000,

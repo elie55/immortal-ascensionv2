@@ -19,7 +19,8 @@ import { Encounter as EncounterCls, type Encounter } from "../../engine/encounte
 import type { Battle } from "../../engine/combat/battle.ts";
 import type { Combatant, BattleEvent, Skill } from "../../engine/combat/types.ts";
 import { gearTile, gearName } from "./items.ts";
-import { rewardsLine } from "./adventure.ts";
+import { rewardsLine, regionScreen } from "./adventure.ts";
+import { nodeState } from "../../engine/nodes.ts";
 import { questProgress } from "../../engine/progression.ts";
 import { affinityLevel } from "../../engine/unlock.ts";
 import { openLocation } from "./sect.ts";
@@ -342,17 +343,18 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         s.kind === "basic" ? h("span", { class: "sk-cost free" }, "+SE") : s.spCost > 0 && h("span", { class: "sk-cost" }, `${s.spCost} SE`));
     };
     const actives = skills.filter((s) => s.kind !== "ultimate");
-    const empty = Math.max(0, 4 - actives.length);
+    // one free slot at most says "you can equip more"; a row of locked "Empty" slots read unfinished (review 51)
+    const empty = Math.min(1, Math.max(0, 4 - actives.length));
     const ultBtn = ult ? (() => {
       const usable = battle.canUse(p, ult); const pct = Math.min(100, p.ult);
       const art = c.art(ult.id, "icon");
       return h("button", { class: ["bt-ultbtn", pct >= 100 && "charged", usable && waiting && manual && "ready"], style: { "--ult": `${pct}%` }, disabled: !(manual && waiting && usable), onClick: () => choose(ult), title: ult.name, "aria-label": `Ultimate: ${ult.name}` },
         h("span", { class: "ub-ring" }), h("span", { class: "ub-art", style: art ? { backgroundImage: app.img(art) } : undefined }, !art && icon("sparkle", 26)),
         h("span", { class: "ub-tag" }, "Ultimate"), h("span", { class: "ub-pct" }, pct >= 100 ? "READY" : `${Math.floor(pct)}%`));
-    })() : h("div", { class: "bt-ultbtn empty", title: "No ultimate equipped" }, h("span", { class: "ub-ring" }), h("span", { class: "ub-art" }, icon("lock", 20)), h("span", { class: "ub-tag" }, "Ultimate"));
+    })() : null;
     replaceChildren(actions,
-      h("div", { class: "bt-skillrow" }, tile(p.skills[0]!, "basic"), ...actives.map((s) => tile(s)), ...Array.from({ length: empty }, () => h("div", { class: "bt-skill empty", title: "Empty technique slot" }, h("span", { class: "sk-name" }, "Empty"), h("span", { class: "sk-art" }, icon("lock", 14))))),
-      h("div", { class: "bt-ult" }, ult && h("span", { class: "sk-name ult-name" }, ult.name), ultBtn));
+      h("div", { class: "bt-skillrow" }, tile(p.skills[0]!, "basic"), ...actives.map((s) => tile(s)), ...Array.from({ length: empty }, () => h("div", { class: "bt-skill empty", title: "Free technique slot: equip one in Techniques" }, h("span", { class: "sk-name" }, "Free slot"), h("span", { class: "sk-art" }, icon("plus", 14))))),
+      ultBtn && h("div", { class: "bt-ult" }, h("span", { class: "sk-name ult-name" }, ult!.name), ultBtn));
     const several = battle.units.filter((u) => u.side === "enemy" && u.alive).length > 1;
     replaceChildren(prompt, waiting && manual ? h("div", { class: "bt-prompt" }, icon("sword", 14), " Your move", h("span", null, several ? " · tap a foe, then a technique" : " · tap a technique")) : null);
   }
@@ -614,6 +616,9 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const again = () => { app.router.close("result"); const src = enc.src; onExit(); const re = EncounterCls.start(s, c, src, app.now()); if (!re.ok) { app.router.toast(re.reason, "bad"); return; } app.router.pushGlobal(battleScreen(app, re.encounter, () => { app.router.popGlobal(); app.router.refresh(); })); };
     // overlays re-render every tick: their content must be built inside render, never a node made once and reused
     // (a reused node is moved out of the live modal by the next render and morph leaves an empty shell behind)
+    // the next place to play in this region (mockup victory: "Continue ▸ Next node" is the gold primary)
+    const nextPlace = r.won && enc.src.kind === "node" ? (() => { const here = c.get<any>((enc.src as any).id); return c.nodesOf(here.region).find((x) => !["hidden", "merchant", "secret_realm"].includes(x.kind) && nodeState(s, c, x) === "reachable"); })() : undefined;
+    const goNext = () => { app.router.close("result"); onExit(); if (!nextPlace) return; const scr = regionScreen(app, nextPlace.region, nextPlace.id); if (app.router.current().screen.id === `region:${nextPlace.region}`) app.router.replace(scr); else app.router.push(scr); };
     if (r.won) { root.classList.add("won"); cheer(); return app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "victory", render: (close) => h("div", { class: "center" },
       h("div", { class: "res-head" },
         h("div", { class: "res-rays", "aria-hidden": "true" }),
@@ -627,9 +632,13 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         r.firstClear && Object.keys(r.firstClear).length > 0 && h("div", { class: "res-first" }, h("span", { class: "muted up" }, "First clear"), rewardsLine(app, r.firstClear)),
         bestGear && h("div", { class: "res-best" }, icon("sparkle", 14), h("span", null, "Best drop: ", h("b", { class: `rt-${bestGear.rarity}` }, `${RARITY_LABEL[bestGear.rarity]} ${c.get<any>(bestGear.base).name}`), ` · iLvl ${bestGear.ilvl}`)),
         trackedLine(),
-        h("div", { class: "grid-2", style: { marginTop: "12px" } },
-          h("button", { class: "btn", onClick: () => { close(); onExit(); } }, icon("back", 14), "Map"),
-          h("button", { class: "btn gold", onClick: again }, "Fight again")))) }); }
+        nextPlace ? h("div", { class: "res-btns3", style: { marginTop: "12px" } },
+            h("button", { class: "btn ghost", onClick: () => { close(); onExit(); } }, icon("back", 14), "Map"),
+            h("button", { class: "btn ghost", onClick: again }, "Again"),
+            h("button", { class: "btn gold", onClick: goNext }, h("span", null, "Continue ▸"), h("span", { class: "cta-s" }, nextPlace.name)))
+          : h("div", { class: "grid-2", style: { marginTop: "12px" } },
+            h("button", { class: "btn", onClick: () => { close(); onExit(); } }, icon("back", 14), "Map"),
+            h("button", { class: "btn gold", onClick: again }, "Fight again")))) }); }
     // Defeat (mockup defeat): the foe with HP left and the power check, no penalty, ways to get stronger
     const lastFoe = battle.units.filter((u) => u.side === "enemy").sort((a, b) => b.maxHp - a.maxHp)[0];
     const foeDef = lastFoe ? c.find<any>(lastFoe.id) ?? mainEnemy : mainEnemy;

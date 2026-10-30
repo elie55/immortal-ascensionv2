@@ -6,8 +6,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "battle",
     "position": [
-      0.5,
-      0.92
+      0.803,
+      0.93
     ],
     "connections": [
       "node.azure_bamboo_forest.herb_patch"
@@ -35,8 +35,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "gather",
     "position": [
-      0.25,
-      0.8
+      0.653,
+      0.812
     ],
     "connections": [
       "node.azure_bamboo_forest.forest_edge",
@@ -72,8 +72,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "cultivation",
     "position": [
-      0.75,
-      0.8
+      0.399,
+      0.745
     ],
     "connections": [
       "node.azure_bamboo_forest.herb_patch",
@@ -96,8 +96,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "battle",
     "position": [
-      0.2,
-      0.62
+      0.179,
+      0.646
     ],
     "connections": [
       "node.azure_bamboo_forest.moon_pool_spring",
@@ -123,8 +123,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "gather",
     "position": [
-      0.8,
-      0.62
+      0.384,
+      0.541
     ],
     "connections": [
       "node.azure_bamboo_forest.viper_hollow",
@@ -152,8 +152,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "battle",
     "position": [
-      0.5,
-      0.68
+      0.637,
+      0.474
     ],
     "connections": [
       "node.azure_bamboo_forest.ore_vein",
@@ -189,8 +189,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "merchant",
     "position": [
-      0.65,
-      0.5
+      0.88,
+      0.534
     ],
     "connections": [
       "node.azure_bamboo_forest.silk_strung_grove"
@@ -208,8 +208,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "chest",
     "position": [
-      0.35,
-      0.5
+      0.813,
+      0.36
     ],
     "connections": [
       "node.azure_bamboo_forest.silk_strung_grove",
@@ -228,8 +228,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "elite",
     "position": [
-      0.15,
-      0.4
+      0.58,
+      0.27
     ],
     "connections": [
       "node.azure_bamboo_forest.hollow_shrine",
@@ -261,8 +261,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "hidden",
     "position": [
-      0.5,
-      0.42
+      0.88,
+      0.18
     ],
     "connections": [
       "node.azure_bamboo_forest.frost_lynx_den"
@@ -284,8 +284,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "elite",
     "position": [
-      0.8,
-      0.35
+      0.327,
+      0.202
     ],
     "connections": [
       "node.azure_bamboo_forest.frost_lynx_den",
@@ -313,8 +313,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "hidden",
     "position": [
-      0.3,
-      0.25
+      0.627,
+      0.112
     ],
     "connections": [
       "node.azure_bamboo_forest.reed_marsh"
@@ -336,8 +336,8 @@
     "region": "region.azure_bamboo_forest",
     "kind": "secret_realm",
     "position": [
-      0.65,
-      0.2
+      0.12,
+      0.262
     ],
     "connections": [
       "node.azure_bamboo_forest.reed_marsh"
@@ -355,7 +355,7 @@
     "region": "region.azure_bamboo_forest",
     "kind": "boss",
     "position": [
-      0.5,
+      0.213,
       0.08
     ],
     "connections": [

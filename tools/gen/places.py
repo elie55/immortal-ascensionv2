@@ -120,19 +120,20 @@ def sect_locations():
         "id": f"sectloc.{key}", **named(name, desc, cn), "unlock": unlock or {}, "features": feats, "npcs": npcs or [], **({"shop": shop} if shop else {}), "map_position": list(pos),
         "art": {"background": bg(f"sect/{key}", scene, refs=["refs/mockups/sect_locations.png"])}}
     return [
-        # map positions: one pin per height band (~0.07 of the map apart), so no two labels can overlap on any phone width or text size
-        L("sword_grounds", "Sword Grounds", "剑场", "Open training terraces where Bai Lingshuang drills the Frost Sword. Friendly duels and technique practice.", ["duels"], (0.26, 0.325), "sunlit stone training terraces with sword racks and cherry trees above clouds", npcs=["npc.bai_lingshuang"]),
-        L("mission_hall", "Mission Hall", "任务堂", "Request board of masters and seniors. Deliver materials, earn Sect Fame.", ["missions"], (0.56, 0.255), "a grand hall with a tall request board covered in paper slips, red lanterns"),
-        L("scripture_pavilion", "Scripture Pavilion", "藏经阁", "Five floors of manuals guarded by Elder Feng. Buy techniques and methods with Spirit Stones and Fame.", ["pavilion"], (0.68, 0.395), "a towering pagoda library with endless shelves of scrolls and floating lanterns", npcs=["npc.elder_feng"], shop="shop.scripture_pavilion"),
-        L("meditation_waterfall", "Meditation Waterfall", "静心瀑", "Sit beneath the falls for a temporary cultivation boost.", ["meditation"], (0.42, 0.605), "a tall misty waterfall with a flat meditation stone and a rainbow in the spray"),
-        L("merchant_pavilion", "Merchant Pavilion", "百宝阁", "Tang Xiaoman's shop. Pills, materials, gear and gossip.", ["merchant"], (0.7, 0.675), "a cosy merchant shop crammed with jars, scrolls, pill bottles and hanging lanterns", npcs=["npc.tang_xiaoman"], shop="shop.merchant_pavilion"),
-        L("alchemy_hall", "Alchemy Hall", "丹药房", "Refine pills from gathered herbs in the sect furnaces.", ["alchemy"], (0.66, 0.815), "an alchemy hall with a huge bronze cauldron glowing green, shelves of herbs and pills"),
-        L("spirit_forge", "Spirit Forge", "炼器坊", "Master Gu's forge. Enhance, refine, reforge, awaken and craft equipment.", ["forge"], (0.22, 0.465), "a mountain forge with a glowing anvil, hanging weapons and molten light", npcs=["npc.master_gu"]),
-        L("spirit_beast_garden", "Spirit Beast Garden", "灵兽园", "Qin's garden. Hatch eggs, feed, train and evolve spirit beasts.", ["beasts"], (0.3, 0.745), "a lush garden with glowing flowers, small ponds and nests under a giant willow", npcs=["npc.qin"], shop="shop.beast_garden"),
-        L("your_quarters", "Your Quarters", "居所", "Rest, store items and receive visitors.", ["quarters", "storage", "rest"], (0.24, 0.885), "a modest wooden disciple's room with a window onto clouds, a bed, a desk and a tea set", npcs=["npc.elder_wen"]),
-        L("proving_arena", "Proving Arena", "演武台", "Sect tournaments are held on this floating stage.", ["tournament"], (0.72, 0.535), "a circular stone arena floating among clouds with banners and spectator stands"),
-        L("inner_sect_peak", "Inner Sect Peak", "内门峰", "The inner sect's cloud peak. Requires Inner Disciple rank.", ["meditation", "rest"], (0.56, 0.08), "a high peak with elegant pavilions above a sea of clouds at dawn", unlock={"rank": "rank.inner_disciple"}),
-        L("frozen_lotus_valley", "Frozen Lotus Valley", "冰莲谷", "A frozen valley where ice lotuses bloom; advanced cultivation grounds. Requires 800 Sect Fame.", ["meditation"], (0.72, 0.17), "a snowy valley with a frozen lake and glowing blue ice lotus flowers", unlock={"sect_fame": 800}),
+        # map positions: each plaque sits on its landmark in assets/ui/sect_map (normalised x, y of the art), one plaque per height
+        # band 0.08 apart: plaques are about half the map wide, so two at a similar height would overlap on a phone
+        L("sword_grounds", "Sword Grounds", "剑场", "Open training terraces where Bai Lingshuang drills the Frost Sword. Friendly duels and technique practice.", ["duels"], (0.24, 0.365), "sunlit stone training terraces with sword racks and cherry trees above clouds", npcs=["npc.bai_lingshuang"]),
+        L("mission_hall", "Mission Hall", "任务堂", "Request board of masters and seniors. Deliver materials, earn Sect Fame.", ["missions"], (0.55, 0.285), "a grand hall with a tall request board covered in paper slips, red lanterns"),
+        L("scripture_pavilion", "Scripture Pavilion", "藏经阁", "Five floors of manuals guarded by Elder Feng. Buy techniques and methods with Spirit Stones and Fame.", ["pavilion"], (0.78, 0.445), "a towering pagoda library with endless shelves of scrolls and floating lanterns", npcs=["npc.elder_feng"], shop="shop.scripture_pavilion"),
+        L("meditation_waterfall", "Meditation Waterfall", "静心瀑", "Sit beneath the falls for a temporary cultivation boost.", ["meditation"], (0.5, 0.525), "a tall misty waterfall with a flat meditation stone and a rainbow in the spray"),
+        L("merchant_pavilion", "Merchant Pavilion", "百宝阁", "Tang Xiaoman's shop. Pills, materials, gear and gossip.", ["merchant"], (0.8, 0.605), "a cosy merchant shop crammed with jars, scrolls, pill bottles and hanging lanterns", npcs=["npc.tang_xiaoman"], shop="shop.merchant_pavilion"),
+        L("alchemy_hall", "Alchemy Hall", "丹药房", "Refine pills from gathered herbs in the sect furnaces.", ["alchemy"], (0.58, 0.765), "an alchemy hall with a huge bronze cauldron glowing green, shelves of herbs and pills"),
+        L("spirit_forge", "Spirit Forge", "炼器坊", "Master Gu's forge. Enhance, refine, reforge, awaken and craft equipment.", ["forge"], (0.76, 0.925), "a mountain forge with a glowing anvil, hanging weapons and molten light", npcs=["npc.master_gu"]),
+        L("spirit_beast_garden", "Spirit Beast Garden", "灵兽园", "Qin's garden. Hatch eggs, feed, train and evolve spirit beasts.", ["beasts"], (0.24, 0.685), "a lush garden with glowing flowers, small ponds and nests under a giant willow", npcs=["npc.qin"], shop="shop.beast_garden"),
+        L("your_quarters", "Your Quarters", "居所", "Rest, store items and receive visitors.", ["quarters", "storage", "rest"], (0.22, 0.845), "a modest wooden disciple's room with a window onto clouds, a bed, a desk and a tea set", npcs=["npc.elder_wen"]),
+        L("proving_arena", "Proving Arena", "演武台", "Sect tournaments are held on this floating stage.", ["tournament"], (0.2, 0.205), "a circular stone arena floating among clouds with banners and spectator stands"),
+        L("inner_sect_peak", "Inner Sect Peak", "内门峰", "The inner sect's cloud peak. Requires Inner Disciple rank.", ["meditation", "rest"], (0.46, 0.045), "a high peak with elegant pavilions above a sea of clouds at dawn", unlock={"rank": "rank.inner_disciple"}),
+        L("frozen_lotus_valley", "Frozen Lotus Valley", "冰莲谷", "A frozen valley where ice lotuses bloom; advanced cultivation grounds. Requires 800 Sect Fame.", ["meditation"], (0.78, 0.125), "a snowy valley with a frozen lake and glowing blue ice lotus flowers", unlock={"sect_fame": 800}),
     ]
 
 def ranks():
@@ -168,7 +169,7 @@ if __name__ == "__main__":
     write("content/adventure/regions.json", regions())
     ns = nodes()
     for r in ["mortal_plains", "azure_bamboo_forest"]:
-        write(f"content/adventure/nodes/{r}.json", chain_links([n for n in ns if n["region"] == f"region.{r}"]))
+        write(f"content/adventure/nodes/{r}.json", road_layout(chain_links([n for n in ns if n["region"] == f"region.{r}"]), r))
     write("content/adventure/events.json", events())
     write("content/dungeons/dungeons.json", dungeons())
     write("content/dungeons/tribulations.json", tribulations())

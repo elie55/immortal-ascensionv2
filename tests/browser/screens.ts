@@ -146,16 +146,19 @@ await shot("inventory-pills");
 await page.locator(".nav button", { hasText: "Sect" }).click();
 await need('[data-screen="sect"]');
 await shot("sect");
-await page.locator(".sect-pin", { hasText: "Meditation Waterfall" }).click();
+await page.locator(".sp", { hasText: "Meditation Waterfall" }).click();
 await shot("sect-location");
 await page.getByText("Cultivate here").click();
 check(await page.evaluate(() => (window as any).__ia.game.state.character.location) === "sectloc.meditation_waterfall", "Cultivate here moves cultivation to the waterfall");
 // Your Quarters → Storage chest: store a stack, take it back (bag ↔ depot, 20 slots a page)
 await page.locator(".nav button", { hasText: "Sect" }).click(); await page.locator(".nav button", { hasText: "Sect" }).click(); await need('[data-screen="sect"]');
-await page.locator(".sect-pin", { hasText: "Your Quarters" }).click(); await need('[data-screen^="loc:"]');
+await page.locator(".sp", { hasText: "Your Quarters" }).click(); await need('[data-screen^="loc:"]');
 await page.locator(".setrow", { hasText: "Storage chest" }).last().click(); await need('[data-screen="depot"]');
 await shot("depot");
-check(await page.locator(".slot-empty-ph").count() > 0 && await page.locator(".pg").count() >= 5, "the bag is drawn as pages of 20 slots with empty slots visible");
+{
+  const tiles = await page.locator(".inv-grid .tile").count(), ph = await page.locator(".slot-empty-ph").count(), pages = await page.locator(".pg").count();
+  check(ph < 6 && (tiles > 20 || pages === 0), `the bag shows its items with at most one row of free slots and no pager for one page (${tiles} items, ${ph} free, ${pages} pages)`);
+}
 await page.locator(".inv-grid .tile").first().click();
 await page.locator(".item-detail .btn.gold").click();
 check(await ia<number>("Object.keys(window.__ia.game.state.inventory.depot.stacks).length") === 1, "Store all moves a stack into the depot");
@@ -167,7 +170,7 @@ await page.locator(".nav button", { hasText: "Sect" }).click();
 
 // ---------- sect systems ----------
 const toSect = async () => { await page.locator(".nav button", { hasText: "Sect" }).click(); await page.locator(".nav button", { hasText: "Sect" }).click(); await need('[data-screen="sect"]'); };
-const openLoc = async (name: string) => { await toSect(); await page.locator(".sect-pin", { hasText: name }).click(); await need('[data-screen^="loc:"]'); };
+const openLoc = async (name: string) => { await toSect(); await page.locator(".sp", { hasText: name }).click(); await need('[data-screen^="loc:"]'); };
 await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.state; s.resources.spirit_stones = 50000; for (const [id, n] of [["mat.lesser_enhancement_stone", 10], ["mat.refining_stone", 10], ["mat.reforging_sand", 10], ["mat.spirit_grass", 20], ["mat.peach_blossom", 10], ["mat.crane_feather", 10], ["gift.ancient_spirit_coin", 2], ["gift.osmanthus_cake", 2]] as const) s.inventory.stacks[id] = n; ia.app.router.refresh(); });
 // Mission Hall
 await openLoc("Mission Hall");
@@ -187,7 +190,7 @@ await need(".quest-card");
 await shot("npc-requests");
 await page.locator(".quest-card .btn.gold", { hasText: "Deliver" }).first().click();
 check(await ia<number>("(window.__ia.game.state.progress.quests.completed['quest.main.senior_sister'] ?? 0)") === 1, "delivering Elder Wen's token completes 'Senior Sister'");
-await page.locator(".back").click();
+check(await page.locator('[data-screen="npc:npc.bai_lingshuang"] .aff-panel').count() === 1, "requests stay inside the NPC screen (portrait, bond and actions kept)");
 const aff0 = await ia<number>("window.__ia.game.state.relations['npc.bai_lingshuang'].affinity");
 await page.locator(".npc-act", { hasText: "Gift" }).click();
 await need(".gift-grid");
@@ -269,6 +272,8 @@ await shot("quest-log");
   await page.locator(".tracker").first().click();
   await page.waitForTimeout(400);
   check(await screen(page) !== "quests", `the tracker's Go leads to the quest's place (${await screen(page)})`);
+  await page.locator(".nav button", { hasText: "Cultivate" }).click(); await page.locator(".nav button", { hasText: "Cultivate" }).click();
+  check(await page.locator(".tracker").count() === 1, "the tracker shows on the tab screens");
   await page.locator(".tracker .tr-x").first().click();
   check(await ia<string | null>("window.__ia.game.state.progress.quests.tracked") === null, "× stops tracking");
   await page.locator(".nav button", { hasText: "Cultivate" }).click(); await page.locator(".nav button", { hasText: "Cultivate" }).click();
@@ -340,7 +345,7 @@ await shot("adventure");
 await page.locator(".region-card").first().click();
 await need(".node-map");
 await shot("region-map");
-await page.locator(".node-pin").first().click();
+await page.locator(".mp-node").first().click();
 await need(".node-card");
 await shot("node-card");
 await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.combat.manual = false; ia.game.state.combat.speed = 3; ia.app.router.refresh(); });
@@ -361,7 +366,7 @@ await page.locator(".modal .btn", { hasText: /Map/ }).click();
 await need(".node-map");
 // manual mode: start the same node, wait for input, pick a technique
 await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.combat.manual = true; ia.game.state.resources.energy.value = 100; ia.app.router.refresh(); });
-await page.locator(".node-pin").first().click();
+await page.locator(".mp-node").first().click();
 await page.locator(".node-card .btn.gold").click();
 await need(".bt-skill.ready", { timeout: 20000 });
 await shot("battle-manual");
@@ -400,7 +405,7 @@ await untilResult();
 await page.locator(".modal .btn", { hasText: /Map/ }).click();
 check(await ia<number>("window.__ia.game.state.progress.dungeons['dungeon.heaven_piercing_tower']?.bestFloor ?? 0") === 1, "climbing the tower records floor 1");
 await page.locator(".th-title").click();
-await need(".tower-floors");
+await need(".tw-spine");
 await shot("tower");
 await page.locator(".back").click();
 await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.state; s.progress.quests.completed["quest.main.bamboo_sovereign"] = 1; if (!s.progress.realmsEntered.includes("realm.foundation_establishment")) s.progress.realmsEntered.push("realm.foundation_establishment"); s.character.realm = "realm.foundation_establishment"; s.character.stage = 3; ia.app.router.refresh(); });

@@ -347,7 +347,7 @@ def region(rd, prev):
         elif kind == "secret_realm":
             d["secret_realm"] = f"dungeon.{sr[0]}"
         nodes[idx] = d
-    out["nodes"].append((key, chain_links([nodes[i] for i in range(len(NODE_TEMPLATE))])))  # maps open in number order
+    out["nodes"].append((key, road_layout(chain_links([nodes[i] for i in range(len(NODE_TEMPLATE))]), key)))  # maps open in number order
 
     # ---------- region ----------
     prev_key, prev_q = prev
@@ -355,7 +355,7 @@ def region(rd, prev):
                            "unlock": {"regions": [f"region.{prev_key}"], "quests": [prev_q], "realm": {"id": realm_id(rmin), "stage": 1}}, "entry_node": entry, "boss": boss_id,
                            "signature_materials": [M(herb), M(ore), M(mon), M(cry)],
                            "art": {"card": art(f"assets/regions/{key}_card.png", f"{STYLE}. Region card illustration, landscape: {rd['scene']}. Painterly, wide composition, no text.", (1024, 640), False, ["refs/mockups/world_regions.png"]),
-                                   "map": art(f"assets/regions/{key}_map.png", f"{STYLE}. Top-down illustrated adventure map of {rd['scene']}, winding paths between clearings suitable for node markers, soft light, no text, no icons.", (1080, 1620), False, ["refs/mockups/region_node_map.png"]),
+                                   "map": art(f"assets/regions/{key}_map.png", MAP_GUIDE_PROMPT.format(scene=rd['scene']), (1080, 1620), False, [f"refs/maps/{key}_guide.png", "refs/mockups/region_node_map.png"]),
                                    "battle_bg": bg(f"regions/{key}_battle_bg", f"battle backdrop inside {rd['scene']}, open ground in the lower third", refs=["refs/mockups/battle_screen.png"])}})
 
     # ---------- alchemy & forge ----------
@@ -582,7 +582,7 @@ def build():
 
 
 def bfood_extra():
-    return [{"id": "bfood.spirit_meat", **named("Spirit Meat", "a slab of glowing red spirit-beast meat wrapped in a leaf", "灵兽肉"), "rarity": "uncommon", "sell_value": 12, "stack_limit": 999, "tags": [],
+    return [{"id": "bfood.spirit_meat", **named("Spirit Meat", "A slab of glowing red spirit-beast meat wrapped in a leaf.", "灵兽肉"), "rarity": "uncommon", "sell_value": 12, "stack_limit": 999, "tags": [],
              "xp": 60, "bond": 1, "preferred_elements": ["elem.fire", "elem.earth", "elem.metal"], "art": {"icon": icon("items/beast_food/spirit_meat", "a slab of glowing red spirit-beast meat wrapped in a leaf", "uncommon")}}]
 
 

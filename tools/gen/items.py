@@ -1,7 +1,13 @@
 from common import *
 
+def sentence(t):
+    """The art caption ("a small round pale-green pill") as a display sentence ("A small round pale-green pill.")."""
+    t = t.strip()
+    return (t[:1].upper() + t[1:] + ("" if t.endswith((".", "!", "?", "…")) else ".")) if t else t
+
 def item(prefix, key, name, desc, rarity, sell, sub, cn=None, extra=None, tags=None, stack=999):
-    d = {"id": f"{prefix}.{key}", **named(name, desc, cn), "rarity": rarity, "sell_value": sell, "stack_limit": stack, "tags": tags or [],
+    # desc is the art caption; the player reads it as a sentence
+    d = {"id": f"{prefix}.{key}", **named(name, sentence(desc), cn), "rarity": rarity, "sell_value": sell, "stack_limit": stack, "tags": tags or [],
          "art": {"icon": icon(f"items/{sub}/{key}", f"{desc}", rarity)}}
     d.update(extra or {})
     return d

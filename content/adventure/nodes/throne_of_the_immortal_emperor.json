@@ -6,7 +6,7 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
-      0.5,
+      0.51,
       0.93
     ],
     "connections": [
@@ -35,8 +35,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "gather",
     "position": [
-      0.22,
-      0.82
+      0.32,
+      0.88
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.entry",
@@ -68,8 +68,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
-      0.78,
-      0.82
+      0.166,
+      0.798
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.gathering",
@@ -99,8 +99,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
-      0.18,
-      0.66
+      0.318,
+      0.715
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.outskirts",
@@ -130,8 +130,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "chest",
     "position": [
-      0.5,
-      0.72
+      0.509,
+      0.664
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.west_path",
@@ -150,8 +150,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
-      0.82,
-      0.66
+      0.699,
+      0.614
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.cache",
@@ -181,8 +181,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "elite",
     "position": [
-      0.14,
-      0.5
+      0.83,
+      0.524
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.east_path",
@@ -213,8 +213,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "event",
     "position": [
-      0.46,
-      0.53
+      0.663,
+      0.448
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.lair",
@@ -233,8 +233,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
-      0.76,
-      0.5
+      0.472,
+      0.399
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.crossroads",
@@ -263,8 +263,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
-      0.3,
-      0.36
+      0.282,
+      0.347
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.ridge",
@@ -294,8 +294,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "cultivation",
     "position": [
-      0.66,
-      0.36
+      0.18,
+      0.251
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.deep_path",
@@ -318,8 +318,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "elite",
     "position": [
-      0.2,
-      0.2
+      0.356,
+      0.182
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.sanctum",
@@ -355,8 +355,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "hidden",
     "position": [
-      0.84,
-      0.22
+      0.12,
+      0.1
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.den"
@@ -378,8 +378,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
-      0.55,
-      0.24
+      0.547,
+      0.133
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.den",
@@ -409,8 +409,8 @@
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "boss",
     "position": [
-      0.5,
-      0.07
+      0.736,
+      0.08
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.approach"

@@ -6,7 +6,7 @@
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
-      0.5,
+      0.787,
       0.93
     ],
     "connections": [
@@ -35,8 +35,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "gather",
     "position": [
-      0.22,
-      0.82
+      0.766,
+      0.832
     ],
     "connections": [
       "node.frozen_lotus_valley.entry",
@@ -68,8 +68,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
-      0.78,
-      0.82
+      0.59,
+      0.778
     ],
     "connections": [
       "node.frozen_lotus_valley.gathering",
@@ -99,8 +99,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
-      0.18,
-      0.66
+      0.408,
+      0.732
     ],
     "connections": [
       "node.frozen_lotus_valley.outskirts",
@@ -130,8 +130,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "chest",
     "position": [
-      0.5,
-      0.72
+      0.232,
+      0.678
     ],
     "connections": [
       "node.frozen_lotus_valley.west_path",
@@ -150,8 +150,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
-      0.82,
-      0.66
+      0.214,
+      0.58
     ],
     "connections": [
       "node.frozen_lotus_valley.cache",
@@ -181,8 +181,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "elite",
     "position": [
-      0.14,
-      0.5
+      0.388,
+      0.523
     ],
     "connections": [
       "node.frozen_lotus_valley.east_path",
@@ -213,8 +213,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "event",
     "position": [
-      0.46,
-      0.53
+      0.569,
+      0.477
     ],
     "connections": [
       "node.frozen_lotus_valley.lair",
@@ -233,8 +233,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
-      0.76,
-      0.5
+      0.747,
+      0.425
     ],
     "connections": [
       "node.frozen_lotus_valley.crossroads",
@@ -263,8 +263,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
-      0.3,
-      0.36
+      0.805,
+      0.329
     ],
     "connections": [
       "node.frozen_lotus_valley.ridge",
@@ -294,8 +294,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "cultivation",
     "position": [
-      0.66,
-      0.36
+      0.634,
+      0.268
     ],
     "connections": [
       "node.frozen_lotus_valley.deep_path",
@@ -318,8 +318,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "elite",
     "position": [
-      0.2,
-      0.2
+      0.453,
+      0.222
     ],
     "connections": [
       "node.frozen_lotus_valley.sanctum",
@@ -355,8 +355,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "hidden",
     "position": [
-      0.84,
-      0.22
+      0.793,
+      0.132
     ],
     "connections": [
       "node.frozen_lotus_valley.den"
@@ -378,8 +378,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
-      0.55,
-      0.24
+      0.274,
+      0.172
     ],
     "connections": [
       "node.frozen_lotus_valley.den",
@@ -409,8 +409,8 @@
     "region": "region.frozen_lotus_valley",
     "kind": "boss",
     "position": [
-      0.5,
-      0.07
+      0.179,
+      0.08
     ],
     "connections": [
       "node.frozen_lotus_valley.approach"

@@ -2,7 +2,7 @@
   {
     "id": "gift.candied_hawthorn",
     "name": "Candied Hawthorn",
-    "description": "a skewer of glossy red candied hawthorns",
+    "description": "A skewer of glossy red candied hawthorns.",
     "name_cn": "糖葫芦",
     "rarity": "common",
     "sell_value": 5,
@@ -33,7 +33,7 @@
   {
     "id": "gift.osmanthus_cake",
     "name": "Osmanthus Cake",
-    "description": "a square of pale yellow osmanthus cake on a leaf",
+    "description": "A square of pale yellow osmanthus cake on a leaf.",
     "name_cn": "桂花糕",
     "rarity": "common",
     "sell_value": 8,
@@ -65,7 +65,7 @@
   {
     "id": "gift.ancient_spirit_coin",
     "name": "Ancient Spirit Coin",
-    "description": "a large square-holed bronze coin engraved with a cloud dragon",
+    "description": "A large square-holed bronze coin engraved with a cloud dragon.",
     "name_cn": "古灵钱",
     "rarity": "rare",
     "sell_value": 60,
@@ -97,7 +97,7 @@
   {
     "id": "gift.rare_treasure_map",
     "name": "Rare Treasure Map",
-    "description": "a rolled yellowed map with a red-inked route",
+    "description": "A rolled yellowed map with a red-inked route.",
     "name_cn": "藏宝图",
     "rarity": "rare",
     "sell_value": 80,
@@ -128,7 +128,7 @@
   {
     "id": "gift.spirit_stone_pouch",
     "name": "Spirit Stone Pouch",
-    "description": "a small embroidered pouch bulging with spirit stones",
+    "description": "A small embroidered pouch bulging with spirit stones.",
     "name_cn": "灵石袋",
     "rarity": "uncommon",
     "sell_value": 50,
@@ -159,7 +159,7 @@
   {
     "id": "gift.fine_ledger_book",
     "name": "Fine Ledger Book",
-    "description": "a leather-bound ledger with gilded edges",
+    "description": "A leather-bound ledger with gilded edges.",
     "name_cn": "精装账本",
     "rarity": "uncommon",
     "sell_value": 40,
@@ -190,7 +190,7 @@
   {
     "id": "gift.counterfeit_coin",
     "name": "Counterfeit Coin",
-    "description": "a dull dented tin coin with a crude square hole, the stamped cloud emblem smudged and crooked, no writing",
+    "description": "A dull dented tin coin with a crude square hole, the stamped cloud emblem smudged and crooked, no writing.",
     "name_cn": "假币",
     "rarity": "common",
     "sell_value": 1,
@@ -221,7 +221,7 @@
   {
     "id": "gift.bitter_medicine",
     "name": "Bitter Medicine",
-    "description": "a bowl of black, bitter herbal medicine",
+    "description": "A bowl of black, bitter herbal medicine.",
     "name_cn": "苦药",
     "rarity": "common",
     "sell_value": 2,
@@ -252,7 +252,7 @@
   {
     "id": "gift.frost_plum_wine",
     "name": "Frost Plum Wine",
-    "description": "a frosted blue porcelain bottle of plum wine",
+    "description": "A frosted blue porcelain bottle of plum wine.",
     "name_cn": "霜梅酒",
     "rarity": "rare",
     "sell_value": 90,
@@ -284,7 +284,7 @@
   {
     "id": "gift.sword_polish_cloth",
     "name": "Sword Polish Cloth",
-    "description": "a folded white silk cloth with a whetstone and oil vial",
+    "description": "A folded white silk cloth with a whetstone and oil vial.",
     "name_cn": "拭剑布",
     "rarity": "uncommon",
     "sell_value": 25,
@@ -315,7 +315,7 @@
   {
     "id": "gift.beast_bell",
     "name": "Beast Bell",
-    "description": "a small golden bell on a red tassel that spirit beasts adore",
+    "description": "A small golden bell on a red tassel that spirit beasts adore.",
     "name_cn": "兽铃",
     "rarity": "uncommon",
     "sell_value": 35,

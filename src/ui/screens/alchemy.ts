@@ -39,7 +39,8 @@ export function alchemyScreen(app: App, backTo: string): Screen {
             h("div", { class: "glass" }, h("span", null, "Base"), h("b", null, `${Math.round(r.success_base * 100)}%`)),
             h("div", { class: "glass" }, h("span", null, f.name.split(" ")[0]), h("b", null, `+${Math.round(f.success_bonus * 100)}%`)),
             h("div", { class: "glass" }, h("span", null, `Proficiency ${fmt.int(s.progress.crafting.proficiency)}`), h("b", null, `+${Math.round(profBonus * 100)}%`)))),
-        h("div", { class: "alch-space" }),
+        // the painted furnace fills the space between the ring and the docked panel (mockup alchemy_hall)
+        h("div", { class: "alch-space" }, app.ui("ui.alchemy", "cauldron") && h("div", { class: "alch-cauldron", style: { backgroundImage: app.img(app.ui("ui.alchemy", "cauldron")) } })),
         h("div", { class: "glass panel alch-panel" },
           h("div", { class: "alch-cols" },
             h("div", { class: "alch-list" }, h("div", { class: "muted up" }, "Recipes"), recipes.map((x) => {
@@ -51,13 +52,13 @@ export function alchemyScreen(app: App, backTo: string): Screen {
             h("div", { class: "alch-detail" },
               h("div", { class: "row", style: { alignItems: "flex-start" } },
                 h("span", { class: `tile-mini big r-${out.rarity ?? "common"}`, style: { backgroundImage: art ? app.img(art) : undefined } }, !art && icon("cauldron", 22)),
-                h("div", { class: "grow" }, h("div", { class: "title", style: { fontSize: "calc(14rem / 15)", lineHeight: 1.2 } }, out.name),
-                  h("div", { class: "row", style: { gap: "4px", flexWrap: "wrap" } }, h("span", { class: `tag rt-${out.rarity ?? "common"}` }, RARITY_LABEL[out.rarity ?? "common"]), h("span", { class: "tag" }, `Grade ${fmt.roman(r.grade)}`), h("span", { class: "tag" }, `Yield ${r.output.qty[0]}–${r.output.qty[1]}`)))),
-              h("div", { class: "dim", style: { fontSize: "calc(12rem / 15)", margin: "6px 0" } }, out.description, effects && h("div", { class: "jade-t" }, effects)),
+                h("div", { class: "grow", style: { minWidth: 0 } }, h("div", { class: "title alch-name" }, out.name),
+                  h("div", { class: "alch-tags" }, h("span", { class: `tag rt-${out.rarity ?? "common"}` }, RARITY_LABEL[out.rarity ?? "common"]), h("span", { class: "tag" }, `Grade ${fmt.roman(r.grade)}`), h("span", { class: "tag" }, `Yield ${r.output.qty[0]}–${r.output.qty[1]}`)))),
+              h("div", { class: "alch-desc" }, effects && h("b", { class: "jade-t" }, effects, ". "), out.description),
               h("div", { class: "muted up" }, "Ingredients"),
               h("div", { class: "rows" }, r.ingredients.map((q: any) => needRow(app, q.id, q.qty * batch, itemCount(s, q.id)))),
-              r.failure.return_pct > 0 && h("div", { class: "muted", style: { marginTop: "4px" } }, `A failed load returns ${Math.round(r.failure.return_pct * 100)}% of the herbs${r.failure.byproduct ? ` and leaves ${c.get<any>(r.failure.byproduct).name}` : ""}.`))),
-          h("div", { class: "row between", style: { marginTop: "10px" } }, stepper(batch, 1, max, (v) => { batch = v; app.router.refresh(); }), h("span", { class: "muted" }, `Max ${cur.st.maxBatch}`), h("span", { class: "muted" }, "Fire fee ", icon("gem", 11), ` ${fmt.int(r.cost_stones * batch)}`)),
+              r.failure.return_pct > 0 && h("div", { class: "muted alch-fail" }, `A failed load returns ${Math.round(r.failure.return_pct * 100)}% of the herbs${r.failure.byproduct ? ` and leaves ${c.get<any>(r.failure.byproduct).name}` : ""}.`))),
+          h("div", { class: "row between alch-foot" }, stepper(batch, 1, max, (v) => { batch = v; app.router.refresh(); }), h("span", { class: "muted" }, `Max ${cur.st.maxBatch}`), h("span", { class: "muted" }, "Fire fee ", icon("gem", 11), ` ${fmt.int(r.cost_stones * batch)}`)),
           cta("Refine", cur.st.unlocked ? (cur.st.maxBatch ? `${batch} load${batch > 1 ? "s" : ""} · ${Math.round(chance * 100)}% each` : "Missing ingredients") : cur.st.reason ?? "Locked", () => {
             const res = app.game.run("alchemy", app.now(), (st, cc) => refinePills(st, cc, r.id, batch));
             if (!res.ok) { app.router.toast(res.reason, "bad"); return; }
@@ -68,16 +69,25 @@ export function alchemyScreen(app: App, backTo: string): Screen {
   };
 }
 
+/** Result of a refine: the pill (or the cracked byproduct) as the hero tile, the count as the headline only when pills came out. */
 function resultModal(app: App, r: any, run: AlchemyRun) {
   const c = app.content;
   const out = c.get<any>(r.output.id);
-  app.router.open({ id: "alch-result", kind: "modal", render: (close) => h("div", { class: "center" },
-    h("div", { class: "m-title" }, run.success ? "Pills refined!" : "The furnace sputters…"),
-    h("div", { class: "result-title", style: { fontSize: "calc(34rem / 15)" } }, run.made ? `${run.made}×` : "0"),
-    h("div", { class: "dim" }, out.name),
-    h("div", { class: "muted", style: { margin: "8px 0" } }, `${run.success} of ${run.success + run.failed} loads succeeded · +${fmt.int(run.proficiency)} proficiency`),
-    run.returned.length > 0 && h("div", { class: "muted" }, "Recovered: ", run.returned.map((q) => `${q.qty}× ${c.get<any>(q.id).name}`).join(", ")),
-    run.byproduct > 0 && r.failure.byproduct && h("div", { class: "muted" }, `Byproduct: ${run.byproduct}× ${c.get<any>(r.failure.byproduct).name}`),
+  const loads = run.success + run.failed;
+  const ok = run.made > 0;
+  const heroId = ok ? r.output.id : r.failure.byproduct && run.byproduct > 0 ? r.failure.byproduct : r.output.id;
+  const heroArt = c.art(heroId, "icon");
+  const tile = (id: string, qty: number) => { const a = c.art(id, "icon"); const d = c.get<any>(id);
+    return h("div", { class: "ar-item" }, h("span", { class: `tile-mini r-${d.rarity ?? "common"}`, style: { backgroundImage: a ? app.img(a) : undefined } }), h("span", null, h("b", null, `${qty}×`), ` ${d.name}`)); };
+  app.router.open({ id: "alch-result", kind: "modal", render: (close) => h("div", { class: ["center alch-result", ok ? "ok" : "fail"] },
+    h("div", { class: "m-title" }, ok ? "Pills refined!" : "The furnace sputters…"),
+    h("div", { class: "ar-hero" }, h("span", { class: `ar-tile r-${c.get<any>(heroId).rarity ?? "common"}`, style: { backgroundImage: heroArt ? app.img(heroArt) : undefined } }, !heroArt && icon("cauldron", 34))),
+    ok ? h("div", { class: "ar-head" }, h("b", null, `${run.made}×`), ` ${out.name}`) : h("div", { class: "ar-head dim" }, "No pills this time"),
+    h("div", { class: "muted", style: { margin: "6px 0 10px" } }, `${run.success} of ${loads} load${loads > 1 ? "s" : ""} succeeded · +${fmt.int(run.proficiency)} proficiency`),
+    (run.returned.length > 0 || (run.byproduct > 0 && r.failure.byproduct)) && h("div", { class: "ar-items" },
+      h("div", { class: "muted up" }, "Recovered"),
+      run.returned.map((q) => tile(q.id, q.qty)),
+      run.byproduct > 0 && r.failure.byproduct && tile(r.failure.byproduct, run.byproduct)),
     h("button", { class: "btn gold block", style: { marginTop: "12px" }, onClick: close }, "Continue")) });
 }
 

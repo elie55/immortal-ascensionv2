@@ -58,6 +58,43 @@ const FEATURE: Record<string, { label: string; icon: string; note: string }> = {
   tournament: { label: "Tournaments", icon: "fame", note: "Climb the sect rankings" },
 };
 
+/** Plaque colour per location (first feature), as in the mockup: each place has its own coloured medallion. */
+const TINT: Record<string, string> = {
+  duels: "#4b8fe0", missions: "#e3a33a", pavilion: "#9b6cff", forge: "#ef7d3a", tournament: "#e5484d", meditation: "#1fb8b3",
+  merchant: "#e0607a", beasts: "#3fbf6a", alchemy: "#f59a2f", quarters: "#e86aa6",
+};
+/** Count on a plaque: requests on the location's own board, and reports to hand in there or to its NPCs. */
+function pendingAt(app: App, l: any): number {
+  const s = app.game.state, c = app.content, here = new Set<string>([l.id, ...(l.npcs ?? [])]);
+  return c.byPrefix<any>("quest").filter((q) => {
+    if (q.giver !== l.id && !here.has(q.turn_in)) return false;
+    const st = questStatus(s, c, q, app.now());
+    return (st === "available" && q.giver === l.id) || (st === "ready" && here.has(q.turn_in));
+  }).length;
+}
+/** An NPC with a request to offer gets a "!" on their portrait. */
+const npcOffers = (app: App, npc: string) => app.content.byPrefix<any>("quest").some((q) => q.giver === npc && questStatus(app.game.state, app.content, q, app.now()) === "available");
+/** "Bai Lingshuang" → "Bai"; a title keeps the next word ("Elder Feng", "Master Gu"). */
+const shortName = (n: string) => { const w = n.split(" "); return ["Elder", "Master", "Old", "Senior", "Granny"].includes(w[0]!) ? w.slice(0, 2).join(" ") : w[0]!; };
+
+/** One plaque on the sect map, anchored on its landmark (map_position = normalised point on the map art). */
+function plaque(app: App, l: any): HTMLElement {
+  const s = app.game.state, c = app.content;
+  const open = locationOpen(s, c, l.id);
+  const [x, y] = l.map_position ?? [0.5, 0.5];
+  const npc = open.ok ? (l.npcs ?? [])[0] as string | undefined : undefined;
+  const n = open.ok ? pendingAt(app, l) : 0;
+  const here = s.character.location === l.id;
+  return h("button", { class: ["sp", !open.ok && "locked", x < 0.3 && "al-l", x > 0.7 && "al-r", here && "here", npc && "has-npc"], "data-loc": l.id,
+      style: { left: `${x * 100}%`, top: `${y * 100}%`, "--k": TINT[l.features?.[0]] ?? "#4b8fe0" } as any,
+      "aria-label": `${l.name}${open.ok ? "" : `, locked: ${open.reasons[0]}`}${n ? `, ${n} waiting` : ""}`, onClick: () => openLocation(app, l.id) },
+    h("span", { class: "sp-ico" }, icon(open.ok ? (FEATURE[l.features?.[0]]?.icon ?? "temple") : "lock", 13)),
+    h("span", { class: "sp-txt" }, h("b", null, l.name), !open.ok && h("small", null, open.reasons[0])),
+    n > 0 && h("span", { class: "sp-count" }, String(n)),
+    npc && h("span", { class: "sp-npc" }, h("i", { style: { backgroundImage: app.img(c.artAny(npc, "portrait", "full_body")) } }), h("em", null, shortName(c.get<any>(npc).name)),
+      npcOffers(app, npc) && h("u", { "aria-label": "has a request" }, "!")));
+}
+
 export function sectScreen(app: App) {
   const s = app.game.state, c = app.content;
   const rank = c.get<any>(s.character.rank);
@@ -72,18 +109,11 @@ export function sectScreen(app: App) {
         app.ui("ui.icons", "sect_emblem") ? h("span", { class: "sect-emblem art", style: { backgroundImage: app.img(app.ui("ui.icons", "sect_emblem")) } }) : h("span", { class: "sect-emblem" }, icon("qi", 26)),
         h("div", { class: "grow" },
           h("div", { class: "row between" }, h("div", { class: "title", style: { fontSize: "calc(15rem / 15)", fontVariant: "small-caps" } }, "Azure Cloud Sect", h("span", { class: "cn", style: { fontSize: "calc(12rem / 15)", marginLeft: "6px" } }, "青云宗")), h("span", { class: "tag gold" }, rank.name)),
-          h("div", { style: { margin: "6px 0 3px" } }, bar(nextRank ? Math.min(1, fame / nextRank.fame_required) : 1, { cls: "gold thin" })),
-          h("div", { class: "row between muted" }, h("span", { class: "nowrap" }, nextRank ? `Next: ${nextRank.name}` : "Highest rank"), h("span", { class: "nowrap gold-t" }, nextRank ? `${fmt.int(fame)} / ${fmt.int(nextRank.fame_required)} Fame` : `${fmt.int(fame)} Fame`)),
-          h("div", { class: "muted" }, "Complete requests to earn Fame")))),
-    h("div", { class: "sect-map" }, locs.map((l) => {
-      const open = locationOpen(s, c, l.id);
-      const [x, y] = l.map_position ?? [0.5, 0.5];
-      const npc = (l.npcs ?? [])[0];
-      return h("button", { class: ["sect-pin glass", !open.ok && "locked"], style: { left: `${x * 100}%`, top: `${y * 100}%` }, onClick: () => openLocation(app, l.id) },
-        h("span", { class: "pin-ico" }, icon(open.ok ? (FEATURE[l.features?.[0]]?.icon ?? "temple") : "lock", 13)),
-        h("span", null, h("span", { class: "pin-name" }, l.name), !open.ok && h("span", { class: "pin-req" }, open.reasons[0])),
-        npc && open.ok && h("span", { class: "pin-npc", style: { backgroundImage: app.img(c.artAny(npc, "portrait", "full_body")) } }));
-    })),
+          h("div", { style: { margin: "5px 0 2px" } }, bar(nextRank ? Math.min(1, fame / nextRank.fame_required) : 1, { cls: "gold thin" })),
+          h("div", { class: "row between muted" }, h("span", { class: "nowrap" }, nextRank ? `Next: ${nextRank.name}` : "Highest rank"), h("span", { class: "nowrap gold-t" }, nextRank ? `${fmt.int(fame)} / ${fmt.int(nextRank.fame_required)} Fame` : `${fmt.int(fame)} Fame`))))),
+    h("div", { class: "sect-map" },
+      h("div", { class: "sect-art", style: { backgroundImage: app.img(app.ui("ui.sect_map", "map")) } }),
+      locs.map((l) => plaque(app, l))),
   ];
 }
 

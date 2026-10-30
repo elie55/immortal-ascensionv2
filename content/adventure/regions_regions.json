@@ -51,9 +51,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of a volcanic mountain of black rock and rivers of lava under an orange sky, ash drifting, fire-lit caravan road, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (a volcanic mountain of black rock and rivers of lava under an orange sky, ash drifting, fire-lit caravan road). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/blazing_mountain_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"
@@ -126,9 +127,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of a snowy valley with a frozen lake, glowing blue ice lotuses and pale mountains under a cold aurora, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (a snowy valley with a frozen lake, glowing blue ice lotuses and pale mountains under a cold aurora). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/frozen_lotus_valley_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"
@@ -201,9 +203,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of a vast valley of ten thousand rusted swords planted in grey earth, a ruined tomb gate, sword qi crackling in the wind, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (a vast valley of ten thousand rusted swords planted in grey earth, a ruined tomb gate, sword qi crackling in the wind). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/ancient_sword_tomb_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"
@@ -276,9 +279,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of a blood-red wasteland of black spires and burning rivers under a crimson moon, demonic banners on bone towers, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (a blood-red wasteland of black spires and burning rivers under a crimson moon, demonic banners on bone towers). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/demon_territory_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"
@@ -351,9 +355,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of impossibly tall white peaks piercing golden clouds, celestial pavilions, thunder cranes and sacred pines, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (impossibly tall white peaks piercing golden clouds, celestial pavilions, thunder cranes and sacred pines). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/celestial_mountains_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"
@@ -426,9 +431,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of nine layers of floating cloud continents under a starry sky, waterfalls falling into nothing, ruined heavenly palaces, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (nine layers of floating cloud continents under a starry sky, waterfalls falling into nothing, ruined heavenly palaces). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/nine_heavens_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"
@@ -501,9 +507,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of a shattered plain of black glass under an endless violet thunderstorm, lightning-struck monoliths and charred trees, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (a shattered plain of black glass under an endless violet thunderstorm, lightning-struck monoliths and charred trees). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/thunderclap_wastes_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"
@@ -576,9 +583,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of a vast turquoise sea with the bones of ancient dragons rising from the water, coral palaces below, whirlpools and sea mist, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (a vast turquoise sea with the bones of ancient dragons rising from the water, coral palaces below, whirlpools and sea mist). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/sunken_dragon_sea_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"
@@ -651,9 +659,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of an endless desert of silver sand under a sky of falling stars, crater oases and half-buried star-metal ruins, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (an endless desert of silver sand under a sky of falling stars, crater oases and half-buried star-metal ruins). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/starfall_desert_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"
@@ -726,9 +735,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of a colossal golden gate floating in white clouds at the edge of the mortal world, phoenix flames, broken chains and endless light beyond, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (a colossal golden gate floating in white clouds at the edge of the mortal world, phoenix flames, broken chains and endless light beyond). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/gate_of_ascension_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"
@@ -801,9 +811,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of a serene realm of floating jade islands, waterfalls flowing upward, immortal gardens and white tigers resting under peach trees, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (a serene realm of floating jade islands, waterfalls flowing upward, immortal gardens and white tigers resting under peach trees). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/jade_immortal_realm_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"
@@ -876,9 +887,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of an enormous golden palace of floating halls connected by bridges of light, giant law-wheels turning in the sky, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (an enormous golden palace of floating halls connected by bridges of light, giant law-wheels turning in the sky). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/golden_palace_of_laws_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"
@@ -951,9 +963,10 @@
           1620
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Top-down illustrated adventure map of a throne of starlight above the clouds of all realms, an azure dragon coiled around it, the five elements orbiting as rings of light, winding paths between clearings suitable for node markers, soft light, no text, no icons.",
+        "prompt": "Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same art style, palette, season and scenery (a throne of starlight above the clouds of all realms, an azure dragon coiled around it, the five elements orbiting as rings of light). The road must follow exactly the sketched road from the bottom edge to the top, made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline and any text: the game draws its own markers on top. No characters.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
+          "refs/maps/throne_of_the_immortal_emperor_guide.png",
           "refs/mockups/region_node_map.png"
         ],
         "status": "generated"

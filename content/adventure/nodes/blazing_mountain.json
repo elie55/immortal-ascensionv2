@@ -6,7 +6,7 @@
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
-      0.5,
+      0.19,
       0.93
     ],
     "connections": [
@@ -35,8 +35,8 @@
     "region": "region.blazing_mountain",
     "kind": "gather",
     "position": [
-      0.22,
-      0.82
+      0.289,
+      0.845
     ],
     "connections": [
       "node.blazing_mountain.entry",
@@ -68,8 +68,8 @@
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
-      0.78,
-      0.82
+      0.433,
+      0.79
     ],
     "connections": [
       "node.blazing_mountain.gathering",
@@ -99,8 +99,8 @@
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
-      0.18,
-      0.66
+      0.582,
+      0.74
     ],
     "connections": [
       "node.blazing_mountain.outskirts",
@@ -130,8 +130,8 @@
     "region": "region.blazing_mountain",
     "kind": "chest",
     "position": [
-      0.5,
-      0.72
+      0.726,
+      0.683
     ],
     "connections": [
       "node.blazing_mountain.west_path",
@@ -150,8 +150,8 @@
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
-      0.82,
-      0.66
+      0.808,
+      0.594
     ],
     "connections": [
       "node.blazing_mountain.cache",
@@ -181,8 +181,8 @@
     "region": "region.blazing_mountain",
     "kind": "elite",
     "position": [
-      0.14,
-      0.5
+      0.696,
+      0.514
     ],
     "connections": [
       "node.blazing_mountain.east_path",
@@ -213,8 +213,8 @@
     "region": "region.blazing_mountain",
     "kind": "event",
     "position": [
-      0.46,
-      0.53
+      0.551,
+      0.46
     ],
     "connections": [
       "node.blazing_mountain.lair",
@@ -233,8 +233,8 @@
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
-      0.76,
-      0.5
+      0.402,
+      0.41
     ],
     "connections": [
       "node.blazing_mountain.crossroads",
@@ -263,8 +263,8 @@
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
-      0.3,
-      0.36
+      0.26,
+      0.352
     ],
     "connections": [
       "node.blazing_mountain.ridge",
@@ -294,8 +294,8 @@
     "region": "region.blazing_mountain",
     "kind": "cultivation",
     "position": [
-      0.66,
-      0.36
+      0.198,
+      0.258
     ],
     "connections": [
       "node.blazing_mountain.deep_path",
@@ -318,8 +318,8 @@
     "region": "region.blazing_mountain",
     "kind": "elite",
     "position": [
-      0.2,
-      0.2
+      0.319,
+      0.183
     ],
     "connections": [
       "node.blazing_mountain.sanctum",
@@ -355,8 +355,8 @@
     "region": "region.blazing_mountain",
     "kind": "hidden",
     "position": [
-      0.84,
-      0.22
+      0.659,
+      0.243
     ],
     "connections": [
       "node.blazing_mountain.den"
@@ -378,8 +378,8 @@
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
-      0.55,
-      0.24
+      0.465,
+      0.13
     ],
     "connections": [
       "node.blazing_mountain.den",
@@ -409,8 +409,8 @@
     "region": "region.blazing_mountain",
     "kind": "boss",
     "position": [
-      0.5,
-      0.07
+      0.614,
+      0.08
     ],
     "connections": [
       "node.blazing_mountain.approach"

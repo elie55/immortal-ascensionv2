@@ -46,6 +46,14 @@ MOCKUP_CHARS = {"lin_xueyao": "char_lin.png", "bai_lingshuang": "char_bai.png", 
 
 # Jobs drawn from a mockup crop (pose and costume as in the approved mockup), with their own reference prompt.
 FILE_REF = {
+    "assets/ui/sect_map.webp": ("ia_style/sect_map_art.png",
+        "Image 1 is the approved reference illustration with game labels on top. Redraw exactly this same floating sect illustration at high resolution with crisp, "
+        "clean, luminous painted detail: the same islands, buildings, bridges, waterfalls, trees, clouds, colours and composition, every building in the same place. "
+        "Remove every label, plaque, button, badge, icon, portrait and all text: only the painted scenery remains. "),
+    "assets/ui/alchemy_cauldron.webp": ("ia_style/alchemy_cauldron.png",
+        "Image 1 is a crop of the approved Alchemy Hall mockup. Redraw this same bronze alchemy cauldron on its own: the same shape, three legs, "
+        "dragon handles, emerald jade medallion, gold filigree and glowing jade and pink smoke, at high resolution with crisp clean detail. "
+        "Remove the shelves, jars, room and any interface: only the cauldron and its smoke remain. Draw: "),
     "assets/ui/cultivate_lotus.webp": ("ia_style/cult_lin.png",
         "Image 1 is the approved reference illustration. Redraw exactly this character in exactly this pose, with the same face, hairstyle, ornaments, outfit, "
         "colours and flowing jade ribbons, at high resolution with crisp clean detail. Remove the background and the gold button under her. Draw: "),

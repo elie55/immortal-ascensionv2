@@ -2,7 +2,7 @@
   {
     "id": "book.crescent_wind_blade_manual",
     "name": "Crescent Wind Blade Manual",
-    "description": "a green silk-bound manual with a crescent moon on the cover",
+    "description": "A green silk-bound manual with a crescent moon on the cover.",
     "name_cn": "新月风刃秘籍",
     "rarity": "epic",
     "sell_value": 300,
@@ -29,7 +29,7 @@
   {
     "id": "book.ripple_mending_scroll",
     "name": "Ripple Mending Scroll",
-    "description": "a water-blue scroll tied with a white ribbon",
+    "description": "A water-blue scroll tied with a white ribbon.",
     "name_cn": "涟漪回春卷",
     "rarity": "rare",
     "sell_value": 150,
@@ -56,7 +56,7 @@
   {
     "id": "book.nine_yang_scripture",
     "name": "Nine Yang Scripture",
-    "description": "a red lacquered book edged in gold with nine suns on the cover",
+    "description": "A red lacquered book edged in gold with nine suns on the cover.",
     "name_cn": "九阳真经",
     "rarity": "rare",
     "sell_value": 400,
@@ -83,7 +83,7 @@
   {
     "id": "book.verdant_vine_bind_manual",
     "name": "Verdant Vine Bind Manual",
-    "description": "a manual bound in living vine with a thorn clasp",
+    "description": "A manual bound in living vine with a thorn clasp.",
     "name_cn": "青藤缚秘籍",
     "rarity": "rare",
     "sell_value": 200,
@@ -110,7 +110,7 @@
   {
     "id": "book.iron_wall_stance_manual",
     "name": "Iron Wall Stance Manual",
-    "description": "a heavy stone-slab book bound with iron rings",
+    "description": "A heavy stone-slab book bound with iron rings.",
     "name_cn": "铁壁式秘籍",
     "rarity": "epic",
     "sell_value": 500,

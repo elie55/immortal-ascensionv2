@@ -5,6 +5,12 @@ import type { App } from "../../app.ts";
 import { trackerChip } from "../navigate.ts";
 import { hintBar, helpButton } from "../help.ts";
 
+/** Screens that show the tracked-quest strip: the tab roots and the region maps (where its marker is). Sub-screens
+ *  keep just the player header and their own screen header (review: the chrome stack ate 35–50% of the screen).
+ *  The quest log keeps it too: it is where a quest gets tracked. */
+const TRACKER_SCREENS = new Set(["cultivate", "adventure", "character", "inventory", "sect", "quests"]);
+const showsTracker = (app: App) => { const id = app.router.current().screen.id; return TRACKER_SCREENS.has(id) || id.startsWith("region:"); };
+
 /** Top bar: portrait, name, sect/rank line, spirit stones. */
 export function header(app: App, opts: { sub?: string } = {}) {
   const s = app.game.state;
@@ -12,7 +18,7 @@ export function header(app: App, opts: { sub?: string } = {}) {
   return [h("header", { class: "hdr glass" },
     h("div", { class: "avatar", style: { backgroundImage: app.img(app.content.artAny(s.character.npc, "portrait", "full_body")) } }),
     h("div", { class: "who" }, h("div", { class: "name" }, s.character.name), h("div", { class: "sub" }, opts.sub ?? `Azure Cloud Sect · ${rank.name}`)),
-    stones(s.resources.spirit_stones)), trackerChip(app)];
+    stones(s.resources.spirit_stones)), showsTracker(app) && trackerChip(app)];
 }
 
 export function stones(n: number) {
@@ -145,18 +151,20 @@ export function confirmModal(app: App, o: { title: string; body: string; ok: str
 }
 
 /**
- * Grid of fixed-size pages (rules.inventory.page_size slots each): every slot is drawn, empty ones as dashed
- * placeholders, so the capacity is visible. Page tabs underneath. `capacity` = total slots (pages = ⌈capacity / size⌉).
+ * Grid of fixed-size pages (rules.inventory.page_size slots each), only as many pages as the items need. Free room
+ * shows as at most one row of dashed slots after the last item (the capacity meter above gives the full count), and
+ * the page tabs only appear when there is more than one page. `capacity` = total slots, so no placeholder is drawn
+ * beyond it.
  */
 export function pagedGrid(app: App, tiles: Child[], capacity: number, page: number, onPage: (p: number) => void, opts: { cols?: number } = {}) {
-  const size = app.content.rules.inventory.page_size;
-  const pages = Math.max(1, Math.ceil(Math.max(capacity, tiles.length) / size));
+  const size = app.content.rules.inventory.page_size, cols = opts.cols ?? 5;
+  const pages = Math.max(1, Math.ceil(tiles.length / size));
   const cur = Math.min(page, pages - 1);
   const slice = tiles.slice(cur * size, cur * size + size);
-  const slotsHere = Math.min(size, Math.max(0, capacity - cur * size));
-  const empties = Math.max(0, slotsHere - slice.length);
+  const free = Math.max(0, capacity - tiles.length);
+  const room = cur === pages - 1 ? Math.min(free, size - slice.length, (cols - (slice.length % cols)) % cols || (slice.length ? 0 : cols)) : 0;
   return h("div", { class: "paged" },
-    h("div", { class: "inv-grid", style: opts.cols ? { gridTemplateColumns: `repeat(${opts.cols}, minmax(0, 1fr))` } : undefined }, slice, Array.from({ length: empties }, () => h("div", { class: "slot-empty-ph", "aria-hidden": "true" }))),
+    h("div", { class: "inv-grid", style: opts.cols ? { gridTemplateColumns: `repeat(${opts.cols}, minmax(0, 1fr))` } : undefined }, slice, Array.from({ length: room }, () => h("div", { class: "slot-empty-ph", "aria-hidden": "true" }))),
     pages > 1 && h("div", { class: "pager" },
       h("button", { class: "icon-btn", disabled: cur === 0, "aria-label": "Previous page", onClick: () => onPage(cur - 1) }, icon("back", 14)),
       h("div", { class: "pager-nums" }, Array.from({ length: pages }, (_, i) => h("button", { class: ["pg", i === cur && "on"], onClick: () => onPage(i) }, String(i + 1)))),

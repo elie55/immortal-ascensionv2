@@ -6,8 +6,8 @@
     "region": "region.mortal_plains",
     "kind": "battle",
     "position": [
-      0.2,
-      0.9
+      0.213,
+      0.93
     ],
     "connections": [
       "node.mortal_plains.herb_meadow"
@@ -35,8 +35,8 @@
     "region": "region.mortal_plains",
     "kind": "gather",
     "position": [
-      0.4,
-      0.8
+      0.476,
+      0.836
     ],
     "connections": [
       "node.mortal_plains.village_road",
@@ -68,8 +68,8 @@
     "region": "region.mortal_plains",
     "kind": "gather",
     "position": [
-      0.6,
-      0.85
+      0.746,
+      0.749
     ],
     "connections": [
       "node.mortal_plains.herb_meadow",
@@ -97,8 +97,8 @@
     "region": "region.mortal_plains",
     "kind": "battle",
     "position": [
-      0.3,
-      0.6
+      0.738,
+      0.601
     ],
     "connections": [
       "node.mortal_plains.river_crossing",
@@ -133,8 +133,8 @@
     "region": "region.mortal_plains",
     "kind": "gather",
     "position": [
-      0.75,
-      0.65
+      0.468,
+      0.514
     ],
     "connections": [
       "node.mortal_plains.boar_thicket",
@@ -162,8 +162,8 @@
     "region": "region.mortal_plains",
     "kind": "battle",
     "position": [
-      0.5,
-      0.5
+      0.206,
+      0.418
     ],
     "connections": [
       "node.mortal_plains.crane_nest",
@@ -189,8 +189,8 @@
     "region": "region.mortal_plains",
     "kind": "chest",
     "position": [
-      0.65,
-      0.4
+      0.315,
+      0.275
     ],
     "connections": [
       "node.mortal_plains.monkey_grove",
@@ -209,8 +209,8 @@
     "region": "region.mortal_plains",
     "kind": "elite",
     "position": [
-      0.25,
-      0.35
+      0.588,
+      0.192
     ],
     "connections": [
       "node.mortal_plains.roadside_cache",
@@ -244,8 +244,8 @@
     "region": "region.mortal_plains",
     "kind": "hidden",
     "position": [
-      0.85,
-      0.3
+      0.248,
+      0.102
     ],
     "connections": [
       "node.mortal_plains.wolf_den"
@@ -267,8 +267,8 @@
     "region": "region.mortal_plains",
     "kind": "boss",
     "position": [
-      0.5,
-      0.15
+      0.83,
+      0.08
     ],
     "connections": [
       "node.mortal_plains.wolf_den"

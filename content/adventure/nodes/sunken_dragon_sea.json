@@ -6,7 +6,7 @@
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
-      0.5,
+      0.228,
       0.93
     ],
     "connections": [
@@ -35,8 +35,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "gather",
     "position": [
-      0.22,
-      0.82
+      0.376,
+      0.867
     ],
     "connections": [
       "node.sunken_dragon_sea.entry",
@@ -68,8 +68,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
-      0.78,
-      0.82
+      0.534,
+      0.815
     ],
     "connections": [
       "node.sunken_dragon_sea.gathering",
@@ -99,8 +99,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
-      0.18,
-      0.66
+      0.69,
+      0.761
     ],
     "connections": [
       "node.sunken_dragon_sea.outskirts",
@@ -130,8 +130,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "chest",
     "position": [
-      0.5,
-      0.72
+      0.817,
+      0.683
     ],
     "connections": [
       "node.sunken_dragon_sea.west_path",
@@ -150,8 +150,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
-      0.82,
-      0.66
+      0.738,
+      0.588
     ],
     "connections": [
       "node.sunken_dragon_sea.cache",
@@ -181,8 +181,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "elite",
     "position": [
-      0.14,
-      0.5
+      0.586,
+      0.53
     ],
     "connections": [
       "node.sunken_dragon_sea.east_path",
@@ -213,8 +213,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "event",
     "position": [
-      0.46,
-      0.53
+      0.428,
+      0.478
     ],
     "connections": [
       "node.sunken_dragon_sea.lair",
@@ -233,8 +233,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
-      0.76,
-      0.5
+      0.274,
+      0.421
     ],
     "connections": [
       "node.sunken_dragon_sea.crossroads",
@@ -263,8 +263,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
-      0.3,
-      0.36
+      0.179,
+      0.33
     ],
     "connections": [
       "node.sunken_dragon_sea.ridge",
@@ -294,8 +294,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "cultivation",
     "position": [
-      0.66,
-      0.36
+      0.298,
+      0.248
     ],
     "connections": [
       "node.sunken_dragon_sea.deep_path",
@@ -318,8 +318,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "elite",
     "position": [
-      0.2,
-      0.2
+      0.453,
+      0.193
     ],
     "connections": [
       "node.sunken_dragon_sea.sanctum",
@@ -355,8 +355,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "hidden",
     "position": [
-      0.84,
-      0.22
+      0.12,
+      0.103
     ],
     "connections": [
       "node.sunken_dragon_sea.den"
@@ -378,8 +378,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
-      0.55,
-      0.24
+      0.611,
+      0.141
     ],
     "connections": [
       "node.sunken_dragon_sea.den",
@@ -409,8 +409,8 @@
     "region": "region.sunken_dragon_sea",
     "kind": "boss",
     "position": [
-      0.5,
-      0.07
+      0.761,
+      0.08
     ],
     "connections": [
       "node.sunken_dragon_sea.approach"

@@ -29,6 +29,17 @@ def art_status(file):
     if not os.path.exists(os.path.join(ROOT, file)): return "planned"
     return "approved" if file in APPROVED else "generated"
 
+# Region map art is painted over a guide (tools/art/map_guides.py): the old art blurred, with the road through every place
+# in map order, a clearing at each place and dotted trails to side places. refs/maps/<region>_guide.png is image 1.
+MAP_GUIDE_PROMPT = ("Image 1 is a rough draft of an illustrated top-down fantasy adventure map for a mobile game: a painted landscape with a road "
+    "sketched over it and round clearings marked along the road. Repaint it as one finished, polished, luminous illustration in the same "
+    "art style, palette, season and scenery ({scene}). The road must follow exactly the sketched road from the bottom edge to the top, "
+    "made of whatever suits this land (dirt road, stone path, steps, snow trail, sand track, bridges or cloud paths), with a small natural "
+    "open clearing exactly where each round marker is, and faint narrow side trails where the thin dotted lines are. Keep the composition, "
+    "the landmarks and the exact position of every clearing. Remove every glowing lantern, post, pin, marker, icon, symbol, circle outline "
+    "and any text: the game draws its own markers on top. No characters.")
+
+
 def art(file, prompt, size=(256, 256), transparent=True, refs=None, negative=NEG):
     # Shipped art is lossy WebP (alpha kept): ~10x smaller than PNG, native on Android.
     if file.endswith(".png"): file = file[:-4] + ".webp"
@@ -112,6 +123,49 @@ def q(i, n): return {"id": i, "qty": n}
 # ---------- region map order ----------
 SIDE_KINDS = ("hidden", "merchant", "secret_realm")
 COMBAT_KINDS = ("battle", "elite", "boss")
+
+def road_layout(nodes, key):
+    """Place a region's places along one winding road, bottom (entry) to top (boss), evenly spaced in number order
+    (owner: maps must read in number order and the painted road must run through every place). Side places
+    (hidden, merchant, secret-realm gate) sit just off the road beside their anchor. Shape varies per region
+    (turns, amplitude, phase, mirror) from a hash of its key. Positions are fractions of the 2:3 map art."""
+    import math, hashlib
+    h = int(hashlib.sha1(key.encode()).hexdigest()[:8], 16)
+    turns = 1.15 + (h % 7) * 0.08              # 1.15 … 1.63 S-bends
+    amp = 0.31 + ((h >> 3) % 4) * 0.012          # horizontal swing
+    phase = ((h >> 7) % 100) / 100 * 0.5 - 0.25
+    mirror = -1 if (h >> 11) % 2 else 1
+    main = [d for d in nodes if d["kind"] not in SIDE_KINDS]
+    side = [d for d in nodes if d["kind"] in SIDE_KINDS]
+    def curve(s):  # s 0 → 1 bottom → top
+        return 0.5 + mirror * amp * math.sin(2 * math.pi * (turns * s + phase)), 0.93 - 0.85 * s
+    pts = [curve(i / 600) for i in range(601)]
+    seg = [math.hypot(pts[i + 1][0] - pts[i][0], (pts[i + 1][1] - pts[i][1]) * 1.5) for i in range(600)]
+    total = sum(seg); acc = [0.0]
+    for l in seg: acc.append(acc[-1] + l)
+    def at(frac):
+        target = frac * total
+        i = next((k for k in range(600) if acc[k + 1] >= target), 599)
+        f = (target - acc[i]) / max(1e-9, seg[i])
+        return (pts[i][0] + (pts[i + 1][0] - pts[i][0]) * f, pts[i][1] + (pts[i + 1][1] - pts[i][1]) * f)
+    for i, d in enumerate(main):
+        x, y = at(i / max(1, len(main) - 1))
+        d["position"] = [round(x, 3), round(y, 3)]
+    placed = [tuple(d["position"]) for d in main]
+    def free(p):
+        return min(math.hypot(p[0] - q[0], (p[1] - q[1]) * 1.5) for q in placed)
+    for d in side:
+        # anchor = the main place before it in map order
+        idx = nodes.index(d); anchor = next((m for m in reversed(nodes[:idx]) if m["kind"] not in SIDE_KINDS), main[0])
+        ax, ay = anchor["position"]
+        best = None
+        for dx in (0.18, -0.18, 0.22, -0.22, 0.26, -0.26, 0.3, -0.3, 0.34, -0.34):
+            for dy in (0.0, -0.03, 0.03, -0.06, 0.06, -0.09):
+                p = (min(0.88, max(0.12, ax + dx)), min(0.9, max(0.1, ay + dy)))
+                score = free(p) - (0.15 if abs(p[0] - 0.5) < 0.12 else 0)
+                if best is None or score > best[0]: best = (score, p)
+        d["position"] = [round(best[1][0], 3), round(best[1][1], 3)]; placed.append(best[1])
+    return nodes
 
 def chain_links(nodes):
     """Region maps open strictly in number order (owner's rule, 2026-10-30): the n-th place on the map links only to the

@@ -117,7 +117,7 @@ export function depotScreen(app: App, backTo: string): Screen {
     };
     return [
       header(app),
-      subbar({ help: { app, key: "depot" }, title: "Storage Chest", cn: "储物箱", sub: "Items in the depot stay safe but cannot be used, sold or crafted with until taken back", backTo, onBack: () => app.router.back() }),
+      subbar({ help: { app, key: "depot" }, title: "Storage Chest", cn: "储物箱", sub: "Safe storage for what you do not carry", backTo, onBack: () => app.router.back() }),
       h("div", { class: "row between glass", style: { padding: "6px 8px", borderRadius: "999px" } },
         seg(dui.side, [{ value: "bag", label: `Bag ${bagUsed(s)}/${bagCapacity(s, c)}` }, { value: "depot", label: `Depot ${depotUsed(s)}/${depotCapacity(s, c)}` }], (v) => { dui.side = v; dui.selected = null; dui.page = 0; refresh(); }),
         expandButton(app, dui.side)),

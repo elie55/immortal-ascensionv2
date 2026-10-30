@@ -31,10 +31,11 @@ def ui():
                                   "long hair and sleeves flowing softly, faint jade-green qi wisps around her, complete figure and stone in frame, isolated on plain background, no text.",
                                   (768, 1024), True, [LIN_REF, "refs/mockups/meditation_waterfall.png"])}),
         U("sect_map", "Azure Cloud Sect map", "Illustrated map of the sect's floating peaks.", "sect",
-          {"map": art("assets/ui/sect_map.png", f"{STYLE}. Top-down three-quarter illustrated map of a xianxia sect built on many small floating islands connected by stone bridges and stairs: a red gate, "
-                      "training terraces with sword racks, a tall library pagoda, a forge with chimney smoke, an arena, a waterfall pool, a merchant pavilion with lanterns, a garden with spirit beasts, an alchemy hall with a cauldron, "
-                      "small living quarters, waterfalls falling into clouds, cherry trees, soft daylight, clear open spaces around each building for labels, no text, no characters.",
-                      (1080, 1920), False, ["refs/mockups/sect_map.png"])}),
+          {"map": art("assets/ui/sect_map.png", f"{STYLE}. Three-quarter top-down illustration of the Azure Cloud Sect exactly as in the approved mockup: luminous floating islands among "
+                      "pastel clouds and cherry blossoms, the Inner Sect Peak pavilions at the top, a snowy frozen valley top right, the Mission Hall pagoda, sword training terraces, "
+                      "the Scripture Pavilion pagoda, the forge island, the proving arena, a pool with a fountain, the merchant pavilion with red lanterns, the spirit beast garden with a pond, "
+                      "the alchemy hall with a golden cauldron and small living quarters at the bottom, waterfalls into clouds, stone bridges and stairs, soft bright daylight, no text, no labels, no characters.",
+                      (1080, 1384), False, ["refs/style/sect_map_art.png"])}),
         U("shortcuts", "Cultivate shortcut tiles", "Illustrated buttons for the Cultivate screen shortcuts.", "cultivate",
           {k: icon(f"ui/shortcut_{k}", d, None, ["refs/mockups/cultivation_screen.png"]) for k, d in [
               ("alchemy", "a bronze alchemy cauldron on three legs with jade-green smoke and a faint golden glow"),
@@ -74,6 +75,12 @@ def ui():
               ("reforge", "a sword blade wrapped in swirling blue and orange flames"),
               ("awaken", "a sword hilt with a radiant golden eye-shaped sigil glowing above it"),
               ("craft", "a pattern scroll with tongs and a small hammer laid across it")]}),
+        # hero furnace of the Alchemy Hall screen (mockup alchemy_hall), a cut-out drawn between the success ring and the panel
+        U("alchemy", "Alchemy Hall furnace", "The sect's great bronze pill furnace.", "alchemy",
+          {"cauldron": art("assets/ui/alchemy_cauldron.png", f"{STYLE}. A single large ornate antique bronze alchemy cauldron (ding) on three legs, seen from the front slightly above, "
+                           "dragon handles, a glowing emerald jade medallion on its belly, gold filigree, soft jade-green and pink spirit smoke rising from the open top, "
+                           "warm rim light, the complete cauldron and smoke in frame, isolated on a plain background, no shelves, no room, no text.",
+                           (1024, 1024), True, ["refs/style/alchemy_cauldron.png"])}),
         U("backdrop", "App backdrop", "Soft painted sky used behind the tab screens.", "shell",
           {"sky": art("assets/ui/backdrop_sky.png", f"{STYLE}. Full-screen vertical background: dreamy sky above a sea of clouds, distant floating mountains and pagodas in soft blue haze, pale pink cherry blossoms drifting at the edges, "
                       "calm and low-contrast so interface panels stay readable, no characters, no text.", (1080, 1920), False, ["refs/mockups/character_screen.png"]),

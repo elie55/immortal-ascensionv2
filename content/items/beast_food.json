@@ -2,7 +2,7 @@
   {
     "id": "bfood.spirit_fruit",
     "name": "Verdant Spirit Fruit",
-    "description": "a plump pale-green fruit glowing with gentle qi",
+    "description": "A plump pale-green fruit glowing with gentle qi.",
     "name_cn": "翠灵果",
     "rarity": "common",
     "sell_value": 6,
@@ -34,7 +34,7 @@
   {
     "id": "bfood.dried_fish",
     "name": "Dried Spirit Fish",
-    "description": "a bundle of small silver dried fish tied with straw",
+    "description": "A bundle of small silver dried fish tied with straw.",
     "name_cn": "灵鱼干",
     "rarity": "common",
     "sell_value": 5,

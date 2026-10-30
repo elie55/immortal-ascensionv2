@@ -265,14 +265,14 @@ async function questMap(name: string) {
   await boot(st, "adventure");
   await dismiss();
   await page.locator(".tracker").first().click();
-  await page.waitForSelector(".node-pin.sel");
+  await page.waitForSelector(".mp-node.sel");
   await page.waitForTimeout(900);
   await shot(`${name}-1-go`);
   const r = await page.evaluate(() => ({
     sub: (document.querySelector(".tracker .tr-sub") as HTMLElement | null)?.innerText ?? "",
-    sel: document.querySelector(".node-pin.sel")?.getAttribute("aria-label") ?? "",
-    locked: !!document.querySelector(".node-pin.sel.st-locked.quest .np-quest"),
-    next: document.querySelector(".node-pin.next-step")?.getAttribute("aria-label") ?? "",
+    sel: document.querySelector(".mp-node.sel")?.getAttribute("aria-label") ?? "",
+    locked: !!document.querySelector(".mp-node.sel.st-locked.quest .np-quest"),
+    next: document.querySelector(".mp-node.next-step")?.getAttribute("aria-label") ?? "",
     card: (document.querySelector(".np-next") as HTMLElement | null)?.innerText ?? "",
     fight: [...document.querySelectorAll("button")].some((b) => /^\s*(Fight|Challenge)\s*$/.test((b as HTMLElement).innerText)),
   }));
@@ -281,7 +281,7 @@ async function questMap(name: string) {
   if (r.fight) throw new Error("a Fight button is offered on a locked quest target");
   await page.locator(".np-next .btn").click(); await page.waitForTimeout(500);
   await shot(`${name}-2-next-step`);
-  await page.locator(".node-pin", { hasText: "Village Road" }).click(); await page.waitForTimeout(400);
+  await page.locator(".mp-node", { hasText: "Village Road" }).click(); await page.waitForTimeout(400);
   await page.locator(".node-fight").scrollIntoViewIfNeeded(); await shot(`${name}-3-combat-card`);
   if (await page.locator(".node-fight").count() !== 1) throw new Error("combat card: expected one Fight button");
 }
@@ -332,7 +332,7 @@ async function sweep() {
   const sect = async (name: string, loc: string, activity: string | null, sel: string) => {
     await page.locator(".nav button", { hasText: "Sect" }).click(); await page.waitForTimeout(300);
     await page.locator(".nav button", { hasText: "Sect" }).click(); await page.waitForTimeout(300);
-    await page.locator(".sect-pin", { hasText: loc }).click(); await page.waitForTimeout(500);
+    await page.locator(".sp", { hasText: loc }).click(); await page.waitForTimeout(500);
     if (activity) { await page.locator(".setrow:not(.glass)", { hasText: activity }).last().click(); await page.waitForSelector(sel, { timeout: 10_000 }); }
     await page.waitForTimeout(600); await shot(name);
   };
@@ -343,13 +343,13 @@ async function sweep() {
   await sect("sw-beasts", "Spirit Beast Garden", "Beast garden", ".beast-grid");
   await sect("sw-merchant", "Merchant Pavilion", "Merchant", ".shop-grid");
   await sect("sw-scripture", "Scripture Pavilion", "Scripture stacks", ".manual-list");
-  await sect("sw-missions", "Mission Hall", "Mission board", ".quest-card, .board-head");
+  await sect("sw-missions", "Mission Hall", "Mission board", ".quest-card, .board-hero");
   await sect("sw-quarters", "Your Quarters", null, "");
   for (const [tab, name] of [["Cultivate", "sw-cultivate"], ["Character", "sw-character"], ["Inventory", "sw-inventory"], ["Adventure", "sw-adventure"]] as const) {
     await page.locator(".nav button", { hasText: tab }).click(); await page.waitForTimeout(300); await page.locator(".nav button", { hasText: tab }).click(); await page.waitForTimeout(600); await shot(name);
   }
   await page.locator(".region-card").nth(5).click(); await page.waitForTimeout(700); await shot("sw-region6");
-  await page.locator(".node-pin").nth(3).click({ force: true }); await page.waitForTimeout(500); await shot("sw-node-card");
+  await page.locator(".mp-node").nth(3).dispatchEvent("click"); await page.waitForTimeout(500); await shot("sw-node-card");
   await page.locator(".back").click(); await page.waitForTimeout(400);
   await page.locator(".chips .chip", { hasText: "Dungeons" }).click(); await page.waitForTimeout(600); await shot("sw-dungeons");
   await page.locator(".nav button", { hasText: "Character" }).click(); await page.waitForTimeout(300);
@@ -396,7 +396,7 @@ const SCEN: Record<string, () => Promise<void>> = {
   sweep,
   bossintro: () => bossIntro("bossintro", 1, { kind: "node", id: nodeOf(1, "boss") }),
   waterfall: () => screen("waterfall", 2, `(async () => { const m = await import("./app.js").catch(() => null); })()`, { tab: "sect", mutate: (s) => { s.resources.sect_fame = 600; } }).then(async () => {
-    await page.locator(".sect-pin", { hasText: "Meditation Waterfall" }).click(); await page.waitForTimeout(700); await page.locator(".med").scrollIntoViewIfNeeded(); await page.waitForTimeout(300); await shot("waterfall-setup");
+    await page.locator(".sp", { hasText: "Meditation Waterfall" }).click(); await page.waitForTimeout(700); await page.locator(".med").scrollIntoViewIfNeeded(); await page.waitForTimeout(300); await shot("waterfall-setup");
     await page.locator(".med-go").click(); await page.waitForTimeout(1200); await page.locator(".med").scrollIntoViewIfNeeded(); await shot("waterfall-active");
     await page.locator(".nav button", { hasText: "Cultivate" }).click(); await page.waitForTimeout(700); await shot("waterfall-cultivate-pill");
   }),
@@ -404,6 +404,28 @@ const SCEN: Record<string, () => Promise<void>> = {
   idle: () => idle("idle"),
   firstwin: () => firstVictory("firstwin"),
   questmap: () => questMap("questmap"),
+  sectmap: () => screen("sectmap", 1, "0", { tab: "sect" }),
+  missions: () => screen("missions", 2, `window.__ia.dev.open("missions")`, { tab: "sect" }),
+  achievements: () => screen("achievements", 3, `window.__ia.dev.open("achievements")`),
+  tower: () => screen("tower", 4, `window.__ia.dev.open("tower")`, { tab: "adventure" }),
+  alchemy: () => screen("alchemy", 2, `window.__ia.dev.open("alchemy")`, { tab: "sect", mutate: (s) => { for (const id of ["mat.spirit_grass", "mat.peach_blossom", "mat.crane_feather"]) s.inventory.stacks[id] = 12; } }).then(async () => {
+    await page.locator(".alch-panel .cta").click(); await page.waitForSelector(".alch-result"); await page.waitForTimeout(400); await shot("alchemy-result");
+  }),
+  // every region map (IA_REGIONS=mortal_plains,blazing_mountain for a subset): the map element alone, mid-way through the region
+  regionmaps: async () => {
+    const keys = (process.env.IA_REGIONS ?? "").split(",").filter(Boolean);
+    for (const [i, r] of regions.entries()) {
+      const key = r.id.split(".")[1]!; if (keys.length && !keys.includes(key)) continue;
+      const st = labState(Math.max(1, i), "fitted");
+      const nodes = c.nodesOf(r.id).filter((n) => !["hidden", "merchant", "secret_realm"].includes(n.kind));
+      st.progress.regions[r.id] = { discoveredAt: T0, nodes: Object.fromEntries(nodes.slice(0, Math.ceil(nodes.length / 2)).map((n) => [n.id, { clears: 1 }])) } as any;
+      await boot(st, "adventure"); await dismiss();
+      await page.evaluate((id) => (window as any).__ia.dev.region(id), r.id);
+      await page.waitForSelector(".node-map"); await page.waitForTimeout(700);
+      await page.locator(".node-map").screenshot({ path: join(OUT, `regionmap-${key}.png`) });
+    }
+  },
+  sectmap2: () => screen("sectmap2", 3, "0", { tab: "sect", mutate: (s) => { s.resources.sect_fame = 420; s.character.location = "sectloc.meditation_waterfall"; } }),
   anim: () => animProto("anim", 1),
   anim2: () => animProto("anim2", 2),
   anim3: () => animProto("anim3", 3),

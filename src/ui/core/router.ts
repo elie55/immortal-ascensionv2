@@ -44,7 +44,8 @@ export class Router {
   }
 
   get tab(): Tab { return this.store.state.tab; }
-  setTab(tab: Tab): void { this.store.update((s) => { if (s.tab === tab) { s.stacks[tab].forEach((x) => x.onLeave?.()); s.stacks[tab] = []; } s.tab = tab; }); }
+  /** Switching tab also drops toasts still waiting: they belonged to the screen being left. */
+  setTab(tab: Tab): void { if (tab !== this.tab) this.toastQueue = []; this.store.update((s) => { if (s.tab === tab) { s.stacks[tab].forEach((x) => x.onLeave?.()); s.stacks[tab] = []; } s.tab = tab; }); }
   push(screen: Screen): void { this.store.update((s) => s.stacks[s.tab].push(screen)); }
   pop(): void { this.store.update((s) => { s.stacks[s.tab].pop()?.onLeave?.(); }); }
   replace(screen: Screen): void { this.store.update((s) => { s.stacks[s.tab].pop()?.onLeave?.(); s.stacks[s.tab].push(screen); }); }
@@ -63,19 +64,24 @@ export class Router {
   open(o: Overlay): void { this.store.update((s) => { s.overlays = s.overlays.filter((x) => x.id !== o.id); s.overlays.push(o); }); }
   close(id?: string): void { this.store.update((s) => { if (!id) s.overlays.pop(); else s.overlays = s.overlays.filter((m) => m.id !== id); }); }
   hasOverlay(id: string): boolean { return this.store.state.overlays.some((o) => o.id === id); }
-  /** Toasts show two at a time at the top; the rest wait their turn (none are dropped, repeats are merged). */
+  /** Toasts show two at a time at the top; the rest wait their turn (repeats are merged). A burst plays faster, so a
+   *  string of rewards never covers the header for long; waiting toasts are dropped when the player changes tab. */
   toast(text: string, kind: "info" | "good" | "bad" = "info", ms = 2400): void {
     if (this.toastQueue.some((t) => t.text === text) || this.store.state.toasts.some((t) => t.text === text)) return;
     this.toastQueue.push({ text, kind, ms });
     this.pumpToasts();
   }
   private toastQueue: { text: string; kind: "info" | "good" | "bad"; ms: number }[] = [];
+  /** Toasts wait while this says so (the battle screen: no toasts over a fight; they play when it ends). */
+  holdToasts: () => boolean = () => false;
   private pumpToasts(): void {
+    if (this.holdToasts()) return;
     while (this.store.state.toasts.length < 2 && this.toastQueue.length) {
       const t = this.toastQueue.shift()!;
       const id = ++this.toastId;
+      const ms = this.toastQueue.length >= 2 ? Math.min(t.ms, 1500) : this.toastQueue.length ? Math.min(t.ms, 1900) : t.ms;
       this.store.update((s) => { s.toasts = [...s.toasts, { id, text: t.text, kind: t.kind }]; });
-      setTimeout(() => { this.store.update((s) => { s.toasts = s.toasts.filter((x) => x.id !== id); }); this.pumpToasts(); }, t.ms);
+      setTimeout(() => { this.store.update((s) => { s.toasts = s.toasts.filter((x) => x.id !== id); }); this.pumpToasts(); }, ms);
     }
   }
   refresh(): void { this.render(); }
@@ -90,6 +96,7 @@ export class Router {
   private render(): void {
     const s = this.store.state;
     const { screen, global } = this.current();
+    if (this.toastQueue.length && !this.holdToasts()) queueMicrotask(() => this.pumpToasts());   // held toasts play once the hold ends
     const showNav = screen.nav ?? !global;
     // keep scroll position across re-renders of the same screen
     const prevMain = this.root.querySelector<HTMLElement>("main.screen");

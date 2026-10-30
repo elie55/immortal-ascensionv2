@@ -2,7 +2,7 @@
   {
     "id": "qitem.caravan_manifest",
     "name": "Caravan Manifest",
-    "description": "a water-stained caravan manifest listing missing crates",
+    "description": "A water-stained caravan manifest listing missing crates.",
     "name_cn": "商队货单",
     "rarity": "uncommon",
     "sell_value": 0,
@@ -28,7 +28,7 @@
   {
     "id": "qitem.elder_wen_token",
     "name": "Elder Wen's Token",
-    "description": "a small jade token carved with a cloud, proof of passing the Elder's Trial",
+    "description": "A small jade token carved with a cloud, proof of passing the Elder's Trial.",
     "name_cn": "温长老令牌",
     "rarity": "uncommon",
     "sell_value": 0,

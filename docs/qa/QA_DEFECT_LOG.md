@@ -52,4 +52,27 @@ Evidence for balance items: `tools/balance/out/baseline.md` (before) vs `after.m
 | D-45 | P2 | UX | Regions / Dungeons switch disappeared on the Dungeons page | Dungeons was a pushed sub-screen with only a back arrow | shared switch on both pages | tour (asserts both ways) |
 | D-46 | P3 | UX | NPC Gift badge showed her daily allowance ("3") with no gift in the bag | wrong count | badge counts gifts carried that she can take today | — |
 
+| D-47 | P1 | Visual | Sect map looked cheap: map art stretched as the screen background, pins floating at fixed heights with no relation to the buildings | pins positioned over a 64vh box, art `cover`ed behind | new art (mockup redraw, labels painted out), framed at the art's own ratio; plaques anchored on landmarks, one per height band; light frosted pills with coloured medallion, NPC portrait + name, pink count, navy locked pill with requirement | lab sectmap / sectmap2, region-map.test (bands) |
+| D-48 | P1 | Visual | Region map roads went one way, the places another | art painted before the place layout | each map repainted over a guide (old art blurred + road through every place in order); art block records the guide prompt and reference | lab regionmaps (overlay check) |
+| D-49 | P2 | UX | Region map names overlapped medallions and each other; bottom names cut by the map edge | every plate drawn below its medallion | plates placed on the free side (below, right, left, above); a place with no clean side shows its number on the medallion; the selected place always shows its name | region-map.test (360–520 px, all regions) |
+| D-50 | P1 | UX | Place card was below the map, off-screen | card in the page flow after a 2:3 map | card docked above the nav (mockup region_node_map); the next place to play is pre-selected | lab questmap |
+| D-51 | P2 | UX | Toast bursts covered the header for several seconds and followed the player to other tabs | queue of 2.4 s toasts | bursts play faster; waiting toasts dropped on tab change; slide-in | — |
+
+| D-52 | P2 | Visual | Mission Hall: one card over art with an empty lower third; Fame box over the subtitle; green Accept | art as background, Fame box in the page | hall art band with title and taken pips; Fame bar in the screen header; gold Accept / Go; "more requests" line | lab missions |
+| D-53 | P2 | Visual | Achievements: counts drawn over bars, 3–4 line wraps, clipped chips | label inside the bar, reward pills in a side column | one-line title and description, count beside a full-width bar, one reward chip, category counts, Earned n/m in the header | lab achievements |
+| D-54 | P1 | UX | Alchemy: Refine button off-screen, recipe names on 3 lines, no furnace art | panel in the page flow | panel docked above the nav with its own list scroll; compact rows; breakdown chips beside the ring; furnace art block (ui.alchemy) added | lab alchemy |
+| D-55 | P2 | Visual | Alchemy result: a giant "0" as the headline | count used as the title | pill / byproduct as a hero tile; "No pills this time"; recovered items as tiles | lab alchemy |
+| D-56 | P3 | Copy | Item descriptions were lowercase art captions | caption reused as text | generator writes sentences (art prompts unchanged) | validator |
+| D-57 | P2 | UX | NPC requests lost the NPC (portrait, bond, actions) and showed the Mission Hall subtitle | pushed the board screen | requests are a mode of the NPC screen, like Chat | tour |
+| D-58 | P3 | Copy | Scripture Pavilion showed the Merchant's tip, a one-tab switch and "Floor 1 · Hall of Rare Arts" | shared shop help; floors numbered by list index | pavilion help; switch only with 2+ tabs; floors by hall with manual counts | — |
+| D-59 | P2 | Visual | Reforge with no secondary stats: one grey line | bare text | empty state: why, how (refine to Uncommon), Go to Refine | — |
+| D-60 | P2 | Visual | Tower: plain rows over art, Climb off-screen, title cut | list layout | spine of floor medallions with enemy art, milestone tiles, docked Climb; 2-line screen titles | lab tower |
+| D-61 | P2 | Visual | Depot / bag padded to capacity: 12 dashed slots and a 6-page pager for 8 items | grid drew every slot | pages only as needed, at most one row of free slots, pager only with 2+ pages | tour |
+| D-62 | P2 | Visual | Disabled primary buttons were beige slabs | opacity + grayscale | navy fill, dim gold outline, readable label | — |
+| D-63 | P2 | Visual | Content showed through the gap under the nav; quest strip on every sub-screen | translucent nav corners; tracker in every header | opaque band under the nav; tracker on tab screens, region maps and the quest log only | tour |
+| D-64 | P2 | UX | Toasts over the battle; dashed "Empty" technique slots and a locked ultimate disc | — | toasts held until the fight ends; one "Free slot" at most; no disc without an ultimate | lab chief |
+| D-65 | P2 | UX | Breakthrough sheet: "Qi 1.00M / 1,323", beige Break Through, no way to the missing pill | — | realm-to-realm header, capped counts with ✓, "Get it ›" to the pill's source, missing line | — |
+| D-66 | P2 | UX | Victory offered only Map and a gold Fight again | — | gold "Continue ▸ next place" opens the region with it selected | — |
+| D-67 | P3 | Visual | Merchant Sell: bare "No spare gear." | — | icon-backed empty rows, section headers, sell bar docked | — |
+
 Open (not fixed in this pass): see `QA_RELEASE_READINESS_REPORT.md`.
