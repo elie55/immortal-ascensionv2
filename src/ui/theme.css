@@ -911,3 +911,6 @@ button.tag { min-height: 32px; padding: 4px 12px; }
 .med-glow { position: absolute; left: 50%; bottom: -6px; width: 260px; height: 60px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(127,240,210,.45), transparent); }
 .med-stage.on .med-glow { box-shadow: 0 0 0 2px rgba(127,240,210,.5); background: radial-gradient(closest-side, rgba(127,240,210,.7), transparent); animation: aurapulse 2.4s ease-in-out infinite; }
 .med-stage.on .med-figure { filter: drop-shadow(0 0 16px rgba(127,240,210,.55)) drop-shadow(0 8px 18px rgba(0,0,0,.45)); }
+
+.rule-when { display: inline-block; padding: 0 7px; border-radius: 999px; background: rgba(4,10,34,.55); border: 1px solid var(--edge); color: var(--text-2); font-weight: 700; }
+.rule-when.cond { border-color: var(--gold-line); color: var(--gold-hi); }

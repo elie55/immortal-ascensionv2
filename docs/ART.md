@@ -41,6 +41,14 @@ Status: `planned` (no file) → `generated` (file exists in `assets/`) → `appr
   - every other NPC's `full_body` is drawn first; once approved, it is copied to `input/ia_chars/<npc>.png`
     and becomes the reference for that NPC's portrait, expressions and battle sprite.
 
+## Interface art
+
+`ui.icons`, `ui.nodes` and `ui.forge` (tools/gen/ui.py) hold painted icons generated like any other art:
+spirit stones, Sect Fame, energy, combat power, sect emblem, map node emblems and the Spirit Forge actions.
+`icons.ts` swaps the line icons `gem`, `fame`, `bolt` and `cp` for them at 12 px and up (`setPainted`).
+Prompts that led the model astray are overridden by `ICON_LOOK` in `tools/gen/common.py` (keyed by the
+entity's short key); status icons describe a concrete object (`STATUS_LOOK` in tools/gen/world.py).
+
 ## Order of generation
 
 1. Character sheets (`full_body`) for every NPC → owner approval.

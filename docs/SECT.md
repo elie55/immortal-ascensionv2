@@ -19,6 +19,17 @@ Engine modules are pure and deterministic (state + content + injected `now`, RNG
   sweep every 5 s. The UI plays queued scenes when nothing is on top of a tab.
 - **Ranks.** Next rank needs its fame, its promotion quests and its trial (tournament or dungeon).
 
+## Meditation Waterfall sessions (`cultivation.ts`)
+
+`cultivation_rules.meditation_session`: spirit stones buy a timed Qi boost (`qi_bonus_pct`, 50 %) for 15 minutes
+or more in steps of `step_minutes`; the longest allowed session comes from `max_minutes_by_fame`
+([fame, minutes]: 45 min from the start, 1 h at 1,000 Fame, 2 h at 2,000). Cost `stones_per_minute` × minutes.
+The session is a Qi buff keyed by the waterfall's location id with `startedAt`, so it keeps running while the
+player explores (the Cultivate screen shows a "Meditating" pill) and can be ended early without refund. Offline
+cultivation integrates every timed buff over the part of the absence it covered (cut at each buff's expiry).
+Screens follow the mockups meditation_waterfall (length slider, locked range, Qi gain / expected / cost, Begin)
+and waterfall_active (timer ring, Qi gained, rate, End early, Back to Sect).
+
 ## Shops (`shop.ts`)
 
 Entries are unlock-gated. Discounts: affinity level × `pct_per_level` with the owner, plus

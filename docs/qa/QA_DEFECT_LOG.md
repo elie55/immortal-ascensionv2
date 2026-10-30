@@ -32,5 +32,12 @@ Evidence for balance items: `tools/balance/out/baseline.md` (before) vs `after.m
 | D-25 | P3 | Readability | Low contrast: muted text on lighter glass, locked rows/pins (opacity .55–.6), badge, gift heart, equipped marker, keeper name tag, labels over bright art (equipment slots, sect location, auto-battle row, inventory counts, filter chips, realm title) | colours/opacity | `--text-3` brighter, locked opacity .8–.88, darker badge/heart, panels or shades behind text on art | audit contrast: 0 errors |
 | D-26 | P3 | Layout | NPC rows crushed the name into one word per line beside two tags; technique slots showed unstyled 15 px text cut mid-word; battle "Your move · tap a technique" overflowed its bar; gift button wrapped | row layouts | tags under the name, styled 2-line clamp, short prompt, stacked gift button | visual review |
 | D-27 | P3 | UX | Content could sit under the nav after scrolling an element into view | no scroll padding | `scroll-padding-bottom` = nav height | tour clicks at 390×844 |
+| D-28 | P2 | Visual | Main-menu "Ascension" rendered dark navy: Chromium paints an inherited text-shadow over a background-clip:text fill | gradient titles | `text-shadow: none` on every gradient title, glow via drop-shadow | tour shot main-menu |
+| D-29 | P3 | Layout | Sub-header titles wrapped or were cut ("Mission / Hall") beside the "Back to …" pill and the help button | sub-header | round back button (mockups), title kept whole, Chinese name wraps instead | tour at 360 / 390 |
+| D-30 | P3 | Layout | Character screen help "?" sat alone on its own line above the figure | chip row wrap | chips stay on one line and shrink | tour shot character |
+| D-31 | P2 | Art | Status icons showed a cultivator behind the symbol; 4 technique/beast renders off (lettering, throne, sticks, a doll beside the moth) | abstract prompts | concrete object prompts, ICON_LOOK overrides, rerolls | contact sheets |
+| D-32 | P3 | Readability | 8–9.5 px labels on new battle and map elements | new UI | all ≥ 10 px | UI audit 0 errors |
+| D-33 | P3 | Layout | "Turn in all" ran off-screen at 360 px with Large text | tabs row | row wraps, button right-aligned | UI audit |
+| D-34 | P3 | Tests | Tour flaked when the manual move ended the wave before switching to Auto | test timing | tour continues through the wave dialog | tour at 360 × 640 |
 
 Open (not fixed in this pass): see `QA_RELEASE_READINESS_REPORT.md`.

@@ -149,7 +149,7 @@ export function settingsScreen(app: App, backTo: string): Screen {
             setrow("fast", "Default speed", "You can change it in any battle", seg(st.battleSpeed, [{ value: 1, label: "1×" }, { value: 2, label: "2×" }, { value: 3, label: "3×" }], (v) => set({ battleSpeed: v as 1 | 2 | 3 }))),
             setrow("auto", "Start in Auto mode", "Techniques follow your priority list", toggle(st.autoBattle, (v) => set({ autoBattle: v }), "Auto battle")),
             setrow("numbers", "Damage numbers", null, toggle(st.damageNumbers, (v) => set({ damageNumbers: v }), "Damage numbers")),
-            setrow("shake", "Screen shake on big hits", null, toggle(st.screenShake, (v) => set({ screenShake: v }), "Screen shake")),
+            setrow("shake", "Screen shake on big hits", "With a short vibration on phones", toggle(st.screenShake, (v) => set({ screenShake: v }), "Screen shake")),
             setrow("sparkle", "Animation quality", "Lower saves battery", seg(st.animationQuality, [{ value: "low", label: "Low" }, { value: "medium", label: "Med" }, { value: "high", label: "High" }], (v) => set({ animationQuality: v as any }))))),
         section("Display & Accessibility", null,
           h("div", { class: "rows" },

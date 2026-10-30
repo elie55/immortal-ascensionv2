@@ -63,14 +63,33 @@ a shield, `enrage` multiplies ATK/SPD, and `charged_attack` starts a telegraphed
 "X in N turns"; after N boss turns the technique lands at `charged_attack_mult` power. A stun or freeze
 cancels the charge. `weaknesses` add damage from those elements.
 
+## Big-attack warnings (telegraphs)
+
+Elites (enemy `kind: "elite"`) and bosses announce their big attacks one turn ahead, the "intent" way
+(`combat_rules.telegraph`). At battle start and at the end of each of their turns, `Battle.planNext` asks the
+enemy AI what it would do at the start of its next turn (cooldowns one lower, spirit energy regenerated). When
+that move is a technique whose expected damage (`Battle.estimate`: no variance, crit averaged, defence, damage
+reduction and multipliers applied, before shields) reaches `heavy_pct` (30 %) of the max HP of the player or a
+Dao companion it targets (spirit beasts are not judged: their small pool would flag everything), it is locked
+in as `Combatant.telegraph` and a `telegraph` event is emitted. On the enemy's next turn the locked move lands
+as planned (`action.heavy = true`). Because the move is the one the AI would have picked anyway and lands on
+the same turn, the warning changes nothing in the balance (simulator: mean win-rate change −0.1 point, within
+seed noise). Stun, freeze or silence on the enemy cancels it (`interrupt` event), like a boss charge.
+
+The battle screen shows a red banner under the enemy panel ("Blazing Comet · NEXT TURN · ≈34 % of your HP ·
+shield, heal or stun to stop it"), a red glow and "!" on the enemy, a red pulse on the threatened ally and its
+card, red screen edges when the player is targeted and a "!" in the turn-order strip. The auto-battle condition
+`big_attack` ("Big attack coming") is true while any enemy has a telegraph or a boss charge lands next turn; the
+default preset raises a shield then.
+
 ## AI
 
 - **Player and allies**: a priority list of rules (`combat.presets[active].rules`), each
   `{slot, when, value, target}`. Slots are loadout positions (`a0`–`a3`, `ultimate`, `beast`) or roles
   (`heal`, `shield`, `damage`, `debuff`, `basic`); conditions `always | hp_below | sp_above | boss_only |
-  no_shield | enemies_at_least | never`; targets `default | lowest_hp | highest_cp | weakest | strongest`.
+  no_shield | enemies_at_least | big_attack | never`; targets `default | lowest_hp | highest_cp | weakest | strongest`.
   The first rule whose condition holds and whose slot has a usable technique acts. Default preset:
-  ultimate → heal under 50 % HP → shield when unshielded → strongest damage technique on the lowest-HP
+  ultimate → heal under 50 % HP → shield when a big attack is coming → shield when unshielded → strongest damage technique on the lowest-HP
   enemy → basic attack.
 - **Manual mode**: the battle pauses on the player's turn (`Battle.pending`); the UI calls `act()`.
 - **Enemies** by strategy: aggressive (strongest technique on the lowest-HP target), berserker (highest

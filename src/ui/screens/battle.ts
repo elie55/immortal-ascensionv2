@@ -325,7 +325,11 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   }
   function hitFlash(uid: number) { const v = views.get(uid); if (!v) return; v.spriteArt.classList.remove("hit"); void v.spriteArt.offsetWidth; v.spriteArt.classList.add("hit"); }
   function screenFlash(kind: "red" | "gold" | "white") { flash.className = "bt-flash"; void flash.offsetWidth; flash.className = `bt-flash ${kind}`; }
-  function shake(big = false) { if (app.settings.reducedMotion || !app.settings.screenShake) return; stage.classList.remove("shake", "shake-big"); void stage.offsetWidth; stage.classList.add(big ? "shake-big" : "shake"); }
+  function shake(big = false) {
+    if (app.settings.reducedMotion || !app.settings.screenShake) return;
+    stage.classList.remove("shake", "shake-big"); void stage.offsetWidth; stage.classList.add(big ? "shake-big" : "shake");
+    if (big) try { navigator.vibrate?.(35); } catch { /* not supported */ }
+  }
   function showSkillName(text: string, kind: "" | "foe" | "heavy" | "ult" = "") { fx.querySelectorAll(".bt-skillname").forEach((x) => x.remove()); const el = h("div", { class: ["bt-skillname", kind] }, text); fx.appendChild(el); setTimeout(() => el.remove(), dur(1000) + 100); }
 
   async function animate(events: BattleEvent[]) {

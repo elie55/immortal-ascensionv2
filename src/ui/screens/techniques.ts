@@ -89,12 +89,16 @@ const ROLE: Record<string, { label: string; icon: string; desc: string }> = {
   debuff: { label: "Debuff", icon: "warning", desc: "A technique that weakens the target" }, basic: { label: "Basic attack", icon: "sword", desc: "Free, restores SP" }, beast: { label: "Beast ability", icon: "paw", desc: "Your companion's skill" },
 };
 
-function ruleLabel(app: App, slot: string): { label: string; icon: string; desc: string } {
+function ruleLabel(app: App, slot: string): { label: string; icon: string; desc: string; art?: string } {
   const s = app.game.state, c = app.content;
   const m = /^a(\d)$/.exec(slot);
-  if (m) { const id = s.techniques.actives[Number(m[1])]; return id ? { label: c.get<any>(id).name, icon: "sword", desc: `Active slot ${Number(m[1]) + 1}` } : { label: `Active slot ${Number(m[1]) + 1}`, icon: "sword", desc: "Empty slot" }; }
-  if (slot === "ultimate" && s.techniques.ultimate) return { label: c.get<any>(s.techniques.ultimate).name, icon: "bolt", desc: "Ultimate · when charged" };
-  return ROLE[slot] ?? { label: slot, icon: "sword", desc: "" };
+  if (m) { const id = s.techniques.actives[Number(m[1])]; return id ? { label: c.get<any>(id).name, icon: "sword", desc: `Active slot ${Number(m[1]) + 1}`, art: c.art(id, "icon") } : { label: `Active slot ${Number(m[1]) + 1}`, icon: "sword", desc: "Empty slot" }; }
+  if (slot === "ultimate" && s.techniques.ultimate) return { label: c.get<any>(s.techniques.ultimate).name, icon: "bolt", desc: "Ultimate · when charged", art: c.art(s.techniques.ultimate, "icon") };
+  // role rules show the equipped technique that currently answers them
+  const eq = s.techniques.actives.filter((x): x is string => !!x).map((id) => c.get<any>(id));
+  const pick = slot === "heal" ? eq.filter((t) => t.heal_pct).sort((a, b) => b.heal_pct - a.heal_pct)[0] : slot === "shield" ? eq.find((t) => t.shield_pct_max_hp) : slot === "damage" ? eq.filter((t) => t.power > 0).sort((a, b) => b.power * b.hits - a.power * a.hits)[0] : undefined;
+  const r = ROLE[slot] ?? { label: slot, icon: "sword", desc: "" };
+  return pick ? { ...r, art: c.art(pick.id, "icon"), desc: `${r.desc} · now ${pick.name}` } : r;
 }
 
 function whenText(r: { when: string; value?: number }): string {
@@ -129,7 +133,8 @@ export function autoBattleScreen(app: App, backTo: string): Screen {
                 h("div", { class: "rule-move" }, h("button", { disabled: i === 0, "aria-label": "Up", onClick: () => { mutate((rs) => { [rs[i - 1], rs[i]] = [rs[i], rs[i - 1]]; }); open = open === i ? i - 1 : open; } }, "▲"), h("button", { disabled: i === rules.length - 1, "aria-label": "Down", onClick: () => { mutate((rs) => { [rs[i + 1], rs[i]] = [rs[i], rs[i + 1]]; }); open = open === i ? i + 1 : open; } }, "▼")),
                 h("span", { class: "rule-n" }, String(i + 1)),
                 h("button", { class: "grow rule-main", onClick: () => { open = open === i ? null : i; app.router.refresh(); } },
-                  h("div", { class: "lbl" }, icon(L.icon, 13), " ", L.label), h("div", { class: "desc" }, `${whenText(r)}${r.target !== "default" ? ` · ${TARGET.find((t) => t.v === r.target)?.label}` : ""}`)),
+                  h("div", { class: "row", style: { gap: "8px" } }, L.art ? h("span", { class: "tech-ico", style: { backgroundImage: app.img(L.art), width: "34px", height: "34px" } }) : h("span", { class: "tech-ico", style: { width: "34px", height: "34px" } }, icon(L.icon, 16)),
+                    h("div", { class: "grow" }, h("div", { class: "lbl" }, L.label), h("div", { class: "desc" }, h("span", { class: ["rule-when", r.when !== "always" && r.when !== "never" && "cond"] }, whenText(r)), r.target !== "default" ? ` · ${TARGET.find((t) => t.v === r.target)?.label}` : "")))),
                 toggle(on, (v) => mutate((rs) => { rs[i].when = v ? "always" : "never"; delete rs[i].value; }), "Enable rule")),
               open === i && h("div", { class: "rule-edit" },
                 h("div", { class: "muted up" }, "Use when…"),

@@ -1,3 +1,24 @@
+# UI audit — pass 2 (all 1,330 art entries generated, 2026-10-30)
+
+**Scope:** every screen of the tour again at 360 × 640, 390 × 844, 412 × 915 and 360 × 640 with Large text, plus
+the battle and Meditation Waterfall screens in mid-game states from `tests/browser/lab.ts`; each screen compared
+side by side with its mockup (44 pairs) for brightness, layout, images and icons.
+
+**Result:** 0 errors, 191 warnings (42 contrast estimates on titles over art, 147 labels of 10–10.5 px such as
+map pin names and stat captions, 2 text cut by a few px). The tour passes at all four sizes.
+
+**Changes from the comparison:**
+- Battle: rebuilt to the battle_screen mockup (centred enemy, full-width HP bar at the top, party cards with
+  portraits, art technique tiles, Ultimate ring, turn order, warnings before big attacks, hit effects).
+- Victory: title over the battle scene and a framed rewards panel with the defeated foe and the tracked quest.
+- Meditation Waterfall: the session screens of meditation_waterfall / waterfall_active (new feature).
+- Scripture Pavilion: manuals as a list with element, kind and rarity tags (scripture_pavilion).
+- Region maps: painted pins (enemy portraits or node emblems) with labels (region_node_map).
+- Sub-headers: round back button and whole titles like the mockups; brighter backgrounds, more opaque panels;
+  ornate gold frames on dialogue, celebration and result panels; main-menu title in bright gold.
+- Icons: painted spirit stone, Sect Fame, energy, combat power, sect emblem, forge actions and node emblems;
+  status icons redrawn as objects; four weak technique/beast renders redone; empty gear slots show a silhouette.
+
 # UI audit — pass 1 (with the art available on 2026-10-29)
 
 **Scope:** every screen of the screen tour (57 screens plus their sheets and modals, scrolled page by page).
