@@ -104,6 +104,18 @@ export function expireBuffs(s: GameState, now: number, out: DomainEvent[]): void
   if (keep.length !== s.buffs.length) s.buffs = keep;
 }
 
+// ---------- Spiritual root ----------
+
+/** Change the character's root (events, trials, awakening); keeps the history for the Spirit Root screen. */
+export function transformRoot(s: GameState, content: ContentIndex, rootId: string, source: string, now: number, events: DomainEvent[]): boolean {
+  if (!content.has(rootId) || s.character.root === rootId) return false;
+  const from = s.character.root;
+  s.character.root = rootId;
+  s.character.rootHistory.push({ root: rootId, at: now, source });
+  events.push({ type: "root_awakened", root: rootId, from, source });
+  return true;
+}
+
 // ---------- Meditation sessions (Meditation Waterfall) ----------
 
 /** Longest session the player's Sect Fame allows. */
@@ -271,7 +283,7 @@ export function canAttemptMajor(s: GameState, content: ContentIndex): boolean {
   return isFinalStage(s) && majorRequirements(s, content).every((r) => r.met);
 }
 
-export interface MajorOptions { /** Extra success chance from a breakthrough pill already consumed (0–1). */ pillBonus?: number }
+export interface MajorOptions { /** Extra success chance from a breakthrough pill already consumed (0–1). */ pillBonus?: number; now?: number }
 
 export interface MajorChance { base: number; parts: { label: string; bonus: number }[]; total: number }
 
@@ -329,6 +341,9 @@ export function majorBreakthrough(s: GameState, content: ContentIndex, opts: Maj
   s.character.qi = Math.min(qiBankCap(s, content), s.character.qi);
   events.push({ type: "realm_reached", realm: next.id });
   for (const u of mb.unlocks) events.push({ type: "unlock", id: u });
+  // A single root awakens into its dual form when Foundation is established (mockup spirit_root: Root history).
+  const root = content.get<Root>(s.character.root);
+  if (next.order >= 2 && root.tier === "single" && root.upgrade_to[0]) transformRoot(s, content, root.upgrade_to[0], `breakthrough:${next.id}`, opts.now ?? s.meta.lastTickAt, events);
   return { ok: true, success: true, events, chance: p };
 }
 

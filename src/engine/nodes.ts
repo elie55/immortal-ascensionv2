@@ -4,7 +4,7 @@ import type { GameState } from "./state.ts";
 import type { DomainEvent } from "./events.ts";
 import type { ActionResult } from "./actions.ts";
 import { grantRewards } from "./actions.ts";
-import { energyNow, spendEnergy } from "./cultivation.ts";
+import { energyNow, spendEnergy, transformRoot } from "./cultivation.ts";
 import { checkUnlock } from "./unlock.ts";
 import { rollTable, grantDrops } from "./loot.ts";
 import { weightedIndex } from "./rng.ts";
@@ -133,7 +133,7 @@ export function resolveEvent(s: GameState, c: ContentIndex, now: number, nodeId:
   const events: DomainEvent[] = [];
   if (o.rewards) grantRewards(s, c, o.rewards as any, events);
   if (o.status) { /* battle-only statuses are informational outside combat */ }
-  if (o.root_transform && c.has(o.root_transform)) { s.character.root = o.root_transform; events.push({ type: "unlock", id: o.root_transform }); }
+  if (o.root_transform) transformRoot(s, c, o.root_transform, `event:${n.event ?? n.id}`, now, events);
   const first = rec.clears === 0;
   if (!o.battle) { rec.clears++; rec.lastAt = now; if (first) { rec.firstClearAt = now; grantRewards(s, c, n.first_clear as any, events); events.push({ type: "node_cleared", node: n.id, region: n.region, first: true }); } }
   return { ok: true, events, outcome: { text: o.text, battle: o.battle, rewards: o.rewards as any } };

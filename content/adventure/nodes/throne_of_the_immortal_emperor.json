@@ -1,8 +1,8 @@
 [
   {
     "id": "node.throne_of_the_immortal_emperor.entry",
-    "name": "Throne of the Immortal Emperor Border",
-    "description": "Border of the Throne of the Immortal Emperor.",
+    "name": "Cloud Threshold",
+    "description": "Cloud Threshold, border of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.gathering",
-    "name": "Throne of the Immortal Emperor Gathering Grounds",
-    "description": "Gathering Grounds of the Throne of the Immortal Emperor.",
+    "name": "Starlight Shoals",
+    "description": "Starlight Shoals, gathering grounds of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.outskirts",
-    "name": "Throne of the Immortal Emperor Outskirts",
-    "description": "Outskirts of the Throne of the Immortal Emperor.",
+    "name": "Whale Road",
+    "description": "Whale Road, outskirts of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.west_path",
-    "name": "Throne of the Immortal Emperor Western Trail",
-    "description": "Western Trail of the Throne of the Immortal Emperor.",
+    "name": "Dragon Guard Walk",
+    "description": "Dragon Guard Walk, western trail of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.cache",
-    "name": "Throne of the Immortal Emperor Hidden Cache",
-    "description": "Hidden Cache of the Throne of the Immortal Emperor.",
+    "name": "Emperor's Cache",
+    "description": "Emperor's Cache, hidden cache of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.east_path",
-    "name": "Throne of the Immortal Emperor Eastern Trail",
-    "description": "Eastern Trail of the Throne of the Immortal Emperor.",
+    "name": "Five Elements Stair",
+    "description": "Five Elements Stair, eastern trail of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.lair",
-    "name": "Throne of the Immortal Emperor Lair",
-    "description": "Lair of the Throne of the Immortal Emperor.",
+    "name": "Usurper's Camp",
+    "description": "Usurper's Camp, lair of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.crossroads",
-    "name": "Throne of the Immortal Emperor Crossroads",
-    "description": "Crossroads of the Throne of the Immortal Emperor.",
+    "name": "Crossing of Realms",
+    "description": "Crossing of Realms, crossroads of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.ridge",
-    "name": "Throne of the Immortal Emperor Ridge",
-    "description": "Ridge of the Throne of the Immortal Emperor.",
+    "name": "Azure Ridge",
+    "description": "Azure Ridge, ridge of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.deep_path",
-    "name": "Throne of the Immortal Emperor Deep Path",
-    "description": "Deep Path of the Throne of the Immortal Emperor.",
+    "name": "Emperor's Road",
+    "description": "Emperor's Road, deep path of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.sanctum",
-    "name": "Throne of the Immortal Emperor Sanctum",
-    "description": "Sanctum of the Throne of the Immortal Emperor.",
+    "name": "Steward's Hall",
+    "description": "Steward's Hall, sanctum of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "cultivation",
     "position": [
@@ -321,8 +321,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.den",
-    "name": "Throne of the Immortal Emperor Den",
-    "description": "Den of the Throne of the Immortal Emperor.",
+    "name": "Shadow Court",
+    "description": "Shadow Court, den of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "elite",
     "position": [
@@ -357,8 +357,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.hidden_grove",
-    "name": "Throne of the Immortal Emperor Secret Place",
-    "description": "Secret Place of the Throne of the Immortal Emperor.",
+    "name": "Swordsmith's Forge",
+    "description": "Swordsmith's Forge, secret place of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "hidden",
     "position": [
@@ -381,8 +381,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.approach",
-    "name": "Throne of the Immortal Emperor Approach",
-    "description": "Approach of the Throne of the Immortal Emperor.",
+    "name": "Throne Steps",
+    "description": "Throne Steps, approach of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "battle",
     "position": [
@@ -413,8 +413,8 @@
   },
   {
     "id": "node.throne_of_the_immortal_emperor.throne",
-    "name": "Throne of the Immortal Emperor Throne",
-    "description": "Throne of the Throne of the Immortal Emperor.",
+    "name": "The Empty Throne",
+    "description": "The Empty Throne, throne of the Throne of the Immortal Emperor.",
     "region": "region.throne_of_the_immortal_emperor",
     "kind": "boss",
     "position": [

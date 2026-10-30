@@ -28,7 +28,7 @@
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a folded yellow paper talisman with red cloud calligraphy and a blue tassel, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a folded yellow paper talisman marked with a swirling red cloud sigil (a pictorial spiral, no writing) and a blue tassel, plain bamboo wood and rough undyed cloth, muted natural colours, no ornament. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",
@@ -47,7 +47,7 @@
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a folded yellow paper talisman with red cloud calligraphy and a blue tassel, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a folded yellow paper talisman marked with a swirling red cloud sigil (a pictorial spiral, no writing) and a blue tassel, polished bronze fittings with small green jade accents, faint glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",
@@ -66,7 +66,7 @@
               256
             ],
             "transparent": true,
-            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a folded yellow paper talisman with red cloud calligraphy and a blue tassel, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+            "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a folded yellow paper talisman marked with a swirling red cloud sigil (a pictorial spiral, no writing) and a blue tassel, silvered steel and blue-green jade, soft cyan glow, simple engraved cloud pattern. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
             "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
             "references": [
               "refs/mockups/inventory_icons.png",

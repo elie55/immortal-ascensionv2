@@ -335,3 +335,28 @@ test("meditation sessions: fame caps the length, stones pay, Qi ×1.5 while it r
   const expected = (rate * (1 + r.qi_bonus_pct / 100) * 1800 + rate * 5400) * content.rules.offline.efficiency;
   assert.ok(Math.abs(rep.qiGained - Math.min(expected, qiBankCap(s3, content))) < 1, `offline ${rep.qiGained} vs ${expected}`);
 });
+
+test("spirit root: a single root awakens into its dual form at Foundation Establishment; the history keeps every root", async () => {
+  const { transformRoot } = await import("../src/engine/cultivation.ts");
+  const s = fresh();
+  assert.equal(s.character.rootHistory.length, 1);
+  assert.equal(s.character.rootHistory[0]!.root, s.character.root);
+  // jump to stage 9 of the first realm with enough Qi and the pills, force success
+  const realm = content.get<any>(s.character.realm);
+  s.character.stage = 9; s.character.qi = 1e12;
+  for (const r of majorRequirements(s, content)) if (r.kind === "item" && r.id) addItem(s, content, r.id, r.need ?? 1);
+  s.character.breakthroughBonus = 1;
+  const before = s.character.root;
+  let ok = false;
+  for (let i = 0; i < 40 && !ok; i++) { const r = majorBreakthrough(s, content, { pillBonus: 1, now: T0 }); if (r.ok && r.success) ok = true; else { s.character.qi = 1e12; s.character.stage = 9; } }
+  assert.ok(ok, "a breakthrough succeeded");
+  const root = content.get<any>(before);
+  if (root.tier === "single" && root.upgrade_to[0]) {
+    assert.equal(s.character.root, root.upgrade_to[0], "root awakened");
+    assert.equal(s.character.rootHistory.length, 2);
+    assert.ok(s.character.rootHistory[1]!.source.startsWith("breakthrough:"));
+  }
+  const ev: any[] = [];
+  assert.equal(transformRoot(s, content, s.character.root, "test", T0, ev), false, "same root: no change");
+  void realm;
+});

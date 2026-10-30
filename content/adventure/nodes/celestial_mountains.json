@@ -1,8 +1,8 @@
 [
   {
     "id": "node.celestial_mountains.entry",
-    "name": "Celestial Mountains Border",
-    "description": "Border of the Celestial Mountains.",
+    "name": "Cloud Gate",
+    "description": "Cloud Gate, border of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.celestial_mountains.gathering",
-    "name": "Celestial Mountains Gathering Grounds",
-    "description": "Gathering Grounds of the Celestial Mountains.",
+    "name": "Pine Terrace",
+    "description": "Pine Terrace, gathering grounds of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.celestial_mountains.outskirts",
-    "name": "Celestial Mountains Outskirts",
-    "description": "Outskirts of the Celestial Mountains.",
+    "name": "Thunder Pines",
+    "description": "Thunder Pines, outskirts of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.celestial_mountains.west_path",
-    "name": "Celestial Mountains Western Trail",
-    "description": "Western Trail of the Celestial Mountains.",
+    "name": "Crane Walk",
+    "description": "Crane Walk, western trail of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.celestial_mountains.cache",
-    "name": "Celestial Mountains Hidden Cache",
-    "description": "Hidden Cache of the Celestial Mountains.",
+    "name": "Sky Cache",
+    "description": "Sky Cache, hidden cache of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.celestial_mountains.east_path",
-    "name": "Celestial Mountains Eastern Trail",
-    "description": "Eastern Trail of the Celestial Mountains.",
+    "name": "Lightning Stair",
+    "description": "Lightning Stair, eastern trail of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.celestial_mountains.lair",
-    "name": "Celestial Mountains Lair",
-    "description": "Lair of the Celestial Mountains.",
+    "name": "Ape Caves",
+    "description": "Ape Caves, lair of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.celestial_mountains.crossroads",
-    "name": "Celestial Mountains Crossroads",
-    "description": "Crossroads of the Celestial Mountains.",
+    "name": "Windy Cross",
+    "description": "Windy Cross, crossroads of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.celestial_mountains.ridge",
-    "name": "Celestial Mountains Ridge",
-    "description": "Ridge of the Celestial Mountains.",
+    "name": "Storm Ridge",
+    "description": "Storm Ridge, ridge of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.celestial_mountains.deep_path",
-    "name": "Celestial Mountains Deep Path",
-    "description": "Deep Path of the Celestial Mountains.",
+    "name": "Pilgrim's Road",
+    "description": "Pilgrim's Road, deep path of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.celestial_mountains.sanctum",
-    "name": "Celestial Mountains Sanctum",
-    "description": "Sanctum of the Celestial Mountains.",
+    "name": "Pine Sage's Hut",
+    "description": "Pine Sage's Hut, sanctum of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "cultivation",
     "position": [
@@ -321,8 +321,8 @@
   },
   {
     "id": "node.celestial_mountains.den",
-    "name": "Celestial Mountains Den",
-    "description": "Den of the Celestial Mountains.",
+    "name": "Tiger Ledge",
+    "description": "Tiger Ledge, den of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "elite",
     "position": [
@@ -357,8 +357,8 @@
   },
   {
     "id": "node.celestial_mountains.hidden_grove",
-    "name": "Celestial Mountains Secret Place",
-    "description": "Secret Place of the Celestial Mountains.",
+    "name": "Star Reader's Peak",
+    "description": "Star Reader's Peak, secret place of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "hidden",
     "position": [
@@ -381,8 +381,8 @@
   },
   {
     "id": "node.celestial_mountains.approach",
-    "name": "Celestial Mountains Approach",
-    "description": "Approach of the Celestial Mountains.",
+    "name": "Celestial Stair",
+    "description": "Celestial Stair, approach of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "battle",
     "position": [
@@ -413,8 +413,8 @@
   },
   {
     "id": "node.celestial_mountains.throne",
-    "name": "Celestial Mountains Throne",
-    "description": "Throne of the Celestial Mountains.",
+    "name": "Summit Shrine",
+    "description": "Summit Shrine, throne of the Celestial Mountains.",
     "region": "region.celestial_mountains",
     "kind": "boss",
     "position": [

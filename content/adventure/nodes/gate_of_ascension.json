@@ -1,8 +1,8 @@
 [
   {
     "id": "node.gate_of_ascension.entry",
-    "name": "Gate of Ascension Border",
-    "description": "Border of the Gate of Ascension.",
+    "name": "Trial Gate",
+    "description": "Trial Gate, border of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.gate_of_ascension.gathering",
-    "name": "Gate of Ascension Gathering Grounds",
-    "description": "Gathering Grounds of the Gate of Ascension.",
+    "name": "Phoenix Ash Field",
+    "description": "Phoenix Ash Field, gathering grounds of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.gate_of_ascension.outskirts",
-    "name": "Gate of Ascension Outskirts",
-    "description": "Outskirts of the Gate of Ascension.",
+    "name": "Chain Walk",
+    "description": "Chain Walk, outskirts of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.gate_of_ascension.west_path",
-    "name": "Gate of Ascension Western Trail",
-    "description": "Western Trail of the Gate of Ascension.",
+    "name": "Lion's Causeway",
+    "description": "Lion's Causeway, western trail of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.gate_of_ascension.cache",
-    "name": "Gate of Ascension Hidden Cache",
-    "description": "Hidden Cache of the Gate of Ascension.",
+    "name": "Ascendant's Cache",
+    "description": "Ascendant's Cache, hidden cache of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.gate_of_ascension.east_path",
-    "name": "Gate of Ascension Eastern Trail",
-    "description": "Eastern Trail of the Gate of Ascension.",
+    "name": "Flame Stair",
+    "description": "Flame Stair, eastern trail of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.gate_of_ascension.lair",
-    "name": "Gate of Ascension Lair",
-    "description": "Lair of the Gate of Ascension.",
+    "name": "Failed Ascendants' Pit",
+    "description": "Failed Ascendants' Pit, lair of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.gate_of_ascension.crossroads",
-    "name": "Gate of Ascension Crossroads",
-    "description": "Crossroads of the Gate of Ascension.",
+    "name": "Judgement Cross",
+    "description": "Judgement Cross, crossroads of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.gate_of_ascension.ridge",
-    "name": "Gate of Ascension Ridge",
-    "description": "Ridge of the Gate of Ascension.",
+    "name": "Vermilion Ridge",
+    "description": "Vermilion Ridge, ridge of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.gate_of_ascension.deep_path",
-    "name": "Gate of Ascension Deep Path",
-    "description": "Deep Path of the Gate of Ascension.",
+    "name": "Nine Flames Road",
+    "description": "Nine Flames Road, deep path of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.gate_of_ascension.sanctum",
-    "name": "Gate of Ascension Sanctum",
-    "description": "Sanctum of the Gate of Ascension.",
+    "name": "Gatekeeper's Hall",
+    "description": "Gatekeeper's Hall, sanctum of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "cultivation",
     "position": [
@@ -321,8 +321,8 @@
   },
   {
     "id": "node.gate_of_ascension.den",
-    "name": "Gate of Ascension Den",
-    "description": "Den of the Gate of Ascension.",
+    "name": "Warden's Post",
+    "description": "Warden's Post, den of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "elite",
     "position": [
@@ -357,8 +357,8 @@
   },
   {
     "id": "node.gate_of_ascension.hidden_grove",
-    "name": "Gate of Ascension Secret Place",
-    "description": "Secret Place of the Gate of Ascension.",
+    "name": "Exile's Rest",
+    "description": "Exile's Rest, secret place of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "hidden",
     "position": [
@@ -381,8 +381,8 @@
   },
   {
     "id": "node.gate_of_ascension.approach",
-    "name": "Gate of Ascension Approach",
-    "description": "Approach of the Gate of Ascension.",
+    "name": "Last Ascent",
+    "description": "Last Ascent, approach of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "battle",
     "position": [
@@ -413,8 +413,8 @@
   },
   {
     "id": "node.gate_of_ascension.throne",
-    "name": "Gate of Ascension Throne",
-    "description": "Throne of the Gate of Ascension.",
+    "name": "Vermilion Gate",
+    "description": "Vermilion Gate, throne of the Gate of Ascension.",
     "region": "region.gate_of_ascension",
     "kind": "boss",
     "position": [

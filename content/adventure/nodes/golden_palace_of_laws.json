@@ -1,8 +1,8 @@
 [
   {
     "id": "node.golden_palace_of_laws.entry",
-    "name": "Golden Palace of Laws Border",
-    "description": "Border of the Golden Palace of Laws.",
+    "name": "Palace Gate",
+    "description": "Palace Gate, border of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.gathering",
-    "name": "Golden Palace of Laws Gathering Grounds",
-    "description": "Gathering Grounds of the Golden Palace of Laws.",
+    "name": "Scroll Courtyard",
+    "description": "Scroll Courtyard, gathering grounds of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.outskirts",
-    "name": "Golden Palace of Laws Outskirts",
-    "description": "Outskirts of the Golden Palace of Laws.",
+    "name": "Lawkeepers' Row",
+    "description": "Lawkeepers' Row, outskirts of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.west_path",
-    "name": "Golden Palace of Laws Western Trail",
-    "description": "Western Trail of the Golden Palace of Laws.",
+    "name": "Golden Crow Walk",
+    "description": "Golden Crow Walk, western trail of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.cache",
-    "name": "Golden Palace of Laws Hidden Cache",
-    "description": "Hidden Cache of the Golden Palace of Laws.",
+    "name": "Archive Cache",
+    "description": "Archive Cache, hidden cache of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.east_path",
-    "name": "Golden Palace of Laws Eastern Trail",
-    "description": "Eastern Trail of the Golden Palace of Laws.",
+    "name": "Verdict Stair",
+    "description": "Verdict Stair, eastern trail of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.lair",
-    "name": "Golden Palace of Laws Lair",
-    "description": "Lair of the Golden Palace of Laws.",
+    "name": "Rebel's Cell",
+    "description": "Rebel's Cell, lair of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.crossroads",
-    "name": "Golden Palace of Laws Crossroads",
-    "description": "Crossroads of the Golden Palace of Laws.",
+    "name": "Hall of Petitions",
+    "description": "Hall of Petitions, crossroads of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.ridge",
-    "name": "Golden Palace of Laws Ridge",
-    "description": "Ridge of the Golden Palace of Laws.",
+    "name": "Gilded Ridge",
+    "description": "Gilded Ridge, ridge of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.deep_path",
-    "name": "Golden Palace of Laws Deep Path",
-    "description": "Deep Path of the Golden Palace of Laws.",
+    "name": "Ten Thousand Laws Road",
+    "description": "Ten Thousand Laws Road, deep path of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.sanctum",
-    "name": "Golden Palace of Laws Sanctum",
-    "description": "Sanctum of the Golden Palace of Laws.",
+    "name": "Chief Magistrate's Court",
+    "description": "Chief Magistrate's Court, sanctum of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "cultivation",
     "position": [
@@ -321,8 +321,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.den",
-    "name": "Golden Palace of Laws Den",
-    "description": "Den of the Golden Palace of Laws.",
+    "name": "Golem Vault",
+    "description": "Golem Vault, den of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "elite",
     "position": [
@@ -357,8 +357,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.hidden_grove",
-    "name": "Golden Palace of Laws Secret Place",
-    "description": "Secret Place of the Golden Palace of Laws.",
+    "name": "Clerk's Office",
+    "description": "Clerk's Office, secret place of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "hidden",
     "position": [
@@ -381,8 +381,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.approach",
-    "name": "Golden Palace of Laws Approach",
-    "description": "Approach of the Golden Palace of Laws.",
+    "name": "Arbiter's Avenue",
+    "description": "Arbiter's Avenue, approach of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "battle",
     "position": [
@@ -413,8 +413,8 @@
   },
   {
     "id": "node.golden_palace_of_laws.throne",
-    "name": "Golden Palace of Laws Throne",
-    "description": "Throne of the Golden Palace of Laws.",
+    "name": "Seat of Laws",
+    "description": "Seat of Laws, throne of the Golden Palace of Laws.",
     "region": "region.golden_palace_of_laws",
     "kind": "boss",
     "position": [

@@ -29,7 +29,7 @@ const regions = regionsOf(c);
 /** A mid-game save: region n archetype, story seen, optional Dao companions. */
 export function labState(n: number, arch: "fitted" | "geared" = "geared", companions: string[] = []): GameState {
   const s = makePlayer(c, n, arch, 1);
-  for (const sc of c.byPrefix<any>("scene")) s.progress.storySeen[sc.id] = T0;
+  for (const sc of c.byPrefix<any>("story")) s.progress.storySeen[sc.id] = T0;
   s.companions.bonded = [...companions]; s.companions.active = [...companions];
   s.progress.hintsSeen = Object.keys((globalThis as any).HELP ?? {});
   return s;
@@ -143,7 +143,84 @@ async function bossIntro(name: string, n: number, src: any) {
   await shot(`${name}-end`);
 }
 
+/** Mid-game sweep: every system screen with real content (region 6, geared), one screenshot each. */
+async function sweep() {
+  const st = labState(6, "geared", ["npc.bai_lingshuang", "npc.tang_xiaoman"]);
+  st.resources.sect_fame = 2500; st.resources.spirit_stones = 48_000;
+  // some bag content, a beast and a few achievements
+  await boot(st, "sect");
+  await dismiss();
+  await page.evaluate(() => {
+    const ia = (window as any).__ia; const s = ia.game.state; const c = ia.content;
+    for (const id of ["mat.spirit_grass", "mat.spirit_iron_ore", "cons.qi_gathering_pill", "cons.foundation_pill", "mat.frost_beast_core", "gift.osmanthus_cake", "junk.cheap_junk_loot"]) if (c.has(id)) s.inventory.stacks[id] = (s.inventory.stacks[id] ?? 0) + 7;
+    const egg = c.byPrefix("egg")[0]; if (egg) s.inventory.stacks[egg.id] = 2;
+    ia.app.router.refresh();
+  });
+  const sect = async (name: string, loc: string, activity: string | null, sel: string) => {
+    await page.locator(".nav button", { hasText: "Sect" }).click(); await page.waitForTimeout(300);
+    await page.locator(".nav button", { hasText: "Sect" }).click(); await page.waitForTimeout(300);
+    await page.locator(".sect-pin", { hasText: loc }).click(); await page.waitForTimeout(500);
+    if (activity) { await page.locator(".setrow:not(.glass)", { hasText: activity }).last().click(); await page.waitForSelector(sel, { timeout: 10_000 }); }
+    await page.waitForTimeout(600); await shot(name);
+  };
+  await sect("sw-forge-enhance", "Spirit Forge", "Spirit forge", ".forge-tabs");
+  for (const t of ["Refine", "Reforge", "Awaken", "Craft"]) { await page.locator(".ftab", { hasText: t }).click(); await page.waitForTimeout(500); await shot(`sw-forge-${t.toLowerCase()}`); }
+  await sect("sw-alchemy", "Alchemy Hall", "Alchemy furnace", ".alch-ring");
+  await sect("sw-arena", "Proving Arena", "Tournaments", ".bracket");
+  await sect("sw-beasts", "Spirit Beast Garden", "Beast garden", ".beast-grid");
+  await sect("sw-merchant", "Merchant Pavilion", "Merchant", ".shop-grid");
+  await sect("sw-scripture", "Scripture Pavilion", "Scripture stacks", ".manual-list");
+  await sect("sw-missions", "Mission Hall", "Mission board", ".quest-card, .board-head");
+  await sect("sw-quarters", "Your Quarters", null, "");
+  for (const [tab, name] of [["Cultivate", "sw-cultivate"], ["Character", "sw-character"], ["Inventory", "sw-inventory"], ["Adventure", "sw-adventure"]] as const) {
+    await page.locator(".nav button", { hasText: tab }).click(); await page.waitForTimeout(300); await page.locator(".nav button", { hasText: tab }).click(); await page.waitForTimeout(600); await shot(name);
+  }
+  await page.locator(".region-card").nth(5).click(); await page.waitForTimeout(700); await shot("sw-region6");
+  await page.locator(".node-pin").nth(3).click({ force: true }); await page.waitForTimeout(500); await shot("sw-node-card");
+  await page.locator(".back").click(); await page.waitForTimeout(400);
+  await page.locator(".chips .chip", { hasText: "Dungeons" }).click(); await page.waitForTimeout(600); await shot("sw-dungeons");
+  await page.locator(".nav button", { hasText: "Character" }).click(); await page.waitForTimeout(300);
+  await page.locator(".btn", { hasText: "Techniques" }).click(); await page.waitForTimeout(500); await shot("sw-techniques");
+  await page.locator(".nav button", { hasText: "Cultivate" }).click(); await page.waitForTimeout(300);
+  await page.locator(".cult-tile", { hasText: "Quests" }).click(); await page.waitForTimeout(500); await shot("sw-quests");
+  await page.locator(".btn", { hasText: "Achievements" }).click(); await page.waitForTimeout(500); await shot("sw-achievements");
+}
+
+/** Tribulation: the fitted player at stage 9 faces the realm's lightning. */
+async function tribulation() {
+  const st = labState(3, "geared"); st.character.stage = 9;
+  await boot(st, "cultivate"); await dismiss();
+  const id = await page.evaluate(() => { const ia = (window as any).__ia; const t = ia.content.byPrefix("tribulation").find((x: any) => x.realm === ia.content.nextRealm(ia.game.state.character.realm)?.id) ?? ia.content.byPrefix("tribulation")[0]; return t.id; });
+  await page.evaluate((tid) => { const ia = (window as any).__ia; const s = ia.game.state; s.combat.manual = false; s.combat.speed = 1; s.progress.tribulations[tid] = { attempts: 0 }; ia.dev.fight({ kind: "tribulation", id: tid }); }, id);
+  await page.waitForSelector(".battle");
+  await page.waitForTimeout(900); await shot("trib-0-intro");
+  await page.waitForSelector(".bt-lightning", { timeout: 60_000 }).catch(() => {});
+  await page.waitForTimeout(120); await shot("trib-1-bolts");
+  await page.waitForTimeout(2500); await shot("trib-2-mid");
+  await page.waitForSelector(".modal-backdrop", { timeout: 180_000 }).catch(() => {});
+  await page.waitForTimeout(700); await shot("trib-3-end");
+}
+
+/** Defeat: a bare player sent against a much stronger place. */
+async function defeat() {
+  const st = labState(1, "fitted"); st.character.stage = 1; st.techniques.actives = [st.techniques.actives[0] ?? null, null, null, null];
+  await boot(st, "adventure"); await dismiss();
+  await page.evaluate(() => { const ia = (window as any).__ia; const s = ia.game.state; s.combat.manual = false; s.combat.speed = 3; const n = ia.content.byPrefix("node").find((x: any) => x.region === "region.blazing_mountain" && x.kind === "boss"); s.progress.regions["region.blazing_mountain"] ??= { discoveredAt: 0, nodes: {} }; s.progress.regions["region.azure_bamboo_forest"] ??= { discoveredAt: 0, nodes: {} }; ia.dev.fight({ kind: "node", id: n.id }); });
+  await page.waitForSelector(".battle");
+  for (let i = 0; i < 5; i++) {
+    await page.waitForSelector(".modal-backdrop", { timeout: 180_000 });
+    const next = page.locator(".modal-backdrop .btn", { hasText: "Next wave" });
+    if (await next.count()) { await next.click(); await page.waitForTimeout(500); continue; }
+    break;
+  }
+  await page.waitForTimeout(700); await shot("defeat-1");
+  await page.evaluate(() => document.querySelector(".modal")!.scrollTo(0, 9999)); await page.waitForTimeout(300); await shot("defeat-2");
+}
+
 const SCEN: Record<string, () => Promise<void>> = {
+  defeat,
+  tribulation,
+  sweep,
   bossintro: () => bossIntro("bossintro", 1, { kind: "node", id: nodeOf(1, "boss") }),
   waterfall: () => screen("waterfall", 2, `(async () => { const m = await import("./app.js").catch(() => null); })()`, { tab: "sect", mutate: (s) => { s.resources.sect_fame = 600; } }).then(async () => {
     await page.locator(".sect-pin", { hasText: "Meditation Waterfall" }).click(); await page.waitForTimeout(700); await page.locator(".med").scrollIntoViewIfNeeded(); await page.waitForTimeout(300); await shot("waterfall-setup");

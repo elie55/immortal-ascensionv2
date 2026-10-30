@@ -1362,7 +1362,7 @@
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head of a tall white crane crackling with blue lightning along its wings. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head of a majestic spirit crane with wide-spread wings, long feathers edged in sapphire light, a red crown and golden beak, arcs of blue lightning crackling between its wing tips, hovering mid-air. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -1376,7 +1376,7 @@
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a tall white crane crackling with blue lightning along its wings, dynamic idle pose facing left, the whole animal in frame from head to tail, a lone creature with no humans, riders or people, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a majestic spirit crane with wide-spread wings, long feathers edged in sapphire light, a red crown and golden beak, arcs of blue lightning crackling between its wing tips, hovering mid-air, dynamic idle pose facing left, the whole animal in frame from head to tail, a lone creature with no humans, riders or people, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"

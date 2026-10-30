@@ -7,7 +7,7 @@ import type { ContentIndex } from "../content/index.ts";
 import { seedRng } from "./rng.ts";
 import { grantGear } from "./inventory.ts";
 
-export const STATE_VERSION = 6;
+export const STATE_VERSION = 7;
 
 export const GearInstanceSchema = z.object({
   base: z.string(), rarity: z.string(), ilvl: z.number().int(), enhance: z.number().int().min(0).max(15),
@@ -68,6 +68,8 @@ export const GameStateSchema = z.object({
     permanent: z.record(z.string(), z.number()),   // permanent stat gains from elixirs
     breakthroughBonus: z.number().min(0),          // success bonus banked from a breakthrough pill
     cooldowns: z.record(z.string(), z.number()),   // consumable id → usable again at (ms)
+    /** Every root the character has had, oldest first (mockup spirit_root "Root history"). */
+    rootHistory: z.array(z.object({ root: z.string(), at: z.number(), source: z.string() })).default([]),
   }),
   techniques: z.object({
     known: z.record(z.string(), z.number().min(0)),           // tech id → mastery xp
@@ -164,7 +166,7 @@ export function newGameState(content: ContentIndex, now: number, opts: { name?: 
     character: {
       name: opts.name ?? content.get(s.character).name, npc: s.character, realm: s.realm.id, stage: s.realm.stage, qi: 0,
       root: s.root, method: s.method, methodMastery: { [s.method]: 0 }, rank: s.rank, titles: [],
-      permanent: {}, breakthroughBonus: 0, cooldowns: {},
+      permanent: {}, breakthroughBonus: 0, cooldowns: {}, rootHistory: [{ root: s.root, at: now, source: "origin" }],
     },
     techniques: { known: Object.fromEntries(s.techniques.map((t) => [t, 0])), actives: [s.techniques[0] ?? null, null, null, null], passives: [null, null], ultimate: null },
     resources: { spirit_stones: s.spirit_stones, sect_fame: s.sect_fame, contribution: 0, energy: { value: rules.energy.max, updatedAt: now } },

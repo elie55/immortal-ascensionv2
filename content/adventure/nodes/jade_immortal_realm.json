@@ -1,8 +1,8 @@
 [
   {
     "id": "node.jade_immortal_realm.entry",
-    "name": "Jade Immortal Realm Border",
-    "description": "Border of the Jade Immortal Realm.",
+    "name": "Jade Steps",
+    "description": "Jade Steps, border of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.jade_immortal_realm.gathering",
-    "name": "Jade Immortal Realm Gathering Grounds",
-    "description": "Gathering Grounds of the Jade Immortal Realm.",
+    "name": "Peach Orchard",
+    "description": "Peach Orchard, gathering grounds of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.jade_immortal_realm.outskirts",
-    "name": "Jade Immortal Realm Outskirts",
-    "description": "Outskirts of the Jade Immortal Realm.",
+    "name": "Garden Walls",
+    "description": "Garden Walls, outskirts of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.jade_immortal_realm.west_path",
-    "name": "Jade Immortal Realm Western Trail",
-    "description": "Western Trail of the Jade Immortal Realm.",
+    "name": "Tiger Path",
+    "description": "Tiger Path, western trail of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.jade_immortal_realm.cache",
-    "name": "Jade Immortal Realm Hidden Cache",
-    "description": "Hidden Cache of the Jade Immortal Realm.",
+    "name": "Jade Cache",
+    "description": "Jade Cache, hidden cache of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.jade_immortal_realm.east_path",
-    "name": "Jade Immortal Realm Eastern Trail",
-    "description": "Eastern Trail of the Jade Immortal Realm.",
+    "name": "Lotus Pond Walk",
+    "description": "Lotus Pond Walk, eastern trail of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.jade_immortal_realm.lair",
-    "name": "Jade Immortal Realm Lair",
-    "description": "Lair of the Jade Immortal Realm.",
+    "name": "Guardian's Garden",
+    "description": "Guardian's Garden, lair of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.jade_immortal_realm.crossroads",
-    "name": "Jade Immortal Realm Crossroads",
-    "description": "Crossroads of the Jade Immortal Realm.",
+    "name": "Four Gardens",
+    "description": "Four Gardens, crossroads of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.jade_immortal_realm.ridge",
-    "name": "Jade Immortal Realm Ridge",
-    "description": "Ridge of the Jade Immortal Realm.",
+    "name": "Jade Ridge",
+    "description": "Jade Ridge, ridge of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.jade_immortal_realm.deep_path",
-    "name": "Jade Immortal Realm Deep Path",
-    "description": "Deep Path of the Jade Immortal Realm.",
+    "name": "Immortal Peach Road",
+    "description": "Immortal Peach Road, deep path of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.jade_immortal_realm.sanctum",
-    "name": "Jade Immortal Realm Sanctum",
-    "description": "Sanctum of the Jade Immortal Realm.",
+    "name": "Peach Keeper's Pavilion",
+    "description": "Peach Keeper's Pavilion, sanctum of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "cultivation",
     "position": [
@@ -321,8 +321,8 @@
   },
   {
     "id": "node.jade_immortal_realm.den",
-    "name": "Jade Immortal Realm Den",
-    "description": "Den of the Jade Immortal Realm.",
+    "name": "Exile's Hermitage",
+    "description": "Exile's Hermitage, den of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "elite",
     "position": [
@@ -357,8 +357,8 @@
   },
   {
     "id": "node.jade_immortal_realm.hidden_grove",
-    "name": "Jade Immortal Realm Secret Place",
-    "description": "Secret Place of the Jade Immortal Realm.",
+    "name": "Mei's Grove",
+    "description": "Mei's Grove, secret place of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "hidden",
     "position": [
@@ -381,8 +381,8 @@
   },
   {
     "id": "node.jade_immortal_realm.approach",
-    "name": "Jade Immortal Realm Approach",
-    "description": "Approach of the Jade Immortal Realm.",
+    "name": "White Tiger's Walk",
+    "description": "White Tiger's Walk, approach of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "battle",
     "position": [
@@ -413,8 +413,8 @@
   },
   {
     "id": "node.jade_immortal_realm.throne",
-    "name": "Jade Immortal Realm Throne",
-    "description": "Throne of the Jade Immortal Realm.",
+    "name": "Peach Tree Throne",
+    "description": "Peach Tree Throne, throne of the Jade Immortal Realm.",
     "region": "region.jade_immortal_realm",
     "kind": "boss",
     "position": [

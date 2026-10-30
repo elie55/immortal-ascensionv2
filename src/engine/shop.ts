@@ -28,6 +28,28 @@ export function periodKey(restock: Shop["restock"], now: number): string {
 }
 
 /** Ms until the next restock (null when stock never returns). */
+/** Rumours (mockup merchant_pavilion): bought once per save; the answer is then readable from the shop and the NPC's topics. */
+export function rumourState(s: GameState, c: ContentIndex, shopId: string) {
+  const shop = c.get<Shop>(shopId);
+  return (shop.rumours ?? []).map((r) => {
+    const known = (s.relations[r.about]?.topics ?? []).includes(`rumour:${r.id}`);
+    const aff = s.relations[shop.owner ?? ""]?.affinity ?? 0;
+    const locked = r.unlock.sect_fame && s.resources.sect_fame < r.unlock.sect_fame ? `${r.unlock.sect_fame} Fame` : r.unlock.affinity && aff < r.unlock.affinity ? `Affinity ${r.unlock.affinity}` : null;
+    return { ...r, known, locked };
+  });
+}
+export function buyRumour(s: GameState, c: ContentIndex, shopId: string, id: string): ActionResult<{ answer: string }> {
+  const r = rumourState(s, c, shopId).find((x) => x.id === id);
+  if (!r) return { ok: false, reason: "No such rumour" };
+  if (r.known) return { ok: true, events: [], answer: r.answer };
+  if (r.locked) return { ok: false, reason: `Needs ${r.locked}` };
+  if (s.resources.spirit_stones < r.price) return { ok: false, reason: "Not enough spirit stones" };
+  s.resources.spirit_stones -= r.price;
+  const rel = (s.relations[r.about] ??= { affinity: 0, giftsToday: 0, topics: [] });
+  rel.topics.push(`rumour:${r.id}`);
+  return { ok: true, events: [{ type: "talk", npc: r.about, topic: `rumour:${r.id}` }], answer: r.answer };
+}
+
 export function restockIn(shop: Shop, now: number): number | null {
   const len = shop.restock === "daily" ? 86_400_000 : shop.restock === "weekly" ? 7 * 86_400_000 : shop.restock === "per_visit" ? VISIT_HOURS * 3_600_000 : 0;
   if (!len) return null;

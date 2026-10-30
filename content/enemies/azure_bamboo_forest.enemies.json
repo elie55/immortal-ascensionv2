@@ -173,7 +173,7 @@
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head of a coiled bright green viper with golden eyes and dripping fangs. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head of a large emerald-scaled spirit viper rearing up in an S-curve with a hooded head, slit golden eyes, long dripping fangs, jade-patterned scales and a faint green venom mist, realistic serpent anatomy. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"
@@ -187,7 +187,7 @@
           1024
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a coiled bright green viper with golden eyes and dripping fangs, dynamic idle pose facing left, the whole animal in frame from head to tail, a lone creature with no humans, riders or people, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a large emerald-scaled spirit viper rearing up in an S-curve with a hooded head, slit golden eyes, long dripping fangs, jade-patterned scales and a faint green venom mist, realistic serpent anatomy, dynamic idle pose facing left, the whole animal in frame from head to tail, a lone creature with no humans, riders or people, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/battle_screen.png"

@@ -61,6 +61,8 @@ export const migrations: Record<number, (raw: any) => any> = {
     inventory: { ...st.inventory, depot: st.inventory?.depot ?? { stacks: {}, gear: [] }, pouch: st.inventory?.pouch ?? { stacks: {}, gear: [] }, bagExpansions: st.inventory?.bagExpansions ?? 0, depotExpansions: st.inventory?.depotExpansions ?? 0 },
     progress: { ...st.progress, quests: { ...st.progress?.quests, tracked: st.progress?.quests?.tracked ?? null }, hintsSeen: st.progress?.hintsSeen ?? [] },
   }),
+  // 6 → 7: root history
+  6: (st) => ({ ...st, character: { ...st.character, rootHistory: st.character?.rootHistory ?? [{ root: st.character?.root, at: st.meta?.createdAt ?? 0, source: "origin" }] } }),
 };
 
 export function encode(state: GameState, slot: number, savedAt: number): string {

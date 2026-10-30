@@ -8,7 +8,7 @@ import type { ContentIndex, MapNode, Dungeon, Tribulation, Npc, Tournament } fro
 import type { GameState } from "./state.ts";
 import type { DomainEvent } from "./events.ts";
 import type { Result } from "./inventory.ts";
-import { energyNow, spendEnergy } from "./cultivation.ts";
+import { energyNow, spendEnergy, qiNeeded } from "./cultivation.ts";
 import { checkUnlock, realmAtLeast } from "./unlock.ts";
 import { computeStats } from "./stats.ts";
 import { addMasteryXp, grantRewards } from "./actions.ts";
@@ -34,7 +34,7 @@ export type EncounterSource =
 export interface WaveResult { summary: BattleSummary; drops: Drops; gearUids: number[] }
 export interface EncounterResult {
   won: boolean; source: EncounterSource; waves: WaveResult[]; total: Drops; firstClear?: Record<string, unknown>;
-  masteryXp: number; recommendations: string[]; enemyCp: number; playerCp: number;
+  masteryXp: number; recommendations: Advice[]; enemyCp: number; playerCp: number;
 }
 
 const emptyDrops = (): Drops => ({ items: [], gear: [], spirit_stones: 0, sect_fame: 0, mastery_xp: 0 });
@@ -345,15 +345,36 @@ export function buildDuelist(c: ContentIndex, npcId: string, cp?: number): Comba
   return buildEnemyFrom(c, npcId, { name: npc.name, element: npc.elements?.[0] ?? "elem.metal", realm: npc.realm ?? { id: "realm.qi_condensation" }, stats, cp: target, techniques: techniques.length ? techniques : ["tech.active.flame_palm"], ai: { strategy: npc.duel?.strategy ?? "aggressive", rules: [] } }, { kind: "enemy", art: c.artAny(npcId, "battle", "full_body") });
 }
 
-function recommend(s: GameState, c: ContentIndex, playerCp: number, enemyCp: number): string[] {
-  const out: string[] = [];
-  if (enemyCp > playerCp * 1.3) out.push("Cultivate further: the enemy's power is well above yours.");
+/** One "way to get stronger" on the defeat screen (mockup defeat): what to do, where, and what it is worth. */
+export interface Advice { title: string; detail: string; gain: string; go: "cultivate" | "character" | "inventory" | "forge" | "pavilion" | "beasts" | "autobattle" | "adventure"; icon: string }
+
+function recommend(s: GameState, c: ContentIndex, playerCp: number, enemyCp: number): Advice[] {
+  const out: Advice[] = [];
   const st = computeStats(s, c).total;
-  const slotsEmpty = ["weapon", "armor", "helmet", "boots", "necklace", "ring_1"].filter((k) => s.equipped[k] === undefined).length;
-  if (slotsEmpty) out.push(`Equip gear in your ${slotsEmpty} empty slot${slotsEmpty > 1 ? "s" : ""}.`);
-  if (s.techniques.actives.filter(Boolean).length < 2) out.push("Learn more techniques at the Scripture Pavilion.");
-  if (!s.techniques.actives.some((t) => t && (c.get<any>(t).heal_pct || c.get<any>(t).shield_pct_max_hp))) out.push("Add a defensive technique (shield or healing) to your loadout.");
-  if ((st.def ?? 0) < (st.atk ?? 0) * 0.3) out.push("Your Defense is low: upgrade armor and helmet.");
-  if (!s.beasts.active) out.push("Hatch and train a spirit beast to fight at your side.");
+  const realm = c.get<any>(s.character.realm);
+  // 1. cultivation: the next stage, with the Qi still needed
+  if (enemyCp > playerCp * 1.15 || s.character.stage < 9) {
+    const need = Math.max(0, Math.ceil(qiNeeded(realm, Math.min(9, s.character.stage + 1)) - s.character.qi));
+    out.push(s.character.stage < 9
+      ? { title: `Break through to ${realm.name} ${s.character.stage + 1}`, detail: need > 0 ? `${need.toLocaleString("en-US")} more Qi · Cultivate tab` : "Ready now · Cultivate tab", gain: "+stats", go: "cultivate", icon: "lotus" }
+      : { title: `Attempt the ${c.nextRealm(realm.id)?.name ?? "next realm"} breakthrough`, detail: "Major breakthrough · Cultivate tab", gain: "big", go: "cultivate", icon: "lotus" });
+  }
+  // 2. gear: empty slots, then the weakest worn piece to enhance
+  const slots = ["weapon", "armor", "helmet", "boots", "necklace", "ring_1", "ring_2"].filter((k) => k !== "artifact");
+  const empty = slots.filter((k) => s.equipped[k] === undefined);
+  if (empty.length) out.push({ title: `Equip your ${empty.length} empty slot${empty.length > 1 ? "s" : ""}`, detail: "Drops, the Merchant Pavilion and the Forge all provide gear · Character tab", gain: `+${empty.length * 6}% CP`, go: "character", icon: "robe" });
+  else {
+    const worn = Object.entries(s.equipped).map(([k, u]) => [k, s.inventory.gear[u!]] as const).filter(([, g]) => g).sort((a, b) => a[1]!.enhance - b[1]!.enhance)[0];
+    if (worn && worn[1]!.enhance < 15) out.push({ title: `Enhance ${c.get<any>(worn[1]!.base).name} to +${worn[1]!.enhance + 1}`, detail: "Spirit Forge · Enhance", gain: "+CP", go: "forge", icon: "sword" });
+  }
+  // 3. techniques
+  const actives = s.techniques.actives.filter(Boolean) as string[];
+  if (actives.length < 4) out.push({ title: "Fill your technique slots", detail: `${4 - actives.length} empty · Scripture Pavilion, manuals, tournaments`, gain: "more options", go: "pavilion", icon: "scroll" });
+  else if (!actives.some((t) => c.get<any>(t).heal_pct || c.get<any>(t).shield_pct_max_hp)) out.push({ title: "Add a shield or healing technique", detail: "Earth Guardian or Ripple Mending · Scripture Pavilion", gain: "survive big hits", go: "pavilion", icon: "shield" });
+  else if (enemyCp > playerCp) out.push({ title: "Shield before the big attack lands", detail: "Auto-battle rule: Shield when 'Big attack coming'", gain: "absorbs a heavy hit", go: "autobattle", icon: "shield" });
+  // 4. stats and companions
+  if ((st.def ?? 0) < (st.atk ?? 0) * 0.3) out.push({ title: "Raise your Defense", detail: "Armor and helmet upgrades · Spirit Forge", gain: "take less damage", go: "forge", icon: "helmet" });
+  if (s.beasts.active === null) out.push({ title: "Hatch a spirit beast", detail: "Eggs drop from battles · Spirit Beast Garden", gain: "an extra fighter", go: "beasts", icon: "paw" });
+  else if (enemyCp > playerCp * 1.3) out.push({ title: "Hunt an easier place first", detail: "Green Rec. CP places pay gear for this one", gain: "safer drops", go: "adventure", icon: "map" });
   return out.slice(0, 4);
 }

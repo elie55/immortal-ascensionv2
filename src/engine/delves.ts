@@ -18,7 +18,7 @@ import type { DomainEvent } from "./events.ts";
 import type { ActionResult } from "./actions.ts";
 import { grantRewards } from "./actions.ts";
 import { checkUnlock } from "./unlock.ts";
-import { energyNow, spendEnergy } from "./cultivation.ts";
+import { energyNow, spendEnergy, transformRoot } from "./cultivation.ts";
 import { rollTable, grantDrops } from "./loot.ts";
 import { computeStats } from "./stats.ts";
 import { weightedIndex } from "./rng.ts";
@@ -201,7 +201,7 @@ export function realmInteract(s: GameState, c: ContentIndex, id: string, key: st
       if (!ch) return fail("Choose an option");
       const o = ch.outcomes[Math.max(0, weightedIndex(s.rng, ch.outcomes.map((x) => x.chance)))]!;
       if (o.rewards) grantRewards(s, c, o.rewards as any, events);
-      if (o.root_transform && c.has(o.root_transform)) { s.character.root = o.root_transform; events.push({ type: "unlock", id: o.root_transform }); }
+      if (o.root_transform) transformRoot(s, c, o.root_transform, `realm:${id}`, now, events);
       if (n.kind === "hidden" && !run.found.includes(key)) run.found.push(key);
       if (o.battle?.length) return { ok: true, events, text: o.text, battle: o.battle };
       markCleared(s, id, key, n.kind, events);

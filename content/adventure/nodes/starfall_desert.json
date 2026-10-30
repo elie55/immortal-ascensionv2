@@ -1,8 +1,8 @@
 [
   {
     "id": "node.starfall_desert.entry",
-    "name": "Starfall Desert Border",
-    "description": "Border of the Starfall Desert.",
+    "name": "Caravan Gate",
+    "description": "Caravan Gate, border of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.starfall_desert.gathering",
-    "name": "Starfall Desert Gathering Grounds",
-    "description": "Gathering Grounds of the Starfall Desert.",
+    "name": "Star Glass Dunes",
+    "description": "Star Glass Dunes, gathering grounds of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.starfall_desert.outskirts",
-    "name": "Starfall Desert Outskirts",
-    "description": "Outskirts of the Starfall Desert.",
+    "name": "Mirage Flats",
+    "description": "Mirage Flats, outskirts of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.starfall_desert.west_path",
-    "name": "Starfall Desert Western Trail",
-    "description": "Western Trail of the Starfall Desert.",
+    "name": "Nomad Trail",
+    "description": "Nomad Trail, western trail of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.starfall_desert.cache",
-    "name": "Starfall Desert Hidden Cache",
-    "description": "Hidden Cache of the Starfall Desert.",
+    "name": "Buried Cache",
+    "description": "Buried Cache, hidden cache of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.starfall_desert.east_path",
-    "name": "Starfall Desert Eastern Trail",
-    "description": "Eastern Trail of the Starfall Desert.",
+    "name": "Scarab Road",
+    "description": "Scarab Road, eastern trail of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.starfall_desert.lair",
-    "name": "Starfall Desert Lair",
-    "description": "Lair of the Starfall Desert.",
+    "name": "Sand Wyrm Hollow",
+    "description": "Sand Wyrm Hollow, lair of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.starfall_desert.crossroads",
-    "name": "Starfall Desert Crossroads",
-    "description": "Crossroads of the Starfall Desert.",
+    "name": "Oasis Cross",
+    "description": "Oasis Cross, crossroads of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.starfall_desert.ridge",
-    "name": "Starfall Desert Ridge",
-    "description": "Ridge of the Starfall Desert.",
+    "name": "Meteor Ridge",
+    "description": "Meteor Ridge, ridge of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.starfall_desert.deep_path",
-    "name": "Starfall Desert Deep Path",
-    "description": "Deep Path of the Starfall Desert.",
+    "name": "Pharaoh's Way",
+    "description": "Pharaoh's Way, deep path of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.starfall_desert.sanctum",
-    "name": "Starfall Desert Sanctum",
-    "description": "Sanctum of the Starfall Desert.",
+    "name": "Temple of Stars",
+    "description": "Temple of Stars, sanctum of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "secret_realm",
     "position": [
@@ -317,8 +317,8 @@
   },
   {
     "id": "node.starfall_desert.den",
-    "name": "Starfall Desert Den",
-    "description": "Den of the Starfall Desert.",
+    "name": "Golem Yard",
+    "description": "Golem Yard, den of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "elite",
     "position": [
@@ -353,8 +353,8 @@
   },
   {
     "id": "node.starfall_desert.hidden_grove",
-    "name": "Starfall Desert Secret Place",
-    "description": "Secret Place of the Starfall Desert.",
+    "name": "Princess's Tent",
+    "description": "Princess's Tent, secret place of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "hidden",
     "position": [
@@ -377,8 +377,8 @@
   },
   {
     "id": "node.starfall_desert.approach",
-    "name": "Starfall Desert Approach",
-    "description": "Approach of the Starfall Desert.",
+    "name": "Sphinx Avenue",
+    "description": "Sphinx Avenue, approach of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "battle",
     "position": [
@@ -409,8 +409,8 @@
   },
   {
     "id": "node.starfall_desert.throne",
-    "name": "Starfall Desert Throne",
-    "description": "Throne of the Starfall Desert.",
+    "name": "Pharaoh's Vault",
+    "description": "Pharaoh's Vault, throne of the Starfall Desert.",
     "region": "region.starfall_desert",
     "kind": "boss",
     "position": [

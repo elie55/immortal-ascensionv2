@@ -89,10 +89,9 @@ export function missionHallScreen(app: App, giver = "sectloc.mission_hall"): Scr
       const active = list.filter((x) => x.st === "active" || x.st === "ready").length;
       return [
         header(app),
-        subbar({ help: { app, key: "missions" }, title: loc.name, cn: loc.name_cn, sub: "Requests from masters & seniors", backTo: "Sect", onBack: () => app.router.back(),
-          end: rank && h("div", { class: "fame-mini" }, h("div", { class: "muted" }, "Sect Fame"), bar(s.resources.sect_fame / rank.rank.fame_required, { cls: "gold thin" }), h("div", { class: "tnum gold-t" }, `${fmt.int(s.resources.sect_fame)} / ${fmt.int(rank.rank.fame_required)}`)) }),
-        h("div", { class: "board-head" }, h("div", null, h("div", { class: "board-t" }, "Request Board", h("span", { class: "cn" }, "悬赏榜")), h("div", { class: "muted" }, "Deliver materials from your adventures to earn Fame")),
-          h("span", { class: "glass tag" }, `Taken ${active}/${list.length}`)),
+        subbar({ help: { app, key: "missions" }, title: loc.name, cn: loc.name_cn, sub: "Requests from masters & seniors", backTo: "Sect", onBack: () => app.router.back() }),
+        h("div", { class: "board-head" }, h("div", { class: "grow" }, h("div", { class: "board-t" }, "Request Board", h("span", { class: "cn" }, "悬赏榜")), h("div", { class: "board-sub" }, "Deliver materials from your adventures to earn Fame")),
+          h("div", { class: "board-side" }, h("span", { class: "glass tag" }, `Taken ${active}/${list.length}`), rank && h("div", { class: "glass fame-mini" }, h("div", { class: "muted" }, icon("fame", 11), " Sect Fame"), bar(Math.min(1, s.resources.sect_fame / rank.rank.fame_required), { cls: "gold thin" }), h("div", { class: "tnum gold-t" }, `${fmt.int(s.resources.sect_fame)} / ${fmt.int(rank.rank.fame_required)}`)))),
         list.length ? list.map((x) => questCard(app, x.q, { where: giver })) : h("div", { class: "glass panel center muted" }, "No requests right now. Explore new regions and rise in rank for more."),
       ];
     },
@@ -148,6 +147,10 @@ export function achievementsScreen(app: App): Screen {
       return [
         header(app),
         subbar({ title: "Achievements", cn: "成就", sub: `${done} / ${list.length} unlocked`, backTo: "Quests", onBack: () => app.router.back() }),
+        h("div", { class: "glass panel ach-hero" },
+          h("span", { class: "ach-trophy", style: app.ui("ui.icons", "sect_fame") ? { backgroundImage: app.img(app.ui("ui.icons", "sect_fame")) } : undefined }, !app.ui("ui.icons", "sect_fame") && icon("fame", 26)),
+          h("div", { class: "grow" }, h("div", { class: "ach-hero-t" }, "Path of the Cultivator"), h("div", { class: "muted" }, `${done} earned · ${list.length - done} remaining`), bar(done / Math.max(1, list.length), { cls: "thin gold", label: `${Math.round(done / Math.max(1, list.length) * 100)}%` })),
+          h("div", { class: "ach-pct" }, h("b", null, String(done)), h("span", { class: "muted" }, `/ ${list.length}`))),
         h("div", { class: "chips scroll-x" }, cats.map((k) => h("button", { class: ["chip", k === cat && "on"], onClick: () => { cat = k; app.router.refresh(); } }, k === "all" ? "All" : k[0]!.toUpperCase() + k.slice(1)))),
         h("div", { class: "rows" }, shown.map((a) => {
           const got = s.progress.achievements[a.id];

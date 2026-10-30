@@ -1,8 +1,8 @@
 [
   {
     "id": "node.blazing_mountain.entry",
-    "name": "Blazing Mountain Border",
-    "description": "Border of the Blazing Mountain.",
+    "name": "Ash Foothills",
+    "description": "Ash Foothills, border of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.blazing_mountain.gathering",
-    "name": "Blazing Mountain Gathering Grounds",
-    "description": "Gathering Grounds of the Blazing Mountain.",
+    "name": "Cinder Meadow",
+    "description": "Cinder Meadow, gathering grounds of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.blazing_mountain.outskirts",
-    "name": "Blazing Mountain Outskirts",
-    "description": "Outskirts of the Blazing Mountain.",
+    "name": "Smoke Pass",
+    "description": "Smoke Pass, outskirts of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.blazing_mountain.west_path",
-    "name": "Blazing Mountain Western Trail",
-    "description": "Western Trail of the Blazing Mountain.",
+    "name": "Obsidian Stair",
+    "description": "Obsidian Stair, western trail of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.blazing_mountain.cache",
-    "name": "Blazing Mountain Hidden Cache",
-    "description": "Hidden Cache of the Blazing Mountain.",
+    "name": "Ember Hollow",
+    "description": "Ember Hollow, hidden cache of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.blazing_mountain.east_path",
-    "name": "Blazing Mountain Eastern Trail",
-    "description": "Eastern Trail of the Blazing Mountain.",
+    "name": "Lava Ford",
+    "description": "Lava Ford, eastern trail of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.blazing_mountain.lair",
-    "name": "Blazing Mountain Lair",
-    "description": "Lair of the Blazing Mountain.",
+    "name": "Salamander Nest",
+    "description": "Salamander Nest, lair of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.blazing_mountain.crossroads",
-    "name": "Blazing Mountain Crossroads",
-    "description": "Crossroads of the Blazing Mountain.",
+    "name": "Burning Crossroads",
+    "description": "Burning Crossroads, crossroads of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.blazing_mountain.ridge",
-    "name": "Blazing Mountain Ridge",
-    "description": "Ridge of the Blazing Mountain.",
+    "name": "Magma Ridge",
+    "description": "Magma Ridge, ridge of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.blazing_mountain.deep_path",
-    "name": "Blazing Mountain Deep Path",
-    "description": "Deep Path of the Blazing Mountain.",
+    "name": "Furnace Road",
+    "description": "Furnace Road, deep path of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.blazing_mountain.sanctum",
-    "name": "Blazing Mountain Sanctum",
-    "description": "Sanctum of the Blazing Mountain.",
+    "name": "Fire Shrine",
+    "description": "Fire Shrine, sanctum of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "cultivation",
     "position": [
@@ -321,8 +321,8 @@
   },
   {
     "id": "node.blazing_mountain.den",
-    "name": "Blazing Mountain Den",
-    "description": "Den of the Blazing Mountain.",
+    "name": "Lion's Crag",
+    "description": "Lion's Crag, den of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "elite",
     "position": [
@@ -357,8 +357,8 @@
   },
   {
     "id": "node.blazing_mountain.hidden_grove",
-    "name": "Blazing Mountain Secret Place",
-    "description": "Secret Place of the Blazing Mountain.",
+    "name": "Phoenix Perch",
+    "description": "Phoenix Perch, secret place of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "hidden",
     "position": [
@@ -381,8 +381,8 @@
   },
   {
     "id": "node.blazing_mountain.approach",
-    "name": "Blazing Mountain Approach",
-    "description": "Approach of the Blazing Mountain.",
+    "name": "Molten Steps",
+    "description": "Molten Steps, approach of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "battle",
     "position": [
@@ -413,8 +413,8 @@
   },
   {
     "id": "node.blazing_mountain.throne",
-    "name": "Blazing Mountain Throne",
-    "description": "Throne of the Blazing Mountain.",
+    "name": "Caldera Throne",
+    "description": "Caldera Throne, throne of the Blazing Mountain.",
     "region": "region.blazing_mountain",
     "kind": "boss",
     "position": [

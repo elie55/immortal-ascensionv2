@@ -26,7 +26,7 @@ def enemies():
         enemy("bamboo_spirit_sprite", "Bamboo Spirit Sprite", "竹灵", "construct", "wood", "qi_condensation", 3, stats(500, 58, 40, 12), 260, ["tech.active.bamboo_spike", "tech.active.stone_shell"], "defensive",
               "A knot of living bamboo animated by forest qi.", "a small humanoid figure made of green bamboo segments and leaves with glowing hollow eyes", F),
         enemy("green_viper", "Green Viper", "青蛇", "beast", "wood", "qi_condensation", 4, stats(540, 72, 24, 18, eva=12), 300, ["tech.active.venom_fang"], "trickster",
-              "A bright green viper whose bite rots the meridians.", "a coiled bright green viper with golden eyes and dripping fangs", F),
+              "A bright green viper whose bite rots the meridians.", "a large emerald-scaled spirit viper rearing up in an S-curve with a hooded head, slit golden eyes, long dripping fangs, jade-patterned scales and a faint green venom mist, realistic serpent anatomy", F),
         enemy("cloud_silk_spider", "Cloud Silk Spider", "云丝蛛", "beast", "wood", "qi_condensation", 5, stats(700, 70, 36, 11), 340, ["tech.active.web_snare", "tech.active.venom_fang"], "trickster",
               "Spins silk as white as cloud and twice as strong.", "a large pale-white spider with cloud-like silk and blue markings on its back", F),
         enemy("rime_bamboo_lynx", "Rime Bamboo Lynx", "霜竹猞猁", "beast", "water", "qi_condensation", 6, stats(900, 92, 44, 20, crit=12), 480, ["tech.active.frost_breath", "tech.active.savage_bite"], "aggressive",

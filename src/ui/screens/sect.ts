@@ -15,7 +15,7 @@ import { affinityLevel } from "../../engine/unlock.ts";
 import { computeStats } from "../../engine/stats.ts";
 import { npcScreen } from "./npc.ts";
 import { shopScreen } from "./shop.ts";
-import { missionHallScreen } from "./quests.ts";
+import { missionHallScreen, questLogScreen } from "./quests.ts";
 import { alchemyScreen } from "./alchemy.ts";
 import { forgeScreen } from "./forge.ts";
 import { arenaScreen } from "./tournament.ts";
@@ -44,6 +44,7 @@ function activity(app: AppT, f: string, loc: any): { go?: () => void; tag: strin
     case "beasts": return { go: () => app.router.push(beastsScreen(app, back)), tag: "Open", note: "Hatch eggs, raise and evolve your beasts" };
     case "storage": return { go: () => app.router.push(depotScreen(app, back)), tag: "Open", note: `Depot ${depotUsed(app.game.state)} / ${depotCapacity(app.game.state, app.content)} slots · keep what you do not carry` };
     case "rest": return { go: () => { app.game.run("rest", app.now(), (st) => { delete st.character.hp; return { ok: true, events: [] }; }, false); app.router.toast("You rest and recover fully", "good"); }, tag: "Rest", note: "Recover all HP" };
+    case "quarters": return { go: () => app.router.push(questLogScreen(app, back)), tag: "Open", note: "Your journal: quests, achievements and the story so far" };
     default: return { tag: "Soon" };
   }
 }
@@ -53,7 +54,7 @@ const FEATURE: Record<string, { label: string; icon: string; note: string }> = {
   pavilion: { label: "Scripture stacks", icon: "scroll", note: "Techniques and methods" }, meditation: { label: "Meditate here", icon: "lotus", note: "Cultivate faster at this spot" },
   merchant: { label: "Merchant", icon: "gem", note: "Buy and sell goods" }, alchemy: { label: "Alchemy furnace", icon: "cauldron", note: "Refine pills" },
   forge: { label: "Spirit forge", icon: "sword", note: "Forge, enhance and refine gear" }, beasts: { label: "Beast garden", icon: "paw", note: "Hatch and raise spirit beasts" },
-  quarters: { label: "Your quarters", icon: "temple", note: "Rest and decorate" }, storage: { label: "Storage chest", icon: "pouch", note: "Personal storage" }, rest: { label: "Rest", icon: "clock", note: "Recover HP" },
+  quarters: { label: "Journal", icon: "scroll", note: "Quests, achievements and the story so far" }, storage: { label: "Storage chest", icon: "pouch", note: "Personal storage" }, rest: { label: "Rest", icon: "clock", note: "Recover HP" },
   tournament: { label: "Tournaments", icon: "fame", note: "Climb the sect rankings" },
 };
 

@@ -826,7 +826,12 @@
         "text": "Sit on the throne.",
         "outcomes": [
           {
-            "chance": 0.5,
+            "chance": 0.12,
+            "text": "The five elements answer as one. Your root transforms!",
+            "root_transform": "root.five_elements"
+          },
+          {
+            "chance": 0.38,
             "text": "Fortune favours you.",
             "rewards": {
               "items": [

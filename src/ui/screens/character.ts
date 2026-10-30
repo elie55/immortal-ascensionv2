@@ -53,7 +53,7 @@ export function characterScreen(app: App) {
     hintBar(app, "character"),
     h("div", { class: "row char-chips" },
       h("span", { class: "glass chip-pill" }, icon("qi", 14), `${realm.name} · Stage ${s.character.stage}`),
-      h("span", { class: "glass chip-pill" }, icon("root", 14), root.name), helpButton(app, "character")),
+      h("button", { class: "glass chip-pill root-chip", onClick: () => rootSheet(app) }, icon("root", 14), root.name, icon("chevron", 12)), helpButton(app, "character")),
     h("div", { class: "char-stage" },
       h("div", { class: "eq-col" }, LEFT.map(slot)),
       h("div", { class: "char-figure", style: { backgroundImage: app.img(c.artAny(s.character.npc, "full_body")) } }, h("div", { class: "char-aura" })),
@@ -72,6 +72,40 @@ export function characterScreen(app: App) {
         h("span", { class: "attr-ico", style: { background: ATTR_COLOR[k] } }, icon(ATTR_INFO[k]!.icon, 13)),
         h("span", { class: "grow" }, ATTR_INFO[k]!.label), h("b", { class: "tnum" }, attrValue(k, stats.total[k] ?? 0)), icon("info", 12))))),
   ];
+}
+
+/** Spirit Root sheet (mockup spirit_root): the root with its art, Qi multiplier, elements, history and rare opportunities. */
+export function rootSheet(app: App) {
+  app.router.open({ id: "root", kind: "sheet", cls: "tall", render: () => {
+    const s = app.game.state, c = app.content;
+    const root = c.get<any>(s.character.root);
+    const art = c.art(root.id, "illustration");
+    const elems = (root.elements as string[]).map((e) => c.get<any>(e));
+    const tierLabel: Record<string, string> = { single: "Single root", dual: "Dual root", five: "Five Elements" };
+    const history = s.character.rootHistory;
+    const srcLabel = (src: string) => src === "origin" ? "Where you started" : src.startsWith("breakthrough:") ? `Awakened at ${c.get<any>(src.slice(13)).name}` : src.startsWith("event:") ? `${c.find<any>(src.slice(6))?.name ?? "A rare encounter"}` : src.startsWith("realm:") ? `${c.find<any>(src.slice(6))?.name ?? "Secret realm"}` : src;
+    // rare opportunities: every event in the world that can transform a root; revealed once its place is discovered
+    const opps = c.byPrefix<any>("event").flatMap((ev) => ev.choices.flatMap((ch: any) => ch.outcomes.filter((o: any) => o.root_transform).map((o: any) => ({ ev, root: o.root_transform, chance: o.chance }))));
+    const whereOf = (evId: string) => { const n = c.byPrefix<any>("node").find((x) => x.event === evId); return n ? { node: n, known: !!s.progress.regions[n.region]?.nodes[n.id] || (!!s.progress.regions[n.region] && n.kind !== "hidden") } : { known: false }; };
+    const known = opps.filter((o) => whereOf(o.ev.id).known).length;
+    return h("div", { class: "stack" },
+      h("div", { class: "glass panel root-hero" },
+        h("div", { class: "root-art", style: art ? { backgroundImage: app.img(art) } : undefined }, !art && icon("root", 40)),
+        h("div", { class: "grow" },
+          h("div", { class: "muted up" }, "Your spirit root"),
+          h("div", { class: "root-name" }, root.name), root.name_cn && h("div", { class: "cn" }, root.name_cn),
+          h("div", { class: "row", style: { gap: "5px", flexWrap: "wrap", margin: "6px 0" } }, h("span", { class: "tag jade" }, tierLabel[root.tier] ?? root.tier), history.length > 1 && h("span", { class: "tag gold" }, "Awakened")),
+          h("div", { class: "root-mult" }, h("b", null, `×${root.qi_mult.toFixed(2)}`), h("span", { class: "muted" }, " Qi speed")),
+          Object.entries(root.bonuses ?? {}).map(([k, v]) => h("div", { class: "root-bonus" }, h("span", { class: "grow" }, attrLabel(k)), h("b", { class: "jade-t" }, `+${v}${/^(elem|crit|eva|acc)/.test(k) ? "%" : ""}`))))),
+      h("p", { class: "dim", style: { margin: "0 2px", fontSize: "calc(12.5rem / 15)" } }, root.description),
+      section("Your elements", `+${Math.round(c.combat.damage.element_advantage * 100)}% vs the element you overcome`, h("div", { class: ["grid-2", elems.length === 1 && "one"] }, elems.map((e) => h("div", { class: "glass root-el", style: { "--el": e.color } },
+        h("div", { class: "row" }, h("span", { class: "el-dot" }), h("b", null, e.name), h("span", { class: "cn" }, e.name_cn)),
+        h("div", { class: "muted" }, e.themes.slice(0, 3).map((t: string) => t[0]!.toUpperCase() + t.slice(1)).join(", ") + " techniques."),
+        h("div", { class: "row", style: { gap: "4px", marginTop: "5px", flexWrap: "wrap" } }, h("span", { class: "tag jade" }, `Strong vs ${c.get<any>(e.overcomes).name}`), h("span", { class: "tag red" }, `Weak to ${c.byPrefix<any>("elem").find((x) => x.overcomes === e.id)?.name ?? "—"}`)))))),
+      section("Root history", "Old roots are kept, never lost", h("div", { class: "root-hist" }, history.map((hst, i) => { const r = c.get<any>(hst.root); return [i > 0 && h("span", { class: "root-arrow" }, "›"), h("div", { class: ["glass root-step", i === history.length - 1 && "on"] }, h("span", { class: "root-mini", style: c.art(r.id, "illustration") ? { backgroundImage: app.img(c.art(r.id, "illustration")) } : undefined }), h("div", null, h("b", null, r.name), h("div", { class: "muted" }, srcLabel(hst.source)), h("div", { class: "muted" }, `×${r.qi_mult.toFixed(2)} Qi`)))]; }))),
+      section("Rare root opportunities", `${known} of ${opps.length} discovered`, h("div", { class: "rows" }, opps.map((o) => { const w = whereOf(o.ev.id); const r = c.get<any>(o.root); const done = s.character.root === o.root || history.some((x) => x.root === o.root);
+        return h("div", { class: ["setrow", !w.known && "off"] }, icon(w.known ? (done ? "check" : "map") : "lock", 16), h("div", { class: "grow" }, h("div", { class: "lbl" }, w.known ? o.ev.name : "???"), h("div", { class: "desc" }, w.known ? `${c.get<any>(w.node!.region).name} · ${w.node!.name}` : "Not discovered yet")), h("span", { class: ["tag", done ? "jade" : "gold"] }, w.known ? `${r.name.replace(" Root", "")} ×${r.qi_mult}` : "???")); }))));
+  } });
 }
 
 /** Bottom sheet for a slot: the equipped piece and every bag piece that fits. */

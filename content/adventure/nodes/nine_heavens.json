@@ -1,8 +1,8 @@
 [
   {
     "id": "node.nine_heavens.entry",
-    "name": "Nine Heavens Border",
-    "description": "Border of the Nine Heavens.",
+    "name": "First Heaven",
+    "description": "First Heaven, border of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.nine_heavens.gathering",
-    "name": "Nine Heavens Gathering Grounds",
-    "description": "Gathering Grounds of the Nine Heavens.",
+    "name": "Cloud Sea Shoals",
+    "description": "Cloud Sea Shoals, gathering grounds of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.nine_heavens.outskirts",
-    "name": "Nine Heavens Outskirts",
-    "description": "Outskirts of the Nine Heavens.",
+    "name": "Drifting Isles",
+    "description": "Drifting Isles, outskirts of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.nine_heavens.west_path",
-    "name": "Nine Heavens Western Trail",
-    "description": "Western Trail of the Nine Heavens.",
+    "name": "Jellyfish Drift",
+    "description": "Jellyfish Drift, western trail of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.nine_heavens.cache",
-    "name": "Nine Heavens Hidden Cache",
-    "description": "Hidden Cache of the Nine Heavens.",
+    "name": "Starlit Cache",
+    "description": "Starlit Cache, hidden cache of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.nine_heavens.east_path",
-    "name": "Nine Heavens Eastern Trail",
-    "description": "Eastern Trail of the Nine Heavens.",
+    "name": "Eagle's Updraft",
+    "description": "Eagle's Updraft, eastern trail of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.nine_heavens.lair",
-    "name": "Nine Heavens Lair",
-    "description": "Lair of the Nine Heavens.",
+    "name": "Fallen Immortal's Isle",
+    "description": "Fallen Immortal's Isle, lair of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.nine_heavens.crossroads",
-    "name": "Nine Heavens Crossroads",
-    "description": "Crossroads of the Nine Heavens.",
+    "name": "Four Winds",
+    "description": "Four Winds, crossroads of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.nine_heavens.ridge",
-    "name": "Nine Heavens Ridge",
-    "description": "Ridge of the Nine Heavens.",
+    "name": "Nebula Ridge",
+    "description": "Nebula Ridge, ridge of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.nine_heavens.deep_path",
-    "name": "Nine Heavens Deep Path",
-    "description": "Deep Path of the Nine Heavens.",
+    "name": "Ninth Ascent",
+    "description": "Ninth Ascent, deep path of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.nine_heavens.sanctum",
-    "name": "Nine Heavens Sanctum",
-    "description": "Sanctum of the Nine Heavens.",
+    "name": "Star Palace Gate",
+    "description": "Star Palace Gate, sanctum of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "cultivation",
     "position": [
@@ -321,8 +321,8 @@
   },
   {
     "id": "node.nine_heavens.den",
-    "name": "Nine Heavens Den",
-    "description": "Den of the Nine Heavens.",
+    "name": "Sentinel Post",
+    "description": "Sentinel Post, den of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "elite",
     "position": [
@@ -357,8 +357,8 @@
   },
   {
     "id": "node.nine_heavens.hidden_grove",
-    "name": "Nine Heavens Secret Place",
-    "description": "Secret Place of the Nine Heavens.",
+    "name": "Wanderer's Island",
+    "description": "Wanderer's Island, secret place of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "hidden",
     "position": [
@@ -381,8 +381,8 @@
   },
   {
     "id": "node.nine_heavens.approach",
-    "name": "Nine Heavens Approach",
-    "description": "Approach of the Nine Heavens.",
+    "name": "Regent's Causeway",
+    "description": "Regent's Causeway, approach of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "battle",
     "position": [
@@ -413,8 +413,8 @@
   },
   {
     "id": "node.nine_heavens.throne",
-    "name": "Nine Heavens Throne",
-    "description": "Throne of the Nine Heavens.",
+    "name": "Star Palace Throne",
+    "description": "Star Palace Throne, throne of the Nine Heavens.",
     "region": "region.nine_heavens",
     "kind": "boss",
     "position": [

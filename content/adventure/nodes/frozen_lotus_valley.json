@@ -1,8 +1,8 @@
 [
   {
     "id": "node.frozen_lotus_valley.entry",
-    "name": "Frozen Lotus Valley Border",
-    "description": "Border of the Frozen Lotus Valley.",
+    "name": "Snowgate",
+    "description": "Snowgate, border of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.gathering",
-    "name": "Frozen Lotus Valley Gathering Grounds",
-    "description": "Gathering Grounds of the Frozen Lotus Valley.",
+    "name": "Lotus Shallows",
+    "description": "Lotus Shallows, gathering grounds of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.outskirts",
-    "name": "Frozen Lotus Valley Outskirts",
-    "description": "Outskirts of the Frozen Lotus Valley.",
+    "name": "Frostfall Slope",
+    "description": "Frostfall Slope, outskirts of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.west_path",
-    "name": "Frozen Lotus Valley Western Trail",
-    "description": "Western Trail of the Frozen Lotus Valley.",
+    "name": "Icicle Path",
+    "description": "Icicle Path, western trail of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.cache",
-    "name": "Frozen Lotus Valley Hidden Cache",
-    "description": "Hidden Cache of the Frozen Lotus Valley.",
+    "name": "Snowbound Cache",
+    "description": "Snowbound Cache, hidden cache of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.east_path",
-    "name": "Frozen Lotus Valley Eastern Trail",
-    "description": "Eastern Trail of the Frozen Lotus Valley.",
+    "name": "Glacier Walk",
+    "description": "Glacier Walk, eastern trail of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.lair",
-    "name": "Frozen Lotus Valley Lair",
-    "description": "Lair of the Frozen Lotus Valley.",
+    "name": "Yeti Cavern",
+    "description": "Yeti Cavern, lair of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.crossroads",
-    "name": "Frozen Lotus Valley Crossroads",
-    "description": "Crossroads of the Frozen Lotus Valley.",
+    "name": "Frozen Crossing",
+    "description": "Frozen Crossing, crossroads of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.ridge",
-    "name": "Frozen Lotus Valley Ridge",
-    "description": "Ridge of the Frozen Lotus Valley.",
+    "name": "Crystal Ridge",
+    "description": "Crystal Ridge, ridge of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.deep_path",
-    "name": "Frozen Lotus Valley Deep Path",
-    "description": "Deep Path of the Frozen Lotus Valley.",
+    "name": "Whiteout Road",
+    "description": "Whiteout Road, deep path of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.sanctum",
-    "name": "Frozen Lotus Valley Sanctum",
-    "description": "Sanctum of the Frozen Lotus Valley.",
+    "name": "Ice Lotus Shrine",
+    "description": "Ice Lotus Shrine, sanctum of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "cultivation",
     "position": [
@@ -321,8 +321,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.den",
-    "name": "Frozen Lotus Valley Den",
-    "description": "Den of the Frozen Lotus Valley.",
+    "name": "Wyrm Hollow",
+    "description": "Wyrm Hollow, den of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "elite",
     "position": [
@@ -357,8 +357,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.hidden_grove",
-    "name": "Frozen Lotus Valley Secret Place",
-    "description": "Secret Place of the Frozen Lotus Valley.",
+    "name": "Hermit's Clearing",
+    "description": "Hermit's Clearing, secret place of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "hidden",
     "position": [
@@ -381,8 +381,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.approach",
-    "name": "Frozen Lotus Valley Approach",
-    "description": "Approach of the Frozen Lotus Valley.",
+    "name": "Frost Queen's Steps",
+    "description": "Frost Queen's Steps, approach of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "battle",
     "position": [
@@ -413,8 +413,8 @@
   },
   {
     "id": "node.frozen_lotus_valley.throne",
-    "name": "Frozen Lotus Valley Throne",
-    "description": "Throne of the Frozen Lotus Valley.",
+    "name": "Lotus Throne",
+    "description": "Lotus Throne, throne of the Frozen Lotus Valley.",
     "region": "region.frozen_lotus_valley",
     "kind": "boss",
     "position": [

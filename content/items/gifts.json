@@ -190,7 +190,7 @@
   {
     "id": "gift.counterfeit_coin",
     "name": "Counterfeit Coin",
-    "description": "a cheap tin coin badly stamped to imitate a spirit coin",
+    "description": "a dull dented tin coin with a crude square hole, the stamped cloud emblem smudged and crooked, no writing",
     "name_cn": "假币",
     "rarity": "common",
     "sell_value": 1,
@@ -204,7 +204,7 @@
           256
         ],
         "transparent": true,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a cheap tin coin badly stamped to imitate a spirit coin, with no glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a dull dented tin coin with a crude square hole, the stamped cloud emblem smudged and crooked, no writing, with no glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/inventory_icons.png"

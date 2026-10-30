@@ -8,11 +8,12 @@ import { icon, SLOT_ICON } from "../core/icons.ts";
 import { header, subbar, seg, bar, tile, stepper, RARITY_LABEL, confirmModal } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
 import type { App } from "../../app.ts";
-import { shopRows, buy, discountPct, restockIn, sellGear, gearSellValue, type ShopRow } from "../../engine/shop.ts";
+import { shopRows, buy, discountPct, restockIn, sellGear, gearSellValue, rumourState, buyRumour, type ShopRow } from "../../engine/shop.ts";
 import { sellItem } from "../../engine/actions.ts";
 import { equippedSlotOf, gearPlace } from "../../engine/inventory.ts";
 import { affinityLevel } from "../../engine/unlock.ts";
 import { ITEM_ICON, CATEGORY, gearTile, gearName, gearArt } from "./items.ts";
+import { npcAvatar } from "../core/kit.ts";
 
 const GREETING: Record<string, string> = {
   "shop.merchant_pavilion": "Welcome, welcome! Fresh stock from the caravan. Raise your Sect Fame and I'll give you a better price~",
@@ -33,7 +34,7 @@ function rowArt(app: App, r: ShopRow): { art?: string; rarity: string; icon: str
 const techRarity = (t: any) => t.rarity ?? (t.kind === "ultimate" ? "legendary" : t.tier >= 3 ? "epic" : t.tier === 2 ? "rare" : "uncommon");
 
 export function shopScreen(app: App, shopId: string, backTo: string): Screen {
-  let tab: "goods" | "sell" = "goods";
+  let tab: "goods" | "sell" | "rumours" = "goods";
   let sellSel: string | number | null = null;
   return {
     id: `shop:${shopId}`, bg: () => { const sh = app.content.get<any>(shopId); const loc = sh.owner ? app.content.get<any>(sh.owner).location : undefined; return loc ? app.content.art(loc, "background") : undefined; },
@@ -54,15 +55,17 @@ export function shopScreen(app: App, shopId: string, backTo: string): Screen {
           h("div", { class: "glass bubble" }, h("div", { class: "bubble-n" }, owner.name), h("div", null, GREETING[shopId] ?? shop.description),
             aff && h("div", { class: "row", style: { gap: "6px", marginTop: "6px" } }, h("span", { class: "pink-t", style: { fontSize: "calc(11rem / 15)", fontWeight: 700 } }, `♥ ${aff.name}`), h("div", { class: "grow" }, bar(aff.next ? affVal / aff.next.threshold : 1, { cls: "thin pink" })), h("span", { class: "muted tnum" }, aff.next ? `${affVal} / ${aff.next.threshold}` : `${affVal}`)))),
         h("div", { class: "glass panel shop-panel" },
-          seg(tab, [{ value: "goods", label: "Goods" }, { value: "sell", label: "Sell" }], (v) => { tab = v; sellSel = null; app.router.refresh(); }),
+          seg(tab, [{ value: "goods" as const, label: "Goods" }, ...(shop.buys_items ? [{ value: "sell" as const, label: "Sell" }] : []), ...((shop.rumours ?? []).length ? [{ value: "rumours" as const, label: "Rumours" }] : [])], (v) => { tab = v; sellSel = null; app.router.refresh(); }),
           tab === "goods" ? [
             h("div", { class: "row between shop-meta" },
               h("span", { class: "muted" }, restock === null ? "Limited stock never returns" : `Restocks in ${fmt.duration(restock)}`),
               disc > 0 ? h("span", { class: "tag gold" }, icon("fame", 10), ` −${disc}%`) : shop.fame_discount_pct_per_500 ? h("span", { class: "muted" }, `−${shop.fame_discount_pct_per_500}% per 500 Fame`) : null),
             rows.length > 0 && rows.every((r) => !("gear" in r.entry) && (r.id.startsWith("tech.") || r.id.startsWith("method.")))
-              ? h("div", { class: "manual-list" }, rows.map((r) => manualRow(app, shopId, r)))
+              ? h("div", { class: "manual-list" }, floors(app, rows).map(({ name, cn, rarity, items }, i) => [
+                  h("div", { class: "floor-h" }, h("span", { class: "floor-n" }, `Floor ${i + 1}`), h("b", null, name), h("span", { class: "cn" }, cn), h("span", { class: `tag rt-${rarity}`, style: { marginLeft: "auto" } }, RARITY_LABEL[rarity] ?? rarity)),
+                  ...items.map((r) => manualRow(app, shopId, r))]))
               : h("div", { class: "shop-grid" }, rows.map((r) => goodsCard(app, shopId, r))),
-          ] : sellPanel(app, () => sellSel, (v) => { sellSel = v; app.router.refresh(); }),
+          ] : tab === "rumours" ? rumoursPanel(app, shopId) : sellPanel(app, () => sellSel, (v) => { sellSel = v; app.router.refresh(); }),
         ),
       ];
     },
@@ -82,6 +85,31 @@ function goodsCard(app: App, shopId: string, r: ShopRow) {
     r.owned ? h("div", { class: "g-price jade-t" }, "Learned")
       : r.locked ? h("div", { class: "g-price muted" }, icon("lock", 10), " ", r.locked)
       : h("div", { class: "g-price" }, orig !== r.price && h("s", { class: "muted" }, fmt.int(orig)), icon(CUR_ICON[r.currency] ?? "gem", 11), h("b", null, fmt.int(r.price))));
+}
+
+/** Rumours tab (mockup merchant_pavilion): gossip about who loves what, bought once. */
+function rumoursPanel(app: App, shopId: string) {
+  const c = app.content;
+  const list = rumourState(app.game.state, c, shopId);
+  return [
+    h("div", { class: "muted", style: { padding: "2px 4px" } }, "Tang hears everything. For a few stones she forgets who told her."),
+    h("div", { class: "rows" }, list.map((r) => {
+      const who = c.get<any>(r.about);
+      return h("div", { class: ["glass rumour", r.known && "known", r.locked && "dim-card"] },
+        h("div", { class: "row" }, npcAvatar(app, r.about, 36), h("div", { class: "grow" }, h("div", { class: "rumour-q" }, r.question), h("div", { class: "muted" }, `About ${who.name}`)),
+          r.known ? h("span", { class: "tag jade" }, "Heard") : r.locked ? h("span", { class: "tag" }, icon("lock", 10), " ", r.locked) : h("button", { class: "btn gold sm", onClick: () => { const res = app.game.run("rumour", app.now(), (st, cc) => buyRumour(st, cc, shopId, r.id)); if (!res.ok) app.router.toast(res.reason, "bad"); } }, icon("gem", 12), ` ${r.price}`)),
+        r.known && h("div", { class: "rumour-a" }, h("span", { class: "bubble-n" }, "Tang"), " ", r.answer));
+    })),
+  ];
+}
+
+/** Scripture Pavilion floors (mockup): manuals grouped by rarity, lowest first. */
+const FLOOR_NAMES: Record<string, [string, string]> = { common: ["Hall of Foundations", "筑基堂"], uncommon: ["Hall of Foundations", "筑基堂"], rare: ["Hall of Rare Arts", "珍艺阁"], epic: ["Hall of Profound Arts", "玄艺阁"], legendary: ["Hall of Mysteries", "秘典阁"], mythic: ["Feng's Sanctum", "冯老静室"], immortal: ["Feng's Sanctum", "冯老静室"], divine: ["Feng's Sanctum", "冯老静室"] };
+function floors(app: App, rows: ShopRow[]) {
+  const order = ["common", "uncommon", "rare", "epic", "legendary", "mythic", "immortal", "divine"];
+  const groups = new Map<string, ShopRow[]>();
+  for (const r of rows) { const k = rowArt(app, r).rarity; (groups.get(k) ?? groups.set(k, []).get(k)!).push(r); }
+  return [...groups.entries()].sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0])).map(([rarity, items]) => ({ rarity, name: FLOOR_NAMES[rarity]?.[0] ?? "Hall", cn: FLOOR_NAMES[rarity]?.[1] ?? "", items }));
 }
 
 /** Scripture Pavilion style row (mockup scripture_pavilion): icon, name, element/kind/rarity tags, effect line, price. */

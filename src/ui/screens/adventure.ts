@@ -56,7 +56,7 @@ export function adventureScreen(app: App) {
         h("div", { class: "rc-art", style: { backgroundImage: app.img(c.art(r.id, "card")) } }, h("span", { class: "rc-num" }, ROMAN[r.order - 1]), !open && h("span", { class: "rc-lock" }, icon("lock", 18)),
           open && h("span", { class: ["rc-state", cleared && "done"] }, cleared ? "Cleared" : s.character.location?.startsWith(`node.${r.id.split(".")[1]}.`) ? "You are here" : `${prog.cleared}/${prog.total}`)),
         h("div", { class: "rc-body" },
-          h("div", { class: "rc-name" }, r.name, r.name_cn && h("span", { class: "cn" }, ` ${r.name_cn}`)),
+          h("div", { class: "rc-name" }, r.name), r.name_cn && h("div", { class: "cn rc-cn" }, r.name_cn),
           h("div", { class: "muted" }, `${c.get<any>(r.realm_range.min).name}${r.realm_range.max !== r.realm_range.min ? ` – ${c.get<any>(r.realm_range.max).name}` : ""}`),
           h("div", { class: "muted" }, open ? `Rec. ${fmt.int(c.get<any>(c.get<Region>(r.id).entry_node).rec_cp)}–${fmt.int(Math.max(...c.nodesOf(r.id).map((n) => n.rec_cp)))} CP` : (u.reasons[0] ?? "Locked"))));
     })),

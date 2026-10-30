@@ -59,7 +59,7 @@ def gifts():
         G("rare_treasure_map", "Rare Treasure Map", "a rolled yellowed map with a red-inked route", "rare", 80, 10, ["map", "treasure"], "藏宝图"),
         G("spirit_stone_pouch", "Spirit Stone Pouch", "a small embroidered pouch bulging with spirit stones", "uncommon", 50, 8, ["coin", "treasure"], "灵石袋"),
         G("fine_ledger_book", "Fine Ledger Book", "a leather-bound ledger with gilded edges", "uncommon", 40, 8, ["ledger", "refined"], "精装账本"),
-        G("counterfeit_coin", "Counterfeit Coin", "a cheap tin coin badly stamped to imitate a spirit coin", "common", 1, -5, ["fake", "junk_gift"], "假币"),
+        G("counterfeit_coin", "Counterfeit Coin", "a dull dented tin coin with a crude square hole, the stamped cloud emblem smudged and crooked, no writing", "common", 1, -5, ["fake", "junk_gift"], "假币"),
         G("bitter_medicine", "Bitter Medicine", "a bowl of black, bitter herbal medicine", "common", 2, -3, ["medicine", "bitter"], "苦药"),
         G("frost_plum_wine", "Frost Plum Wine", "a frosted blue porcelain bottle of plum wine", "rare", 90, 10, ["wine", "refined", "frost"], "霜梅酒"),
         G("sword_polish_cloth", "Sword Polish Cloth", "a folded white silk cloth with a whetstone and oil vial", "uncommon", 25, 6, ["sword_care", "practical"], "拭剑布"),
@@ -169,7 +169,7 @@ def gear_bases():
         base("starlight_spirit_ring", "Starlight Spirit Ring", "星辉灵戒", "ring", "A ring that holds a fallen star. Found only at the tower's heights.", ("mythic", "mythic"), "a dark silver ring set with a swirling star-filled gem trailing stardust", elem="metal", sig="crit", droppable=False, unique=True,
              specials=[eff("cooldown_reduction", "Technique cooldowns −1 every 4th turn.", value=1)]),
         # artifacts
-        base("cloud_talisman", "Cloud Talisman", "云符", "artifact", "A paper talisman inked with the sect's cloud seal, carried for luck.", ("common", "rare"), "a folded yellow paper talisman with red cloud calligraphy and a blue tassel", tags=["plains", "starter"]),
+        base("cloud_talisman", "Cloud Talisman", "云符", "artifact", "A paper talisman inked with the sect's cloud seal, carried for luck.", ("common", "rare"), "a folded yellow paper talisman marked with a swirling red cloud sigil (a pictorial spiral, no writing) and a blue tassel", tags=["plains", "starter"]),
         base("whispering_reed_flute", "Whispering Reed Flute", "苇笛", "artifact", "A reed flute whose lullaby dulls the senses of beasts.", ("rare", "epic"), "a slender dark-green reed flute with silver bands and a teal tassel", elem="water", sig="elem_dmg.water", tags=["forest"]),
     ]
 

@@ -22,6 +22,8 @@ export const Shop = Named.extend({
   affinity_discount: z.object({ npc: ref("npc"), pct_per_level: z.number().min(0).max(50) }).optional(),
   fame_discount_pct_per_500: z.number().min(0).max(20).default(0),
   buys_items: z.boolean().default(true),
+  /** Gossip for sale (mockup merchant_pavilion "Rumours"): each reveals what an NPC loves or secretly likes, once. */
+  rumours: z.array(z.object({ id: z.string().regex(/^[a-z0-9_]+$/), about: ref("npc"), price: z.number().int().positive(), question: z.string().min(1), answer: z.string().min(1), unlock: z.object({ sect_fame: z.number().int().nonnegative().optional(), affinity: z.number().int().nonnegative().optional() }).default({}) })).default([]),
 });
 
 export const LootItemEntry = z.object({

@@ -1,8 +1,8 @@
 [
   {
     "id": "node.ancient_sword_tomb.entry",
-    "name": "Ancient Sword Tomb Border",
-    "description": "Border of the Ancient Sword Tomb.",
+    "name": "Tomb Gate",
+    "description": "Tomb Gate, border of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.gathering",
-    "name": "Ancient Sword Tomb Gathering Grounds",
-    "description": "Gathering Grounds of the Ancient Sword Tomb.",
+    "name": "Rust Field",
+    "description": "Rust Field, gathering grounds of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.outskirts",
-    "name": "Ancient Sword Tomb Outskirts",
-    "description": "Outskirts of the Ancient Sword Tomb.",
+    "name": "Broken Blade Row",
+    "description": "Broken Blade Row, outskirts of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.west_path",
-    "name": "Ancient Sword Tomb Western Trail",
-    "description": "Western Trail of the Ancient Sword Tomb.",
+    "name": "Hilt Alley",
+    "description": "Hilt Alley, western trail of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.cache",
-    "name": "Ancient Sword Tomb Hidden Cache",
-    "description": "Hidden Cache of the Ancient Sword Tomb.",
+    "name": "Sword Cache",
+    "description": "Sword Cache, hidden cache of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.east_path",
-    "name": "Ancient Sword Tomb Eastern Trail",
-    "description": "Eastern Trail of the Ancient Sword Tomb.",
+    "name": "Pommel Walk",
+    "description": "Pommel Walk, eastern trail of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.lair",
-    "name": "Ancient Sword Tomb Lair",
-    "description": "Lair of the Ancient Sword Tomb.",
+    "name": "Wraith Hollow",
+    "description": "Wraith Hollow, lair of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.crossroads",
-    "name": "Ancient Sword Tomb Crossroads",
-    "description": "Crossroads of the Ancient Sword Tomb.",
+    "name": "Crossed Blades",
+    "description": "Crossed Blades, crossroads of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.ridge",
-    "name": "Ancient Sword Tomb Ridge",
-    "description": "Ridge of the Ancient Sword Tomb.",
+    "name": "Edge Ridge",
+    "description": "Edge Ridge, ridge of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.deep_path",
-    "name": "Ancient Sword Tomb Deep Path",
-    "description": "Deep Path of the Ancient Sword Tomb.",
+    "name": "Ten Thousand Steps",
+    "description": "Ten Thousand Steps, deep path of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.sanctum",
-    "name": "Ancient Sword Tomb Sanctum",
-    "description": "Sanctum of the Ancient Sword Tomb.",
+    "name": "Sword Shrine",
+    "description": "Sword Shrine, sanctum of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "cultivation",
     "position": [
@@ -321,8 +321,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.den",
-    "name": "Ancient Sword Tomb Den",
-    "description": "Den of the Ancient Sword Tomb.",
+    "name": "Guardian's Rest",
+    "description": "Guardian's Rest, den of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "elite",
     "position": [
@@ -357,8 +357,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.hidden_grove",
-    "name": "Ancient Sword Tomb Secret Place",
-    "description": "Secret Place of the Ancient Sword Tomb.",
+    "name": "Singing Blade",
+    "description": "Singing Blade, secret place of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "hidden",
     "position": [
@@ -381,8 +381,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.approach",
-    "name": "Ancient Sword Tomb Approach",
-    "description": "Approach of the Ancient Sword Tomb.",
+    "name": "Sovereign's Walk",
+    "description": "Sovereign's Walk, approach of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "battle",
     "position": [
@@ -413,8 +413,8 @@
   },
   {
     "id": "node.ancient_sword_tomb.throne",
-    "name": "Ancient Sword Tomb Throne",
-    "description": "Throne of the Ancient Sword Tomb.",
+    "name": "Sword Throne",
+    "description": "Sword Throne, throne of the Ancient Sword Tomb.",
     "region": "region.ancient_sword_tomb",
     "kind": "boss",
     "position": [

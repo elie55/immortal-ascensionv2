@@ -296,7 +296,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Blazing Mountain · Gathering Grounds",
+    "hint": "Blazing Mountain · Cinder Meadow",
     "art": {
       "icon": {
         "file": "assets/quests/npc_old_kang.webp",
@@ -611,7 +611,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Frozen Lotus Valley · Gathering Grounds",
+    "hint": "Frozen Lotus Valley · Lotus Shallows",
     "art": {
       "icon": {
         "file": "assets/quests/npc_hermit_shuang.webp",
@@ -926,7 +926,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Ancient Sword Tomb · Gathering Grounds",
+    "hint": "Ancient Sword Tomb · Rust Field",
     "art": {
       "icon": {
         "file": "assets/quests/npc_blind_swordsmith_yu.webp",
@@ -1241,7 +1241,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Demon Territory · Gathering Grounds",
+    "hint": "Demon Territory · Blood Reeds",
     "art": {
       "icon": {
         "file": "assets/quests/npc_defector_lian.webp",
@@ -1556,7 +1556,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Celestial Mountains · Gathering Grounds",
+    "hint": "Celestial Mountains · Pine Terrace",
     "art": {
       "icon": {
         "file": "assets/quests/npc_crane_boy_ming.webp",
@@ -1871,7 +1871,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Nine Heavens · Gathering Grounds",
+    "hint": "Nine Heavens · Cloud Sea Shoals",
     "art": {
       "icon": {
         "file": "assets/quests/npc_star_reader_wu.webp",
@@ -2186,7 +2186,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Thunderclap Wastes · Gathering Grounds",
+    "hint": "Thunderclap Wastes · Fulgurite Field",
     "art": {
       "icon": {
         "file": "assets/quests/npc_storm_widow_jin.webp",
@@ -2501,7 +2501,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Sunken Dragon Sea · Gathering Grounds",
+    "hint": "Sunken Dragon Sea · Pearl Shoals",
     "art": {
       "icon": {
         "file": "assets/quests/npc_fisherwoman_ah_hai.webp",
@@ -2816,7 +2816,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Starfall Desert · Gathering Grounds",
+    "hint": "Starfall Desert · Star Glass Dunes",
     "art": {
       "icon": {
         "file": "assets/quests/npc_caravan_princess_zahra.webp",
@@ -3131,7 +3131,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Gate of Ascension · Gathering Grounds",
+    "hint": "Gate of Ascension · Phoenix Ash Field",
     "art": {
       "icon": {
         "file": "assets/quests/npc_immortal_wanderer_qiu.webp",
@@ -3446,7 +3446,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Jade Immortal Realm · Gathering Grounds",
+    "hint": "Jade Immortal Realm · Peach Orchard",
     "art": {
       "icon": {
         "file": "assets/quests/npc_peach_keeper_mei.webp",
@@ -3761,7 +3761,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Golden Palace of Laws · Gathering Grounds",
+    "hint": "Golden Palace of Laws · Scroll Courtyard",
     "art": {
       "icon": {
         "file": "assets/quests/npc_clerk_fu.webp",
@@ -4075,7 +4075,7 @@
       ]
     },
     "difficulty": 1,
-    "hint": "Throne of the Immortal Emperor · Gathering Grounds",
+    "hint": "Throne of the Immortal Emperor · Starlight Shoals",
     "art": {
       "icon": {
         "file": "assets/quests/npc_throne_steward_lao.webp",

@@ -20,6 +20,34 @@ import { computeStats } from "../../engine/stats.ts";
 import { gearTile, gearName } from "./items.ts";
 import { rewardsLine } from "./adventure.ts";
 import { questProgress } from "../../engine/progression.ts";
+import { affinityLevel } from "../../engine/unlock.ts";
+import { openLocation } from "./sect.ts";
+import { autoBattleScreen } from "./techniques.ts";
+import type { EncounterResult as EncounterResultT } from "../../engine/encounter.ts";
+
+/** What sparring partners say after a bout (mockup spar_result). */
+const SPAR_WIN: Record<string, string> = {
+  default: "Well struck. Again tomorrow — I will not be so gentle.",
+  "npc.bai_lingshuang": "Your stance held. Good. Tomorrow we work on your footwork.",
+  "npc.tang_xiaoman": "Ow, ow! Fine, you win, boss. Snacks are on me… at a small discount.",
+  "npc.zhao_lie": "Ha! My fist didn't even warm up. Again!",
+  "npc.shen_qingxue": "Clean. You read the spear before it moved.",
+  "npc.tie_shanhe": "Amitabha. Even iron bends to a steady hand.",
+  "npc.mo_lianjue": "…Noted. Do not expect that to happen twice.",
+  "npc.lu_feiyan": "You dance better than you dress. A compliment, mostly.",
+  "npc.han_jinghong": "Tch. Keep that edge; the Blood Saber remembers.",
+  "npc.su_wanqing": "No poison this time. Next time, no promises~",
+  "npc.gu_xuanming": "Your sword has a heart in it now. Keep it there.",
+};
+const SPAR_LOSE: Record<string, string> = {
+  default: "Rest, then come back. Losing teaches faster than winning.",
+  "npc.bai_lingshuang": "Breathe when I say. Your guard dropped on the third exchange.",
+  "npc.tang_xiaoman": "Hehe, the abacus wins again! Buy a pill, you'll feel better.",
+  "npc.zhao_lie": "Too slow! Eat more, train more, come back.",
+  "npc.shen_qingxue": "The spear is patient. So should you be.",
+  "npc.tie_shanhe": "Fall seven times. Stand eight.",
+  "npc.mo_lianjue": "As expected. Come back when it is not.",
+};
 
 const ELEMENT_COLOR: Record<string, string> = { "elem.wood": "#5fe39a", "elem.fire": "#ff7b4a", "elem.earth": "#f0c060", "elem.metal": "#f2f5ff", "elem.water": "#6fd0ff", "elem.none": "#d6c9ff" };
 const ROLE_LABEL: Record<string, string> = { dps: "Damage", tank: "Guardian", support: "Support", healer: "Healer" };
@@ -61,7 +89,7 @@ function hpBar(cls: string, text = true): HpBar {
 
 export function battleScreen(app: App, enc: Encounter, onExit: () => void): Screen {
   const c = app.content;
-  const root = keep(h("div", { class: "battle" }));
+  const root = keep(h("div", { class: ["battle", enc.src.kind === "tribulation" && "trib"] }));
   let battle: Battle = enc.battle!;
   let speed = app.game.state.combat.speed || app.settings.battleSpeed || 1;
   let timer: number | undefined;
@@ -255,11 +283,16 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     }));
   }
 
+  const trib = enc.src.kind === "tribulation";
   function renderTop() {
+    const hz = battle.opts.hazard;
+    const hzWave = hz ? Math.min(hz.waves.length, Math.floor(Math.max(0, battle.round - 1) / hz.turnsPerWave) + 1) : 0;
     replaceChildren(topbar,
       h("div", { class: "grow" },
         h("div", { class: "bt-title" }, enc.name),
-        h("div", { class: "bt-sub" }, `Wave ${enc.wave + 1}/${enc.waves.length} · Round ${battle.round}${battle.opts.surviveRounds ? ` / ${battle.opts.surviveRounds}` : ""}${caption ? ` · ${caption}` : ""}`)),
+        trib && hz
+          ? h("div", { class: "bt-sub row", style: { gap: "6px" } }, h("span", null, `Wave ${hzWave} / ${hz.waves.length}`), h("span", { class: "trib-pips" }, hz.waves.map((_, i) => h("i", { class: i < hzWave - 1 ? "done" : i === hzWave - 1 ? "cur" : "" }))), h("span", null, `· survive ${Math.max(0, (battle.opts.surviveRounds ?? 0) - battle.round + 1)} more`))
+          : h("div", { class: "bt-sub" }, `Wave ${enc.wave + 1}/${enc.waves.length} · Round ${battle.round}${battle.opts.surviveRounds ? ` / ${battle.opts.surviveRounds}` : ""}${caption ? ` · ${caption}` : ""}`)),
       h("button", { class: "icon-btn bt-pause", "aria-label": playing ? "Pause" : "Resume", onClick: () => { playing = !playing; renderTop(); root.classList.toggle("paused", !playing); if (playing) loop(); } }, icon(playing ? "pause" : "play", 16)));
   }
 
@@ -367,6 +400,12 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const el = h("div", { class: ["bt-spark", kind], style: { left: `${p.x}px`, top: `${p.y}px` } }, Array.from({ length: kind === "heal" ? 9 : 1 }, (_, i) => h("i", { style: { "--i": String(i), "--a": `${(i * 40 + 20) % 360}deg` } })));
     fx.appendChild(el); setTimeout(() => el.remove(), dur(900) + 50);
   }
+  /** Heavenly lightning: jagged bolts from the top of the sky onto the party. */
+  function lightning() {
+    const el = h("div", { class: "bt-lightning" }, Array.from({ length: 3 }, (_, i) => h("svg", { viewBox: "0 0 100 400", preserveAspectRatio: "none", style: { left: `${18 + i * 30 + Math.random() * 12}%`, animationDelay: `${i * 70}ms` } }, (() => { const pl = document.createElementNS("http://www.w3.org/2000/svg", "polyline"); let x = 50, d = ""; for (let y = 0; y <= 400; y += 40) { d += `${x},${y} `; x = Math.max(10, Math.min(90, x + (Math.random() * 50 - 25))); } pl.setAttribute("points", d.trim()); return pl; })())));
+    fx.appendChild(el); setTimeout(() => el.remove(), 600);
+  }
+
   /** Ultimate cut-in: the caster's portrait sweeps across a gold band. */
   function cutIn(u: Combatant, skillName: string): Promise<void> {
     const el = h("div", { class: ["bt-cutin", u.side], style: { "--el": ELEMENT_COLOR[u.element] ?? "#fff" } },
@@ -383,7 +422,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const names = [...new Map(foesNow.map((u) => [u.id, u])).values()].map((u) => `${u.name}${foesNow.filter((x) => x.id === u.id).length > 1 ? ` ×${foesNow.filter((x) => x.id === u.id).length}` : ""}`).join(" · ");
     replaceChildren(intro, boss
       ? h("div", { class: "bi-boss" }, h("div", { class: "bi-art", style: { backgroundImage: app.img(bossArt) } }), h("div", { class: "bi-veil" }),
-          h("div", { class: "bi-text" }, h("span", { class: "bi-pre" }, enc.wave + 1 < enc.waves.length ? "Guardian" : "Sovereign of this place"), h("b", null, boss.name), c.get<any>(boss.id).name_cn && h("span", { class: "cn bi-cn" }, c.get<any>(boss.id).name_cn), h("span", { class: "bi-sub" }, `${c.get<any>(boss.element).name} · ${boss.boss!.phases.length} phases`)))
+          h("div", { class: "bi-text" }, h("span", { class: "bi-pre" }, trib ? "Heavenly Tribulation" : enc.src.kind === "tower" ? "Tower warden" : enc.src.kind === "tournament" ? "Your opponent" : enc.wave + 1 < enc.waves.length ? "Guardian" : "Sovereign of this place"), h("b", null, boss.name), c.get<any>(boss.id).name_cn && h("span", { class: "cn bi-cn" }, c.get<any>(boss.id).name_cn), h("span", { class: "bi-sub" }, `${c.get<any>(boss.element).name} · ${boss.boss!.phases.length} phases`)))
       : h("div", { class: "bi-wave" }, h("span", { class: "bi-pre" }, `Wave ${enc.wave + 1} / ${enc.waves.length}`), h("b", null, names)));
     intro.classList.add("on");
     const ms = boss ? 2300 : 1250;
@@ -444,7 +483,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         case "telegraph": renderUnits(); float(e.actor, "!", "warnf big"); await wait(520); break;
         case "interrupt": float(e.actor, "Interrupted!", "interrupt"); renderUnits(); await wait(380); break;
         case "skip": float(e.actor, e.reason === "frozen" ? "Frozen" : "Stunned", "miss"); await wait(250); break;
-        case "hazard": showSkillName(`${e.name} · wave ${e.wave}/${e.waves}`, "heavy"); screenFlash("white"); shake(true); await wait(320); break;
+        case "hazard": lightning(); showSkillName(`${e.name} · wave ${e.wave}/${e.waves}`, "heavy"); screenFlash("white"); shake(true); await wait(420); break;
         case "ult_ready": renderUnits(); break;
         default: break;
       }
@@ -494,8 +533,36 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         ...d.items.map((it) => { const def = c.get<any>(it.id); return h("div", null, h("div", { class: `tile r-${def.rarity ?? "common"}` }, h("div", { class: "in" }, c.art(it.id, "icon") ? h("div", { class: "art", style: { backgroundImage: app.img(c.art(it.id, "icon")) } }) : icon("sparkle", 20)), h("span", { class: "qty" }, `×${it.qty}`)), h("div", { class: "tile-name" }, def.name)); })));
   }
 
+  /** Friendly spar result (mockup spar_result): the opponent's reaction, the spar rewards, Rematch / Back to talk. */
+  function showSparResult(r: EncounterResultT) {
+    const s = app.game.state;
+    const npcId = (enc.src as any).npc as string; const n = c.get<any>(npcId);
+    const stake = r.won ? n.duel.win : n.duel.lose;
+    const line = (r.won ? SPAR_WIN[npcId] ?? SPAR_WIN.default : SPAR_LOSE[npcId] ?? SPAR_LOSE.default)!;
+    const expr = c.artAny(npcId, r.won ? "expression_pout" : "expression_grin", r.won ? "expression_grumble" : "expression_pleased", "expression_neutral", "full_body");
+    const rel = s.relations[npcId]; const lvl = affinityLevel(c, npcId, rel?.affinity ?? 0);
+    const rows: [string, string][] = [];
+    if (r.masteryXp) rows.push(["Technique mastery", `+${r.masteryXp} XP`]);
+    for (const a of (stake.affinity ?? []) as { npc: string; delta: number }[]) rows.push([`${c.get<any>(a.npc).name} · affinity`, `${a.delta >= 0 ? "+" : ""}${a.delta}`]);
+    if (stake.sect_fame) rows.push(["Sect Fame", `+${stake.sect_fame}`]);
+    if (stake.spirit_stones) rows.push(["Spirit Stones", `+${fmt.int(stake.spirit_stones)}`]);
+    root.classList.add("won");
+    app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "victory spar", render: (close) => h("div", { class: "center" },
+      h("div", { class: "res-head" }, h("div", { class: "res-rays", "aria-hidden": "true" }), h("div", { class: ["result-title", r.won ? "win" : "lose"] }, r.won ? "Victory" : "Defeated"), h("div", { class: "cn res-cn" }, r.won ? "切磋 · 胜" : "切磋 · 负"),
+        h("div", { class: "res-ribbon" }, h("span", null, `Friendly spar · vs ${n.name}`))),
+      h("div", { class: "res-panel glass" },
+        h("div", { class: "spar-say" }, h("span", { class: "spar-face", style: { backgroundImage: app.img(expr) } }), h("div", { class: "spar-bubble" }, h("span", { class: "bubble-n" }, n.name), h("div", null, line))),
+        h("div", { class: "row", style: { gap: "8px", margin: "10px 0 4px" } }, h("span", { class: "pink-t", style: { fontWeight: 800, fontSize: "calc(11.5rem / 15)" } }, `♥ ${lvl.name}`), h("div", { class: "grow bar thin pink" }, h("i", { style: { width: `${lvl.next ? Math.min(100, (rel?.affinity ?? 0) / lvl.next.threshold * 100) : 100}%` } })), h("span", { class: "muted tnum" }, lvl.next ? `${rel?.affinity ?? 0} / ${lvl.next.threshold}` : `${rel?.affinity ?? 0}`)),
+        h("div", { class: "sec-h", style: { marginTop: "8px" } }, h("h3", null, "Spar rewards"), h("span", { class: "hint" }, "Nothing was risked")),
+        h("div", { class: "rows" }, rows.length ? rows.map(([k, v]) => h("div", { class: "setrow" }, h("span", { class: "grow lbl" }, k), h("b", { class: "jade-t" }, v))) : h("div", { class: "muted" }, "Practice only · no stakes today")),
+        h("div", { class: "grid-2", style: { marginTop: "12px" } },
+          h("button", { class: "btn", onClick: () => { close(); onExit(); } }, "Back to talk"),
+          h("button", { class: "btn gold", onClick: () => { app.router.close("result"); onExit(); startEncounter(app, enc.src); } }, "Rematch")))) });
+  }
+
   function showResult() {
     const r = enc.done!;
+    if (enc.src.kind === "duel") return showSparResult(r);
     const s = app.game.state;
     const sum = r.waves.reduce((a, w) => ({ dealt: a.dealt + w.summary.dealt, taken: a.taken + w.summary.taken, healed: a.healed + w.summary.healed }), { dealt: 0, taken: 0, healed: 0 });
     const first = r.waves[0]!.summary;
@@ -507,9 +574,9 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     if (r.won) { root.classList.add("won"); return app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "victory", render: (close) => h("div", { class: "center" },
       h("div", { class: "res-head" },
         h("div", { class: "res-rays", "aria-hidden": "true" }),
-        h("div", { class: "result-title win" }, "Victory"),
-        h("div", { class: "cn res-cn" }, "大 胜"),
-        h("div", { class: "res-ribbon" }, mainEnemy && h("span", { class: "res-foe", style: { backgroundImage: app.img(c.art(mainEnemy.id, "icon")) } }, h("i", null, "Defeated")), h("span", null, `${mainEnemy?.name ?? enc.name} defeated`), r.firstClear && h("span", { class: "tag gold" }, "First clear"))),
+        h("div", { class: "result-title win" }, trib ? "Tribulation passed" : "Victory"),
+        h("div", { class: "cn res-cn" }, trib ? "渡 劫 成 功" : "大 胜"),
+        h("div", { class: "res-ribbon" }, mainEnemy && h("span", { class: "res-foe", style: { backgroundImage: app.img(c.art(mainEnemy.id, "icon")) } }, h("i", null, trib ? "Endured" : "Defeated")), h("span", null, trib ? "The heavens relent. Break through when you are ready." : `${mainEnemy?.name ?? enc.name} defeated`), r.firstClear && h("span", { class: "tag gold" }, "First clear"))),
       h("div", { class: "res-panel glass" },
         h("div", { class: "grid-3 res-stats" }, stat("Damage dealt", fmt.compact(sum.dealt)), stat("Damage taken", fmt.compact(sum.taken)), stat("HP left", `${fmt.int(lastWave.summary.playerHp)} / ${fmt.int(computeStats(s, c).total.hp ?? 0)}`)),
         h("div", { class: "sec-h", style: { marginTop: "12px" } }, h("h3", null, "Rewards"), h("span", { class: "hint" }, `${r.masteryXp ? `Mastery +${r.masteryXp} XP` : ""}`)),
@@ -520,18 +587,50 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         h("div", { class: "grid-2", style: { marginTop: "12px" } },
           h("button", { class: "btn", onClick: () => { close(); onExit(); } }, icon("back", 14), "Map"),
           h("button", { class: "btn gold", onClick: again }, "Fight again")))) }); }
+    // Defeat (mockup defeat): the foe with HP left and the power check, no penalty, ways to get stronger
+    const lastFoe = battle.units.filter((u) => u.side === "enemy").sort((a, b) => b.maxHp - a.maxHp)[0];
+    const foeDef = lastFoe ? c.find<any>(lastFoe.id) ?? mainEnemy : mainEnemy;
+    const dealtHere = battle.units.filter((u) => u.side === "ally").reduce((n, u) => n + u.stats.dealt, 0);
+    const gap = r.playerCp - r.enemyCp;
+    const goTo: Record<string, () => void> = {
+      cultivate: () => { app.router.clearGlobal(); app.router.setTab("cultivate"); },
+      character: () => { app.router.clearGlobal(); app.router.setTab("character"); },
+      inventory: () => { app.router.clearGlobal(); app.router.setTab("inventory"); },
+      adventure: () => { app.router.clearGlobal(); app.router.setTab("adventure"); },
+      forge: () => { app.router.clearGlobal(); app.router.setTab("sect"); const loc = c.byPrefix<any>("sectloc").find((l) => (l.features ?? []).includes("forge")); if (loc) openLocation(app, loc.id); },
+      pavilion: () => { app.router.clearGlobal(); app.router.setTab("sect"); const loc = c.byPrefix<any>("sectloc").find((l) => (l.features ?? []).includes("pavilion")); if (loc) openLocation(app, loc.id); },
+      beasts: () => { app.router.clearGlobal(); app.router.setTab("sect"); const loc = c.byPrefix<any>("sectloc").find((l) => (l.features ?? []).includes("beasts")); if (loc) openLocation(app, loc.id); },
+      autobattle: () => { app.router.clearGlobal(); app.router.setTab("character"); app.router.push(autoBattleScreen(app, "Character")); },
+    };
     app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "defeat", render: (close) => h("div", { class: "center" },
       h("div", { class: "result-title lose" }, "Defeated"),
       h("div", { class: "cn res-cn" }, "败 退"),
-      h("div", { class: "m-sub" }, "You were driven back — nothing is lost."),
-      h("div", null,
-            mainEnemy && h("div", { class: "glass panel", style: { textAlign: "left", marginBottom: "8px" } }, h("div", { class: "row" }, h("span", { class: "ec-ico lg", style: { backgroundImage: app.img(c.art(mainEnemy.id, "icon")) } }), h("div", { class: "grow" }, h("div", { class: "title", style: { fontSize: "calc(14rem / 15)" } }, mainEnemy.name), h("div", { class: "muted" }, `${c.get<any>(mainEnemy.element).name} · ${c.get<any>(mainEnemy.realm.id).name} ${mainEnemy.realm.stage}`)), h("div", null, h("div", { class: "muted up" }, "Power check"), h("div", { class: r.playerCp >= r.enemyCp ? "jade-t" : "red-t", style: { fontWeight: 900 } }, `${r.playerCp >= r.enemyCp ? "+" : ""}${fmt.int(r.playerCp - r.enemyCp)} CP`)))),
-            h("div", { class: "grid-3 res-stats" }, stat("Damage dealt", fmt.compact(sum.dealt)), stat("Rounds", String(first.rounds)), stat("Healing", fmt.compact(sum.healed))),
-            h("div", { class: "glass panel", style: { textAlign: "left", marginTop: "8px" } }, h("div", { class: "row" }, icon("shield", 16), h("div", { class: "grow" }, h("b", null, "No penalty"), h("div", { class: "muted" }, "Drops from this run are kept · HP restored partly")))),
-            r.recommendations.length > 0 && h("div", { style: { textAlign: "left", marginTop: "8px" } }, h("div", { class: "sec-h" }, h("h3", null, "Ways to get stronger")), h("div", { class: "rows" }, r.recommendations.map((t) => h("div", { class: "setrow" }, icon("sparkle", 14), h("span", { style: { fontSize: "calc(12.5rem / 15)" } }, t)))))),
+      h("div", { class: "m-sub" }, "You were driven back — ", h("b", null, "nothing is lost"), "."),
+      foeDef && h("div", { class: "glass panel df-foe" },
+        h("span", { class: "df-art", style: { backgroundImage: app.img(c.artAny(foeDef.id, "icon", "battle")) } }),
+        h("div", { class: "grow", style: { minWidth: 0 } },
+          h("div", { class: "muted up", style: { color: "#ffb3bd" } }, `${foeDef.phases ? "Boss" : foeDef.kind === "elite" ? "Elite" : (foeDef.kind ?? "enemy")[0].toUpperCase() + (foeDef.kind ?? "enemy").slice(1)} · ${c.get<any>(foeDef.element).name} · ${c.get<any>(foeDef.realm.id).name} ${foeDef.realm.stage}`),
+          h("div", { class: "df-name" }, foeDef.name),
+          h("div", { class: "muted" }, enc.name),
+          lastFoe && h("div", { class: "bar hp", style: { marginTop: "6px", height: "14px" } }, h("i", { style: { width: `${(lastFoe.hp / lastFoe.maxHp * 100).toFixed(1)}%` } }), h("span", null, `${fmt.compact(lastFoe.hp)} / ${fmt.compact(lastFoe.maxHp)} HP left (${Math.round(lastFoe.hp / lastFoe.maxHp * 100)}%)`)),
+          h("div", { class: "muted", style: { marginTop: "4px" } }, `You dealt ${fmt.compact(Math.max(sum.dealt, dealtHere))} damage this run`, foeDef.weaknesses?.length ? ` · weak to ${foeDef.weaknesses.map((w: string) => c.get<any>(w).name).join(", ")}` : ""))),
+      h("div", { class: "glass panel df-power" },
+        h("div", { class: "sec-h" }, h("h3", null, "Power check"), h("span", { class: "hint" }, "Combat Power")),
+        h("div", { class: "df-cp" },
+          h("div", { class: "df-cpbox" }, h("span", null, icon("cp", 12), " Your CP"), h("b", null, fmt.int(r.playerCp))),
+          h("div", { class: "df-gap" }, h("b", { class: gap >= 0 ? "jade-t" : "red-t" }, `${gap >= 0 ? "+" : "−"}${fmt.int(Math.abs(gap))}`), h("span", { class: "muted up" }, gap >= 0 ? "above the enemy" : "below the enemy")),
+          h("div", { class: "df-cpbox" }, h("span", null, "Enemy"), h("b", null, fmt.int(r.enemyCp)))),
+        h("div", { class: "df-track" }, h("i", { style: { width: `${Math.min(100, r.playerCp / Math.max(1, Math.max(r.playerCp, r.enemyCp)) * 100)}%` } }), h("b", { style: { left: `${Math.min(100, r.enemyCp / Math.max(1, Math.max(r.playerCp, r.enemyCp)) * 100)}%` } }))),
+      h("div", { class: "glass panel df-nopen" }, h("span", { class: "df-check" }, icon("check", 16)), h("div", { class: "grow" }, h("b", null, "No penalty"), h("div", { class: "muted" }, `Drops from this run are kept · HP restored to ${c.combat.defeat.hp_pct_after_defeat}% · retry for free`)),
+        r.total.items.slice(0, 2).map((it) => h("span", { class: "tile-mini", style: { backgroundImage: app.img(c.art(it.id, "icon")) } }))),
+      r.recommendations.length > 0 && h("div", { class: "glass panel df-ways" },
+        h("div", { class: "sec-h" }, h("h3", null, "Ways to get stronger"), h("span", { class: "hint" }, "Tap to go there")),
+        h("div", { class: "rows" }, r.recommendations.map((a) => h("button", { class: "setrow df-way", onClick: () => { close(); onExit(); goTo[a.go]?.(); } },
+          h("span", { class: "df-way-ico" }, icon(a.icon, 18)), h("div", { class: "grow" }, h("div", { class: "lbl" }, a.title), h("div", { class: "desc" }, a.detail)), h("b", { class: "jade-t df-gain" }, a.gain))))),
       tracked,
-      h("div", { class: "grid-2", style: { marginTop: "14px" } },
+      h("div", { class: "grid-3 df-actions" },
         h("button", { class: "btn", onClick: () => { close(); onExit(); } }, icon("back", 14), "Map"),
+        h("button", { class: "btn", onClick: () => { app.game.state.combat.manual = false; app.game.dirty = true; again(); } }, icon("auto", 14), "Auto"),
         h("button", { class: "btn gold", onClick: again }, "Retry"))) });
   }
   /** The tracked quest's progress, so a fight that advanced it says so on the result screen. */

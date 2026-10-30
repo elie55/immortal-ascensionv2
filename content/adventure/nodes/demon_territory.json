@@ -1,8 +1,8 @@
 [
   {
     "id": "node.demon_territory.entry",
-    "name": "Demon Territory Border",
-    "description": "Border of the Demon Territory.",
+    "name": "Black Pass",
+    "description": "Black Pass, border of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.demon_territory.gathering",
-    "name": "Demon Territory Gathering Grounds",
-    "description": "Gathering Grounds of the Demon Territory.",
+    "name": "Blood Reeds",
+    "description": "Blood Reeds, gathering grounds of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.demon_territory.outskirts",
-    "name": "Demon Territory Outskirts",
-    "description": "Outskirts of the Demon Territory.",
+    "name": "Bone Orchard",
+    "description": "Bone Orchard, outskirts of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.demon_territory.west_path",
-    "name": "Demon Territory Western Trail",
-    "description": "Western Trail of the Demon Territory.",
+    "name": "Howling Trail",
+    "description": "Howling Trail, western trail of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.demon_territory.cache",
-    "name": "Demon Territory Hidden Cache",
-    "description": "Hidden Cache of the Demon Territory.",
+    "name": "Cultist Cache",
+    "description": "Cultist Cache, hidden cache of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.demon_territory.east_path",
-    "name": "Demon Territory Eastern Trail",
-    "description": "Eastern Trail of the Demon Territory.",
+    "name": "Red River Walk",
+    "description": "Red River Walk, eastern trail of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.demon_territory.lair",
-    "name": "Demon Territory Lair",
-    "description": "Lair of the Demon Territory.",
+    "name": "Imp Warren",
+    "description": "Imp Warren, lair of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.demon_territory.crossroads",
-    "name": "Demon Territory Crossroads",
-    "description": "Crossroads of the Demon Territory.",
+    "name": "Gallows Cross",
+    "description": "Gallows Cross, crossroads of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.demon_territory.ridge",
-    "name": "Demon Territory Ridge",
-    "description": "Ridge of the Demon Territory.",
+    "name": "Horn Ridge",
+    "description": "Horn Ridge, ridge of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.demon_territory.deep_path",
-    "name": "Demon Territory Deep Path",
-    "description": "Deep Path of the Demon Territory.",
+    "name": "Moonless Road",
+    "description": "Moonless Road, deep path of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.demon_territory.sanctum",
-    "name": "Demon Territory Sanctum",
-    "description": "Sanctum of the Demon Territory.",
+    "name": "Blood Altar",
+    "description": "Blood Altar, sanctum of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "secret_realm",
     "position": [
@@ -317,8 +317,8 @@
   },
   {
     "id": "node.demon_territory.den",
-    "name": "Demon Territory Den",
-    "description": "Den of the Demon Territory.",
+    "name": "Hound Pit",
+    "description": "Hound Pit, den of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "elite",
     "position": [
@@ -353,8 +353,8 @@
   },
   {
     "id": "node.demon_territory.hidden_grove",
-    "name": "Demon Territory Secret Place",
-    "description": "Secret Place of the Demon Territory.",
+    "name": "Defector's Hideout",
+    "description": "Defector's Hideout, secret place of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "hidden",
     "position": [
@@ -377,8 +377,8 @@
   },
   {
     "id": "node.demon_territory.approach",
-    "name": "Demon Territory Approach",
-    "description": "Approach of the Demon Territory.",
+    "name": "Crimson Steps",
+    "description": "Crimson Steps, approach of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "battle",
     "position": [
@@ -409,8 +409,8 @@
   },
   {
     "id": "node.demon_territory.throne",
-    "name": "Demon Territory Throne",
-    "description": "Throne of the Demon Territory.",
+    "name": "Moon Devourer's Seat",
+    "description": "Moon Devourer's Seat, throne of the Demon Territory.",
     "region": "region.demon_territory",
     "kind": "boss",
     "position": [

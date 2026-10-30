@@ -215,6 +215,59 @@
           "sect_fame": 500
         }
       }
+    ],
+    "rumours": [
+      {
+        "id": "bai_secret",
+        "about": "npc.bai_lingshuang",
+        "price": 30,
+        "question": "What does Senior Sister Bai secretly love?",
+        "answer": "Frost plum wine — she will deny it. A sword polish cloth works on an ordinary day; she keeps every one you give her."
+      },
+      {
+        "id": "wen_tea",
+        "about": "npc.elder_wen",
+        "price": 20,
+        "question": "How does one please Elder Wen?",
+        "answer": "Spirit tea and osmanthus cake, taken slowly. She judges you by how you pour."
+      },
+      {
+        "id": "gu_metal",
+        "about": "npc.master_gu",
+        "price": 40,
+        "question": "What makes Master Gu smile?",
+        "answer": "Good ore. Spirit iron if you are poor, glacier iron if you are rich. Compliments do nothing.",
+        "unlock": {
+          "sect_fame": 300
+        }
+      },
+      {
+        "id": "qin_beasts",
+        "about": "npc.qin",
+        "price": 25,
+        "question": "What does Qin at the garden care for?",
+        "answer": "Beast bells and anything his beasts can eat. Feed the beasts first, talk to him after."
+      },
+      {
+        "id": "feng_books",
+        "about": "npc.elder_feng",
+        "price": 60,
+        "question": "Is Elder Feng bribable?",
+        "answer": "Not with stones. A fine ledger book, though… he pretends not to notice, then reads it all night.",
+        "unlock": {
+          "sect_fame": 500
+        }
+      },
+      {
+        "id": "tang_self",
+        "about": "npc.tang_xiaoman",
+        "price": 10,
+        "question": "And what do you like, Tang?",
+        "answer": "Candied hawthorn, and an ancient spirit coin if you truly want my heart. And people who pay in full. You're doing great on one of those~",
+        "unlock": {
+          "affinity": 50
+        }
+      }
     ]
   },
   {

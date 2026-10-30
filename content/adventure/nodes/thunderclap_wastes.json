@@ -1,8 +1,8 @@
 [
   {
     "id": "node.thunderclap_wastes.entry",
-    "name": "Thunderclap Wastes Border",
-    "description": "Border of the Thunderclap Wastes.",
+    "name": "Glass Flats",
+    "description": "Glass Flats, border of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.thunderclap_wastes.gathering",
-    "name": "Thunderclap Wastes Gathering Grounds",
-    "description": "Gathering Grounds of the Thunderclap Wastes.",
+    "name": "Fulgurite Field",
+    "description": "Fulgurite Field, gathering grounds of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.thunderclap_wastes.outskirts",
-    "name": "Thunderclap Wastes Outskirts",
-    "description": "Outskirts of the Thunderclap Wastes.",
+    "name": "Scorched Dunes",
+    "description": "Scorched Dunes, outskirts of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.thunderclap_wastes.west_path",
-    "name": "Thunderclap Wastes Western Trail",
-    "description": "Western Trail of the Thunderclap Wastes.",
+    "name": "Lightning Alley",
+    "description": "Lightning Alley, western trail of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.thunderclap_wastes.cache",
-    "name": "Thunderclap Wastes Hidden Cache",
-    "description": "Hidden Cache of the Thunderclap Wastes.",
+    "name": "Storm Cache",
+    "description": "Storm Cache, hidden cache of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.thunderclap_wastes.east_path",
-    "name": "Thunderclap Wastes Eastern Trail",
-    "description": "Eastern Trail of the Thunderclap Wastes.",
+    "name": "Thunder Road",
+    "description": "Thunder Road, eastern trail of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.thunderclap_wastes.lair",
-    "name": "Thunderclap Wastes Lair",
-    "description": "Lair of the Thunderclap Wastes.",
+    "name": "Scorpion Burrows",
+    "description": "Scorpion Burrows, lair of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.thunderclap_wastes.crossroads",
-    "name": "Thunderclap Wastes Crossroads",
-    "description": "Crossroads of the Thunderclap Wastes.",
+    "name": "Struck Crossroads",
+    "description": "Struck Crossroads, crossroads of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.thunderclap_wastes.ridge",
-    "name": "Thunderclap Wastes Ridge",
-    "description": "Ridge of the Thunderclap Wastes.",
+    "name": "Static Ridge",
+    "description": "Static Ridge, ridge of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.thunderclap_wastes.deep_path",
-    "name": "Thunderclap Wastes Deep Path",
-    "description": "Deep Path of the Thunderclap Wastes.",
+    "name": "Roc's Flightpath",
+    "description": "Roc's Flightpath, deep path of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.thunderclap_wastes.sanctum",
-    "name": "Thunderclap Wastes Sanctum",
-    "description": "Sanctum of the Thunderclap Wastes.",
+    "name": "Thunder Spire",
+    "description": "Thunder Spire, sanctum of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "cultivation",
     "position": [
@@ -321,8 +321,8 @@
   },
   {
     "id": "node.thunderclap_wastes.den",
-    "name": "Thunderclap Wastes Den",
-    "description": "Den of the Thunderclap Wastes.",
+    "name": "Beetle Mound",
+    "description": "Beetle Mound, den of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "elite",
     "position": [
@@ -357,8 +357,8 @@
   },
   {
     "id": "node.thunderclap_wastes.hidden_grove",
-    "name": "Thunderclap Wastes Secret Place",
-    "description": "Secret Place of the Thunderclap Wastes.",
+    "name": "Widow's Shelter",
+    "description": "Widow's Shelter, secret place of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "hidden",
     "position": [
@@ -381,8 +381,8 @@
   },
   {
     "id": "node.thunderclap_wastes.approach",
-    "name": "Thunderclap Wastes Approach",
-    "description": "Approach of the Thunderclap Wastes.",
+    "name": "Nine Bolts' Walk",
+    "description": "Nine Bolts' Walk, approach of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "battle",
     "position": [
@@ -413,8 +413,8 @@
   },
   {
     "id": "node.thunderclap_wastes.throne",
-    "name": "Thunderclap Wastes Throne",
-    "description": "Throne of the Thunderclap Wastes.",
+    "name": "Thunder Throne",
+    "description": "Thunder Throne, throne of the Thunderclap Wastes.",
     "region": "region.thunderclap_wastes",
     "kind": "boss",
     "position": [

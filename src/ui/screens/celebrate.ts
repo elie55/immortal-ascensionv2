@@ -17,6 +17,7 @@ import { dungeonHubScreen, realmScreen, towerScreen } from "./delves.ts";
 import { beastsScreen } from "./beasts.ts";
 import { arenaScreen } from "./tournament.ts";
 import { questLogScreen, achievementsScreen } from "./quests.ts";
+import { rootSheet } from "./character.ts";
 
 export interface Celebration {
   /** Small label above the title ("Fame milestone", "Evolution"). */
@@ -100,6 +101,13 @@ export function celebrateEvent(app: App, e: DomainEvent): boolean {
       celebrate(app, { pre, title: p.name, cn: p.name_cn, sub: p.description, art: c.artAny(e.id, "card", "background"), icon: isRealm ? "map" : "temple",
         body: isRealm && h("div", { class: "row", style: { justifyContent: "center", gap: "6px", flexWrap: "wrap", margin: "6px 0" } }, h("span", { class: "tag" }, `Rec. CP ${p.rec_cp.toLocaleString("en-US")}`), h("span", { class: "tag" }, `${(p.realm_nodes ?? []).filter((n: any) => n.waves?.length).length} trials`)),
         cta: { label: isRealm ? "Go to Adventure" : `Visit ${p.name}`, go: () => { if (isRealm) { tab("adventure"); app.router.push(dungeonHubScreen(app)); app.router.push(realmScreen(app, e.id)); } else { tab("sect"); openLocation(app, e.id); } } } });
+      return true;
+    }
+    case "root_awakened": {
+      const r = c.get<any>(e.root); const from = c.find<any>(e.from);
+      celebrate(app, { pre: "Spirit root awakened", title: r.name, cn: r.name_cn, sub: `${from ? `${from.name} → ` : ""}${r.name} · Qi ×${r.qi_mult.toFixed(2)} · ${r.description}`, art: c.art(r.id, "illustration"), icon: "root",
+        body: h("div", { class: "row", style: { justifyContent: "center", gap: "6px", flexWrap: "wrap", margin: "6px 0" } }, (r.elements as string[]).map((el) => { const x = c.get<any>(el); return h("span", { class: "tag", style: { color: x.color, borderColor: x.color } }, x.name); })),
+        cta: { label: "See your root", go: () => { tab("character"); rootSheet(app); } } });
       return true;
     }
     case "unlock": {

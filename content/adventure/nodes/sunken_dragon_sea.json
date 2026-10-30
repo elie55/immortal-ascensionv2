@@ -1,8 +1,8 @@
 [
   {
     "id": "node.sunken_dragon_sea.entry",
-    "name": "Sunken Dragon Sea Border",
-    "description": "Border of the Sunken Dragon Sea.",
+    "name": "Tide Gate",
+    "description": "Tide Gate, border of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
@@ -31,8 +31,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.gathering",
-    "name": "Sunken Dragon Sea Gathering Grounds",
-    "description": "Gathering Grounds of the Sunken Dragon Sea.",
+    "name": "Pearl Shoals",
+    "description": "Pearl Shoals, gathering grounds of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "gather",
     "position": [
@@ -65,8 +65,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.outskirts",
-    "name": "Sunken Dragon Sea Outskirts",
-    "description": "Outskirts of the Sunken Dragon Sea.",
+    "name": "Coral Shelf",
+    "description": "Coral Shelf, outskirts of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
@@ -97,8 +97,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.west_path",
-    "name": "Sunken Dragon Sea Western Trail",
-    "description": "Western Trail of the Sunken Dragon Sea.",
+    "name": "Kelp Road",
+    "description": "Kelp Road, western trail of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
@@ -128,8 +128,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.cache",
-    "name": "Sunken Dragon Sea Hidden Cache",
-    "description": "Hidden Cache of the Sunken Dragon Sea.",
+    "name": "Wreck Cache",
+    "description": "Wreck Cache, hidden cache of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "chest",
     "position": [
@@ -149,8 +149,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.east_path",
-    "name": "Sunken Dragon Sea Eastern Trail",
-    "description": "Eastern Trail of the Sunken Dragon Sea.",
+    "name": "Naga Channel",
+    "description": "Naga Channel, eastern trail of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
@@ -180,8 +180,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.lair",
-    "name": "Sunken Dragon Sea Lair",
-    "description": "Lair of the Sunken Dragon Sea.",
+    "name": "Kraken Deep",
+    "description": "Kraken Deep, lair of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "elite",
     "position": [
@@ -212,8 +212,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.crossroads",
-    "name": "Sunken Dragon Sea Crossroads",
-    "description": "Crossroads of the Sunken Dragon Sea.",
+    "name": "Drowned Crossing",
+    "description": "Drowned Crossing, crossroads of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "event",
     "position": [
@@ -233,8 +233,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.ridge",
-    "name": "Sunken Dragon Sea Ridge",
-    "description": "Ridge of the Sunken Dragon Sea.",
+    "name": "Dragonbone Reef",
+    "description": "Dragonbone Reef, ridge of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
@@ -263,8 +263,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.deep_path",
-    "name": "Sunken Dragon Sea Deep Path",
-    "description": "Deep Path of the Sunken Dragon Sea.",
+    "name": "Abyssal Descent",
+    "description": "Abyssal Descent, deep path of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
@@ -295,8 +295,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.sanctum",
-    "name": "Sunken Dragon Sea Sanctum",
-    "description": "Sanctum of the Sunken Dragon Sea.",
+    "name": "Coral Queen's Court",
+    "description": "Coral Queen's Court, sanctum of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "cultivation",
     "position": [
@@ -321,8 +321,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.den",
-    "name": "Sunken Dragon Sea Den",
-    "description": "Den of the Sunken Dragon Sea.",
+    "name": "Angler Trench",
+    "description": "Angler Trench, den of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "elite",
     "position": [
@@ -357,8 +357,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.hidden_grove",
-    "name": "Sunken Dragon Sea Secret Place",
-    "description": "Secret Place of the Sunken Dragon Sea.",
+    "name": "Fisherwoman's Cove",
+    "description": "Fisherwoman's Cove, secret place of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "hidden",
     "position": [
@@ -381,8 +381,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.approach",
-    "name": "Sunken Dragon Sea Approach",
-    "description": "Approach of the Sunken Dragon Sea.",
+    "name": "Dragon King's Causeway",
+    "description": "Dragon King's Causeway, approach of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "battle",
     "position": [
@@ -413,8 +413,8 @@
   },
   {
     "id": "node.sunken_dragon_sea.throne",
-    "name": "Sunken Dragon Sea Throne",
-    "description": "Throne of the Sunken Dragon Sea.",
+    "name": "Sunken Throne",
+    "description": "Sunken Throne, throne of the Sunken Dragon Sea.",
     "region": "region.sunken_dragon_sea",
     "kind": "boss",
     "position": [
