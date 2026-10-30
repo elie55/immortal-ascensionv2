@@ -1239,3 +1239,5 @@ button.tag { min-height: 32px; padding: 4px 12px; }
 .sell-h { display: flex; align-items: baseline; gap: 8px; margin: 10px 2px 6px; font-family: var(--f-title); font-weight: 800; font-variant: small-caps; font-size: calc(13.5rem / 15); } .sell-h .muted { font-family: var(--f-body); font-variant: normal; font-weight: 600; font-size: calc(11rem / 15); }
 .sell-bar { position: sticky; bottom: 0; z-index: 4; box-shadow: 0 -10px 24px rgba(4,8,30,.55); }
 .res-btns3 { display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 8px; } .res-btns3 .btn.gold { flex-direction: column; gap: 0; line-height: 1.1; } .res-btns3 .btn.gold .cta-s { margin: 0; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.alch-top { z-index: 2; } .alch-space { z-index: 1; }
+.alch-cauldron { left: 44%; bottom: 6px; width: min(270px, 68vw); }
