@@ -69,3 +69,13 @@ outputs in `output/IA_anim/<id>/`). `tools/anim/build.py` registers each edit on
 into `assets/anim/<id>/`; generators then attach the entity's `anim` block. The protagonist's `battle` art faces right
 (the player's side); enemies face left.
 
+## Facing (combat sprites)
+
+Foes stand at the top of the battle screen and **face the player** (three-quarter front view, eyes on the viewer);
+the player's party (Lin, Dao companions) faces right, toward the foes. The rule lives in `FACING` / `battle()` in
+`tools/gen/common.py`. Existing sprites are turned without losing their design by redrawing from the current image:
+`python3 tools/art/queue.py --name front --files <...> --redraw --tag front` writes the reference PNGs to
+`.tmp/redraw_refs/ia_cur/` (upload to `input/ia_cur/`) and a queue whose prompt keeps anatomy, outfit, mounts and
+objects and only turns the figure. Collect with `tools/art/collect.py <root> --tag front`.
+Note: the bridge can reuse an earlier upload of the same path; give a changed queue or reference a new file name.
+

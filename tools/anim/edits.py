@@ -74,6 +74,7 @@ def main():
     ap.add_argument("--ids", required=True)
     ap.add_argument("--parts", default=",".join(PARTS))
     ap.add_argument("--reroll", type=int, default=0)
+    ap.add_argument("--ver", default="", help="suffix for the uploaded source name (new art → new name, so no stale copy is used)")
     a = ap.parse_args()
     c = load_content()
     parts = [p for p in a.parts.split(",") if p]
@@ -90,13 +91,13 @@ def main():
             prompt, transparent = PARTS[p]
             seed = int(hashlib.sha1(f"{eid}/{p}#{a.reroll}".encode()).hexdigest()[:8], 16)
             q.append({"entity": eid, "key": f"anim_{p}", "file": f"assets/anim/{eid}/{p}.png", "prompt": prompt + (" Plain flat light-grey background." if transparent else ""),
-                      "ref": f"ia_anim/{eid}.png", "w": gw, "h": gh, "transparent": transparent, "seed": seed,
+                      "ref": f"ia_anim/{eid}{('_' + a.ver) if a.ver else ''}.png", "w": gw, "h": gh, "transparent": transparent, "seed": seed,
                       "prefix": f"IA_anim/{eid}/{p}" + (f"_r{a.reroll}" if a.reroll else "")})
     os.makedirs(os.path.join(ROOT, ".tmp", "queues"), exist_ok=True)
     path = os.path.join(ROOT, ".tmp", "queues", f"anim_{a.name}.json")
     json.dump(q, open(path, "w"), ensure_ascii=False)
     print(f"{len(q)} jobs -> {path}")
-    for eid, s in sources: print(f"source {eid}: {s}  → ComfyUI input/ia_anim/{eid}.png")
+    for eid, s in sources: print(f"source {eid}: {s}  → ComfyUI input/ia_anim/{eid}{('_' + a.ver) if a.ver else ''}.png")
 
 
 if __name__ == "__main__":

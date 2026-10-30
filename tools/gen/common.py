@@ -74,12 +74,20 @@ def bg(path, desc, size=(1080, 1920), refs=None):
 # Creatures must not turn into people: "head to feet" made the model add riders, fairies and humans to animals.
 CREATURE = "the whole animal in frame from head to tail, a lone creature with no humans, riders or people"
 
-def battle(path, desc, size=(768, 1024), refs=None, creature=False, facing="left"):
-    """Combat sprite. Enemies face left; the player's side faces right (facing matters for the animation rig:
-    the weapon swings toward the foe). Side view, weapon clearly separate from the body, so the rig can cut it out."""
+# How a combat sprite is turned. Foes stand at the top of the battle screen and face the player, who is in front of
+# them (owner, 2026-10-30: "make them look in front of them"); the player's party faces right, toward the foes.
+FACING = {
+    "front": "in a three-quarter front view, body turned toward the viewer, head and eyes looking straight at the viewer as if facing an opponent standing right in front of it",
+    "right": "in three-quarter view facing right",
+    "left": "in three-quarter view facing left",
+}
+
+def battle(path, desc, size=(768, 1024), refs=None, creature=False, facing="front"):
+    """Combat sprite (see FACING). The weapon is held clearly away from the body so the animation rig can cut it out."""
     body = CREATURE if creature else "complete figure head to feet"
-    return art(f"assets/{path}.png", f"{STYLE}. Full-body combat illustration of {desc}, dynamic idle pose in three-quarter view facing {facing}, "
-               f"{body}, weapon held ready and clearly visible away from the body, isolated on plain background, no text.", size, True, refs or [])
+    weapon = "" if creature else ", any weapon held ready and clearly visible away from the body"
+    return art(f"assets/{path}.png", f"{STYLE}. Full-body combat illustration of {desc}, dynamic ready pose {FACING[facing]}, "
+               f"{body}{weapon}, isolated on plain background, no text.", size, True, refs or [])
 
 def portrait(path, desc, refs=None):
     return art(f"assets/{path}.png", f"{STYLE}. Bust portrait of {desc}, facing slightly left, soft expression, "

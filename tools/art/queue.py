@@ -52,6 +52,23 @@ FILE_REF = {
 }
 
 
+# --redraw: the asset's current image is the reference (uploaded as input/ia_cur/<entity>__<key>.png) and the new
+# prompt says what changes; identity, outfit and colours come from the image (owner: turn every foe toward the player).
+REDRAW_PROMPT = ("Image 1 is the approved design. Keep everything about it exactly the same: the same subject and species, the same anatomy and "
+                 "body shape (an animal, serpent, dragon or monster stays exactly that creature, never a human), the same face, outfit, colours, markings, "
+                 "weapons and held objects (add none, remove none), the same rider or mount if there is one, the same effects and art style. ")
+# what each FACING value asks of a redraw
+REDRAW_TURN = {
+    "front": "Only turn it to face the viewer: a three-quarter front view with the head and eyes looking straight at the viewer, as if facing an opponent standing right in front of it. If it already faces the viewer, keep the pose.",
+    "right": "Only turn it to face right in a three-quarter view, toward an opponent on the right. If it already faces right, keep the pose.",
+    "left": "Only turn it to face left in a three-quarter view. If it already faces left, keep the pose.",
+}
+
+
+def redraw_ref_name(job):
+    return f"ia_cur/{job['entity']}__{job['key']}.png"
+
+
 def char_ref(job):
     """Characters seen in the mockups are drawn from their mockup crop; every other portrait/expression/battle
     sprite is drawn from that NPC's own full-body render once it exists."""
@@ -78,12 +95,15 @@ def gen_size(w, h, mp=1.05):
     return int(round(gw / 16) * 16), int(round(gh / 16) * 16)
 
 
-def entry(job, variant="ref", tag="", reroll=0):
+def entry(job, variant="ref", tag="", reroll=0, redraw=False):
     w, h = job["size"]
     gw, gh = gen_size(w, h)
     cref = char_ref(job)
     sref = None if variant == "noref" else style_ref(job, "all" if variant == "allref" else "chars")
-    if job["file"] in FILE_REF:
+    if redraw:
+        turn = "right" if "facing right" in job["prompt"] else "left" if "facing left" in job["prompt"] else "front"
+        prompt, ref = REDRAW_PROMPT + REDRAW_TURN[turn] + " The complete figure stays in frame, same scale.", redraw_ref_name(job)
+    elif job["file"] in FILE_REF:
         ref, pre = FILE_REF[job["file"]]
         prompt = pre + job["prompt"]
     elif cref:
@@ -114,6 +134,8 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--tag", default="", help="suffix for output names (pilot rounds)")
     ap.add_argument("--reroll", type=int, default=0, help="new seed for the same prompt (bad draw: frame, stray object, bad cut-out)")
+    ap.add_argument("--redraw", action="store_true", help="draw from the asset's current image (identity kept, the prompt's pose applied); writes the reference PNGs to .tmp/redraw_refs/")
+    ap.add_argument("--exclude", default="", help="comma-separated entity ids to leave out")
     a = ap.parse_args()
     jobs = json.load(open(os.path.join(ROOT, ".tmp/art-jobs.json")))["jobs"]
     ids = set(filter(None, a.ids.split(","))); files = set(filter(None, a.files.split(",")))
@@ -121,8 +143,17 @@ def main():
     sel = [j for j in jobs if (not ids or j["entity"] in ids) and (not files or j["file"] in files)
            and (not prefixes or j["file"][len("assets/"):].startswith(prefixes)) and (not keys or j["key"] in keys)
            and not (a.skip_existing and os.path.exists(os.path.join(ROOT, j["file"])))]
+    excl = set(filter(None, a.exclude.split(",")))
+    sel = [j for j in sel if j["entity"] not in excl]
     if a.limit: sel = sel[:a.limit]
-    q = [entry(j, a.variant, a.tag, a.reroll) for j in sel]
+    if a.redraw:
+        from PIL import Image
+        out = os.path.join(ROOT, ".tmp", "redraw_refs"); os.makedirs(os.path.join(out, "ia_cur"), exist_ok=True)
+        for j in sel:
+            im = Image.open(os.path.join(ROOT, j["file"])).convert("RGBA")
+            flat = Image.new("RGB", im.size, (217, 217, 217)); flat.paste(im, mask=im.getchannel("A"))
+            flat.save(os.path.join(out, redraw_ref_name(j)))
+    q = [entry(j, a.variant, a.tag, a.reroll, a.redraw) for j in sel]
     os.makedirs(os.path.join(ROOT, ".tmp/queues"), exist_ok=True)
     path = os.path.join(ROOT, ".tmp/queues", f"{a.name}.json")
     json.dump(q, open(path, "w"), ensure_ascii=False)

@@ -89,3 +89,18 @@ test("the weapon pivots at the grip and swings toward the foe", () => {
   const swing = weaponPlacement(rig, { ...REST, weapon: 1 });
   assert.equal(swing.angle, -1, "facing −1 mirrors the swing");
 });
+
+test("a figure facing the viewer bows toward the camera instead of shearing sideways; swings follow its weapon side", () => {
+  const front: RigDef = { ...rig, facing: 0 };
+  const mesh = buildMesh(front);
+  const still = { ...REST, flutter: 0 };
+  const rest = deform(front, mesh, still), bow = deform(front, mesh, { ...still, lean: 0.4 });
+  const topCentre = 4 * 2;
+  assert.ok(Math.abs(bow[topCentre]! - rest[topCentre]!) < 1, "no sideways shear at the top centre");
+  assert.ok(bow[topCentre + 1]! > rest[topCentre + 1]!, "the top comes down toward the viewer");
+  const feet = ((13 - 1) * 9 + 4) * 2;
+  assert.ok(Math.abs(bow[feet + 1]! - rest[feet + 1]!) < 1e-6, "feet stay planted");
+  // weapon pivot (560) is right of the ground point (382): swings turn clockwise (+1)
+  assert.equal(weaponPlacement(front, { ...REST, weapon: 1 }).angle, 1);
+});
+

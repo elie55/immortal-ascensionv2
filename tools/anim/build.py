@@ -205,7 +205,9 @@ def build(root, eid, c, debug=False):
         dbg[..., 2] = np.maximum(dbg[..., 2], (wmask * 255).astype(np.uint8))
 
     # ---------- measurements ----------
-    facing = 1 if eid.startswith("npc.") and (e.get("role") == "protagonist" or e.get("dao_companion", {}).get("eligible")) else -1
+    ally = eid.startswith("npc.") and (e.get("role") == "protagonist" or e.get("dao_companion", {}).get("eligible"))
+    prompt = (e.get("art", {}).get("battle") or {}).get("prompt", "")
+    facing = 1 if ally else 0 if "toward the viewer" in prompt or "front view" in prompt else -1
     kind = e.get("kind"); arch = "humanoid" if weapon else ("humanoid_unarmed" if not creature else "quadruped")
     if e.get("phases") or kind == "boss": arch = "large" if not weapon else "humanoid"
     if "flying" in (e.get("tags") or []) or re.search(r"bird|crane|roc|moth|eagle|phoenix|bat", eid): arch = "flying" if creature else arch

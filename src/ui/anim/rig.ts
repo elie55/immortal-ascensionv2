@@ -16,7 +16,7 @@ export interface RigDef {
   size: [number, number];             // body texture size in px
   bbox: [number, number, number, number]; // opaque box inside the texture
   ground: [number, number];           // feet point (texture px)
-  facing: 1 | -1;                     // +1 faces right (player's side), −1 faces left (foes)
+  facing: 1 | -1 | 0;                 // +1 faces right (player's side), −1 faces left, 0 faces the viewer (foes)
   /** unit vector toward the foe in screen space (set by the stage: allies advance up the screen, foes down) */
   toward?: [number, number];
   archetype: Archetype;
@@ -253,10 +253,11 @@ export function deform(rig: RigDef, mesh: Mesh, p: Pose, out?: Float32Array): Fl
   const n = mesh.base.length / 2;
   const pos = out ?? new Float32Array(n * 2);
   const [gx, gy] = rig.ground; const [x0, y0, x1, y1] = rig.bbox;
-  const w = x1 - x0, h = y1 - y0, f = rig.facing;
+  const w = x1 - x0, h = y1 - y0, f = rig.facing, sf = swingSide(rig);
+  const front = f === 0;                   // a figure facing the viewer bends toward the camera instead of sideways
   const [tx, ty] = rig.toward ?? [f, 0];   // "advance" (pose.x) moves along this vector
   const sx = 1 + p.squash * 0.6, sy = 1 - p.squash;
-  const cosR = Math.cos(p.rot * f), sinR = Math.sin(p.rot * f);
+  const cosR = Math.cos(p.rot * sf), sinR = Math.sin(p.rot * sf);
   const neckH = (gy - rig.neck) / h, chestH = (gy - rig.chest) / h;
   for (let i = 0; i < n; i++) {
     let x = mesh.base[i * 2]! - gx, y = mesh.base[i * 2 + 1]! - gy;  // relative to the ground point, y up is negative
@@ -267,11 +268,12 @@ export function deform(rig: RigDef, mesh: Mesh, p: Pose, out?: Float32Array): Fl
     // head tilt: vertices above the neck rotate around the neck point
     if (hh > neckH && p.head) {
       const wHead = Math.min(1, (hh - neckH) / 0.08);
-      const ny = -neckH * h; const dx = x, dy = y - ny; const a = p.head * f * wHead;
+      const ny = -neckH * h; const dx = x, dy = y - ny; const a = p.head * sf * wHead;
       x = dx * Math.cos(a) - dy * Math.sin(a); y = ny + dx * Math.sin(a) + dy * Math.cos(a);
     }
     // lean: shear growing with height (bend from the hips)
-    x += p.lean * f * Math.pow(hh, 1.35) * h * 0.42;
+    if (front) { const k = Math.pow(hh, 1.35); y += p.lean * k * h * 0.07; x *= 1 + p.lean * 0.09 * k; } // bow toward the viewer: the top comes down and closer
+    else x += p.lean * f * Math.pow(hh, 1.35) * h * 0.42;
     // flutter: lagged wave on hair, sleeves and hems
     const fl = mesh.flutter[i]! * p.flutter;
     if (fl) { const ph = p.wind - hh * 2.4 + (x / w) * 1.1; x += Math.sin(ph) * fl * w * 0.028; y += Math.cos(ph * 0.7) * fl * h * 0.006; }
@@ -283,17 +285,24 @@ export function deform(rig: RigDef, mesh: Mesh, p: Pose, out?: Float32Array): Fl
   return pos;
 }
 
+/** Which way swings and tilts turn: the facing, or for a figure facing the viewer the side its weapon is on. */
+export function swingSide(rig: RigDef): 1 | -1 {
+  if (rig.facing) return rig.facing;
+  return rig.weapon && rig.weapon.pivot[0] < rig.ground[0] ? -1 : 1;
+}
+
 /** Weapon placement for a pose: pivot position (texture px) and angle (radians, screen space). */
 export function weaponPlacement(rig: RigDef, p: Pose): { px: number; py: number; angle: number; sx: number; sy: number } {
-  const wp = rig.weapon!; const [gx, gy] = rig.ground; const [x0, y0, x1, y1] = rig.bbox; const w = x1 - x0, h = y1 - y0, f = rig.facing;
+  const wp = rig.weapon!; const [gx, gy] = rig.ground; const [x0, y0, x1, y1] = rig.bbox; const w = x1 - x0, h = y1 - y0, f = rig.facing, sf = swingSide(rig);
   let x = wp.pivot[0] - gx, y = wp.pivot[1] - gy;
   const hh = Math.min(1, Math.max(0, -y / h));
-  x += p.lean * f * Math.pow(hh, 1.35) * h * 0.42;
+  if (f === 0) { const k = Math.pow(hh, 1.35); y += p.lean * k * h * 0.07; x *= 1 + p.lean * 0.09 * k; }
+  else x += p.lean * f * Math.pow(hh, 1.35) * h * 0.42;
   const sx = 1 + p.squash * 0.6, sy = 1 - p.squash; x *= sx; y *= sy;
-  const cosR = Math.cos(p.rot * f), sinR = Math.sin(p.rot * f);
+  const cosR = Math.cos(p.rot * sf), sinR = Math.sin(p.rot * sf);
   const rx = x * cosR - y * sinR, ry = x * sinR + y * cosR;
   const [tx, ty] = rig.toward ?? [f, 0];
-  return { px: gx + rx + p.x * tx * w, py: gy + ry + p.y + p.x * ty * h * 0.35, angle: p.weapon * f + p.rot * f + p.lean * f * 0.5, sx, sy };
+  return { px: gx + rx + p.x * tx * w, py: gy + ry + p.y + p.x * ty * h * 0.35, angle: p.weapon * sf + p.rot * sf + p.lean * f * 0.5, sx, sy };
 }
 
 // ---------- state machine ----------
