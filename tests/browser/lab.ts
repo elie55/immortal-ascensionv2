@@ -113,6 +113,101 @@ async function fight(name: string, n: number, src: any, opts: { companions?: str
   await shot(`${name}-5-end`);
 }
 
+/**
+ * Regression check for three owner reports: (1) in Manual, while the game waits for a move, nothing may flash or
+ * replay (the battle scene used to leave and re-enter the page on every game tick); (2) switching Manual → Auto
+ * while a move is awaited must let the fight finish by itself; (3) the victory screen, shot over a few ticks.
+ */
+async function idle(name: string) {
+  await boot(labState(2, "fitted"));
+  await dismiss();
+  await page.evaluate(() => { const st = (window as any).__ia.game.state; st.combat.speed = 1; st.combat.manual = true; });
+  await page.evaluate((s) => (window as any).__ia.dev.fight(s), { kind: "node", id: nodeOf(2, "battle") });
+  await page.waitForSelector(".bt-skill.ready", { timeout: 30_000 });
+  await page.locator(".bt-skill.basic.ready").first().click(); // one exchange so the fighters carry hit classes
+  await page.waitForSelector(".bt-skill.ready", { timeout: 30_000 });
+  await page.waitForTimeout(700);
+  const probe = await page.evaluate(() => new Promise<{ anims: string[]; detached: number }>((done) => {
+    const root = document.querySelector(".battle")!; const anims: string[] = []; let detached = 0;
+    const onStart = (e: Event) => anims.push(`${(e.target as HTMLElement).className}:${(e as AnimationEvent).animationName}`);
+    root.addEventListener("animationstart", onStart);
+    const mo = new MutationObserver((ms) => { for (const m of ms) for (const n of m.removedNodes) if (n === root) detached++; });
+    mo.observe(document.body, { childList: true, subtree: true });
+    setTimeout(() => { root.removeEventListener("animationstart", onStart); mo.disconnect(); done({ anims, detached }); }, 3500);
+  }));
+  await shot(`${name}-1-manual-idle`);
+  if (probe.detached || probe.anims.length) throw new Error(`manual idle replayed: detached ${probe.detached}×, animations ${probe.anims.join(", ")}`);
+  await page.locator(".bt-controls .seg button", { hasText: "Auto" }).click();
+  let finished = false;
+  for (let w = 0; w < 6 && !finished; w++) {
+    if (!await page.waitForSelector(".modal-backdrop", { timeout: 60_000 }).then(() => true).catch(() => false)) break;
+    const next = page.locator(".modal-backdrop button", { hasText: "Next wave" });
+    if (await next.count()) { await page.waitForTimeout(600); await shot(`${name}-1b-wave-clear`); await next.click(); await page.waitForTimeout(400); continue; }
+    finished = true;
+  }
+  if (!finished) throw new Error("Auto did not take over after Manual");
+  for (const [i, ms] of [[2, 400], [3, 1300], [4, 2600]] as const) { await page.waitForTimeout(ms - (i === 2 ? 0 : i === 3 ? 400 : 1300)); await shot(`${name}-${i}-victory`); }
+  const foesShown = await page.evaluate(() => [...document.querySelectorAll(".bt-foe-u")].filter((e) => getComputedStyle(e).opacity !== "0" && getComputedStyle(e.querySelector(".spr")!).opacity !== "0").length);
+  if (foesShown) throw new Error(`${foesShown} defeated foe(s) still visible behind the victory screen`);
+}
+
+/** The owner's first-fight case: early character, First Hunt tracked, Village Road won → victory screen. */
+async function firstVictory(name: string) {
+  const st = labState(1, "fitted");
+  st.progress.quests.active["quest.main.first_hunt"] = { startedAt: T0, counters: [0] }; st.progress.quests.tracked = "quest.main.first_hunt";
+  st.progress.regions["region.mortal_plains"] = { discoveredAt: T0, nodes: {} };
+  await boot(st);
+  await dismiss();
+  await page.evaluate(() => { const g = (window as any).__ia.game.state; g.combat.speed = 3; g.combat.manual = false; });
+  await page.evaluate((s) => (window as any).__ia.dev.fight(s), { kind: "node", id: "node.mortal_plains.village_road" });
+  for (let w = 0; w < 4; w++) {
+    await page.waitForSelector(".modal-backdrop", { timeout: 90_000 });
+    const next = page.locator(".modal-backdrop button", { hasText: "Next wave" });
+    if (await next.count()) { await page.waitForTimeout(500); await next.click(); continue; }
+    break;
+  }
+  await page.waitForTimeout(1500); await shot(`${name}-victory`);
+  const check = await page.evaluate(() => ({
+    track: (document.querySelector(".modal.victory .res-track") as HTMLElement | null)?.innerText.trim() ?? null,
+    hp: (document.querySelectorAll(".modal.victory .res-stats b")[2] as HTMLElement | undefined)?.innerText ?? "",
+  }));
+  if (check.track === "") throw new Error("victory: the tracked-quest line is an empty box");
+  const [hpNow, hpMax] = check.hp.split("/").map((x) => Number(x.replace(/[^0-9]/g, "")));
+  if (!(hpNow! <= hpMax!)) throw new Error(`victory: HP left ${check.hp} is above the maximum`);
+  if (process.env.IA_DUMP) console.log(await page.evaluate(() => [...document.querySelectorAll(".modal.victory .res-panel > *")].map((e) => `${e.tagName}.${e.className} [${(e as HTMLElement).innerText.replace(/\s+/g, " ").slice(0, 80)}] ${e.innerHTML.slice(0, 160)}`).join("\n")));
+}
+
+/** Quest tracking on the map: First Hunt points at Boar Thicket (4) while only Village Road (1) is cleared. The target
+ *  must stay locked with a quest marker, the card must name the next place, and that place must pulse. */
+async function questMap(name: string) {
+  const st = labState(1, "fitted");
+  st.progress.regions["region.mortal_plains"] = { discoveredAt: T0, nodes: { "node.mortal_plains.village_road": { clears: 1 } } } as any;
+  for (const k of Object.keys(st.progress.regions)) if (k !== "region.mortal_plains") delete st.progress.regions[k];
+  st.progress.quests.active = { "quest.main.first_hunt": { startedAt: T0, counters: [0] } } as any; st.progress.quests.tracked = "quest.main.first_hunt";
+  await boot(st, "adventure");
+  await dismiss();
+  await page.locator(".tracker").first().click();
+  await page.waitForSelector(".node-pin.sel");
+  await page.waitForTimeout(900);
+  await shot(`${name}-1-go`);
+  const r = await page.evaluate(() => ({
+    sub: (document.querySelector(".tracker .tr-sub") as HTMLElement | null)?.innerText ?? "",
+    sel: document.querySelector(".node-pin.sel")?.getAttribute("aria-label") ?? "",
+    locked: !!document.querySelector(".node-pin.sel.st-locked.quest .np-quest"),
+    next: document.querySelector(".node-pin.next-step")?.getAttribute("aria-label") ?? "",
+    card: (document.querySelector(".np-next") as HTMLElement | null)?.innerText ?? "",
+    fight: [...document.querySelectorAll("button")].some((b) => /^\s*(Fight|Challenge)\s*$/.test((b as HTMLElement).innerText)),
+  }));
+  if (!r.locked || !/Boar Thicket/.test(r.sel)) throw new Error(`quest target not marked/locked: ${JSON.stringify(r)}`);
+  if (!/Herb Meadow/.test(r.next) || !/Herb Meadow/.test(r.card)) throw new Error(`next step not shown: ${JSON.stringify(r)}`);
+  if (r.fight) throw new Error("a Fight button is offered on a locked quest target");
+  await page.locator(".np-next .btn").click(); await page.waitForTimeout(500);
+  await shot(`${name}-2-next-step`);
+  await page.locator(".node-pin", { hasText: "Village Road" }).click(); await page.waitForTimeout(400);
+  await page.locator(".node-fight").scrollIntoViewIfNeeded(); await shot(`${name}-3-combat-card`);
+  if (await page.locator(".node-fight").count() !== 1) throw new Error("combat card: expected one Fight button");
+}
+
 const nodeOf = (n: number, kind: string) => c.nodesOf(regions[n - 1]!.id).find((x) => x.kind === kind && x.waves?.length)!.id;
 /** A screen in a mid-game state: `go` runs in the page after loading (window.__ia available). */
 async function screen(name: string, n: number, go: string, opts: { arch?: "fitted" | "geared"; tab?: string; mutate?: (s: GameState) => void } = {}) {
@@ -228,6 +323,9 @@ const SCEN: Record<string, () => Promise<void>> = {
     await page.locator(".nav button", { hasText: "Cultivate" }).click(); await page.waitForTimeout(700); await shot("waterfall-cultivate-pill");
   }),
   solo: () => fight("solo", 2, { kind: "node", id: nodeOf(2, "battle") }),
+  idle: () => idle("idle"),
+  firstwin: () => firstVictory("firstwin"),
+  questmap: () => questMap("questmap"),
   chief: () => fight("chief", 1, { kind: "node", id: nodeOf(1, "boss") }, { arch: "geared", companions: ["npc.bai_lingshuang"] }),
   elite: () => fight("elite", 3, { kind: "node", id: nodeOf(3, "elite") }),
   boss: () => fight("boss", 2, { kind: "node", id: nodeOf(2, "boss") }, { companions: ["npc.bai_lingshuang"] }),

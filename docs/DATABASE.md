@@ -144,10 +144,11 @@ Only reference-carrying and rule-carrying fields are listed; see `schema/*.ts` f
 | **beast** | `element` → `elem.`, `stages[]` each: `evolve_materials[]` → items, `active` → `btech.`, `passive` → `btech.`; `food[]` → `bfood.`; `sources[]` |
 | **npc** | `location?` → `sectloc.`/`node.`, `gifts.{loved,liked,disliked}[]` → items, `topics[].unlock` (affinity level), `quests[]` → `quest.`, `duel.loadout[]` → `tech.`, `shop?` → `shop.`, `dao_companion` (bool + `battle` art) |
 | **region** | `unlock` → `region.`/`quest.`/`realm.`/`sect_fame`, `nodes[]` → `node.`, `boss` → `boss.`, `materials[]` → `mat.` (regional drops summary; validated against actual loot) |
-| **node** | `region` → `region.`, `kind`, `connections[]` → `node.` (same region), `enemies[]` / `boss` / `gather[]` → items, `chest` → `loot.`, `event` → `event.`, `shop` → `shop.`, `secret_realm` → `dungeon.`, `story` → `story.`, `cultivation_bonus` |
+| **node** | `region` → `region.`, `kind`, `connections[]` → `node.` (same region), `enemies[]` / `boss` / `gather[]` → items, `chest` → `loot.`, `event` → `event.`, `shop` → `shop.`, `secret_realm` → `dungeon.`, `story` → `story.`, `cultivation_bonus` · links are built by `chain_links()` (tools/gen/common.py): places open in map-number order, hidden / merchant / secret-realm places branch off without gating |
 | **dungeon** | `kind`, `entry` (→ `realm.`/`rank.`/`quest.`/`region.`), `floors[]`/`waves[]`/`nodes[]` → `enemy.`/`boss.`, `rewards` → `loot.`, `first_clear` → rewards, `modifiers[]`, `companions_allowed` (mega) |
 | **tribulation** | `realm` → `realm.`, `waves[]` (lightning stats), `failure` consequence, `rewards` → `loot.` |
 | **sectloc** | `unlock` → `rank.`/`sect_fame`, `npcs[]` → `npc.`, `shop?` → `shop.`, `actions[]` (recipes/quests boards) |
+| **quest** | `giver`/`turn_in` → `npc.`/`sectloc.`, `prereqs`, `objectives[]` → enemies/items/nodes/…, `rewards`, `provides?[]` → items handed over on accept (counts as an acquisition source; quest cannot be abandoned, items cannot be sold while active), `next?` → `quest.` |
 | **rank** | `order`, `fame_required`, `promotion.quests[]` → `quest.`, `promotion.trial?` → `dungeon.`/`tournament.`, `benefits` |
 | **shop** | `stock[]` → `{id}` items/techs or `{gear: GearGrant}` with price + `unlock`, `owner?` → `npc.` |
 | **loot** | `ilvl: [min,max]` band; `entries[]` → item entries `{id, chance, qty}` or gear entries `{gear: {base}｜{pool}, rarity_weights, chance}`; `guaranteed[]`, `guaranteed_gear[]`; currency ranges |

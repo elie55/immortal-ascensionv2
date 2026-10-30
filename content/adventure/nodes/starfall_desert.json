@@ -10,8 +10,7 @@
       0.93
     ],
     "connections": [
-      "node.starfall_desert.gathering",
-      "node.starfall_desert.outskirts"
+      "node.starfall_desert.gathering"
     ],
     "rec_cp": 73000,
     "first_clear": {
@@ -41,8 +40,7 @@
     ],
     "connections": [
       "node.starfall_desert.entry",
-      "node.starfall_desert.west_path",
-      "node.starfall_desert.cache"
+      "node.starfall_desert.outskirts"
     ],
     "rec_cp": 83512,
     "first_clear": {},
@@ -74,9 +72,8 @@
       0.82
     ],
     "connections": [
-      "node.starfall_desert.entry",
-      "node.starfall_desert.cache",
-      "node.starfall_desert.east_path"
+      "node.starfall_desert.gathering",
+      "node.starfall_desert.west_path"
     ],
     "rec_cp": 78840,
     "first_clear": {
@@ -106,8 +103,8 @@
       0.66
     ],
     "connections": [
-      "node.starfall_desert.gathering",
-      "node.starfall_desert.lair"
+      "node.starfall_desert.outskirts",
+      "node.starfall_desert.cache"
     ],
     "rec_cp": 81760,
     "first_clear": {
@@ -137,9 +134,8 @@
       0.72
     ],
     "connections": [
-      "node.starfall_desert.gathering",
-      "node.starfall_desert.outskirts",
-      "node.starfall_desert.crossroads"
+      "node.starfall_desert.west_path",
+      "node.starfall_desert.east_path"
     ],
     "rec_cp": 93148,
     "first_clear": {},
@@ -158,8 +154,8 @@
       0.66
     ],
     "connections": [
-      "node.starfall_desert.outskirts",
-      "node.starfall_desert.ridge"
+      "node.starfall_desert.cache",
+      "node.starfall_desert.lair"
     ],
     "rec_cp": 87600,
     "first_clear": {
@@ -189,8 +185,8 @@
       0.5
     ],
     "connections": [
-      "node.starfall_desert.west_path",
-      "node.starfall_desert.deep_path"
+      "node.starfall_desert.east_path",
+      "node.starfall_desert.crossroads"
     ],
     "rec_cp": 144832,
     "first_clear": {
@@ -221,9 +217,8 @@
       0.53
     ],
     "connections": [
-      "node.starfall_desert.cache",
-      "node.starfall_desert.deep_path",
-      "node.starfall_desert.sanctum"
+      "node.starfall_desert.lair",
+      "node.starfall_desert.ridge"
     ],
     "rec_cp": 102784,
     "first_clear": {},
@@ -242,8 +237,8 @@
       0.5
     ],
     "connections": [
-      "node.starfall_desert.east_path",
-      "node.starfall_desert.sanctum"
+      "node.starfall_desert.crossroads",
+      "node.starfall_desert.deep_path"
     ],
     "rec_cp": 96360,
     "first_clear": {
@@ -272,8 +267,8 @@
       0.36
     ],
     "connections": [
-      "node.starfall_desert.lair",
-      "node.starfall_desert.crossroads",
+      "node.starfall_desert.ridge",
+      "node.starfall_desert.sanctum",
       "node.starfall_desert.den"
     ],
     "rec_cp": 99280,
@@ -304,10 +299,7 @@
       0.36
     ],
     "connections": [
-      "node.starfall_desert.crossroads",
-      "node.starfall_desert.ridge",
-      "node.starfall_desert.hidden_grove",
-      "node.starfall_desert.approach"
+      "node.starfall_desert.deep_path"
     ],
     "rec_cp": 112420,
     "first_clear": {},
@@ -327,7 +319,8 @@
     ],
     "connections": [
       "node.starfall_desert.deep_path",
-      "node.starfall_desert.throne"
+      "node.starfall_desert.hidden_grove",
+      "node.starfall_desert.approach"
     ],
     "rec_cp": 168192,
     "first_clear": {
@@ -362,8 +355,7 @@
       0.22
     ],
     "connections": [
-      "node.starfall_desert.sanctum",
-      "node.starfall_desert.approach"
+      "node.starfall_desert.den"
     ],
     "rec_cp": 118844,
     "first_clear": {},
@@ -371,7 +363,7 @@
     "energy_cost": 10,
     "event": "event.oasis_of_stars",
     "hidden": {
-      "condition": "clear the region boss",
+      "condition": "Win at Golem Yard to search for it",
       "reveal_chance": 0.3
     }
   },
@@ -386,8 +378,7 @@
       0.24
     ],
     "connections": [
-      "node.starfall_desert.sanctum",
-      "node.starfall_desert.hidden_grove",
+      "node.starfall_desert.den",
       "node.starfall_desert.throne"
     ],
     "rec_cp": 110960,
@@ -418,7 +409,6 @@
       0.07
     ],
     "connections": [
-      "node.starfall_desert.den",
       "node.starfall_desert.approach"
     ],
     "rec_cp": 170820,

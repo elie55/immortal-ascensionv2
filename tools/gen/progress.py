@@ -116,12 +116,13 @@ def forge():
 
 # ---------------- Quests ----------------
 def quests():
-    def Q(key, typ, name, cn, desc, giver, turn_in, objectives, rewards, hint, prereqs=None, nxt=None, diff=1, cp=None, repeat=None):
+    def Q(key, typ, name, cn, desc, giver, turn_in, objectives, rewards, hint, prereqs=None, nxt=None, diff=1, cp=None, repeat=None, provides=None):
         d = {"id": f"quest.{typ}.{key}", **named(name, desc, cn), "type": typ, "giver": giver, "turn_in": turn_in, "prereqs": prereqs or {}, "objectives": objectives, "rewards": rewards,
              "difficulty": diff, "hint": hint, "art": {"icon": icon(f"quests/{typ}_{key}", f"a round quest emblem with a small pictorial scene evoking {name.lower()}, a purely pictorial emblem with no letters, characters or writing anywhere", "rare", ["refs/mockups/mission_hall.png"])}}
         if nxt: d["next"] = f"quest.{nxt}"
         if cp: d["rec_cp"] = cp
         if repeat: d["repeatable"] = {"cooldown_min": repeat}
+        if provides: d["provides"] = provides
         return d
     MH, BAI, TANG = "sectloc.mission_hall", "npc.bai_lingshuang", "npc.tang_xiaoman"
     return [
@@ -155,7 +156,8 @@ def quests():
         Q("frost_sword_lesson", "npc", "The Frost Sword Lesson", "霜剑课", "Bai will teach the Frost Blossom Slash once you reach Stage 3 and win a friendly spar against Tang.", BAI, BAI,
           [{"type": "reach_realm", "realm": "realm.qi_condensation", "stage": 3}, {"type": "win_duel", "npc": TANG, "count": 1}], {"techniques": ["tech.active.frost_blossom_slash"], "items": [q("book.ripple_mending_scroll", 1)], "affinity": [{"npc": BAI, "delta": 30}]}, "Sect · Merchant Pavilion · Duel Tang, then Sword Grounds", {"affinity": [{"npc": BAI, "level": 1}]}, None, 2),
         Q("qins_first_companion", "npc", "A First Companion", "初伴", "Qin hands you a warm cloud-fox egg. Hatch it in the Spirit Beast Garden.", "npc.qin", "npc.qin",
-          [{"type": "hatch", "beast": "beast.yunyun"}], {"items": [q("bfood.spirit_fruit", 5)], "affinity": [{"npc": "npc.qin", "delta": 20}]}, "Sect · Spirit Beast Garden", {}, "beast.evolve_yunyun"),
+          [{"type": "hatch", "beast": "beast.yunyun"}], {"items": [q("bfood.spirit_fruit", 5)], "affinity": [{"npc": "npc.qin", "delta": 20}]}, "Sect · Spirit Beast Garden", {}, "beast.evolve_yunyun",
+          provides=[q("egg.cloud_fox", 1)]),  # the player's first egg: Qin gives it with this quest (no egg in the starting bag)
         Q("evolve_yunyun", "beast", "YunYun Grows Up", "云云长大", "Raise YunYun to level 10 and evolve her into a Cloud Fox.", "npc.qin", "npc.qin",
           [{"type": "evolve", "beast": "beast.yunyun", "stage": "juvenile"}], {"items": [q("bfood.dried_fish", 5), q("gift.beast_bell", 1)], "affinity": [{"npc": "npc.qin", "delta": 30}]}, "Sect · Spirit Beast Garden · YunYun", {"quests": ["quest.npc.qins_first_companion"]}),
         Q("qi_condensation_five", "cultivation", "Halfway Up the Mountain", "炼气五层", "Reach Qi Condensation Stage 5.", "system", "auto",
@@ -239,7 +241,7 @@ def story():
 def meta():
     starting = {"character": "npc.lin_xueyao", "realm": {"id": "realm.qi_condensation", "stage": 1}, "root": "root.faint_mortal", "rank": "rank.outer_disciple", "region": "region.mortal_plains",
                 "method": "method.azure_cloud_breathing", "techniques": ["tech.active.azure_strike"],
-                "inventory": [q("cons.qi_gathering_pill", 3), q("egg.cloud_fox", 1), q("mat.lesser_enhancement_stone", 5)],
+                "inventory": [q("cons.qi_gathering_pill", 3), q("mat.lesser_enhancement_stone", 5)],
                 "equipped": {"weapon": {"base": "gear.bamboo_sword", "rarity": "common", "ilvl": 1}, "armor": {"base": "gear.bamboo_robe", "rarity": "common", "ilvl": 1}, "ring_1": {"base": "gear.azure_iron_war_ring", "rarity": "common", "ilvl": 1}},
                 "spirit_stones": 340, "sect_fame": 120}
     targets = {"strict": False, "targets": {"realms": 15, "regions": 15, "dungeons": 20, "mega_dungeons": 5, "encounters": 150, "bosses": 40, "active_techniques": 30, "passive_techniques": 20,

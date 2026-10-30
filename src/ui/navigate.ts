@@ -10,6 +10,7 @@ import type { Tab } from "./core/router.ts";
 import type { MapNode } from "../content/index.ts";
 import { questProgress, questStatus } from "../engine/progression.ts";
 import { itemCount } from "../engine/inventory.ts";
+import { nextStepTo } from "../engine/nodes.ts";
 import { openLocation } from "./screens/sect.ts";
 import { npcScreen } from "./screens/npc.ts";
 import { regionScreen } from "./screens/adventure.ts";
@@ -17,7 +18,8 @@ import { dungeonHubScreen, realmScreen } from "./screens/delves.ts";
 import { shopScreen } from "./screens/shop.ts";
 import { questLogScreen } from "./screens/quests.ts";
 
-export interface Destination { where: string; tab: Tab; go: () => void }
+/** `node`: the map place the quest points at (the region map puts a quest marker on it). */
+export interface Destination { where: string; tab: Tab; go: () => void; node?: string }
 
 /** Sect location that hosts an NPC (if any). */
 function locationOfNpc(app: App, npcId: string): string | undefined {
@@ -44,7 +46,13 @@ const goNpc = (app: App, npcId: string): Destination => {
   const npc = app.content.get<any>(npcId);
   return { where: `${npc.name}${loc ? ` · ${app.content.get<any>(loc).name}` : ""}`, tab: "sect", go: () => { toTab(app, "sect"); if (loc) openLocation(app, loc); app.router.push(npcScreen(app, npcId, loc ? app.content.get<any>(loc).name : "Sect")); } };
 };
-const goNode = (app: App, n: MapNode): Destination => ({ where: `${app.content.get<any>(n.region).name} · ${n.name}`, tab: "adventure", go: () => { toTab(app, "adventure"); app.router.push(regionScreen(app, n.region, n.id)); focusLater(".node-pin.sel"); } });
+/** A map place: the region opens with the target selected and marked. A locked target stays locked (its card names
+ *  the place to clear next, which pulses on the map); the tracker never makes a place playable. */
+const goNode = (app: App, n: MapNode): Destination => {
+  const step = nextStepTo(app.game.state, app.content, n.id);
+  return { where: `${app.content.get<any>(n.region).name} · ${n.name}${step ? ` · next: ${step.name}` : ""}`, tab: "adventure", node: n.id,
+    go: () => { toTab(app, "adventure"); app.router.push(regionScreen(app, n.region, n.id)); focusLater(".node-pin.sel"); } };
+};
 const goRegion = (app: App, region: string): Destination => ({ where: app.content.get<any>(region).name, tab: "adventure", go: () => { toTab(app, "adventure"); app.router.push(regionScreen(app, region)); } });
 const goDungeon = (app: App, id: string): Destination => {
   const d = app.content.get<any>(id);
@@ -115,6 +123,13 @@ export function questDestination(app: App, q: any): Destination | null {
   const prog = questProgress(s, c, q);
   const i = prog.findIndex((p) => !p.done);
   return i >= 0 ? objectiveDestination(app, q.objectives[i]) : null;
+}
+
+/** The map place the tracked quest points at, if any (region maps put the quest marker on it). */
+export function trackedNode(app: App): string | undefined {
+  const id = app.game.state.progress.quests.tracked;
+  if (!id || !app.content.has(id)) return undefined;
+  return questDestination(app, app.content.get<any>(id))?.node;
 }
 
 /** After the next render, scroll the highlighted element into view (map pin, dungeon card). */

@@ -11,7 +11,8 @@ import type { Screen } from "../core/router.ts";
 import type { App } from "../../app.ts";
 import type { MapNode, Region, Dungeon } from "../../content/index.ts";
 import { checkUnlock } from "../../engine/unlock.ts";
-import { nodeState, regionProgress, gather, openChest, meditateAt, resolveEvent, energyLeft, type NodeState } from "../../engine/nodes.ts";
+import { nodeState, nextStepTo, regionProgress, gather, openChest, meditateAt, resolveEvent, energyLeft, type NodeState } from "../../engine/nodes.ts";
+import { trackedNode } from "../navigate.ts";
 import { energyMax } from "../../engine/cultivation.ts";
 import { canStart, Encounter, type EncounterSource } from "../../engine/encounter.ts";
 import { computeStats } from "../../engine/stats.ts";
@@ -38,6 +39,13 @@ export function nodeArt(app: App, n: MapNode): string | undefined {
   return c.art("ui.nodes", n.kind);
 }
 
+/** Regions / Dungeons switch, shown on both pages (Dungeons sits one level above the Adventure root). */
+export function worldSwitch(app: App, on: "regions" | "dungeons") {
+  return h("div", { class: "chips glass world-switch", role: "tablist" },
+    h("button", { class: ["chip", on === "regions" && "on"], role: "tab", "aria-selected": String(on === "regions"), onClick: () => { if (on !== "regions") app.router.back(); } }, "Regions"),
+    h("button", { class: ["chip", on === "dungeons" && "on"], role: "tab", "aria-selected": String(on === "dungeons"), onClick: () => { if (on !== "dungeons") app.router.push(dungeonHubScreen(app)); } }, "Dungeons"));
+}
+
 export function adventureScreen(app: App) {
   const s = app.game.state, c = app.content;
   const regions = c.byPrefix<Region>("region").slice().sort((a, b) => a.order - b.order);
@@ -46,7 +54,7 @@ export function adventureScreen(app: App) {
   return [
     header(app),
     subbar({ title: "World Regions", cn: "天下", sub: `${discovered} of ${regions.length} regions open`, end: energyChip(app, now) }),
-    h("div", { class: "chips glass" }, h("button", { class: "chip on" }, "Regions"), h("button", { class: "chip", onClick: () => app.router.push(dungeonHubScreen(app)) }, "Dungeons")),
+    worldSwitch(app, "regions"),
     h("div", { class: "region-grid" }, regions.map((r) => {
       const open = !!s.progress.regions[r.id];
       const u = checkUnlock(s, c, r.unlock as any);
@@ -81,6 +89,11 @@ export function regionScreen(app: App, regionId: string, select?: string): Scree
       const bossNode = nodes.find((n) => n.kind === "boss");
       const sel = selected ? nodes.find((n) => n.id === selected) : undefined;
       const pos = (n: MapNode) => ({ left: `${n.position[0] * 100}%`, top: `${n.position[1] * 100}%` });
+      // the tracked quest marks its place; if that place is still locked, the place to play next pulses
+      const quest = trackedNode(app);
+      const questHere = quest && nodes.some((n) => n.id === quest) ? quest : undefined;
+      const step = questHere ? nextStepTo(s, c, questHere) : null;
+      const number = (n: MapNode) => nodes.indexOf(n) + 1;
       return [
         header(app),
         subbar({ help: { app, key: "region" }, title: r.name, cn: r.name_cn, sub: `${c.get<any>(r.realm_range.min).name} · ${prog.cleared} / ${prog.total} places · ${bossNode ? (s.progress.regions[regionId]?.nodes[bossNode.id]?.clears ? "boss defeated" : "boss awaits") : ""}`, backTo: "Regions", onBack: () => app.router.back(), end: h("span", { class: "cp-chip" }, icon("cp", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(cp)))) }),
@@ -98,7 +111,8 @@ export function regionScreen(app: App, regionId: string, select?: string): Scree
             const k = KIND[n.kind] ?? KIND.battle!;
             const here = s.character.location === n.id;
             const art = st === "hidden" ? undefined : nodeArt(app, n);
-            return h("button", { class: ["node-pin", `k-${n.kind}`, `st-${st}`, n.kind === "boss" && "boss", n.kind === "elite" && "elite", art && "has-art", selected === n.id && "sel"], style: { ...pos(n), "--k": k.color }, onClick: () => { selected = n.id; app.router.refresh(); }, "aria-label": n.name },
+            return h("button", { class: ["node-pin", `k-${n.kind}`, `st-${st}`, n.kind === "boss" && "boss", n.kind === "elite" && "elite", art && "has-art", selected === n.id && "sel", questHere === n.id && "quest", step?.id === n.id && "next-step"], style: { ...pos(n), "--k": k.color }, onClick: () => { selected = n.id; app.router.refresh(); }, "aria-label": `${n.name}${questHere === n.id ? " · quest target" : ""}${step?.id === n.id ? " · next step" : ""}` },
+              questHere === n.id && h("span", { class: "np-quest", title: "Quest target" }, icon("scroll", 11)),
               h("span", { class: "np-ico", style: art ? { backgroundImage: app.img(art) } : { background: st === "locked" || st === "hidden" ? undefined : k.color } }, !art && icon(st === "locked" ? "lock" : st === "hidden" ? "info" : k.icon, n.kind === "boss" ? 18 : 14)),
               h("span", { class: "np-num" }, String(i + 1)),
               st === "locked" && art && h("span", { class: "np-lock" }, icon("lock", 10)),
@@ -106,7 +120,7 @@ export function regionScreen(app: App, regionId: string, select?: string): Scree
               h("span", { class: "np-label" }, st === "hidden" ? "???" : n.name),
               here && h("span", { class: "np-here" }, "You are here"));
           })),
-        sel ? nodeCard(app, sel, () => app.router.refresh()) : h("div", { class: "glass panel center muted" }, "Tap a place on the map"),
+        sel ? nodeCard(app, sel, () => app.router.refresh(), { number, quest: questHere === sel.id, select: (id) => { selected = id; app.router.refresh(); } }) : h("div", { class: "glass panel center muted" }, "Tap a place on the map"),
       ];
     },
   };
@@ -122,7 +136,8 @@ function enemyChips(app: App, ids: string[]) {
   }));
 }
 
-function nodeCard(app: App, n: MapNode, refresh: () => void) {
+interface CardCtx { number: (n: MapNode) => number; quest: boolean; select: (id: string) => void }
+function nodeCard(app: App, n: MapNode, refresh: () => void, ctx?: CardCtx) {
   const s = app.game.state, c = app.content, now = app.now();
   const st = nodeState(s, c, n);
   const k = KIND[n.kind] ?? KIND.battle!;
@@ -147,14 +162,20 @@ function nodeCard(app: App, n: MapNode, refresh: () => void) {
     h("div", { class: "grow" }, h("div", { class: "muted up", style: { color: `color-mix(in srgb, ${k.color} 55%, #fff)` } }, `${k.label} · ${st === "cleared" ? `cleared ×${rec?.clears}` : st}`), h("div", { class: "title", style: { fontSize: "calc(16rem / 15)" } }, n.name)),
     n.rec_cp > 0 && h("span", { class: ["tag", powerTone(cp, n.rec_cp)] }, `Rec. CP ${fmt.int(n.rec_cp)}`));
   body.push(head, h("div", { class: "dim", style: { fontSize: "calc(12.5rem / 15)", margin: "6px 0 8px" } }, n.description));
-  if (st === "locked") body.push(h("div", { class: "muted" }, icon("lock", 12), " Clear a neighbouring place to reach it."));
+  if (ctx?.quest) body.push(h("div", { class: "np-questline" }, icon("scroll", 12), st === "locked" ? " Your quest leads here, but the way is not open yet." : " Your quest leads here."));
+  if (st === "locked") {
+    const step = nextStepTo(s, c, n.id);
+    body.push(step
+      ? h("div", { class: "np-next" }, icon("lock", 12), h("span", { class: "grow" }, " Locked · clear the places before it. Next: ", h("b", null, `${ctx ? `${ctx.number(step)}. ` : ""}${step.name}`)),
+          ctx && h("button", { class: "btn sm jade", onClick: () => ctx.select(step.id) }, "Show"))
+      : h("div", { class: "muted" }, icon("lock", 12), " Clear the place before it to reach it."));
+  }
   else if (st === "hidden") body.push(h("div", { class: "muted" }, icon("info", 12), ` Something is hidden here. ${n.hidden?.condition ?? ""}`));
   else if (n.waves?.length) {
     body.push(enemyChips(app, n.waves.flat()), h("div", { class: "muted", style: { margin: "6px 0" } }, `${n.waves.length} wave${n.waves.length > 1 ? "s" : ""} · ${n.energy_cost} energy${rec?.clears ? " · replayable, drops only" : " · first clear rewards"}`));
     if (!rec?.clears && n.first_clear && Object.keys(n.first_clear).length) body.push(rewardsLine(app, n.first_clear as any));
-    body.push(h("div", { class: "grid-2" },
-      h("button", { class: "btn", onClick: () => { app.game.state.combat.manual = !app.game.state.combat.manual; app.game.dirty = true; refresh(); } }, icon(s.combat.manual ? "person" : "auto", 14), s.combat.manual ? "Manual" : "Auto"),
-      h("button", { class: "btn gold", onClick: () => start({ kind: "node", id: n.id }) }, icon("sword", 14), n.kind === "boss" ? "Challenge" : "Fight")));
+    // one clear action: Manual/Auto is chosen on the battle screen itself (and remembered), not here
+    body.push(h("button", { class: "btn gold block node-fight", onClick: () => start({ kind: "node", id: n.id }) }, icon("sword", 15), n.kind === "boss" ? "Challenge" : "Fight"));
   } else if (n.kind === "gather") {
     const nextAt = (rec?.lastAt ?? 0) + n.gather!.cooldown_min * 60_000;
     body.push(rewardsLine(app, { items: n.gather!.items }), h("div", { class: "muted", style: { margin: "6px 0" } }, `${n.gather!.energy_cost} energy · regrows every ${n.gather!.cooldown_min} min`),

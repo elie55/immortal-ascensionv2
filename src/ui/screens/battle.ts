@@ -16,7 +16,6 @@ import type { App } from "../../app.ts";
 import { Encounter as EncounterCls, type Encounter } from "../../engine/encounter.ts";
 import type { Battle } from "../../engine/combat/battle.ts";
 import type { Combatant, BattleEvent, Skill } from "../../engine/combat/types.ts";
-import { computeStats } from "../../engine/stats.ts";
 import { gearTile, gearName } from "./items.ts";
 import { rewardsLine } from "./adventure.ts";
 import { questProgress } from "../../engine/progression.ts";
@@ -365,7 +364,13 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const el = h("div", { class: ["bt-slash", big && "big"], style: { left: `${p.x}px`, top: `${p.y}px`, "--el": ELEMENT_COLOR[element] ?? "#fff", "--rot": `${-35 + Math.random() * 70}deg` } }, h("i"), h("b"));
     fx.appendChild(el); setTimeout(() => el.remove(), 520);
   }
-  function hitFlash(uid: number, big = false) { const v = views.get(uid); if (!v) return; v.spriteArt.classList.remove("hit", "hit-big"); void v.spriteArt.offsetWidth; v.spriteArt.classList.add(big ? "hit-big" : "hit"); }
+  const hitTimers = new Map<number, number>();
+  function hitFlash(uid: number, big = false) {
+    const v = views.get(uid); if (!v) return;
+    v.spriteArt.classList.remove("hit", "hit-big"); void v.spriteArt.offsetWidth; v.spriteArt.classList.add(big ? "hit-big" : "hit");
+    // the flash is a one-shot: drop the class once it has played so nothing can replay it later
+    clearTimeout(hitTimers.get(uid)); hitTimers.set(uid, window.setTimeout(() => v.spriteArt.classList.remove("hit", "hit-big"), 520));
+  }
   function screenFlash(kind: "red" | "gold" | "white") { flash.className = "bt-flash"; void flash.offsetWidth; flash.className = `bt-flash ${kind}`; }
   function shake(big = false) {
     if (app.settings.reducedMotion || !app.settings.screenShake) return;
@@ -495,12 +500,13 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   async function loop() {
     if (busy) return; busy = true;
     try {
-      while (playing && !battle.result && !battle.needsInput) {
+      // a turn waiting for manual input only stops the loop in Manual; switching to Auto lets the rules play it
+      while (playing && !battle.result && !(battle.manual && battle.needsInput)) {
         battle.step();
         await animate(battle.drain());
         renderUnits(); renderSkills();
       }
-      if (battle.needsInput) { renderOrder(); renderSkills(); }
+      if (battle.manual && battle.needsInput) { renderOrder(); renderSkills(); }
       if (battle.result) await finishWave();
     } finally { busy = false; }
   }
@@ -568,7 +574,8 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const mainEnemy = enc.waves.flat().map((id) => c.find<any>(id)).filter(Boolean).sort((a, b) => b.cp - a.cp)[0];
     const bestGear = r.total.gear.length ? r.total.gear.slice().sort((a, b) => ["common", "uncommon", "rare", "epic", "legendary", "mythic", "immortal", "divine"].indexOf(b.rarity) - ["common", "uncommon", "rare", "epic", "legendary", "mythic", "immortal", "divine"].indexOf(a.rarity))[0] : undefined;
     const again = () => { app.router.close("result"); const src = enc.src; onExit(); const re = EncounterCls.start(s, c, src, app.now()); if (!re.ok) { app.router.toast(re.reason, "bad"); return; } app.router.pushGlobal(battleScreen(app, re.encounter, () => { app.router.popGlobal(); app.router.refresh(); })); };
-    const tracked = trackedLine();
+    // overlays re-render every tick: their content must be built inside render, never a node made once and reused
+    // (a reused node is moved out of the live modal by the next render and morph leaves an empty shell behind)
     if (r.won) { root.classList.add("won"); return app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "victory", render: (close) => h("div", { class: "center" },
       h("div", { class: "res-head" },
         h("div", { class: "res-rays", "aria-hidden": "true" }),
@@ -576,12 +583,12 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         h("div", { class: "cn res-cn" }, trib ? "渡 劫 成 功" : "大 胜"),
         h("div", { class: "res-ribbon" }, mainEnemy && h("span", { class: "res-foe", style: { backgroundImage: app.img(c.art(mainEnemy.id, "icon")) } }, h("i", null, trib ? "Endured" : "Defeated")), h("span", null, trib ? "The heavens relent. Break through when you are ready." : `${mainEnemy?.name ?? enc.name} defeated`), r.firstClear && h("span", { class: "tag gold" }, "First clear"))),
       h("div", { class: "res-panel glass" },
-        h("div", { class: "grid-3 res-stats" }, stat("Damage dealt", fmt.compact(sum.dealt)), stat("Damage taken", fmt.compact(sum.taken)), stat("HP left", `${fmt.int(lastWave.summary.playerHp)} / ${fmt.int(computeStats(s, c).total.hp ?? 0)}`)),
+        h("div", { class: "grid-3 res-stats" }, stat("Damage dealt", fmt.compact(sum.dealt)), stat("Damage taken", fmt.compact(sum.taken)), stat("HP left", `${fmt.int(Math.min(lastWave.summary.playerHp, battle.player.maxHp))} / ${fmt.int(battle.player.maxHp)}`)),
         h("div", { class: "sec-h", style: { marginTop: "12px" } }, h("h3", null, "Rewards"), h("span", { class: "hint" }, `${r.masteryXp ? `Mastery +${r.masteryXp} XP` : ""}`)),
         dropsBlock(r.total, r.waves.flatMap((w) => w.gearUids)),
         r.firstClear && Object.keys(r.firstClear).length > 0 && h("div", { class: "res-first" }, h("span", { class: "muted up" }, "First clear"), rewardsLine(app, r.firstClear)),
         bestGear && h("div", { class: "res-best" }, icon("sparkle", 14), h("span", null, "Best drop: ", h("b", { class: `rt-${bestGear.rarity}` }, `${RARITY_LABEL[bestGear.rarity]} ${c.get<any>(bestGear.base).name}`), ` · iLvl ${bestGear.ilvl}`)),
-        tracked,
+        trackedLine(),
         h("div", { class: "grid-2", style: { marginTop: "12px" } },
           h("button", { class: "btn", onClick: () => { close(); onExit(); } }, icon("back", 14), "Map"),
           h("button", { class: "btn gold", onClick: again }, "Fight again")))) }); }
@@ -625,7 +632,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         h("div", { class: "sec-h" }, h("h3", null, "Ways to get stronger"), h("span", { class: "hint" }, "Tap to go there")),
         h("div", { class: "rows" }, r.recommendations.map((a) => h("button", { class: "setrow df-way", onClick: () => { close(); onExit(); goTo[a.go]?.(); } },
           h("span", { class: "df-way-ico" }, icon(a.icon, 18)), h("div", { class: "grow" }, h("div", { class: "lbl" }, a.title), h("div", { class: "desc" }, a.detail)), h("b", { class: "jade-t df-gain" }, a.gain))))),
-      tracked,
+      trackedLine(),
       h("div", { class: "grid-3 df-actions" },
         h("button", { class: "btn", onClick: () => { close(); onExit(); } }, icon("back", 14), "Map"),
         h("button", { class: "btn", onClick: () => { app.game.state.combat.manual = false; app.game.dirty = true; again(); } }, icon("auto", 14), "Auto"),

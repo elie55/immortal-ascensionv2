@@ -15,7 +15,7 @@ import { computeStats } from "../../engine/stats.ts";
 import { towerFloor, bestFloor, canEnterRealm, enterRealm, realmRun, realmNodeState, realmInteract, realmSummary, abandonRealm, type RealmNodeState } from "../../engine/delves.ts";
 import { startEncounter } from "./battle.ts";
 import { shopScreen } from "./shop.ts";
-import { rewardsLine } from "./adventure.ts";
+import { rewardsLine, worldSwitch } from "./adventure.ts";
 
 const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
 const cpChip = (app: App) => h("span", { class: "cp-chip" }, icon("cp", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(computeStats(app.game.state, app.content).cp))));
@@ -68,7 +68,8 @@ export function dungeonHubScreen(app: App): Screen {
       };
       return [
         header(app),
-        subbar({ help: { app, key: "dungeons" }, title: "Dungeons", cn: "秘境", sub: "Tower · resource · challenge · secret realms · mega", backTo: "Regions", onBack: () => app.router.back(), end: cpChip(app) }),
+        subbar({ help: { app, key: "dungeons" }, title: "Dungeons", cn: "秘境", sub: "Tower · resource · challenge · secret realms · mega", end: cpChip(app) }),
+        worldSwitch(app, "dungeons"),
         tower && towerHero(app, tower),
         section("Resource", "Farm materials and spirit stones", h("div", { class: "rows" }, group("resource").map(card))),
         section("Challenge", "Multi-wave, HP carries over", h("div", { class: "rows" }, group("challenge").map(card))),

@@ -10,8 +10,7 @@
       0.93
     ],
     "connections": [
-      "node.sunken_dragon_sea.gathering",
-      "node.sunken_dragon_sea.outskirts"
+      "node.sunken_dragon_sea.gathering"
     ],
     "rec_cp": 52000,
     "first_clear": {
@@ -41,8 +40,7 @@
     ],
     "connections": [
       "node.sunken_dragon_sea.entry",
-      "node.sunken_dragon_sea.west_path",
-      "node.sunken_dragon_sea.cache"
+      "node.sunken_dragon_sea.outskirts"
     ],
     "rec_cp": 59488,
     "first_clear": {},
@@ -74,9 +72,8 @@
       0.82
     ],
     "connections": [
-      "node.sunken_dragon_sea.entry",
-      "node.sunken_dragon_sea.cache",
-      "node.sunken_dragon_sea.east_path"
+      "node.sunken_dragon_sea.gathering",
+      "node.sunken_dragon_sea.west_path"
     ],
     "rec_cp": 56160,
     "first_clear": {
@@ -106,8 +103,8 @@
       0.66
     ],
     "connections": [
-      "node.sunken_dragon_sea.gathering",
-      "node.sunken_dragon_sea.lair"
+      "node.sunken_dragon_sea.outskirts",
+      "node.sunken_dragon_sea.cache"
     ],
     "rec_cp": 58240,
     "first_clear": {
@@ -137,9 +134,8 @@
       0.72
     ],
     "connections": [
-      "node.sunken_dragon_sea.gathering",
-      "node.sunken_dragon_sea.outskirts",
-      "node.sunken_dragon_sea.crossroads"
+      "node.sunken_dragon_sea.west_path",
+      "node.sunken_dragon_sea.east_path"
     ],
     "rec_cp": 66352,
     "first_clear": {},
@@ -158,8 +154,8 @@
       0.66
     ],
     "connections": [
-      "node.sunken_dragon_sea.outskirts",
-      "node.sunken_dragon_sea.ridge"
+      "node.sunken_dragon_sea.cache",
+      "node.sunken_dragon_sea.lair"
     ],
     "rec_cp": 62400,
     "first_clear": {
@@ -189,8 +185,8 @@
       0.5
     ],
     "connections": [
-      "node.sunken_dragon_sea.west_path",
-      "node.sunken_dragon_sea.deep_path"
+      "node.sunken_dragon_sea.east_path",
+      "node.sunken_dragon_sea.crossroads"
     ],
     "rec_cp": 103168,
     "first_clear": {
@@ -221,9 +217,8 @@
       0.53
     ],
     "connections": [
-      "node.sunken_dragon_sea.cache",
-      "node.sunken_dragon_sea.deep_path",
-      "node.sunken_dragon_sea.sanctum"
+      "node.sunken_dragon_sea.lair",
+      "node.sunken_dragon_sea.ridge"
     ],
     "rec_cp": 73216,
     "first_clear": {},
@@ -242,8 +237,8 @@
       0.5
     ],
     "connections": [
-      "node.sunken_dragon_sea.east_path",
-      "node.sunken_dragon_sea.sanctum"
+      "node.sunken_dragon_sea.crossroads",
+      "node.sunken_dragon_sea.deep_path"
     ],
     "rec_cp": 68640,
     "first_clear": {
@@ -272,9 +267,8 @@
       0.36
     ],
     "connections": [
-      "node.sunken_dragon_sea.lair",
-      "node.sunken_dragon_sea.crossroads",
-      "node.sunken_dragon_sea.den"
+      "node.sunken_dragon_sea.ridge",
+      "node.sunken_dragon_sea.sanctum"
     ],
     "rec_cp": 70720,
     "first_clear": {
@@ -304,10 +298,8 @@
       0.36
     ],
     "connections": [
-      "node.sunken_dragon_sea.crossroads",
-      "node.sunken_dragon_sea.ridge",
-      "node.sunken_dragon_sea.hidden_grove",
-      "node.sunken_dragon_sea.approach"
+      "node.sunken_dragon_sea.deep_path",
+      "node.sunken_dragon_sea.den"
     ],
     "rec_cp": 80080,
     "first_clear": {},
@@ -330,8 +322,9 @@
       0.2
     ],
     "connections": [
-      "node.sunken_dragon_sea.deep_path",
-      "node.sunken_dragon_sea.throne"
+      "node.sunken_dragon_sea.sanctum",
+      "node.sunken_dragon_sea.hidden_grove",
+      "node.sunken_dragon_sea.approach"
     ],
     "rec_cp": 119808,
     "first_clear": {
@@ -366,8 +359,7 @@
       0.22
     ],
     "connections": [
-      "node.sunken_dragon_sea.sanctum",
-      "node.sunken_dragon_sea.approach"
+      "node.sunken_dragon_sea.den"
     ],
     "rec_cp": 84656,
     "first_clear": {},
@@ -375,7 +367,7 @@
     "energy_cost": 10,
     "event": "event.dragon_whisper",
     "hidden": {
-      "condition": "clear the region boss",
+      "condition": "Win at Angler Trench to search for it",
       "reveal_chance": 0.3
     }
   },
@@ -390,8 +382,7 @@
       0.24
     ],
     "connections": [
-      "node.sunken_dragon_sea.sanctum",
-      "node.sunken_dragon_sea.hidden_grove",
+      "node.sunken_dragon_sea.den",
       "node.sunken_dragon_sea.throne"
     ],
     "rec_cp": 79040,
@@ -422,7 +413,6 @@
       0.07
     ],
     "connections": [
-      "node.sunken_dragon_sea.den",
       "node.sunken_dragon_sea.approach"
     ],
     "rec_cp": 121680,

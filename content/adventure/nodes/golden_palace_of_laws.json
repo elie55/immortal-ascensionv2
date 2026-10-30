@@ -10,8 +10,7 @@
       0.93
     ],
     "connections": [
-      "node.golden_palace_of_laws.gathering",
-      "node.golden_palace_of_laws.outskirts"
+      "node.golden_palace_of_laws.gathering"
     ],
     "rec_cp": 135000,
     "first_clear": {
@@ -41,8 +40,7 @@
     ],
     "connections": [
       "node.golden_palace_of_laws.entry",
-      "node.golden_palace_of_laws.west_path",
-      "node.golden_palace_of_laws.cache"
+      "node.golden_palace_of_laws.outskirts"
     ],
     "rec_cp": 154440,
     "first_clear": {},
@@ -74,9 +72,8 @@
       0.82
     ],
     "connections": [
-      "node.golden_palace_of_laws.entry",
-      "node.golden_palace_of_laws.cache",
-      "node.golden_palace_of_laws.east_path"
+      "node.golden_palace_of_laws.gathering",
+      "node.golden_palace_of_laws.west_path"
     ],
     "rec_cp": 145800,
     "first_clear": {
@@ -106,8 +103,8 @@
       0.66
     ],
     "connections": [
-      "node.golden_palace_of_laws.gathering",
-      "node.golden_palace_of_laws.lair"
+      "node.golden_palace_of_laws.outskirts",
+      "node.golden_palace_of_laws.cache"
     ],
     "rec_cp": 151200,
     "first_clear": {
@@ -137,9 +134,8 @@
       0.72
     ],
     "connections": [
-      "node.golden_palace_of_laws.gathering",
-      "node.golden_palace_of_laws.outskirts",
-      "node.golden_palace_of_laws.crossroads"
+      "node.golden_palace_of_laws.west_path",
+      "node.golden_palace_of_laws.east_path"
     ],
     "rec_cp": 172260,
     "first_clear": {},
@@ -158,8 +154,8 @@
       0.66
     ],
     "connections": [
-      "node.golden_palace_of_laws.outskirts",
-      "node.golden_palace_of_laws.ridge"
+      "node.golden_palace_of_laws.cache",
+      "node.golden_palace_of_laws.lair"
     ],
     "rec_cp": 162000,
     "first_clear": {
@@ -189,8 +185,8 @@
       0.5
     ],
     "connections": [
-      "node.golden_palace_of_laws.west_path",
-      "node.golden_palace_of_laws.deep_path"
+      "node.golden_palace_of_laws.east_path",
+      "node.golden_palace_of_laws.crossroads"
     ],
     "rec_cp": 267840,
     "first_clear": {
@@ -221,9 +217,8 @@
       0.53
     ],
     "connections": [
-      "node.golden_palace_of_laws.cache",
-      "node.golden_palace_of_laws.deep_path",
-      "node.golden_palace_of_laws.sanctum"
+      "node.golden_palace_of_laws.lair",
+      "node.golden_palace_of_laws.ridge"
     ],
     "rec_cp": 190080,
     "first_clear": {},
@@ -242,8 +237,8 @@
       0.5
     ],
     "connections": [
-      "node.golden_palace_of_laws.east_path",
-      "node.golden_palace_of_laws.sanctum"
+      "node.golden_palace_of_laws.crossroads",
+      "node.golden_palace_of_laws.deep_path"
     ],
     "rec_cp": 178200,
     "first_clear": {
@@ -272,9 +267,8 @@
       0.36
     ],
     "connections": [
-      "node.golden_palace_of_laws.lair",
-      "node.golden_palace_of_laws.crossroads",
-      "node.golden_palace_of_laws.den"
+      "node.golden_palace_of_laws.ridge",
+      "node.golden_palace_of_laws.sanctum"
     ],
     "rec_cp": 183600,
     "first_clear": {
@@ -304,10 +298,8 @@
       0.36
     ],
     "connections": [
-      "node.golden_palace_of_laws.crossroads",
-      "node.golden_palace_of_laws.ridge",
-      "node.golden_palace_of_laws.hidden_grove",
-      "node.golden_palace_of_laws.approach"
+      "node.golden_palace_of_laws.deep_path",
+      "node.golden_palace_of_laws.den"
     ],
     "rec_cp": 207900,
     "first_clear": {},
@@ -330,8 +322,9 @@
       0.2
     ],
     "connections": [
-      "node.golden_palace_of_laws.deep_path",
-      "node.golden_palace_of_laws.throne"
+      "node.golden_palace_of_laws.sanctum",
+      "node.golden_palace_of_laws.hidden_grove",
+      "node.golden_palace_of_laws.approach"
     ],
     "rec_cp": 311040,
     "first_clear": {
@@ -366,8 +359,7 @@
       0.22
     ],
     "connections": [
-      "node.golden_palace_of_laws.sanctum",
-      "node.golden_palace_of_laws.approach"
+      "node.golden_palace_of_laws.den"
     ],
     "rec_cp": 219780,
     "first_clear": {},
@@ -375,7 +367,7 @@
     "energy_cost": 12,
     "event": "event.unwritten_law",
     "hidden": {
-      "condition": "clear the region boss",
+      "condition": "Win at Golem Vault to search for it",
       "reveal_chance": 0.3
     }
   },
@@ -390,8 +382,7 @@
       0.24
     ],
     "connections": [
-      "node.golden_palace_of_laws.sanctum",
-      "node.golden_palace_of_laws.hidden_grove",
+      "node.golden_palace_of_laws.den",
       "node.golden_palace_of_laws.throne"
     ],
     "rec_cp": 205200,
@@ -422,7 +413,6 @@
       0.07
     ],
     "connections": [
-      "node.golden_palace_of_laws.den",
       "node.golden_palace_of_laws.approach"
     ],
     "rec_cp": 315900,

@@ -10,8 +10,7 @@
       0.93
     ],
     "connections": [
-      "node.frozen_lotus_valley.gathering",
-      "node.frozen_lotus_valley.outskirts"
+      "node.frozen_lotus_valley.gathering"
     ],
     "rec_cp": 1300,
     "first_clear": {
@@ -41,8 +40,7 @@
     ],
     "connections": [
       "node.frozen_lotus_valley.entry",
-      "node.frozen_lotus_valley.west_path",
-      "node.frozen_lotus_valley.cache"
+      "node.frozen_lotus_valley.outskirts"
     ],
     "rec_cp": 1487,
     "first_clear": {},
@@ -74,9 +72,8 @@
       0.82
     ],
     "connections": [
-      "node.frozen_lotus_valley.entry",
-      "node.frozen_lotus_valley.cache",
-      "node.frozen_lotus_valley.east_path"
+      "node.frozen_lotus_valley.gathering",
+      "node.frozen_lotus_valley.west_path"
     ],
     "rec_cp": 1404,
     "first_clear": {
@@ -106,8 +103,8 @@
       0.66
     ],
     "connections": [
-      "node.frozen_lotus_valley.gathering",
-      "node.frozen_lotus_valley.lair"
+      "node.frozen_lotus_valley.outskirts",
+      "node.frozen_lotus_valley.cache"
     ],
     "rec_cp": 1456,
     "first_clear": {
@@ -137,9 +134,8 @@
       0.72
     ],
     "connections": [
-      "node.frozen_lotus_valley.gathering",
-      "node.frozen_lotus_valley.outskirts",
-      "node.frozen_lotus_valley.crossroads"
+      "node.frozen_lotus_valley.west_path",
+      "node.frozen_lotus_valley.east_path"
     ],
     "rec_cp": 1659,
     "first_clear": {},
@@ -158,8 +154,8 @@
       0.66
     ],
     "connections": [
-      "node.frozen_lotus_valley.outskirts",
-      "node.frozen_lotus_valley.ridge"
+      "node.frozen_lotus_valley.cache",
+      "node.frozen_lotus_valley.lair"
     ],
     "rec_cp": 1560,
     "first_clear": {
@@ -189,8 +185,8 @@
       0.5
     ],
     "connections": [
-      "node.frozen_lotus_valley.west_path",
-      "node.frozen_lotus_valley.deep_path"
+      "node.frozen_lotus_valley.east_path",
+      "node.frozen_lotus_valley.crossroads"
     ],
     "rec_cp": 2579,
     "first_clear": {
@@ -221,9 +217,8 @@
       0.53
     ],
     "connections": [
-      "node.frozen_lotus_valley.cache",
-      "node.frozen_lotus_valley.deep_path",
-      "node.frozen_lotus_valley.sanctum"
+      "node.frozen_lotus_valley.lair",
+      "node.frozen_lotus_valley.ridge"
     ],
     "rec_cp": 1830,
     "first_clear": {},
@@ -242,8 +237,8 @@
       0.5
     ],
     "connections": [
-      "node.frozen_lotus_valley.east_path",
-      "node.frozen_lotus_valley.sanctum"
+      "node.frozen_lotus_valley.crossroads",
+      "node.frozen_lotus_valley.deep_path"
     ],
     "rec_cp": 1716,
     "first_clear": {
@@ -272,9 +267,8 @@
       0.36
     ],
     "connections": [
-      "node.frozen_lotus_valley.lair",
-      "node.frozen_lotus_valley.crossroads",
-      "node.frozen_lotus_valley.den"
+      "node.frozen_lotus_valley.ridge",
+      "node.frozen_lotus_valley.sanctum"
     ],
     "rec_cp": 1768,
     "first_clear": {
@@ -304,10 +298,8 @@
       0.36
     ],
     "connections": [
-      "node.frozen_lotus_valley.crossroads",
-      "node.frozen_lotus_valley.ridge",
-      "node.frozen_lotus_valley.hidden_grove",
-      "node.frozen_lotus_valley.approach"
+      "node.frozen_lotus_valley.deep_path",
+      "node.frozen_lotus_valley.den"
     ],
     "rec_cp": 2002,
     "first_clear": {},
@@ -330,8 +322,9 @@
       0.2
     ],
     "connections": [
-      "node.frozen_lotus_valley.deep_path",
-      "node.frozen_lotus_valley.throne"
+      "node.frozen_lotus_valley.sanctum",
+      "node.frozen_lotus_valley.hidden_grove",
+      "node.frozen_lotus_valley.approach"
     ],
     "rec_cp": 2995,
     "first_clear": {
@@ -366,8 +359,7 @@
       0.22
     ],
     "connections": [
-      "node.frozen_lotus_valley.sanctum",
-      "node.frozen_lotus_valley.approach"
+      "node.frozen_lotus_valley.den"
     ],
     "rec_cp": 2116,
     "first_clear": {},
@@ -375,7 +367,7 @@
     "energy_cost": 7,
     "event": "event.frozen_reflection",
     "hidden": {
-      "condition": "clear the region boss",
+      "condition": "Win at Wyrm Hollow to search for it",
       "reveal_chance": 0.3
     }
   },
@@ -390,8 +382,7 @@
       0.24
     ],
     "connections": [
-      "node.frozen_lotus_valley.sanctum",
-      "node.frozen_lotus_valley.hidden_grove",
+      "node.frozen_lotus_valley.den",
       "node.frozen_lotus_valley.throne"
     ],
     "rec_cp": 1976,
@@ -422,7 +413,6 @@
       0.07
     ],
     "connections": [
-      "node.frozen_lotus_valley.den",
       "node.frozen_lotus_valley.approach"
     ],
     "rec_cp": 3042,

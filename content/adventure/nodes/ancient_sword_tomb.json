@@ -10,8 +10,7 @@
       0.93
     ],
     "connections": [
-      "node.ancient_sword_tomb.gathering",
-      "node.ancient_sword_tomb.outskirts"
+      "node.ancient_sword_tomb.gathering"
     ],
     "rec_cp": 2700,
     "first_clear": {
@@ -41,8 +40,7 @@
     ],
     "connections": [
       "node.ancient_sword_tomb.entry",
-      "node.ancient_sword_tomb.west_path",
-      "node.ancient_sword_tomb.cache"
+      "node.ancient_sword_tomb.outskirts"
     ],
     "rec_cp": 3089,
     "first_clear": {},
@@ -74,9 +72,8 @@
       0.82
     ],
     "connections": [
-      "node.ancient_sword_tomb.entry",
-      "node.ancient_sword_tomb.cache",
-      "node.ancient_sword_tomb.east_path"
+      "node.ancient_sword_tomb.gathering",
+      "node.ancient_sword_tomb.west_path"
     ],
     "rec_cp": 2916,
     "first_clear": {
@@ -106,8 +103,8 @@
       0.66
     ],
     "connections": [
-      "node.ancient_sword_tomb.gathering",
-      "node.ancient_sword_tomb.lair"
+      "node.ancient_sword_tomb.outskirts",
+      "node.ancient_sword_tomb.cache"
     ],
     "rec_cp": 3024,
     "first_clear": {
@@ -137,9 +134,8 @@
       0.72
     ],
     "connections": [
-      "node.ancient_sword_tomb.gathering",
-      "node.ancient_sword_tomb.outskirts",
-      "node.ancient_sword_tomb.crossroads"
+      "node.ancient_sword_tomb.west_path",
+      "node.ancient_sword_tomb.east_path"
     ],
     "rec_cp": 3445,
     "first_clear": {},
@@ -158,8 +154,8 @@
       0.66
     ],
     "connections": [
-      "node.ancient_sword_tomb.outskirts",
-      "node.ancient_sword_tomb.ridge"
+      "node.ancient_sword_tomb.cache",
+      "node.ancient_sword_tomb.lair"
     ],
     "rec_cp": 3240,
     "first_clear": {
@@ -189,8 +185,8 @@
       0.5
     ],
     "connections": [
-      "node.ancient_sword_tomb.west_path",
-      "node.ancient_sword_tomb.deep_path"
+      "node.ancient_sword_tomb.east_path",
+      "node.ancient_sword_tomb.crossroads"
     ],
     "rec_cp": 5357,
     "first_clear": {
@@ -221,9 +217,8 @@
       0.53
     ],
     "connections": [
-      "node.ancient_sword_tomb.cache",
-      "node.ancient_sword_tomb.deep_path",
-      "node.ancient_sword_tomb.sanctum"
+      "node.ancient_sword_tomb.lair",
+      "node.ancient_sword_tomb.ridge"
     ],
     "rec_cp": 3802,
     "first_clear": {},
@@ -242,8 +237,8 @@
       0.5
     ],
     "connections": [
-      "node.ancient_sword_tomb.east_path",
-      "node.ancient_sword_tomb.sanctum"
+      "node.ancient_sword_tomb.crossroads",
+      "node.ancient_sword_tomb.deep_path"
     ],
     "rec_cp": 3564,
     "first_clear": {
@@ -272,9 +267,8 @@
       0.36
     ],
     "connections": [
-      "node.ancient_sword_tomb.lair",
-      "node.ancient_sword_tomb.crossroads",
-      "node.ancient_sword_tomb.den"
+      "node.ancient_sword_tomb.ridge",
+      "node.ancient_sword_tomb.sanctum"
     ],
     "rec_cp": 3672,
     "first_clear": {
@@ -304,10 +298,8 @@
       0.36
     ],
     "connections": [
-      "node.ancient_sword_tomb.crossroads",
-      "node.ancient_sword_tomb.ridge",
-      "node.ancient_sword_tomb.hidden_grove",
-      "node.ancient_sword_tomb.approach"
+      "node.ancient_sword_tomb.deep_path",
+      "node.ancient_sword_tomb.den"
     ],
     "rec_cp": 4158,
     "first_clear": {},
@@ -330,8 +322,9 @@
       0.2
     ],
     "connections": [
-      "node.ancient_sword_tomb.deep_path",
-      "node.ancient_sword_tomb.throne"
+      "node.ancient_sword_tomb.sanctum",
+      "node.ancient_sword_tomb.hidden_grove",
+      "node.ancient_sword_tomb.approach"
     ],
     "rec_cp": 6221,
     "first_clear": {
@@ -366,8 +359,7 @@
       0.22
     ],
     "connections": [
-      "node.ancient_sword_tomb.sanctum",
-      "node.ancient_sword_tomb.approach"
+      "node.ancient_sword_tomb.den"
     ],
     "rec_cp": 4396,
     "first_clear": {},
@@ -375,7 +367,7 @@
     "energy_cost": 7,
     "event": "event.singing_blade",
     "hidden": {
-      "condition": "clear the region boss",
+      "condition": "Win at Guardian's Rest to search for it",
       "reveal_chance": 0.3
     }
   },
@@ -390,8 +382,7 @@
       0.24
     ],
     "connections": [
-      "node.ancient_sword_tomb.sanctum",
-      "node.ancient_sword_tomb.hidden_grove",
+      "node.ancient_sword_tomb.den",
       "node.ancient_sword_tomb.throne"
     ],
     "rec_cp": 4104,
@@ -422,7 +413,6 @@
       0.07
     ],
     "connections": [
-      "node.ancient_sword_tomb.den",
       "node.ancient_sword_tomb.approach"
     ],
     "rec_cp": 6318,

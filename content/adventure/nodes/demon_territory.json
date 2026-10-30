@@ -10,8 +10,7 @@
       0.93
     ],
     "connections": [
-      "node.demon_territory.gathering",
-      "node.demon_territory.outskirts"
+      "node.demon_territory.gathering"
     ],
     "rec_cp": 7900,
     "first_clear": {
@@ -41,8 +40,7 @@
     ],
     "connections": [
       "node.demon_territory.entry",
-      "node.demon_territory.west_path",
-      "node.demon_territory.cache"
+      "node.demon_territory.outskirts"
     ],
     "rec_cp": 9038,
     "first_clear": {},
@@ -74,9 +72,8 @@
       0.82
     ],
     "connections": [
-      "node.demon_territory.entry",
-      "node.demon_territory.cache",
-      "node.demon_territory.east_path"
+      "node.demon_territory.gathering",
+      "node.demon_territory.west_path"
     ],
     "rec_cp": 8532,
     "first_clear": {
@@ -106,8 +103,8 @@
       0.66
     ],
     "connections": [
-      "node.demon_territory.gathering",
-      "node.demon_territory.lair"
+      "node.demon_territory.outskirts",
+      "node.demon_territory.cache"
     ],
     "rec_cp": 8848,
     "first_clear": {
@@ -137,9 +134,8 @@
       0.72
     ],
     "connections": [
-      "node.demon_territory.gathering",
-      "node.demon_territory.outskirts",
-      "node.demon_territory.crossroads"
+      "node.demon_territory.west_path",
+      "node.demon_territory.east_path"
     ],
     "rec_cp": 10080,
     "first_clear": {},
@@ -158,8 +154,8 @@
       0.66
     ],
     "connections": [
-      "node.demon_territory.outskirts",
-      "node.demon_territory.ridge"
+      "node.demon_territory.cache",
+      "node.demon_territory.lair"
     ],
     "rec_cp": 9480,
     "first_clear": {
@@ -189,8 +185,8 @@
       0.5
     ],
     "connections": [
-      "node.demon_territory.west_path",
-      "node.demon_territory.deep_path"
+      "node.demon_territory.east_path",
+      "node.demon_territory.crossroads"
     ],
     "rec_cp": 15674,
     "first_clear": {
@@ -221,9 +217,8 @@
       0.53
     ],
     "connections": [
-      "node.demon_territory.cache",
-      "node.demon_territory.deep_path",
-      "node.demon_territory.sanctum"
+      "node.demon_territory.lair",
+      "node.demon_territory.ridge"
     ],
     "rec_cp": 11123,
     "first_clear": {},
@@ -242,8 +237,8 @@
       0.5
     ],
     "connections": [
-      "node.demon_territory.east_path",
-      "node.demon_territory.sanctum"
+      "node.demon_territory.crossroads",
+      "node.demon_territory.deep_path"
     ],
     "rec_cp": 10428,
     "first_clear": {
@@ -272,8 +267,8 @@
       0.36
     ],
     "connections": [
-      "node.demon_territory.lair",
-      "node.demon_territory.crossroads",
+      "node.demon_territory.ridge",
+      "node.demon_territory.sanctum",
       "node.demon_territory.den"
     ],
     "rec_cp": 10744,
@@ -304,10 +299,7 @@
       0.36
     ],
     "connections": [
-      "node.demon_territory.crossroads",
-      "node.demon_territory.ridge",
-      "node.demon_territory.hidden_grove",
-      "node.demon_territory.approach"
+      "node.demon_territory.deep_path"
     ],
     "rec_cp": 12166,
     "first_clear": {},
@@ -327,7 +319,8 @@
     ],
     "connections": [
       "node.demon_territory.deep_path",
-      "node.demon_territory.throne"
+      "node.demon_territory.hidden_grove",
+      "node.demon_territory.approach"
     ],
     "rec_cp": 18202,
     "first_clear": {
@@ -362,8 +355,7 @@
       0.22
     ],
     "connections": [
-      "node.demon_territory.sanctum",
-      "node.demon_territory.approach"
+      "node.demon_territory.den"
     ],
     "rec_cp": 12861,
     "first_clear": {},
@@ -371,7 +363,7 @@
     "energy_cost": 8,
     "event": "event.demon_bazaar",
     "hidden": {
-      "condition": "clear the region boss",
+      "condition": "Win at Hound Pit to search for it",
       "reveal_chance": 0.3
     }
   },
@@ -386,8 +378,7 @@
       0.24
     ],
     "connections": [
-      "node.demon_territory.sanctum",
-      "node.demon_territory.hidden_grove",
+      "node.demon_territory.den",
       "node.demon_territory.throne"
     ],
     "rec_cp": 12008,
@@ -418,7 +409,6 @@
       0.07
     ],
     "connections": [
-      "node.demon_territory.den",
       "node.demon_territory.approach"
     ],
     "rec_cp": 18486,

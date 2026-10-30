@@ -21,8 +21,7 @@ def nodes():
         d = {"id": f"node.{region}.{key}", **named(name, desc or name), "region": f"region.{region}", "kind": kind, "position": list(pos), "connections": [], "rec_cp": cp,
              "first_clear": {}, "replayable": kind not in ("chest", "story"), "energy_cost": 5}
         d.update(kw); out.append(d); return d
-    def link(a, b):
-        a["connections"].append(b["id"]); b["connections"].append(a["id"])
+    # links come from chain_links() at write time: places open in map-number order
     P = "mortal_plains"
     road = N(P, "village_road", "Village Road", "battle", (0.2, 0.9), 110, "Bandits shake down travellers on the road to the sect.", waves=[["enemy.field_bandit"], ["enemy.field_bandit", "enemy.field_bandit"]], first_clear={"spirit_stones": 40})
     meadow = N(P, "herb_meadow", "Herb Meadow", "gather", (0.4, 0.8), 100, "Spirit grass and peach trees grow wild here.", gather={"items": [q("mat.spirit_grass", 3), q("mat.peach_blossom", 2)], "energy_cost": 4, "cooldown_min": 30})
@@ -34,7 +33,6 @@ def nodes():
     wolf = N(P, "wolf_den", "Wolf Den", "elite", (0.25, 0.35), 220, "Three grey wolves and a lot of bones.", waves=[["enemy.grey_wolf", "enemy.grey_wolf", "enemy.grey_wolf"]], first_clear={"spirit_stones": 120, "items": [q("mat.wolf_fang", 2)]})
     shrine = N(P, "old_shrine", "Old Shrine", "hidden", (0.85, 0.3), 200, "A collapsed shrine to a fire god, warm to the touch.", event="event.blazing_shrine", hidden={"condition": "clear wolf_den and crane_nest", "reveal_chance": 0.35})
     camp = N(P, "bandit_camp", "Bandit Camp", "boss", (0.5, 0.15), 480, "Chief Hu's camp. Smoke, drums and stolen sect banners.", waves=[["enemy.field_bandit", "enemy.field_bandit"], ["boss.plains_bandit_chief"]], first_clear={"spirit_stones": 300, "sect_fame": 60, "items": [q("gift.ancient_spirit_coin", 1)]})
-    for a, b in [(road, meadow), (meadow, river), (road, boar), (boar, monkey), (meadow, monkey), (river, crane), (monkey, cache), (crane, cache), (boar, wolf), (wolf, camp), (cache, camp), (crane, shrine)]: link(a, b)
 
     F = "azure_bamboo_forest"
     edge = N(F, "forest_edge", "Forest Edge", "battle", (0.5, 0.92), 280, "Where the plains end and the blue bamboo begins.", waves=[["enemy.azure_bamboo_wolf"], ["enemy.azure_bamboo_wolf", "enemy.azure_bamboo_wolf"]], first_clear={"spirit_stones": 100})
@@ -51,7 +49,6 @@ def nodes():
     heart = N(F, "heart_of_the_grove", "Heart of the Grove", "hidden", (0.3, 0.25), 520, "A clearing of silver bamboo and an old hermit's hut.", event="event.frost_hermit_trial", hidden={"condition": "hidden node, 2 of 3 found", "reveal_chance": 0.25})
     rift = N(F, "origin_rift", "Origin Rift", "secret_realm", (0.65, 0.2), 1800, "A seam of light between two ancient stalks. The Origin Secret Realm lies beyond.", secret_realm="dungeon.origin_secret_realm")
     sov = N(F, "ancient_sovereign", "Ancient Bamboo Sovereign", "boss", (0.5, 0.08), 1100, "The dragon's grove. The bamboo here is older than the sect.", waves=[["enemy.bamboo_spirit_sprite", "enemy.bamboo_spirit_sprite"], ["boss.thousand_node_bamboo_dragon"]], first_clear={"spirit_stones": 800, "sect_fame": 200, "items": [q("mat.bamboo_dragon_scale", 2)]})
-    for a, b in [(edge, herb), (edge, pool), (edge, silk), (herb, viper), (pool, vein), (silk, caravan), (silk, hollow), (viper, lynx), (hollow, whisper), (caravan, marsh), (lynx, heart), (whisper, heart), (marsh, rift), (heart, sov), (rift, sov), (whisper, sov)]: link(a, b)
     return out
 
 def dungeons():
@@ -171,7 +168,7 @@ if __name__ == "__main__":
     write("content/adventure/regions.json", regions())
     ns = nodes()
     for r in ["mortal_plains", "azure_bamboo_forest"]:
-        write(f"content/adventure/nodes/{r}.json", [n for n in ns if n["region"] == f"region.{r}"])
+        write(f"content/adventure/nodes/{r}.json", chain_links([n for n in ns if n["region"] == f"region.{r}"]))
     write("content/adventure/events.json", events())
     write("content/dungeons/dungeons.json", dungeons())
     write("content/dungeons/tribulations.json", tribulations())

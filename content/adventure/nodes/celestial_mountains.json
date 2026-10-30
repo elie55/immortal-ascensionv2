@@ -10,8 +10,7 @@
       0.93
     ],
     "connections": [
-      "node.celestial_mountains.gathering",
-      "node.celestial_mountains.outskirts"
+      "node.celestial_mountains.gathering"
     ],
     "rec_cp": 12400,
     "first_clear": {
@@ -41,8 +40,7 @@
     ],
     "connections": [
       "node.celestial_mountains.entry",
-      "node.celestial_mountains.west_path",
-      "node.celestial_mountains.cache"
+      "node.celestial_mountains.outskirts"
     ],
     "rec_cp": 14186,
     "first_clear": {},
@@ -74,9 +72,8 @@
       0.82
     ],
     "connections": [
-      "node.celestial_mountains.entry",
-      "node.celestial_mountains.cache",
-      "node.celestial_mountains.east_path"
+      "node.celestial_mountains.gathering",
+      "node.celestial_mountains.west_path"
     ],
     "rec_cp": 13392,
     "first_clear": {
@@ -106,8 +103,8 @@
       0.66
     ],
     "connections": [
-      "node.celestial_mountains.gathering",
-      "node.celestial_mountains.lair"
+      "node.celestial_mountains.outskirts",
+      "node.celestial_mountains.cache"
     ],
     "rec_cp": 13888,
     "first_clear": {
@@ -137,9 +134,8 @@
       0.72
     ],
     "connections": [
-      "node.celestial_mountains.gathering",
-      "node.celestial_mountains.outskirts",
-      "node.celestial_mountains.crossroads"
+      "node.celestial_mountains.west_path",
+      "node.celestial_mountains.east_path"
     ],
     "rec_cp": 15822,
     "first_clear": {},
@@ -158,8 +154,8 @@
       0.66
     ],
     "connections": [
-      "node.celestial_mountains.outskirts",
-      "node.celestial_mountains.ridge"
+      "node.celestial_mountains.cache",
+      "node.celestial_mountains.lair"
     ],
     "rec_cp": 14880,
     "first_clear": {
@@ -189,8 +185,8 @@
       0.5
     ],
     "connections": [
-      "node.celestial_mountains.west_path",
-      "node.celestial_mountains.deep_path"
+      "node.celestial_mountains.east_path",
+      "node.celestial_mountains.crossroads"
     ],
     "rec_cp": 24602,
     "first_clear": {
@@ -221,9 +217,8 @@
       0.53
     ],
     "connections": [
-      "node.celestial_mountains.cache",
-      "node.celestial_mountains.deep_path",
-      "node.celestial_mountains.sanctum"
+      "node.celestial_mountains.lair",
+      "node.celestial_mountains.ridge"
     ],
     "rec_cp": 17459,
     "first_clear": {},
@@ -242,8 +237,8 @@
       0.5
     ],
     "connections": [
-      "node.celestial_mountains.east_path",
-      "node.celestial_mountains.sanctum"
+      "node.celestial_mountains.crossroads",
+      "node.celestial_mountains.deep_path"
     ],
     "rec_cp": 16368,
     "first_clear": {
@@ -272,9 +267,8 @@
       0.36
     ],
     "connections": [
-      "node.celestial_mountains.lair",
-      "node.celestial_mountains.crossroads",
-      "node.celestial_mountains.den"
+      "node.celestial_mountains.ridge",
+      "node.celestial_mountains.sanctum"
     ],
     "rec_cp": 16864,
     "first_clear": {
@@ -304,10 +298,8 @@
       0.36
     ],
     "connections": [
-      "node.celestial_mountains.crossroads",
-      "node.celestial_mountains.ridge",
-      "node.celestial_mountains.hidden_grove",
-      "node.celestial_mountains.approach"
+      "node.celestial_mountains.deep_path",
+      "node.celestial_mountains.den"
     ],
     "rec_cp": 19096,
     "first_clear": {},
@@ -330,8 +322,9 @@
       0.2
     ],
     "connections": [
-      "node.celestial_mountains.deep_path",
-      "node.celestial_mountains.throne"
+      "node.celestial_mountains.sanctum",
+      "node.celestial_mountains.hidden_grove",
+      "node.celestial_mountains.approach"
     ],
     "rec_cp": 28570,
     "first_clear": {
@@ -366,8 +359,7 @@
       0.22
     ],
     "connections": [
-      "node.celestial_mountains.sanctum",
-      "node.celestial_mountains.approach"
+      "node.celestial_mountains.den"
     ],
     "rec_cp": 20187,
     "first_clear": {},
@@ -375,7 +367,7 @@
     "energy_cost": 8,
     "event": "event.stair_of_trials",
     "hidden": {
-      "condition": "clear the region boss",
+      "condition": "Win at Tiger Ledge to search for it",
       "reveal_chance": 0.3
     }
   },
@@ -390,8 +382,7 @@
       0.24
     ],
     "connections": [
-      "node.celestial_mountains.sanctum",
-      "node.celestial_mountains.hidden_grove",
+      "node.celestial_mountains.den",
       "node.celestial_mountains.throne"
     ],
     "rec_cp": 18848,
@@ -422,7 +413,6 @@
       0.07
     ],
     "connections": [
-      "node.celestial_mountains.den",
       "node.celestial_mountains.approach"
     ],
     "rec_cp": 29016,

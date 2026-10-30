@@ -7,6 +7,8 @@ import { addItem, itemCount } from "../src/engine/inventory.ts";
 import { incubate, incubateCheck, hatch, warmEggs, feed, foodXp, play, train, trainXp, evolve, evolveCheck, levelCap, xpToNext, bondInfo, setActiveBeast, renameBeast, addBeastXp } from "../src/engine/beasts.ts";
 import { canBond, bondDao, setCompanionActive, companionSlots, MAX_ACTIVE } from "../src/engine/companions.ts";
 import { Encounter } from "../src/engine/encounter.ts";
+import { acceptQuest, abandonQuest } from "../src/engine/progression.ts";
+import { sellItem } from "../src/engine/actions.ts";
 import { computeStats } from "../src/engine/stats.ts";
 import { qiRate, energyNow } from "../src/engine/cultivation.ts";
 import { decode, encode, fnv1a, canonical } from "../src/save/codec.ts";
@@ -25,9 +27,25 @@ function hatchYunyun(s: GameState): number {
   return r.uid;
 }
 
-test("the starting egg incubates, hatches only from victories, and becomes the active companion", () => {
+test("Qin hands over the first egg with her quest: never in the starting bag, never twice, kept until the quest ends", () => {
   const s = fresh();
-  assert.equal(itemCount(s, "egg.cloud_fox"), 1, "new disciples start with YunYun's egg");
+  assert.equal(itemCount(s, "egg.cloud_fox"), 0, "new disciples start without an egg");
+  const q = "quest.npc.qins_first_companion";
+  const r = acceptQuest(s, c, q, T0);
+  assert.ok(r.ok);
+  assert.ok(r.events.some((e: any) => e.type === "item_gained" && e.id === "egg.cloud_fox"), "accepting the quest gives the egg");
+  assert.equal(itemCount(s, "egg.cloud_fox"), 1);
+  assert.equal(sellItem(s, c, "egg.cloud_fox", 1).ok, false, "the quest's egg cannot be sold while the quest runs");
+  assert.equal(abandonQuest(s, c, q).ok, false, "a quest that came with a gift cannot be abandoned");
+  // an older save that already carries the egg is topped up, not given a second one
+  const s2 = fresh(); addItem(s2, c, "egg.cloud_fox", 1);
+  assert.ok(acceptQuest(s2, c, q, T0).ok);
+  assert.equal(itemCount(s2, "egg.cloud_fox"), 1);
+});
+
+test("Qin's egg incubates, hatches only from victories, and becomes the active companion", () => {
+  const s = fresh();
+  assert.ok(acceptQuest(s, c, "quest.npc.qins_first_companion", T0).ok);
   assert.ok(incubate(s, c, "egg.cloud_fox", T0).ok);
   assert.equal(itemCount(s, "egg.cloud_fox"), 0);
   const inc = s.beasts.incubating[0]!;

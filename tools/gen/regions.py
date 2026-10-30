@@ -69,7 +69,6 @@ NODE_TEMPLATE = [
     (9, "deep_path", "battle", (0.3, 0.36)), (10, "sanctum", "cultivation", (0.66, 0.36)), (11, "den", "elite", (0.2, 0.2)),
     (12, "hidden_grove", "hidden", (0.84, 0.22)), (13, "approach", "battle", (0.55, 0.24)), (14, "throne", "boss", (0.5, 0.07)),
 ]
-NODE_EDGES = [(0, 1), (0, 2), (1, 3), (1, 4), (2, 4), (2, 5), (3, 6), (4, 7), (5, 8), (6, 9), (7, 9), (7, 10), (8, 10), (9, 11), (10, 12), (10, 13), (12, 13), (11, 14), (13, 14)]
 NODE_NAMES = {"entry": "Border", "gathering": "Gathering Grounds", "outskirts": "Outskirts", "west_path": "Western Trail", "cache": "Hidden Cache",
               "east_path": "Eastern Trail", "lair": "Lair", "crossroads": "Crossroads", "ridge": "Ridge", "deep_path": "Deep Path", "sanctum": "Sanctum",
               "den": "Den", "hidden_grove": "Secret Place", "approach": "Approach", "throne": "Throne"}
@@ -348,9 +347,7 @@ def region(rd, prev):
         elif kind == "secret_realm":
             d["secret_realm"] = f"dungeon.{sr[0]}"
         nodes[idx] = d
-    for a, b in NODE_EDGES:
-        nodes[a]["connections"].append(nodes[b]["id"]); nodes[b]["connections"].append(nodes[a]["id"])
-    out["nodes"].append((key, [nodes[i] for i in range(len(NODE_TEMPLATE))]))
+    out["nodes"].append((key, chain_links([nodes[i] for i in range(len(NODE_TEMPLATE))])))  # maps open in number order
 
     # ---------- region ----------
     prev_key, prev_q = prev

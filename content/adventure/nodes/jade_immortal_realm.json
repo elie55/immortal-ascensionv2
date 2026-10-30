@@ -10,8 +10,7 @@
       0.93
     ],
     "connections": [
-      "node.jade_immortal_realm.gathering",
-      "node.jade_immortal_realm.outskirts"
+      "node.jade_immortal_realm.gathering"
     ],
     "rec_cp": 150000,
     "first_clear": {
@@ -41,8 +40,7 @@
     ],
     "connections": [
       "node.jade_immortal_realm.entry",
-      "node.jade_immortal_realm.west_path",
-      "node.jade_immortal_realm.cache"
+      "node.jade_immortal_realm.outskirts"
     ],
     "rec_cp": 171600,
     "first_clear": {},
@@ -74,9 +72,8 @@
       0.82
     ],
     "connections": [
-      "node.jade_immortal_realm.entry",
-      "node.jade_immortal_realm.cache",
-      "node.jade_immortal_realm.east_path"
+      "node.jade_immortal_realm.gathering",
+      "node.jade_immortal_realm.west_path"
     ],
     "rec_cp": 162000,
     "first_clear": {
@@ -106,8 +103,8 @@
       0.66
     ],
     "connections": [
-      "node.jade_immortal_realm.gathering",
-      "node.jade_immortal_realm.lair"
+      "node.jade_immortal_realm.outskirts",
+      "node.jade_immortal_realm.cache"
     ],
     "rec_cp": 168000,
     "first_clear": {
@@ -137,9 +134,8 @@
       0.72
     ],
     "connections": [
-      "node.jade_immortal_realm.gathering",
-      "node.jade_immortal_realm.outskirts",
-      "node.jade_immortal_realm.crossroads"
+      "node.jade_immortal_realm.west_path",
+      "node.jade_immortal_realm.east_path"
     ],
     "rec_cp": 191400,
     "first_clear": {},
@@ -158,8 +154,8 @@
       0.66
     ],
     "connections": [
-      "node.jade_immortal_realm.outskirts",
-      "node.jade_immortal_realm.ridge"
+      "node.jade_immortal_realm.cache",
+      "node.jade_immortal_realm.lair"
     ],
     "rec_cp": 180000,
     "first_clear": {
@@ -189,8 +185,8 @@
       0.5
     ],
     "connections": [
-      "node.jade_immortal_realm.west_path",
-      "node.jade_immortal_realm.deep_path"
+      "node.jade_immortal_realm.east_path",
+      "node.jade_immortal_realm.crossroads"
     ],
     "rec_cp": 297600,
     "first_clear": {
@@ -221,9 +217,8 @@
       0.53
     ],
     "connections": [
-      "node.jade_immortal_realm.cache",
-      "node.jade_immortal_realm.deep_path",
-      "node.jade_immortal_realm.sanctum"
+      "node.jade_immortal_realm.lair",
+      "node.jade_immortal_realm.ridge"
     ],
     "rec_cp": 211200,
     "first_clear": {},
@@ -242,8 +237,8 @@
       0.5
     ],
     "connections": [
-      "node.jade_immortal_realm.east_path",
-      "node.jade_immortal_realm.sanctum"
+      "node.jade_immortal_realm.crossroads",
+      "node.jade_immortal_realm.deep_path"
     ],
     "rec_cp": 198000,
     "first_clear": {
@@ -272,9 +267,8 @@
       0.36
     ],
     "connections": [
-      "node.jade_immortal_realm.lair",
-      "node.jade_immortal_realm.crossroads",
-      "node.jade_immortal_realm.den"
+      "node.jade_immortal_realm.ridge",
+      "node.jade_immortal_realm.sanctum"
     ],
     "rec_cp": 204000,
     "first_clear": {
@@ -304,10 +298,8 @@
       0.36
     ],
     "connections": [
-      "node.jade_immortal_realm.crossroads",
-      "node.jade_immortal_realm.ridge",
-      "node.jade_immortal_realm.hidden_grove",
-      "node.jade_immortal_realm.approach"
+      "node.jade_immortal_realm.deep_path",
+      "node.jade_immortal_realm.den"
     ],
     "rec_cp": 231000,
     "first_clear": {},
@@ -330,8 +322,9 @@
       0.2
     ],
     "connections": [
-      "node.jade_immortal_realm.deep_path",
-      "node.jade_immortal_realm.throne"
+      "node.jade_immortal_realm.sanctum",
+      "node.jade_immortal_realm.hidden_grove",
+      "node.jade_immortal_realm.approach"
     ],
     "rec_cp": 345600,
     "first_clear": {
@@ -366,8 +359,7 @@
       0.22
     ],
     "connections": [
-      "node.jade_immortal_realm.sanctum",
-      "node.jade_immortal_realm.approach"
+      "node.jade_immortal_realm.den"
     ],
     "rec_cp": 244200,
     "first_clear": {},
@@ -375,7 +367,7 @@
     "energy_cost": 11,
     "event": "event.forbidden_peach",
     "hidden": {
-      "condition": "clear the region boss",
+      "condition": "Win at Exile's Hermitage to search for it",
       "reveal_chance": 0.3
     }
   },
@@ -390,8 +382,7 @@
       0.24
     ],
     "connections": [
-      "node.jade_immortal_realm.sanctum",
-      "node.jade_immortal_realm.hidden_grove",
+      "node.jade_immortal_realm.den",
       "node.jade_immortal_realm.throne"
     ],
     "rec_cp": 228000,
@@ -422,7 +413,6 @@
       0.07
     ],
     "connections": [
-      "node.jade_immortal_realm.den",
       "node.jade_immortal_realm.approach"
     ],
     "rec_cp": 351000,

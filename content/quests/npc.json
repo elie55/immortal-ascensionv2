@@ -168,7 +168,13 @@
         "status": "generated"
       }
     },
-    "next": "quest.beast.evolve_yunyun"
+    "next": "quest.beast.evolve_yunyun",
+    "provides": [
+      {
+        "id": "egg.cloud_fox",
+        "qty": 1
+      }
+    ]
   },
   {
     "id": "quest.beast.evolve_yunyun",

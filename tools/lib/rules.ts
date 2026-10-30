@@ -146,6 +146,7 @@ export function buildGraph(db: Database) {
         break;
       case "quest":
         for (const id of rewardIds(d.rewards)) grant(id, `quest:${e.id}`);
+        for (const p of d.provides ?? []) grant(p.id, `quest:${e.id}:provides`);
         if (d.giver !== "system") appear(d.giver, `quest:${e.id}`);
         if (d.turn_in !== "auto") appear(d.turn_in, `quest:${e.id}`);
         for (const o of d.objectives) {

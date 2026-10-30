@@ -11,6 +11,7 @@ import type { Screen } from "../core/router.ts";
 import type { App } from "../../app.ts";
 import { affinityLevel } from "../../engine/unlock.ts";
 import { chat, topics, askTopic, giveGift, giftValue, giftable, giftsLeft, type Preference } from "../../engine/social.ts";
+import { itemCount } from "../../engine/inventory.ts";
 import { canStart, buildDuelist } from "../../engine/encounter.ts";
 import { computeStats } from "../../engine/stats.ts";
 import { questStatus } from "../../engine/progression.ts";
@@ -56,7 +57,8 @@ export function npcScreen(app: App, npcId: string, backTo: string): Screen {
         } },
         n.topics.length && { id: "ask", label: n.role === "elder" ? "Ask" : "Ask about them", icon: "info", on: mode === "ask", run: () => { mode = "ask"; app.router.refresh(); } },
         n.duel?.enabled && { id: "duel", label: "Duel", icon: "sword", run: () => sparCard(app, npcId) },
-        { id: "gift", label: "Gift", icon: "fame", badge: giftsLeft(s, c, npcId), run: () => giftSheet(app, npcId, say) },
+        // badge = gifts you carry that she can take today (her remaining daily allowance is shown in the sheet, not here)
+        { id: "gift", label: "Gift", icon: "fame", badge: giftsLeft(s, c, npcId) > 0 ? giftable(s, c, npcId).reduce((n, id) => n + itemCount(s, id), 0) : 0, run: () => giftSheet(app, npcId, say) },
         n.shop && { id: "shop", label: "Shop", icon: "gem", run: () => app.router.push(shopScreen(app, n.shop, n.name)) },
         quests.length && { id: "quests", label: "Requests", icon: "scroll", badge: ready, run: () => app.router.push(missionHallScreen(app, npcId)) },
         canBond(s, c, npcId).ok && { id: "dao", label: "Dao Companion", icon: "fame", on: true, run: () => daoModal(app, npcId, say) },

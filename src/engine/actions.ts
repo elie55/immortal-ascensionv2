@@ -7,6 +7,7 @@ import type { GameState } from "./state.ts";
 import type { DomainEvent } from "./events.ts";
 import { addItem, removeItem, itemCount, grantGear, equip as equipGear, unequip as unequipGear, meetsRequirements, equippedSlotOf, gearPlace, EQUIP_SLOTS, deposit, withdraw, depositGear, withdrawGear, claimPouch, expand, type Result, type EquipSlot } from "./inventory.ts";
 import { slotOpen } from "./unlock.ts";
+import { questReserving } from "./progression.ts";
 import { addBuff, minorBreakthrough, majorBreakthrough, countAffordableStages, qiBankCap, isBreakthroughItem } from "./cultivation.ts";
 import { computeStats } from "./stats.ts";
 import type { Rewards } from "../../schema/common.ts";
@@ -174,6 +175,8 @@ export function unequip(s: GameState, _content: ContentIndex, slot: EquipSlot): 
 export function sellItem(s: GameState, content: ContentIndex, id: string, qty: number): ActionResult<{ stones: number }> {
   const def = content.find<any>(id);
   if (!def || typeof def.sell_value !== "number") return fail("Cannot be sold");
+  const reserved = questReserving(s, content, id);
+  if (reserved) return fail(`Needed for “${reserved.name}”`);
   if (!removeItem(s, id, qty)) return fail("Not enough items");
   const stones = def.sell_value * qty;
   s.resources.spirit_stones += stones;

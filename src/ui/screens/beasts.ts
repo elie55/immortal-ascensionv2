@@ -15,6 +15,9 @@ import { energyNow } from "../../engine/cultivation.ts";
 import { itemCount } from "../../engine/inventory.ts";
 import type { BeastInstance } from "../../engine/state.ts";
 import { npcScreen } from "./npc.ts";
+import { questStatus } from "../../engine/progression.ts";
+import { missionHallScreen } from "./quests.ts";
+import type { Quest } from "../../content/index.ts";
 
 const ELEM: Record<string, string> = { "elem.wood": "Wood", "elem.fire": "Fire", "elem.earth": "Earth", "elem.metal": "Metal", "elem.water": "Water" };
 
@@ -35,7 +38,7 @@ export function beastsScreen(app: App, backTo: string): Screen {
         header(app),
         subbar({ help: { app, key: "beasts" }, title: "Spirit Beasts", cn: "灵兽", sub: `Companions · ${s.beasts.active !== null ? "1 fights beside you" : "none active"}`, backTo, onBack: () => app.router.back(),
           end: h("div", { class: "found" }, h("div", { class: "muted" }, "Found"), h("b", { class: "gold-t" }, `${found.size} / ${all.length}`)) }),
-        b ? activeCard(app, b) : h("div", { class: "glass panel center" }, icon("paw", 26), h("div", { class: "lbl", style: { marginTop: "6px" } }, "No spirit beast yet"), h("div", { class: "muted" }, "Place an egg in an incubator below. Eggs hatch from battles you win.")),
+        b ? activeCard(app, b) : h("div", { class: "glass panel center" }, icon("paw", 26), h("div", { class: "lbl", style: { marginTop: "6px" } }, "No spirit beast yet"), h("div", { class: "muted" }, "Place an egg in an incubator below. Eggs hatch from battles you win."), eggQuestHint(app)),
         b && evolutionTrack(app, b),
         section("Your beasts", h("span", null, "Tap to view · set active"), h("div", { class: "beast-grid" },
           owned.map((x) => {
@@ -146,6 +149,17 @@ function evolveSheet(app: App, uid: number) {
       h("button", { class: "btn gold block lg", disabled: !chk.ok, onClick: () => { const r = app.game.run("evolve", app.now(), (st, cc) => evolve(st, cc, uid)); if (r.ok) { close(); app.router.toast(`${b.name} evolved into ${next.name}!`, "good", 3500); } else app.router.toast(r.reason, "bad"); } }, "Evolve"),
       !chk.ok && h("div", { class: "muted center" }, chk.reason));
   } });
+}
+
+/** A giver with an egg for the player (a quest that hands one over and is open to take): say who, and go there. */
+function eggQuestHint(app: App) {
+  const s = app.game.state, c = app.content;
+  if (Object.keys(s.inventory.stacks).some((k) => k.startsWith("egg.") && itemCount(s, k) > 0) || s.beasts.incubating.length) return null;
+  const q = c.byPrefix<Quest>("quest").find((x) => x.giver.startsWith("npc.") && x.provides?.some((p) => p.id.startsWith("egg.")) && questStatus(s, c, x, app.now()) === "available");
+  if (!q) return null;
+  const giver = c.get<any>(q.giver);
+  return h("div", { class: "egg-hint" }, npcAvatar(app, q.giver, 34), h("div", { class: "grow" }, h("b", null, `${giver.name} has an egg for you`), h("div", { class: "muted" }, `Quest · ${q.name}`)),
+    h("button", { class: "btn gold sm", onClick: () => app.router.push(missionHallScreen(app, q.giver)) }, "See quest"));
 }
 
 function eggSheet(app: App) {

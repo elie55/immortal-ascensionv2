@@ -10,9 +10,7 @@
       0.92
     ],
     "connections": [
-      "node.azure_bamboo_forest.herb_patch",
-      "node.azure_bamboo_forest.moon_pool_spring",
-      "node.azure_bamboo_forest.silk_strung_grove"
+      "node.azure_bamboo_forest.herb_patch"
     ],
     "rec_cp": 280,
     "first_clear": {
@@ -42,7 +40,7 @@
     ],
     "connections": [
       "node.azure_bamboo_forest.forest_edge",
-      "node.azure_bamboo_forest.viper_hollow"
+      "node.azure_bamboo_forest.moon_pool_spring"
     ],
     "rec_cp": 260,
     "first_clear": {},
@@ -78,8 +76,8 @@
       0.8
     ],
     "connections": [
-      "node.azure_bamboo_forest.forest_edge",
-      "node.azure_bamboo_forest.ore_vein"
+      "node.azure_bamboo_forest.herb_patch",
+      "node.azure_bamboo_forest.viper_hollow"
     ],
     "rec_cp": 260,
     "first_clear": {},
@@ -102,8 +100,8 @@
       0.62
     ],
     "connections": [
-      "node.azure_bamboo_forest.herb_patch",
-      "node.azure_bamboo_forest.frost_lynx_den"
+      "node.azure_bamboo_forest.moon_pool_spring",
+      "node.azure_bamboo_forest.ore_vein"
     ],
     "rec_cp": 300,
     "first_clear": {
@@ -129,7 +127,8 @@
       0.62
     ],
     "connections": [
-      "node.azure_bamboo_forest.moon_pool_spring"
+      "node.azure_bamboo_forest.viper_hollow",
+      "node.azure_bamboo_forest.silk_strung_grove"
     ],
     "rec_cp": 280,
     "first_clear": {},
@@ -157,7 +156,7 @@
       0.68
     ],
     "connections": [
-      "node.azure_bamboo_forest.forest_edge",
+      "node.azure_bamboo_forest.ore_vein",
       "node.azure_bamboo_forest.caravan_rest",
       "node.azure_bamboo_forest.hollow_shrine"
     ],
@@ -194,8 +193,7 @@
       0.5
     ],
     "connections": [
-      "node.azure_bamboo_forest.silk_strung_grove",
-      "node.azure_bamboo_forest.reed_marsh"
+      "node.azure_bamboo_forest.silk_strung_grove"
     ],
     "rec_cp": 300,
     "first_clear": {},
@@ -215,7 +213,7 @@
     ],
     "connections": [
       "node.azure_bamboo_forest.silk_strung_grove",
-      "node.azure_bamboo_forest.whispering_bend"
+      "node.azure_bamboo_forest.frost_lynx_den"
     ],
     "rec_cp": 320,
     "first_clear": {},
@@ -234,8 +232,9 @@
       0.4
     ],
     "connections": [
-      "node.azure_bamboo_forest.viper_hollow",
-      "node.azure_bamboo_forest.heart_of_the_grove"
+      "node.azure_bamboo_forest.hollow_shrine",
+      "node.azure_bamboo_forest.whispering_bend",
+      "node.azure_bamboo_forest.reed_marsh"
     ],
     "rec_cp": 480,
     "first_clear": {
@@ -266,9 +265,7 @@
       0.42
     ],
     "connections": [
-      "node.azure_bamboo_forest.hollow_shrine",
-      "node.azure_bamboo_forest.heart_of_the_grove",
-      "node.azure_bamboo_forest.ancient_sovereign"
+      "node.azure_bamboo_forest.frost_lynx_den"
     ],
     "rec_cp": 400,
     "first_clear": {},
@@ -276,7 +273,7 @@
     "energy_cost": 5,
     "event": "event.hidden_whisper",
     "hidden": {
-      "condition": "clear silk_strung_grove",
+      "condition": "Win at Frost Lynx Den to search for it",
       "reveal_chance": 0.4
     }
   },
@@ -291,8 +288,10 @@
       0.35
     ],
     "connections": [
-      "node.azure_bamboo_forest.caravan_rest",
-      "node.azure_bamboo_forest.origin_rift"
+      "node.azure_bamboo_forest.frost_lynx_den",
+      "node.azure_bamboo_forest.heart_of_the_grove",
+      "node.azure_bamboo_forest.origin_rift",
+      "node.azure_bamboo_forest.ancient_sovereign"
     ],
     "rec_cp": 560,
     "first_clear": {
@@ -318,9 +317,7 @@
       0.25
     ],
     "connections": [
-      "node.azure_bamboo_forest.frost_lynx_den",
-      "node.azure_bamboo_forest.whispering_bend",
-      "node.azure_bamboo_forest.ancient_sovereign"
+      "node.azure_bamboo_forest.reed_marsh"
     ],
     "rec_cp": 520,
     "first_clear": {},
@@ -328,7 +325,7 @@
     "energy_cost": 5,
     "event": "event.frost_hermit_trial",
     "hidden": {
-      "condition": "hidden node, 2 of 3 found",
+      "condition": "Win at Reed Marsh to search for it",
       "reveal_chance": 0.25
     }
   },
@@ -343,8 +340,7 @@
       0.2
     ],
     "connections": [
-      "node.azure_bamboo_forest.reed_marsh",
-      "node.azure_bamboo_forest.ancient_sovereign"
+      "node.azure_bamboo_forest.reed_marsh"
     ],
     "rec_cp": 1800,
     "first_clear": {},
@@ -363,9 +359,7 @@
       0.08
     ],
     "connections": [
-      "node.azure_bamboo_forest.heart_of_the_grove",
-      "node.azure_bamboo_forest.origin_rift",
-      "node.azure_bamboo_forest.whispering_bend"
+      "node.azure_bamboo_forest.reed_marsh"
     ],
     "rec_cp": 1100,
     "first_clear": {

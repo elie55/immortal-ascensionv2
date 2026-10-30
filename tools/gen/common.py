@@ -90,6 +90,34 @@ def named(name, desc, cn=None, lore=None):
 
 def q(i, n): return {"id": i, "qty": n}
 
+# ---------- region map order ----------
+SIDE_KINDS = ("hidden", "merchant", "secret_realm")
+COMBAT_KINDS = ("battle", "elite", "boss")
+
+def chain_links(nodes):
+    """Region maps open strictly in number order (owner's rule, 2026-10-30): the n-th place on the map links only to the
+    previous and next main places, so clearing place n opens place n+1 and nothing further. Side places branch off
+    without gating the path: merchants and secret-realm gates open with the place before them, hidden places hang off
+    the last battle before them (hidden places are found by winning there). `nodes` is in map-number order."""
+    for d in nodes: d["connections"] = []
+    def link(a, b):
+        a["connections"].append(b["id"]); b["connections"].append(a["id"])
+    prev = prev_fight = None
+    for d in nodes:
+        if d["kind"] == "hidden":
+            anchor = prev_fight or prev
+            assert anchor, f"{d['id']}: a hidden place cannot come first"
+            link(anchor, d)
+            d["hidden"] = {**d.get("hidden", {}), "condition": f"Win at {anchor['name']} to search for it"}
+        elif d["kind"] in SIDE_KINDS:
+            assert prev, f"{d['id']}: a side place cannot come first"
+            link(prev, d)
+        else:
+            if prev: link(prev, d)
+            prev = d
+            if d["kind"] in COMBAT_KINDS: prev_fight = d
+    return nodes
+
 def write(rel, data):
     p = os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(p), exist_ok=True)

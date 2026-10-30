@@ -26,6 +26,29 @@ export function nodeState(s: GameState, c: ContentIndex, n: MapNode): NodeState 
   return "reachable";
 }
 
+/**
+ * The place to play next on the way to a locked target: the nearest reachable place found by walking back from the
+ * target through locked places. Null when the target is already playable (or cleared), hidden, or its region is not
+ * discovered. Used by quest tracking: a quest marks its target, it never opens it.
+ */
+export function nextStepTo(s: GameState, c: ContentIndex, targetId: string): MapNode | null {
+  const target = c.get<MapNode>(targetId);
+  if (!s.progress.regions[target.region] || nodeState(s, c, target) !== "locked") return null;
+  const seen = new Set([targetId]);
+  let frontier = [target];
+  while (frontier.length) {
+    const next: MapNode[] = [];
+    for (const n of frontier) for (const k of n.connections) {
+      if (seen.has(k)) continue; seen.add(k);
+      const m = c.get<MapNode>(k); const st = nodeState(s, c, m);
+      if (st === "reachable") return m;
+      if (st === "locked") next.push(m);
+    }
+    frontier = next;
+  }
+  return null;
+}
+
 /** Cleared share of a region's visible nodes. */
 export function regionProgress(s: GameState, c: ContentIndex, regionId: string): { cleared: number; total: number } {
   const nodes = c.nodesOf(regionId);
@@ -62,7 +85,7 @@ export function revealHidden(s: GameState, c: ContentIndex, clearedId: string, o
 function requireReachable(s: GameState, c: ContentIndex, id: string) {
   const n = c.get<MapNode>(id);
   const st = nodeState(s, c, n);
-  if (st === "locked") return { n, err: "Clear a neighbouring place first" };
+  if (st === "locked") return { n, err: "Clear the place before it first" };
   if (st === "hidden") return { n, err: "This place has not been found yet" };
   return { n, err: null, cleared: st === "cleared" };
 }

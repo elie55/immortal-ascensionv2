@@ -10,8 +10,7 @@
       0.93
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.gathering",
-      "node.throne_of_the_immortal_emperor.outskirts"
+      "node.throne_of_the_immortal_emperor.gathering"
     ],
     "rec_cp": 260000,
     "first_clear": {
@@ -41,8 +40,7 @@
     ],
     "connections": [
       "node.throne_of_the_immortal_emperor.entry",
-      "node.throne_of_the_immortal_emperor.west_path",
-      "node.throne_of_the_immortal_emperor.cache"
+      "node.throne_of_the_immortal_emperor.outskirts"
     ],
     "rec_cp": 297440,
     "first_clear": {},
@@ -74,9 +72,8 @@
       0.82
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.entry",
-      "node.throne_of_the_immortal_emperor.cache",
-      "node.throne_of_the_immortal_emperor.east_path"
+      "node.throne_of_the_immortal_emperor.gathering",
+      "node.throne_of_the_immortal_emperor.west_path"
     ],
     "rec_cp": 280800,
     "first_clear": {
@@ -106,8 +103,8 @@
       0.66
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.gathering",
-      "node.throne_of_the_immortal_emperor.lair"
+      "node.throne_of_the_immortal_emperor.outskirts",
+      "node.throne_of_the_immortal_emperor.cache"
     ],
     "rec_cp": 291200,
     "first_clear": {
@@ -137,9 +134,8 @@
       0.72
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.gathering",
-      "node.throne_of_the_immortal_emperor.outskirts",
-      "node.throne_of_the_immortal_emperor.crossroads"
+      "node.throne_of_the_immortal_emperor.west_path",
+      "node.throne_of_the_immortal_emperor.east_path"
     ],
     "rec_cp": 331760,
     "first_clear": {},
@@ -158,8 +154,8 @@
       0.66
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.outskirts",
-      "node.throne_of_the_immortal_emperor.ridge"
+      "node.throne_of_the_immortal_emperor.cache",
+      "node.throne_of_the_immortal_emperor.lair"
     ],
     "rec_cp": 312000,
     "first_clear": {
@@ -189,8 +185,8 @@
       0.5
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.west_path",
-      "node.throne_of_the_immortal_emperor.deep_path"
+      "node.throne_of_the_immortal_emperor.east_path",
+      "node.throne_of_the_immortal_emperor.crossroads"
     ],
     "rec_cp": 515840,
     "first_clear": {
@@ -221,9 +217,8 @@
       0.53
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.cache",
-      "node.throne_of_the_immortal_emperor.deep_path",
-      "node.throne_of_the_immortal_emperor.sanctum"
+      "node.throne_of_the_immortal_emperor.lair",
+      "node.throne_of_the_immortal_emperor.ridge"
     ],
     "rec_cp": 366080,
     "first_clear": {},
@@ -242,8 +237,8 @@
       0.5
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.east_path",
-      "node.throne_of_the_immortal_emperor.sanctum"
+      "node.throne_of_the_immortal_emperor.crossroads",
+      "node.throne_of_the_immortal_emperor.deep_path"
     ],
     "rec_cp": 343200,
     "first_clear": {
@@ -272,9 +267,8 @@
       0.36
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.lair",
-      "node.throne_of_the_immortal_emperor.crossroads",
-      "node.throne_of_the_immortal_emperor.den"
+      "node.throne_of_the_immortal_emperor.ridge",
+      "node.throne_of_the_immortal_emperor.sanctum"
     ],
     "rec_cp": 353600,
     "first_clear": {
@@ -304,10 +298,8 @@
       0.36
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.crossroads",
-      "node.throne_of_the_immortal_emperor.ridge",
-      "node.throne_of_the_immortal_emperor.hidden_grove",
-      "node.throne_of_the_immortal_emperor.approach"
+      "node.throne_of_the_immortal_emperor.deep_path",
+      "node.throne_of_the_immortal_emperor.den"
     ],
     "rec_cp": 400400,
     "first_clear": {},
@@ -330,8 +322,9 @@
       0.2
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.deep_path",
-      "node.throne_of_the_immortal_emperor.throne"
+      "node.throne_of_the_immortal_emperor.sanctum",
+      "node.throne_of_the_immortal_emperor.hidden_grove",
+      "node.throne_of_the_immortal_emperor.approach"
     ],
     "rec_cp": 599040,
     "first_clear": {
@@ -366,8 +359,7 @@
       0.22
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.sanctum",
-      "node.throne_of_the_immortal_emperor.approach"
+      "node.throne_of_the_immortal_emperor.den"
     ],
     "rec_cp": 423280,
     "first_clear": {},
@@ -375,7 +367,7 @@
     "energy_cost": 12,
     "event": "event.empty_throne",
     "hidden": {
-      "condition": "clear the region boss",
+      "condition": "Win at Shadow Court to search for it",
       "reveal_chance": 0.3
     }
   },
@@ -390,8 +382,7 @@
       0.24
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.sanctum",
-      "node.throne_of_the_immortal_emperor.hidden_grove",
+      "node.throne_of_the_immortal_emperor.den",
       "node.throne_of_the_immortal_emperor.throne"
     ],
     "rec_cp": 395200,
@@ -422,7 +413,6 @@
       0.07
     ],
     "connections": [
-      "node.throne_of_the_immortal_emperor.den",
       "node.throne_of_the_immortal_emperor.approach"
     ],
     "rec_cp": 608400,

@@ -393,6 +393,18 @@ button.setrow { width: 100%; color: inherit; }
 .node-pin.st-locked .np-label { color: var(--text-3); } .node-pin.sel .np-label { background: var(--gold); color: #3a2405; }
 .node-pin:has(.np-here) .np-label { display: none; }
 .np-here { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 3px; padding: 1px 6px; border-radius: 999px; background: var(--gold); color: #3a2405; font-size: calc(10rem / 15); font-weight: 900; white-space: nowrap; }
+/* quest marker on the tracked quest's place; the place to play next on the way pulses (owner: mark, never unlock) */
+.np-quest { position: absolute; left: 50%; bottom: calc(100% + 3px); transform: translateX(-50%); width: 20px; height: 20px; border-radius: 6px 6px 6px 1px; rotate: 45deg; display: grid; place-items: center; background: linear-gradient(160deg, #ffe7a3, #e2a33a); border: 1px solid #fff4cf; box-shadow: 0 2px 8px rgba(0,0,0,.5), 0 0 12px rgba(255,214,120,.7); color: #4a2c05; z-index: 2; animation: qbob 1.6s ease-in-out infinite; }
+.np-quest .ico { rotate: -45deg; }
+@keyframes qbob { 0%,100% { translate: 0 0; } 50% { translate: 0 -3px; } }
+.node-pin.quest { border-color: var(--gold-hi); }
+/* a locked quest target stays grey, but its marker and selection ring keep full colour */
+.node-pin.st-locked.quest { filter: none; opacity: 1; } .node-pin.st-locked.quest > :not(.np-quest) { filter: grayscale(.75) brightness(.72); }
+.node-pin.next-step::after { content: ""; position: absolute; inset: -7px; border-radius: 50%; border: 2px solid rgba(110,240,190,.9); animation: nextpulse 1.4s ease-out infinite; pointer-events: none; }
+@keyframes nextpulse { 0% { transform: scale(.85); opacity: 1; } 100% { transform: scale(1.35); opacity: 0; } }
+.np-questline { display: flex; align-items: center; gap: 4px; margin: -2px 0 6px; color: var(--gold-hi); font-weight: 700; font-size: calc(12rem / 15); }
+.np-next { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 12px; background: rgba(4,10,34,.5); border: 1px solid var(--edge); color: var(--text-2); font-size: calc(12.5rem / 15); }
+.np-next b { color: var(--text); }
 .node-card { animation: rise .2s ease; }
 .enemy-chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px 3px 3px; border-radius: 999px; background: rgba(4,10,34,.55); border: 1px solid var(--edge); font-size: calc(11rem / 15); }
 .ec-ico { width: 24px; height: 24px; border-radius: 50%; background: var(--navy-700) center/cover; border: 1px solid var(--edge-hi); flex: none; }
@@ -815,6 +827,7 @@ button.tag { min-height: 32px; padding: 4px 12px; }
 .beast-cell .tile { width: 54px; } .beast-cell.on { border-color: var(--jade); box-shadow: 0 0 12px rgba(79,224,176,.35); }
 .beast-cell .bar { width: 80%; margin-top: 3px; }
 .beast-cell.egg.ready { border-color: var(--gold-line); animation: pulse 1.6s infinite; }
+.egg-hint { display: flex; align-items: center; gap: 10px; margin-top: 10px; padding: 8px 10px; border-radius: 14px; background: rgba(4,10,34,.5); border: 1px solid var(--gold-line); text-align: left; }
 .beast-cell.empty { border-style: dashed; } .egg-slot { width: 54px; aspect-ratio: 1; border-radius: 12px; border: 1px dashed var(--edge-hi); display: grid; place-items: center; color: var(--text-3); }
 .beast-cell.unknown .tile .in { font-size: calc(24rem / 15); font-weight: 900; color: var(--text-2); filter: grayscale(1); } .beast-cell.unknown { opacity: .7; }
 .bc-n { font-weight: 800; font-size: calc(11rem / 15); line-height: 1.15; } .bc-badge { position: absolute; top: 4px; right: 4px; width: 16px; height: 16px; border-radius: 50%; display: grid; place-items: center; background: var(--jade-lo); color: #fff; }

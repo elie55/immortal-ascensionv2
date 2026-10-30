@@ -10,8 +10,7 @@
       0.9
     ],
     "connections": [
-      "node.mortal_plains.herb_meadow",
-      "node.mortal_plains.boar_thicket"
+      "node.mortal_plains.herb_meadow"
     ],
     "rec_cp": 110,
     "first_clear": {
@@ -41,8 +40,7 @@
     ],
     "connections": [
       "node.mortal_plains.village_road",
-      "node.mortal_plains.river_crossing",
-      "node.mortal_plains.monkey_grove"
+      "node.mortal_plains.river_crossing"
     ],
     "rec_cp": 100,
     "first_clear": {},
@@ -75,7 +73,7 @@
     ],
     "connections": [
       "node.mortal_plains.herb_meadow",
-      "node.mortal_plains.crane_nest"
+      "node.mortal_plains.boar_thicket"
     ],
     "rec_cp": 100,
     "first_clear": {},
@@ -103,9 +101,8 @@
       0.6
     ],
     "connections": [
-      "node.mortal_plains.village_road",
-      "node.mortal_plains.monkey_grove",
-      "node.mortal_plains.wolf_den"
+      "node.mortal_plains.river_crossing",
+      "node.mortal_plains.crane_nest"
     ],
     "rec_cp": 130,
     "first_clear": {
@@ -140,9 +137,8 @@
       0.65
     ],
     "connections": [
-      "node.mortal_plains.river_crossing",
-      "node.mortal_plains.roadside_cache",
-      "node.mortal_plains.old_shrine"
+      "node.mortal_plains.boar_thicket",
+      "node.mortal_plains.monkey_grove"
     ],
     "rec_cp": 120,
     "first_clear": {},
@@ -170,8 +166,7 @@
       0.5
     ],
     "connections": [
-      "node.mortal_plains.boar_thicket",
-      "node.mortal_plains.herb_meadow",
+      "node.mortal_plains.crane_nest",
       "node.mortal_plains.roadside_cache"
     ],
     "rec_cp": 160,
@@ -199,8 +194,7 @@
     ],
     "connections": [
       "node.mortal_plains.monkey_grove",
-      "node.mortal_plains.crane_nest",
-      "node.mortal_plains.bandit_camp"
+      "node.mortal_plains.wolf_den"
     ],
     "rec_cp": 150,
     "first_clear": {},
@@ -219,7 +213,8 @@
       0.35
     ],
     "connections": [
-      "node.mortal_plains.boar_thicket",
+      "node.mortal_plains.roadside_cache",
+      "node.mortal_plains.old_shrine",
       "node.mortal_plains.bandit_camp"
     ],
     "rec_cp": 220,
@@ -253,7 +248,7 @@
       0.3
     ],
     "connections": [
-      "node.mortal_plains.crane_nest"
+      "node.mortal_plains.wolf_den"
     ],
     "rec_cp": 200,
     "first_clear": {},
@@ -261,7 +256,7 @@
     "energy_cost": 5,
     "event": "event.blazing_shrine",
     "hidden": {
-      "condition": "clear wolf_den and crane_nest",
+      "condition": "Win at Wolf Den to search for it",
       "reveal_chance": 0.35
     }
   },
@@ -276,8 +271,7 @@
       0.15
     ],
     "connections": [
-      "node.mortal_plains.wolf_den",
-      "node.mortal_plains.roadside_cache"
+      "node.mortal_plains.wolf_den"
     ],
     "rec_cp": 480,
     "first_clear": {

@@ -12,7 +12,7 @@ import type { DomainEvent } from "./events.ts";
 import type { ActionResult } from "./actions.ts";
 import { grantRewards } from "./actions.ts";
 import { checkUnlock, realmAtLeast, affinityLevel } from "./unlock.ts";
-import { itemCount, removeItems, gearPlace } from "./inventory.ts";
+import { itemCount, removeItems, gearPlace, addItem } from "./inventory.ts";
 import { applyUnlock } from "./story.ts";
 
 type Objective = Quest["objectives"][number];
@@ -102,7 +102,21 @@ export function acceptQuest(s: GameState, c: ContentIndex, id: string, now: numb
   if (st !== "available") return { ok: false, reason: st === "locked" ? (checkUnlock(s, c, q.prereqs as any).reasons[0] ?? "Locked") : st === "cooldown" ? "Not available again yet" : "Already taken" };
   s.progress.quests.active[id] = { startedAt: now, counters: q.objectives.map((o) => { const k = counterKey(o); return k ? counter(s, k) : 0; }) };
   if (!s.progress.quests.tracked && q.type === "main") s.progress.quests.tracked = id; // main quests pin themselves until the player picks another
-  return { ok: true, events: [{ type: "quest_accepted", quest: id }] };
+  const events: DomainEvent[] = [{ type: "quest_accepted", quest: id }];
+  for (const p of q.provides ?? []) { // the giver hands these over now (only what the player does not already carry)
+    const give = Math.max(0, p.qty - itemCount(s, p.id));
+    if (give > 0) { addItem(s, c, p.id, give); events.push({ type: "item_gained", id: p.id, qty: give }); }
+  }
+  return { ok: true, events };
+}
+
+/** The active quest an item was handed over for (it cannot be sold while that quest runs). */
+export function questReserving(s: GameState, c: ContentIndex, itemId: string): Quest | undefined {
+  for (const id of Object.keys(s.progress.quests.active)) {
+    const q = c.find<Quest>(id);
+    if (q?.provides?.some((p) => p.id === itemId)) return q;
+  }
+  return undefined;
 }
 
 /** Turn in every ready quest from the Quest Log (no walk to the giver). Returns how many were handed in. */
@@ -122,6 +136,7 @@ export function abandonQuest(s: GameState, c: ContentIndex, id: string): ActionR
   const q = c.get<Quest>(id);
   if (!s.progress.quests.active[id]) return { ok: false, reason: "Not active" };
   if (q.type === "main") return { ok: false, reason: "Main quests cannot be abandoned" };
+  if (q.provides?.length) return { ok: false, reason: "This quest came with a gift · it cannot be abandoned" };
   delete s.progress.quests.active[id];
   return { ok: true, events: [] };
 }

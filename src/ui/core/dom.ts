@@ -30,13 +30,19 @@ export function append(el: Node, children: Child[]): void {
   for (const c of children) {
     if (c === null || c === undefined || c === false) continue;
     if (Array.isArray(c)) append(el, c);
-    else el.appendChild(typeof c === "string" || typeof c === "number" ? document.createTextNode(String(c)) : c);
+    else if (typeof c === "string" || typeof c === "number") el.appendChild(document.createTextNode(String(c)));
+    // A kept element already on screen must not be pulled out of the document while the next tree is built:
+    // leaving and re-entering the document restarts every CSS animation inside it (hit flashes, dissolves…),
+    // which replayed once per game tick. A placeholder stands in for it; morph() keeps the live node in place.
+    else if ((c as any)[KEEP] && c.isConnected) el.appendChild(keptStandIn(c));
+    else el.appendChild(c);
   }
 }
 
 export function replaceChildren(el: Element, ...children: Child[]): void {
   el.replaceChildren();
   append(el, children);
+  resolveKept(el); // an explicit move: a kept element passed here really goes into `el`
 }
 
 // ---------- event handlers that survive patching ----------
@@ -51,6 +57,20 @@ function on(el: HTMLElement, type: string, fn: (e: Event) => void): void {
 
 /** Mark an element whose content its screen manages itself (moved as is by morph, never patched). */
 export function keep<T extends Element>(el: T): T { (el as any)[KEEP] = true; return el; }
+
+const KEPT_REF = Symbol("keptRef");
+function keptStandIn(el: Node): Node { const ph = document.createComment("kept"); (ph as any)[KEPT_REF] = el; return ph; }
+/** Swap every placeholder inside a freshly built subtree for its kept element (used when the subtree is inserted whole). */
+function resolveKept(n: Node): Node {
+  const ref: Node | undefined = (n as any)[KEPT_REF];
+  if (ref) return ref;
+  if (n.nodeType === 1) {
+    const w = document.createTreeWalker(n, NodeFilter.SHOW_COMMENT); const found: Comment[] = [];
+    while (w.nextNode()) if ((w.currentNode as any)[KEPT_REF]) found.push(w.currentNode as Comment);
+    for (const ph of found) ph.replaceWith((ph as any)[KEPT_REF]);
+  }
+  return n;
+}
 
 /** Patch `el`'s children to match `children` (see the header comment). */
 export function morph(el: Element, ...children: Child[]): void {
@@ -74,10 +94,12 @@ function morphKids(oldP: Node, newP: Node): void {
   kids.forEach((nk, i) => {
     let ok: Node | null = oldP.childNodes[i] ?? null;
     if (ok === nk) return;
+    const kept: Node | undefined = (nk as any)[KEPT_REF];
+    if (kept) { if (ok !== kept) oldP.insertBefore(kept, ok); return; } // already in place: untouched
     const k = keyOf(nk);
     if (k && keyed.has(k)) { const m = keyed.get(k)!; keyed.delete(k); if (m !== ok) { oldP.insertBefore(m, ok); ok = m; } }
     if (ok && sameKind(ok, nk)) morphNode(ok, nk);
-    else oldP.insertBefore(nk, ok);
+    else oldP.insertBefore(resolveKept(nk), ok);
   });
   while (oldP.childNodes.length > kids.length) oldP.removeChild(oldP.lastChild!);
 }

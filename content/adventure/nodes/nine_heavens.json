@@ -10,8 +10,7 @@
       0.93
     ],
     "connections": [
-      "node.nine_heavens.gathering",
-      "node.nine_heavens.outskirts"
+      "node.nine_heavens.gathering"
     ],
     "rec_cp": 14900,
     "first_clear": {
@@ -41,8 +40,7 @@
     ],
     "connections": [
       "node.nine_heavens.entry",
-      "node.nine_heavens.west_path",
-      "node.nine_heavens.cache"
+      "node.nine_heavens.outskirts"
     ],
     "rec_cp": 17046,
     "first_clear": {},
@@ -74,9 +72,8 @@
       0.82
     ],
     "connections": [
-      "node.nine_heavens.entry",
-      "node.nine_heavens.cache",
-      "node.nine_heavens.east_path"
+      "node.nine_heavens.gathering",
+      "node.nine_heavens.west_path"
     ],
     "rec_cp": 16092,
     "first_clear": {
@@ -106,8 +103,8 @@
       0.66
     ],
     "connections": [
-      "node.nine_heavens.gathering",
-      "node.nine_heavens.lair"
+      "node.nine_heavens.outskirts",
+      "node.nine_heavens.cache"
     ],
     "rec_cp": 16688,
     "first_clear": {
@@ -137,9 +134,8 @@
       0.72
     ],
     "connections": [
-      "node.nine_heavens.gathering",
-      "node.nine_heavens.outskirts",
-      "node.nine_heavens.crossroads"
+      "node.nine_heavens.west_path",
+      "node.nine_heavens.east_path"
     ],
     "rec_cp": 19012,
     "first_clear": {},
@@ -158,8 +154,8 @@
       0.66
     ],
     "connections": [
-      "node.nine_heavens.outskirts",
-      "node.nine_heavens.ridge"
+      "node.nine_heavens.cache",
+      "node.nine_heavens.lair"
     ],
     "rec_cp": 17880,
     "first_clear": {
@@ -189,8 +185,8 @@
       0.5
     ],
     "connections": [
-      "node.nine_heavens.west_path",
-      "node.nine_heavens.deep_path"
+      "node.nine_heavens.east_path",
+      "node.nine_heavens.crossroads"
     ],
     "rec_cp": 29562,
     "first_clear": {
@@ -221,9 +217,8 @@
       0.53
     ],
     "connections": [
-      "node.nine_heavens.cache",
-      "node.nine_heavens.deep_path",
-      "node.nine_heavens.sanctum"
+      "node.nine_heavens.lair",
+      "node.nine_heavens.ridge"
     ],
     "rec_cp": 20979,
     "first_clear": {},
@@ -242,8 +237,8 @@
       0.5
     ],
     "connections": [
-      "node.nine_heavens.east_path",
-      "node.nine_heavens.sanctum"
+      "node.nine_heavens.crossroads",
+      "node.nine_heavens.deep_path"
     ],
     "rec_cp": 19668,
     "first_clear": {
@@ -272,9 +267,8 @@
       0.36
     ],
     "connections": [
-      "node.nine_heavens.lair",
-      "node.nine_heavens.crossroads",
-      "node.nine_heavens.den"
+      "node.nine_heavens.ridge",
+      "node.nine_heavens.sanctum"
     ],
     "rec_cp": 20264,
     "first_clear": {
@@ -304,10 +298,8 @@
       0.36
     ],
     "connections": [
-      "node.nine_heavens.crossroads",
-      "node.nine_heavens.ridge",
-      "node.nine_heavens.hidden_grove",
-      "node.nine_heavens.approach"
+      "node.nine_heavens.deep_path",
+      "node.nine_heavens.den"
     ],
     "rec_cp": 22946,
     "first_clear": {},
@@ -330,8 +322,9 @@
       0.2
     ],
     "connections": [
-      "node.nine_heavens.deep_path",
-      "node.nine_heavens.throne"
+      "node.nine_heavens.sanctum",
+      "node.nine_heavens.hidden_grove",
+      "node.nine_heavens.approach"
     ],
     "rec_cp": 34330,
     "first_clear": {
@@ -366,8 +359,7 @@
       0.22
     ],
     "connections": [
-      "node.nine_heavens.sanctum",
-      "node.nine_heavens.approach"
+      "node.nine_heavens.den"
     ],
     "rec_cp": 24257,
     "first_clear": {},
@@ -375,7 +367,7 @@
     "energy_cost": 9,
     "event": "event.falling_star",
     "hidden": {
-      "condition": "clear the region boss",
+      "condition": "Win at Sentinel Post to search for it",
       "reveal_chance": 0.3
     }
   },
@@ -390,8 +382,7 @@
       0.24
     ],
     "connections": [
-      "node.nine_heavens.sanctum",
-      "node.nine_heavens.hidden_grove",
+      "node.nine_heavens.den",
       "node.nine_heavens.throne"
     ],
     "rec_cp": 22648,
@@ -422,7 +413,6 @@
       0.07
     ],
     "connections": [
-      "node.nine_heavens.den",
       "node.nine_heavens.approach"
     ],
     "rec_cp": 34866,

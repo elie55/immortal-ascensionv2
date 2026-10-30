@@ -43,6 +43,9 @@ export const Quest = Named.extend({
   prereqs: Unlock.default({}),
   objectives: z.array(Objective).min(1),
   rewards: Rewards,
+  /** Items the giver hands over when the quest is accepted (e.g. Qin's egg). Topped up, never duplicated; such a quest
+   *  cannot be abandoned and its items cannot be sold while it is active, so it always stays completable. */
+  provides: z.array(Quantity).optional(),
   next: ref("quest").optional(),
   repeatable: z.object({ cooldown_min: z.number().int().positive() }).optional(),
   difficulty: z.number().int().min(1).max(5).default(1),
