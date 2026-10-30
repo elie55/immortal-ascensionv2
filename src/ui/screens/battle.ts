@@ -182,7 +182,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     party.appendChild(sprite);
     attachRig(u, art, sprite, u.kind === "player" ? 14 : 13);
     const cardBar = hpBar("card");
-    const spBar = h("div", { class: "bar sp" }, h("i"));
+    const spBar = h("div", { class: "bar se", role: "meter", "aria-label": "Spiritual energy" }, h("i"));   // not "sp": that is the sect map plaque
     const status = h("div", { class: "bc-status" });
     const role = u.kind === "player" ? `${c.get<any>(u.element).name} · You` : u.kind === "beast" ? "Spirit beast" : `${c.get<any>(u.element).name} · ${ROLE_LABEL[c.get<any>(u.id).dao_companion?.role ?? "dps"] ?? "Companion"}`;
     const card = h("div", { class: ["bt-card", u.kind], dataset: { uid: String(u.uid) } },
@@ -238,6 +238,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       const v = views.get(u.uid)!;
       v.cardBar!.set(u.hp, u.maxHp, u.shield);
       (v.spBar!.firstChild as HTMLElement).style.width = `${(u.sp / Math.max(1, u.maxSp) * 100).toFixed(1)}%`;
+      v.spBar!.setAttribute("aria-valuenow", String(Math.round(u.sp))); v.spBar!.setAttribute("aria-valuemax", String(u.maxSp)); v.spBar!.title = `Spiritual energy ${Math.round(u.sp)} / ${u.maxSp}`;
       replaceChildren(v.status!, statusIcons(u));
       const t = threats.has(u.uid) && u.alive;
       v.card!.classList.toggle("threat", t); v.sprite.classList.toggle("threat", t);

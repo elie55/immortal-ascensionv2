@@ -425,6 +425,7 @@ const SCEN: Record<string, () => Promise<void>> = {
     await page.locator(".nav button", { hasText: "Cultivate" }).click(); await page.waitForTimeout(700); await shot("waterfall-cultivate-pill");
   }),
   solo: () => fight("solo", 2, { kind: "node", id: nodeOf(2, "battle") }),
+  alone: () => fight("alone", 1, { kind: "node", id: nodeOf(1, "battle") }),   // region 1: no beast yet, the player's card alone
   idle: () => idle("idle"),
   firstwin: () => firstVictory("firstwin"),
   gearwin: () => gearVictory("gearwin"),
