@@ -59,7 +59,9 @@ export function shopScreen(app: App, shopId: string, backTo: string): Screen {
             h("div", { class: "row between shop-meta" },
               h("span", { class: "muted" }, restock === null ? "Limited stock never returns" : `Restocks in ${fmt.duration(restock)}`),
               disc > 0 ? h("span", { class: "tag gold" }, icon("fame", 10), ` −${disc}%`) : shop.fame_discount_pct_per_500 ? h("span", { class: "muted" }, `−${shop.fame_discount_pct_per_500}% per 500 Fame`) : null),
-            h("div", { class: "shop-grid" }, rows.map((r) => goodsCard(app, shopId, r))),
+            rows.length > 0 && rows.every((r) => !("gear" in r.entry) && (r.id.startsWith("tech.") || r.id.startsWith("method.")))
+              ? h("div", { class: "manual-list" }, rows.map((r) => manualRow(app, shopId, r)))
+              : h("div", { class: "shop-grid" }, rows.map((r) => goodsCard(app, shopId, r))),
           ] : sellPanel(app, () => sellSel, (v) => { sellSel = v; app.router.refresh(); }),
         ),
       ];
@@ -80,6 +82,23 @@ function goodsCard(app: App, shopId: string, r: ShopRow) {
     r.owned ? h("div", { class: "g-price jade-t" }, "Learned")
       : r.locked ? h("div", { class: "g-price muted" }, icon("lock", 10), " ", r.locked)
       : h("div", { class: "g-price" }, orig !== r.price && h("s", { class: "muted" }, fmt.int(orig)), icon(CUR_ICON[r.currency] ?? "gem", 11), h("b", null, fmt.int(r.price))));
+}
+
+/** Scripture Pavilion style row (mockup scripture_pavilion): icon, name, element/kind/rarity tags, effect line, price. */
+function manualRow(app: App, shopId: string, r: ShopRow) {
+  const c = app.content;
+  const a = rowArt(app, r);
+  const def = c.get<any>(r.id);
+  const el = def.element ? c.find<any>(def.element) : undefined;
+  const line = r.id.startsWith("tech.") ? [def.power ? `${def.power}% ATK${def.hits > 1 ? ` ×${def.hits}` : ""}` : def.heal_pct ? `Heals ${def.heal_pct}%` : def.shield_pct_max_hp ? `Shield ${def.shield_pct_max_hp}% HP` : "", def.cooldown ? `CD ${def.cooldown}` : "", def.sp_cost ? `${def.sp_cost} SE` : ""].filter(Boolean).join(" · ") : `Qi ×${def.qi_mult}`;
+  const soldOut = r.left === 0;
+  return h("button", { class: ["glass manual", (r.locked || soldOut) && "dim-card", r.owned && "owned"], onClick: () => buySheet(app, shopId, r.index) },
+    h("div", { class: "mn-art" }, tile({ rarity: a.rarity, art: a.art, fallbackIcon: a.icon, img: (f) => app.img(f) })),
+    h("div", { class: "grow" },
+      h("div", { class: "mn-name" }, def.name),
+      h("div", { class: "mn-tags" }, el && h("span", { class: "tag", style: { color: el.color ?? undefined } }, el.name), h("span", { class: "tag" }, a.label), h("span", { class: `tag rt-${a.rarity}` }, RARITY_LABEL[a.rarity] ?? a.rarity)),
+      h("div", { class: "mn-desc" }, line)),
+    h("div", { class: "mn-price" }, r.owned ? h("span", { class: "tag jade" }, "✓ Learned") : r.locked ? h("span", { class: "muted" }, icon("lock", 11), " ", r.locked) : h("span", { class: "g-price" }, icon(CUR_ICON[r.currency] ?? "gem", 13), h("b", null, fmt.int(r.price)))));
 }
 
 function buySheet(app: App, shopId: string, index: number) {

@@ -21,6 +21,19 @@ const RIGHT: EquipSlot[] = ["necklace", "ring_1", "ring_2", "artifact"];
 const CORE = ["hp", "atk", "def", "spd", "crit", "crit_dmg", "sp_power", "sp_energy"];
 const ATTR_COLOR: Record<string, string> = { hp: "#5fe08f", atk: "#ff7b6b", def: "#f2c45e", spd: "#7fd0ff", crit: "#ff7fb0", crit_dmg: "#ffa25e", sp_power: "#b48cff", sp_energy: "#62b6ff" };
 
+/** A faint silhouette for an empty slot: the art of the slot's most common base piece. */
+const ghostCache = new Map<string, string | undefined>();
+function ghostArt(app: App, slot: string): string | undefined {
+  const k = slot.startsWith("ring") ? "ring" : slot;
+  if (!ghostCache.has(k)) {
+    const c = app.content;
+    const fileOf = (g: any) => Object.values<any>(g.rarities ?? {}).map((r) => r.art?.icon).find((a) => a && a.status !== "planned")?.file as string | undefined;
+    const b = c.byPrefix<any>("gear").filter((g) => g.slot === k && fileOf(g)).sort((a, b) => a.main_value - b.main_value)[0];
+    ghostCache.set(k, b ? fileOf(b) : undefined);
+  }
+  return ghostCache.get(k);
+}
+
 export function characterScreen(app: App) {
   const s = app.game.state, c = app.content;
   const stats = computeStats(s, c);
@@ -32,7 +45,7 @@ export function characterScreen(app: App) {
     const inner = !open.ok
       ? h("div", { class: "tile r-common slot-locked" }, h("div", { class: "in" }, icon("lock", 24)))
       : uid !== undefined ? gearTile(app, uid, { onClick: () => slotSheet(app, k) })
-      : h("button", { class: "tile r-common slot-empty", onClick: () => slotSheet(app, k), "aria-label": SLOT_LABEL[k] }, h("div", { class: "in" }, icon(SLOT_ICON[k]!, 26)));
+      : h("button", { class: "tile r-common slot-empty", onClick: () => slotSheet(app, k), "aria-label": SLOT_LABEL[k] }, h("div", { class: "in" }, ghostArt(app, k) ? h("div", { class: "art ghost", style: { backgroundImage: app.img(ghostArt(app, k)) } }) : icon(SLOT_ICON[k]!, 26), h("span", { class: "slot-plus" }, icon("plus", 12))));
     return h("div", { class: "eq-slot" }, inner, h("div", { class: "eq-lbl" }, SLOT_LABEL[k]), !open.ok && h("div", { class: "eq-lock" }, open.reasons[0]!.replace(/^Unlocks at /, "")));
   };
   return [
@@ -46,7 +59,7 @@ export function characterScreen(app: App) {
       h("div", { class: "char-figure", style: { backgroundImage: app.img(c.artAny(s.character.npc, "full_body")) } }, h("div", { class: "char-aura" })),
       h("div", { class: "eq-col" }, RIGHT.map(slot))),
     h("div", { class: "cp-row" },
-      h("div", { class: "cp-banner" }, icon("sword", 16), h("span", { class: "cp-lbl" }, "Combat Power"), h("span", { class: "cp-val" }, fmt.int(stats.cp))),
+      h("div", { class: "cp-banner" }, icon("cp", 16), h("span", { class: "cp-lbl" }, "Combat Power"), h("span", { class: "cp-val" }, fmt.int(stats.cp))),
       h("button", { class: ["btn sm cp-best", app.betterGear() && "gold"], "aria-label": "Equip best gear", onClick: () => {
         const r = app.game.run("equip", app.now(), (st, ct) => equipBest(st, ct));
         if (!r.ok) app.router.toast(r.reason, "info"); else app.router.toast(`Equipped ${(r as any).changed} piece${(r as any).changed > 1 ? "s" : ""} · CP +${fmt.int((r as any).cpGain)}`, "good");

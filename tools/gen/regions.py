@@ -97,7 +97,7 @@ def region(rd, prev):
             "targeting": "self" if tpow == 0 else ("all_enemies" if "all" in tdesc.lower() else "single"), "power": tpow, "hits": 1, "sp_cost": tsp, "cooldown": tcd,
             "applies": [{"status": f"status.{tstat}", "chance": tch, "turns": 2}], "passive_bonuses": {}, "requirements": {"realm": {"id": realm_id(rmin)}},
             "mastery": {"max_level": 10, "xp_per_level": 60 + 20 * n, "per_level_bonus": 0.03}, "enemy_only": False,
-            "art": {"icon": icon(f"techniques/active/{tk}", f"a square technique icon depicting the {telem}-element art {tname} as a glowing martial-art symbol or action{(': ' + flavor(tdesc)) if flavor(tdesc) else ''}, {NOTXT}", trar, ["refs/mockups/battle_screen.png"])}}
+            "art": {"icon": icon(f"techniques/active/{tk}", f"{ICON_LOOK[tk]}, {NOTXT}" if tk in ICON_LOOK else f"a square technique icon depicting the {telem}-element art {tname} as a glowing martial-art symbol or action{(': ' + flavor(tdesc)) if flavor(tdesc) else ''}, {NOTXT}", trar, ["refs/mockups/battle_screen.png"])}}
     if tpow == 0: tech["heal_pct"] = 35
     out["techs_active"].append(tech)
     ek, ename, ecn, eelem, edesc, epow, estat, ech = rd["etech"]
@@ -114,7 +114,7 @@ def region(rd, prev):
     mk, mname, mcn, melem, mrar, mgrade, mmult, mbon, mdesc = rd["method"]
     out["methods"].append({"id": f"method.{mk}", **named(mname, mdesc, mcn), "rarity": mrar, "grade": mgrade, "element": f"elem.{melem}", "qi_mult": mmult, "bonuses": mbon,
                            "requirements": {"realm": {"id": realm_id(rmin)}}, "mastery": {"max_level": 10, "xp_per_level": 100 + 30 * n, "per_level_bonus": 0.04},
-                           "art": {"icon": icon(f"techniques/methods/{mk}", f"a cultivation-method scroll emblem evoking {mname}{(': ' + flavor(mdesc)) if flavor(mdesc) else ''}, {NOTXT}", mrar, ["refs/mockups/cultivation_screen.png"])}})
+                           "art": {"icon": icon(f"techniques/methods/{mk}", f"{ICON_LOOK[mk]}, {NOTXT}" if mk in ICON_LOOK else f"a cultivation-method scroll emblem evoking {mname}{(': ' + flavor(mdesc)) if flavor(mdesc) else ''}, {NOTXT}", mrar, ["refs/mockups/cultivation_screen.png"])}})
     out["books"].append({"id": f"book.{mk}", **named(mname, f"The scripture of the {mname}.", mcn), "rarity": mrar, "sell_value": 200 * n, "stack_limit": 5, "tags": [key],
                          "teaches": f"method.{mk}", "art": {"icon": icon(f"items/books/{mk}", f"an ornate cultivation manual titled {mname}, {melem} themed cover", mrar)}})
 
@@ -447,7 +447,7 @@ def endgame():
     # ---- extra methods / passives (pavilion) ----
     for k, name, cn, el, rar, grade, mult, bon, desc, fame in EXTRA_METHODS:
         out["methods"].append({"id": f"method.{k}", **named(name, desc, cn), "rarity": rar, "grade": grade, **({"element": f"elem.{el}"} if el else {}), "qi_mult": mult, "bonuses": bon, "requirements": {},
-                               "mastery": {"max_level": 10, "xp_per_level": 120, "per_level_bonus": 0.04}, "art": {"icon": icon(f"techniques/methods/{k}", f"a cultivation-method scroll emblem evoking {name}{(': ' + flavor(desc)) if flavor(desc) else ''}, {NOTXT}", rar, ["refs/mockups/cultivation_screen.png"])}})
+                               "mastery": {"max_level": 10, "xp_per_level": 120, "per_level_bonus": 0.04}, "art": {"icon": icon(f"techniques/methods/{k}", f"{ICON_LOOK[k]}, {NOTXT}" if k in ICON_LOOK else f"a cultivation-method scroll emblem evoking {name}{(': ' + flavor(desc)) if flavor(desc) else ''}, {NOTXT}", rar, ["refs/mockups/cultivation_screen.png"])}})
         pavilion.append({"id": f"method.{k}", "price": fame * 2, "currency": "spirit_stones", "unlock": {"sect_fame": fame}})
     for k, name, cn, el, rar, desc, bon, fame in EXTRA_PASSIVES:
         out["techs_passive"].append({"id": f"tech.passive.{k}", **named(name, desc, cn), "kind": "passive", "rarity": rar, "element": f"elem.{el}", "weapon_affinity": "any", "targeting": "self", "power": 0, "hits": 1,

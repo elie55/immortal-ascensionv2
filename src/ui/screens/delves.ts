@@ -18,7 +18,7 @@ import { shopScreen } from "./shop.ts";
 import { rewardsLine } from "./adventure.ts";
 
 const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
-const cpChip = (app: App) => h("span", { class: "cp-chip" }, icon("sword", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(computeStats(app.game.state, app.content).cp))));
+const cpChip = (app: App) => h("span", { class: "cp-chip" }, icon("cp", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(computeStats(app.game.state, app.content).cp))));
 
 // ---------- hub ----------
 

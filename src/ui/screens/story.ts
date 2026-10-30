@@ -124,7 +124,7 @@ export function storyScreen(app: App, startId: string, done: () => void): Screen
           return [h("div", { class: "vn-card-pre" }, m ? `Welcome to ${m[1] ?? ""}`.trim() : "Unlocked"), h("div", { class: "vn-card-title" }, m ? m[2] : scene.name)];
         })(),
         scene.name_cn && h("div", { class: "cn vn-card-cn" }, scene.name_cn.split("").join(" ")),
-        h("div", { class: "vn-seal" }, icon("qi", 54)),
+        app.ui("ui.icons", "sect_emblem") ? h("div", { class: "vn-seal art", style: { backgroundImage: app.img(app.ui("ui.icons", "sect_emblem")) } }) : h("div", { class: "vn-seal" }, icon("qi", 54)),
         scene.chapter === "prologue" && h("div", { class: "vn-ribbon" }, h("div", { class: "vn-ribbon-pre" }, "✦ Rank granted ✦"), h("div", { class: "vn-ribbon-t" }, c.get<any>(app.game.state.character.rank).name)),
         h("div", { class: "dim center", style: { fontSize: "calc(12.5rem / 15)", margin: "10px 0" } }, scene.lines[0]!.text),
         h("div", { class: "row", style: { justifyContent: "center", flexWrap: "wrap", gap: "8px" } }, grants.map((g) => h("div", { class: "vn-grant" },

@@ -19,6 +19,7 @@ import type { Combatant, BattleEvent, Skill } from "../../engine/combat/types.ts
 import { computeStats } from "../../engine/stats.ts";
 import { gearTile, gearName } from "./items.ts";
 import { rewardsLine } from "./adventure.ts";
+import { questProgress } from "../../engine/progression.ts";
 
 const ELEMENT_COLOR: Record<string, string> = { "elem.wood": "#5fe39a", "elem.fire": "#ff7b4a", "elem.earth": "#f0c060", "elem.metal": "#f2f5ff", "elem.water": "#6fd0ff", "elem.none": "#d6c9ff" };
 const ROLE_LABEL: Record<string, string> = { dps: "Damage", tank: "Guardian", support: "Support", healer: "Healer" };
@@ -429,26 +430,45 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const mainEnemy = enc.waves.flat().map((id) => c.find<any>(id)).filter(Boolean).sort((a, b) => b.cp - a.cp)[0];
     const bestGear = r.total.gear.length ? r.total.gear.slice().sort((a, b) => ["common", "uncommon", "rare", "epic", "legendary", "mythic", "immortal", "divine"].indexOf(b.rarity) - ["common", "uncommon", "rare", "epic", "legendary", "mythic", "immortal", "divine"].indexOf(a.rarity))[0] : undefined;
     const again = () => { app.router.close("result"); const src = enc.src; onExit(); const re = EncounterCls.start(s, c, src, app.now()); if (!re.ok) { app.router.toast(re.reason, "bad"); return; } app.router.pushGlobal(battleScreen(app, re.encounter, () => { app.router.popGlobal(); app.router.refresh(); })); };
-    app.router.open({ id: "result", kind: "modal", dismissible: false, cls: r.won ? "victory" : "defeat", render: (close) => h("div", { class: "center" },
-      h("div", { class: "res-rays", "aria-hidden": "true" }),
-      h("div", { class: ["result-title", r.won ? "win" : "lose"] }, r.won ? "Victory" : "Defeated"),
-      h("div", { class: "cn res-cn" }, r.won ? "大 胜" : "败 退"),
-      h("div", { class: "m-sub" }, r.won ? `${mainEnemy?.name ?? enc.name} defeated${r.firstClear ? " · First clear" : ""}` : "You were driven back — nothing is lost."),
-      r.won
-        ? h("div", null,
-            h("div", { class: "grid-3 res-stats" }, stat("Damage dealt", fmt.compact(sum.dealt)), stat("Damage taken", fmt.compact(sum.taken)), stat("HP left", `${fmt.int(lastWave.summary.playerHp)} / ${fmt.int(computeStats(s, c).total.hp ?? 0)}`)),
-            h("div", { class: "sec-h", style: { marginTop: "12px" } }, h("h3", null, "Rewards"), h("span", { class: "hint" }, `${r.masteryXp ? `Mastery +${r.masteryXp} XP` : ""}`)),
-            dropsBlock(r.total, r.waves.flatMap((w) => w.gearUids)),
-            r.firstClear && Object.keys(r.firstClear).length > 0 && h("div", null, h("div", { class: "muted up", style: { marginTop: "8px" } }, "First clear"), rewardsLine(app, r.firstClear)),
-            bestGear && h("div", { class: "muted", style: { marginTop: "6px" } }, `Best drop: ${RARITY_LABEL[bestGear.rarity]} ${c.get<any>(bestGear.base).name} (iLvl ${bestGear.ilvl})`))
-        : h("div", null,
+    const tracked = trackedLine();
+    if (r.won) { root.classList.add("won"); return app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "victory", render: (close) => h("div", { class: "center" },
+      h("div", { class: "res-head" },
+        h("div", { class: "res-rays", "aria-hidden": "true" }),
+        h("div", { class: "result-title win" }, "Victory"),
+        h("div", { class: "cn res-cn" }, "大 胜"),
+        h("div", { class: "res-ribbon" }, mainEnemy && h("span", { class: "res-foe", style: { backgroundImage: app.img(c.art(mainEnemy.id, "icon")) } }, h("i", null, "Defeated")), h("span", null, `${mainEnemy?.name ?? enc.name} defeated`), r.firstClear && h("span", { class: "tag gold" }, "First clear"))),
+      h("div", { class: "res-panel glass" },
+        h("div", { class: "grid-3 res-stats" }, stat("Damage dealt", fmt.compact(sum.dealt)), stat("Damage taken", fmt.compact(sum.taken)), stat("HP left", `${fmt.int(lastWave.summary.playerHp)} / ${fmt.int(computeStats(s, c).total.hp ?? 0)}`)),
+        h("div", { class: "sec-h", style: { marginTop: "12px" } }, h("h3", null, "Rewards"), h("span", { class: "hint" }, `${r.masteryXp ? `Mastery +${r.masteryXp} XP` : ""}`)),
+        dropsBlock(r.total, r.waves.flatMap((w) => w.gearUids)),
+        r.firstClear && Object.keys(r.firstClear).length > 0 && h("div", { class: "res-first" }, h("span", { class: "muted up" }, "First clear"), rewardsLine(app, r.firstClear)),
+        bestGear && h("div", { class: "res-best" }, icon("sparkle", 14), h("span", null, "Best drop: ", h("b", { class: `rt-${bestGear.rarity}` }, `${RARITY_LABEL[bestGear.rarity]} ${c.get<any>(bestGear.base).name}`), ` · iLvl ${bestGear.ilvl}`)),
+        tracked,
+        h("div", { class: "grid-2", style: { marginTop: "12px" } },
+          h("button", { class: "btn", onClick: () => { close(); onExit(); } }, icon("back", 14), "Map"),
+          h("button", { class: "btn gold", onClick: again }, "Fight again")))) }); }
+    app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "defeat", render: (close) => h("div", { class: "center" },
+      h("div", { class: "result-title lose" }, "Defeated"),
+      h("div", { class: "cn res-cn" }, "败 退"),
+      h("div", { class: "m-sub" }, "You were driven back — nothing is lost."),
+      h("div", null,
             mainEnemy && h("div", { class: "glass panel", style: { textAlign: "left", marginBottom: "8px" } }, h("div", { class: "row" }, h("span", { class: "ec-ico lg", style: { backgroundImage: app.img(c.art(mainEnemy.id, "icon")) } }), h("div", { class: "grow" }, h("div", { class: "title", style: { fontSize: "calc(14rem / 15)" } }, mainEnemy.name), h("div", { class: "muted" }, `${c.get<any>(mainEnemy.element).name} · ${c.get<any>(mainEnemy.realm.id).name} ${mainEnemy.realm.stage}`)), h("div", null, h("div", { class: "muted up" }, "Power check"), h("div", { class: r.playerCp >= r.enemyCp ? "jade-t" : "red-t", style: { fontWeight: 900 } }, `${r.playerCp >= r.enemyCp ? "+" : ""}${fmt.int(r.playerCp - r.enemyCp)} CP`)))),
             h("div", { class: "grid-3 res-stats" }, stat("Damage dealt", fmt.compact(sum.dealt)), stat("Rounds", String(first.rounds)), stat("Healing", fmt.compact(sum.healed))),
             h("div", { class: "glass panel", style: { textAlign: "left", marginTop: "8px" } }, h("div", { class: "row" }, icon("shield", 16), h("div", { class: "grow" }, h("b", null, "No penalty"), h("div", { class: "muted" }, "Drops from this run are kept · HP restored partly")))),
             r.recommendations.length > 0 && h("div", { style: { textAlign: "left", marginTop: "8px" } }, h("div", { class: "sec-h" }, h("h3", null, "Ways to get stronger")), h("div", { class: "rows" }, r.recommendations.map((t) => h("div", { class: "setrow" }, icon("sparkle", 14), h("span", { style: { fontSize: "calc(12.5rem / 15)" } }, t)))))),
+      tracked,
       h("div", { class: "grid-2", style: { marginTop: "14px" } },
         h("button", { class: "btn", onClick: () => { close(); onExit(); } }, icon("back", 14), "Map"),
-        h("button", { class: "btn gold", onClick: again }, r.won ? "Fight again" : "Retry"))) });
+        h("button", { class: "btn gold", onClick: again }, "Retry"))) });
+  }
+  /** The tracked quest's progress, so a fight that advanced it says so on the result screen. */
+  function trackedLine() {
+    const s = app.game.state; const id = s.progress.quests.tracked;
+    if (!id || !c.has(id) || !s.progress.quests.active[id]) return null;
+    const q = c.get<any>(id); const prog = questProgress(s, c, q);
+    const i = prog.findIndex((p) => !p.done); const cur = i >= 0 ? prog[i]! : null;
+    return h("div", { class: "res-track" }, icon("map", 13), h("span", { class: "grow" }, h("b", null, q.name), cur ? ` · ${cur.label} ${cur.have}/${cur.need}` : " · ready to turn in"),
+      cur && h("div", { class: "bar gold thin" }, h("i", { style: { width: `${Math.min(100, cur.have / Math.max(1, cur.need) * 100)}%` } })));
   }
   const stat = (l: string, v: string) => h("div", null, h("span", null, l), h("b", null, v));
 

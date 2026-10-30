@@ -108,7 +108,22 @@ async function fight(name: string, n: number, src: any, opts: { companions?: str
 }
 
 const nodeOf = (n: number, kind: string) => c.nodesOf(regions[n - 1]!.id).find((x) => x.kind === kind && x.waves?.length)!.id;
+/** A screen in a mid-game state: `go` runs in the page after loading (window.__ia available). */
+async function screen(name: string, n: number, go: string, opts: { arch?: "fitted" | "geared"; tab?: string; mutate?: (s: GameState) => void } = {}) {
+  const st = labState(n, opts.arch ?? "fitted"); opts.mutate?.(st);
+  await boot(st, opts.tab ?? "cultivate");
+  await dismiss();
+  await page.evaluate(go);
+  await page.waitForTimeout(900);
+  await shot(name);
+}
+
 const SCEN: Record<string, () => Promise<void>> = {
+  waterfall: () => screen("waterfall", 2, `(async () => { const m = await import("./app.js").catch(() => null); })()`, { tab: "sect", mutate: (s) => { s.resources.sect_fame = 600; } }).then(async () => {
+    await page.locator(".sect-pin", { hasText: "Meditation Waterfall" }).click(); await page.waitForTimeout(700); await page.locator(".med").scrollIntoViewIfNeeded(); await page.waitForTimeout(300); await shot("waterfall-setup");
+    await page.locator(".med-go").click(); await page.waitForTimeout(1200); await page.locator(".med").scrollIntoViewIfNeeded(); await shot("waterfall-active");
+    await page.locator(".nav button", { hasText: "Cultivate" }).click(); await page.waitForTimeout(700); await shot("waterfall-cultivate-pill");
+  }),
   solo: () => fight("solo", 2, { kind: "node", id: nodeOf(2, "battle") }),
   elite: () => fight("elite", 3, { kind: "node", id: nodeOf(3, "elite") }),
   boss: () => fight("boss", 2, { kind: "node", id: nodeOf(2, "boss") }, { companions: ["npc.bai_lingshuang"] }),

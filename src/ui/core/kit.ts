@@ -22,8 +22,8 @@ export function stones(n: number) {
 /** Sub-header with a back chip, title (+ Chinese), subtitle and optional trailing element. */
 export function subbar(o: { title: string; cn?: string; sub?: string; backTo?: string; onBack?: () => void; end?: Child; help?: { app: App; key: string } }) {
   const bar = h("div", { class: "subbar glass" },
-    o.onBack && h("button", { class: "back", onClick: o.onBack, "aria-label": "Back" }, icon("back", 14), h("span", null, "Back to", h("b", null, o.backTo ?? "Back"))),
-    h("div", { class: "grow" }, h("div", { class: "t" }, o.title, o.cn && h("span", { class: "cn" }, o.cn)), o.sub && h("div", { class: "s" }, o.sub)),
+    o.onBack && h("button", { class: "back", onClick: o.onBack, "aria-label": `Back to ${o.backTo ?? "the previous screen"}`, title: `Back to ${o.backTo ?? "the previous screen"}` }, icon("back", 18)),
+    h("div", { class: "grow" }, h("div", { class: "t" }, h("span", { class: "tt" }, o.title), o.cn && h("span", { class: "cn" }, o.cn)), o.sub && h("div", { class: "s" }, o.sub)),
     o.help && helpButton(o.help.app, o.help.key),
     o.end && h("div", { class: "end" }, o.end));
   return o.help ? [bar, hintBar(o.help.app, o.help.key)] : bar;

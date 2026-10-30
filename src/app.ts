@@ -11,6 +11,7 @@ import { SaveManager, SLOT_COUNT, type Settings, type SlotSummary } from "./save
 import { Autosave } from "./save/autosave.ts";
 import { Router, type Tab, type Screen } from "./ui/core/router.ts";
 import { h } from "./ui/core/dom.ts";
+import { setPainted } from "./ui/core/icons.ts";
 import { mainMenuScreen } from "./ui/screens/menu.ts";
 import { storyScreen } from "./ui/screens/story.ts";
 import { cultivateScreen } from "./ui/screens/cultivate.ts";
@@ -56,6 +57,7 @@ export class App {
     this.router = new Router(root, (tab) => this.tabScreen(tab));
     this.router.img = (f) => this.img(f);
     this.router.defaultBg = () => this.ui("ui.backdrop", "sky");
+    setPainted({ cp: this.ui("ui.icons", "combat_power"), gem: this.ui("ui.icons", "spirit_stone"), fame: this.ui("ui.icons", "sect_fame"), bolt: this.ui("ui.icons", "energy") });
     await this.refreshSlots();
     this.router.pushGlobal(mainMenuScreen(this));
     this.installLifecycle();

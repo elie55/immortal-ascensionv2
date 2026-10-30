@@ -213,7 +213,7 @@ check(await ia<number>("(() => { const s = window.__ia.game.state; const worn = 
 // Scripture Pavilion
 await openLoc("Scripture Pavilion");
 await page.locator(".setrow", { hasText: "Scripture stacks" }).last().click();
-await need(".shop-grid");
+await need(".manual-list");
 await shot("scripture-pavilion");
 // Spirit Forge
 await openLoc("Spirit Forge");
@@ -346,7 +346,12 @@ const readyName = await page.locator(".bt-skill.ready").first().locator(".sk-nam
 await page.locator(".bt-skill.ready").first().click();
 await page.waitForTimeout(600);
 check(await page.evaluate(() => (window as any).__ia.game.state.combat.manual) === true, `manual turn accepted (${readyName})`);
-await page.locator(".bt-controls .seg button", { hasText: "Auto" }).click();
+// the manual move may have ended the wave: switch to auto from whatever comes next
+for (let i = 0; i < 4 && !(await page.locator(".modal-backdrop[data-key='ov:result']").count()); i++) {
+  const next = page.locator(".modal-backdrop[data-key='ov:wave'] .btn");
+  if (await next.count()) { await next.click(); await page.waitForTimeout(300); continue; }
+  await page.locator(".bt-controls .seg button", { hasText: "Auto" }).click(); break;
+}
 await untilResult();
 await page.locator(".modal .btn", { hasText: /Map/ }).click();
 await page.evaluate(() => { const ia = (window as any).__ia; ia.game.state.combat.manual = false; });

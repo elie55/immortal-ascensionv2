@@ -28,6 +28,16 @@ const KIND: Record<string, { label: string; icon: string; color: string }> = {
   secret_realm: { label: "Secret Realm", icon: "map", color: "#b8fff7" }, story: { label: "Story", icon: "scroll", color: "#fff2c2" },
 };
 
+/** Art for a map pin: the strongest enemy's portrait for fights, the painted node emblem otherwise. */
+export function nodeArt(app: App, n: MapNode): string | undefined {
+  const c = app.content;
+  if (n.waves?.length) {
+    const top = n.waves.flat().map((id) => c.find<any>(id)).filter(Boolean).sort((a, b) => b.cp - a.cp)[0];
+    const a = top && c.art(top.id, "icon"); if (a) return a;
+  }
+  return c.art("ui.nodes", n.kind);
+}
+
 export function adventureScreen(app: App) {
   const s = app.game.state, c = app.content;
   const regions = c.byPrefix<Region>("region").slice().sort((a, b) => a.order - b.order);
@@ -73,8 +83,8 @@ export function regionScreen(app: App, regionId: string, select?: string): Scree
       const pos = (n: MapNode) => ({ left: `${n.position[0] * 100}%`, top: `${n.position[1] * 100}%` });
       return [
         header(app),
-        subbar({ help: { app, key: "region" }, title: r.name, cn: r.name_cn, sub: `${c.get<any>(r.realm_range.min).name} · ${prog.cleared} / ${prog.total} places · ${bossNode ? (s.progress.regions[regionId]?.nodes[bossNode.id]?.clears ? "boss defeated" : "boss awaits") : ""}`, backTo: "Regions", onBack: () => app.router.back(), end: h("span", { class: "cp-chip" }, icon("sword", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(cp)))) }),
-        h("div", { class: "chips glass legend" }, Object.entries(KIND).filter(([k]) => nodes.some((n) => n.kind === k)).map(([k, v]) => h("span", { class: "chip", style: { color: v.color } }, icon(v.icon, 11), v.label))),
+        subbar({ help: { app, key: "region" }, title: r.name, cn: r.name_cn, sub: `${c.get<any>(r.realm_range.min).name} · ${prog.cleared} / ${prog.total} places · ${bossNode ? (s.progress.regions[regionId]?.nodes[bossNode.id]?.clears ? "boss defeated" : "boss awaits") : ""}`, backTo: "Regions", onBack: () => app.router.back(), end: h("span", { class: "cp-chip" }, icon("cp", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(cp)))) }),
+        h("div", { class: "chips glass legend" }, Object.entries(KIND).filter(([k]) => nodes.some((n) => n.kind === k)).map(([k, v]) => h("span", { class: "chip", style: { color: `color-mix(in srgb, ${v.color} 65%, #fff)` } }, icon(v.icon, 11), v.label))),
         h("div", { class: "node-map", style: { backgroundImage: app.img(c.art(regionId, "map")) } },
           h("svg", { class: "node-links", viewBox: "0 0 100 100", preserveAspectRatio: "none" }, nodes.flatMap((n) => n.connections.filter((k) => k > n.id).map((k) => {
             const m = nodes.find((x) => x.id === k); if (!m) return null;
@@ -87,10 +97,13 @@ export function regionScreen(app: App, regionId: string, select?: string): Scree
             const st = nodeState(s, c, n);
             const k = KIND[n.kind] ?? KIND.battle!;
             const here = s.character.location === n.id;
-            return h("button", { class: ["node-pin", `st-${st}`, n.kind === "boss" && "boss", selected === n.id && "sel"], style: pos(n), onClick: () => { selected = n.id; app.router.refresh(); }, "aria-label": n.name },
-              h("span", { class: "np-ico", style: { background: st === "locked" || st === "hidden" ? undefined : k.color } }, icon(st === "locked" ? "lock" : st === "hidden" ? "info" : k.icon, n.kind === "boss" ? 18 : 14)),
+            const art = st === "hidden" ? undefined : nodeArt(app, n);
+            return h("button", { class: ["node-pin", `k-${n.kind}`, `st-${st}`, n.kind === "boss" && "boss", n.kind === "elite" && "elite", art && "has-art", selected === n.id && "sel"], style: { ...pos(n), "--k": k.color }, onClick: () => { selected = n.id; app.router.refresh(); }, "aria-label": n.name },
+              h("span", { class: "np-ico", style: art ? { backgroundImage: app.img(art) } : { background: st === "locked" || st === "hidden" ? undefined : k.color } }, !art && icon(st === "locked" ? "lock" : st === "hidden" ? "info" : k.icon, n.kind === "boss" ? 18 : 14)),
               h("span", { class: "np-num" }, String(i + 1)),
+              st === "locked" && art && h("span", { class: "np-lock" }, icon("lock", 10)),
               st === "cleared" && h("span", { class: "np-done" }, "✓"),
+              h("span", { class: "np-label" }, st === "hidden" ? "???" : n.name),
               here && h("span", { class: "np-here" }, "You are here"));
           })),
         sel ? nodeCard(app, sel, () => app.router.refresh()) : h("div", { class: "glass panel center muted" }, "Tap a place on the map"),
@@ -130,8 +143,8 @@ function nodeCard(app: App, n: MapNode, refresh: () => void) {
   };
   const body: any[] = [];
   const head = h("div", { class: "row" },
-    h("span", { class: "np-ico big", style: { background: k.color } }, icon(k.icon, 20)),
-    h("div", { class: "grow" }, h("div", { class: "muted up", style: { color: k.color } }, `${k.label} · ${st === "cleared" ? `cleared ×${rec?.clears}` : st}`), h("div", { class: "title", style: { fontSize: "calc(16rem / 15)" } }, n.name)),
+    nodeArt(app, n) ? h("span", { class: "np-ico big art", style: { backgroundImage: app.img(nodeArt(app, n)), borderColor: k.color } }) : h("span", { class: "np-ico big", style: { background: k.color } }, icon(k.icon, 20)),
+    h("div", { class: "grow" }, h("div", { class: "muted up", style: { color: `color-mix(in srgb, ${k.color} 55%, #fff)` } }, `${k.label} · ${st === "cleared" ? `cleared ×${rec?.clears}` : st}`), h("div", { class: "title", style: { fontSize: "calc(16rem / 15)" } }, n.name)),
     n.rec_cp > 0 && h("span", { class: ["tag", powerTone(cp, n.rec_cp)] }, `Rec. CP ${fmt.int(n.rec_cp)}`));
   body.push(head, h("div", { class: "dim", style: { fontSize: "calc(12.5rem / 15)", margin: "6px 0 8px" } }, n.description));
   if (st === "locked") body.push(h("div", { class: "muted" }, icon("lock", 12), " Clear a neighbouring place to reach it."));

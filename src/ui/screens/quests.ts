@@ -48,7 +48,7 @@ export function questCard(app: App, q: any, opts: { where?: string } = {}) {
   const total = prog.reduce((n: number, p: any) => n + p.need, 0), have = prog.reduce((n: number, p: any) => n + p.have, 0);
   return h("article", { class: ["glass quest-card", st === "ready" && "ready", q.type === "main" && "main"] },
     h("div", { class: "row" },
-      q.giver.startsWith("npc.") ? npcAvatar(app, q.giver, 40) : h("span", { class: "q-ico" }, icon(q.type === "main" ? "scroll" : q.type === "combat" ? "sword" : q.type === "dungeon" ? "temple" : "scroll", 18)),
+      q.giver.startsWith("npc.") ? npcAvatar(app, q.giver, 40) : c.art(q.id, "icon") ? h("span", { class: "q-ico art", style: { backgroundImage: app.img(c.art(q.id, "icon")) } }) : h("span", { class: "q-ico" }, icon(q.type === "main" ? "scroll" : q.type === "combat" ? "sword" : q.type === "dungeon" ? "temple" : "scroll", 18)),
       h("div", { class: "grow" }, h("div", { class: "q-title" }, q.name), h("div", { class: "muted" }, giverLine(app, q))),
       h("div", { class: "q-meta" }, stars(q.difficulty), q.rec_cp ? h("span", { class: "tag" }, icon("sword", 10), ` Rec. CP ${fmt.int(q.rec_cp)}`) : h("span", { class: "tag" }, TYPE_LABEL[q.type] ?? q.type))),
     h("div", { class: "q-objs" }, prog.map((p: any, i: number) => {

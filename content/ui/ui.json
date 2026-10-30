@@ -42,6 +42,21 @@
           "refs/mockups/cultivation_screen.png"
         ],
         "status": "generated"
+      },
+      "meditation_pose": {
+        "file": "assets/ui/cultivate_meditation_pose.webp",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body illustration: Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, calm gentle face, wearing a white hanfu with pale jade-green layered robes, translucent flowing sleeves and a pink sash, a long sword at her side, seated in lotus meditation pose on a flat mossy stone with eyes closed and hands resting in her lap, long hair and sleeves flowing softly, faint jade-green qi wisps around her, complete figure and stone in frame, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "assets/npcs/lin_xueyao/full_body.webp",
+          "refs/mockups/meditation_waterfall.png"
+        ],
+        "status": "generated"
       }
     }
   },
@@ -126,6 +141,394 @@
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
           "refs/mockups/cultivation_screen.png"
+        ],
+        "status": "generated"
+      }
+    }
+  },
+  {
+    "id": "ui.icons",
+    "name": "Interface icons",
+    "description": "Painted icons for resources and actions shown across the screens.",
+    "screen": "shell",
+    "art": {
+      "spirit_stone": {
+        "file": "assets/ui/icon_spirit_stone.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a faceted jade-green spirit crystal glowing softly from within, small sparkles, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "generated"
+      },
+      "sect_fame": {
+        "file": "assets/ui/icon_sect_fame.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round golden sect medallion embossed with clouds and a sword, a red silk tassel hanging below, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "generated"
+      },
+      "energy": {
+        "file": "assets/ui/icon_energy.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a crackling azure lightning bolt wrapped in a thin golden ring, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "generated"
+      },
+      "qi": {
+        "file": "assets/ui/icon_qi.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a luminous cyan orb of swirling qi with spiralling wisps of light, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "generated"
+      },
+      "combat_power": {
+        "file": "assets/ui/icon_combat_power.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of two crossed golden jian swords over a glowing round shield, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "generated"
+      },
+      "mastery": {
+        "file": "assets/ui/icon_mastery.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an unrolled bamboo scroll with a glowing calligraphy brush resting on it, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "generated"
+      },
+      "depot": {
+        "file": "assets/ui/icon_depot.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of an ornate red lacquer storage chest with brass corners, lid closed, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "generated"
+      },
+      "breakthrough": {
+        "file": "assets/ui/icon_breakthrough.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a radiant golden lotus bursting open with rays of light, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "generated"
+      },
+      "sect_emblem": {
+        "file": "assets/ui/icon_sect_emblem.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round azure and white sect crest with a swirling cloud and a slender sword through it, polished gold rim, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/inventory_icons.png"
+        ],
+        "status": "generated"
+      }
+    }
+  },
+  {
+    "id": "ui.nodes",
+    "name": "Map node emblems",
+    "description": "Round painted emblems for each kind of place on a region map.",
+    "screen": "adventure",
+    "art": {
+      "battle": {
+        "file": "assets/ui/node_battle.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round game map marker emblem showing a crossed sword and saber with a faint red glow, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "generated"
+      },
+      "elite": {
+        "file": "assets/ui/node_elite.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round game map marker emblem showing a fierce demon mask with golden horns and an orange glow, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "generated"
+      },
+      "boss": {
+        "file": "assets/ui/node_boss.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round game map marker emblem showing a horned dragon skull wreathed in crimson flame, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "generated"
+      },
+      "gather": {
+        "file": "assets/ui/node_gather.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round game map marker emblem showing a bundle of glowing green spirit herbs tied with string, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "generated"
+      },
+      "chest": {
+        "file": "assets/ui/node_chest.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round game map marker emblem showing a small red lacquer treasure chest with gold fittings, light spilling from the lid, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "generated"
+      },
+      "event": {
+        "file": "assets/ui/node_event.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round game map marker emblem showing a floating paper lantern trailing violet mist, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "generated"
+      },
+      "cultivation": {
+        "file": "assets/ui/node_cultivation.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round game map marker emblem showing a white lotus floating on a glowing pool of light, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "generated"
+      },
+      "merchant": {
+        "file": "assets/ui/node_merchant.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round game map marker emblem showing a merchant's pack with gold coins and a small oiled-paper parasol, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "generated"
+      },
+      "hidden": {
+        "file": "assets/ui/node_hidden.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round game map marker emblem showing a swirling violet portal of mist, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "generated"
+      },
+      "secret_realm": {
+        "file": "assets/ui/node_secret_realm.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round game map marker emblem showing an ancient stone gate with a glowing blue portal inside, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "generated"
+      },
+      "story": {
+        "file": "assets/ui/node_story.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round game map marker emblem showing an unrolled scroll beside an ink stone and a brush, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "generated"
+      },
+      "locked": {
+        "file": "assets/ui/node_locked.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a round game map marker emblem showing an ornate bronze padlock with jade inlay, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/region_node_map.png"
+        ],
+        "status": "generated"
+      }
+    }
+  },
+  {
+    "id": "ui.forge",
+    "name": "Forge action icons",
+    "description": "Painted icons for the Spirit Forge tabs.",
+    "screen": "forge",
+    "art": {
+      "enhance": {
+        "file": "assets/ui/forge_enhance.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a blacksmith hammer striking a glowing blade on an anvil with flying sparks, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/forge_awaken.png"
+        ],
+        "status": "generated"
+      },
+      "refine": {
+        "file": "assets/ui/forge_refine.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a glowing gem rising out of a small bronze crucible of molten light, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/forge_awaken.png"
+        ],
+        "status": "generated"
+      },
+      "reforge": {
+        "file": "assets/ui/forge_reforge.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a sword blade wrapped in swirling blue and orange flames, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/forge_awaken.png"
+        ],
+        "status": "generated"
+      },
+      "awaken": {
+        "file": "assets/ui/forge_awaken.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a sword hilt with a radiant golden eye-shaped sigil glowing above it, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/forge_awaken.png"
+        ],
+        "status": "generated"
+      },
+      "craft": {
+        "file": "assets/ui/forge_craft.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a pattern scroll with tongs and a small hammer laid across it, a purely pictorial emblem with no letters, characters, numbers or writing anywhere. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/forge_awaken.png"
         ],
         "status": "generated"
       }

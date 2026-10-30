@@ -39,6 +39,27 @@
     "inner_sect_peak": 1.4,
     "frozen_lotus_valley": 1.35
   },
+  "meditation_session": {
+    "location": "sectloc.meditation_waterfall",
+    "qi_bonus_pct": 50,
+    "stones_per_minute": 1,
+    "step_minutes": 15,
+    "min_minutes": 15,
+    "max_minutes_by_fame": [
+      [
+        0,
+        45
+      ],
+      [
+        1000,
+        60
+      ],
+      [
+        2000,
+        120
+      ]
+    ]
+  },
   "base_stats": {
     "hp": 360,
     "atk": 40,

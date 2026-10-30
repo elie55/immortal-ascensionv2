@@ -177,6 +177,12 @@ export const CultivationRules = z.object({
   autosave_seconds: z.number().positive().default(30),
   tick_seconds: z.number().positive().default(1),
   location_qi_mult: z.record(z.string(), z.number().positive()).default({}),
+  /** Meditation Waterfall sessions: spirit stones buy a timed Qi boost; longer sessions unlock with Sect Fame ([fame, max minutes]). */
+  meditation_session: z.object({
+    location: z.string(), qi_bonus_pct: z.number().positive(), stones_per_minute: z.number().min(0),
+    step_minutes: z.number().int().positive(), min_minutes: z.number().int().positive(),
+    max_minutes_by_fame: z.array(z.tuple([z.number().int().min(0), z.number().int().positive()])).min(1),
+  }).optional(),
   /** The character's stat block before realms, root, method, gear… */
   base_stats: Stats,
   /** Combat-power weights per attribute (`elem` applies to every elemental damage and resistance attribute). */

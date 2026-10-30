@@ -305,3 +305,33 @@ test("bag capacity: one slot per stack or piece, worn gear free; overflow goes t
   assert.equal(equip(s, content, g2).ok, false, "depot gear cannot be worn");
   assert.ok(act.takeGear(s, content, g2).ok && inv.gearPlace(s, g2) === "bag");
 });
+
+test("meditation sessions: fame caps the length, stones pay, Qi ×1.5 while it runs (even away), offline counts only the covered part", async () => {
+  const { startMeditation, endMeditation, activeMeditation, meditationMaxMinutes, meditationCost } = await import("../src/engine/cultivation.ts");
+  const r = content.rules.meditation_session!;
+  const s = fresh(); s.resources.spirit_stones = 1000; s.resources.sect_fame = 0;
+  assert.equal(meditationMaxMinutes(s, content), 45);
+  assert.equal(startMeditation(s, content, T0, 60).ok, false, "1 h needs 1,000 Fame");
+  assert.equal(startMeditation(s, content, T0, 20).ok, false, "steps of 15 minutes");
+  const base = qiRate(s, content, T0).perSecond;
+  assert.ok(startMeditation(s, content, T0, 30).ok);
+  assert.equal(s.resources.spirit_stones, 1000 - meditationCost(content, 30));
+  assert.ok(activeMeditation(s, content, T0 + 60_000));
+  assert.equal(startMeditation(s, content, T0 + 1000, 15).ok, false, "one session at a time");
+  assert.ok(Math.abs(qiRate(s, content, T0 + 60_000).perSecond - base * (1 + r.qi_bonus_pct / 100)) < 1e-9, "boosted rate");
+  assert.equal(activeMeditation(s, content, T0 + 31 * 60_000), undefined, "ends on time");
+  // ending early stops the boost
+  const s2 = fresh(); s2.resources.spirit_stones = 1000; s2.resources.sect_fame = 2000;
+  assert.equal(meditationMaxMinutes(s2, content), 120);
+  assert.ok(startMeditation(s2, content, T0, 120).ok);
+  assert.ok(endMeditation(s2, content, T0 + 1000).ok);
+  assert.equal(activeMeditation(s2, content, T0 + 2000), undefined);
+  // offline: away 2 h with a 30 min session left → boost counted for 30 min only
+  const s3 = fresh(); s3.resources.spirit_stones = 1000; s3.character.qi = 0;
+  const rate = qiRate(s3, content, T0).perSecond;
+  assert.ok(startMeditation(s3, content, T0, 30).ok);
+  s3.meta.lastTickAt = T0;
+  const rep = applyOffline(s3, content, T0 + 2 * 3_600_000)!;
+  const expected = (rate * (1 + r.qi_bonus_pct / 100) * 1800 + rate * 5400) * content.rules.offline.efficiency;
+  assert.ok(Math.abs(rep.qiGained - Math.min(expected, qiBankCap(s3, content))) < 1, `offline ${rep.qiGained} vs ${expected}`);
+});

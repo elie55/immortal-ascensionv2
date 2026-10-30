@@ -9,7 +9,8 @@ import { beastsScreen } from "./beasts.ts";
 import { icon } from "../core/icons.ts";
 import { header, bar, section } from "../core/kit.ts";
 import type { App } from "../../app.ts";
-import { qiRate, qiForNextStage, stageProgress, etaToNextStage, majorRequirements, majorChance, isFinalStage, countAffordableStages, energyNow, energyMax, isBreakthroughItem } from "../../engine/cultivation.ts";
+import { qiRate, qiForNextStage, stageProgress, etaToNextStage, majorRequirements, majorChance, isFinalStage, countAffordableStages, energyNow, energyMax, isBreakthroughItem, activeMeditation } from "../../engine/cultivation.ts";
+import { openLocation } from "./sect.ts";
 import { computeStats, masteryLevel, type StatBlock } from "../../engine/stats.ts";
 import { breakThrough, breakThroughAll, useConsumable, switchMethod, type ActionResult } from "../../engine/actions.ts";
 import { attrLabel, attrValue } from "../core/kit.ts";
@@ -45,7 +46,9 @@ export function cultivateScreen(app: App) {
     h("div", { class: "cult-title" },
       h("div", { class: "cn cult-cn" }, `${realm.name_cn ?? ""} · 第${CN_NUM[s.character.stage]}层`),
       h("div", { class: "cult-realm" }, realm.name),
-      h("div", { class: "cult-stage glass" }, `Stage ${s.character.stage} / 9`, pips)),
+      h("div", { class: "cult-stage glass" }, `Stage ${s.character.stage} / 9`, pips),
+      (() => { const m = activeMeditation(s, c, app.now()); const r = c.rules.meditation_session; if (!m || !r) return null; const left = Math.ceil((m.expiresAt - app.now()) / 1000);
+        return h("button", { class: "med-pill", onClick: () => { app.router.clearGlobal(); app.router.setTab("sect"); openLocation(app, r.location); } }, icon("lotus", 13), ` Meditating · +${r.qi_bonus_pct}% Qi · ${Math.floor(left / 60)}:${String(left % 60).padStart(2, "0")}`); })()),
     h("div", { class: "cult-space", onClick: () => openRateSheet(app) }),
     h("button", { class: ["btn gold block cult-bt", ready && "ready"], onClick: () => (final ? openMajorSheet(app) : doMinor(app, affordable)) },
       h("span", { class: "stack", style: { gap: "1px" } }, h("span", { class: "cult-bt-t" }, final ? "Breakthrough" : "Breakthrough"), h("span", { class: "cult-bt-s" }, btSub))),

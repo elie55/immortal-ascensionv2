@@ -104,6 +104,46 @@ export function expireBuffs(s: GameState, now: number, out: DomainEvent[]): void
   if (keep.length !== s.buffs.length) s.buffs = keep;
 }
 
+// ---------- Meditation sessions (Meditation Waterfall) ----------
+
+/** Longest session the player's Sect Fame allows. */
+export function meditationMaxMinutes(s: GameState, content: ContentIndex): number {
+  const r = content.rules.meditation_session; if (!r) return 0;
+  let m = 0; for (const [fame, min] of r.max_minutes_by_fame) if (s.resources.sect_fame >= fame) m = Math.max(m, min);
+  return m;
+}
+/** The running session (a Qi buff keyed by the waterfall's location id), if any. */
+export function activeMeditation(s: GameState, content: ContentIndex, now: number): Buff | undefined {
+  const r = content.rules.meditation_session;
+  return r ? s.buffs.find((b) => b.id === r.location && b.expiresAt > now) : undefined;
+}
+export const meditationCost = (content: ContentIndex, minutes: number) => Math.round(minutes * (content.rules.meditation_session?.stones_per_minute ?? 0));
+
+/** Pay for a session of `minutes`: Qi ×(1 + bonus) until it ends, wherever the player goes meanwhile. */
+export function startMeditation(s: GameState, content: ContentIndex, now: number, minutes: number): Result<{ events: DomainEvent[] }> {
+  const r = content.rules.meditation_session;
+  if (!r) return { ok: false, reason: "Meditation sessions are not available" };
+  if (activeMeditation(s, content, now)) return { ok: false, reason: "A session is already running" };
+  if (!Number.isInteger(minutes) || minutes < r.min_minutes || minutes % r.step_minutes !== 0) return { ok: false, reason: `Sessions last ${r.min_minutes} minutes or more, in steps of ${r.step_minutes}` };
+  const max = meditationMaxMinutes(s, content);
+  if (minutes > max) return { ok: false, reason: `Your Sect Fame allows sessions of up to ${max} minutes` };
+  const cost = meditationCost(content, minutes);
+  if (s.resources.spirit_stones < cost) return { ok: false, reason: "Not enough spirit stones" };
+  s.resources.spirit_stones -= cost;
+  const events: DomainEvent[] = [];
+  addBuff(s, { id: r.location, label: "Meditation session", qi_mult: 1 + r.qi_bonus_pct / 100, expiresAt: now + minutes * 60_000, startedAt: now }, events);
+  s.progress.counters.meditation_sessions = (s.progress.counters.meditation_sessions ?? 0) + 1;
+  return { ok: true, events };
+}
+
+/** Stop the running session early (no refund). */
+export function endMeditation(s: GameState, content: ContentIndex, now: number): Result<{ events: DomainEvent[] }> {
+  const b = activeMeditation(s, content, now);
+  if (!b) return { ok: false, reason: "No session is running" };
+  s.buffs = s.buffs.filter((x) => x !== b);
+  return { ok: true, events: [{ type: "buff_expired", id: b.id }] };
+}
+
 // ---------- Ticking ----------
 
 /** Add Qi for a live interval. `dtMs` comes from a monotonic clock; `now` is the wall clock for buff expiry. */
@@ -155,7 +195,12 @@ export function applyOffline(s: GameState, content: ContentIndex, now: number): 
   const effectiveMs = clockMovedBack ? 0 : Math.min(elapsedMs, capMs);
   const rate = qiRate(s, content, now).perSecond;
   const qiBefore = s.character.qi;
-  const gained = rate * (effectiveMs / 1000) * rules.efficiency;
+  // Timed buffs (pills, meditation sessions) count only for the part of the absence they covered.
+  const t0 = now - elapsedMs, t1 = t0 + effectiveMs;
+  const cuts = [t0, ...s.buffs.map((b) => b.expiresAt).filter((t) => t > t0 && t < t1).sort((a, b) => a - b), t1];
+  let qiSum = 0;
+  for (let i = 0; i + 1 < cuts.length; i++) qiSum += qiRate(s, content, cuts[i]! + 1).perSecond * ((cuts[i + 1]! - cuts[i]!) / 1000);
+  const gained = qiSum * rules.efficiency;
   s.character.qi = Math.min(qiBankCap(s, content), qiBefore + gained);
   const out: DomainEvent[] = [];
   expireBuffs(s, now, out);

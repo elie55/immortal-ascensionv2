@@ -59,7 +59,7 @@ export function inventoryScreen(app: App) {
     : stackTile(app, e.id, { named: true, selected: e.key === ui.selected, onClick: () => { ui.selected = e.key; refresh(); } });
   return [
     header(app),
-    subbar({ help: { app, key: "inventory" }, title: "Inventory", cn: "行囊", sub: `${used} / ${cap} slots · page ${Math.min(ui.page, Math.ceil(Math.max(1, pageCap) / size) - 1) + 1} of ${Math.max(1, Math.ceil(Math.max(pageCap, 1) / size))}`, end: h("span", { class: "cp-chip" }, icon("sword", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(cp)))) }),
+    subbar({ help: { app, key: "inventory" }, title: "Inventory", cn: "行囊", sub: `${used} / ${cap} slots · page ${Math.min(ui.page, Math.ceil(Math.max(1, pageCap) / size) - 1) + 1} of ${Math.max(1, Math.ceil(Math.max(pageCap, 1) / size))}`, end: h("span", { class: "cp-chip" }, icon("cp", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(cp)))) }),
     pouch > 0 && h("div", { class: "glass panel pouch-bar" }, icon("pouch", 20),
       h("div", { class: "grow" }, h("b", null, `${pouch} drop${pouch > 1 ? "s" : ""} waiting in your overflow pouch`), h("span", null, used >= cap ? "Your bag is full: sell, use or store something, then claim them." : "Claim them into your bag.")),
       h("button", { class: ["btn sm", used < cap && "gold"], onClick: () => { const r = app.game.run("pouch", app.now(), (st, ct) => claimOverflow(st, ct)); app.router.toast(r.ok ? `Claimed ${(r as any).moved} · ${(r as any).left} still waiting` : r.reason, r.ok ? "good" : "bad"); } }, "Claim")),

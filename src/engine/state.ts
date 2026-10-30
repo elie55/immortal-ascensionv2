@@ -23,6 +23,7 @@ export const BuffSchema = z.object({
   qi_mult: z.number().positive().optional(),
   stats: z.record(z.string(), z.number()).optional(),
   expiresAt: z.number(),     // epoch ms
+  startedAt: z.number().optional(),
 });
 
 export const BeastInstanceSchema = z.object({

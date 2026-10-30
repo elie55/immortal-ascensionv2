@@ -15,6 +15,7 @@ const P: Record<string, string> = {
   check: '<path d="M5 12l5 5L20 7"/>',
   plus: '<path d="M12 5v14M5 12h14"/>',
   play: '<path d="M8 5v14l11-7z" fill="currentColor"/>',
+  cp: '<path d="M14.5 3H21v6.5L9 21.5 2.5 15z"/><path d="M5 13l6 6"/><path d="M3 21l3-3"/>',
   pause: '<path d="M8.5 5v14M15.5 5v14" stroke-width="3"/>',
   save: '<path d="M5 3h11l3 3v15H5z"/><path d="M8 3v5h7V3"/><path d="M8 21v-7h8v7"/>',
   export: '<path d="M12 15V3"/><path d="M7 8l5-5 5 5"/><path d="M5 13v7h14v-7"/>',
@@ -59,8 +60,18 @@ const P: Record<string, string> = {
   sort: '<path d="M7 4v16M4 17l3 3 3-3M17 20V4M14 7l3-3 3 3"/>',
 };
 
+/** Painted replacements (ui.icons art) for some line icons, set once the content is loaded. */
+const PAINTED: Record<string, string> = {};
+export function setPainted(map: Record<string, string | undefined>) { for (const [k, v] of Object.entries(map)) if (v) PAINTED[k] = v; }
+
 export function icon(name: keyof typeof P | string, size = 20, cls = ""): SVGSVGElement {
   const wrap = document.createElement("span");
+  if (PAINTED[name] && size >= 12) {
+    const sp = document.createElement("span");
+    sp.className = `ico painted ${cls}`; sp.setAttribute("aria-hidden", "true");
+    sp.style.width = sp.style.height = `${Math.round(size * 1.18)}px`; sp.style.backgroundImage = `url("./${PAINTED[name]}")`;
+    return sp as unknown as SVGSVGElement;
+  }
   wrap.innerHTML = `<svg class="ico ${cls}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[name] ?? P.info}</svg>`;
   return wrap.firstChild as SVGSVGElement;
 }

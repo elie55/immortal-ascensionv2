@@ -38,6 +38,14 @@ def art(file, prompt, size=(256, 256), transparent=True, refs=None, negative=NEG
 # Art prompts never quote a name or numbers: the model letters them onto the picture (pilot: medals, quest emblems).
 NOTXT = "a purely pictorial emblem with no letters, characters, numbers or writing anywhere"
 
+# Icons whose description led the model astray (a throne under a scroll, crossed sticks for a web, lettering in a coin rain):
+# the picture to draw instead, keyed by the entity's short key.
+ICON_LOOK = {
+    "web_snare": "a square technique icon of a glistening web of silver spider silk stretched between bamboo stalks, green glow",
+    "immortal_emperor_canon": "a cultivation-method scroll emblem: an imperial jade scroll case with a golden dragon clasp, crimson aura",
+    "ten_thousand_gold_rain": "a square technique icon of a torrent of gold coins pouring down from a violet sky onto the ground",
+}
+
 def flavor(desc):
     """The sentences of a description that carry imagery (no numbers), for art prompts."""
     import re
@@ -93,7 +101,7 @@ def write(rel, data):
 # Spirit beast evolution stages must read as clearly different forms of the same creature. No stage adds horns,
 # legs or a human shape the species does not have (pilot: moths and eels turned into winged people).
 BEAST_STAGE_LOOK = {
-    "hatchling": "as a tiny newborn baby creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame",
+    "hatchling": "as a tiny newly hatched young creature with chibi proportions, oversized head and big round shiny eyes, soft fluffy body, stubby legs, small nubs instead of horns, playful and cute, small in frame",
     "juvenile": "as a young adolescent creature, slender and lanky, half-grown features of its kind, curious alert expression, medium size",
     "adult": "as a fully grown powerful adult creature, strong and majestic, fully developed features of its kind, confident stance, filling the frame",
     "sovereign": "as an enormous legendary sovereign form, larger and more ornate than the adult, a glowing crown-like crest, flowing ethereal light, radiant elemental aura and floating runes around it, regal awe-inspiring presence",

@@ -46,7 +46,7 @@ export function forgeScreen(app: App, backTo: string, start: Tab = "enhance"): S
       return [
         header(app),
         subbar({ help: { app, key: "forge" }, title: "Spirit Forge", cn: "灵器坊", sub: `Master Smith Gu · ${TABS.find((t) => t.id === tab)!.label}`, backTo, onBack: () => app.router.back() }),
-        h("div", { class: "forge-tabs" }, TABS.map((t) => h("button", { class: ["glass ftab", t.id === tab && "on"], onClick: () => { tab = t.id; locks = []; app.router.refresh(); } }, icon(t.icon, 18), h("span", null, t.label)))),
+        h("div", { class: "forge-tabs" }, TABS.map((t) => h("button", { class: ["glass ftab", t.id === tab && "on"], onClick: () => { tab = t.id; locks = []; app.router.refresh(); } }, app.ui("ui.forge", t.id) ? h("span", { class: "ftab-art", style: { backgroundImage: app.img(app.ui("ui.forge", t.id)) } }) : icon(t.icon, 18), h("span", null, t.label)))),
         h("div", { class: "glass gu-line" }, npcAvatar(app, "npc.master_gu", 28), h("div", null, h("div", { class: "muted" }, "Master Gu"), h("div", { class: "dim" }, `“${GU[tab]}”`))),
         tab === "craft" ? craftPanel(app, () => recipe, (r) => { recipe = r; app.router.refresh(); }) : [
           section("Choose gear", h("span", null, `${owned.length} pieces`),

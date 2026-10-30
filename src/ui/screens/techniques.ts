@@ -47,7 +47,7 @@ export function techniquesScreen(app: App, backTo: string): Screen {
         section("Active techniques", "Used in battle by your auto rules", h("div", { class: "rows" }, s.techniques.actives.map((id, i) => slot("actives", i, id)))),
         section("Passive techniques", "Always on", h("div", { class: "rows" }, s.techniques.passives.map((id, i) => slot("passives", i, id)))),
         section("Ultimate", "Charges during battle", slot("ultimate", 0, s.techniques.ultimate)),
-        h("div", { class: "muted center" }, "Learn more at the Scripture Pavilion, from manuals and from tournaments."),
+        h("div", { class: "dim center", style: { fontSize: "calc(12rem / 15)", padding: "6px 10px", borderRadius: "12px", background: "rgba(4,10,34,.62)" } }, "Learn more at the Scripture Pavilion, from manuals and from tournaments."),
       ];
     },
   };
