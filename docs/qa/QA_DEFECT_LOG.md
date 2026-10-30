@@ -39,5 +39,9 @@ Evidence for balance items: `tools/balance/out/baseline.md` (before) vs `after.m
 | D-32 | P3 | Readability | 8–9.5 px labels on new battle and map elements | new UI | all ≥ 10 px | UI audit 0 errors |
 | D-33 | P3 | Layout | "Turn in all" ran off-screen at 360 px with Large text | tabs row | row wraps, button right-aligned | UI audit |
 | D-34 | P3 | Tests | Tour flaked when the manual move ended the wave before switching to Auto | test timing | tour continues through the wave dialog | tour at 360 × 640 |
+| D-35 | P2 | Content | Every place in the 13 generated regions was named "<Region> Border / Outskirts…", so map labels and quest hints all read the same | generator | per-region place names (PLACE_NAMES) | lab sweep region 6 |
+| D-36 | P2 | Visual | Boss intro art was hidden under the stage (z-index below the sprites) | layer order | intro layer at z 60 with isolation | lab bossintro |
+| D-37 | P3 | Tests | Lab fights ran into the region arrival story scene; marked scenes seen by prefix "story" | test state | fixed | lab sweep |
+| D-38 | P3 | Visual | Defeat card showed the first wave's enemy and "0 damage" from the wrong tally | result data | shows the foe that won, run total | lab defeat |
 
 Open (not fixed in this pass): see `QA_RELEASE_READINESS_REPORT.md`.

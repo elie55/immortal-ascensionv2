@@ -894,7 +894,7 @@ button.tag { min-height: 32px; padding: 4px 12px; }
 .rc-num { width: auto; min-width: 22px; padding: 0 5px; border-radius: 999px; }
 .attr .grow { font-size: calc(11.5rem / 15); line-height: 1.15; overflow-wrap: anywhere; }
 .src-grid span { letter-spacing: 0; text-transform: none; font-size: calc(10.5rem / 15); overflow-wrap: anywhere; }
-.evo-stage .lbl { white-space: normal; line-height: 1.15; }
+.evo-stage .lbl { white-space: normal; line-height: 1.15; overflow-wrap: anywhere; hyphens: auto; } .evo-stage { min-width: 84px; }
 .alch-rec .lbl { white-space: normal; line-height: 1.15; overflow-wrap: anywhere; }
 .rule-move button { min-height: 32px; }
 .seg button { white-space: nowrap; }
@@ -1019,7 +1019,7 @@ button.tag { min-height: 32px; padding: 4px 12px; }
 
 .rc-cn { font-size: calc(11rem / 15); letter-spacing: .08em; margin-top: -1px; }
 .board-t { display: block; line-height: 1.1; } .board-t .cn { display: inline-block; margin-left: 6px; font-size: calc(13rem / 15); }
-.board-head .board-t { font-size: min(calc(26rem / 15), 7vw); white-space: nowrap; }
+.board-head .board-t { font-size: min(calc(24rem / 15), 6.4vw); white-space: nowrap; } .board-head .board-t .cn { font-size: calc(12rem / 15); }
 .ach-pct { white-space: nowrap; display: flex; align-items: baseline; gap: 3px; } .ach-pct b { display: inline; }
 
 .rumour { padding: 9px 10px; border-radius: var(--r-md); } .rumour.known { border-color: rgba(79,224,176,.45); }
