@@ -153,11 +153,12 @@ export function trackerChip(app: App) {
   const i = prog.findIndex((p) => !p.done);
   const cur = i >= 0 ? prog[i]! : null;
   const dest = questDestination(app, q);
-  return h("button", { class: ["glass tracker", st === "ready" && "ready"], onClick: () => { if (dest) dest.go(); else { toTab(app, "cultivate"); app.router.push(questLogScreen(app, "Cultivate")); } } },
-    icon(st === "ready" ? "sparkle" : "map", 14),
-    h("span", { class: "grow" },
+  // One slim line (UI review G1): quest name, then the step or "Ready" in the quest colour; where it happens is in Go's label.
+  return h("button", { class: ["tracker", st === "ready" && "ready"], title: dest?.where, onClick: () => { if (dest) dest.go(); else { toTab(app, "cultivate"); app.router.push(questLogScreen(app, "Cultivate")); } } },
+    h("span", { class: "tr-i" }, icon(st === "ready" ? "sparkle" : "map", 13)),
+    h("span", { class: "grow tr-line" },
       h("b", null, q.name),
-      h("span", { class: "tr-sub" }, st === "ready" ? `Ready · ${dest ? dest.where : "turn in from the Quest Log"}` : cur ? `${cur.label} ${cur.have}/${cur.need}${dest ? ` · ${dest.where}` : ""}` : (dest?.where ?? ""))),
+      h("span", { class: "tr-sub" }, st === "ready" ? "Ready to turn in" : cur ? `${cur.label} ${cur.have}/${cur.need}` : (dest?.where ?? ""))),
     h("span", { class: "tr-go" }, "Go ▸"),
     h("span", { class: "icon-btn tr-x", role: "button", "aria-label": "Stop tracking", onClick: (e: Event) => { e.stopPropagation(); setTracked(app, null); } }, icon("close", 12)));
 }

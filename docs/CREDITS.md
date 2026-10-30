@@ -18,3 +18,13 @@ All game art is generated locally with Qwen-Image-Edit 2511 from the prompts in 
 ## Icons
 
 UI icons in `src/ui/core/icons.ts` are drawn for this project.
+
+### Added in the UI premium pass (2026-10-30), same licence (SIL OFL 1.1), from the google/fonts repository
+
+| Font | Use | Authors | Source |
+|---|---|---|---|
+| Noto Sans (variable) | interface text and numbers (tabular figures) | Google, Monotype | Google Fonts |
+| Marcellus | buttons, labels, panel headings | Brian J. Bonislawsky (Astigmatic) | Google Fonts |
+| Ma Shan Zheng | large Chinese brush titles (realm names) | Ma Shan Zheng | Google Fonts |
+
+Ma Shan Zheng is cut down to the 605 Chinese characters the game uses (re-run the subset when new Chinese text is added).

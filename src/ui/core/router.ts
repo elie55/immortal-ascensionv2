@@ -24,7 +24,11 @@ export interface Screen {
 }
 export interface Overlay { id: string; kind: "modal" | "sheet"; render: (close: () => void) => Child; dismissible?: boolean; cls?: string }
 
-export interface UiState { tab: Tab; stacks: Record<Tab, Screen[]>; global: Screen[]; overlays: Overlay[]; toasts: { id: number; text: string; kind: "info" | "good" | "bad" }[] }
+export type ToastKind = "info" | "good" | "bad" | "gold";
+/** Toast texts that mark a milestone (gold toast). */
+const MILESTONE = /^(Quest complete|Quest ready|Achievement|Rank|Breakthrough|Promoted|New realm|Realm|Unlocked)/i;
+const TOAST_ICON: Record<ToastKind, string> = { info: "info", good: "check", bad: "close", gold: "sparkle" };
+export interface UiState { tab: Tab; stacks: Record<Tab, Screen[]>; global: Screen[]; overlays: Overlay[]; toasts: { id: number; text: string; kind: ToastKind }[]; toastMore?: number }
 
 export class Router {
   readonly store: Store<UiState>;
@@ -64,25 +68,30 @@ export class Router {
   open(o: Overlay): void { this.store.update((s) => { s.overlays = s.overlays.filter((x) => x.id !== o.id); s.overlays.push(o); }); }
   close(id?: string): void { this.store.update((s) => { if (!id) s.overlays.pop(); else s.overlays = s.overlays.filter((m) => m.id !== id); }); }
   hasOverlay(id: string): boolean { return this.store.state.overlays.some((o) => o.id === id); }
-  /** Toasts show two at a time at the top; the rest wait their turn (repeats are merged). A burst plays faster, so a
-   *  string of rewards never covers the header for long; waiting toasts are dropped when the player changes tab. */
+  /** One toast at a time in a lane just above the nav bar (UI review G2: two pills stacked on the header hid the name
+   *  and stones). The rest wait their turn (repeats are merged) and the lane shows how many; a burst plays faster.
+   *  Milestones (quest complete, rank, achievement, breakthrough) get the gold style. Waiting toasts are dropped when
+   *  the player changes tab. */
   toast(text: string, kind: "info" | "good" | "bad" = "info", ms = 2400): void {
     if (this.toastQueue.some((t) => t.text === text) || this.store.state.toasts.some((t) => t.text === text)) return;
-    this.toastQueue.push({ text, kind, ms });
+    this.toastQueue.push({ text, kind: kind === "bad" ? "bad" : MILESTONE.test(text) ? "gold" : kind, ms });
     this.pumpToasts();
   }
-  private toastQueue: { text: string; kind: "info" | "good" | "bad"; ms: number }[] = [];
+  private toastQueue: { text: string; kind: ToastKind; ms: number }[] = [];
   /** Toasts wait while this says so (the battle screen: no toasts over a fight; they play when it ends). */
   holdToasts: () => boolean = () => false;
   private pumpToasts(): void {
     if (this.holdToasts()) return;
-    while (this.store.state.toasts.length < 2 && this.toastQueue.length) {
-      const t = this.toastQueue.shift()!;
-      const id = ++this.toastId;
-      const ms = this.toastQueue.length >= 2 ? Math.min(t.ms, 1500) : this.toastQueue.length ? Math.min(t.ms, 1900) : t.ms;
-      this.store.update((s) => { s.toasts = [...s.toasts, { id, text: t.text, kind: t.kind }]; });
-      setTimeout(() => { this.store.update((s) => { s.toasts = s.toasts.filter((x) => x.id !== id); }); this.pumpToasts(); }, ms);
+    if (this.store.state.toasts.length || !this.toastQueue.length) {
+      // only touch the store when the "+N waiting" count changes: render() pumps again, so an unconditional update loops
+      if (this.store.state.toasts.length && (this.store.state.toastMore ?? 0) !== this.toastQueue.length) this.store.update((s) => { s.toastMore = this.toastQueue.length; });
+      return;
     }
+    const t = this.toastQueue.shift()!;
+    const id = ++this.toastId;
+    const ms = this.toastQueue.length >= 2 ? Math.min(t.ms, 1300) : this.toastQueue.length ? Math.min(t.ms, 1700) : t.ms;
+    this.store.update((s) => { s.toasts = [{ id, text: t.text, kind: t.kind }]; s.toastMore = this.toastQueue.length; });
+    setTimeout(() => { this.store.update((s) => { s.toasts = s.toasts.filter((x) => x.id !== id); }); this.pumpToasts(); }, ms);
   }
   refresh(): void { this.render(); }
 
@@ -115,7 +124,8 @@ export class Router {
       return h("div", { class: "modal-backdrop", dataset: { key: `ov:${o.id}` }, onClick: (e: MouseEvent) => { if (top && e.target === e.currentTarget && o.dismissible !== false) close(); } },
         h("div", { class: ["modal glass gold", o.cls] }, o.render(close)));
     });
-    const toasts = h("div", { class: "toasts", dataset: { key: "toasts" } }, s.toasts.map((t) => h("div", { class: ["toast", t.kind], dataset: { key: `t${t.id}` } }, t.text)));
+    const toasts = h("div", { class: ["toasts", !showNav && "no-nav"], dataset: { key: "toasts" }, role: "status", "aria-live": "polite" }, s.toasts.map((t) => h("div", { class: ["toast", t.kind], dataset: { key: `t${t.id}` } },
+      h("span", { class: "toast-i" }, icon(TOAST_ICON[t.kind], 13)), h("span", { class: "toast-t" }, t.text), s.toastMore ? h("span", { class: "toast-more" }, `+${s.toastMore}`) : null)));
     const backdrop = h("div", { class: "backdrop", dataset: { key: "bg" } }, bgFile ? h("div", { class: "img", style: { backgroundImage: this.img(bgFile) } }) : null, h("div", { class: "veil" }));
     // Patch instead of replace: the same screen keeps its nodes (scroll, focus, running animations, taps in flight).
     morph(this.root, backdrop, main, nav, overlays, toasts);

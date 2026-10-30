@@ -43,15 +43,24 @@ export const HELP: Record<string, { title: string; line: string; points: string[
 };
 
 const seen = (app: App, key: string) => app.game.state.progress.hintsSeen.includes(key);
+const armed = new Set<string>();
 
-/** One-line hint under the title bar, shown until dismissed; (?) opens the full help. */
+/** First-visit coach mark: a bubble that floats under the (?) of the title bar, over the content (it takes no room:
+ *  the stacked hint banners pushed every screen down, UI review G1). Tapping it dismisses it for good; (?) keeps the
+ *  full help. */
 export function hintBar(app: App, key: string) {
   const hp = HELP[key];
   if (!hp || seen(app, key)) return null;
-  return h("div", { class: "glass hint-bar" },
-    h("span", { class: "hint-i" }, icon("info", 14)),
-    h("span", { class: "grow" }, hp.line),
-    h("button", { class: "btn sm jade", onClick: () => app.game.run("hint", app.now(), (st) => { if (!st.progress.hintsSeen.includes(key)) st.progress.hintsSeen.push(key); return { ok: true, events: [] }; }, false) }, "Got it"));
+  const dismiss = () => { if (!seen(app, key)) app.game.run("hint", app.now(), (st) => { if (!st.progress.hintsSeen.includes(key)) st.progress.hintsSeen.push(key); return { ok: true, events: [] }; }, false); };
+  // The bubble never blocks a tap (pointer-events: none, except Got it): the player's first tap anywhere, which still
+  // reaches its target, retires it. Armed once per key (this renders every tick).
+  // Retired after the tap's own click has run (dismissing earlier re-renders the screen under the finger and the tap is lost).
+  if (!armed.has(key)) { armed.add(key); setTimeout(() => document.addEventListener("click", () => setTimeout(() => { armed.delete(key); dismiss(); }, 0), { once: true, capture: true }), 600); }
+  return h("div", { class: "coach-anchor", dataset: { key: `coach:${key}` } },
+    h("div", { class: "coach", role: "note" },
+      h("span", { class: "coach-i" }, icon("info", 14)),
+      h("span", { class: "grow" }, hp.line),
+      h("button", { class: "coach-ok", onClick: (e: Event) => { e.stopPropagation(); dismiss(); } }, "Got it")));
 }
 
 /** (?) button for the title bar. */

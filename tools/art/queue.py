@@ -67,7 +67,12 @@ REDRAW_PROMPT = ("Image 1 is the approved design. Keep everything about it exact
                  "weapons and held objects (add none, remove none), the same rider or mount if there is one, the same effects and art style. ")
 # what each FACING value asks of a redraw
 REDRAW_TURN = {
-    "front": "Only turn it to face the viewer: a three-quarter front view with the head and eyes looking straight at the viewer, as if facing an opponent standing right in front of it. If it already faces the viewer, keep the pose.",
+    # A softer wording ("three-quarter front view ... if it already faces the viewer, keep the pose") left most foes
+    # looking sideways (2026-10-30 run): the turn is now stated as a hard requirement, with no way out.
+    "front": "Change only its orientation: redraw it facing the viewer head-on. The body is turned squarely toward the viewer "
+             "(at most a slight turn) and the face is seen from the front, with both eyes visible and looking straight into the "
+             "camera, as if staring down an opponent standing directly in front of it. The head must not be turned to the side "
+             "and must not be in profile.",
     "right": "Only turn it to face right in a three-quarter view, toward an opponent on the right. If it already faces right, keep the pose.",
     "left": "Only turn it to face left in a three-quarter view. If it already faces left, keep the pose.",
 }
