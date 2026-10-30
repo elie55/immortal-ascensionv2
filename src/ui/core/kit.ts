@@ -65,8 +65,8 @@ export function setrow(ico: string, label: string, desc: string | null, end: Chi
 }
 
 /** Rarity-framed item tile. */
-export function tile(o: { rarity: string; art?: string; fallbackIcon?: string; qty?: number; plus?: number; name?: string; selected?: boolean; isNew?: boolean; onClick?: () => void; img: (f?: string) => string }) {
-  const t = h("button", { class: ["tile", `r-${o.rarity}`, o.selected && "sel"], onClick: o.onClick, "aria-label": o.name ?? "item" },
+export function tile(o: { rarity: string; art?: string; fallbackIcon?: string; qty?: number; plus?: number; name?: string; label?: string; selected?: boolean; isNew?: boolean; onClick?: () => void; img: (f?: string) => string }) {
+  const t = h("button", { class: ["tile", `r-${o.rarity}`, o.selected && "sel"], onClick: o.onClick, "aria-label": o.name ?? o.label ?? "item", title: o.name ? undefined : o.label },
     h("div", { class: "in" }, o.art ? h("div", { class: "art", style: { backgroundImage: o.img(o.art) } }) : icon(o.fallbackIcon ?? "sparkle", 26)),
     o.qty && o.qty > 1 ? h("span", { class: "qty" }, String(o.qty)) : null,
     o.plus ? h("span", { class: "plus" }, `+${o.plus}`) : null,
@@ -157,14 +157,14 @@ export function confirmModal(app: App, o: { title: string; body: string; ok: str
  * beyond it.
  */
 export function pagedGrid(app: App, tiles: Child[], capacity: number, page: number, onPage: (p: number) => void, opts: { cols?: number } = {}) {
-  const size = app.content.rules.inventory.page_size, cols = opts.cols ?? 5;
+  const size = app.content.rules.inventory.page_size, cols = opts.cols ?? 6;
   const pages = Math.max(1, Math.ceil(tiles.length / size));
   const cur = Math.min(page, pages - 1);
   const slice = tiles.slice(cur * size, cur * size + size);
   const free = Math.max(0, capacity - tiles.length);
   const room = cur === pages - 1 ? Math.min(free, size - slice.length, (cols - (slice.length % cols)) % cols || (slice.length ? 0 : cols)) : 0;
   return h("div", { class: "paged" },
-    h("div", { class: "inv-grid", style: opts.cols ? { gridTemplateColumns: `repeat(${opts.cols}, minmax(0, 1fr))` } : undefined }, slice, Array.from({ length: room }, () => h("div", { class: "slot-empty-ph", "aria-hidden": "true" }))),
+    h("div", { class: "inv-grid", style: { gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` } }, slice, Array.from({ length: room }, () => h("div", { class: "slot-empty-ph", "aria-hidden": "true" }))),
     pages > 1 && h("div", { class: "pager" },
       h("button", { class: "icon-btn", disabled: cur === 0, "aria-label": "Previous page", onClick: () => onPage(cur - 1) }, icon("back", 14)),
       h("div", { class: "pager-nums" }, Array.from({ length: pages }, (_, i) => h("button", { class: ["pg", i === cur && "on"], onClick: () => onPage(i) }, String(i + 1)))),

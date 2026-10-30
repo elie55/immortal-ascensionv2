@@ -84,6 +84,7 @@ export class App {
     const root = document.documentElement;
     root.classList.toggle("text-large", this.settings.textSize === "large");
     root.classList.toggle("reduce-motion", this.settings.reducedMotion);
+    root.classList.toggle("anim-low", this.settings.animationQuality === "low");
   }
   async setSettings(patch: Partial<Settings>): Promise<void> {
     Object.assign(this.settings, patch);

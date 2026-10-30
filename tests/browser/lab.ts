@@ -255,6 +255,30 @@ async function firstVictory(name: string) {
   if (process.env.IA_DUMP) console.log(await page.evaluate(() => [...document.querySelectorAll(".modal.victory .res-panel > *")].map((e) => `${e.tagName}.${e.className} [${(e as HTMLElement).innerText.replace(/\s+/g, " ").slice(0, 80)}] ${e.innerHTML.slice(0, 160)}`).join("\n")));
 }
 
+/** Victory with a guaranteed gear drop (the best-drop card and the ▲ upgrade badge): the in-memory loot of the
+ *  Village Road foes is patched to always drop a rare sword (loot entries; guaranteed lists hold items only). */
+async function gearVictory(name: string) {
+  const st = labState(1, "fitted");
+  st.progress.regions["region.mortal_plains"] = { discoveredAt: T0, nodes: {} };
+  await boot(st);
+  await dismiss();
+  await page.evaluate(() => {
+    const ia = (window as any).__ia; const c = ia.content; const g = ia.game.state; g.combat.speed = 3; g.combat.manual = false;
+    for (const w of c.get("node.mortal_plains.village_road").waves) for (const e of w) { const loot = c.get(e).loot; const l = loot && c.find(loot); if (l) l.entries = [...l.entries.filter((x: any) => !x.gear), { gear: { base: "gear.azure_iron_sword" }, rarity_weights: { rare: 100 }, chance: 1 }]; }
+  });
+  await page.evaluate((s) => (window as any).__ia.dev.fight(s), { kind: "node", id: "node.mortal_plains.village_road" });
+  for (let w = 0; w < 4; w++) {
+    await page.waitForSelector(".modal-backdrop", { timeout: 90_000 });
+    const next = page.locator(".modal-backdrop button", { hasText: "Next wave" });
+    if (await next.count()) { await page.waitForTimeout(500); await next.click(); continue; }
+    break;
+  }
+  await page.waitForTimeout(1800); await shot(`${name}-victory`);
+  if (!(await page.locator(".modal.victory .res-bestcard").count())) throw new Error("victory: no best-drop card for a gear drop");
+  const eq = page.locator(".modal.victory .rb-eq");
+  if (await eq.count()) { await eq.click(); await page.waitForTimeout(400); await shot(`${name}-equipped`); }
+}
+
 /** Quest tracking on the map: First Hunt points at Boar Thicket (4) while only Village Road (1) is cleared. The target
  *  must stay locked with a quest marker, the card must name the next place, and that place must pulse. */
 async function questMap(name: string) {
@@ -403,6 +427,7 @@ const SCEN: Record<string, () => Promise<void>> = {
   solo: () => fight("solo", 2, { kind: "node", id: nodeOf(2, "battle") }),
   idle: () => idle("idle"),
   firstwin: () => firstVictory("firstwin"),
+  gearwin: () => gearVictory("gearwin"),
   questmap: () => questMap("questmap"),
   sectmap: () => screen("sectmap", 1, "0", { tab: "sect" }),
   missions: () => screen("missions", 2, `window.__ia.dev.open("missions")`, { tab: "sect" }),

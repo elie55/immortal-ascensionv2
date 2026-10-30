@@ -41,6 +41,12 @@ function inPage(arg: { pageIdx: number }) {
   else if (vn) roots = [vn];
   else roots = [document.querySelector<HTMLElement>("main.screen"), nav].filter(Boolean) as HTMLElement[];
   const navRect = !sheets.length && !modals.length && nav ? nav.getBoundingClientRect() : null;
+  // Sticky docks (the CTA dock, the inventory detail dock) stay at the bottom while the content scrolls under them,
+  // like the nav bar: what is under a dock is reachable by scrolling, so it is not measured there.
+  const dockSel = ".dock-cta, .inv-dock";
+  const dockEls = navRect ? [...document.querySelectorAll<HTMLElement>(`main.screen :is(${dockSel})`)].filter((d) => getComputedStyle(d).position === "sticky") : [];
+  const dockTop = dockEls.length ? Math.min(...dockEls.map((d) => d.getBoundingClientRect().top)) : Infinity;
+  const inDock = (el: Element) => !!el.closest(dockSel);
 
   const name = (el: Element): string => {
     const parts: string[] = [];
@@ -123,7 +129,7 @@ function inPage(arg: { pageIdx: number }) {
     const rects: DOMRect[] = [];
     for (const n of el.childNodes) if (n.nodeType === 3 && n.textContent!.trim()) { range.selectNodeContents(n); for (const rr of range.getClientRects()) if (rr.width > 2 && rr.height > 2) rects.push(rr); }
     const visRects = rects.map((rr) => ({ x: Math.max(rr.left, ci.vis.l), y: Math.max(rr.top, ci.vis.t), r: Math.min(rr.right, ci.vis.r), b: Math.min(rr.bottom, ci.vis.b) }))
-      .filter((v) => v.r - v.x > 2 && v.b - v.y > 2 && v.y >= 0 && v.b <= vh && (!navRect || v.b <= navRect.top || v.y >= navRect.bottom || roots.length === 1 || el.closest("nav")));
+      .filter((v) => v.r - v.x > 2 && v.b - v.y > 2 && v.y >= 0 && v.b <= vh && (!navRect || v.b <= navRect.top || v.y >= navRect.bottom || roots.length === 1 || el.closest("nav")) && (inDock(el) || v.b <= dockTop + 1));
     // glyphs fill roughly the middle 70% of a line box; neighbours with tight line-height touch otherwise
     const vrect = (rr: DOMRect) => { const t = Math.max(rr.top + rr.height * 0.15, ci.vis.t), b = Math.min(rr.bottom - rr.height * 0.15, ci.vis.b); return new DOMRect(Math.max(rr.left, ci.vis.l), t, Math.min(rr.right, ci.vis.r) - Math.max(rr.left, ci.vis.l), b - t); };
     lineBoxes.push({ el, rects: rects.map(vrect).filter((v) => v.width > 1 && v.height > 1) });
@@ -144,6 +150,7 @@ function inPage(arg: { pageIdx: number }) {
     const A = lineBoxes[i]!, B = lineBoxes[j]!;
     if (A.el.contains(B.el) || B.el.contains(A.el)) continue;
     if (!!A.el.closest("nav") !== !!B.el.closest("nav")) continue; // content scrolling under the nav bar
+    if (inDock(A.el) !== inDock(B.el)) continue; // … or under a sticky dock
     for (const a of A.rects) for (const b of B.rects) {
       const ov = inter(a, b);
       if (ov > 0.25 * Math.min(area(a), area(b)) && ov > 12) {
@@ -171,6 +178,7 @@ function inPage(arg: { pageIdx: number }) {
     const cx = (Math.max(r.left, ci.vis.l) + Math.min(r.right, ci.vis.r)) / 2, cy = (Math.max(r.top, ci.vis.t) + Math.min(r.bottom, ci.vis.b)) / 2;
     if (cx < 0 || cy < 0 || cx > vw || cy > vh) continue;
     if (navRect && !el.closest("nav") && cy > navRect.top - 2) continue;
+    if (!inDock(el) && cy > dockTop - 2) continue;
     if (Math.min(r.right, ci.vis.r) - Math.max(r.left, ci.vis.l) < 4 || Math.min(r.bottom, ci.vis.b) - Math.max(r.top, ci.vis.t) < 4) continue;
     const hit = document.elementFromPoint(cx, cy);
     if (hit && hit !== el && !el.contains(hit) && !hit.contains(el)) out.push({ check: "covered", severity: "error", where, text, detail: `under ${name(hit)}` });
@@ -179,6 +187,7 @@ function inPage(arg: { pageIdx: number }) {
     const A = ctrlRects[i]!, B = ctrlRects[j]!;
     if (A.el.contains(B.el) || B.el.contains(A.el) || !inView(A.v) || !inView(B.v)) continue;
     if (!!A.el.closest("nav") !== !!B.el.closest("nav")) continue; // content scrolling under the nav bar
+    if (inDock(A.el) !== inDock(B.el)) continue; // … or under a sticky dock
     const ov = inter(A.v, B.v);
     if (ov > 16) out.push({ check: "tap-overlap", severity: "error", where: `${name(A.el)}  ×  ${name(B.el)}`, text: `${textOf(A.el)} × ${textOf(B.el)}`, detail: `${Math.round(ov)}px²` });
   }
@@ -235,6 +244,8 @@ export async function auditScreen(page: Page, screen: string, opts: { pages?: nu
   // Settle entrance animations (fade/rise) so colours are measured at full opacity; looping ones keep running.
   const settle = () => page.evaluate(() => { for (const a of document.getAnimations()) { const t = a.effect?.getTiming(); if (t && t.iterations !== Infinity) a.finish(); } });
   await settle();
+  // Toasts are transient (one at a time, a couple of seconds, never tappable): hidden while the screen is measured.
+  await page.evaluate(() => { if (!document.getElementById("ia-audit-hide")) { const st = document.createElement("style"); st.id = "ia-audit-hide"; st.textContent = ".toasts { visibility: hidden !important; }"; document.head.appendChild(st); } });
   const scrollEl = `(() => { const s = [...document.querySelectorAll(".sheet")].pop(); const m = [...document.querySelectorAll(".modal-backdrop .modal")].pop(); return s ?? m ?? document.querySelector("main.screen"); })()`;
   const scroller = await page.evaluate(`(() => { const el = ${scrollEl}; return el ? { h: el.scrollHeight, c: el.clientHeight, top: el.scrollTop } : null; })()`) as { h: number; c: number; top: number } | null;
   const nPages = scroller ? Math.min(pages, Math.max(1, Math.ceil((scroller.h - 4) / Math.max(1, scroller.c * 0.85)))) : 1;
@@ -265,6 +276,6 @@ export async function auditScreen(page: Page, screen: string, opts: { pages?: nu
     for (const f of out) { const k = `${f.check}|${f.where}|${f.text}`; if (!found.has(k)) found.set(k, { screen, ...f }); }
   }
   if (scroller) await page.evaluate(`(() => { const el = ${scrollEl}; if (el) el.scrollTop = ${scroller.top}; })()`);
-  await page.evaluate(() => { if ((window as any).__iaLoopWas) (window as any).__ia.app.startLoop(); });
+  await page.evaluate(() => { document.getElementById("ia-audit-hide")?.remove(); if ((window as any).__iaLoopWas) (window as any).__ia.app.startLoop(); });
   return [...found.values()];
 }

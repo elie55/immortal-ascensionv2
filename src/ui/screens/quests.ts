@@ -11,6 +11,7 @@ import type { App } from "../../app.ts";
 import { questDestination, objectiveDestination, setTracked } from "../navigate.ts";
 import { questStatus, questProgress, acceptQuest, turnInQuest, abandonQuest, achievementProgress, nextRank, type QuestStatus, turnInAll } from "../../engine/progression.ts";
 import { itemCount } from "../../engine/inventory.ts";
+import { checkUnlock } from "../../engine/unlock.ts";
 import { rewardsLine } from "./adventure.ts";
 
 const TYPE_LABEL: Record<string, string> = { main: "Main", mission: "Mission", npc: "Personal", cultivation: "Cultivation", dungeon: "Trial", combat: "Hunt", alchemy: "Alchemy", forge: "Forge", hidden: "Hidden", beast: "Beast" };
@@ -49,8 +50,9 @@ export function questCard(app: App, q: any, opts: { where?: string } = {}) {
   return h("article", { class: ["glass quest-card", st === "ready" && "ready", q.type === "main" && "main"] },
     h("div", { class: "row" },
       q.giver.startsWith("npc.") ? npcAvatar(app, q.giver, 40) : c.art(q.id, "icon") ? h("span", { class: "q-ico art", style: { backgroundImage: app.img(c.art(q.id, "icon")) } }) : h("span", { class: "q-ico" }, icon(q.type === "main" ? "scroll" : q.type === "combat" ? "sword" : q.type === "dungeon" ? "temple" : "scroll", 18)),
-      h("div", { class: "grow" }, h("div", { class: "q-title" }, q.name), h("div", { class: "muted" }, giverLine(app, q))),
-      h("div", { class: "q-meta" }, stars(q.difficulty), q.rec_cp ? h("span", { class: "tag" }, icon("sword", 10), ` Rec. CP ${fmt.int(q.rec_cp)}`) : h("span", { class: "tag" }, TYPE_LABEL[q.type] ?? q.type))),
+      // one quiet meta line (UI review S9): who asks, how hard, the power it wants; MAIN stays the only badge
+      h("div", { class: "grow" }, h("div", { class: "q-title" }, q.name), h("div", { class: "q-sub" }, h("span", null, giverLine(app, q)), stars(q.difficulty), q.rec_cp ? h("span", { class: "q-cp" }, icon("sword", 10), ` CP ${fmt.int(q.rec_cp)}`) : null)),
+      q.type === "main" && h("span", { class: "tag gold q-main" }, "Main")),
     h("div", { class: "q-objs" }, prog.map((p: any, i: number) => {
       const o = q.objectives[i];
       const item = o.item ? c.find<any>(o.item) : undefined;
@@ -58,10 +60,11 @@ export function questCard(app: App, q: any, opts: { where?: string } = {}) {
       const shown = (o.type === "deliver" || o.type === "collect") ? Math.min(itemCount(s, o.item), o.count) : p.have;
       return h("div", { class: ["q-obj", p.done && "done"] },
         h("span", { class: ["tile-mini", `r-${item?.rarity ?? "common"}`], style: { backgroundImage: art ? app.img(art) : undefined } }, !art && icon(p.done ? "sparkle" : "chevron", 12)),
-        h("div", { class: "grow" }, h("div", null, p.label), h("div", { class: "muted" }, (st === "active" || st === "ready") && !p.done ? (objectiveDestination(app, o)?.where ?? q.hint) : o.item ? q.hint : "")),
+        h("div", { class: "grow" }, h("div", null, p.label), h("div", { class: "muted" }, (st === "active" || st === "ready") && !p.done ? (objectiveDestination(app, o)?.where ?? q.hint) : o.item ? q.hint : ""),
+          (st === "active" || st === "ready") && p.need > 1 && h("div", { class: "q-bar" }, h("i", { style: { width: `${Math.min(100, shown / p.need * 100).toFixed(1)}%` } }))),
         h("b", { class: "tnum" }, `${fmt.int(shown)}/${fmt.int(p.need)}`));
     })),
-    h("div", { class: "row between q-foot" }, rewardsLine(app, q.rewards), h("div", { class: "row", style: { gap: "6px" } }, total > 1 && (st === "active" || st === "ready") && h("span", { class: "muted nowrap" }, `${fmt.int(have)} / ${fmt.int(total)}`), action)));
+    h("div", { class: "row between q-foot" }, h("div", { class: "q-rew" }, rewardsLine(app, q.rewards)), h("div", { class: "row", style: { gap: "6px" } }, total > 1 && (st === "active" || st === "ready") && h("span", { class: "muted nowrap" }, `${fmt.int(have)} / ${fmt.int(total)}`), action)));
 }
 
 function objLabel(app: App, o: any): string {
@@ -87,7 +90,8 @@ export function missionHallScreen(app: App, giver = "sectloc.mission_hall"): Scr
       list.sort((a, b) => order[a.st]! - order[b.st]! || a.q.difficulty - b.q.difficulty);
       const rank = nextRank(s, c);
       const taken = list.filter((x) => x.st === "active" || x.st === "ready").length;
-      const later = c.byPrefix<any>("quest").filter((q) => q.giver === giver && questStatus(s, c, q, now) === "locked").length;
+      const lockedQs = c.byPrefix<any>("quest").filter((q) => q.giver === giver && questStatus(s, c, q, now) === "locked");
+      const later = lockedQs.length;
       // Fame lives in the screen header (mockup mission_hall); the hall art is a band behind the board title
       const fame = rank && h("div", { class: "sb-fame" }, h("div", { class: "row between" }, h("span", null, "Sect Fame"), h("b", { class: "tnum" }, `${fmt.int(s.resources.sect_fame)} / ${fmt.int(rank.rank.fame_required)}`)),
         bar(Math.min(1, s.resources.sect_fame / rank.rank.fame_required), { cls: "gold thin" }));
@@ -100,8 +104,12 @@ export function missionHallScreen(app: App, giver = "sectloc.mission_hall"): Scr
             h("div", { class: "board-sub" }, "Deliver materials from your adventures to earn Fame"),
             list.length > 0 && h("div", { class: "board-pips", "aria-label": `${taken} of ${list.length} requests taken` }, h("span", null, `Taken ${taken}/${list.length}`),
               h("span", { class: "pips" }, list.slice(0, 8).map((_x, i) => h("i", { class: i < taken && "on" })))))),
-        list.length ? list.map((x) => questCard(app, x.q, { where: giver })) : h("div", { class: "glass panel center muted" }, "No requests right now."),
-        h("div", { class: "board-more muted" }, icon("scroll", 12), later ? ` ${later} more request${later > 1 ? "s" : ""} will be pinned here as you explore new regions and rise in rank.` : " New requests are pinned here as you explore and rise in rank."),
+        // the board itself (UI review S9): paper notices pinned on wood, the next locked requests as sealed notices
+        h("div", { class: "notice-board" },
+          list.length ? list.map((x) => questCard(app, x.q, { where: giver })) : h("div", { class: "notice-empty" }, "No requests right now."),
+          lockedQs.slice(0, 2).map((q) => h("div", { class: "notice-sealed" }, h("span", { class: "wax", "aria-hidden": "true" }, "封"),
+            h("div", { class: "grow" }, h("b", null, "Sealed request"), h("div", null, checkUnlock(s, c, q.prereqs as any).reasons[0] ?? "Opens later")))),
+          h("div", { class: "board-more" }, icon("scroll", 12), later > 2 ? ` ${later - 2} more sealed request${later - 2 > 1 ? "s" : ""} open as you explore new regions and rise in rank.` : later ? " Sealed requests open as you explore and rise in rank." : " New requests are pinned here as you explore and rise in rank.")),
       ];
     },
   };

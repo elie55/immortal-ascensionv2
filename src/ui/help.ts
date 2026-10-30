@@ -23,7 +23,7 @@ export const HELP: Record<string, { title: string; line: string; points: string[
     "Awaken: unlocks the piece's special effect permanently.", "Craft: recipes come from blueprints you studied."] },
   alchemy: { title: "Alchemy Hall", line: "Pick a recipe, load materials, refine. Success and yield grow with your furnace grade and proficiency.", points: [
     "Each load has a success chance; failures still give proficiency.", "Proficiency unlocks higher grades of pills; the furnace upgrades with materials.", "Recipes come from manuals and shops; unknown ones show what unlocks them."] },
-  autobattle: { title: "Auto-battle", line: "Rules fire top to bottom: the first rule whose condition is true picks the technique. Drag ▲▼ to reorder.", points: [
+  autobattle: { title: "Auto-battle", line: "Rules fire top to bottom: the first rule whose condition is true picks the technique. Open a rule to change it or move it.", points: [
     "Conditions: Always, My HP below N %, SP above N, No shield, Boss fights, Enemies ≥ N, Big attack coming (an elite or boss is winding up).", "Targets: Default, Lowest HP, Strongest, Weakest, Toughest.", "Up to three presets (Balanced, Boss, Farming); the active one is used in every auto battle.", "Switch Manual in battle to choose every move yourself."] },
   techniques: { title: "Techniques", line: "Four active slots, two passive, one ultimate. Mastery grows with use and raises power.", points: [
     "Learn techniques from manuals (Scripture Pavilion, drops, quests).", "Elements matter: a technique of the element your enemy is weak to deals more.", "Your cultivation method sets your Qi rate; its mastery grows while you cultivate."] },
@@ -45,9 +45,9 @@ export const HELP: Record<string, { title: string; line: string; points: string[
 const seen = (app: App, key: string) => app.game.state.progress.hintsSeen.includes(key);
 const armed = new Set<string>();
 
-/** First-visit coach mark: a bubble that floats under the (?) of the title bar, over the content (it takes no room:
- *  the stacked hint banners pushed every screen down, UI review G1). Tapping it dismisses it for good; (?) keeps the
- *  full help. */
+/** First-visit coach mark: a slim bubble under the title bar pointing at its (?), in the flow so it never covers a
+ *  control (a floating version hid buttons and caught their taps). The player's first tap anywhere retires it for
+ *  good; (?) keeps the full help. */
 export function hintBar(app: App, key: string) {
   const hp = HELP[key];
   if (!hp || seen(app, key)) return null;

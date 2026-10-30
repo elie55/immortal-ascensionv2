@@ -8,7 +8,7 @@ Worn gear takes no slot. Numbers live in `content/meta/cultivation_rules.json �
 | Bag | 100 | +10 | +20 slots | 5 |
 | Depot (Your Quarters) | 200 | +10 | +20 slots | 10 |
 
-Expansion *n* costs `500 · 2^n` spirit stones (`expand`, `expansionCost`). Both are drawn as **pages of 20 slots**
+Expansion *n* costs `500 · 2^n` spirit stones (`expand`, `expansionCost`). Both are drawn as **pages of 24 slots** (six columns × four rows)
 (`pagedGrid`), empty slots included, so the capacity is visible.
 
 ## Where things live

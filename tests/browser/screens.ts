@@ -115,7 +115,7 @@ await page.locator(".sheet-backdrop").click({ position: { x: 20, y: 20 } });
 await page.evaluate(() => { const g = (window as any).__ia.game; g.state.character.stage = 9; g.state.character.qi = 1e6; g.tick(0, Date.now()); });
 await page.locator(".cult-bt").click();
 await shot("cultivate-major-sheet");
-await page.locator(".sheet-backdrop").click({ position: { x: 20, y: 20 } });
+await page.locator(".modal.ceremony .btn", { hasText: "Not yet" }).click();
 
 // character
 await page.locator(".nav button", { hasText: "Character" }).click();
@@ -150,7 +150,7 @@ await page.locator(".sp", { hasText: "Meditation Waterfall" }).click();
 await shot("sect-location");
 await page.getByText("Cultivate here").click();
 check(await page.evaluate(() => (window as any).__ia.game.state.character.location) === "sectloc.meditation_waterfall", "Cultivate here moves cultivation to the waterfall");
-// Your Quarters → Storage chest: store a stack, take it back (bag ↔ depot, 20 slots a page)
+// Your Quarters → Storage chest: store a stack, take it back (bag ↔ depot, 24 slots a page)
 await page.locator(".nav button", { hasText: "Sect" }).click(); await page.locator(".nav button", { hasText: "Sect" }).click(); await need('[data-screen="sect"]');
 await page.locator(".sp", { hasText: "Your Quarters" }).click(); await need('[data-screen^="loc:"]');
 await page.locator(".setrow", { hasText: "Storage chest" }).last().click(); await need('[data-screen="depot"]');

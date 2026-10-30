@@ -95,57 +95,80 @@ function doMinor(app: App, affordable: number) {
   if (r.ok) minorBurst(app, affordable > 1 ? (r as any).count : 1, before);
 }
 
-/** Short celebratory overlay for minor breakthroughs: new stage and stat gains. */
+/** Minor breakthrough (UI review S2): Qi spirals into the stage seal, a ring of light, the stage number turns over and
+ *  the gains rise one by one. 1.9 s, tap to skip. */
 export function minorBurst(app: App, count: number, before?: StatBlock) {
   const s = app.game.state;
   const after = computeStats(s, app.content).total;
   const gains = before ? ["hp", "atk", "def", "sp_power"].map((k) => [k, (after[k] ?? 0) - (before[k] ?? 0)] as const).filter(([, d]) => d > 0) : [];
   const id = "burst";
+  const to = s.character.stage, from = Math.max(1, to - count);
   app.router.open({ id, kind: "modal", cls: "burst",
     render: (close) => h("div", { class: "burst-in", onClick: close },
+      h("div", { class: "burst-qi", "aria-hidden": "true" }, Array.from({ length: 3 }, (_, i) => h("i", { style: { "--i": String(i) } as any }))),
       h("div", { class: "burst-ring" }),
-      h("div", { class: "cn", style: { fontSize: "calc(14rem / 15)" } }, "突 破"),
-      h("div", { class: "m-title" }, count > 1 ? `+${count} Stages` : "Breakthrough"),
-      h("div", { class: "m-sub" }, `${app.content.get<any>(s.character.realm).name} · Stage ${s.character.stage}`),
-      gains.length > 0 && h("div", { class: "row", style: { justifyContent: "center", flexWrap: "wrap", gap: "6px" } }, gains.map(([k, d]) => h("span", { class: "tag jade" }, `${attrLabel(k)} +${attrValue(k, d)}`)))) });
+      h("div", { class: "burst-brush" }, "突破"),
+      h("div", { class: "burst-stage" }, h("span", { class: "bs-from" }, `Stage ${from}`), h("span", { class: "bs-arrow" }, "›"), h("span", { class: "bs-to" }, `Stage ${to}`)),
+      h("div", { class: "m-sub" }, count > 1 ? `${count} stages · ${app.content.get<any>(s.character.realm).name}` : app.content.get<any>(s.character.realm).name),
+      gains.length > 0 && h("div", { class: "burst-gains" }, gains.map(([k, d], i) => h("span", { class: "bg-gain", style: { "--i": String(i) } as any }, h("span", null, attrLabel(k)), h("b", null, `+${attrValue(k, d)}`))))) });
   setTimeout(() => app.router.close(id), 1900);
 }
 
+/** The realm's Chinese name without its trailing 期/境, for the brush seals. */
+const sealCn = (rl: any) => (rl.name_cn ?? "").replace(/[期境]$/, "").slice(0, 3);
+
+/** Major breakthrough (UI review S2): a full-screen ceremony instead of a form-like sheet. The two realm seals face
+ *  each other over an array circle, requirements are talismans that light up when met, and Break Through is held
+ *  (0.9 s) to channel the attempt; Enter or a keyboard press acts at once. */
 function openMajorSheet(app: App) {
-  app.router.open({ id: "major", kind: "sheet", render: (close) => {
+  app.router.open({ id: "major", kind: "modal", cls: "ceremony", render: (close) => {
     const s = app.game.state, c = app.content;
     const realm = c.get<any>(s.character.realm), next = c.nextRealm(realm.id);
-    if (!next) return h("div", { class: "center" }, h("div", { class: "m-title" }, "The summit"), h("p", { class: "dim" }, "There is no realm above the Immortal Emperor."));
+    if (!next) return h("div", { class: "center" }, h("div", { class: "m-title" }, "The summit"), h("p", { class: "dim" }, "There is no realm above the Immortal Emperor."), h("button", { class: "btn block", onClick: close }, "Close"));
     const reqs = majorRequirements(s, c);
     const ch = majorChance(s, c);
     const ready = reqs.every((r) => r.met);
     const gains = Object.entries(next.realm_bonus as Record<string, number>);
     const missing = reqs.filter((r) => !r.met);
-    // where to get a missing pill or item: the same lookup the quest tracker uses
     const getIt = (r: any) => { if (r.kind !== "item" || r.met) return null; const d = objectiveDestination(app, { type: "collect", item: r.id, count: r.need }); return d && h("button", { class: "link-btn jade-t", onClick: () => { close(); d.go(); } }, "Get it ›"); };
-    const medal = (rl: any) => h("span", { class: "rt-medal" }, h("b", { class: "cn" }, (rl.name_cn ?? "").replace(/[期境]$/, "").slice(0, 2)), h("span", null, rl.name));
-    return h("div", null,
-      h("div", { class: "realm-trans" }, medal(realm), h("span", { class: "rt-arrow" }, "➜"), medal(next)),
-      h("div", { class: "m-title center" }, `Ascend to ${next.name}`),
-      h("div", { class: "m-sub center" }, next.description),
-      section("Requirements", ready ? "All requirements met" : `${missing.length} missing`,
-        h("div", { class: "rows" }, reqs.map((r) => h("div", { class: ["setrow", r.met && "met"] },
-          icon(r.kind === "qi" ? "qi" : r.kind === "item" ? "cauldron" : r.kind === "tribulation" ? "bolt" : "sword", 18),
-          h("div", { class: "grow" }, h("div", { class: "lbl" }, r.label), h("div", { class: "desc tnum" }, r.kind === "qi" ? `${fmt.int(Math.min(r.have, r.need))} / ${fmt.int(r.need)}${r.met ? " ✓" : ""}` : r.kind === "tribulation" ? "Survive the heavenly lightning (combat)" : r.kind === "trial" ? "Clear the trial first" : `${Math.min(r.have, r.need)} / ${r.need} in your bag${r.met ? " ✓" : ""}`)),
-          getIt(r) ?? h("span", { class: ["tag", r.met ? "jade" : ""] }, r.met ? "Ready" : "Missing"))))),
-      section("Success chance", `${Math.round(ch.total * 100)}%`,
-        h("dl", { class: "kv" }, h("dt", null, "Base"), h("dd", null, `${Math.round(ch.base * 100)}%`), ...ch.parts.flatMap((p) => [h("dt", null, p.label), h("dd", { class: "jade-t" }, `+${Math.round(p.bonus * 100)}%`)])),
-        ch.total < 1 && h("div", { class: "muted", style: { marginTop: "6px" } }, `On failure you keep your realm and lose ${Math.round(c.rules.major_breakthrough.fail_qi_loss_pct * 100)}% of the stage's Qi. Required pills are consumed.`)),
-      gains.length > 0 && section("You will gain", null, h("div", { class: "row", style: { flexWrap: "wrap", gap: "6px" } }, gains.map(([k, v]) => h("span", { class: "tag gold" }, `${attrLabel(k)} +${attrValue(k, v)}`)))),
-      !ready && h("div", { class: "muted center", style: { margin: "2px 0 6px" } }, `Missing: ${missing.map((r) => r.label).join(", ")}`),
-      h("div", { class: "grid-2", style: { marginTop: "4px" } },
+    const desc = String(next.description ?? "").replace(new RegExp(`^${next.name}[,:]?\\s*`), "");
+    const attempt = () => { close(); const r = act(app, "major breakthrough", (st, ct) => breakThrough(st, ct, { now: app.now() })); if (r.ok) majorResult(app, r.success, r.chance ?? 0, realm.id); };
+    return h("div", { class: "cer" },
+      h("div", { class: "cer-array", "aria-hidden": "true" }),
+      h("div", { class: "cer-eyebrow" }, "Great realm breakthrough"),
+      h("div", { class: "cer-seals" },
+        h("div", { class: "cer-seal from" }, h("b", null, sealCn(realm)), h("span", null, realm.name)),
+        h("div", { class: "cer-link" }, h("i"), h("i"), h("i")),
+        h("div", { class: "cer-seal to" }, h("b", null, sealCn(next)), h("span", null, next.name))),
+      h("div", { class: "cer-title" }, `Ascend to ${next.name}`),
+      desc && h("div", { class: "cer-desc" }, desc.charAt(0).toUpperCase() + desc.slice(1)),
+      h("div", { class: "cer-talismans" }, reqs.map((r) => h("div", { class: ["talisman", r.met && "met"] },
+        h("span", { class: "tl-ico" }, icon(r.kind === "qi" ? "qi" : r.kind === "item" ? "cauldron" : r.kind === "tribulation" ? "bolt" : "sword", 18)),
+        h("span", { class: "tl-lbl" }, r.label),
+        h("span", { class: "tl-val tnum" }, r.kind === "qi" ? `${fmt.compact(Math.min(r.have, r.need))} / ${fmt.compact(r.need)}` : r.kind === "tribulation" ? "Heavenly lightning" : r.kind === "trial" ? "Clear the trial" : `${Math.min(r.have, r.need)} / ${r.need}`),
+        getIt(r) ?? h("span", { class: "tl-seal" }, r.met ? "✓" : "")))),
+      h("div", { class: "cer-row" },
+        h("div", { class: "cer-chance", style: { "--p": String(Math.round(ch.total * 100)) } as any }, h("b", { class: "tnum" }, `${Math.round(ch.total * 100)}%`), h("span", null, "success")),
+        h("div", { class: "cer-gains" }, h("div", { class: "lab" }, "You will gain"), h("div", { class: "cg-list" }, gains.map(([k, v]) => h("span", { class: "cg" }, h("span", null, attrLabel(k)), h("b", { class: "tnum" }, `+${attrValue(k, v)}`)))))),
+      ch.total < 1 && h("div", { class: "cer-note" }, `On failure you keep your realm and lose ${Math.round(c.rules.major_breakthrough.fail_qi_loss_pct * 100)}% of the stage's Qi. Required pills are consumed.`),
+      !ready && h("div", { class: "cer-missing" }, `Missing: ${missing.map((r) => r.label).join(", ")}`),
+      h("div", { class: "cer-actions" },
         h("button", { class: "btn ghost", onClick: close }, "Not yet"),
-        h("button", { class: "btn gold", disabled: !ready, onClick: () => {
-          close();
-          const r = act(app, "major breakthrough", (st, ct) => breakThrough(st, ct, { now: app.now() }));
-          if (r.ok) majorResult(app, r.success, r.chance ?? 0, realm.id);
-        } }, "Break Through")));
+        holdButton("Break Through", ready ? "Hold to channel" : "Requirements missing", !ready, attempt)));
   } });
+}
+
+/** A gold button that fires after being held (a ring fills); keyboard activation fires at once. The hold state lives
+ *  outside the render: the overlay is rebuilt every game tick and must not lose a press in progress. */
+let holdTimer: ReturnType<typeof setTimeout> | undefined;
+let holding = false;
+function holdButton(label: string, sub: string, disabled: boolean, onDone: () => void) {
+  const stop = (e?: Event) => { clearTimeout(holdTimer); holding = false; (e?.currentTarget as HTMLElement | undefined)?.classList.remove("holding"); };
+  return h("button", { class: ["btn gold cta hold-btn", holding && "holding"], disabled,
+    onPointerdown: (e: Event) => { holding = true; (e.currentTarget as HTMLElement).classList.add("holding"); clearTimeout(holdTimer); holdTimer = setTimeout(() => { holding = false; onDone(); }, 900); },
+    onPointerup: stop, onPointerleave: stop, onPointercancel: stop,
+    onKeydown: (e: KeyboardEvent) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onDone(); } } },
+    h("span", { class: "hold-fill", "aria-hidden": "true" }), h("span", { class: "cta-l" }, label), h("span", { class: "cta-s" }, sub));
 }
 
 function majorResult(app: App, success: boolean, chance: number, _fromRealm: string) {
@@ -154,8 +177,10 @@ function majorResult(app: App, success: boolean, chance: number, _fromRealm: str
   app.router.open({ id: "major-result", kind: "modal", cls: ["major-result", success ? "win" : "lose"].join(" "), dismissible: false,
     render: (close) => h("div", null,
       success && h("div", { class: "major-bg", style: { backgroundImage: app.img(c.art(realm.id, "breakthrough_bg")) } }),
+      success && h("div", { class: "light-pillar", "aria-hidden": "true" }),
       h("div", { class: "burst-ring big" }),
-      h("div", { class: "cn center", style: { fontSize: "calc(16rem / 15)" } }, success ? `${realm.name_cn ?? ""} · 大境界突破` : "天 意 难 违"),
+      h("div", { class: "mr-brush" }, success ? sealCn(realm) : "天意难违"),
+      h("div", { class: "cn center", style: { fontSize: "calc(13rem / 15)", letterSpacing: ".3em" } }, success ? "大境界突破" : ""),
       h("div", { class: "m-title", style: { fontSize: "calc(26rem / 15)" } }, success ? realm.name : "The heavens resist"),
       h("div", { class: "m-sub" }, success ? realm.description : `Your foundation shook (${Math.round(chance * 100)}% chance). Steady your Qi and try again.`),
       success && h("div", { class: "row", style: { justifyContent: "center", flexWrap: "wrap", gap: "6px", marginBottom: "12px" } },

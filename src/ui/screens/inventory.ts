@@ -1,7 +1,7 @@
 /**
- * Inventory tab (mockup "inventory_icons"/"inventory_full"): category chips, rarity counts, sort, the bag drawn
- * as pages of 20 slots (empty slots visible, so capacity means something), the overflow pouch when drops did
- * not fit, bag expansions, and the selected item's detail panel with Lock / Compare / Equip or Use.
+ * Inventory tab (mockup "inventory_icons"/"inventory_full"): category chips, rarity filter and sort dropdowns, the
+ * bag drawn as pages of 24 slots (6 × 4; empty slots visible, so capacity means something), the overflow pouch when
+ * drops did not fit, bag expansions, and the selected item's detail docked at the bottom (Lock / Compare / Equip or Use).
  * The depot (Your Quarters) has its own screen: depotScreen.
  */
 import { h, fmt } from "../core/dom.ts";
@@ -21,7 +21,8 @@ const catOf = (id: string): Cat => { const p = id.split(".")[0]; return p === "m
 
 export type Entry = { key: string; kind: "gear"; uid: number; rarity: string; name: string; score: number } | { key: string; kind: "stack"; id: string; qty: number; rarity: string; name: string; score: number };
 
-const ui = { cat: "all" as Cat, sort: "rarity" as "rarity" | "name" | "cp", selected: null as string | null, page: 0 };
+const ui = { cat: "all" as Cat, sort: "rarity" as "rarity" | "name" | "cp", rarity: "all" as string, selected: null as string | null, page: 0 };
+const SORTS = { rarity: "Rarity", cp: "Value", name: "Name" } as const;
 
 /** Entries of the bag or the depot, sorted. */
 export function entriesOf(app: App, where: "bag" | "depot"): Entry[] {
@@ -40,46 +41,69 @@ export function sortEntries(entries: Entry[], sort: "rarity" | "name" | "cp") {
 }
 const filterCat = (entries: Entry[], cat: Cat) => entries.filter((e) => cat === "all" || (cat === "gear" ? e.kind === "gear" : e.kind === "stack" && catOf(e.id) === cat));
 
+/** A short list of choices in a bottom sheet (rarity filter, sort order): tap one to apply. */
+function pickSheet(app: App, id: string, title: string, options: { value: string; label: string; count?: number; rarity?: string }[], cur: string, onPick: (v: string) => void) {
+  app.router.open({ id, kind: "sheet", render: (close) => h("div", { class: "pick" },
+    h("div", { class: "sec-h" }, h("h3", null, title)),
+    options.map((o) => h("button", { class: ["pick-row", o.value === cur && "on", o.rarity && `r-${o.rarity}`], disabled: o.count === 0 && o.value !== cur, onClick: () => { onPick(o.value); close(); } },
+      o.rarity ? h("i", { class: "pick-dot" }) : null, h("span", { class: ["grow", o.rarity && `rt-${o.rarity}`] }, o.label),
+      o.count !== undefined && h("span", { class: "muted tnum" }, String(o.count)), o.value === cur && icon("check", 14)))) });
+}
+
+/** Inventory (UI review S4): six columns of slots with no names under them (the dock names the selected item), the
+ *  rarity filter and the sort order as two dropdown chips, the bag capacity and its expansion on the same line, and
+ *  the selected item's detail docked at the bottom so Lock · Compare · Equip / Use never scroll away. */
 export function inventoryScreen(app: App) {
   const s = app.game.state, c = app.content;
   const entries = entriesOf(app, "bag");
-  const counts = Object.fromEntries(RARITIES.map((r) => [r, entries.filter((e) => e.rarity === r).length]));
-  const shown = sortEntries(filterCat(entries, ui.cat), ui.sort);
+  const inCat = filterCat(entries, ui.cat);
+  const counts = Object.fromEntries(RARITIES.map((r) => [r, inCat.filter((e) => e.rarity === r).length]));
+  if (ui.rarity !== "all" && !counts[ui.rarity]) ui.rarity = "all";
+  const shown = sortEntries(inCat.filter((e) => ui.rarity === "all" || e.rarity === ui.rarity), ui.sort);
   if (ui.selected && !shown.some((e) => e.key === ui.selected)) ui.selected = null;
   if (!ui.selected && shown.length) ui.selected = shown[0]!.key;
   const sel = shown.find((e) => e.key === ui.selected);
   const cp = computeStats(s, c).cp;
   const refresh = () => app.router.refresh();
   const cap = bagCapacity(s, c), used = bagUsed(s), pouch = pouchCount(s);
-  const size = c.rules.inventory.page_size;
-  // the page count follows the capacity in "All" (every slot is drawn), the filtered list otherwise
-  const pageCap = ui.cat === "all" ? cap : shown.length;
+  // the page count follows the capacity when nothing is filtered (every slot is drawn), the filtered list otherwise
+  const pageCap = ui.cat === "all" && ui.rarity === "all" ? cap : shown.length;
   const tileOf = (e: Entry) => e.kind === "gear"
-    ? gearTile(app, e.uid, { named: true, selected: e.key === ui.selected, onClick: () => { ui.selected = e.key; refresh(); } })
-    : stackTile(app, e.id, { named: true, selected: e.key === ui.selected, onClick: () => { ui.selected = e.key; refresh(); } });
+    ? gearTile(app, e.uid, { selected: e.key === ui.selected, onClick: () => { ui.selected = e.key; refresh(); } })
+    : stackTile(app, e.id, { selected: e.key === ui.selected, onClick: () => { ui.selected = e.key; refresh(); } });
+  const full = used >= cap;
   return [
     header(app),
-    subbar({ help: { app, key: "inventory" }, title: "Inventory", cn: "行囊", sub: `${used} / ${cap} slots · page ${Math.min(ui.page, Math.ceil(Math.max(1, pageCap) / size) - 1) + 1} of ${Math.max(1, Math.ceil(Math.max(pageCap, 1) / size))}`, end: h("span", { class: "cp-chip" }, icon("cp", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(cp)))) }),
+    subbar({ help: { app, key: "inventory" }, title: "Inventory", cn: "行囊", sub: `${entries.length} item${entries.length === 1 ? "" : "s"} in your bag · worn gear is on Character`, end: h("span", { class: "cp-chip" }, icon("cp", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(cp)))) }),
     pouch > 0 && h("div", { class: "glass panel pouch-bar" }, icon("pouch", 20),
-      h("div", { class: "grow" }, h("b", null, `${pouch} drop${pouch > 1 ? "s" : ""} waiting in your overflow pouch`), h("span", null, used >= cap ? "Your bag is full: sell, use or store something, then claim them." : "Claim them into your bag.")),
-      h("button", { class: ["btn sm", used < cap && "gold"], onClick: () => { const r = app.game.run("pouch", app.now(), (st, ct) => claimOverflow(st, ct)); app.router.toast(r.ok ? `Claimed ${(r as any).moved} · ${(r as any).left} still waiting` : r.reason, r.ok ? "good" : "bad"); } }, "Claim")),
+      h("div", { class: "grow" }, h("b", null, `${pouch} drop${pouch > 1 ? "s" : ""} waiting in your overflow pouch`), h("span", null, full ? "Your bag is full: sell, use or store something, then claim them." : "Claim them into your bag.")),
+      h("button", { class: ["btn sm", !full && "gold"], onClick: () => { const r = app.game.run("pouch", app.now(), (st, ct) => claimOverflow(st, ct)); app.router.toast(r.ok ? `Claimed ${(r as any).moved} · ${(r as any).left} still waiting` : r.reason, r.ok ? "good" : "bad"); } }, "Claim")),
     h("div", { class: "chips glass" }, CATS.map((ct) => h("button", { class: ["chip", ui.cat === ct.id && "on"], onClick: () => { ui.cat = ct.id; ui.selected = null; ui.page = 0; refresh(); } }, ct.label))),
-    h("div", { class: "row inv-counts" },
-      RARITIES.map((r) => h("span", { class: `rc r-${r}`, title: r }, h("i", null), String(counts[r]))),
-      h("button", { class: "tag", style: { marginLeft: "auto" }, onClick: () => { ui.sort = ui.sort === "rarity" ? "cp" : ui.sort === "cp" ? "name" : "rarity"; refresh(); } }, icon("sort", 11), ui.sort === "rarity" ? "Rarity" : ui.sort === "cp" ? "Value" : "Name")),
-    h("div", { class: "glass panel" },
-      h("div", { class: "row between", style: { marginBottom: "6px" } }, capacityMeter(used, cap, "Bag"), expandButton(app, "bag")),
-      shown.length === 0 && ui.cat !== "all" ? h("div", { class: "muted center", style: { padding: "28px 0" } }, "Nothing here yet.")
+    h("div", { class: "inv-tools" },
+      h("button", { class: ["dd-chip", ui.rarity !== "all" && `r-${ui.rarity} on`], "aria-label": "Filter by rarity", onClick: () => pickSheet(app, "rarity", "Rarity",
+          [{ value: "all", label: "All rarities", count: inCat.length }, ...RARITIES.map((r) => ({ value: r, label: RARITY_LABEL[r]!, count: counts[r]!, rarity: r }))], ui.rarity, (v) => { ui.rarity = v; ui.selected = null; ui.page = 0; refresh(); }) },
+        ui.rarity === "all" ? h("span", { class: "dd-dots" }, RARITIES.filter((r) => counts[r]).slice(0, 4).map((r) => h("i", { class: `r-${r}` }))) : h("i", { class: "pick-dot" }),
+        h("span", null, ui.rarity === "all" ? "All" : RARITY_LABEL[ui.rarity]), h("b", { class: "tnum" }, String(shown.length)), h("span", { class: "dd-car" }, "▾")),
+      h("button", { class: "dd-chip", "aria-label": "Sort order", onClick: () => pickSheet(app, "sort", "Sort by", (Object.keys(SORTS) as (keyof typeof SORTS)[]).map((k) => ({ value: k, label: SORTS[k] })), ui.sort, (v) => { ui.sort = v as typeof ui.sort; refresh(); }) },
+        icon("sort", 11), h("span", null, SORTS[ui.sort]), h("span", { class: "dd-car" }, "▾")),
+      h("span", { class: "grow" }),
+      h("span", { class: ["inv-cap", full && "full"], title: "Bag slots used" }, icon("pouch", 12), h("b", { class: "tnum" }, String(used)), h("span", null, `/ ${cap}`)),
+      expandButton(app, "bag", true)),
+    h("div", { class: "glass panel inv-panel" },
+      shown.length === 0 && pageCap === shown.length ? h("div", { class: "muted center", style: { padding: "28px 0" } }, "Nothing here yet.")
         : pagedGrid(app, shown.map(tileOf), pageCap, ui.page, (p) => { ui.page = p; refresh(); })),
-    sel && (sel.kind === "gear" ? gearDetail(app, sel.uid, { onChange: refresh }) : stackDetail(app, sel.id, { onChange: refresh })),
+    sel && h("div", { class: "inv-dock", dataset: { key: "inv-dock" } }, sel.kind === "gear" ? gearDetail(app, sel.uid, { onChange: refresh }) : stackDetail(app, sel.id, { onChange: refresh })),
   ];
 }
 
 /** "+20 slots · cost" button; disabled at the maximum. */
-function expandButton(app: App, which: "bag" | "depot") {
+function expandButton(app: App, which: "bag" | "depot", mini = false) {
   const s = app.game.state, c = app.content;
   const cost = expansionCost(s, c, which);
-  if (cost === null) return h("span", { class: "tag" }, "Max size");
+  if (cost === null) return mini ? null : h("span", { class: "tag" }, "Max size");
+  if (mini) return h("button", { class: "icon-btn inv-exp", "aria-label": `Expand your ${which}: +${c.rules.inventory.expansion_slots} slots for ${fmt.int(cost)} spirit stones`, title: `+${c.rules.inventory.expansion_slots} slots · ${fmt.int(cost)} stones`, onClick: () => confirmModal(app, { title: `Expand your ${which}?`, body: `+${c.rules.inventory.expansion_slots} slots for ${fmt.int(cost)} spirit stones. Permanent.`, ok: "Expand" }, () => {
+    const r = app.game.run("expand", app.now(), (st, ct) => buyExpansion(st, ct, which)); app.router.toast(r.ok ? `+${(r as any).slots} slots` : r.reason, r.ok ? "good" : "bad");
+  }) }, icon("plus", 13));
   return h("button", { class: "btn sm ghost", onClick: () => confirmModal(app, { title: `Expand your ${which}?`, body: `+${c.rules.inventory.expansion_slots} slots for ${fmt.int(cost)} spirit stones. Permanent.`, ok: "Expand" }, () => {
     const r = app.game.run("expand", app.now(), (st, ct) => buyExpansion(st, ct, which)); app.router.toast(r.ok ? `+${(r as any).slots} slots` : r.reason, r.ok ? "good" : "bad");
   }) }, icon("plus", 12), `+${c.rules.inventory.expansion_slots}`, h("span", { class: "cta-s" }, icon("gem", 10), ` ${fmt.int(cost)}`));

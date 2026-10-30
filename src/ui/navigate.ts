@@ -83,6 +83,12 @@ function goItemSource(app: App, item: string): Destination | null {
   return null;
 }
 
+/** Where an item comes from, as a short place name ("Blazing Mountain", "Mission Hall"), for hints. */
+export function itemSourcePlace(app: App, item: string): string | null {
+  const d = goItemSource(app, item);
+  return d ? d.where.split(" · ")[0]! : null;
+}
+
 /** Where to go for one objective. */
 export function objectiveDestination(app: App, o: any): Destination | null {
   const c = app.content, s = app.game.state;

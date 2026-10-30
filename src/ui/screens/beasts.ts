@@ -18,6 +18,7 @@ import { npcScreen } from "./npc.ts";
 import { questStatus } from "../../engine/progression.ts";
 import { missionHallScreen } from "./quests.ts";
 import type { Quest } from "../../content/index.ts";
+import { itemSourcePlace } from "../navigate.ts";
 
 const ELEM: Record<string, string> = { "elem.wood": "Wood", "elem.fire": "Fire", "elem.earth": "Earth", "elem.metal": "Metal", "elem.water": "Water" };
 
@@ -38,7 +39,7 @@ export function beastsScreen(app: App, backTo: string): Screen {
         header(app),
         subbar({ help: { app, key: "beasts" }, title: "Spirit Beasts", cn: "灵兽", sub: `Companions · ${s.beasts.active !== null ? "1 fights beside you" : "none active"}`, backTo, onBack: () => app.router.back(),
           end: h("div", { class: "found" }, h("div", { class: "muted" }, "Found"), h("b", { class: "gold-t" }, `${found.size} / ${all.length}`)) }),
-        b ? activeCard(app, b) : h("div", { class: "glass panel center" }, icon("paw", 26), h("div", { class: "lbl", style: { marginTop: "6px" } }, "No spirit beast yet"), h("div", { class: "muted" }, "Place an egg in an incubator below. Eggs hatch from battles you win."), eggQuestHint(app)),
+        b ? activeCard(app, b) : emptyGarden(app),
         b && evolutionTrack(app, b),
         section("Your beasts", h("span", null, "Tap to view · set active"), h("div", { class: "beast-grid" },
           owned.map((x) => {
@@ -57,7 +58,10 @@ export function beastsScreen(app: App, backTo: string): Screen {
               bar(inc.wins / inc.need, { cls: "thin gold" }));
           }),
           Array.from({ length: Math.max(0, c.rules.beasts.incubators - s.beasts.incubating.length) }, () => h("button", { class: "glass beast-cell empty", onClick: () => eggSheet(app) }, h("span", { class: "egg-slot" }, icon("plus", 20)), h("div", { class: "bc-n" }, "Incubator"), h("div", { class: "muted" }, "Place an egg"))),
-          all.filter((d) => !found.has(d.id)).slice(0, 3).map((d) => h("div", { class: "glass beast-cell unknown" }, h("span", { class: `tile r-${d.rarity}` }, h("div", { class: "in" }, "?")), h("div", { class: "bc-n" }, "???"), h("div", { class: "muted" }, "Not found yet")))),
+          // not found yet (UI review G5): a silhouette and where its egg is found, the nearest first
+          unknown(app, all.filter((d) => !found.has(d.id))).slice(0, 3).map(({ d, where, art }) => h("div", { class: "glass beast-cell unknown" },
+            h("span", { class: `tile r-${d.rarity}` }, h("div", { class: "in" }, art ? h("div", { class: "art silhouette", style: { backgroundImage: app.img(art) } }) : icon("paw", 22))),
+            h("div", { class: "bc-n" }, "Undiscovered"), h("div", { class: "muted" }, where ? `Egg: ${where}` : "Not found yet")))),
           h("div", { class: "muted", style: { marginTop: "6px" } }, icon("info", 11), " Eggs hatch from Adventure battles you win, never from waiting.")),
         companionsPanel(app),
       ];
@@ -152,6 +156,30 @@ function evolveSheet(app: App, uid: number) {
 }
 
 /** A giver with an egg for the player (a quest that hands one over and is open to take): say who, and go there. */
+/** Beasts not found yet with their egg's place, eggs from places you know first. */
+function unknown(app: App, defs: any[]) {
+  const s = app.game.state, c = app.content;
+  const eggOf = (id: string) => c.byPrefix<any>("egg").find((e) => e.hatches_into === id);
+  return defs.map((d) => {
+    const egg = eggOf(d.id);
+    const where = egg ? itemSourcePlace(app, egg.id) : null;
+    const known = !!egg && (egg.tags ?? []).some((t: string) => s.progress.regions[`region.${t}`]);
+    return { d, where, art: c.artAny(d.id, "battle_0", "icon"), known };
+  }).sort((a, b) => Number(b.known) - Number(a.known));
+}
+
+/** No beast yet: an empty nest with the first egg the player can get, and who has it. */
+function emptyGarden(app: App) {
+  const c = app.content;
+  const firstEgg = c.byPrefix<any>("egg").find((e) => !(e.tags ?? []).length) ?? c.byPrefix<any>("egg")[0];
+  const art = firstEgg ? c.art(firstEgg.id, "icon") : undefined;
+  return h("section", { class: "glass panel hero-frame beast-empty" },
+    h("div", { class: "nest" }, h("span", { class: "nest-glow", "aria-hidden": "true" }), art ? h("span", { class: "nest-egg", style: { backgroundImage: app.img(art) } }) : icon("paw", 30)),
+    h("div", { class: "be-title" }, "Your garden awaits"),
+    h("div", { class: "muted" }, "Place an egg in an incubator: it hatches after the battles you win."),
+    eggQuestHint(app));
+}
+
 function eggQuestHint(app: App) {
   const s = app.game.state, c = app.content;
   if (Object.keys(s.inventory.stacks).some((k) => k.startsWith("egg.") && itemCount(s, k) > 0) || s.beasts.incubating.length) return null;

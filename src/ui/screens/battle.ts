@@ -8,7 +8,7 @@
  * Units keep their DOM nodes for the whole battle (bars animate, idle loops never restart); the engine's event
  * stream drives the animation. Victory and defeat panels follow the "victory" / "defeat" mockups.
  */
-import { h, fmt, replaceChildren, keep } from "../core/dom.ts";
+import { h, fmt, replaceChildren, keep, type Child } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
 import { AnimStage } from "../anim/stage.ts";
 import type { RigDef } from "../anim/rig.ts";
@@ -18,7 +18,9 @@ import type { App } from "../../app.ts";
 import { Encounter as EncounterCls, type Encounter } from "../../engine/encounter.ts";
 import type { Battle } from "../../engine/combat/battle.ts";
 import type { Combatant, BattleEvent, Skill } from "../../engine/combat/types.ts";
-import { gearTile, gearName } from "./items.ts";
+import { gearTile, gearName, gearCp, gearChips, comparedTo } from "./items.ts";
+import { equip } from "../../engine/actions.ts";
+import { equippedSlotOf } from "../../engine/inventory.ts";
 import { rewardsLine, regionScreen } from "./adventure.ts";
 import { nodeState } from "../../engine/nodes.ts";
 import { questProgress } from "../../engine/progression.ts";
@@ -106,7 +108,8 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   const modes = h("div", { class: "bt-controls" });
   const foePanel = h("div", { class: "bt-foe glass" });
   const warnSlot = h("div", { class: "bt-warn-slot" });
-  const hud = h("div", { class: "bt-hud" }, topbar, modes, foePanel, warnSlot);
+  // one top line (UI review S7): place and wave, then Manual/Auto, speed and pause on the same bar
+  const hud = h("div", { class: "bt-hud" }, topbar, foePanel, warnSlot);
   const foes = h("div", { class: "bt-foes" });
   const party = h("div", { class: "bt-party" });
   const order = h("div", { class: "bt-order", "aria-label": "Turn order" });
@@ -314,6 +317,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         trib && hz
           ? h("div", { class: "bt-sub row", style: { gap: "6px" } }, h("span", null, `Wave ${hzWave} / ${hz.waves.length}`), h("span", { class: "trib-pips" }, hz.waves.map((_, i) => h("i", { class: i < hzWave - 1 ? "done" : i === hzWave - 1 ? "cur" : "" }))), h("span", null, `· survive ${Math.max(0, (battle.opts.surviveRounds ?? 0) - battle.round + 1)} more`))
           : h("div", { class: "bt-sub" }, `Wave ${enc.wave + 1}/${enc.waves.length} · Round ${battle.round}${battle.opts.surviveRounds ? ` / ${battle.opts.surviveRounds}` : ""}${caption ? ` · ${caption}` : ""}`)),
+      modes,
       h("button", { class: "icon-btn bt-pause", "aria-label": playing ? "Pause" : "Resume", onClick: () => { playing = !playing; renderTop(); root.classList.toggle("paused", !playing); if (playing) loop(); } }, icon(playing ? "pause" : "play", 16)));
   }
 
@@ -321,7 +325,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const manual = battle.manual;
     replaceChildren(modes,
       h("div", { class: "seg" }, h("button", { class: manual && "on", onClick: () => setManual(true) }, "Manual"), h("button", { class: !manual && "on", onClick: () => setManual(false) }, icon("auto", 12), " Auto")),
-      h("div", { class: "seg" }, [1, 2, 3].map((x) => h("button", { class: speed === x && "on", "aria-label": `Speed ${x}×`, onClick: () => { speed = x; app.game.state.combat.speed = x as 1 | 2 | 3; app.game.dirty = true; renderModes(); } }, `${x}×`))));
+      h("button", { class: "bt-speed", "aria-label": `Speed ${speed}×, tap to change`, onClick: () => { speed = speed >= 3 ? 1 : speed + 1; app.game.state.combat.speed = speed as 1 | 2 | 3; app.game.dirty = true; renderModes(); } }, `${speed}×`));
   }
 
   function renderSkills() {
@@ -339,12 +343,13 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         title: `${s.name}${s.spCost ? ` · ${s.spCost} SP` : ""}${s.cooldown ? ` · cooldown ${s.cooldown}` : ""}` },
         h("span", { class: "sk-name" }, s.name),
         h("span", { class: "sk-art", style: art ? { backgroundImage: app.img(art) } : undefined }, !art && icon("sword", 22)),
+        cd > 0 && h("span", { class: "sk-sweep", "aria-hidden": "true", style: { "--cd": String(Math.min(1, cd / Math.max(1, s.cooldown))) } }),
         cd > 0 && h("span", { class: "sk-cd" }, String(cd)),
         s.kind === "basic" ? h("span", { class: "sk-cost free" }, "+SE") : s.spCost > 0 && h("span", { class: "sk-cost" }, `${s.spCost} SE`));
     };
     const actives = skills.filter((s) => s.kind !== "ultimate");
-    // one free slot at most says "you can equip more"; a row of locked "Empty" slots read unfinished (review 51)
-    const empty = Math.min(1, Math.max(0, 4 - actives.length));
+    // unused slots are hidden in battle (UI review G5); the Techniques screen says what can be equipped
+    const empty = 0;
     const ultBtn = ult ? (() => {
       const usable = battle.canUse(p, ult); const pct = Math.min(100, p.ult);
       const art = c.art(ult.id, "icon");
@@ -535,6 +540,8 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
 
   // ---------- loop ----------
   let busy = false;
+  /** Biggest single blow of the encounter (all waves), for the victory stats. */
+  let bestHit = { v: 0, crit: false };
   async function loop() {
     if (busy) return; busy = true;
     try {
@@ -542,6 +549,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       // keep stepping; a turn waiting for manual input only stops the loop in Manual (Auto plays it).
       for (;;) {
         const pending = battle.drain();
+        for (const e of pending) if (e.t === "hit" && !e.dodged && unit(e.actor)?.side === "ally" && e.amount + e.absorbed > bestHit.v) bestHit = { v: e.amount + e.absorbed, crit: e.crit };
         if (pending.length) { await animate(pending); renderUnits(); renderSkills(); }
         if (!playing || battle.result || (battle.manual && battle.needsInput)) break;
         battle.step();
@@ -569,12 +577,38 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
 
   function dropsBlock(d: { items: { id: string; qty: number }[]; spirit_stones: number; sect_fame: number }, gearUids: number[]) {
     const s = app.game.state;
+    let k = 0;
+    const upgrade = (u: number) => { const inst = s.inventory.gear[u]; if (!inst || equippedSlotOf(s, u)) return false; const vs = comparedTo(app, inst, u); return vs === undefined || gearCp(app, inst) > gearCp(app, s.inventory.gear[vs]!); };
     return h("div", null,
-      h("div", { class: "row", style: { justifyContent: "center", flexWrap: "wrap", gap: "6px" } },
+      h("div", { class: "row res-cur", style: { justifyContent: "center", flexWrap: "wrap", gap: "6px" } },
         d.spirit_stones > 0 && h("span", { class: "tag gold" }, icon("gem", 10), ` +${fmt.int(d.spirit_stones)}`), d.sect_fame > 0 && h("span", { class: "tag" }, icon("fame", 10), ` +${d.sect_fame} Fame`)),
       (d.items.length > 0 || gearUids.length > 0) && h("div", { class: "drop-grid" },
-        ...gearUids.map((u) => h("div", null, gearTile(app, u), h("div", { class: "tile-name" }, gearName(app, s.inventory.gear[u]!)))),
-        ...d.items.map((it) => { const def = c.get<any>(it.id); return h("div", null, h("div", { class: `tile r-${def.rarity ?? "common"}` }, h("div", { class: "in" }, c.art(it.id, "icon") ? h("div", { class: "art", style: { backgroundImage: app.img(c.art(it.id, "icon")) } }) : icon("sparkle", 20)), h("span", { class: "qty" }, `×${it.qty}`)), h("div", { class: "tile-name" }, def.name)); })));
+        ...gearUids.filter((u) => s.inventory.gear[u]).map((u) => h("div", { class: "drop", style: { "--i": String(k++) } as any }, gearTile(app, u), upgrade(u) && h("span", { class: "drop-up", title: "Better than what you wear" }, "▲"), h("div", { class: "tile-name" }, gearName(app, s.inventory.gear[u]!)))),
+        ...d.items.map((it) => { const def = c.get<any>(it.id); const fresh = (s.inventory.stacks[it.id] ?? 0) <= it.qty;
+          return h("div", { class: "drop", style: { "--i": String(k++) } as any }, h("div", { class: `tile r-${def.rarity ?? "common"}` }, h("div", { class: "in" }, c.art(it.id, "icon") ? h("div", { class: "art", style: { backgroundImage: app.img(c.art(it.id, "icon")) } }) : icon("sparkle", 20)), h("span", { class: "qty" }, `×${it.qty}`), fresh && h("span", { class: "new" }, "NEW")), h("div", { class: "tile-name" }, def.name)); })));
+  }
+
+  /** The best gear of the run against what is worn in its slot, with a one-tap Equip (mockup victory: highlighted drop). */
+  function bestDropCard(uids: number[]) {
+    const s = app.game.state;
+    const R = ["common", "uncommon", "rare", "epic", "legendary", "mythic", "immortal", "divine"];
+    const live = uids.filter((u) => s.inventory.gear[u]);
+    if (!live.length) return null;
+    const uid = live.sort((a, b) => R.indexOf(s.inventory.gear[b]!.rarity) - R.indexOf(s.inventory.gear[a]!.rarity) || gearCp(app, s.inventory.gear[b]!) - gearCp(app, s.inventory.gear[a]!))[0]!;
+    const inst = s.inventory.gear[uid]!; const base = c.get<any>(inst.base);
+    const cp = gearCp(app, inst); const vs = comparedTo(app, inst, uid); const vsCp = vs !== undefined ? gearCp(app, s.inventory.gear[vs]!) : 0;
+    const worn = equippedSlotOf(s, uid);
+    return h("div", { class: ["res-bestcard", `r-${inst.rarity}`] },
+      h("div", { class: "rb-tile" }, gearTile(app, uid)),
+      h("div", { class: "grow rb-info" },
+        h("div", { class: "rb-tag" }, icon("sparkle", 11), ` Best drop · ${RARITY_LABEL[inst.rarity]} ${base.slot}`),
+        h("div", { class: `rb-name rt-${inst.rarity}` }, gearName(app, inst)),
+        h("div", { class: "rb-chips" }, gearChips(app, inst, 3))),
+      h("div", { class: "rb-cp" },
+        h("span", { class: "muted up" }, "CP"), h("b", { class: "tnum" }, fmt.int(cp)),
+        worn ? h("span", { class: "jade-t rb-d" }, icon("check", 11), " Worn")
+          : h("span", { class: ["rb-d", cp >= vsCp ? "jade-t" : "red-t"] }, vs === undefined ? "Empty slot" : `${cp >= vsCp ? "▲" : "▼"} ${fmt.int(Math.abs(cp - vsCp))}`),
+        !worn && cp > vsCp && h("button", { class: "btn gold sm rb-eq", onClick: () => { const r = app.game.run("equip", app.now(), (st, ct) => equip(st, ct, uid)); if (r && (r as any).ok === false) app.router.toast((r as any).reason, "bad"); else app.router.toast(`Equipped ${gearName(app, inst)}`, "good"); } }, "Equip")));
   }
 
   /** Friendly spar result (mockup spar_result): the opponent's reaction, the spar rewards, Rematch / Back to talk. */
@@ -594,6 +628,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "victory spar", render: (close) => h("div", { class: "center" },
       h("div", { class: "res-head" }, h("div", { class: "res-rays", "aria-hidden": "true" }), h("div", { class: ["result-title", r.won ? "win" : "lose"] }, r.won ? "Victory" : "Defeated"), h("div", { class: "cn res-cn" }, r.won ? "切磋 · 胜" : "切磋 · 负"),
         h("div", { class: "res-ribbon" }, h("span", null, `Friendly spar · vs ${n.name}`))),
+      h("div", { class: "res-gap", "aria-hidden": "true" }),
       h("div", { class: "res-panel glass" },
         h("div", { class: "spar-say" }, h("span", { class: "spar-face", style: { backgroundImage: app.img(expr) } }), h("div", { class: "spar-bubble" }, h("span", { class: "bubble-n" }, n.name), h("div", null, line))),
         h("div", { class: "row", style: { gap: "8px", margin: "10px 0 4px" } }, h("span", { class: "pink-t", style: { fontWeight: 800, fontSize: "calc(11.5rem / 15)" } }, `♥ ${lvl.name}`), h("div", { class: "grow bar thin pink" }, h("i", { style: { width: `${lvl.next ? Math.min(100, (rel?.affinity ?? 0) / lvl.next.threshold * 100) : 100}%` } })), h("span", { class: "muted tnum" }, lvl.next ? `${rel?.affinity ?? 0} / ${lvl.next.threshold}` : `${rel?.affinity ?? 0}`)),
@@ -625,12 +660,16 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         h("div", { class: "result-title win" }, trib ? "Tribulation passed" : "Victory"),
         h("div", { class: "cn res-cn" }, trib ? "渡 劫 成 功" : "大 胜"),
         h("div", { class: "res-ribbon" }, mainEnemy && h("span", { class: "res-foe", style: { backgroundImage: app.img(c.art(mainEnemy.id, "icon")) } }, h("i", null, trib ? "Endured" : "Defeated")), h("span", null, trib ? "The heavens relent. Break through when you are ready." : `${mainEnemy?.name ?? enc.name} defeated`), r.firstClear && h("span", { class: "tag gold" }, "First clear"))),
+      h("div", { class: "res-gap", "aria-hidden": "true" }),
       h("div", { class: "res-panel glass" },
-        h("div", { class: "grid-3 res-stats" }, stat("Damage dealt", fmt.compact(sum.dealt)), stat("Damage taken", fmt.compact(sum.taken)), stat("HP left", `${fmt.int(Math.min(lastWave.summary.playerHp, battle.player.maxHp))} / ${fmt.int(battle.player.maxHp)}`)),
+        h("div", { class: "grid-3 res-stats" },
+          stat("sword", "Damage dealt", fmt.compact(sum.dealt)),
+          bestHit.v > 0 ? stat("bolt", "Highest hit", fmt.compact(bestHit.v), bestHit.crit ? "crit" : undefined) : stat("shield", "Damage taken", fmt.compact(sum.taken)),
+          stat("shield", "HP left", [hpNum(Math.min(lastWave.summary.playerHp, battle.player.maxHp)), h("small", null, `/ ${hpNum(battle.player.maxHp)}`)], undefined, Math.min(1, lastWave.summary.playerHp / Math.max(1, battle.player.maxHp)))),
         h("div", { class: "sec-h", style: { marginTop: "12px" } }, h("h3", null, "Rewards"), h("span", { class: "hint" }, `${r.masteryXp ? `Mastery +${r.masteryXp} XP` : ""}`)),
         dropsBlock(r.total, r.waves.flatMap((w) => w.gearUids)),
         r.firstClear && Object.keys(r.firstClear).length > 0 && h("div", { class: "res-first" }, h("span", { class: "muted up" }, "First clear"), rewardsLine(app, r.firstClear)),
-        bestGear && h("div", { class: "res-best" }, icon("sparkle", 14), h("span", null, "Best drop: ", h("b", { class: `rt-${bestGear.rarity}` }, `${RARITY_LABEL[bestGear.rarity]} ${c.get<any>(bestGear.base).name}`), ` · iLvl ${bestGear.ilvl}`)),
+        bestGear && bestDropCard(r.waves.flatMap((w) => w.gearUids)),
         trackedLine(),
         nextPlace ? h("div", { class: "res-btns3", style: { marginTop: "12px" } },
             h("button", { class: "btn ghost", onClick: () => { close(); onExit(); } }, icon("back", 14), "Map"),
@@ -694,7 +733,10 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     return h("div", { class: "res-track" }, icon("map", 13), h("span", { class: "grow" }, h("b", null, q.name), cur ? ` · ${cur.label} ${cur.have}/${cur.need}` : " · ready to turn in"),
       cur && h("div", { class: "bar gold thin" }, h("i", { style: { width: `${Math.min(100, cur.have / Math.max(1, cur.need) * 100)}%` } })));
   }
-  const stat = (l: string, v: string) => h("div", null, h("span", null, l), h("b", null, v));
+  const hpNum = (n: number) => n < 100_000 ? fmt.int(n) : fmt.compact(n);
+  const stat = (ic: string, l: string, v: Child, tag?: string, frac?: number) => h("div", { class: "rs-tile" },
+    h("span", { class: "rs-l" }, icon(ic, 11), l), h("b", { class: "tnum" }, v, tag && h("i", { class: "rs-tag" }, tag)),
+    frac !== undefined && h("div", { class: "rs-bar" }, h("i", { style: { width: `${(frac * 100).toFixed(1)}%` } })));
 
   function cheer() { for (const u of battle.units) if (u.side === "ally" && u.alive && rigged(u.uid)) puppets.play(u.uid, "victory", 1); }
   function renderAll() { renderTop(); renderModes(); renderUnits(); renderSkills(); }

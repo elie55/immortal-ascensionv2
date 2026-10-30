@@ -27,12 +27,12 @@ export const gearCp = (app: App, inst: GearInstance) => instanceCp(app.content.g
 export function gearTile(app: App, uid: number, o: { selected?: boolean; onClick?: () => void; named?: boolean } = {}) {
   const inst = app.game.state.inventory.gear[uid]!;
   const base = app.content.get<any>(inst.base);
-  return tile({ rarity: inst.rarity, art: gearArt(app, inst), fallbackIcon: SLOT_ICON[base.slot] ?? "sword", plus: inst.enhance, name: o.named ? gearName(app, inst) : undefined, selected: o.selected, onClick: o.onClick, img: (f) => app.img(f) });
+  return tile({ rarity: inst.rarity, art: gearArt(app, inst), fallbackIcon: SLOT_ICON[base.slot] ?? "sword", plus: inst.enhance, name: o.named ? gearName(app, inst) : undefined, label: gearName(app, inst), selected: o.selected, onClick: o.onClick, img: (f) => app.img(f) });
 }
 
 export function stackTile(app: App, id: string, o: { selected?: boolean; onClick?: () => void; named?: boolean } = {}) {
   const def = app.content.get<any>(id);
-  return tile({ rarity: def.rarity ?? "common", art: app.content.art(id, "icon"), fallbackIcon: ITEM_ICON[id.split(".")[0]!], qty: app.game.state.inventory.stacks[id], name: o.named ? def.name : undefined, selected: o.selected, onClick: o.onClick, img: (f) => app.img(f) });
+  return tile({ rarity: def.rarity ?? "common", art: app.content.art(id, "icon"), fallbackIcon: ITEM_ICON[id.split(".")[0]!], qty: app.game.state.inventory.stacks[id], name: o.named ? def.name : undefined, label: def.name, selected: o.selected, onClick: o.onClick, img: (f) => app.img(f) });
 }
 
 /** "ATK 8 · HP 28 · Crit +2%" style chips for an instance (enhancement applied). */
