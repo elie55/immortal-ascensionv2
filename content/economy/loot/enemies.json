@@ -506,6 +506,19 @@
     "mastery_xp": 0
   },
   {
+    "id": "loot.enemy.training_construct",
+    "mode": "independent",
+    "rolls": 1,
+    "entries": [],
+    "guaranteed": [],
+    "spirit_stones": [
+      1,
+      2
+    ],
+    "sect_fame": 0,
+    "mastery_xp": 0
+  },
+  {
     "id": "loot.enemy.thunder_wisp",
     "mode": "independent",
     "rolls": 1,

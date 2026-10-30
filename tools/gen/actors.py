@@ -35,6 +35,10 @@ def enemies():
               "A demonic cultivator who hides among the reeds and sings travellers to sleep.", "a gaunt pale woman in tattered green-black robes woven from reeds, long wet hair, holding a reed flute, eerie teal glow", F),
         enemy("abyss_spawn", "Abyss Spawn", "渊裔", "demonic", "water", "foundation_establishment", 3, stats(4200, 260, 120, 22), 1800, ["tech.active.frost_breath", "tech.active.venom_fang"], "aggressive",
               "A serpent-headed thing birthed by the Abyss.", "a hunched black-scaled humanoid with a serpent head, dark water dripping from its claws", "special"),
+        # the Sword Grounds practice post (prologue lesson, story.prologue.first_sword_art): barely hits back, drops nothing
+        enemy("training_construct", "Training Construct", "木人桩", "construct", "wood", "qi_condensation", 1, stats(2400, 6, 30, 4), 40, ["tech.active.stone_shell"], "defensive",
+              "A wooden practice post of the Sword Grounds, talismans pasted to its chest. It never hits back hard.",
+              "a wooden martial-arts training dummy construct on a round stone base: a sturdy carved post with three short wooden arms, yellow paper talismans pasted on its chest, faint jade runes glowing in the grain", "special"),
         enemy("thunder_wisp", "Thunder Wisp", "雷灵", "celestial", "metal", "foundation_establishment", 5, stats(2600, 300, 80, 30, eva=20), 1700, ["tech.active.heavenly_bolt"], "caster",
               "A fragment of tribulation lightning given form.", "a crackling violet-white wisp of lightning shaped like a small floating spirit with a crown of sparks", "special"),
     ]

@@ -66,6 +66,71 @@
     }
   },
   {
+    "id": "enemy.training_construct",
+    "name": "Training Construct",
+    "description": "A wooden practice post of the Sword Grounds, talismans pasted to its chest. It never hits back hard.",
+    "name_cn": "木人桩",
+    "kind": "construct",
+    "element": "elem.wood",
+    "realm": {
+      "id": "realm.qi_condensation",
+      "stage": 1
+    },
+    "stats": {
+      "hp": 2400,
+      "atk": 6,
+      "def": 30,
+      "spd": 4,
+      "crit": 5,
+      "crit_dmg": 150,
+      "acc": 90,
+      "eva": 5,
+      "sp_power": 0,
+      "sp_energy": 100
+    },
+    "cp": 40,
+    "techniques": [
+      "tech.active.stone_shell"
+    ],
+    "ai": {
+      "strategy": "defensive",
+      "rules": []
+    },
+    "resistances": {},
+    "loot": "loot.enemy.training_construct",
+    "mastery_xp": 10,
+    "art": {
+      "icon": {
+        "file": "assets/enemies/special/training_construct_icon.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of the head and shoulders of a wooden martial-arts training dummy construct on a round stone base: a sturdy carved post with three short wooden arms, yellow paper talismans pasted on its chest, faint jade runes glowing in the grain. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "generated"
+      },
+      "battle": {
+        "file": "assets/enemies/special/training_construct_battle.webp",
+        "size": [
+          768,
+          1024
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of a wooden martial-arts training dummy construct on a round stone base: a sturdy carved post with three short wooden arms, yellow paper talismans pasted on its chest, faint jade runes glowing in the grain, dynamic ready pose in a three-quarter front view, body turned toward the viewer, head and eyes looking straight at the viewer as if facing an opponent standing right in front of it, complete figure head to feet, any weapon held ready and clearly visible away from the body, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "generated"
+      }
+    }
+  },
+  {
     "id": "enemy.thunder_wisp",
     "name": "Thunder Wisp",
     "description": "A fragment of tribulation lightning given form.",

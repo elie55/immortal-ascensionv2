@@ -29,7 +29,10 @@ export type EncounterSource =
   | { kind: "tournament"; id: string }
   | { kind: "tower"; id: string; floor: number }
   | { kind: "realm"; id: string; node: string; enemies?: string[] }
-  | { kind: "event"; node: string; enemies: string[] };
+  | { kind: "event"; node: string; enemies: string[] }
+  /** A lesson (story line `practice`): cast `tech` `count` times against `enemy`. No energy, no loot, HP untouched;
+   *  the battle screen ends it once the casts are done (or the fight ends) and the story goes on. */
+  | { kind: "practice"; enemy: string; tech: string; count: number };
 
 export interface WaveResult { summary: BattleSummary; drops: Drops; gearUids: number[] }
 export interface EncounterResult {
@@ -81,7 +84,7 @@ export function canStart(s: GameState, c: ContentIndex, src: EncounterSource, no
     if (p?.nextTryAt && p.nextTryAt > now) return { ok: false, reason: `Steady your Qi first: ${Math.ceil((p.nextTryAt - now) / 60000)} min` };
     return { ok: true, energy: 0 };
   }
-  if (src.kind === "event") return { ok: true, energy: 0 };
+  if (src.kind === "event" || src.kind === "practice") return { ok: true, energy: 0 };
   if (src.kind === "tournament") return canEnterTournament(s, c, src.id, now);
   if (src.kind === "tower") { const r = canClimb(s, c, src.id, src.floor); return r.ok ? { ok: true, energy: 0 } : r; }
   if (src.kind === "realm") {
@@ -140,6 +143,7 @@ export class Encounter {
       this.waves = src.enemies?.length ? [src.enemies] : n.waves!; this.name = `${d.name} · ${n.name}`; this.bg = c.art(d.id, "battle_bg"); opts.isBossFight = n.kind === "boss";
       const hp = realmRun(s, src.id)?.hp; if (hp !== undefined) this.carry = { hp };
     }
+    else if (src.kind === "practice") { this.waves = [[src.enemy]]; this.name = `${c.find<any>("sectloc.sword_grounds")?.name ?? "Sword Grounds"} · Practice`; this.bg = c.art("sectloc.sword_grounds", "background"); }
     else if (src.kind === "tournament") { const t = c.get<Tournament>(src.id); const r = s.progress.tournaments[t.id]?.round ?? 0; this.waves = [[t.rounds[r]!.opponent]]; this.name = `${t.name} · ${r + 1 === t.rounds.length ? "Final" : `Round ${r + 1}`}`; this.bg = c.art("sectloc.proving_arena", "background") ?? c.art("sectloc.sword_grounds", "background"); }
     else { const n = c.get<Npc>(src.npc); this.waves = [[src.npc]]; this.name = `Spar: ${n.name}`; this.bg = c.art("sectloc.sword_grounds", "background"); }
     this.opts = opts;
@@ -317,7 +321,7 @@ export class Encounter {
   drainEvents(): DomainEvent[] { const e = this.events; this.events = []; return e; }
 }
 
-const srcId = (src: EncounterSource) => src.kind === "duel" ? src.npc : src.kind === "event" ? src.node : src.id;
+const srcId = (src: EncounterSource) => src.kind === "duel" ? src.npc : src.kind === "event" ? src.node : src.kind === "practice" ? src.enemy : src.id;
 
 /**
  * Tournaments are fought one round per entry; the bracket position is saved. Losing a round resets the run

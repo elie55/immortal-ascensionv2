@@ -78,6 +78,7 @@ export class Router {
     this.pumpToasts();
   }
   private toastQueue: { text: string; kind: ToastKind; ms: number }[] = [];
+  private shownToast: { text: string; kind: ToastKind; ms: number } | null = null;
   /** Toasts wait while this says so (the battle screen: no toasts over a fight; they play when it ends). */
   holdToasts: () => boolean = () => false;
   private pumpToasts(): void {
@@ -90,8 +91,9 @@ export class Router {
     const t = this.toastQueue.shift()!;
     const id = ++this.toastId;
     const ms = this.toastQueue.length >= 2 ? Math.min(t.ms, 1300) : this.toastQueue.length ? Math.min(t.ms, 1700) : t.ms;
+    this.shownToast = t;
     this.store.update((s) => { s.toasts = [{ id, text: t.text, kind: t.kind }]; s.toastMore = this.toastQueue.length; });
-    setTimeout(() => { this.store.update((s) => { s.toasts = s.toasts.filter((x) => x.id !== id); }); this.pumpToasts(); }, ms);
+    setTimeout(() => { if (this.shownToast === t) this.shownToast = null; this.store.update((s) => { s.toasts = s.toasts.filter((x) => x.id !== id); }); this.pumpToasts(); }, ms);
   }
   refresh(): void { this.render(); }
 
@@ -105,7 +107,10 @@ export class Router {
   private render(): void {
     const s = this.store.state;
     const { screen, global } = this.current();
-    if (this.toastQueue.length && !this.holdToasts()) queueMicrotask(() => this.pumpToasts());   // held toasts play once the hold ends
+    if (this.holdToasts()) {
+      // a toast already on screen when a hold begins (story, battle) goes back to the front of the queue
+      if (s.toasts.length && this.shownToast) { this.toastQueue.unshift(this.shownToast); this.shownToast = null; queueMicrotask(() => this.store.update((st) => { st.toasts = []; st.toastMore = 0; })); }
+    } else if (this.toastQueue.length) queueMicrotask(() => this.pumpToasts());   // held toasts play once the hold ends
     const showNav = screen.nav ?? !global;
     // keep scroll position across re-renders of the same screen
     const prevMain = this.root.querySelector<HTMLElement>("main.screen");

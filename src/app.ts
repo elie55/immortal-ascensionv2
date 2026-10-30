@@ -58,6 +58,8 @@ export class App {
     this.settings = await this.saves.loadSettings();
     this.applySettings();
     this.router = new Router(root, (tab) => this.tabScreen(tab));
+    // no toasts over a fight or a story scene (the prologue starts before enterGame); they play when it ends
+    this.router.holdToasts = () => ["battle", "story"].includes(this.router.current().screen.id);
     this.router.img = (f) => this.img(f);
     this.router.defaultBg = () => this.ui("ui.backdrop", "sky");
     setPainted({ cp: this.ui("ui.icons", "combat_power"), gem: this.ui("ui.icons", "spirit_stone"), fame: this.ui("ui.icons", "sect_fame"), bolt: this.ui("ui.icons", "energy") });
@@ -137,7 +139,6 @@ export class App {
 
   private enterGame(tab: Tab = "cultivate"): void {
     this.router.store.update((s) => { s.tab = tab; s.stacks = { cultivate: [], adventure: [], character: [], inventory: [], sect: [] }; });
-    this.router.holdToasts = () => this.router.current().screen.id === "battle";
     this.router.badges = (t) => t === "sect" ? this.readyQuests() : t === "character" && this.betterGear() ? 1 : 0;
     this.game.settle(this.now());
     this.startLoop();

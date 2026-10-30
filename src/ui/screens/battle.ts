@@ -316,6 +316,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         h("div", { class: "bt-title" }, enc.name),
         trib && hz
           ? h("div", { class: "bt-sub row", style: { gap: "6px" } }, h("span", null, `Wave ${hzWave} / ${hz.waves.length}`), h("span", { class: "trib-pips" }, hz.waves.map((_, i) => h("i", { class: i < hzWave - 1 ? "done" : i === hzWave - 1 ? "cur" : "" }))), h("span", null, `· survive ${Math.max(0, (battle.opts.surviveRounds ?? 0) - battle.round + 1)} more`))
+          : practice ? h("div", { class: "bt-sub" }, `${c.get<any>(practice.tech).name} casts ${Math.min(practiceCasts, practice.count)} / ${practice.count} · Practice restores HP; no loot`)
           : h("div", { class: "bt-sub" }, `Wave ${enc.wave + 1}/${enc.waves.length} · Round ${battle.round}${battle.opts.surviveRounds ? ` / ${battle.opts.surviveRounds}` : ""}${caption ? ` · ${caption}` : ""}`)),
       modes,
       h("button", { class: "icon-btn bt-pause", "aria-label": playing ? "Pause" : "Resume", onClick: () => { playing = !playing; renderTop(); root.classList.toggle("paused", !playing); if (playing) loop(); } }, icon(playing ? "pause" : "play", 16)));
@@ -542,6 +543,9 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   let busy = false;
   /** Biggest single blow of the encounter (all waves), for the victory stats. */
   let bestHit = { v: 0, crit: false };
+  /** A lesson (story practice): the casts of its technique so far; it ends at `count` (no settling: no loot, HP untouched). */
+  const practice = enc.src.kind === "practice" ? enc.src : null;
+  let practiceCasts = 0;
   async function loop() {
     if (busy) return; busy = true;
     try {
@@ -550,7 +554,9 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       for (;;) {
         const pending = battle.drain();
         for (const e of pending) if (e.t === "hit" && !e.dodged && unit(e.actor)?.side === "ally" && e.amount + e.absorbed > bestHit.v) bestHit = { v: e.amount + e.absorbed, crit: e.crit };
+        if (practice) for (const e of pending) if (e.t === "action" && e.actor === battle.player.uid && e.skill === practice.tech) { practiceCasts++; renderTop(); }
         if (pending.length) { await animate(pending); renderUnits(); renderSkills(); }
+        if (practice && practiceCasts >= practice.count) { playing = false; showPracticeDone(); return; }
         if (!playing || battle.result || (battle.manual && battle.needsInput)) break;
         battle.step();
       }
@@ -561,6 +567,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
 
   async function finishWave() {
     await wait(500);
+    if (practice) { showPracticeDone(); return; }
     const wr = enc.settleWave(app.now());
     app.game.dirtyImportant = true;
     app.game.run("battle", app.now(), () => ({ ok: true, events: enc.drainEvents() }));
@@ -724,6 +731,18 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         h("button", { class: "btn", onClick: () => { app.game.state.combat.manual = false; app.game.dirty = true; again(); } }, icon("auto", 14), "Auto"),
         h("button", { class: "btn gold", onClick: again }, "Retry"))) });
   }
+  /** End of a lesson: the technique was cast enough times (or the post fell). Nothing is settled: no loot, HP as before. */
+  let practiceShown = false;
+  function showPracticeDone() {
+    if (!practice || practiceShown) return;
+    practiceShown = true; root.classList.add("won"); cheer();
+    const tech = c.get<any>(practice.tech);
+    app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "practice-done", render: (close) => h("div", { class: "center" },
+      h("div", { class: "cn m-cn" }, "习 成"), h("div", { class: "m-title" }, "Lesson learned"),
+      h("div", { class: "m-sub" }, `${tech.name} cast ${Math.min(practiceCasts, practice.count)} / ${practice.count} · practice restores HP; no loot`),
+      h("button", { class: "btn gold cta block", onClick: () => { close(); onExit(); } }, "Back to the lesson ›")) });
+  }
+
   /** The tracked quest's progress, so a fight that advanced it says so on the result screen. */
   function trackedLine() {
     const s = app.game.state; const id = s.progress.quests.tracked;

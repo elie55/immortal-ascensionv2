@@ -11,7 +11,7 @@
     "objectives": [
       {
         "type": "story",
-        "scene": "story.prologue.senior_sister"
+        "scene": "story.prologue.first_sword_art"
       }
     ],
     "rewards": {

@@ -18,5 +18,9 @@
  {
   "key": "contrast|div.spar-ribbon",
   "why": "in the tour a gift toast is still on screen when the spar card opens and briefly covers the ribbon; readable once it slides away"
+ },
+ {
+  "key": "contrast|span.vn-caret",
+  "why": "the story's blinking typing caret is decorative (aria-hidden) and is measured mid-blink"
  }
 ]

@@ -11,11 +11,7 @@
     "lines": [
       {
         "speaker": "narration",
-        "text": "Hundreds climb the Thousand Steps each spring. Few pass the gate."
-      },
-      {
-        "speaker": "narration",
-        "text": "Today, Lin Xueyao climbs among them."
+        "text": "Hundreds climb the Thousand Steps each spring.\nFew pass the gate.\nToday, **Lin Xueyao** climbs among them."
       },
       {
         "speaker": "player",
@@ -33,20 +29,30 @@
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a vast stone staircase climbing into clouds toward a red-and-gold sect gate, floating mountains, waterfalls, cherry blossoms, crowds of hopeful applicants. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel illustration: a vast white stone staircase climbing to a great red-pillared sect gate with a blue-tiled roof, floating islands with pagodas and waterfalls, cherry blossoms, a crowd of hopeful applicants in pale robes walking up the stairs, seen from behind, a young woman in white with long black hair walking up the middle. Cinematic, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
-          "refs/mockups/prologue.png"
+          "refs/mockups/prologue/gate.png"
         ],
         "status": "generated"
       }
+    },
+    "figure": false,
+    "setting": {
+      "name": "The Thousand Steps",
+      "sub": "Azure Cloud Sect"
+    },
+    "tag": {
+      "npc": "npc.lin_xueyao",
+      "x": 50,
+      "y": 54
     }
   },
   {
     "id": "story.prologue.elders_trial",
     "name": "The Elder's Trial",
-    "description": "Elder Wen asks a question with no wrong answer.",
-    "name_cn": "考验",
+    "description": "Elder Wen asks three questions with no wrong answer.",
+    "name_cn": "入门考验",
     "chapter": "prologue",
     "trigger": {
       "on": "chained"
@@ -54,51 +60,159 @@
     "lines": [
       {
         "speaker": "npc.elder_wen",
-        "text": "A thirsty villager and a wounded fox both reach for your last waterskin. What do you do?",
-        "expression": "thoughtful"
-      }
-    ],
-    "choices": [
-      {
-        "text": "Give it to the villager. A person's life comes first.",
-        "effects": {
-          "affinity": [
-            {
-              "npc": "npc.elder_wen",
-              "delta": 10
+        "text": "A thirsty villager and a wounded fox both reach for your **last waterskin**. What do you do?",
+        "expression": "thoughtful",
+        "continue": "Continue to the next question ›",
+        "choices": [
+          {
+            "text": "Give it to the villager. A person's life comes first.",
+            "reply": "A clear choice, and a hard one. Remember that the fox also had a life to lose.",
+            "effects": {
+              "affinity": [
+                {
+                  "npc": "npc.elder_wen",
+                  "delta": 10
+                }
+              ]
             }
-          ]
-        }
+          },
+          {
+            "text": "Share it. Half for each, and search for a stream together.",
+            "reply": "You refuse to abandon either traveller. Then you must accept the effort of finding a third answer.",
+            "effects": {
+              "affinity": [
+                {
+                  "npc": "npc.elder_wen",
+                  "delta": 15
+                },
+                {
+                  "npc": "npc.bai_lingshuang",
+                  "delta": 5
+                }
+              ]
+            }
+          },
+          {
+            "text": "Bind the fox's wound first, then give water to whoever needs it most.",
+            "reply": "You looked before you gave. Judgement is a kind of mercy too.",
+            "effects": {
+              "affinity": [
+                {
+                  "npc": "npc.bai_lingshuang",
+                  "delta": 15
+                },
+                {
+                  "npc": "npc.qin",
+                  "delta": 10
+                }
+              ]
+            }
+          }
+        ]
       },
       {
-        "text": "Share it. Half for each, and we search for a stream together.",
-        "effects": {
-          "affinity": [
-            {
-              "npc": "npc.elder_wen",
-              "delta": 15
-            },
-            {
-              "npc": "npc.bai_lingshuang",
-              "delta": 5
+        "speaker": "npc.elder_wen",
+        "text": "A flood threatens a village. A powerful patron offers you a rare manual if you protect only his household. Where do you stand?",
+        "expression": "thoughtful",
+        "continue": "Continue to the next question ›",
+        "choices": [
+          {
+            "text": "Protect the village. Power must serve more than its owner.",
+            "reply": "Then you will face the patron's anger with empty hands. Some debts are worth owing.",
+            "effects": {
+              "affinity": [
+                {
+                  "npc": "npc.elder_wen",
+                  "delta": 10
+                }
+              ]
             }
-          ]
-        }
+          },
+          {
+            "text": "Ask the patron to open his safe grounds to everyone.",
+            "reply": "You seek to turn private strength into shelter. Be certain the negotiation does not become an excuse to delay.",
+            "effects": {
+              "affinity": [
+                {
+                  "npc": "npc.elder_wen",
+                  "delta": 5
+                },
+                {
+                  "npc": "npc.tang_xiaoman",
+                  "delta": 5
+                }
+              ]
+            }
+          },
+          {
+            "text": "Refuse his payment and organize the villagers together.",
+            "reply": "Many hands and no master. It is slower than a sword, and it lasts longer.",
+            "effects": {
+              "affinity": [
+                {
+                  "npc": "npc.elder_wen",
+                  "delta": 5
+                },
+                {
+                  "npc": "npc.qin",
+                  "delta": 5
+                }
+              ]
+            }
+          }
+        ]
       },
       {
-        "text": "Bind the fox's wound first, then give the water to whoever needs it most.",
-        "effects": {
-          "affinity": [
-            {
-              "npc": "npc.bai_lingshuang",
-              "delta": 15
-            },
-            {
-              "npc": "npc.qin",
-              "delta": 10
+        "speaker": "npc.elder_wen",
+        "text": "If the years became endless, what would make your immortality worth pursuing?",
+        "expression": "thoughtful",
+        "continue": "Receive the sect's welcome ›",
+        "choices": [
+          {
+            "text": "The chance to protect those who would otherwise be forgotten.",
+            "reply": "Then never forget their names. The heavens will not keep them for you.",
+            "effects": {
+              "affinity": [
+                {
+                  "npc": "npc.elder_wen",
+                  "delta": 5
+                },
+                {
+                  "npc": "npc.bai_lingshuang",
+                  "delta": 5
+                }
+              ]
             }
-          ]
-        }
+          },
+          {
+            "text": "The freedom to understand the world without rushing past it.",
+            "reply": "Remain curious when mastery makes certainty comfortable. The world is larger than any single method.",
+            "effects": {
+              "affinity": [
+                {
+                  "npc": "npc.elder_feng",
+                  "delta": 10
+                }
+              ]
+            }
+          },
+          {
+            "text": "The bonds I choose to keep, however far the path takes me.",
+            "reply": "Bonds are the heaviest treasure a cultivator carries. Carry them well.",
+            "effects": {
+              "affinity": [
+                {
+                  "npc": "npc.bai_lingshuang",
+                  "delta": 5
+                },
+                {
+                  "npc": "npc.qin",
+                  "delta": 5
+                }
+              ]
+            }
+          }
+        ]
       }
     ],
     "unlocks": [],
@@ -112,12 +226,19 @@
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: a serene elder's study with scrolls, a wooden staff and morning light through paper windows, cherry branches. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel illustration: an elder's study of dark carved wood with lattice windows and bookshelves, an open moon gate onto misty golden mountains, cherry blossoms in a celadon vase, a kind white-haired grandmother elder in white and pale-blue robes smiling with closed eyes, holding a gnarled wooden staff topped with a ring and a glowing pearl. Cinematic, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
-          "refs/mockups/prologue.png"
+          "refs/mockups/prologue/trial_q1.png"
         ],
         "status": "generated"
+      }
+    },
+    "figure": false,
+    "progress": "Question",
+    "cast": {
+      "npc.elder_wen": {
+        "title": "Gate Elder · Azure Cloud Sect"
       }
     }
   },
@@ -181,20 +302,22 @@
     "lines": [
       {
         "speaker": "npc.bai_lingshuang",
-        "text": "Lin Xueyao. I am Bai Lingshuang. From today, you train under me.",
-        "expression": "stern"
-      },
-      {
-        "speaker": "npc.bai_lingshuang",
-        "text": "Straighten your back, breathe when I say, and do not waste my time.",
-        "expression": "neutral"
+        "text": "**Lin Xueyao.** I am Bai Lingshuang. From today, you train under me. Straighten your back, breathe when I say, and do not waste my time.",
+        "expression": "stern",
+        "intro": "New character"
       },
       {
         "speaker": "player",
         "text": "Yes, Senior Sister."
+      },
+      {
+        "speaker": "npc.bai_lingshuang",
+        "text": "Then learn to breathe first. Elder Feng keeps the Scripture Pavilion: go to him, and come back to me with your method.",
+        "expression": "neutral"
       }
     ],
     "unlocks": [],
+    "next": "story.prologue.first_method",
     "skippable": true,
     "art": {
       "cg": {
@@ -204,12 +327,152 @@
           1920
         ],
         "transparent": false,
-        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel background illustration: sunlit sword-training terraces above clouds with frost-blue banners and a single plum tree. Cinematic, no characters in the foreground, no text.",
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel illustration: sunlit cloud terraces under a great blossoming cherry tree, floating islands with waterfalls and pagodas, drifting petals, a serene young woman with very long silver-white hair in a half bun with blue crystal ornaments, white and pale-blue hanfu with a blue sash and frost-flower brooches, holding a slender ice-blue sword. Cinematic, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [
-          "refs/mockups/prologue.png"
+          "refs/mockups/prologue/senior_sister.png"
         ],
         "status": "generated"
+      }
+    },
+    "figure": false,
+    "cast": {
+      "npc.bai_lingshuang": {
+        "title": "Senior Sister · Inner Disciple",
+        "chip": "Ice · Sword",
+        "chip_icon": "snow"
+      }
+    }
+  },
+  {
+    "id": "story.prologue.first_method",
+    "name": "First Method",
+    "description": "Elder Feng sets Lin Xueyao's first cultivation method.",
+    "name_cn": "初法",
+    "chapter": "prologue",
+    "trigger": {
+      "on": "chained"
+    },
+    "lines": [
+      {
+        "speaker": "npc.elder_feng",
+        "text": "Your first method begins with the breath. Visit the Scripture Pavilion and study Azure Cloud Breathing; the manual you already carry is enough.",
+        "expression": "neutral",
+        "intro": "Cultivation method",
+        "card": {
+          "id": "method.azure_cloud_breathing",
+          "status": "Manual acquired"
+        },
+        "cta": {
+          "label": "Visit Scripture Pavilion"
+        }
+      },
+      {
+        "speaker": "npc.elder_feng",
+        "text": "Do not drag Qi into the body. Make room for it. Your first method is a rhythm, not a contest.",
+        "expression": "approving",
+        "intro": "Cultivation method",
+        "card": {
+          "id": "method.azure_cloud_breathing",
+          "status": "Studied"
+        },
+        "cta": {
+          "label": "Continue to meet Senior Sister Bai"
+        }
+      }
+    ],
+    "unlocks": [],
+    "next": "story.prologue.first_sword_art",
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/prologue_first_method.webp",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel illustration: a grand two-storey scripture library of dark wood and gold, shelves of scrolls and books, hanging lanterns and a glowing chandelier, a stern handsome elder with long grey hair in a topknot and a short goatee, black robes with heavy gold embroidery, one hand at his chin, looking at the viewer. Cinematic, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue/first_method.png"
+        ],
+        "status": "generated"
+      }
+    },
+    "figure": false,
+    "place": "sectloc.scripture_pavilion",
+    "cast": {
+      "npc.elder_feng": {
+        "name": "Elder Feng",
+        "cn": "冯长老",
+        "title": "Sect Elder · Scripture Pavilion",
+        "intro_title": "Sect Elder · Scripture Pavilion",
+        "chip": "Cultivation arts",
+        "chip_icon": "scroll"
+      }
+    }
+  },
+  {
+    "id": "story.prologue.first_sword_art",
+    "name": "First Sword Art",
+    "description": "Bai Lingshuang's first lesson: Azure Strike against a training construct.",
+    "name_cn": "初剑",
+    "chapter": "prologue",
+    "trigger": {
+      "on": "chained"
+    },
+    "lines": [
+      {
+        "speaker": "npc.bai_lingshuang",
+        "text": "A clean strike begins in the breath. Use Azure Strike three times against a training construct; its bark will show you where you hesitate.",
+        "expression": "neutral",
+        "intro": "Combat lesson",
+        "card": {
+          "id": "tech.active.azure_strike",
+          "status": "Lesson ready"
+        },
+        "cta": {
+          "label": "Learn Azure Strike from Bai",
+          "action": "practice"
+        },
+        "practice": {
+          "enemy": "enemy.training_construct",
+          "tech": "tech.active.azure_strike",
+          "count": 3
+        }
+      },
+      {
+        "speaker": "npc.bai_lingshuang",
+        "text": "Better. You hesitated on the second strike, and the construct heard it. Again tomorrow, at dawn.",
+        "expression": "faint_smile"
+      }
+    ],
+    "unlocks": [],
+    "skippable": true,
+    "art": {
+      "cg": {
+        "file": "assets/story/prologue_first_sword_art.webp",
+        "size": [
+          1080,
+          1920
+        ],
+        "transparent": false,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-screen visual novel illustration: sunlit cloud terraces under a great blossoming cherry tree, floating islands with waterfalls and pagodas, drifting petals, a serene young woman with very long silver-white hair in a half bun with blue crystal ornaments, white and pale-blue hanfu with a blue sash and frost-flower brooches, holding a slender ice-blue sword. Cinematic, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/prologue/sword_lesson.png"
+        ],
+        "status": "generated"
+      }
+    },
+    "figure": false,
+    "place": "sectloc.sword_grounds",
+    "cast": {
+      "npc.bai_lingshuang": {
+        "title": "Senior Sister · Inner Disciple",
+        "chip": "Ice · Sword",
+        "chip_icon": "snow"
       }
     }
   }

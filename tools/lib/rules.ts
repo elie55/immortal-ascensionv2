@@ -230,7 +230,13 @@ export function buildGraph(db: Database) {
         break;
       case "story":
         for (const u of d.unlocks) grant(u, `story:${e.id}`);
-        for (const l of d.lines) if (l.speaker.startsWith("npc.")) appear(l.speaker, `story:${e.id}`);
+        for (const l of d.lines) {
+          if (l.speaker.startsWith("npc.")) appear(l.speaker, `story:${e.id}`);
+          // a line can be a question (each answer may grant something) or start a practice fight
+          for (const c of l.choices ?? []) { for (const id of rewardIds(c.effects)) grant(id, `story:${e.id}`); if (c.next) appear(c.next, `story:${e.id}`); }
+          if (l.practice) appear(l.practice.enemy, `story:${e.id}`);
+        }
+        if (d.tag) appear(d.tag.npc, `story:${e.id}`);
         for (const c of d.choices ?? []) { for (const id of rewardIds(c.effects)) grant(id, `story:${e.id}`); if (c.next) appear(c.next, `story:${e.id}`); }
         if (d.next) appear(d.next, `story:${e.id}`);
         if (d.trigger.on !== "chained") appear(e.id, `trigger:${d.trigger.on}`);

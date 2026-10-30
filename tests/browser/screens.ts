@@ -76,18 +76,40 @@ const clickVN = async (times: number) => { for (let i = 0; i < times; i++) { awa
 const tapUntil = async (sel: string, max = 30) => { for (let i = 0; i < max; i++) { if (await page.locator(sel).count()) return true; await page.locator(".vn").click({ position: { x: 195, y: 300 } }); await page.waitForTimeout(120); } return (await page.locator(sel).count()) > 0; };
 await tapUntil(".vn-choice");
 await shot("prologue-trial-choices");
-await page.locator(".vn-choice").nth(1).click();
-await page.waitForTimeout(300);
+check(await page.locator(".vn-steps").innerText().then((t) => /1 of 3/.test(t)), "the trial shows Question 1 of 3");
+// three questions: each answer gets Elder Wen's reply and "Your answer" before the next one
+for (let q = 0; q < 3; q++) {
+  if (q) await tapUntil(".vn-choice");
+  await page.locator(".vn-choice").nth(1).click();
+  await tapUntil(".vn-answer .vn-cta");
+  if (q === 0) await shot("prologue-trial-answer");
+  await page.locator(".vn-answer .vn-cta").click();
+  await page.waitForTimeout(200);
+}
 check(await tapUntil(".vn-card"), "welcome scene ends with the unlock card");
 await shot("prologue-welcome-card");
 await clickVN(1);
 await page.waitForTimeout(500);
 await shot("prologue-senior-sister");
+// Elder Feng's first method, then Bai's lesson: Azure Strike three times against the training construct
+check(await tapUntil(".vn-cta"), "Elder Feng's lesson waits on its button");
+await shot("prologue-first-method");
+await page.locator(".vn-cta").click(); await page.waitForTimeout(200);
+await tapUntil(".vn-cta"); await page.locator(".vn-cta").click(); await page.waitForTimeout(200);
+check(await tapUntil(".vn-cta"), "Bai's lesson waits on its button");
+await shot("prologue-sword-lesson");
+await page.locator(".vn-cta").click();
+await need(".battle");
+await page.locator(".bt-controls .seg button", { hasText: "Auto" }).click().catch(() => {});
+await page.locator(".bt-speed").click(); await page.locator(".bt-speed").click();
+await need(".modal.practice-done", { timeout: 90000 });
+await shot("prologue-practice-done");
+await page.locator(".modal.practice-done .btn").click();
 await tapUntil('[data-screen="cultivate"]', 40);
 await need('[data-screen="cultivate"]', { timeout: 5000 });
 check(true, "prologue ends in the Cultivate tab");
-const st = await page.evaluate(() => { const s = (window as any).__ia.game.state; return { seen: Object.keys(s.progress.storySeen).length, aff: s.relations["npc.elder_wen"]?.affinity ?? 0, token: s.inventory.stacks["qitem.elder_wen_token"] ?? 0 }; });
-check(st.seen === 4 && st.aff === 15 && st.token === 1, `prologue recorded: 4 scenes, choice affinity +15, token received (${JSON.stringify(st)})`);
+const st = await page.evaluate(() => { const s = (window as any).__ia.game.state; return { seen: Object.keys(s.progress.storySeen).length, aff: s.relations["npc.elder_wen"]?.affinity ?? 0, feng: s.relations["npc.elder_feng"]?.affinity ?? 0, token: s.inventory.stacks["qitem.elder_wen_token"] ?? 0 }; });
+check(st.seen === 6 && st.aff === 20 && st.feng === 10 && st.token === 1, `prologue recorded: 6 scenes, answers' affinity (Wen +20, Feng +10), token received (${JSON.stringify(st)})`);
 await shot("cultivate");
 
 // cultivate: breakthrough

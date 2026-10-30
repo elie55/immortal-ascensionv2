@@ -56,6 +56,7 @@ def loot():
         L("loot.enemy.whispering_reed_witch", [E("book.crescent_wind_blade_manual", 0.05), E("mat.cloud_silk_bolt", 0.3), E("mat.frost_beast_core", 0.3)], (60, 100), fame=10, ilvl=(15, 20),
           gear=[GB("reed_witchs_whisper_ring", 0.08, epic=1), GB("whispering_reed_flute", 0.12, rare=80, epic=20), GP(0.1, ["forest"], rare=70, epic=30)]),
         L("loot.enemy.abyss_spawn", [E("mat.spirit_enhancing_stone", 0.4), E("mat.refining_stone", 0.2), E("mat.reforging_sand", 0.3)], (120, 200)),
+        L("loot.enemy.training_construct", [], (1, 2)),   # the schema wants a yield; the practice fight never rolls loot
         L("loot.enemy.thunder_wisp", [E("mat.spirit_enhancing_stone", 0.3), E("mat.sword_rain_fragment", 0.1)], (100, 160)),
     ]
     bosses = [
@@ -127,7 +128,7 @@ def quests():
     MH, BAI, TANG = "sectloc.mission_hall", "npc.bai_lingshuang", "npc.tang_xiaoman"
     return [
         Q("the_path_begins", "main", "The Path Begins", "仙途伊始", "Climb the Thousand Steps and pass the Elder's Trial.", "system", "auto",
-          [{"type": "story", "scene": "story.prologue.senior_sister"}], {"spirit_stones": 100, "sect_fame": 20}, "Prologue · follow the story", None, "main.senior_sister"),
+          [{"type": "story", "scene": "story.prologue.first_sword_art"}], {"spirit_stones": 100, "sect_fame": 20}, "Prologue · follow the story", None, "main.senior_sister"),
         Q("senior_sister", "main", "Senior Sister", "师姐", "Present Elder Wen's token to Bai Lingshuang at the Sword Grounds.", BAI, BAI,
           [{"type": "deliver", "item": "qitem.elder_wen_token", "count": 1, "to": BAI}], {"sect_fame": 20, "items": [q("cons.blossom_healing_pill", 2)], "affinity": [{"npc": BAI, "delta": 20}]},
           "Sect · Sword Grounds · Bai Lingshuang", {"quests": ["quest.main.the_path_begins"]}, "main.first_breath"),
@@ -205,30 +206,75 @@ def tournaments():
 
 def story():
     cg = lambda key, scene: art(f"assets/story/{key}.png", f"{STYLE}. Full-screen visual novel background illustration: {scene}. Cinematic, no characters in the foreground, no text.", (1080, 1920), False, ["refs/mockups/prologue.png"])
-    S = lambda key, chapter, title, cn, desc, trigger, lines, scene, choices=None, unlocks=None, nxt=None: {
+    # a scene painted from the owner's mockup screenshot (tools/art/queue.py FILE_REF strips the interface): the speaker is part of the painting
+    cgm = lambda key, scene, mock: art(f"assets/story/{key}.png", f"{STYLE}. Full-screen visual novel illustration: {scene}. Cinematic, no text.", (1080, 1920), False, [f"refs/mockups/prologue/{mock}"])
+    S = lambda key, chapter, title, cn, desc, trigger, lines, scene, choices=None, unlocks=None, nxt=None, mock=None: {
         "id": f"story.{chapter}.{key}", **named(title, desc, cn), "chapter": chapter, "trigger": trigger, "lines": lines, **({"choices": choices} if choices else {}),
-        "unlocks": unlocks or [], **({"next": nxt} if nxt else {}), "skippable": True, "art": {"cg": cg(f"{chapter}_{key}", scene)}}
+        "unlocks": unlocks or [], **({"next": nxt} if nxt else {}), "skippable": True, "art": {"cg": cgm(f"{chapter}_{key}", scene, mock) if mock else cg(f"{chapter}_{key}", scene)}}
     n = lambda t: {"speaker": "narration", "text": t}
     p = lambda t: {"speaker": "player", "text": t}
     s = lambda who, t, e=None: {"speaker": f"npc.{who}", "text": t, **({"expression": e} if e else {})}
+    # a question from Elder Wen: three answers, each with her reply and its affinity
+    qn = lambda t, cont, opts: {**s("elder_wen", t, "thoughtful"), "continue": cont,
+        "choices": [{"text": a, "reply": r, "effects": {"affinity": [{"npc": f"npc.{who}", "delta": d} for who, d in aff]}} for a, r, aff in opts]}
+    BAI_CAST = {"title": "Senior Sister · Inner Disciple", "chip": "Ice · Sword", "chip_icon": "snow"}
     return [
-        S("entrance_gate", "prologue", "The Entrance Gate", "入门", "Lin Xueyao climbs the Thousand Steps.", {"on": "new_game"},
-          [n("Hundreds climb the Thousand Steps each spring. Few pass the gate."), n("Today, Lin Xueyao climbs among them."), p("…One more step.")],
-          "a vast stone staircase climbing into clouds toward a red-and-gold sect gate, floating mountains, waterfalls, cherry blossoms, crowds of hopeful applicants", nxt="story.prologue.elders_trial"),
-        S("elders_trial", "prologue", "The Elder's Trial", "考验", "Elder Wen asks a question with no wrong answer.", {"on": "chained"},
-          [s("elder_wen", "A thirsty villager and a wounded fox both reach for your last waterskin. What do you do?", "thoughtful")],
-          "a serene elder's study with scrolls, a wooden staff and morning light through paper windows, cherry branches",
-          choices=[{"text": "Give it to the villager. A person's life comes first.", "effects": {"affinity": [{"npc": "npc.elder_wen", "delta": 10}]}},
-                   {"text": "Share it. Half for each, and we search for a stream together.", "effects": {"affinity": [{"npc": "npc.elder_wen", "delta": 15}, {"npc": "npc.bai_lingshuang", "delta": 5}]}},
-                   {"text": "Bind the fox's wound first, then give the water to whoever needs it most.", "effects": {"affinity": [{"npc": "npc.bai_lingshuang", "delta": 15}, {"npc": "npc.qin", "delta": 10}]}}],
-          nxt="story.prologue.welcome"),
+        # Prologue, drawn to the owner's mockups (refs/mockups/prologue/*.png). The CGs paint the speaker into the scene
+        # ("figure": False); the trial asks three questions in one scene, each answer gets Elder Wen's reply.
+        {**S("entrance_gate", "prologue", "The Entrance Gate", "入门", "Lin Xueyao climbs the Thousand Steps.", {"on": "new_game"},
+          [n("Hundreds climb the Thousand Steps each spring.\nFew pass the gate.\nToday, **Lin Xueyao** climbs among them."), p("…One more step.")],
+          "a vast white stone staircase climbing to a great red-pillared sect gate with a blue-tiled roof, floating islands with pagodas and waterfalls, cherry blossoms, "
+          "a crowd of hopeful applicants in pale robes walking up the stairs, seen from behind, a young woman in white with long black hair walking up the middle", nxt="story.prologue.elders_trial",
+          mock="gate.png"),
+         "figure": False, "setting": {"name": "The Thousand Steps", "sub": "Azure Cloud Sect"}, "tag": {"npc": "npc.lin_xueyao", "x": 50, "y": 54}},
+        {**S("elders_trial", "prologue", "The Elder's Trial", "入门考验", "Elder Wen asks three questions with no wrong answer.", {"on": "chained"},
+          [qn("A thirsty villager and a wounded fox both reach for your **last waterskin**. What do you do?", "Continue to the next question ›", [
+              ("Give it to the villager. A person's life comes first.", "A clear choice, and a hard one. Remember that the fox also had a life to lose.", [("elder_wen", 10)]),
+              ("Share it. Half for each, and search for a stream together.", "You refuse to abandon either traveller. Then you must accept the effort of finding a third answer.", [("elder_wen", 15), ("bai_lingshuang", 5)]),
+              ("Bind the fox's wound first, then give water to whoever needs it most.", "You looked before you gave. Judgement is a kind of mercy too.", [("bai_lingshuang", 15), ("qin", 10)])]),
+           qn("A flood threatens a village. A powerful patron offers you a rare manual if you protect only his household. Where do you stand?", "Continue to the next question ›", [
+              ("Protect the village. Power must serve more than its owner.", "Then you will face the patron's anger with empty hands. Some debts are worth owing.", [("elder_wen", 10)]),
+              ("Ask the patron to open his safe grounds to everyone.", "You seek to turn private strength into shelter. Be certain the negotiation does not become an excuse to delay.", [("elder_wen", 5), ("tang_xiaoman", 5)]),
+              ("Refuse his payment and organize the villagers together.", "Many hands and no master. It is slower than a sword, and it lasts longer.", [("elder_wen", 5), ("qin", 5)])]),
+           qn("If the years became endless, what would make your immortality worth pursuing?", "Receive the sect's welcome ›", [
+              ("The chance to protect those who would otherwise be forgotten.", "Then never forget their names. The heavens will not keep them for you.", [("elder_wen", 5), ("bai_lingshuang", 5)]),
+              ("The freedom to understand the world without rushing past it.", "Remain curious when mastery makes certainty comfortable. The world is larger than any single method.", [("elder_feng", 10)]),
+              ("The bonds I choose to keep, however far the path takes me.", "Bonds are the heaviest treasure a cultivator carries. Carry them well.", [("bai_lingshuang", 5), ("qin", 5)])])],
+          "an elder's study of dark carved wood with lattice windows and bookshelves, an open moon gate onto misty golden mountains, cherry blossoms in a celadon vase, "
+          "a kind white-haired grandmother elder in white and pale-blue robes smiling with closed eyes, holding a gnarled wooden staff topped with a ring and a glowing pearl",
+          nxt="story.prologue.welcome", mock="trial_q1.png"),
+         "figure": False, "progress": "Question", "cast": {"npc.elder_wen": {"title": "Gate Elder · Azure Cloud Sect"}}},
         S("welcome", "prologue", "Welcome to the Azure Cloud Sect", "青云宗", "Lin Xueyao is granted the rank of Outer Disciple.", {"on": "chained"},
           [n("Lin Xueyao has passed the Elder's Trial."), s("elder_wen", "Rank granted: Outer Disciple. Take this token to the Sword Grounds. Someone is waiting.", "warm_smile"), n("New area: Sword Grounds. Method granted: Azure Cloud Breathing.")],
           "a breathtaking view of the Azure Cloud Sect: floating islands, pagodas, bridges and waterfalls in golden morning light",
           unlocks=["sectloc.sword_grounds", "method.azure_cloud_breathing", "qitem.elder_wen_token"], nxt="story.prologue.senior_sister"),
-        S("senior_sister", "prologue", "Senior Sister", "师姐", "Bai Lingshuang introduces herself.", {"on": "chained"},
-          [s("bai_lingshuang", "Lin Xueyao. I am Bai Lingshuang. From today, you train under me.", "stern"), s("bai_lingshuang", "Straighten your back, breathe when I say, and do not waste my time.", "neutral"), p("Yes, Senior Sister.")],
-          "sunlit sword-training terraces above clouds with frost-blue banners and a single plum tree"),
+        {**S("senior_sister", "prologue", "Senior Sister", "师姐", "Bai Lingshuang introduces herself.", {"on": "chained"},
+          [{**s("bai_lingshuang", "**Lin Xueyao.** I am Bai Lingshuang. From today, you train under me. Straighten your back, breathe when I say, and do not waste my time.", "stern"), "intro": "New character"},
+           p("Yes, Senior Sister."),
+           s("bai_lingshuang", "Then learn to breathe first. Elder Feng keeps the Scripture Pavilion: go to him, and come back to me with your method.", "neutral")],
+          "sunlit cloud terraces under a great blossoming cherry tree, floating islands with waterfalls and pagodas, drifting petals, "
+          "a serene young woman with very long silver-white hair in a half bun with blue crystal ornaments, white and pale-blue hanfu with a blue sash and frost-flower brooches, holding a slender ice-blue sword",
+          nxt="story.prologue.first_method", mock="senior_sister.png"),
+         "figure": False, "cast": {"npc.bai_lingshuang": BAI_CAST}},
+        {**S("first_method", "prologue", "First Method", "初法", "Elder Feng sets Lin Xueyao's first cultivation method.", {"on": "chained"},
+          [{**s("elder_feng", "Your first method begins with the breath. Visit the Scripture Pavilion and study Azure Cloud Breathing; the manual you already carry is enough.", "neutral"),
+            "intro": "Cultivation method", "card": {"id": "method.azure_cloud_breathing", "status": "Manual acquired"}, "cta": {"label": "Visit Scripture Pavilion"}},
+           {**s("elder_feng", "Do not drag Qi into the body. Make room for it. Your first method is a rhythm, not a contest.", "approving"),
+            "intro": "Cultivation method", "card": {"id": "method.azure_cloud_breathing", "status": "Studied"}, "cta": {"label": "Continue to meet Senior Sister Bai"}}],
+          "a grand two-storey scripture library of dark wood and gold, shelves of scrolls and books, hanging lanterns and a glowing chandelier, "
+          "a stern handsome elder with long grey hair in a topknot and a short goatee, black robes with heavy gold embroidery, one hand at his chin, looking at the viewer",
+          nxt="story.prologue.first_sword_art", mock="first_method.png"),
+         "figure": False, "place": "sectloc.scripture_pavilion",
+         "cast": {"npc.elder_feng": {"name": "Elder Feng", "cn": "冯长老", "title": "Sect Elder · Scripture Pavilion", "intro_title": "Sect Elder · Scripture Pavilion", "chip": "Cultivation arts", "chip_icon": "scroll"}}},
+        {**S("first_sword_art", "prologue", "First Sword Art", "初剑", "Bai Lingshuang's first lesson: Azure Strike against a training construct.", {"on": "chained"},
+          [{**s("bai_lingshuang", "A clean strike begins in the breath. Use Azure Strike three times against a training construct; its bark will show you where you hesitate.", "neutral"),
+            "intro": "Combat lesson", "card": {"id": "tech.active.azure_strike", "status": "Lesson ready"}, "cta": {"label": "Learn Azure Strike from Bai", "action": "practice"},
+            "practice": {"enemy": "enemy.training_construct", "tech": "tech.active.azure_strike", "count": 3}},
+           s("bai_lingshuang", "Better. You hesitated on the second strike, and the construct heard it. Again tomorrow, at dawn.", "faint_smile")],
+          "sunlit cloud terraces under a great blossoming cherry tree, floating islands with waterfalls and pagodas, drifting petals, "
+          "a serene young woman with very long silver-white hair in a half bun with blue crystal ornaments, white and pale-blue hanfu with a blue sash and frost-flower brooches, holding a slender ice-blue sword",
+          mock="sword_lesson.png"),
+         "figure": False, "place": "sectloc.sword_grounds", "cast": {"npc.bai_lingshuang": BAI_CAST}},
         S("first_steps", "forest", "Blue Bamboo", "苍竹", "Tang's caravan waits at the forest edge.", {"on": "region_enter", "region": "region.azure_bamboo_forest"},
           [s("tang_xiaoman", "Boss! You made it out of the plains! My caravan's camped up ahead—come buy something before the wolves do.", "grin"), p("The wolves buy things?"), s("tang_xiaoman", "The wolves take things. Big difference. Keep an eye out for a missing manifest, would you?", "wink")],
           "the edge of a misty blue bamboo forest with a small merchant caravan and lanterns among the stalks"),

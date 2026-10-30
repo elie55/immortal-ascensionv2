@@ -30,7 +30,8 @@ test("main chain: system quest auto-accepts, story completes it, next quest is o
   const { g, s, events } = game();
   g.settle(T0);
   assert.ok(s.progress.quests.active["quest.main.the_path_begins"], "system quest accepted on first settle");
-  g.run("story", T0, (st, cc) => completeScene(st, cc, "story.prologue.senior_sister", pickChoice(cc, "story.prologue.senior_sister"), T0));
+  // the prologue's last scene (Bai's first sword lesson) completes the opening quest
+  g.run("story", T0, (st, cc) => completeScene(st, cc, "story.prologue.first_sword_art", pickChoice(cc, "story.prologue.first_sword_art"), T0));
   assert.equal(s.progress.quests.completed["quest.main.the_path_begins"], 1, "auto turn-in");
   assert.ok(s.progress.quests.active["quest.main.senior_sister"], "chain continues");
   assert.ok(events.some((e) => e.type === "quest_completed"));

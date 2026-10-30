@@ -13,16 +13,24 @@ export function applyUnlock(s: GameState, content: ContentIndex, id: string, out
   out.push({ type: "unlock", id });
 }
 
-/** Finish a scene (after its lines, with the chosen option if it has choices). Returns the next scene, if any. */
-export function completeScene(s: GameState, content: ContentIndex, sceneId: string, choice: number | null, now: number): ActionResult<{ next?: string }> {
+/** Finish a scene (after its lines, with the chosen option if it has choices). Returns the next scene, if any.
+ *  A scene whose lines ask questions takes one answer per question line, in order (`choice` is then an array). */
+export function completeScene(s: GameState, content: ContentIndex, sceneId: string, choice: number | number[] | null, now: number): ActionResult<{ next?: string }> {
   const scene = content.get<StoryScene>(sceneId);
   const events: DomainEvent[] = [];
   let next = scene.next;
-  if (scene.choices?.length) {
-    if (choice === null || !scene.choices[choice]) return { ok: false, reason: "Choose an answer" };
-    const c = scene.choices[choice]!;
+  const questions = scene.lines.filter((l) => l.choices?.length);
+  if (questions.length) {
+    const picks = Array.isArray(choice) ? choice : choice === null ? [] : [choice];
+    if (picks.length !== questions.length || questions.some((q, i) => !q.choices![picks[i]!])) return { ok: false, reason: "Answer every question" };
+    questions.forEach((q, i) => { const c = q.choices![picks[i]!]!; grantRewards(s, content, c.effects, events); if (c.next) next = c.next; });
+    s.progress.storyChoices[sceneId] = picks.join(",");
+  } else if (scene.choices?.length) {
+    const pick = Array.isArray(choice) ? choice[0] ?? null : choice;
+    if (pick === null || !scene.choices[pick]) return { ok: false, reason: "Choose an answer" };
+    const c = scene.choices[pick]!;
     grantRewards(s, content, c.effects, events);
-    s.progress.storyChoices[sceneId] = String(choice);
+    s.progress.storyChoices[sceneId] = String(pick);
     if (c.next) next = c.next;
   }
   if (!s.progress.storySeen[sceneId]) for (const u of scene.unlocks) applyUnlock(s, content, u, events);

@@ -44,8 +44,17 @@ def style_ref(job, mode="chars"):
 MOCKUP_CHARS = {"lin_xueyao": "char_lin.png", "bai_lingshuang": "char_bai.png", "elder_wen": "char_elder_wen.png", "tang_xiaoman": "char_tang.png"}
 
 
+# Prologue CGs are the owner's mockup screenshots (refs/mockups/prologue/) with the interface painted out.
+MOCKUP_SCENE = ("Image 1 is a screenshot of the approved game scene, with the game's interface drawn over the painting. Redraw exactly this same painting "
+                "as one clean full-screen illustration at high resolution: the same place, the same characters with the same faces, hair, outfits, poses and "
+                "held objects, the same colours, light and composition. Remove every interface element: the top bar and its buttons, every label, chip and "
+                "name tag, the dialogue or narration box with its frame and text, answer buttons, vertical title text, the rounded gold frame around the "
+                "screen and all writing; paint what they covered in the same style, completing the characters' bodies. ")
+PROLOGUE_MOCKS = {"entrance_gate": "gate", "elders_trial": "trial_q1", "senior_sister": "senior_sister", "first_method": "first_method", "first_sword_art": "sword_lesson"}
+
 # Jobs drawn from a mockup crop (pose and costume as in the approved mockup), with their own reference prompt.
 FILE_REF = {
+    **{f"assets/story/prologue_{k}.webp": (f"ia_style/prologue_{m}.png", MOCKUP_SCENE) for k, m in PROLOGUE_MOCKS.items()},
     "assets/ui/sect_map.webp": ("ia_style/sect_map_art.png",
         "Image 1 is the approved reference illustration with game labels on top. Redraw exactly this same floating sect illustration at high resolution with crisp, "
         "clean, luminous painted detail: the same islands, buildings, bridges, waterfalls, trees, clouds, colours and composition, every building in the same place. "

@@ -8,6 +8,7 @@ const P: Record<string, string> = {
   sword: '<path d="M14.5 3H21v6.5L9 21.5 2.5 15z"/><path d="M5 13l6 6"/><path d="M3 21l3-3"/>',
   person: '<circle cx="12" cy="7" r="3.5"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/>',
   pouch: '<path d="M9 4h6l-1.5 3h-3z"/><path d="M8.5 7.5C5 10 4 13 4 15.5 4 19 7.5 21 12 21s8-2 8-5.5c0-2.5-1-5.5-4.5-8"/><path d="M9 11.5h6"/>',
+  snow: '<path d="M12 2v20M3.4 7l17.2 10M3.4 17l17.2-10"/><path d="M9.5 3.8 12 6l2.5-2.2M9.5 20.2 12 18l2.5 2.2M3.6 10.4l3.1-.6-.9-3M20.4 13.6l-3.1.6.9 3M3.6 13.6l3.1.6-.9 3M20.4 10.4l-3.1-.6.9-3"/>',
   temple: '<path d="M2 8.5 12 3l10 5.5"/><path d="M4 9.5h16"/><path d="M5.5 10v8M9.5 10v8M14.5 10v8M18.5 10v8"/><path d="M3 21h18M4 18.5h16"/>',
   back: '<path d="M15 5l-7 7 7 7"/>',
   chevron: '<path d="M9 5l7 7-7 7"/>',

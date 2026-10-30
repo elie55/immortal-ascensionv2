@@ -37,9 +37,26 @@ to check it. Styles live at the end of `src/ui/theme.css` under "PREMIUM LAYER",
 | G5 Empty/locked | Locked slots get a gold seal, undiscovered beasts a silhouette and a hint, empty battle slots are hidden, empty technique sockets are quiet. | — |
 | G7 Motion | Reduce motion hides the decorative layers (qi spiral, light pillar, forge sparks, ceremony array); Low animation quality stops the idle loops (CTA sheen, rotating rays and arrays). | `app.ts` (`anim-low` class), theme.css |
 
+## Prologue (new game, built from the owner's 11 mockups in `refs/mockups/prologue/`)
+
+| Scene | What it shows | Where |
+|---|---|---|
+| The Entrance Gate | Painted CG, place chip (The Thousand Steps · Azure Cloud Sect), the player's name tag in the crowd, narration box with gold corners. | `story.prologue.entrance_gate` |
+| The Elder's Trial | Title card 入门考验 with "Question n of 3" and pips; Elder Wen's nameplate (emblem + gold ribbon); three numbered answers (壹 贰 叁); her reply, then "Your answer" with Review question and Continue. Each answer moves her affinity. | `story.prologue.elders_trial` |
+| Welcome | Rank granted card (Outer Disciple), new area, method and token. | `story.prologue.welcome` |
+| Senior Sister | "New character" introduction: vertical 白凌霜, name, titles, Ice · Sword chip, affinity chip (on the nameplate on wide screens, under the introduction on phones). | `story.prologue.senior_sister` |
+| Scripture Pavilion · First Method | Elder Feng's introduction, the manual card (Manual acquired → Studied), Visit Scripture Pavilion. | `story.prologue.first_method` |
+| Sword Grounds · First Sword Art | Bai's lesson card (Azure Strike · Lesson ready), "Learn Azure Strike from Bai" opens a practice fight against the Training Construct (three casts, HP restored, no loot), then "Lesson learned". | `story.prologue.first_sword_art`, `encounter.ts` (`practice`) |
+
+The story screen (`screens/story.ts`) reads all of this from content: `intro`, `card`, `cta`, `practice`, per-line
+`choices` with `reply`, and per-scene `setting`, `tag`, `progress`, `place` and `cast` (short name, Chinese name,
+titles, chip). Lines keep their final size while they type (the rest is laid out invisibly), the introduction steps
+down (Chinese name in a row → name only → tag only) when a short phone would put it under the dialogue, and toasts
+wait until the story ends.
+
 ## Checking
 
-- `node tests/browser/screens.ts` (tour, 48 checks) and `npm run test:ui` (audit at four phone sizes, must report 0 errors).
+- `node tests/browser/screens.ts` (tour, 51 checks, including the whole prologue) and `npm run test:ui` (audit at four phone sizes, must report 0 errors).
 - `node tests/browser/lab.ts gearwin` forces a gear drop to show the best-drop card and the ▲ badge.
 - The audit skips what scrolls under a sticky dock (`.dock-cta`, `.inv-dock`), as it already did for the nav bar, and
   hides toasts while measuring (they are transient).

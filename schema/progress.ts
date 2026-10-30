@@ -101,10 +101,30 @@ export const Tournament = Named.extend({
 
 // ---------- Story ----------
 
+export const StoryChoice = z.object({
+  text: z.string().min(1),
+  /** The speaker's answer to this choice, shown with "Your answer" before the scene goes on. */
+  reply: z.string().min(1).optional(),
+  effects: Rewards.default({}),
+  next: ref("story").optional(),
+});
+
+/** One line. Text may mark **words** to stress (gold). A line can also be a question (`choices`, each with a reply),
+ *  show a card for a method/technique/item with its status, wait on a button (`cta`), or start a practice fight. */
 export const StoryLine = z.object({
   speaker: ref("npc").or(z.enum(["narration", "player"])),
   expression: z.string().optional(),
   text: z.string().min(1),
+  choices: z.array(StoryChoice).min(2).optional(),
+  /** Label of the button after a question's reply ("Continue to the next question ›"). */
+  continue: z.string().optional(),
+  /** Introduction block for the speaker (tag over the vertical name): "New character", "Combat lesson"… */
+  intro: z.string().optional(),
+  card: z.object({ id: ref("method", "tech", "mat", "cons", "book", "qitem"), status: z.string() }).optional(),
+  cta: z.object({ label: z.string().min(1), action: z.enum(["practice"]).optional() }).optional(),
+  practice: z.object({ enemy: ref("enemy"), tech: ref("tech"), count: z.number().int().min(1).max(9) }).optional(),
+}).superRefine((l, ctx) => {
+  if (l.cta?.action === "practice" && !l.practice) ctx.addIssue({ code: "custom", message: "a practice button needs `practice`" });
 });
 
 export const StoryScene = Named.extend({
@@ -120,11 +140,19 @@ export const StoryScene = Named.extend({
     z.object({ on: z.literal("chained") }),
   ]),
   lines: z.array(StoryLine).min(1),
-  choices: z.array(z.object({
-    text: z.string().min(1),
-    effects: Rewards.default({}),
-    next: ref("story").optional(),
-  })).optional(),
+  choices: z.array(StoryChoice).optional(),
+  /** false: the CG already paints the speakers, no separate figure is drawn over it. */
+  figure: z.boolean().default(true),
+  /** Location chip at the top of a narration scene. */
+  setting: z.object({ name: z.string().min(1), sub: z.string().optional() }).optional(),
+  /** Name tag over a character painted in the CG, at x/y percent of the screen. */
+  tag: z.object({ npc: ref("npc"), x: z.number().min(0).max(100), y: z.number().min(0).max(100) }).optional(),
+  /** Step pill for scenes with several questions: "<progress> 1 of 3". */
+  progress: z.string().optional(),
+  /** Sect location the scene happens at (header reads "<place> · <scene>" instead of "Scene N"). */
+  place: ref("sectloc").optional(),
+  /** Per-speaker presentation for this scene: short name and Chinese name, title on the nameplate and intro, element chip. */
+  cast: z.record(ref("npc"), z.object({ name: z.string().optional(), cn: z.string().optional(), title: z.string().optional(), intro_title: z.string().optional(), chip: z.string().optional(), chip_icon: z.string().optional() })).optional(),
   unlocks: z.array(z.string()).default([]),
   next: ref("story").optional(),
   skippable: z.boolean().default(true),

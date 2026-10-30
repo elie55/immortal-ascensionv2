@@ -27,4 +27,5 @@ UI icons in `src/ui/core/icons.ts` are drawn for this project.
 | Marcellus | buttons, labels, panel headings | Brian J. Bonislawsky (Astigmatic) | Google Fonts |
 | Ma Shan Zheng | large Chinese brush titles (realm names) | Ma Shan Zheng | Google Fonts |
 
-Ma Shan Zheng is cut down to the 605 Chinese characters the game uses (re-run the subset when new Chinese text is added).
+Ma Shan Zheng is cut down to the Chinese characters the game uses (605 of 608; 槃, 鮟 and 鱇 are not in the font and fall back to
+the system face). Re-run `python3 tools/fonts/subset_brush.py MaShanZheng-Regular.ttf` when new Chinese text is added.
