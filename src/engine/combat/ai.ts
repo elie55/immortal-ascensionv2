@@ -77,6 +77,7 @@ function condition(b: Battle, actor: Combatant, r: AutoRuleResolved): boolean {
     case "boss_only": return !!b.opts.isBossFight || b.alive("enemy").some((e) => e.kind === "boss");
     case "no_shield": return actor.shield <= 0;
     case "enemies_at_least": return b.alive(actor.side === "ally" ? "enemy" : "ally").length >= (r.value ?? 2);
+    case "big_attack": return b.alive(actor.side === "ally" ? "enemy" : "ally").some((e) => !!e.telegraph || (!!e.boss?.charging && e.boss.charging.turnsLeft <= 1));
     default: return true;
   }
 }

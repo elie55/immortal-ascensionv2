@@ -232,7 +232,7 @@ export const UiArt = Named.extend({
 export const AutoRule = z.object({
   /** A loadout slot (active index 0-3 as "a0".."a3", "ultimate", "beast") or a role ("heal", "shield", "damage", "basic"). */
   slot: z.string().min(1),
-  when: z.enum(["always", "hp_below", "sp_above", "boss_only", "no_shield", "enemies_at_least", "never"]).default("always"),
+  when: z.enum(["always", "hp_below", "sp_above", "boss_only", "no_shield", "enemies_at_least", "big_attack", "never"]).default("always"),
   value: z.number().optional(),
   target: z.enum(["default", "lowest_hp", "highest_cp", "weakest", "strongest"]).default("default"),
 });
@@ -267,6 +267,9 @@ export const CombatRules = z.object({
     /** Turn gauge: effective speed = min_speed + (spd − min)^spd_exp · k, so speed matters without linear runaway. */
     spd_exp: z.number().min(0.3).max(1).default(1),
   }).default({}),
+  /** Warnings before big attacks: an elite or boss that picks a technique estimated to take at least heavy_pct % of the
+   *  target's max HP winds up for one turn (a basic attack while glowing), then unleashes it. Control interrupts the wind-up. */
+  telegraph: z.object({ heavy_pct: z.number().min(0).max(100).default(30), ranks: z.array(z.enum(["elite", "boss"])).default(["elite", "boss"]) }).default({}),
   auto_default: z.array(AutoRule).min(1),
 });
 export type CombatRules = z.infer<typeof CombatRules>;

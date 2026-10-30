@@ -90,7 +90,7 @@ export function buildEnemy(c: ContentIndex, id: string, opts: { hpMult?: number;
   return buildEnemyFrom(c, id, c.get<any>(id), opts);
 }
 
-export interface EnemyDef { name: string; element: string; realm: { id: string }; stats: Record<string, number>; cp: number; techniques: string[]; ai: { strategy: string; rules: string[] }; resistances?: Record<string, number>; loot?: string; mastery_xp?: number; phases?: Boss["phases"]; weaknesses?: string[] }
+export interface EnemyDef { name: string; kind?: string; element: string; realm: { id: string }; stats: Record<string, number>; cp: number; techniques: string[]; ai: { strategy: string; rules: string[] }; resistances?: Record<string, number>; loot?: string; mastery_xp?: number; phases?: Boss["phases"]; weaknesses?: string[] }
 
 /** Build from an explicit definition (content enemy/boss, or a synthetic one such as a duelling NPC). */
 export function buildEnemyFrom(c: ContentIndex, id: string, e: EnemyDef, opts: { hpMult?: number; statMult?: number; kind?: Combatant["kind"]; art?: string } = {}): Combatant {
@@ -109,6 +109,7 @@ export function buildEnemyFrom(c: ContentIndex, id: string, e: EnemyDef, opts: {
     id, name: e.name, side: "enemy", kind: opts.kind ?? (isBoss ? "boss" : "enemy"), element: e.element, base, maxHp, maxSp: Math.max(0, Math.round(base.sp_energy ?? 100)), skills, specials: [],
     resistances: { ...(e.resistances ?? {}) }, ai: { strategy: e.ai.strategy, rules: e.ai.rules }, art: opts.art ?? c.art(id, "battle"), cp: Math.round(e.cp * (opts.statMult ?? 1)), masteryXp: e.mastery_xp ?? 0, lootTable: e.loot, realmOrder: c.get<any>(e.realm.id).order,
   });
+  if (!isBoss && e.kind === "elite") cmb.elite = true;
   if (isBoss) cmb.boss = { phases: [...e.phases!].sort((a, b) => b.hp_threshold - a.hp_threshold), weaknesses: e.weaknesses ?? [], phase: 0, charging: null };
   return cmb;
 }

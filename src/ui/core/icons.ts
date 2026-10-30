@@ -15,6 +15,7 @@ const P: Record<string, string> = {
   check: '<path d="M5 12l5 5L20 7"/>',
   plus: '<path d="M12 5v14M5 12h14"/>',
   play: '<path d="M8 5v14l11-7z" fill="currentColor"/>',
+  pause: '<path d="M8.5 5v14M15.5 5v14" stroke-width="3"/>',
   save: '<path d="M5 3h11l3 3v15H5z"/><path d="M8 3v5h7V3"/><path d="M8 21v-7h8v7"/>',
   export: '<path d="M12 15V3"/><path d="M7 8l5-5 5 5"/><path d="M5 13v7h14v-7"/>',
   import: '<path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 13v7h14v-7"/>',

@@ -78,6 +78,7 @@ function pickSheet(app: App, kind: "actives" | "passives" | "ultimate", index: n
 const WHEN: { v: string; label: string; value?: [number, number, number] }[] = [
   { v: "always", label: "Always" }, { v: "hp_below", label: "My HP below", value: [10, 90, 50] }, { v: "sp_above", label: "SP above", value: [10, 90, 50] },
   { v: "no_shield", label: "No shield" }, { v: "boss_only", label: "Boss fights" }, { v: "enemies_at_least", label: "Enemies ≥", value: [2, 5, 2] },
+  { v: "big_attack", label: "Big attack coming" },
 ];
 const TARGET: { v: string; label: string }[] = [
   { v: "default", label: "Default" }, { v: "lowest_hp", label: "Lowest HP" }, { v: "highest_cp", label: "Strongest CP" }, { v: "weakest", label: "Weakest" }, { v: "strongest", label: "Toughest" },

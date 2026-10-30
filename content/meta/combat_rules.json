@@ -45,30 +45,6 @@
     "turns_per_wave": 3,
     "bolt_power": 25
   },
-  "auto_default": [
-    {
-      "slot": "ultimate",
-      "when": "always"
-    },
-    {
-      "slot": "heal",
-      "when": "hp_below",
-      "value": 50
-    },
-    {
-      "slot": "shield",
-      "when": "no_shield"
-    },
-    {
-      "slot": "damage",
-      "when": "always",
-      "target": "lowest_hp"
-    },
-    {
-      "slot": "basic",
-      "when": "always"
-    }
-  ],
   "recovery": {
     "hp_pct_per_min": 4
   },
@@ -90,5 +66,41 @@
     "status_res": 75,
     "elem_diff": 60,
     "spd_exp": 0.7
-  }
+  },
+  "telegraph": {
+    "heavy_pct": 30,
+    "ranks": [
+      "elite",
+      "boss"
+    ]
+  },
+  "auto_default": [
+    {
+      "slot": "ultimate",
+      "when": "always"
+    },
+    {
+      "slot": "heal",
+      "when": "hp_below",
+      "value": 50
+    },
+    {
+      "slot": "shield",
+      "when": "big_attack",
+      "target": "default"
+    },
+    {
+      "slot": "shield",
+      "when": "no_shield"
+    },
+    {
+      "slot": "damage",
+      "when": "always",
+      "target": "lowest_hp"
+    },
+    {
+      "slot": "basic",
+      "when": "always"
+    }
+  ]
 }

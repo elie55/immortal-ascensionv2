@@ -23,6 +23,8 @@ import { celebrateEvent } from "./ui/screens/celebrate.ts";
 import { questStatus } from "./engine/progression.ts";
 import { bestLoadout } from "./engine/actions.ts";
 import { grantGear } from "./engine/inventory.ts";
+import { decode } from "./save/codec.ts";
+import { startEncounter } from "./ui/screens/battle.ts";
 import type { DomainEvent } from "./engine/events.ts";
 
 export const VERSION = "0.5.0";
@@ -57,7 +59,12 @@ export class App {
     await this.refreshSlots();
     this.router.pushGlobal(mainMenuScreen(this));
     this.installLifecycle();
-    (globalThis as any).__ia = Object.assign((globalThis as any).__ia ?? {}, { app: this, content: this.content, engine: { grantGear } });
+    (globalThis as any).__ia = Object.assign((globalThis as any).__ia ?? {}, { app: this, content: this.content, engine: { grantGear },
+      // test lab (tests/browser/lab.ts): load an encoded save into slot 0 and open a tab; start any encounter
+      dev: {
+        load: (text: string, tab: Tab = "cultivate") => { const r = decode(text); if (!r.ok) throw new Error(r.reason); this.attach(r.state, 0); this.router.clearGlobal(); this.enterGame(tab); },
+        fight: (src: Parameters<typeof startEncounter>[1]) => startEncounter(this, src),
+      } });
   }
 
   async refreshSlots(): Promise<void> {

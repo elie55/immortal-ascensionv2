@@ -67,6 +67,7 @@ export class Battle {
       }
       if (u.boss) this.enterPhase(u, 0, true);
     }
+    for (const u of this.units) if (u.side === "enemy") this.planNext(u);
   }
 
   // ---------- main loop ----------
@@ -91,8 +92,14 @@ export class Battle {
     this.beginTurn(actor);
     if (this.result) return;
     if (!actor.alive) return;
-    if (this.isControlled(actor)) { this.emit({ t: "skip", actor: actor.uid, reason: this.has(actor, "status.freeze") ? "frozen" : "stunned" }); if (actor.boss?.charging) { actor.boss.charging = null; this.emit({ t: "interrupt", actor: actor.uid }); } this.endTurn(actor); return; }
+    if (this.isControlled(actor)) { this.emit({ t: "skip", actor: actor.uid, reason: this.has(actor, "status.freeze") ? "frozen" : "stunned" }); this.interrupt(actor); this.endTurn(actor); return; }
     if (actor.kind === "player" && this.manual) { this.pending = actor; return; }
+    // a big attack announced at the end of this unit's last turn lands now
+    if (actor.telegraph) {
+      const tg = actor.telegraph; actor.telegraph = null;
+      const sk = actor.skills.find((s) => s.id === tg.skill);
+      if (sk) { this.perform(actor, { skill: sk, target: tg.target, heavy: true }); this.endTurn(actor); return; }
+    }
     const choice = actor.ai ? chooseEnemy(this, actor) : chooseAuto(this, actor, this.autoRules);
     this.perform(actor, choice);
     this.endTurn(actor);
@@ -108,6 +115,81 @@ export class Battle {
     this.perform(actor, { skill, target: choice.target });
     this.endTurn(actor);
     return true;
+  }
+
+  /** The next `n` actors by the speed gauge, simulated on a copy (nothing changes). For the turn-order strip. */
+  previewOrder(n = 6): number[] {
+    const th = this.c.combat.turn.gauge_threshold;
+    const live = this.alive();
+    if (!live.length) return [];
+    const g = new Map(live.map((u) => [u.uid, u.gauge]));
+    const spd = new Map(live.map((u) => [u.uid, this.eff(u, "spd")]));
+    const out: number[] = [];
+    for (let guard = 0; out.length < n && guard < 100_000; guard++) {
+      let best: Combatant | null = null;
+      for (const u of live) { const v = g.get(u.uid)!; if (v >= th && (!best || v > g.get(best.uid)! || (v === g.get(best.uid)! && u.uid < best.uid))) best = u; }
+      if (best) { g.set(best.uid, g.get(best.uid)! - th); out.push(best.uid); continue; }
+      for (const u of live) g.set(u.uid, g.get(u.uid)! + spd.get(u.uid)!);
+    }
+    return out;
+  }
+
+  /** Stun, freeze or silence cancels a boss charge and a wound-up big attack. */
+  private interrupt(u: Combatant): void {
+    let hit = false;
+    if (u.boss?.charging) { u.boss.charging = null; hit = true; }
+    if (u.telegraph) { u.telegraph = null; hit = true; }
+    if (hit) this.emit({ t: "interrupt", actor: u.uid });
+  }
+
+  /**
+   * Elites and bosses telegraph big attacks ("intent"): at the end of their turn they decide their next move as they
+   * would at the start of it (cooldowns one lower, spirit energy regenerated). When that move is estimated to take at
+   * least `telegraph.heavy_pct` % of the player's or a companion's max HP it is locked in and announced, and it lands
+   * on that next turn, so the warning never delays or weakens the attack. Stun, freeze or silence cancels it.
+   */
+  private planNext(actor: Combatant): void {
+    actor.telegraph = null;
+    const T = this.c.combat.telegraph;
+    const rank = actor.boss ? "boss" : actor.elite ? "elite" : null;
+    if (!rank || !T.ranks.includes(rank) || !actor.alive || !actor.ai || this.result) return;
+    if (actor.boss?.charging && actor.boss.charging.turnsLeft <= 1) return;   // its charged attack lands first
+    const cds = { ...actor.cooldowns }, sp = actor.sp;
+    for (const k of Object.keys(actor.cooldowns)) if (actor.cooldowns[k]! > 0) actor.cooldowns[k]!--;
+    if (actor.maxSp > 0) actor.sp = Math.min(actor.maxSp, actor.sp + Math.round(actor.maxSp * this.c.combat.spirit_energy.regen_pct_per_turn / 100));
+    const choice = chooseEnemy(this, actor);
+    actor.cooldowns = cds; actor.sp = sp;
+    this.windUp(actor, choice);
+  }
+
+  private windUp(actor: Combatant, choice: { skill: Skill; target?: number }): boolean {
+    const T = this.c.combat.telegraph;
+    const sk = choice.skill;
+    if (sk.kind === "basic" || sk.power <= 0) return false;
+    const targets = resolveTargets(this, actor, sk, choice.target).filter((t) => t.side !== actor.side);
+    // measured on the player and Dao companions: a spirit beast's small HP pool would make every hit look "big"
+    const judged = targets.filter((t) => t.kind !== "beast");
+    if (!judged.length) return false;
+    const pct = Math.max(...judged.map((t) => this.estimate(actor, t, sk) / Math.max(1, t.maxHp) * 100));
+    if (pct < T.heavy_pct) return false;
+    actor.telegraph = { skill: sk.id, name: sk.name, target: choice.target, targets: targets.map((t) => t.uid), pct: Math.round(pct) };
+    this.emit({ t: "telegraph", actor: actor.uid, skill: sk.id, name: sk.name, targets: actor.telegraph.targets, pct: Math.round(pct) });
+    return true;
+  }
+
+  /** Expected damage of a skill on a target (no variance, crit averaged, no dodge, before shields). */
+  estimate(a: Combatant, d: Combatant, skill: Skill, extraMult = 1): number {
+    const R = this.c.combat.damage;
+    let raw = (this.eff(a, "atk") + this.eff(a, "sp_power") * R.sp_power_weight) * (skill.power / 100) * skill.masteryMult * extraMult;
+    raw *= this.elementMult(a, d, skill.element);
+    const cr = Math.max(0, Math.min(1, this.eff(a, "crit") / 100));
+    raw *= 1 + cr * (Math.max(100, this.eff(a, "crit_dmg") || R.crit_dmg_default) / 100 - 1);
+    const defEff = this.eff(d, "def") * (1 - this.eff(a, "armor_pen") / 100);
+    const atk = Math.max(1, this.eff(a, "atk"));
+    raw *= atk / (atk + defEff * R.def_factor);
+    raw *= a.side === "enemy" ? (this.opts.enemyDmgMult ?? 1) : (this.opts.allyDmgMult ?? 1);
+    raw *= 1 - this.eff(d, "dmg_red") / 100;
+    return raw * skill.hits;
   }
 
   private nextActor(): Combatant | null {
@@ -165,6 +247,7 @@ export class Battle {
       if (CONTROL.has(s.id)) u.controlGuard = Math.max(u.controlGuard ?? 0, this.c.combat.status.control_immunity_turns + (u.boss ? 1 : 0));
     }
     this.checkEnd();
+    if (u.side === "enemy" && u.alive) this.planNext(u);
   }
 
   private isControlled(u: Combatant): boolean { return u.statuses.some((s) => CONTROL.has(s.id)); }
@@ -179,7 +262,7 @@ export class Battle {
 
   // ---------- actions ----------
 
-  perform(actor: Combatant, choice: { skill: Skill; target?: number; charged?: boolean }): void {
+  perform(actor: Combatant, choice: { skill: Skill; target?: number; charged?: boolean; heavy?: boolean }): void {
     const { skill } = choice;
     const boss = actor.boss;
     // boss charged attack lifecycle
@@ -202,7 +285,7 @@ export class Battle {
     if (skill.kind === "ultimate") actor.ult = 0;
     else actor.ult = Math.min(100, actor.ult + this.c.combat.ultimate.gain_per_action);
     if (skill.kind === "basic") this.gainSp(actor, this.c.combat.spirit_energy.basic_attack_restore);
-    this.emit({ t: "action", actor: actor.uid, skill: skill.id, name: skill.name, targets: targets.map((t) => t.uid), charged: choice.charged });
+    this.emit({ t: "action", actor: actor.uid, skill: skill.id, name: skill.name, targets: targets.map((t) => t.uid), charged: choice.charged, ...(choice.heavy ? { heavy: true } : {}) });
     const mult = choice.charged ? this.c.combat.damage.charged_attack_mult : 1;
     for (const tgt of targets) {
       if (skill.healPct) this.heal(actor, tgt, Math.round(actor.maxHp * skill.healPct / 100 * skill.masteryMult), "heal");
@@ -294,7 +377,7 @@ export class Battle {
   }
 
   private kill(d: Combatant, by: Combatant | null): void {
-    d.alive = false; d.statuses = []; d.shield = 0;
+    d.alive = false; d.statuses = []; d.shield = 0; d.telegraph = null;
     if (d.side === "enemy") this.killed.push(d.id);
     this.emit({ t: "death", target: d.uid, by: by?.uid ?? 0 });
     if (by && by.alive) {
@@ -346,7 +429,7 @@ export class Battle {
       this.emit({ t: "status", actor: src.uid, target: tgt.uid, status, result: "applied" });
       if (status === "status.shield" && tgt.shield <= 0) this.addShield(src, tgt, Math.round(tgt.maxHp * this.c.combat.status.shield_from_status_pct / 100));
     }
-    if (CONTROL.has(status) && tgt.boss?.charging) { tgt.boss.charging = null; this.emit({ t: "interrupt", actor: tgt.uid }); }
+    if (CONTROL.has(status)) this.interrupt(tgt);
   }
 
   // ---------- bosses ----------

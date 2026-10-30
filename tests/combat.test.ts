@@ -11,6 +11,7 @@ import { energyNow, qiNeeded } from "../src/engine/cultivation.ts";
 import { itemCount } from "../src/engine/inventory.ts";
 import { computeStats } from "../src/engine/stats.ts";
 import type { Combatant, AutoRuleResolved } from "../src/engine/combat/types.ts";
+import { chooseAuto } from "../src/engine/combat/ai.ts";
 
 const c = testContent();
 const T0 = Date.UTC(2026, 9, 29, 12, 0, 0);
@@ -324,3 +325,68 @@ test("300 random battles across regions terminate with sane invariants", () => {
   }
 });
 
+
+test("elites and bosses announce big attacks one turn ahead; the announced move lands as is; control cancels it", () => {
+  const elite = c.byPrefix<any>("enemy").find((e) => e.kind === "elite" && e.techniques.some((t: string) => c.get<any>(t).power > 0))!;
+  assert.ok(elite, "an elite with a damaging technique exists");
+  // a fragile player: any technique hit is "big"
+  resetUids();
+  const p = buildPlayer(fresh(), c); p.base.hp = 400; p.maxHp = 400; p.hp = 400; p.base.def = 0; p.base.atk = 1;
+  const e = buildEnemy(c, elite.id);
+  assert.equal(e.elite, true);
+  const b = new Battle(c, [p, e], seedRng(4), rules());
+  b.start();
+  const evs: any[] = [...b.drain()];
+  for (let i = 0; i < 30 && !b.result; i++) { b.step(); evs.push(...b.drain()); if (evs.some((x) => x.t === "action" && x.heavy)) break; }
+  const tg = evs.find((x) => x.t === "telegraph");
+  assert.ok(tg, "a telegraph is emitted");
+  assert.ok(tg.pct >= c.combat.telegraph.heavy_pct, `estimated ${tg.pct}% ≥ threshold`);
+  const heavy = evs.find((x) => x.t === "action" && x.heavy);
+  if (heavy) { assert.equal(heavy.skill, tg.skill, "the announced technique is the one that lands"); assert.ok(evs.indexOf(tg) < evs.indexOf(heavy)); }
+
+  // the auto-battle condition sees it
+  resetUids();
+  const p2 = buildPlayer(fresh(), c); p2.base.hp = 400; p2.maxHp = 400; p2.hp = 400; p2.base.def = 0;
+  const e2 = buildEnemy(c, elite.id);
+  const b2 = new Battle(c, [p2, e2], seedRng(5), rules());
+  b2.start();
+  assert.ok(e2.telegraph, "planned at battle start");
+  // stun cancels the wound-up attack
+  (b2 as any).applyStatus(p2, e2, "status.stun", 1, 1);
+  if (e2.statuses.some((s) => s.id === "status.stun")) {
+    assert.equal(e2.telegraph, null, "control interrupts the big attack");
+    assert.ok(b2.drain().some((x) => x.t === "interrupt"));
+  }
+
+  // a sturdy player: the same elite never telegraphs
+  resetUids();
+  const p3 = buildPlayer(fresh(), c); p3.base.hp = 1e9; p3.maxHp = 1e9; p3.hp = 1e9; p3.base.def = 1e6;
+  const e3 = buildEnemy(c, elite.id);
+  const b3 = new Battle(c, [p3, e3], seedRng(6), rules());
+  b3.start();
+  for (let i = 0; i < 20 && !b3.result; i++) b3.step();
+  assert.ok(!b3.drain().some((x) => x.t === "telegraph"), "small hits are not announced");
+});
+
+test("normal enemies never telegraph, and the Big attack coming rule picks a shield", () => {
+  resetUids();
+  const p = buildPlayer(fresh(), c); p.base.hp = 50; p.maxHp = 50; p.hp = 50; p.base.def = 0;
+  const e = buildEnemy(c, "enemy.field_bandit");
+  const b = new Battle(c, [p, e], seedRng(3), rules());
+  b.start();
+  for (let i = 0; i < 10 && !b.result; i++) b.step();
+  assert.ok(!b.drain().some((x) => x.t === "telegraph"));
+  // the auto-battle condition
+  const sh = c.byPrefix<any>("tech").find((t) => t.shield_pct_max_hp > 0 && !t.enemy_only && t.kind === "active")!;
+  const s = fresh(); s.techniques.known[sh.id] = 0; s.techniques.actives = [sh.id, null, null, null];
+  resetUids();
+  const p4 = buildPlayer(s, c);
+  const e4 = buildEnemy(c, "enemy.field_bandit");
+  const rl: AutoRuleResolved[] = [{ slot: "shield", when: "big_attack", target: "default" }, { slot: "basic", when: "always", target: "default" }];
+  const b4 = new Battle(c, [p4, e4], seedRng(2), rl);
+  b4.start();
+  p4.sp = p4.maxSp;
+  assert.equal(chooseAuto(b4, p4, rl).skill.kind, "basic", "no warning: basic attack");
+  e4.telegraph = { skill: "basic", name: "x", targets: [p4.uid], pct: 50 };
+  assert.equal(chooseAuto(b4, p4, rl).skill.id, sh.id, "warning: shield up");
+});

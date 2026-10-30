@@ -61,6 +61,10 @@ export interface Combatant {
   specials: GearSpecial[];
   resistances: Record<string, number>;
   boss?: BossProfile;
+  /** Elite enemies (content kind "elite") telegraph big attacks like bosses do. */
+  elite?: boolean;
+  /** A big attack wound up last turn, unleashed on this unit's next turn unless control interrupts it. */
+  telegraph?: { skill: string; name: string; target?: number; targets: number[]; pct: number } | null;
   /** Turns of control immunity left after a stun/freeze/silence wore off. */
   controlGuard?: number;
   ai: { strategy: string; rules: string[] } | null;   // null = player (manual or auto rules)
@@ -80,7 +84,7 @@ export type BattleEvent =
   | { t: "start"; wave: number; waves: number }
   | { t: "turn"; actor: number; round: number }
   | { t: "skip"; actor: number; reason: string }
-  | { t: "action"; actor: number; skill: string; name: string; targets: number[]; charged?: boolean }
+  | { t: "action"; actor: number; skill: string; name: string; targets: number[]; charged?: boolean; heavy?: boolean }
   | { t: "hit"; actor: number; target: number; amount: number; crit: boolean; element: string; absorbed: number; dodged?: boolean; kind: HitKind }
   | { t: "heal"; actor: number; target: number; amount: number; kind: "heal" | "regen" | "lifesteal" | "on_kill" }
   | { t: "shield"; actor: number; target: number; amount: number }
@@ -92,6 +96,8 @@ export type BattleEvent =
   | { t: "summon"; actor: number; spawned: number[] }
   | { t: "charge"; actor: number; skill: string; turns: number }
   | { t: "interrupt"; actor: number }
+  /** A big attack is coming on this unit's next turn: estimated damage as % of the main target's max HP. */
+  | { t: "telegraph"; actor: number; skill: string; name: string; targets: number[]; pct: number }
   | { t: "hazard"; name: string; element: string; wave: number; waves: number }
   | { t: "end"; result: "victory" | "defeat" | "timeout" | "fled" };
 
