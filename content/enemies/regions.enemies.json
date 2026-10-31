@@ -133,7 +133,14 @@
         "facing": "front",
         "body": "flying"
       }
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/enemy.ash_vulture/rig.json",
+        "art": "battle",
+        "archetype": "flying"
+      }
+    ]
   },
   {
     "id": "enemy.magma_golem",
@@ -2037,7 +2044,14 @@
         "facing": "front",
         "body": "humanoid_unarmed"
       }
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/enemy.abyss_cultist/rig.json",
+        "art": "battle",
+        "archetype": "humanoid_unarmed"
+      }
+    ]
   },
   {
     "id": "enemy.thunder_beetle",
@@ -2513,7 +2527,14 @@
         "facing": "front",
         "body": "flying"
       }
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/enemy.abyssal_angler/rig.json",
+        "art": "battle",
+        "archetype": "flying"
+      }
+    ]
   },
   {
     "id": "enemy.bone_dragon_spirit",
@@ -3329,7 +3350,14 @@
         "facing": "front",
         "body": "humanoid_unarmed"
       }
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/enemy.ascension_judge/rig.json",
+        "art": "battle",
+        "archetype": "humanoid_unarmed"
+      }
+    ]
   },
   {
     "id": "enemy.failed_ascendant",

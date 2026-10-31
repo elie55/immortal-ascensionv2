@@ -1,0 +1,38 @@
+{
+ "id": "enemy.abyss_cultist",
+ "art": "battle",
+ "body": "assets/anim/enemy.abyss_cultist/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  67,
+  70,
+  740,
+  987
+ ],
+ "ground": [
+  404,
+  987
+ ],
+ "facing": 0,
+ "archetype": "humanoid_unarmed",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 547,
+ "chest": 364,
+ "neck": 254,
+ "blink": {
+  "file": "assets/anim/enemy.abyss_cultist/blink.webp",
+  "rect": [
+   293,
+   151,
+   69,
+   39
+  ]
+ },
+ "weights": "assets/anim/enemy.abyss_cultist/weights.png"
+}

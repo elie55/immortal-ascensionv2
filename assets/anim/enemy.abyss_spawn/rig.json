@@ -1,0 +1,38 @@
+{
+ "id": "enemy.abyss_spawn",
+ "art": "battle",
+ "body": "assets/anim/enemy.abyss_spawn/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  9,
+  40,
+  758,
+  970
+ ],
+ "ground": [
+  384,
+  970
+ ],
+ "facing": 0,
+ "archetype": "serpent",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 524,
+ "chest": 361,
+ "neck": 249,
+ "blink": {
+  "file": "assets/anim/enemy.abyss_spawn/blink.webp",
+  "rect": [
+   324,
+   149,
+   86,
+   35
+  ]
+ },
+ "weights": "assets/anim/enemy.abyss_spawn/weights.png"
+}

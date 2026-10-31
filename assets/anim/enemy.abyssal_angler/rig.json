@@ -1,0 +1,38 @@
+{
+ "id": "enemy.abyssal_angler",
+ "art": "battle",
+ "body": "assets/anim/enemy.abyssal_angler/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  16,
+  38,
+  752,
+  935
+ ],
+ "ground": [
+  384,
+  935
+ ],
+ "facing": 0,
+ "archetype": "flying",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 504,
+ "chest": 603,
+ "neck": 496,
+ "blink": {
+  "file": "assets/anim/enemy.abyssal_angler/blink.webp",
+  "rect": [
+   252,
+   352,
+   67,
+   81
+  ]
+ },
+ "weights": "assets/anim/enemy.abyssal_angler/weights.png"
+}

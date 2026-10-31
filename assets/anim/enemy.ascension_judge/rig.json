@@ -1,0 +1,38 @@
+{
+ "id": "enemy.ascension_judge",
+ "art": "battle",
+ "body": "assets/anim/enemy.ascension_judge/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  32,
+  87,
+  723,
+  983
+ ],
+ "ground": [
+  378,
+  983
+ ],
+ "facing": 0,
+ "archetype": "humanoid_unarmed",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 553,
+ "chest": 365,
+ "neck": 258,
+ "blink": {
+  "file": "assets/anim/enemy.ascension_judge/blink.webp",
+  "rect": [
+   315,
+   171,
+   65,
+   24
+  ]
+ },
+ "weights": "assets/anim/enemy.ascension_judge/weights.png"
+}

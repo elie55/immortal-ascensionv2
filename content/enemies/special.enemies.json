@@ -65,7 +65,14 @@
         "facing": "front",
         "body": "serpent"
       }
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/enemy.abyss_spawn/rig.json",
+        "art": "battle",
+        "archetype": "serpent"
+      }
+    ]
   },
   {
     "id": "enemy.training_construct",
