@@ -529,7 +529,7 @@ const SCEN: Record<string, () => Promise<void>> = {
   auto5: () => autoFight("auto5", 5, { kind: "node", id: nodeOf(5, "boss") }, ["npc.bai_lingshuang", "npc.tang_xiaoman"]),
   auto8: () => autoFight("auto8", 8, { kind: "node", id: nodeOf(8, "elite") }, ["npc.bai_lingshuang"]),
   // the header stays at the top while a screen scrolls
-  hdrscroll: () => screen("hdrscroll-0", 3, "0", { tab: "inventory" }).then(async () => {
+  hdrscroll: () => screen("hdrscroll-c", 3, "0", { tab: "cultivate" }).then(() => screen("hdrscroll-0", 3, "0", { tab: "inventory" })).then(async () => {
     await page.evaluate(() => document.querySelector(".screen")!.scrollTo(0, 500)); await page.waitForTimeout(300); await shot("hdrscroll-1");
     await page.locator(".nav button", { hasText: "Sect" }).click(); await page.waitForTimeout(700); await page.evaluate(() => document.querySelector(".screen")!.scrollTo(0, 400)); await page.waitForTimeout(300); await shot("hdrscroll-2");
   }),
