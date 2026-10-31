@@ -46,7 +46,9 @@ export function layoutSide(side: Side, units: LayoutUnit[], st: StageSize): Map<
   const A = ARENA;
   const [s0, s1] = side === "ally" ? A.allySpan : A.foeSpan;
   const span = (s1 - s0) * st.w;
-  const maxH = (side === "ally" ? A.allyMaxH : A.foeMaxH) * st.h;
+  // a boss standing alone gets the room of the whole band: it is the fight
+  const lone = side === "enemy" && order.length === 1 && order[0]!.kind === "boss";
+  const maxH = (side === "ally" ? A.allyMaxH : A.foeMaxH) * st.h * (lone ? 1.18 : 1);
   // the tallest figure that still lets the whole line fit its span
   const need = order.reduce((n, u) => n + size(u) * A.visible * A.pack, 0);
   const h = Math.min(maxH, span / need);

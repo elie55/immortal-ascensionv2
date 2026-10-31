@@ -531,7 +531,7 @@ def endgame():
              "duel": {"enabled": True, "loadout": loadout, "strategy": strat, "win": {"mastery_xp": 60}, "lose": {"mastery_xp": 20}, "cooldown_min": 60},
              "dao_companion": {"eligible": False}, "expressions": ["neutral"],
              "art": {"portrait": portrait(f"npcs/{k}/portrait", look), "full_body": full_body(f"npcs/{k}/full_body", look), "expression_neutral": expression(f"npcs/{k}/expression_neutral", look, "neutral"),
-                     "battle": battle(f"npcs/{k}/battle", f"{name} in combat stance, {look}")}}
+                     "battle": battle(f"npcs/{k}/battle", f"{name} in combat stance, {look}"), "cutin": cutin_art(k, look)}}
         out["npcs"].append(d)
 
     # ---- cultivation quests ----

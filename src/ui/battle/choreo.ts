@@ -6,7 +6,7 @@
 import type { BattleEvent } from "../../engine/combat/types.ts";
 
 export type Approach = "dash" | "none";
-export type Shape = "slash" | "pierce" | "burst" | "beam" | "wave" | "pillar" | "ring" | "rain" | "glow";
+export type Shape = "slash" | "pierce" | "burst" | "beam" | "wave" | "pillar" | "ring" | "rain" | "glow" | "bolt";
 export type Impact = "light" | "medium" | "heavy";
 export type Camera = "none" | "push" | "zoom";
 

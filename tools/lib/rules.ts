@@ -615,20 +615,32 @@ function hasUse(e: Entity, g: ReturnType<typeof buildGraph>): boolean {
   }
 }
 
-/** An animation rig must be built for this very entity, animate one of its generated art keys, and have all its layers on disk. */
+/**
+ * Every rig must be built for this very entity and art (assets/anim/<id>/ for the battle sprite, assets/anim/<id>.<key>/
+ * for another art such as a beast stage), animate one of its generated art keys, and have all its layers on disk.
+ */
 function checkAnim(ctx: Ctx, e: Entity) {
-  const a = e.data.anim; const where = `${e.id}.anim`;
-  if (a.rig !== `assets/anim/${e.id}/rig.json`) ctx.err("anim-rig", where, `rig path must be assets/anim/${e.id}/rig.json`);
-  const art = e.data.art?.[a.art];
-  if (!art) ctx.err("anim-art", where, `animates art key "${a.art}" which the entity does not have`);
-  else if (art.status === "planned") ctx.err("anim-art", where, `animates "${a.art}" but that image is not generated`);
-  const path = join(ctx.db.root, a.rig);
-  if (!existsSync(path)) { ctx.err("anim-missing", where, `${a.rig} does not exist`); return; }
-  let rig: any;
-  try { rig = JSON.parse(readFileSync(path, "utf8")); } catch { ctx.err("anim-rig", where, `${a.rig} is not valid JSON`); return; }
-  for (const f of [rig.body, rig.weapon?.file, rig.blink?.file, rig.weights].filter(Boolean) as string[]) if (!existsSync(join(ctx.db.root, f))) ctx.err("anim-missing", where, `layer ${f} does not exist`);
-  if (rig.archetype !== a.archetype) ctx.err("anim-rig", where, `archetype ${a.archetype} differs from the rig's ${rig.archetype}`);
-  if (!Array.isArray(rig.bbox) || !Array.isArray(rig.ground) || !rig.size) ctx.err("anim-rig", where, "rig lacks size/bbox/ground");
+  const list = e.data.anim as any[];
+  const keys = new Set<string>();
+  for (const [i, a] of list.entries()) {
+    const where = `${e.id}.anim[${i}]`;
+    const primary = a.art === "battle" || a.art === "full_body";
+    const want = primary ? `assets/anim/${e.id}/rig.json` : `assets/anim/${e.id}.${a.art}/rig.json`;
+    if (a.rig !== want) ctx.err("anim-rig", where, `rig path must be ${want}`);
+    if (keys.has(a.art)) ctx.err("anim-rig", where, `a second rig for art "${a.art}"`);
+    keys.add(a.art);
+    const art = e.data.art?.[a.art];
+    if (!art) ctx.err("anim-art", where, `animates art key "${a.art}" which the entity does not have`);
+    else if (art.status === "planned") ctx.err("anim-art", where, `animates "${a.art}" but that image is not generated`);
+    const path = join(ctx.db.root, a.rig);
+    if (!existsSync(path)) { ctx.err("anim-missing", where, `${a.rig} does not exist`); continue; }
+    let rig: any;
+    try { rig = JSON.parse(readFileSync(path, "utf8")); } catch { ctx.err("anim-rig", where, `${a.rig} is not valid JSON`); continue; }
+    for (const f of [rig.body, rig.weapon?.file, rig.blink?.file, rig.weights].filter(Boolean) as string[]) if (!existsSync(join(ctx.db.root, f))) ctx.err("anim-missing", where, `layer ${f} does not exist`);
+    if (rig.archetype !== a.archetype) ctx.err("anim-rig", where, `archetype ${a.archetype} differs from the rig's ${rig.archetype}`);
+    if (rig.art && rig.art !== a.art) ctx.err("anim-rig", where, `the rig animates "${rig.art}", the block says "${a.art}"`);
+    if (!Array.isArray(rig.bbox) || !Array.isArray(rig.ground) || !rig.size) ctx.err("anim-rig", where, "rig lacks size/bbox/ground");
+  }
 }
 
 function checkArt(ctx: Ctx, where: string, asset: any, files: Map<string, string>) {

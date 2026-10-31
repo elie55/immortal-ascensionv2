@@ -132,6 +132,8 @@ export const ArtAsset = z.object({
   notes: z.string().optional(),
   /** Which way the figure looks (battle sprites; tools/art/facing.json). The arena stage mirrors figures to face their foes. */
   facing: z.enum(["left", "right", "front"]).optional(),
+  /** Body type of a battle sprite (tools/anim/cast.json): moves a figure without a rig with its archetype's clips. */
+  body: z.enum(["humanoid", "humanoid_unarmed", "quadruped", "flying", "serpent", "large"]).optional(),
 });
 export type ArtAsset = z.infer<typeof ArtAsset>;
 
@@ -141,11 +143,13 @@ export type ArtAsset = z.infer<typeof ArtAsset>;
  * Added by the generators when the rig folder exists, so content never points at a rig that is not built.
  */
 export const AnimBlock = z.object({
-  rig: z.string().regex(/^assets\/anim\/[a-z0-9_.\-]+\/rig\.json$/, "assets/anim/<id>/rig.json"),
+  rig: z.string().regex(/^assets\/anim\/[a-z0-9_.\-]+\/rig\.json$/, "assets/anim/<id>[.<art key>]/rig.json"),
   art: z.string().min(1),
   archetype: z.enum(["humanoid", "humanoid_unarmed", "quadruped", "flying", "serpent", "large"]),
 });
 export type AnimBlock = z.infer<typeof AnimBlock>;
+/** Every rig of an entity: its battle sprite's, and one per other art it fights as (a beast's stages). */
+export const AnimBlocks = z.array(AnimBlock).min(1);
 
 /**
  * Build an `art` object schema: the given keys are required; any extra key

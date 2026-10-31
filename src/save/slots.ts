@@ -20,11 +20,13 @@ export interface Settings {
   screenShake: boolean; animationQuality: "low" | "medium" | "high"; reducedMotion: boolean; textSize: "normal" | "large";
   /** Battle presentation: the classic stage, or the arena under test (docs/BATTLE_STAGE.md). */
   battleStage: "classic" | "arena";
+  /** 2 once the arena became the default stage: older settings are moved to it once, then the player's choice stands. */
+  stageVersion?: number;
   language: "en"; lastSlot: number | null;
 }
 export const DEFAULT_SETTINGS: Settings = {
   musicVolume: 0.7, sfxVolume: 0.8, battleSpeed: 1, autoBattle: true, damageNumbers: true, screenShake: true,
-  animationQuality: "high", reducedMotion: false, textSize: "normal", battleStage: "classic", language: "en", lastSlot: null,
+  animationQuality: "high", reducedMotion: false, textSize: "normal", battleStage: "arena", stageVersion: 2, language: "en", lastSlot: null,
 };
 
 export type LoadResult =
@@ -103,7 +105,12 @@ export class SaveManager {
   }
 
   async loadSettings(): Promise<Settings> {
-    try { return { ...DEFAULT_SETTINGS, ...JSON.parse((await this.storage.get("settings")) ?? "{}") }; } catch { return { ...DEFAULT_SETTINGS }; }
+    try {
+      const s: Settings = { ...DEFAULT_SETTINGS, ...JSON.parse((await this.storage.get("settings")) ?? "{}") };
+      // the arena replaced the classic stage as the default (docs/BATTLE_STAGE.md): move older settings over once
+      if ((s.stageVersion ?? 1) < 2) { s.battleStage = "arena"; s.stageVersion = 2; }
+      return s;
+    } catch { return { ...DEFAULT_SETTINGS }; }
   }
   async saveSettings(s: Settings): Promise<void> { await this.storage.set("settings", JSON.stringify(s)); }
 

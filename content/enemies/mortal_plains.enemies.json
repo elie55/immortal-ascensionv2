@@ -61,14 +61,17 @@
           "refs/mockups/battle_screen.png"
         ],
         "status": "generated",
-        "facing": "front"
+        "facing": "front",
+        "body": "humanoid"
       }
     },
-    "anim": {
-      "rig": "assets/anim/enemy.field_bandit/rig.json",
-      "art": "battle",
-      "archetype": "humanoid"
-    }
+    "anim": [
+      {
+        "rig": "assets/anim/enemy.field_bandit/rig.json",
+        "art": "battle",
+        "archetype": "humanoid"
+      }
+    ]
   },
   {
     "id": "enemy.wild_boar",
@@ -132,7 +135,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left",
+        "body": "quadruped"
       }
     }
   },
@@ -197,7 +202,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left",
+        "body": "quadruped"
       }
     }
   },
@@ -262,7 +269,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "quadruped"
       }
     }
   }

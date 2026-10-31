@@ -10,7 +10,10 @@ import { h } from "../core/dom.ts";
 import type { Shape, Impact } from "./choreo.ts";
 
 export interface Pt { x: number; y: number }
-export type Sprite = "slash_arc" | "slash_cross" | "impact" | "blade" | "shard" | "ring" | "pillar" | "array" | "flare" | "swirl" | "wind" | "dust";
+export type Sprite = "slash_arc" | "slash_cross" | "impact" | "blade" | "shard" | "ring" | "pillar" | "array" | "flare" | "swirl" | "wind" | "dust"
+  | "burst_fire" | "burst_water" | "burst_wood" | "burst_earth" | "rock" | "flame" | "lightning" | "frost" | "miasma";
+/** The element's own burst painting (fire, water, wood, earth); metal and the rest use the plain light impact. */
+const BURST: Record<string, Sprite> = { "elem.fire": "burst_fire", "elem.water": "burst_water", "elem.wood": "burst_wood", "elem.earth": "burst_earth" };
 export interface VfxCtx {
   layer: HTMLElement;
   /** Scales a duration by the battle speed (ms at 1× → ms now). */
@@ -89,9 +92,17 @@ export function flare(ctx: VfxCtx, at: Pt, color: string, r: number, life = 360)
   anim(el, [{ transform: "translate(-50%,-50%) scale(.2)", opacity: 1 }, { transform: "translate(-50%,-50%) scale(1)", opacity: 0.9, offset: 0.35 }, { transform: "translate(-50%,-50%) scale(1.25)", opacity: 0 }], life, ctx);
 }
 
-/** The painted impact burst (star rays and shock ring), else sparks only. */
-function impact(ctx: VfxCtx, at: Pt, color: string, r: number, life = 380) {
-  const p = painted(ctx, "impact", at, r * 2.4, r * 2.4, color, life, { core: 0.95 });
+/**
+ * The painted impact: the element's own burst (flames, a splash, leaves, rock shards) with the light star over it,
+ * or the light star alone; else sparks only.
+ */
+function impact(ctx: VfxCtx, at: Pt, color: string, r: number, life = 380, element?: string) {
+  const el = element && BURST[element] && ctx.sprite(BURST[element]!) ? BURST[element]! : null;
+  if (el) {
+    const b = painted(ctx, el, at, r * 2.7, r * 2.7, color, life + 120, { core: 1, tint: 0.55, normal: false });
+    if (b) anim(b, pf("-50%,-50%", rnd(-40, 40), [[0.3, 0.3, 1], [1, 1, 1, 0.4], [1.25, 1.25, 0]]), life + 120, ctx);
+  }
+  const p = painted(ctx, "impact", at, r * (el ? 1.7 : 2.4), r * (el ? 1.7 : 2.4), color, life, { core: 0.95 });
   if (p) anim(p, pf("-50%,-50%", rnd(-30, 30), [[0.25, 0.25, 1], [1, 1, 1, 0.35], [1.2, 1.2, 0]]), life, ctx);
 }
 
@@ -157,7 +168,7 @@ async function slash(ctx: VfxCtx, a: VfxArgs, k: number) {
     else legacyArc(ctx, t, a, k, rot);
   }
   await sleep(ctx.dur(110));
-  for (const t of a.to) { impact(ctx, t, a.color, a.size * 0.34 * k); sparks(ctx, t, a.color, Math.round(10 * k), a.size * 0.5 * k); }
+  for (const t of a.to) { impact(ctx, t, a.color, a.size * 0.34 * k, 380, a.element); sparks(ctx, t, a.color, Math.round(10 * k), a.size * 0.5 * k); }
 }
 function legacyArc(ctx: VfxCtx, t: Pt, a: VfxArgs, k: number, rot: number) {
   const w = a.size * 0.95 * k;
@@ -175,13 +186,13 @@ async function pierce(ctx: VfxCtx, a: VfxArgs, k: number) {
   const p = painted(ctx, "wind", { x: a.from.x, y: a.from.y }, len * 1.15, a.size * 0.32 * k, a.color, 380, { origin: "0% 50%" });
   if (p) anim(p, [{ transform: `translate(0,-50%) rotate(${ang}deg) scale(.1, 1)`, opacity: 1 }, { transform: `translate(0,-50%) rotate(${ang}deg) scale(1, 1)`, opacity: 1, offset: 0.45 }, { transform: `translate(0,-50%) rotate(${ang}deg) scale(1.05, .4)`, opacity: 0 }], 380, ctx);
   await sleep(ctx.dur(160));
-  impact(ctx, t, a.color, a.size * 0.38 * k); flare(ctx, t, a.color, a.size * 0.25 * k); sparks(ctx, t, a.color, Math.round(8 * k), a.size * 0.45 * k);
+  impact(ctx, t, a.color, a.size * 0.38 * k, 380, a.element); flare(ctx, t, a.color, a.size * 0.25 * k); sparks(ctx, t, a.color, Math.round(8 * k), a.size * 0.45 * k);
 }
 
 /** A palm or claw blow: the burst on the body and a shock ring on the ground. */
 async function burst(ctx: VfxCtx, a: VfxArgs, k: number) {
   for (const t of a.to) {
-    impact(ctx, t, a.color, a.size * 0.5 * k, 460);
+    impact(ctx, t, a.color, a.size * 0.5 * k, 460, a.element);
     flare(ctx, t, a.color, a.size * 0.3 * k);
     if (a.ground !== undefined) ring(ctx, { x: t.x, y: a.ground }, a.color, a.size * 0.55 * k, 0.32, 520);
   }
@@ -198,7 +209,7 @@ async function beam(ctx: VfxCtx, a: VfxArgs, k: number) {
     flare(ctx, a.from, a.color, a.size * 0.22 * k, 520);
   }
   await sleep(ctx.dur(170));
-  for (const t of a.to) { impact(ctx, t, a.color, a.size * 0.4 * k); sparks(ctx, t, a.color, Math.round(6 * k), a.size * 0.4 * k); }
+  for (const t of a.to) { impact(ctx, t, a.color, a.size * 0.4 * k, 380, a.element); sparks(ctx, t, a.color, Math.round(6 * k), a.size * 0.4 * k); }
 }
 
 /** A sweep of sword wind across a whole line of targets. */
@@ -209,7 +220,7 @@ async function wave(ctx: VfxCtx, a: VfxArgs, k: number) {
   const p = painted(ctx, "wind", { x: cx, y: cy }, span, span * 0.38, a.color, 620, { core: 1 });
   if (p) anim(p, [{ transform: "translate(-85%,-50%) rotate(-12deg) scale(.4, .8)", opacity: 0 }, { transform: "translate(-50%,-50%) rotate(-12deg) scale(1, 1)", opacity: 1, offset: 0.45 }, { transform: "translate(-15%,-50%) rotate(-12deg) scale(1.1, .7)", opacity: 0 }], 620, ctx, { easing: "ease-out" });
   await sleep(ctx.dur(250));
-  for (const t of a.to) { impact(ctx, t, a.color, a.size * 0.32 * k); sparks(ctx, t, a.color, Math.round(5 * k), a.size * 0.35 * k); }
+  for (const t of a.to) { impact(ctx, t, a.color, a.size * 0.32 * k, 380, a.element); sparks(ctx, t, a.color, Math.round(5 * k), a.size * 0.35 * k); }
 }
 
 /** A column of heavenly light on one target, its ring on the ground. */
@@ -221,14 +232,16 @@ async function pillar(ctx: VfxCtx, a: VfxArgs, k: number) {
     setTimeout(() => ring(ctx, { x: t.x, y: g }, a.color, a.size * 0.8 * k, 0.3, 640), ctx.dur(200));
   }
   await sleep(ctx.dur(280));
-  for (const t of a.to) { impact(ctx, t, a.color, a.size * 0.55 * k, 480); sparks(ctx, t, a.color, Math.round(14 * k), a.size * 0.7 * k, 700); }
+  for (const t of a.to) { impact(ctx, t, a.color, a.size * 0.55 * k, 480, a.element); sparks(ctx, t, a.color, Math.round(14 * k), a.size * 0.7 * k, 700); }
 }
 
 /** Spirit blades (or ice shards) raining on every target, staggered, each landing with a flash; a ring to close. */
 async function rain(ctx: VfxCtx, a: VfxArgs, k: number) {
   const n = ctx.reduced ? 4 : Math.round(9 * k);
-  const icy = a.element === "elem.water";
-  const key: Sprite = icy ? "shard" : "blade";
+  // what falls: ice shards for water, burning rocks for earth, falling fire for fire, spirit blades otherwise
+  const pick: Sprite = a.element === "elem.water" ? "shard" : a.element === "elem.earth" ? "rock" : a.element === "elem.fire" ? "flame" : "blade";
+  const key: Sprite = ctx.sprite(pick) ? pick : a.element === "elem.water" ? "shard" : "blade";
+  const flip = key === "flame";   // a flame is painted rising: turned over, it falls like a meteor
   const landings: Promise<void>[] = [];
   let landed = 0;
   for (const t of a.to) for (let i = 0; i < n; i++) {
@@ -236,14 +249,17 @@ async function rain(ctx: VfxCtx, a: VfxArgs, k: number) {
     const x = t.x + rnd(-0.4, 0.4) * a.size, y = (a.ground ?? t.y + a.size * 0.45) - rnd(0.02, 0.35) * a.size;
     const len = a.size * rnd(0.55, 0.8), w = len * 0.36;
     const fall = a.size * 1.9, tilt = 14;
-    const p = painted(ctx, key, { x, y }, w, len, a.color, delay + 520, { origin: "50% 100%", core: 1 });
+    const p = painted(ctx, key, { x, y }, w * (key === "rock" ? 1.5 : 1), len * (key === "rock" ? 0.8 : 1), a.color, delay + 520, { origin: flip ? "50% 50%" : "50% 100%", core: 1 });
     // the box's bottom centre sits on the landing point; the blade falls along its own slant
     const sx = Math.sin(tilt * Math.PI / 180) * fall;
-    const frames = [{ transform: `translate(calc(-50% - ${sx}px), calc(-100% - ${fall}px)) rotate(${tilt}deg)`, opacity: 0 }, { transform: `translate(-50%, -100%) rotate(${tilt}deg)`, opacity: 1, offset: 0.62 }, { transform: `translate(-50%, -96%) rotate(${tilt}deg) scale(1, .85)`, opacity: 1, offset: 0.8 }, { transform: `translate(-50%, -96%) rotate(${tilt}deg) scale(.6, .5)`, opacity: 0 }];
+    const r = flip ? 180 + tilt : tilt;
+    const frames = [{ transform: `translate(calc(-50% - ${sx}px), calc(-100% - ${fall}px)) rotate(${r}deg)`, opacity: 0 }, { transform: `translate(-50%, -100%) rotate(${r}deg)`, opacity: 1, offset: 0.62 }, { transform: `translate(-50%, -96%) rotate(${r}deg) scale(1, .85)`, opacity: 1, offset: 0.8 }, { transform: `translate(-50%, -96%) rotate(${r}deg) scale(.6, .5)`, opacity: 0 }];
     if (p) anim(p, frames, 460, ctx, { delay: ctx.dur(delay), easing: "cubic-bezier(.6,0,.9,.6)" });
     else { const el = mount(ctx, h("div", { class: "vx vx-drop", style: { left: `${x}px`, top: `${y}px`, height: `${len}px`, "--c": a.color } }), delay + 460); anim(el, frames, 460, ctx, { delay: ctx.dur(delay), easing: "ease-in" }); }
     landings.push(sleep(ctx.dur(delay + 290)).then(() => {
       flare(ctx, { x, y: y - len * 0.08 }, a.color, a.size * 0.16, 300);
+      if (key === "rock" || key === "flame") impact(ctx, { x, y: y - len * 0.1 }, a.color, a.size * 0.14, 320, a.element);
+      if (key === "rock") dust(ctx, { x, y }, a.size * 0.4);
       if (!ctx.reduced) sparks(ctx, { x, y }, a.color, 4, a.size * 0.25, 380);
       a.onLand?.(landed++);
     }));
@@ -251,7 +267,7 @@ async function rain(ctx: VfxCtx, a: VfxArgs, k: number) {
   await sleep(ctx.dur(290));
   await Promise.race([Promise.all(landings), sleep(ctx.dur(900))]);
   // the last blade's shock: a burst on the body and a ring along the ground, kept inside the target's own space
-  for (const t of a.to) { impact(ctx, t, a.color, a.size * 0.4 * k, 520); ring(ctx, { x: t.x, y: a.ground ?? t.y + a.size * 0.45 }, a.color, a.size * 0.6 * k, 0.3, 700); }
+  for (const t of a.to) { impact(ctx, t, a.color, a.size * 0.4 * k, 520, a.element); ring(ctx, { x: t.x, y: a.ground ?? t.y + a.size * 0.45 }, a.color, a.size * 0.6 * k, 0.3, 700); }
 }
 
 /** A protective array and ring on friendly targets (buffs and shields). */
@@ -280,12 +296,34 @@ async function glow(ctx: VfxCtx, a: VfxArgs, k: number) {
   await sleep(ctx.dur(200));
 }
 
-const SHAPES: Record<Shape, (ctx: VfxCtx, a: VfxArgs, k: number) => Promise<void>> = { slash, pierce, burst, beam, wave, pillar, rain, ring: ringFx, glow };
+/** Thunder from the sky: a bolt on every target (two on heavy arts), each with its burst and ring; the stage flickers. */
+async function boltFx(ctx: VfxCtx, a: VfxArgs, k: number) {
+  const n = a.impact === "heavy" ? 2 : 1;
+  for (const [i, t] of a.to.entries()) for (let j = 0; j < n; j++) {
+    setTimeout(() => {
+      const g = { x: t.x + (j ? rnd(-0.15, 0.15) * a.size : 0), y: a.ground ?? t.y + a.size * 0.45 };
+      if (!bolt(ctx, g, a.color, a.size * 0.6 * k)) { impact(ctx, t, a.color, a.size * 0.45 * k); }
+      sparks(ctx, t, a.color, Math.round(8 * k), a.size * 0.5 * k);
+    }, ctx.dur(i * 90 + j * 160));
+  }
+  await sleep(ctx.dur(120));
+}
+
+const SHAPES: Record<Shape, (ctx: VfxCtx, a: VfxArgs, k: number) => Promise<void>> = { slash, pierce, burst, beam, wave, pillar, rain, ring: ringFx, glow, bolt: boltFx };
 
 /** Play one technique effect; resolves when it connects (the moment numbers should appear). */
 export function play(ctx: VfxCtx, a: VfxArgs): Promise<void> {
   if (!a.to.length) return Promise.resolve();
   return SHAPES[a.shape](ctx, a, IMPACT[a.impact]);
+}
+
+/** A bolt of lightning striking a point from the top of the stage (tribulations, thunder arts). */
+export function bolt(ctx: VfxCtx, at: Pt, color: string, w: number, life = 420) {
+  const p = painted(ctx, "lightning", { x: at.x, y: at.y }, w, at.y + w * 0.4, color, life, { origin: "50% 100%", core: 1, tint: 0.8 });
+  if (!p) return false;
+  anim(p, [{ transform: "translate(-50%,-100%) scale(.6, 1)", opacity: 0 }, { transform: "translate(-50%,-100%) scale(1, 1)", opacity: 1, offset: 0.08 }, { transform: "translate(-50%,-100%) scale(.9, 1)", opacity: 0.4, offset: 0.25 }, { transform: "translate(-50%,-100%) scale(1.05, 1)", opacity: 1, offset: 0.35 }, { transform: "translate(-50%,-100%) scale(.7, 1)", opacity: 0 }], life, ctx, { easing: "linear" });
+  impact(ctx, at, color, w * 0.45, 360); ring(ctx, at, color, w * 0.8, 0.3, 520);
+  return true;
 }
 
 /** A dash: dust where the feet push off and a streak of wind along the path. */

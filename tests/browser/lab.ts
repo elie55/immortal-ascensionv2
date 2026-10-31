@@ -55,6 +55,8 @@ async function boot(state: GameState, tab = "cultivate") {
   await page.goto(url);
   await page.waitForSelector('[data-screen="menu"]');
   await page.evaluate(([text, t]) => (window as any).__ia.dev.load(text, t), [encode(state, 0, T0), tab] as const);
+  // IA_STAGE=classic|arena picks the battle stage for this run
+  if (process.env.IA_STAGE) await page.evaluate((v) => { (window as any).__ia.app.settings.battleStage = v; }, process.env.IA_STAGE);
   await page.waitForTimeout(400);
 }
 const shot = async (name: string) => { if (process.env.IA_VIDEO) { await page.waitForTimeout(90); return; } await page.screenshot({ path: join(OUT, `${name}.png`) }); };   // a video run takes no stills (they stall the page)
@@ -415,6 +417,22 @@ async function defeat() {
   await page.evaluate(() => document.querySelector(".modal")!.scrollTo(0, 9999)); await page.waitForTimeout(300); await shot("defeat-2");
 }
 
+/** A whole fight on Auto at 1× (for IA_VIDEO reviews of the arena): every wave, until the result panel. */
+async function autoFight(name: string, n: number, src: any, companions: string[] = [], speed = 1) {
+  await boot(labState(n, "geared", companions));
+  await dismiss();
+  await page.evaluate((sp) => { const st = (window as any).__ia.game.state; st.combat.speed = sp; st.combat.manual = false; }, speed);
+  await page.evaluate((s) => (window as any).__ia.dev.fight(s), src);
+  await page.waitForSelector(".battle");
+  for (let i = 0; i < 6; i++) {
+    await page.waitForSelector(".modal-backdrop", { timeout: 240_000 });
+    await page.waitForTimeout(400); await shot(`${name}-w${i}`);
+    const next = page.locator(".modal-backdrop .btn", { hasText: "Next wave" });
+    if (await next.count()) { await next.click(); continue; }
+    break;
+  }
+}
+
 /** The arena test fight (docs/BATTLE_STAGE.md §7): a burst of frames around a dash strike and around the ultimate. */
 async function arenaTest(name: string) {
   await boot(labState(Number(process.env.IA_REGION ?? 1), "fitted"));   // IA_REGION=2: a spirit beast joins (three allies)
@@ -506,6 +524,10 @@ const SCEN: Record<string, () => Promise<void>> = {
   elite: () => fight("elite", 3, { kind: "node", id: nodeOf(3, "elite") }),
   boss: () => fight("boss", 2, { kind: "node", id: nodeOf(2, "boss") }, { companions: ["npc.bai_lingshuang"] }),
   party: () => fight("party", 5, { kind: "node", id: nodeOf(5, "boss") }, { companions: ["npc.bai_lingshuang", "npc.tang_xiaoman"] }),
+  // whole fights on Auto (IA_VIDEO=1 to record): a region 2 battle with a beast, a region 5 boss with the full party, a late elite
+  auto2: () => autoFight("auto2", 2, { kind: "node", id: nodeOf(2, "battle") }),
+  auto5: () => autoFight("auto5", 5, { kind: "node", id: nodeOf(5, "boss") }, ["npc.bai_lingshuang", "npc.tang_xiaoman"]),
+  auto8: () => autoFight("auto8", 8, { kind: "node", id: nodeOf(8, "elite") }, ["npc.bai_lingshuang"]),
   multi: () => fight("multi", 4, { kind: "node", id: c.nodesOf(regions[3]!.id).filter((x) => x.kind === "battle" && x.waves?.length).sort((a, b) => b.waves![0]!.length - a.waves![0]!.length)[0]!.id }),
 };
 

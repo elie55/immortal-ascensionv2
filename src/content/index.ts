@@ -89,7 +89,7 @@ export class ContentIndex {
   animFor(artFile: string): { rig: string; art: string; archetype: string } | undefined {
     if (!this._anim) {
       this._anim = new Map();
-      for (const e of Object.values(this.entities) as any[]) if (e.anim && e.art?.[e.anim.art]) this._anim.set(e.art[e.anim.art].file, e.anim);
+      for (const e of Object.values(this.entities) as any[]) for (const r of e.anim ?? []) if (e.art?.[r.art]) this._anim.set(e.art[r.art].file, r);
     }
     return this._anim.get(artFile);
   }
@@ -103,6 +103,12 @@ export class ContentIndex {
     return this._facing.get(artFile) ?? "front";
   }
   private _facing?: Map<string, "left" | "right" | "front">;
+  /** Body type recorded for a battle sprite (art block `body`), if any. */
+  bodyOf(artFile: string): string | undefined {
+    if (!this._body) { this._body = new Map(); for (const e of Object.values(this.entities) as any[]) for (const a of Object.values<any>(e.art ?? {})) if (a?.body) this._body.set(a.file, a.body); }
+    return this._body.get(artFile);
+  }
+  private _body?: Map<string, string>;
   /** First generated art among several keys (e.g. portrait, then full_body). */
   artAny(id: string, ...keys: string[]): string | undefined {
     for (const k of keys) { const f = this.art(id, k); if (f) return f; }

@@ -708,6 +708,114 @@
         "references": [],
         "status": "generated"
       },
+      "burst_fire": {
+        "file": "assets/vfx/burst_fire.webp",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. An explosive burst of fire: a blinding yellow-white centre, curling tongues of orange and red flame bursting outward in every direction, glowing embers flying, anime fire effect, centred.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "burst_water": {
+        "file": "assets/vfx/burst_water.webp",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A splash burst of glowing water: a bright white-cyan centre, a crown of luminous cyan water splashes and droplets spraying outward in every direction, thin spray streaks, anime water effect, centred.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "burst_wood": {
+        "file": "assets/vfx/burst_wood.webp",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A burst of glowing spirit wood energy: a bright pale-green centre, luminous jade-green leaves and curling vine tendrils of light radiating outward in every direction, small sparkles, anime nature magic effect, centred.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "burst_earth": {
+        "file": "assets/vfx/burst_earth.webp",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. An explosion of earth energy: a bright golden centre, jagged rock fragments glowing with molten amber cracks and streaks of golden dust bursting outward in every direction, anime earth impact effect, centred.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "rock": {
+        "file": "assets/vfx/rock.webp",
+        "size": [
+          384,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A single jagged boulder falling straight down, its cracks glowing bright molten amber and gold, a trail of glowing golden dust streaking above it, centred, vertical.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "flame": {
+        "file": "assets/vfx/flame.webp",
+        "size": [
+          384,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A single tall flickering tongue of fire rising upward: a bright yellow-white base, orange and red flame tapering to a curling tip, a few embers, centred, vertical.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "lightning": {
+        "file": "assets/vfx/lightning.webp",
+        "size": [
+          512,
+          1024
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A single jagged bolt of lightning striking straight down from the top edge to the bottom edge, a brilliant white core with violet and pale blue glow, thin forking branches, centred, vertical.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "frost": {
+        "file": "assets/vfx/frost.webp",
+        "size": [
+          768,
+          512
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A cluster of jagged glowing ice crystals growing upward from the bottom edge, translucent cyan and white facets, cold mist, centred, wide and low.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "miasma": {
+        "file": "assets/vfx/miasma.webp",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A swirling cloud of glowing toxic miasma: luminous acid-green and violet vapour wisps and small glowing bubbles, centred.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
       "dust": {
         "file": "assets/vfx/dust.webp",
         "size": [

@@ -1,7 +1,7 @@
 {
  "id": "beast.yunyun",
  "art": "battle_juvenile",
- "body": "assets/anim/beast.yunyun/body.webp",
+ "body": "assets/anim/beast.yunyun.battle_juvenile/body.webp",
  "size": [
   768,
   768
@@ -26,7 +26,7 @@
  "chest": 464,
  "neck": 391,
  "blink": {
-  "file": "assets/anim/beast.yunyun/blink.webp",
+  "file": "assets/anim/beast.yunyun.battle_juvenile/blink.webp",
   "rect": [
    138,
    272,
@@ -34,5 +34,5 @@
    76
   ]
  },
- "weights": "assets/anim/beast.yunyun/weights.png"
+ "weights": "assets/anim/beast.yunyun.battle_juvenile/weights.png"
 }

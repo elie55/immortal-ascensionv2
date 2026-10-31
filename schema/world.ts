@@ -100,7 +100,7 @@ export const Targeting = z.enum([
  */
 export const Vfx = z.object({
   approach: z.enum(["dash", "none"]),
-  shape: z.enum(["slash", "pierce", "burst", "beam", "wave", "pillar", "ring", "rain", "glow"]),
+  shape: z.enum(["slash", "pierce", "burst", "beam", "wave", "pillar", "ring", "rain", "glow", "bolt"]),
   impact: z.enum(["light", "medium", "heavy"]),
   camera: z.enum(["none", "push", "zoom"]),
   color: z.string().regex(/^#[0-9a-f]{6}$/i),

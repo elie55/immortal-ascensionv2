@@ -1,4 +1,4 @@
-import json, os
+import json, os, re
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 STYLE = ("Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, "
          "soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, "
@@ -58,13 +58,27 @@ ICON_LOOK = {
 }
 
 def anim_block(entity):
-    """Attach the animation rig (assets/anim/<id>/rig.json) when tools/anim/build.py has produced one."""
-    rig = os.path.join(ROOT, "assets", "anim", entity["id"], "rig.json")
-    if not os.path.exists(rig): entity.pop("anim", None); return entity
-    r = json.load(open(rig))
-    key = r.get("art") or ("battle" if "battle" in entity.get("art", {}) else "full_body")
-    entity["anim"] = {"rig": f"assets/anim/{entity['id']}/rig.json", "art": key, "archetype": r["archetype"]}
+    """Attach the animation rigs tools/anim/build.py has produced: assets/anim/<id>/ for the battle sprite and
+    assets/anim/<id>.<art key>/ for any other art (a beast's stages), one entry per rig."""
+    out = []
+    for name in [entity["id"]] + [f"{entity['id']}.{k}" for k in sorted(entity.get("art", {}))]:
+        rig = os.path.join(ROOT, "assets", "anim", name, "rig.json")
+        if not os.path.exists(rig): continue
+        r = json.load(open(rig))
+        key = r.get("art") or ("battle" if "battle" in entity.get("art", {}) else "full_body")
+        if key not in entity.get("art", {}) or any(x["art"] == key for x in out): continue
+        out.append({"rig": f"assets/anim/{name}/rig.json", "art": key, "archetype": r["archetype"]})
+    if out: entity["anim"] = out
+    else: entity.pop("anim", None)
     return entity
+
+def cutin_art(key, who):
+    """A fighter's ultimate close-up on the arena stage (docs/BATTLE_STAGE.md): upper body from a low angle, drawn from their references."""
+    return art(f"assets/npcs/{key}/cutin.png", f"{STYLE}. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: "
+               f"{who}, the same character, outfit and weapon as the references, unleashing their strongest technique, the weapon or bare hands blazing with spiritual energy, "
+               "intense focused eyes, hair and clothing whipping sideways in a strong wind, swirling energy, light streaks and sparks around them, "
+               "strong rim light, high contrast, cinematic, the complete head and hands in frame, isolated on a plain background, no text.",
+               (1024, 1280), True, [f"assets/npcs/{key}/full_body.webp", f"assets/npcs/{key}/battle.webp"])
 
 ELEMENT_COLOR = {"elem.wood": "#5fe39a", "elem.fire": "#ff7b4a", "elem.earth": "#f0c060", "elem.metal": "#f2f5ff", "elem.water": "#6fd0ff", "elem.none": "#d6c9ff"}
 MELEE_WEAPONS = ("sword", "saber", "spear", "palm")
@@ -106,6 +120,12 @@ def vfx_block(t):
     impact = "heavy" if ult or power >= 220 else "medium" if power >= 120 or shields else "light"
     camera = "zoom" if ult else "push" if approach == "dash" or impact == "heavy" else "none"
     t["vfx"] = {"approach": approach, "shape": shape, "impact": impact, "camera": camera, "color": ELEMENT_COLOR.get(t.get("element"), "#d6c9ff")}
+    # what the name promises: thunder falls from the sky, flames of judgement rise as a column, a comet falls
+    name = (t.get("id") or "").split(".")[-1]
+    if re.search(r"lightning|bolt|thunder_judgment", name) and not re.search(r"spear|palm", name): t["vfx"]["shape"] = "bolt"
+    elif re.search(r"judgement_flame|verdict_of_heaven", name): t["vfx"]["shape"] = "pillar"
+    elif re.search(r"comet", name): t["vfx"]["shape"] = "rain"
+    if re.search(r"thunder|lightning|bolt", name): t["vfx"]["color"] = "#b98cff"   # thunder reads violet whatever its element
     return t
 
 def flavor(desc):
@@ -233,13 +253,17 @@ def chain_links(nodes):
             if d["kind"] in COMBAT_KINDS: prev_fight = d
     return nodes
 
-# Which way battle sprites look, read from contact sheets (the arena test cast for now: docs/BATTLE_STAGE.md)
+# Which way battle sprites look and what body they have, read from contact sheets (docs/BATTLE_STAGE.md)
 LOOKS = json.load(open(os.path.join(ROOT, "tools", "art", "facing.json"))) if os.path.exists(os.path.join(ROOT, "tools", "art", "facing.json")) else {}
+BODIES = json.load(open(os.path.join(ROOT, "tools", "anim", "cast.json"))) if os.path.exists(os.path.join(ROOT, "tools", "anim", "cast.json")) else {}
 
 def facing_block(entity):
-    """Record which way battle sprites look (tools/art/facing.json, read from contact sheets): the arena mirrors figures to face their foes."""
+    """Record which way battle sprites look (tools/art/facing.json) and their body type (tools/anim/cast.json): the arena
+    mirrors figures to face their foes and moves figures without a rig by their body type."""
     for a in (entity.get("art") or {}).values():
-        if isinstance(a, dict) and a.get("file") in LOOKS: a["facing"] = LOOKS[a["file"]]
+        if not isinstance(a, dict): continue
+        if a.get("file") in LOOKS: a["facing"] = LOOKS[a["file"]]
+        if a.get("file") in BODIES: a["body"] = BODIES[a["file"]]["arch"]
     return entity
 
 def write(rel, data):

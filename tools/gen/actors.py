@@ -1,3 +1,4 @@
+import re
 from common import *
 from region_data import REGIONS
 
@@ -243,6 +244,12 @@ def finalize_npcs(lst):
                                     "hair and sleeves whipping sideways in a strong wind, swirling sword light, wind streaks and a few cherry blossom petals around her, "
                                     "strong rim light, high contrast, cinematic, the complete head, both hands and the sword in frame, isolated on a plain background, no text.",
                                     (1024, 1280), True, ["assets/npcs/lin_xueyao/full_body.webp", "assets/npcs/lin_xueyao/battle.webp"])
+        elif "battle" in n["art"]:
+            # every other fighter's ultimate close-up: the same framing as Lin's, drawn from their own references
+            look = re.search(r"illustration of (.*?), complete figure", n["art"]["full_body"]["prompt"])
+            who = look.group(1) if look else n["name"]
+            key = n["id"].split(".")[1]
+            n["art"]["cutin"] = cutin_art(key, who)
     return lst
 
 if __name__ == "__main__":

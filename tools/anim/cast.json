@@ -1,0 +1,1233 @@
+{
+ "assets/beasts/azure_dragon_adult.webp": {
+  "id": "beast.azure_dragon",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/azure_dragon_hatchling.webp": {
+  "id": "beast.azure_dragon",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/azure_dragon_juvenile.webp": {
+  "id": "beast.azure_dragon",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/azure_dragon_sovereign.webp": {
+  "id": "beast.azure_dragon",
+  "art": "battle_sovereign",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/azure_wolf_adult.webp": {
+  "id": "beast.azure_wolf",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/azure_wolf_hatchling.webp": {
+  "id": "beast.azure_wolf",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/azure_wolf_juvenile.webp": {
+  "id": "beast.azure_wolf",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/black_tortoise_adult.webp": {
+  "id": "beast.black_tortoise",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/black_tortoise_hatchling.webp": {
+  "id": "beast.black_tortoise",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/black_tortoise_juvenile.webp": {
+  "id": "beast.black_tortoise",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/black_tortoise_sovereign.webp": {
+  "id": "beast.black_tortoise",
+  "art": "battle_sovereign",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/blood_moon_wolf_adult.webp": {
+  "id": "beast.blood_moon_wolf",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/blood_moon_wolf_hatchling.webp": {
+  "id": "beast.blood_moon_wolf",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/blood_moon_wolf_juvenile.webp": {
+  "id": "beast.blood_moon_wolf",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/cloud_qilin_adult.webp": {
+  "id": "beast.cloud_qilin",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/cloud_qilin_hatchling.webp": {
+  "id": "beast.cloud_qilin",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/cloud_qilin_juvenile.webp": {
+  "id": "beast.cloud_qilin",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/cloud_qilin_sovereign.webp": {
+  "id": "beast.cloud_qilin",
+  "art": "battle_sovereign",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/ember_salamander_pup_adult.webp": {
+  "id": "beast.ember_salamander_pup",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/ember_salamander_pup_hatchling.webp": {
+  "id": "beast.ember_salamander_pup",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/ember_salamander_pup_juvenile.webp": {
+  "id": "beast.ember_salamander_pup",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/flame_fox_adult.webp": {
+  "id": "beast.flame_fox",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/flame_fox_hatchling.webp": {
+  "id": "beast.flame_fox",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/flame_fox_juvenile.webp": {
+  "id": "beast.flame_fox",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/frost_otter_adult.webp": {
+  "id": "beast.frost_otter",
+  "art": "battle_adult",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/beasts/frost_otter_hatchling.webp": {
+  "id": "beast.frost_otter",
+  "art": "battle_hatchling",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/beasts/frost_otter_juvenile.webp": {
+  "id": "beast.frost_otter",
+  "art": "battle_juvenile",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/beasts/ghost_lantern_moth_adult.webp": {
+  "id": "beast.ghost_lantern_moth",
+  "art": "battle_adult",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/ghost_lantern_moth_hatchling.webp": {
+  "id": "beast.ghost_lantern_moth",
+  "art": "battle_hatchling",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/ghost_lantern_moth_juvenile.webp": {
+  "id": "beast.ghost_lantern_moth",
+  "art": "battle_juvenile",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/jade_serpent_adult.webp": {
+  "id": "beast.jade_serpent",
+  "art": "battle_adult",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/beasts/jade_serpent_hatchling.webp": {
+  "id": "beast.jade_serpent",
+  "art": "battle_hatchling",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/beasts/jade_serpent_juvenile.webp": {
+  "id": "beast.jade_serpent",
+  "art": "battle_juvenile",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/beasts/lightning_eel_adult.webp": {
+  "id": "beast.lightning_eel",
+  "art": "battle_adult",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/beasts/lightning_eel_hatchling.webp": {
+  "id": "beast.lightning_eel",
+  "art": "battle_hatchling",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/beasts/lightning_eel_juvenile.webp": {
+  "id": "beast.lightning_eel",
+  "art": "battle_juvenile",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/beasts/lightning_eel_sovereign.webp": {
+  "id": "beast.lightning_eel",
+  "art": "battle_sovereign",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/beasts/nine_tailed_fox_adult.webp": {
+  "id": "beast.nine_tailed_fox",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/nine_tailed_fox_hatchling.webp": {
+  "id": "beast.nine_tailed_fox",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/nine_tailed_fox_juvenile.webp": {
+  "id": "beast.nine_tailed_fox",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/nine_tailed_fox_sovereign.webp": {
+  "id": "beast.nine_tailed_fox",
+  "art": "battle_sovereign",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/sand_dragon_adult.webp": {
+  "id": "beast.sand_dragon",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/sand_dragon_hatchling.webp": {
+  "id": "beast.sand_dragon",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/sand_dragon_juvenile.webp": {
+  "id": "beast.sand_dragon",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/sand_dragon_sovereign.webp": {
+  "id": "beast.sand_dragon",
+  "art": "battle_sovereign",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/snow_crane_adult.webp": {
+  "id": "beast.snow_crane",
+  "art": "battle_adult",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/snow_crane_hatchling.webp": {
+  "id": "beast.snow_crane",
+  "art": "battle_hatchling",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/snow_crane_juvenile.webp": {
+  "id": "beast.snow_crane",
+  "art": "battle_juvenile",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/starlight_deer_adult.webp": {
+  "id": "beast.starlight_deer",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/starlight_deer_hatchling.webp": {
+  "id": "beast.starlight_deer",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/starlight_deer_juvenile.webp": {
+  "id": "beast.starlight_deer",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/starlight_deer_sovereign.webp": {
+  "id": "beast.starlight_deer",
+  "art": "battle_sovereign",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/storm_roc_adult.webp": {
+  "id": "beast.storm_roc",
+  "art": "battle_adult",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/storm_roc_hatchling.webp": {
+  "id": "beast.storm_roc",
+  "art": "battle_hatchling",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/storm_roc_juvenile.webp": {
+  "id": "beast.storm_roc",
+  "art": "battle_juvenile",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/storm_roc_sovereign.webp": {
+  "id": "beast.storm_roc",
+  "art": "battle_sovereign",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/thunder_tiger_adult.webp": {
+  "id": "beast.thunder_tiger",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/thunder_tiger_hatchling.webp": {
+  "id": "beast.thunder_tiger",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/thunder_tiger_juvenile.webp": {
+  "id": "beast.thunder_tiger",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/thunder_tiger_sovereign.webp": {
+  "id": "beast.thunder_tiger",
+  "art": "battle_sovereign",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/vermilion_bird_adult.webp": {
+  "id": "beast.vermilion_bird",
+  "art": "battle_adult",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/vermilion_bird_hatchling.webp": {
+  "id": "beast.vermilion_bird",
+  "art": "battle_hatchling",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/vermilion_bird_juvenile.webp": {
+  "id": "beast.vermilion_bird",
+  "art": "battle_juvenile",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/vermilion_bird_sovereign.webp": {
+  "id": "beast.vermilion_bird",
+  "art": "battle_sovereign",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/beasts/white_tiger_adult.webp": {
+  "id": "beast.white_tiger",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/white_tiger_hatchling.webp": {
+  "id": "beast.white_tiger",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/white_tiger_juvenile.webp": {
+  "id": "beast.white_tiger",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/white_tiger_sovereign.webp": {
+  "id": "beast.white_tiger",
+  "art": "battle_sovereign",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/yunyun_adult.webp": {
+  "id": "beast.yunyun",
+  "art": "battle_adult",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/yunyun_hatchling.webp": {
+  "id": "beast.yunyun",
+  "art": "battle_hatchling",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/yunyun_juvenile.webp": {
+  "id": "beast.yunyun",
+  "art": "battle_juvenile",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/beasts/yunyun_sovereign.webp": {
+  "id": "beast.yunyun",
+  "art": "battle_sovereign",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/bosses/ancient_sword_tomb/blade_storm_avatar_battle.webp": {
+  "id": "boss.blade_storm_avatar",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/ancient_sword_tomb/sword_sovereign_remnant_battle.webp": {
+  "id": "boss.sword_sovereign_remnant",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/azure_bamboo_forest/thousand_node_bamboo_dragon_battle.webp": {
+  "id": "boss.thousand_node_bamboo_dragon",
+  "art": "battle",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/bosses/blazing_mountain/forge_wraith_battle.webp": {
+  "id": "boss.forge_wraith",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/bosses/blazing_mountain/molten_ape_king_battle.webp": {
+  "id": "boss.molten_ape_king",
+  "art": "battle",
+  "arch": "large",
+  "armed": false
+ },
+ "assets/bosses/celestial_mountains/celestial_stair_guardian_battle.webp": {
+  "id": "boss.celestial_stair_guardian",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/celestial_mountains/pine_thunder_sage_battle.webp": {
+  "id": "boss.pine_thunder_sage",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/demon_territory/crimson_moon_matriarch_battle.webp": {
+  "id": "boss.crimson_moon_matriarch",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/demon_territory/moon_devourer_battle.webp": {
+  "id": "boss.moon_devourer",
+  "art": "battle",
+  "arch": "large",
+  "armed": false
+ },
+ "assets/bosses/demon_territory/prison_warden_gu_ling_battle.webp": {
+  "id": "boss.prison_warden_gu_ling",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/frozen_lotus_valley/glacier_titan_battle.webp": {
+  "id": "boss.glacier_titan",
+  "art": "battle",
+  "arch": "large",
+  "armed": false
+ },
+ "assets/bosses/frozen_lotus_valley/lotus_frost_queen_battle.webp": {
+  "id": "boss.lotus_frost_queen",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/bosses/gate_of_ascension/flame_trial_master_battle.webp": {
+  "id": "boss.flame_trial_master",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/gate_of_ascension/vermilion_gatekeeper_battle.webp": {
+  "id": "boss.vermilion_gatekeeper",
+  "art": "battle",
+  "arch": "large",
+  "armed": false
+ },
+ "assets/bosses/golden_palace_of_laws/arbiter_of_laws_battle.webp": {
+  "id": "boss.arbiter_of_laws",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/golden_palace_of_laws/chief_magistrate_battle.webp": {
+  "id": "boss.chief_magistrate",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/bosses/jade_immortal_realm/peach_tree_ancestor_battle.webp": {
+  "id": "boss.peach_tree_ancestor",
+  "art": "battle",
+  "arch": "large",
+  "armed": false
+ },
+ "assets/bosses/jade_immortal_realm/white_tiger_sovereign_battle.webp": {
+  "id": "boss.white_tiger_sovereign",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/bosses/mortal_plains/plains_bandit_chief_battle.webp": {
+  "id": "boss.plains_bandit_chief",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/nine_heavens/heavenly_gate_keeper_battle.webp": {
+  "id": "boss.heavenly_gate_keeper",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/bosses/nine_heavens/star_palace_regent_battle.webp": {
+  "id": "boss.star_palace_regent",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/special/chaos_progenitor_battle.webp": {
+  "id": "boss.chaos_progenitor",
+  "art": "battle",
+  "arch": "large",
+  "armed": false
+ },
+ "assets/bosses/special/dragon_king_ao_battle.webp": {
+  "id": "boss.dragon_king_ao",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/bosses/special/fallen_heaven_lord_battle.webp": {
+  "id": "boss.fallen_heaven_lord",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/bosses/special/golden_immortal_tribulation_spirit_battle.webp": {
+  "id": "boss.golden_immortal_tribulation_spirit",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/special/guardian_of_the_origin_battle.webp": {
+  "id": "boss.guardian_of_the_origin",
+  "art": "battle",
+  "arch": "large",
+  "armed": false,
+  "eyes": false
+ },
+ "assets/bosses/special/immortal_ascension_tribulation_spirit_battle.webp": {
+  "id": "boss.immortal_ascension_tribulation_spirit",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/special/immortal_emperor_tribulation_spirit_battle.webp": {
+  "id": "boss.immortal_emperor_tribulation_spirit",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/special/law_sovereign_battle.webp": {
+  "id": "boss.law_sovereign",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/special/nine_headed_abyss_serpent_battle.webp": {
+  "id": "boss.nine_headed_abyss_serpent",
+  "art": "battle",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/bosses/special/soul_transformation_tribulation_spirit_battle.webp": {
+  "id": "boss.soul_transformation_tribulation_spirit",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/special/tower_warden_battle.webp": {
+  "id": "boss.tower_warden",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/bosses/special/tribulation_thunder_spirit_battle.webp": {
+  "id": "boss.tribulation_thunder_spirit",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/special/tribulation_transcendence_tribulation_spirit_battle.webp": {
+  "id": "boss.tribulation_transcendence_tribulation_spirit",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/starfall_desert/starfall_pharaoh_battle.webp": {
+  "id": "boss.starfall_pharaoh",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/starfall_desert/temple_star_priest_battle.webp": {
+  "id": "boss.temple_star_priest",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/bosses/starfall_desert/vault_sphinx_battle.webp": {
+  "id": "boss.vault_sphinx",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/bosses/sunken_dragon_sea/coral_queen_battle.webp": {
+  "id": "boss.coral_queen",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/sunken_dragon_sea/drowned_dragon_lord_battle.webp": {
+  "id": "boss.drowned_dragon_lord",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/throne_of_the_immortal_emperor/first_emperor_remnant_battle.webp": {
+  "id": "boss.first_emperor_remnant",
+  "art": "battle",
+  "arch": "large",
+  "armed": false
+ },
+ "assets/bosses/throne_of_the_immortal_emperor/five_element_ancestor_battle.webp": {
+  "id": "boss.five_element_ancestor",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/bosses/thunderclap_wastes/mirror_thunder_beast_battle.webp": {
+  "id": "boss.mirror_thunder_beast",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/bosses/thunderclap_wastes/nine_bolt_thunder_emperor_battle.webp": {
+  "id": "boss.nine_bolt_thunder_emperor",
+  "art": "battle",
+  "arch": "large",
+  "armed": false
+ },
+ "assets/enemies/ancient_sword_tomb/headless_general_battle.webp": {
+  "id": "enemy.headless_general",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true,
+  "eyes": false
+ },
+ "assets/enemies/ancient_sword_tomb/rusted_sword_spirit_battle.webp": {
+  "id": "enemy.rusted_sword_spirit",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/enemies/ancient_sword_tomb/sword_qi_wisp_battle.webp": {
+  "id": "enemy.sword_qi_wisp",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/ancient_sword_tomb/tomb_guardian_statue_battle.webp": {
+  "id": "enemy.tomb_guardian_statue",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/enemies/ancient_sword_tomb/tomb_robber_battle.webp": {
+  "id": "enemy.tomb_robber",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/enemies/azure_bamboo_forest/azure_bamboo_wolf_battle.webp": {
+  "id": "enemy.azure_bamboo_wolf",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/azure_bamboo_forest/bamboo_spirit_sprite_battle.webp": {
+  "id": "enemy.bamboo_spirit_sprite",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/azure_bamboo_forest/cloud_silk_spider_battle.webp": {
+  "id": "enemy.cloud_silk_spider",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/azure_bamboo_forest/green_viper_battle.webp": {
+  "id": "enemy.green_viper",
+  "art": "battle",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/enemies/azure_bamboo_forest/rime_bamboo_lynx_battle.webp": {
+  "id": "enemy.rime_bamboo_lynx",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/azure_bamboo_forest/whispering_reed_witch_battle.webp": {
+  "id": "enemy.whispering_reed_witch",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/blazing_mountain/ash_vulture_battle.webp": {
+  "id": "enemy.ash_vulture",
+  "art": "battle",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/enemies/blazing_mountain/caravan_raider_battle.webp": {
+  "id": "enemy.caravan_raider",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/blazing_mountain/ember_salamander_battle.webp": {
+  "id": "enemy.ember_salamander",
+  "art": "battle",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/enemies/blazing_mountain/flame_lion_battle.webp": {
+  "id": "enemy.flame_lion",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/blazing_mountain/magma_golem_battle.webp": {
+  "id": "enemy.magma_golem",
+  "art": "battle",
+  "arch": "large",
+  "armed": false,
+  "eyes": false
+ },
+ "assets/enemies/celestial_mountains/celestial_soldier_battle.webp": {
+  "id": "enemy.celestial_soldier",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/enemies/celestial_mountains/cloud_ape_battle.webp": {
+  "id": "enemy.cloud_ape",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/celestial_mountains/heaven_seeker_battle.webp": {
+  "id": "enemy.heaven_seeker",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/celestial_mountains/storm_tiger_battle.webp": {
+  "id": "enemy.storm_tiger",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/celestial_mountains/thunder_crane_battle.webp": {
+  "id": "enemy.thunder_crane",
+  "art": "battle",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/enemies/demon_territory/blood_imp_battle.webp": {
+  "id": "enemy.blood_imp",
+  "art": "battle",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/enemies/demon_territory/blood_sect_disciple_battle.webp": {
+  "id": "enemy.blood_sect_disciple",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/demon_territory/bone_hound_battle.webp": {
+  "id": "enemy.bone_hound",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/demon_territory/demon_general_battle.webp": {
+  "id": "enemy.demon_general",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/enemies/demon_territory/shadow_assassin_battle.webp": {
+  "id": "enemy.shadow_assassin",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/frozen_lotus_valley/frost_wyrm_battle.webp": {
+  "id": "enemy.frost_wyrm",
+  "art": "battle",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/enemies/frozen_lotus_valley/frost_yeti_battle.webp": {
+  "id": "enemy.frost_yeti",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/frozen_lotus_valley/frozen_cultist_battle.webp": {
+  "id": "enemy.frozen_cultist",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/frozen_lotus_valley/ice_lotus_guardian_battle.webp": {
+  "id": "enemy.ice_lotus_guardian",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/frozen_lotus_valley/snow_fox_spirit_battle.webp": {
+  "id": "enemy.snow_fox_spirit",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/gate_of_ascension/ascension_judge_battle.webp": {
+  "id": "enemy.ascension_judge",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/gate_of_ascension/chain_warden_battle.webp": {
+  "id": "enemy.chain_warden",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/gate_of_ascension/cloud_lion_battle.webp": {
+  "id": "enemy.cloud_lion",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/gate_of_ascension/failed_ascendant_battle.webp": {
+  "id": "enemy.failed_ascendant",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/gate_of_ascension/phoenix_flame_spirit_battle.webp": {
+  "id": "enemy.phoenix_flame_spirit",
+  "art": "battle",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/enemies/golden_palace_of_laws/golden_crow_battle.webp": {
+  "id": "enemy.golden_crow",
+  "art": "battle",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/enemies/golden_palace_of_laws/law_enforcer_battle.webp": {
+  "id": "enemy.law_enforcer",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/golden_palace_of_laws/nine_tailed_shadow_battle.webp": {
+  "id": "enemy.nine_tailed_shadow",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/golden_palace_of_laws/rebel_immortal_battle.webp": {
+  "id": "enemy.rebel_immortal",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/golden_palace_of_laws/scroll_golem_battle.webp": {
+  "id": "enemy.scroll_golem",
+  "art": "battle",
+  "arch": "large",
+  "armed": false,
+  "eyes": false
+ },
+ "assets/enemies/jade_immortal_realm/immortal_gardener_battle.webp": {
+  "id": "enemy.immortal_gardener",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/enemies/jade_immortal_realm/jade_guardian_beast_battle.webp": {
+  "id": "enemy.jade_guardian_beast",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/jade_immortal_realm/jade_tiger_battle.webp": {
+  "id": "enemy.jade_tiger",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/jade_immortal_realm/realm_exile_battle.webp": {
+  "id": "enemy.realm_exile",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/jade_immortal_realm/waterfall_spirit_battle.webp": {
+  "id": "enemy.waterfall_spirit",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/mortal_plains/field_bandit_battle.webp": {
+  "id": "enemy.field_bandit",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/enemies/mortal_plains/grey_wolf_battle.webp": {
+  "id": "enemy.grey_wolf",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/mortal_plains/spirit_monkey_battle.webp": {
+  "id": "enemy.spirit_monkey",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/mortal_plains/wild_boar_battle.webp": {
+  "id": "enemy.wild_boar",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/nine_heavens/abyss_cultist_battle.webp": {
+  "id": "enemy.abyss_cultist",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/nine_heavens/cloud_jellyfish_battle.webp": {
+  "id": "enemy.cloud_jellyfish",
+  "art": "battle",
+  "arch": "flying",
+  "armed": false,
+  "eyes": false
+ },
+ "assets/enemies/nine_heavens/fallen_immortal_battle.webp": {
+  "id": "enemy.fallen_immortal",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/nine_heavens/heaven_eagle_battle.webp": {
+  "id": "enemy.heaven_eagle",
+  "art": "battle",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/enemies/nine_heavens/starlight_sentinel_battle.webp": {
+  "id": "enemy.starlight_sentinel",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/special/abyss_spawn_battle.webp": {
+  "id": "enemy.abyss_spawn",
+  "art": "battle",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/enemies/special/thunder_wisp_battle.webp": {
+  "id": "enemy.thunder_wisp",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/special/training_construct_battle.webp": {
+  "id": "enemy.training_construct",
+  "art": "battle",
+  "arch": "large",
+  "armed": false,
+  "eyes": false
+ },
+ "assets/enemies/starfall_desert/dune_mirage_battle.webp": {
+  "id": "enemy.dune_mirage",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/starfall_desert/nomad_star_hunter_battle.webp": {
+  "id": "enemy.nomad_star_hunter",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/starfall_desert/sand_wyrm_battle.webp": {
+  "id": "enemy.sand_wyrm",
+  "art": "battle",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/enemies/starfall_desert/star_metal_golem_battle.webp": {
+  "id": "enemy.star_metal_golem",
+  "art": "battle",
+  "arch": "large",
+  "armed": false,
+  "eyes": false
+ },
+ "assets/enemies/starfall_desert/star_scarab_battle.webp": {
+  "id": "enemy.star_scarab",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/sunken_dragon_sea/abyssal_angler_battle.webp": {
+  "id": "enemy.abyssal_angler",
+  "art": "battle",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/enemies/sunken_dragon_sea/bone_dragon_spirit_battle.webp": {
+  "id": "enemy.bone_dragon_spirit",
+  "art": "battle",
+  "arch": "serpent",
+  "armed": false
+ },
+ "assets/enemies/sunken_dragon_sea/coral_naga_battle.webp": {
+  "id": "enemy.coral_naga",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/enemies/sunken_dragon_sea/pirate_cultivator_battle.webp": {
+  "id": "enemy.pirate_cultivator",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/enemies/sunken_dragon_sea/tide_kraken_battle.webp": {
+  "id": "enemy.tide_kraken",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/throne_of_the_immortal_emperor/azure_dragon_guard_battle.webp": {
+  "id": "enemy.azure_dragon_guard",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/throne_of_the_immortal_emperor/emperors_shadow_battle.webp": {
+  "id": "enemy.emperors_shadow",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/throne_of_the_immortal_emperor/five_element_sentinel_battle.webp": {
+  "id": "enemy.five_element_sentinel",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/throne_of_the_immortal_emperor/star_whale_battle.webp": {
+  "id": "enemy.star_whale",
+  "art": "battle",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/enemies/throne_of_the_immortal_emperor/throne_usurper_battle.webp": {
+  "id": "enemy.throne_usurper",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/thunderclap_wastes/glass_scorpion_battle.webp": {
+  "id": "enemy.glass_scorpion",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/thunderclap_wastes/lightning_roc_battle.webp": {
+  "id": "enemy.lightning_roc",
+  "art": "battle",
+  "arch": "flying",
+  "armed": false
+ },
+ "assets/enemies/thunderclap_wastes/storm_wraith_battle.webp": {
+  "id": "enemy.storm_wraith",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/enemies/thunderclap_wastes/thunder_beetle_battle.webp": {
+  "id": "enemy.thunder_beetle",
+  "art": "battle",
+  "arch": "quadruped",
+  "armed": false
+ },
+ "assets/enemies/thunderclap_wastes/tribulation_scavenger_battle.webp": {
+  "id": "enemy.tribulation_scavenger",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/npcs/bai_lingshuang/battle.webp": {
+  "id": "npc.bai_lingshuang",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/npcs/gu_xuanming/battle.webp": {
+  "id": "npc.gu_xuanming",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/npcs/han_jinghong/battle.webp": {
+  "id": "npc.han_jinghong",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/npcs/lin_xueyao/battle.webp": {
+  "id": "npc.lin_xueyao",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/npcs/lu_feiyan/battle.webp": {
+  "id": "npc.lu_feiyan",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/npcs/mo_lianjue/battle.webp": {
+  "id": "npc.mo_lianjue",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/npcs/shen_qingxue/battle.webp": {
+  "id": "npc.shen_qingxue",
+  "art": "battle",
+  "arch": "humanoid",
+  "armed": true
+ },
+ "assets/npcs/su_wanqing/battle.webp": {
+  "id": "npc.su_wanqing",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/npcs/tang_xiaoman/battle.webp": {
+  "id": "npc.tang_xiaoman",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/npcs/tie_shanhe/battle.webp": {
+  "id": "npc.tie_shanhe",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ },
+ "assets/npcs/zhao_lie/battle.webp": {
+  "id": "npc.zhao_lie",
+  "art": "battle",
+  "arch": "humanoid_unarmed",
+  "armed": false
+ }
+}

@@ -1314,6 +1314,23 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of Lu Feiyan in combat stance, Lu Feiyan, a graceful young woman with long brown hair in a braid, green and white dancer robes, twin steel war fans, dynamic ready pose in a three-quarter front view, body turned toward the viewer, head and eyes looking straight at the viewer as if facing an opponent standing right in front of it, complete figure head to feet, any weapon held ready and clearly visible away from the body, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
+      },
+      "cutin": {
+        "file": "assets/npcs/lu_feiyan/cutin.webp",
+        "size": [
+          1024,
+          1280
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: Lu Feiyan, a graceful young woman with long brown hair in a braid, green and white dancer robes, twin steel war fans, the same character, outfit and weapon as the references, unleashing their strongest technique, the weapon or bare hands blazing with spiritual energy, intense focused eyes, hair and clothing whipping sideways in a strong wind, swirling energy, light streaks and sparks around them, strong rim light, high contrast, cinematic, the complete head and hands in frame, isolated on a plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "assets/npcs/lu_feiyan/full_body.webp",
+          "assets/npcs/lu_feiyan/battle.webp"
+        ],
         "status": "generated"
       }
     }
@@ -1437,6 +1454,23 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of Han Jinghong in combat stance, Han Jinghong, a tall grim young man with a scarred jaw, black and crimson robes, a heavy blood-red saber, dynamic ready pose in a three-quarter front view, body turned toward the viewer, head and eyes looking straight at the viewer as if facing an opponent standing right in front of it, complete figure head to feet, any weapon held ready and clearly visible away from the body, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid"
+      },
+      "cutin": {
+        "file": "assets/npcs/han_jinghong/cutin.webp",
+        "size": [
+          1024,
+          1280
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: Han Jinghong, a tall grim young man with a scarred jaw, black and crimson robes, a heavy blood-red saber, the same character, outfit and weapon as the references, unleashing their strongest technique, the weapon or bare hands blazing with spiritual energy, intense focused eyes, hair and clothing whipping sideways in a strong wind, swirling energy, light streaks and sparks around them, strong rim light, high contrast, cinematic, the complete head and hands in frame, isolated on a plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "assets/npcs/han_jinghong/full_body.webp",
+          "assets/npcs/han_jinghong/battle.webp"
+        ],
         "status": "generated"
       }
     }
@@ -1560,6 +1594,23 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of Su Wanqing in combat stance, Su Wanqing, a soft-spoken young woman with dark green hair in a bun, pale robes with herb pouches, holding a jade vial, dynamic ready pose in a three-quarter front view, body turned toward the viewer, head and eyes looking straight at the viewer as if facing an opponent standing right in front of it, complete figure head to feet, any weapon held ready and clearly visible away from the body, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
+      },
+      "cutin": {
+        "file": "assets/npcs/su_wanqing/cutin.webp",
+        "size": [
+          1024,
+          1280
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: Su Wanqing, a soft-spoken young woman with dark green hair in a bun, pale robes with herb pouches, holding a jade vial, the same character, outfit and weapon as the references, unleashing their strongest technique, the weapon or bare hands blazing with spiritual energy, intense focused eyes, hair and clothing whipping sideways in a strong wind, swirling energy, light streaks and sparks around them, strong rim light, high contrast, cinematic, the complete head and hands in frame, isolated on a plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "assets/npcs/su_wanqing/full_body.webp",
+          "assets/npcs/su_wanqing/battle.webp"
+        ],
         "status": "generated"
       }
     }
@@ -1683,6 +1734,23 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of Gu Xuanming in combat stance, Gu Xuanming, a composed young man with long black hair, white and silver core-disciple robes, a plain sword on his back, dynamic ready pose in a three-quarter front view, body turned toward the viewer, head and eyes looking straight at the viewer as if facing an opponent standing right in front of it, complete figure head to feet, any weapon held ready and clearly visible away from the body, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
+      },
+      "cutin": {
+        "file": "assets/npcs/gu_xuanming/cutin.webp",
+        "size": [
+          1024,
+          1280
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: Gu Xuanming, a composed young man with long black hair, white and silver core-disciple robes, a plain sword on his back, the same character, outfit and weapon as the references, unleashing their strongest technique, the weapon or bare hands blazing with spiritual energy, intense focused eyes, hair and clothing whipping sideways in a strong wind, swirling energy, light streaks and sparks around them, strong rim light, high contrast, cinematic, the complete head and hands in frame, isolated on a plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "assets/npcs/gu_xuanming/full_body.webp",
+          "assets/npcs/gu_xuanming/battle.webp"
+        ],
         "status": "generated"
       }
     }

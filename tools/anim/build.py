@@ -15,7 +15,7 @@ from PIL import Image
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "tools", "anim"))
-from edits import load_content, art_file, art_key, GREY  # noqa: E402
+from edits import load_content, art_file, art_key, rig_name, cast_of, CAST, GREY  # noqa: E402
 LOOKS = json.load(open(os.path.join(ROOT, "tools", "art", "facing.json"))) if os.path.exists(os.path.join(ROOT, "tools", "art", "facing.json")) else {}
 
 MESH = [8, 12]
@@ -132,18 +132,21 @@ def soft(m, feather=2):
 def build(root, eid, c, debug=False, key=None):
     e = c[eid]
     f, creature = art_file(c, eid, key)
+    name = rig_name(c, eid, key)
+    rec = cast_of(f)
+    armed = rec.get("armed", not creature)
     src = Image.open(os.path.join(ROOT, f)).convert("RGBA"); W, H = src.size
     alpha = np.asarray(src.getchannel("A"))
     ys, xs = np.where(alpha > 24); bbox = [int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1]
     bw, bh = bbox[2] - bbox[0], bbox[3] - bbox[1]
-    out_dir = os.path.join(ROOT, "assets", "anim", eid); os.makedirs(out_dir, exist_ok=True)
-    rel = lambda name: f"assets/anim/{eid}/{name}"
+    out_dir = os.path.join(ROOT, "assets", "anim", name); os.makedirs(out_dir, exist_ok=True)
+    rel = lambda n: f"assets/anim/{name}/{n}"
     src_flat = flat(src)
     dbg = np.asarray(src.convert("RGB")).copy()
 
     # ---------- body + weapon ----------
-    nowp = None if creature else load_edit(root, eid, "noweapon", (W, H), src)
-    tagw = None if creature else load_edit(root, eid, "tag_weapon", (W, H), src)
+    nowp = load_edit(root, name, "noweapon", (W, H), src) if armed else None
+    tagw = load_edit(root, name, "tag_weapon", (W, H), src) if armed else None
     weapon = None
     if nowp is not None:
         if tagw is not None:  # the painted silhouette: clean and exact
@@ -163,7 +166,7 @@ def build(root, eid, c, debug=False, key=None):
             mean = pts.mean(axis=0); cov = np.cov((pts - mean).T); evals, evecs = np.linalg.eigh(cov); axis = evecs[:, int(np.argmax(evals))]
             proj = (pts - mean) @ axis; p0 = mean + axis * proj.min(); p1 = mean + axis * proj.max()
             # the grip is the end at the hands (tag_hands); without it, the end nearest the torso
-            tagh = load_edit(root, eid, "tag_hands", (W, H), src)
+            tagh = load_edit(root, name, "tag_hands", (W, H), src)
             hm = magenta_mask(tagh) if tagh is not None else None
             if hm is not None and (hm > 127).sum() > 50:
                 hy, hx = np.where(hm > 127); hand = np.array([hx.mean(), hy.mean()])
@@ -188,8 +191,8 @@ def build(root, eid, c, debug=False, key=None):
 
     # ---------- blink ----------
     blink = None
-    eyes = load_edit(root, eid, "eyesclosed", (W, H), src)
-    tage = load_edit(root, eid, "tag_eyes", (W, H), src)
+    eyes = load_edit(root, name, "eyesclosed", (W, H), src)
+    tage = load_edit(root, name, "tag_eyes", (W, H), src)
     if eyes is not None:
         # where the eyes may be: the top third of a standing figure; a creature's ears and tail reach higher, so half of it
         head_band = np.zeros_like(alpha); head_band[bbox[1]:bbox[1] + int(bh * (0.55 if creature else 0.34)), bbox[0]:bbox[2]] = 255
@@ -225,7 +228,7 @@ def build(root, eid, c, debug=False, key=None):
                 cv2.rectangle(dbg, (int(x0), int(y0)), (int(x1), int(y1)), (255, 255, 0), 2)
 
     # ---------- flutter weights ----------
-    hair = load_edit(root, eid, "tag_hair", (W, H), src); cloth = load_edit(root, eid, "tag_cloth", (W, H), src)
+    hair = load_edit(root, name, "tag_hair", (W, H), src); cloth = load_edit(root, name, "tag_cloth", (W, H), src)
     weights_file = None
     if hair is not None or cloth is not None:
         hm = magenta_mask(hair) if hair is not None else np.zeros_like(alpha)
@@ -252,6 +255,7 @@ def build(root, eid, c, debug=False, key=None):
     if e.get("phases") or kind == "boss": arch = "large" if not weapon else "humanoid"
     if "flying" in (e.get("tags") or []) or re.search(r"bird|crane|roc|moth|eagle|phoenix|bat", eid): arch = "flying" if creature else arch
     if re.search(r"serpent|snake|viper|eel|dragon|wyrm", eid) and creature: arch = "serpent"
+    if rec.get("arch"): arch = rec["arch"]   # recorded from the sprite (tools/anim/cast.json) wins
     top = bbox[1]
     neck = top + bh * 0.15; chest = top + bh * 0.27; hips = top + bh * 0.52
     if blink: neck = blink["rect"][1] + blink["rect"][3] + bh * 0.07; chest = neck + bh * 0.12
@@ -260,16 +264,24 @@ def build(root, eid, c, debug=False, key=None):
            **({"weapon": weapon} if weapon else {}), **({"blink": blink} if blink else {}), **({"weights": weights_file} if weights_file else {})}
     json.dump(rig, open(os.path.join(out_dir, "rig.json"), "w"), indent=1)
     if debug:
-        d = os.path.join(ROOT, ".tmp", "anim", eid); os.makedirs(d, exist_ok=True)
+        d = os.path.join(ROOT, ".tmp", "anim", name); os.makedirs(d, exist_ok=True)
         cv2.line(dbg, (bbox[0], int(neck)), (bbox[2], int(neck)), (0, 255, 255), 1); cv2.line(dbg, (bbox[0], int(chest)), (bbox[2], int(chest)), (0, 200, 255), 1)
         Image.fromarray(dbg).save(os.path.join(d, "debug.png"))
-    print(f"{eid}: body ✓  weapon {'✓ pivot ' + str(weapon['pivot']) if weapon else '—'}  blink {blink['rect'] if blink else '—'}  weights {'✓' if weights_file else '—'}  arch {arch} facing {facing}")
+    print(f"{name}: body ✓  weapon {'✓ pivot ' + str(weapon['pivot']) if weapon else '—'}  blink {blink['rect'] if blink else '—'}  weights {'✓' if weights_file else '—'}  arch {arch} facing {facing}")
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("root"); ap.add_argument("--ids", required=True); ap.add_argument("--debug", action="store_true"); ap.add_argument("--art", default=None)
+    ap = argparse.ArgumentParser(); ap.add_argument("root"); ap.add_argument("--ids", default="", help="entity ids; `id#art_key` for another art (a beast stage)")
+    ap.add_argument("--all", action="store_true", help="every sprite in tools/anim/cast.json whose renders are staged"); ap.add_argument("--debug", action="store_true"); ap.add_argument("--art", default=None)
     a = ap.parse_args(); c = load_content()
-    for eid in filter(None, a.ids.split(",")): build(a.root, eid, c, a.debug, a.art)
+    targets = [(x.split("#")[0], x.split("#")[1] if "#" in x else a.art) for x in filter(None, a.ids.split(","))]
+    if a.all: targets += [(v["id"], v["art"]) for v in CAST.values() if os.path.isdir(os.path.join(a.root, "IA_anim", rig_name(c, v["id"], v["art"])))]
+    failed = []
+    for eid, key in targets:
+        try: build(a.root, eid, c, a.debug, key)
+        except Exception as ex:  # one bad render must not stop a batch of 200
+            failed.append(f"{rig_name(c, eid, key)}: {ex}"); print("FAILED", failed[-1])
+    if failed: print(f"{len(failed)} failed:\n  " + "\n  ".join(failed))
 
 
 if __name__ == "__main__":

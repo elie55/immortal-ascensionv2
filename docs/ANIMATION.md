@@ -1,7 +1,8 @@
 # Combat animation
 
 Decision record and pipeline for character animation (spec §30 "Animation and audio" and the
-"Professional Animation Production" checklist). Status: **prototype** (Lin Xueyao vs the Field Bandit).
+"Professional Animation Production" checklist). Status: **rolling out to the whole cast** (2026-10-31: 737 renders
+for 200 rigs queued overnight; Lin, Bai, YunYun juvenile and the Field Bandit built).
 
 ## The decision
 
@@ -31,7 +32,12 @@ The spec's examples ("spritesheets, layered cutout rigs, or equivalent") list cu
 | `rig.json` | measurements: size, ground anchor, hip/chest/head heights, archetype | drives the deformers |
 
 Renders are queued by `tools/anim/edits.py`, collected by `tools/anim/build.py`, and listed in the
-entity's `anim` block (generators add it when the folder exists), so the database stays the source of truth.
+entity's `anim` list (generators add one entry per rig folder that exists), so the database stays the source of truth.
+A rig is per art: `assets/anim/<id>/` animates the battle sprite, `assets/anim/<id>.<art key>/` another art (each stage of
+a spirit beast). Which renders a sprite needs comes from `tools/anim/cast.json` (body type, armed, eyes, read from the
+sprites): weapon parts for armed figures only, cloth tags for clothed bodies, a "flowing parts" tag (mane, crest, tail
+tufts, fins) instead of hair for creatures. `edits.py --all --skip-built` queues the whole cast; `build.py <root> --all`
+builds every rig whose renders are staged and reports the failures without stopping.
 
 ## Runtime (`src/ui/anim/`)
 

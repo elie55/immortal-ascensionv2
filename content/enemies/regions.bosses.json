@@ -104,7 +104,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "large"
       },
       "intro": {
         "file": "assets/bosses/blazing_mountain/molten_ape_king_intro.webp",
@@ -210,7 +212,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left",
+        "body": "humanoid"
       },
       "intro": {
         "file": "assets/bosses/blazing_mountain/forge_wraith_intro.webp",
@@ -333,7 +337,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left",
+        "body": "humanoid"
       },
       "intro": {
         "file": "assets/bosses/frozen_lotus_valley/lotus_frost_queen_intro.webp",
@@ -439,7 +445,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "large"
       },
       "intro": {
         "file": "assets/bosses/frozen_lotus_valley/glacier_titan_intro.webp",
@@ -562,7 +570,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/ancient_sword_tomb/sword_sovereign_remnant_intro.webp",
@@ -668,7 +678,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/ancient_sword_tomb/blade_storm_avatar_intro.webp",
@@ -791,7 +803,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/demon_territory/crimson_moon_matriarch_intro.webp",
@@ -897,7 +911,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/demon_territory/prison_warden_gu_ling_intro.webp",
@@ -1005,7 +1021,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "large"
       },
       "intro": {
         "file": "assets/bosses/demon_territory/moon_devourer_intro.webp",
@@ -1128,7 +1146,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/celestial_mountains/celestial_stair_guardian_intro.webp",
@@ -1234,7 +1254,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/celestial_mountains/pine_thunder_sage_intro.webp",
@@ -1357,7 +1379,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left",
+        "body": "humanoid"
       },
       "intro": {
         "file": "assets/bosses/nine_heavens/heavenly_gate_keeper_intro.webp",
@@ -1463,7 +1487,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/nine_heavens/star_palace_regent_intro.webp",
@@ -1586,7 +1612,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "large"
       },
       "intro": {
         "file": "assets/bosses/thunderclap_wastes/nine_bolt_thunder_emperor_intro.webp",
@@ -1692,7 +1720,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "quadruped"
       },
       "intro": {
         "file": "assets/bosses/thunderclap_wastes/mirror_thunder_beast_intro.webp",
@@ -1815,7 +1845,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/sunken_dragon_sea/drowned_dragon_lord_intro.webp",
@@ -1921,7 +1953,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/sunken_dragon_sea/coral_queen_intro.webp",
@@ -2044,7 +2078,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/starfall_desert/starfall_pharaoh_intro.webp",
@@ -2150,7 +2186,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid"
       },
       "intro": {
         "file": "assets/bosses/starfall_desert/temple_star_priest_intro.webp",
@@ -2258,7 +2296,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "quadruped"
       },
       "intro": {
         "file": "assets/bosses/starfall_desert/vault_sphinx_intro.webp",
@@ -2381,7 +2421,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "large"
       },
       "intro": {
         "file": "assets/bosses/gate_of_ascension/vermilion_gatekeeper_intro.webp",
@@ -2487,7 +2529,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/gate_of_ascension/flame_trial_master_intro.webp",
@@ -2610,7 +2654,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left",
+        "body": "quadruped"
       },
       "intro": {
         "file": "assets/bosses/jade_immortal_realm/white_tiger_sovereign_intro.webp",
@@ -2716,7 +2762,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "large"
       },
       "intro": {
         "file": "assets/bosses/jade_immortal_realm/peach_tree_ancestor_intro.webp",
@@ -2839,7 +2887,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/golden_palace_of_laws/arbiter_of_laws_intro.webp",
@@ -2945,7 +2995,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left",
+        "body": "humanoid"
       },
       "intro": {
         "file": "assets/bosses/golden_palace_of_laws/chief_magistrate_intro.webp",
@@ -3068,7 +3120,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "large"
       },
       "intro": {
         "file": "assets/bosses/throne_of_the_immortal_emperor/first_emperor_remnant_intro.webp",
@@ -3174,7 +3228,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/throne_of_the_immortal_emperor/five_element_ancestor_intro.webp",
@@ -3300,7 +3356,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left",
+        "body": "humanoid"
       },
       "intro": {
         "file": "assets/bosses/special/dragon_king_ao_intro.webp",
@@ -3426,7 +3484,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid"
       },
       "intro": {
         "file": "assets/bosses/special/fallen_heaven_lord_intro.webp",
@@ -3552,7 +3612,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/special/law_sovereign_intro.webp",
@@ -3678,7 +3740,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "large"
       },
       "intro": {
         "file": "assets/bosses/special/chaos_progenitor_intro.webp",
@@ -3787,7 +3851,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/special/soul_transformation_tribulation_spirit_intro.webp",
@@ -3896,7 +3962,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/special/tribulation_transcendence_tribulation_spirit_intro.webp",
@@ -4005,7 +4073,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/special/immortal_ascension_tribulation_spirit_intro.webp",
@@ -4114,7 +4184,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/special/golden_immortal_tribulation_spirit_intro.webp",
@@ -4223,7 +4295,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/special/immortal_emperor_tribulation_spirit_intro.webp",

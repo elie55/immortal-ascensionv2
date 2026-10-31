@@ -61,7 +61,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "quadruped"
       }
     }
   },
@@ -127,7 +129,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       }
     }
   },
@@ -192,7 +196,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "serpent"
       }
     }
   },
@@ -258,7 +264,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "quadruped"
       }
     }
   },
@@ -324,7 +332,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "quadruped"
       }
     }
   },
@@ -390,7 +400,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       }
     }
   }

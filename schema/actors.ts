@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Named, Rarity, Stats, Quantity, artBlock, ref, ItemRef, Rewards, Unlock, AnimBlock } from "./common.ts";
+import { Named, Rarity, Stats, Quantity, artBlock, ref, ItemRef, Rewards, Unlock, AnimBlocks } from "./common.ts";
 
 // ---------- Enemies & bosses ----------
 
@@ -24,7 +24,7 @@ export const Enemy = CombatantBase.extend({
   id: ref("enemy"),
   kind: z.enum(["normal", "elite", "human", "demonic", "beast", "guardian", "celestial", "construct"]),
   art: artBlock(["icon", "battle"]),
-  anim: AnimBlock.optional(),
+  anim: AnimBlocks.optional(),
 });
 
 export const Boss = CombatantBase.extend({
@@ -41,7 +41,7 @@ export const Boss = CombatantBase.extend({
   })).min(1),
   weaknesses: z.array(ref("elem")).default([]),
   art: artBlock(["icon", "battle", "intro"]),
-  anim: AnimBlock.optional(),
+  anim: AnimBlocks.optional(),
 });
 
 // ---------- Spirit beasts ----------
@@ -68,7 +68,7 @@ export const Beast = Named.extend({
   /** Passive contribution to cultivation while active companion. */
   cultivation_bonus: z.number().min(0).default(0),
   art: artBlock(["icon"]),
-  anim: AnimBlock.optional(),
+  anim: AnimBlocks.optional(),
 }).superRefine((b, ctx) => {
   for (const s of b.stages) {
     if (!(b.art as Record<string, unknown>)[`battle_${s.key}`])
@@ -137,7 +137,7 @@ export const Npc = Named.extend({
   }).default({ eligible: false }),
   expressions: z.array(z.string().regex(/^[a-z_]+$/)).default([]),
   art: artBlock(["portrait", "full_body"]),
-  anim: AnimBlock.optional(),
+  anim: AnimBlocks.optional(),
 }).superRefine((n, ctx) => {
   for (const e of n.expressions)
     if (!(n.art as Record<string, unknown>)[`expression_${e}`]) ctx.addIssue({ code: "custom", message: `npc art missing expression_${e}` });

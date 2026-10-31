@@ -4,9 +4,9 @@ Decision record for the second battle screen. The owner asked for fights that fe
 one shared battlefield, characters that dash to their target and strike, a turn-order strip, ultimates with a
 full-screen close-up and a burst of numbers, a hit counter and floating status words. Portrait for now.
 
-Status: **built, on trial.** Settings → Battle stage switches every fight between Classic and Arena;
-Settings → Arena test fight → Try it starts the test fight on any save (§7). The owner judges it on the phone
-before the cast is converted. What was built:
+Status: **approved, the default stage** (owner, 2026-10-31). Every fight plays on the arena; Settings → Battle stage
+still offers Classic. Older settings are moved to the arena once (`slots.ts: stageVersion`). Settings → Arena test
+fight → Try it keeps the free test fight (§7). What was built:
 
 | Part | Where |
 |---|---|
@@ -21,6 +21,24 @@ before the cast is converted. What was built:
 Presentation choices made while building: the acting unit is drawn in front of everyone during its action;
 an ultimate's damage is shown as six numbers (a heavy art's as three) that add up to the real hit, and the
 hit counter counts them; the focused-foe panel is only kept for bosses.
+
+### Roll-out to the whole cast
+
+| Part | Where |
+|---|---|
+| Facing and body type of all 204 battle sprites (enemies, bosses, companions, sect rivals, every beast stage), read from contact sheets | `tools/art/facing.json`, `tools/anim/cast.json` → art blocks `facing` / `body` |
+| One rig per art: `assets/anim/<id>/` for the battle sprite, `assets/anim/<id>.<art key>/` for a beast's stages; `anim` is a list | `tools/anim/edits.py` (`rig_name`, `parts_for`), `tools/gen/common.py: anim_block`, `tools/lib/rules.ts: checkAnim` |
+| Figures without a rig yet move by their recorded body type (still puppets) | `battle.ts: attachRig` (`content.bodyOf`) |
+| Element bursts (fire, water, wood, earth) under every hit of that element; falling rocks (earth), falling fire (fire), shards (water), blades (metal) for rains | `vfx.ts: impact`, `rain`; `ui.vfx` `burst_*`, `rock`, `flame` |
+| Thunder arts strike from the sky (`bolt` shape); judgement arts are columns; a comet falls | `tools/gen/common.py: vfx_block` (by name), `vfx.ts: boltFx` |
+| Statuses drawn on the figure: frost at the feet, flames, miasma, circling stars, a shield bubble, rising motes; enemy status icons under their bars | `battle.ts: statusFx`, `theme.css .st-fx` |
+| Bosses: alone they get a bigger band; a phase change zooms on them with a burst; summons arrive through an array; a boss's charged art plays like an ultimate (close-up, flurry) | `field.ts` (`lone`), `battle.ts` phase / summon / `isUlt` |
+| Tribulation lightning is painted and strikes where the party stands | `battle.ts: lightning`, `vfx.ts: bolt` |
+| Close-up cut-ins for every fighter (companions and sect rivals) | `tools/gen/common.py: cutin_art`, art key `cutin` |
+| Victory beat after the last wave of any fight | `battle.ts: arenaVictory` |
+
+`node tests/browser/lab.ts auto2 auto5 auto8` plays whole fights on Auto (`IA_VIDEO=1` to record),
+`IA_STAGE=classic` runs any scene on the old stage.
 
 ### Polish round 2 (test fight only)
 

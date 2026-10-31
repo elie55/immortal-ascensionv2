@@ -1952,7 +1952,7 @@ html, body { font-variant-numeric: tabular-nums; }
 .battle.arena .bt-ally-u.acting .spr { animation: lunge-ar-a .46s ease; } @keyframes lunge-ar-a { 40% { transform: translate(14px, -16px) scale(1.05); } }
 .battle.arena .bt-foe-u.acting .spr { animation: lunge-ar-e .46s ease; } @keyframes lunge-ar-e { 40% { transform: translate(-14px, 16px) scale(1.05); } }
 .battle.arena .dashing .spr { filter: drop-shadow(-10px 6px 0 rgba(255,255,255,.18)) drop-shadow(-20px 12px 0 rgba(255,255,255,.08)); }
-.battle.arena .bt-skillname { top: 34%; }
+.battle.arena .bt-skillname { top: 34%; max-width: calc(100% - 28px); white-space: normal; text-align: center; line-height: 1.2; }
 /* the field reads as a floor: a soft ground glow under the line of battle */
 .battle.arena .bt-cam::before { content: ""; position: absolute; left: -10%; right: -10%; top: 40%; bottom: 4%; pointer-events: none;
   background: radial-gradient(60% 50% at 52% 58%, rgba(255,240,210,.10), transparent 70%), linear-gradient(180deg, transparent, rgba(4,8,30,.28) 70%, rgba(4,8,30,.45)); }
@@ -2052,3 +2052,30 @@ html, body { font-variant-numeric: tabular-nums; }
 @keyframes bv-stamp { 0% { transform: scale(2.4); opacity: 0; filter: blur(6px); } 60% { transform: scale(.94); opacity: 1; filter: blur(0); } 100% { transform: scale(1); } }
 @keyframes bv-word { from { opacity: 0; letter-spacing: 1em; clip-path: inset(0 50%); } to { opacity: 1; letter-spacing: .5em; clip-path: inset(0 0); } }
 @media (prefers-reduced-motion: reduce) { .bt-victory, .bt-victory * { animation: none !important; } }
+
+/* ---- arena: statuses drawn on the figure (battle.ts statusFx) ---- */
+.battle.arena .fu-st { display: flex; justify-content: center; gap: 2px; margin-top: 2px; }
+.battle.arena .fu-st .bt-st { width: 14px; height: 14px; } .battle.arena .fu-st .bt-st .trn, .battle.arena .fu-st .bt-st .stk { display: none; }
+.st-fx { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.st-fx > i { position: absolute; display: block; }
+.st-fx .sf-frost { left: 4%; right: 4%; bottom: -6%; height: 34%; background: var(--img) center bottom / contain no-repeat; mix-blend-mode: plus-lighter; filter: drop-shadow(0 0 6px #8fe0ff); opacity: .95; animation: sf-in .35s ease-out; }
+.st-fx .sf-flame { left: 0; right: 0; top: 18%; bottom: 8%; }
+.st-fx .sf-flame, .st-fx .sf-flame > i { background: var(--img) center bottom / auto 70% no-repeat; mix-blend-mode: plus-lighter; }
+.st-fx .sf-flame { background-position: 22% 100%; animation: sf-flicker .5s ease-in-out infinite alternate; filter: drop-shadow(0 0 8px #ff8a3a); }
+.st-fx .sf-flame > i { position: absolute; inset: 0; background-position: 78% 90%; background-size: auto 55%; animation: sf-flicker .42s .1s ease-in-out infinite alternate-reverse; }
+.st-fx .sf-miasma { left: -8%; right: -8%; top: 20%; height: 62%; background: var(--img) center / contain no-repeat; mix-blend-mode: plus-lighter; opacity: .6; animation: sf-spin 7s linear infinite, sf-in .4s ease-out; }
+.st-fx .sf-stun { left: 30%; right: 30%; top: 2%; height: 9%; animation: sf-spin 1.4s linear infinite; transform-style: preserve-3d; }
+.st-fx .sf-stun b { position: absolute; width: 9px; height: 9px; top: 35%; background: radial-gradient(circle, #fff 20%, #ffe36b 45%, transparent 70%); border-radius: 50%; filter: drop-shadow(0 0 4px #ffd34a); }
+.st-fx .sf-stun b:nth-child(1) { left: 0; } .st-fx .sf-stun b:nth-child(2) { left: 45%; top: -10%; } .st-fx .sf-stun b:nth-child(3) { right: 0; }
+.st-fx .sf-shield { left: 6%; right: 6%; top: 6%; bottom: 0; border-radius: 50% 50% 46% 46%; background: radial-gradient(ellipse at 50% 40%, transparent 55%, rgba(150,220,255,.22) 72%, rgba(190,240,255,.55) 86%, transparent 92%); box-shadow: inset 0 0 18px rgba(140,210,255,.35); animation: sf-pulse 2.2s ease-in-out infinite, sf-in .3s ease-out; }
+.st-fx .sf-regen b { position: absolute; bottom: 10%; width: 6px; height: 6px; border-radius: 50%; background: radial-gradient(circle, #eafff3, #5fe39a 55%, transparent 70%); animation: sf-rise 1.6s ease-in infinite; }
+.st-fx .sf-regen { inset: 0; }
+.st-fx .sf-regen b:nth-child(1) { left: 25%; } .st-fx .sf-regen b:nth-child(2) { left: 45%; animation-delay: .4s; } .st-fx .sf-regen b:nth-child(3) { left: 62%; animation-delay: .8s; } .st-fx .sf-regen b:nth-child(4) { left: 75%; animation-delay: 1.2s; }
+.st-fx .sf-bleed { left: 30%; right: 30%; top: 30%; height: 30%; background: radial-gradient(circle at 50% 30%, rgba(220,30,50,.55), transparent 60%); animation: sf-pulse 1s ease-in-out infinite; }
+@keyframes sf-in { from { opacity: 0; transform: scale(.7); } }
+@keyframes sf-flicker { from { transform: scaleY(.88) translateY(4%); opacity: .8; } to { transform: scaleY(1.08); opacity: 1; } }
+@keyframes sf-spin { to { transform: rotate(360deg); } }
+@keyframes sf-pulse { 0%, 100% { opacity: .65; } 50% { opacity: 1; } }
+@keyframes sf-rise { 0% { transform: translateY(0) scale(.6); opacity: 0; } 25% { opacity: 1; } 100% { transform: translateY(-260%) scale(1); opacity: 0; } }
+.battle.arena .sf-stun { animation-name: sf-orbit; } @keyframes sf-orbit { to { transform: rotateY(360deg); } }
+@media (prefers-reduced-motion: reduce) { .st-fx i, .st-fx b { animation: none !important; } }

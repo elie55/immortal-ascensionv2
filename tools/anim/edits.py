@@ -13,10 +13,14 @@ Edits (image 1 = the source sprite; Qwen-Image-Edit keeps the rest of the pictur
   tag_eyes    eyes painted flat magenta                          → the eye rectangle the blink patch covers
   tag_hair    hair painted flat magenta                          → flutter weights (hair)
   tag_cloth   loose fabric painted flat magenta                  → flutter weights (ribbons, sashes, sleeves, hems)
-Unarmed figures (creatures) skip noweapon; `--parts` picks a subset.
+Which parts a figure gets comes from tools/anim/cast.json (read from the sprites: body type, armed, eyes): the
+weapon parts only for armed figures, tag_cloth only for figures that wear clothes, the eye parts only when there
+are eyes to blink; creatures get a "flowing parts" tag (mane, crest, tail tufts, fins) instead of hair.
+One rig per art: the battle sprite is `<id>`, any other art key (a beast's stage) is `<id>.<key>`.
 
 Usage:
-  python3 tools/anim/edits.py --name proto --ids npc.lin_xueyao,enemy.field_bandit [--parts noweapon,eyesclosed,tag_hair,tag_cloth] [--reroll N]
+  python3 tools/anim/edits.py --name proto --ids npc.lin_xueyao,enemy.field_bandit,beast.yunyun#battle_adult [--parts ...] [--reroll N]
+  python3 tools/anim/edits.py --name cast --all [--skip-built]      every sprite in tools/anim/cast.json
 """
 import argparse, hashlib, json, os, sys
 from PIL import Image
@@ -44,6 +48,37 @@ PARTS = {
                   "skirt and robe hems that could sway in the wind — in one flat solid bright magenta colour (#FF00FF) with no shading. "
                   "The body, face, hair, fitted clothing, armour, weapon and background stay exactly as they are.", False),
 }
+
+
+CAST = json.load(open(os.path.join(ROOT, "tools", "anim", "cast.json"))) if os.path.exists(os.path.join(ROOT, "tools", "anim", "cast.json")) else {}
+CREATURE_FLOW = (KEEP + "paint only the free-flowing parts that would sway in the wind — mane, crest, long tail and tail tufts, loose fur tufts, whiskers, "
+                 "long feathers and wing tips, fins and trailing ribbons of energy — in one flat solid bright magenta colour (#FF00FF) with no shading. "
+                 "The head, face, eyes, body, legs and background stay exactly as they are.")
+CREATURES = ("quadruped", "flying", "serpent", "large")
+
+
+def cast_of(f):
+    """The recorded look of a sprite (tools/anim/cast.json): arch, armed, eyes."""
+    return CAST.get(f) or CAST.get(f.rsplit(".", 1)[0] + ".webp") or {}
+
+
+def rig_name(c, eid, key=None):
+    """Folder / ComfyUI name of a rig: the entity id for its battle sprite, `<id>.<key>` for another art (a beast stage)."""
+    k = art_key(c, eid, key)
+    return eid if k in ("battle", "full_body") else f"{eid}.{k}"
+
+
+def parts_for(f, creature):
+    """The edit renders a sprite needs, from its recorded look."""
+    look = cast_of(f)
+    arch = look.get("arch") or ("quadruped" if creature else "humanoid")
+    armed = look.get("armed", not creature)
+    out = []
+    if armed: out += ["noweapon", "tag_weapon", "tag_hands"]
+    if look.get("eyes", True): out += ["eyesclosed", "tag_eyes"]
+    out += ["tag_hair"]
+    if arch in ("humanoid", "humanoid_unarmed", "large"): out += ["tag_cloth"]
+    return out
 
 
 def art_key(c, eid, key=None):
@@ -77,34 +112,46 @@ def load_content():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--name", required=True)
-    ap.add_argument("--ids", required=True)
-    ap.add_argument("--parts", default=",".join(PARTS))
+    ap.add_argument("--ids", default="", help="entity ids; `id#art_key` picks another art (a beast stage)")
+    ap.add_argument("--all", action="store_true", help="every sprite in tools/anim/cast.json")
+    ap.add_argument("--skip-built", action="store_true", help="leave out figures whose rig is already built")
+    ap.add_argument("--parts", default="", help="only these parts (default: what the sprite needs, see parts_for)")
     ap.add_argument("--reroll", type=int, default=0)
     ap.add_argument("--ver", default="", help="suffix for the uploaded source name (new art → new name, so no stale copy is used)")
     ap.add_argument("--art", default=None, help="art key to rig (a beast stage: battle_juvenile); default battle / full_body")
     a = ap.parse_args()
     c = load_content()
-    parts = [p for p in a.parts.split(",") if p]
-    q, sources = [], []
-    for eid in filter(None, a.ids.split(",")):
-        f, creature = art_file(c, eid, a.art)
+    only = [p for p in a.parts.split(",") if p]
+    targets = [(x.split("#")[0], x.split("#")[1] if "#" in x else a.art) for x in filter(None, a.ids.split(","))]
+    if a.all: targets += [(v["id"], v["art"]) for v in CAST.values()]
+    q, sources, seen = [], [], set()
+    for eid, key in targets:
+        rig = rig_name(c, eid, key)
+        if rig in seen: continue
+        seen.add(rig)
+        if a.skip_built and os.path.exists(os.path.join(ROOT, "assets", "anim", rig, "rig.json")): continue
+        f, creature = art_file(c, eid, key)
         im = Image.open(os.path.join(ROOT, f)).convert("RGBA")
         flat = Image.new("RGB", im.size, GREY); flat.paste(im, mask=im.getchannel("A"))
-        d = os.path.join(ROOT, ".tmp", "anim", eid); os.makedirs(d, exist_ok=True)
-        src = os.path.join(d, "source.png"); flat.save(src); sources.append((eid, src))
+        d = os.path.join(ROOT, ".tmp", "anim", rig); os.makedirs(d, exist_ok=True)
+        src = os.path.join(d, "source.png"); flat.save(src); sources.append((rig, src))
         gw, gh = gen_size(*im.size)
-        for p in parts:
-            if p in ("noweapon", "tag_weapon", "tag_hands") and creature: continue
+        flowing = (cast_of(f).get("arch") or ("quadruped" if creature else "humanoid")) in CREATURES
+        for p in parts_for(f, creature):
+            if only and p not in only: continue
             prompt, transparent = PARTS[p]
-            seed = int(hashlib.sha1(f"{eid}/{p}#{a.reroll}".encode()).hexdigest()[:8], 16)
-            q.append({"entity": eid, "key": f"anim_{p}", "file": f"assets/anim/{eid}/{p}.png", "prompt": prompt + (" Plain flat light-grey background." if transparent else ""),
-                      "ref": f"ia_anim/{eid}{('_' + a.ver) if a.ver else ''}.png", "w": gw, "h": gh, "transparent": transparent, "seed": seed,
-                      "prefix": f"IA_anim/{eid}/{p}" + (f"_r{a.reroll}" if a.reroll else "")})
+            if p == "tag_hair" and flowing: prompt = CREATURE_FLOW
+            seed = int(hashlib.sha1(f"{rig}/{p}#{a.reroll}".encode()).hexdigest()[:8], 16)
+            q.append({"entity": eid, "key": f"anim_{p}", "file": f"assets/anim/{rig}/{p}.png", "prompt": prompt + (" Plain flat light-grey background." if transparent else ""),
+                      "ref": f"ia_anim/{rig}{('_' + a.ver) if a.ver else ''}.png", "w": gw, "h": gh, "transparent": transparent, "seed": seed,
+                      "prefix": f"IA_anim/{rig}/{p}" + (f"_r{a.reroll}" if a.reroll else "")})
     os.makedirs(os.path.join(ROOT, ".tmp", "queues"), exist_ok=True)
     path = os.path.join(ROOT, ".tmp", "queues", f"anim_{a.name}.json")
     json.dump(q, open(path, "w"), ensure_ascii=False)
     print(f"{len(q)} jobs -> {path}")
-    for eid, s in sources: print(f"source {eid}: {s}  → ComfyUI input/ia_anim/{eid}{('_' + a.ver) if a.ver else ''}.png")
+    if len(sources) <= 12:
+        for rig, s in sources: print(f"source {rig}: {s}  → ComfyUI input/ia_anim/{rig}{('_' + a.ver) if a.ver else ''}.png")
+    else: print(f"{len(sources)} sources under .tmp/anim/<rig>/source.png → ComfyUI input/ia_anim/<rig>.png")
 
 
 if __name__ == "__main__":

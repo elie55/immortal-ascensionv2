@@ -143,7 +143,8 @@
           "refs/mockups/cultivation_screen.png"
         ],
         "status": "generated",
-        "facing": "right"
+        "facing": "right",
+        "body": "humanoid"
       },
       "cutin": {
         "file": "assets/npcs/lin_xueyao/cutin.webp",
@@ -164,11 +165,13 @@
     "dao_companion": {
       "eligible": false
     },
-    "anim": {
-      "rig": "assets/anim/npc.lin_xueyao/rig.json",
-      "art": "battle",
-      "archetype": "humanoid"
-    }
+    "anim": [
+      {
+        "rig": "assets/anim/npc.lin_xueyao/rig.json",
+        "art": "battle",
+        "archetype": "humanoid"
+      }
+    ]
   },
   {
     "id": "npc.bai_lingshuang",
@@ -293,7 +296,23 @@
           "refs/mockups/prologue_bai.png"
         ],
         "status": "generated",
-        "facing": "left"
+        "facing": "left",
+        "body": "humanoid"
+      },
+      "cutin": {
+        "file": "assets/npcs/bai_lingshuang/cutin.webp",
+        "size": [
+          1024,
+          1280
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: Bai Lingshuang, a tall elegant young woman with long silver-white hair in a high ponytail, cool blue eyes, pale skin, wearing white and ice-blue layered robes with silver frost embroidery, holding a slender crystal-blue sword, the same character, outfit and weapon as the references, unleashing their strongest technique, the weapon or bare hands blazing with spiritual energy, intense focused eyes, hair and clothing whipping sideways in a strong wind, swirling energy, light streaks and sparks around them, strong rim light, high contrast, cinematic, the complete head and hands in frame, isolated on a plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "assets/npcs/bai_lingshuang/full_body.webp",
+          "assets/npcs/bai_lingshuang/battle.webp"
+        ],
+        "status": "generated"
       }
     },
     "gifts": {
@@ -438,11 +457,13 @@
         "text": "The frost in my sword is quieter when you are near. I do not know what that means yet."
       }
     ],
-    "anim": {
-      "rig": "assets/anim/npc.bai_lingshuang/rig.json",
-      "art": "battle",
-      "archetype": "humanoid"
-    }
+    "anim": [
+      {
+        "rig": "assets/anim/npc.bai_lingshuang/rig.json",
+        "art": "battle",
+        "archetype": "humanoid"
+      }
+    ]
   },
   {
     "id": "npc.tang_xiaoman",
@@ -588,6 +609,23 @@
         "references": [
           "refs/mockups/tang_talk.png",
           "refs/mockups/merchant_pavilion.png"
+        ],
+        "status": "generated",
+        "facing": "right",
+        "body": "humanoid_unarmed"
+      },
+      "cutin": {
+        "file": "assets/npcs/tang_xiaoman/cutin.webp",
+        "size": [
+          1024,
+          1280
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: Tang Xiaoman, a cheerful young merchant girl with short wavy chestnut hair, large amber eyes, a wide grin, wearing a cream and red merchant hanfu with a coin-patterned sash, a bronze abacus and coin pouches at her belt, the same character, outfit and weapon as the references, unleashing their strongest technique, the weapon or bare hands blazing with spiritual energy, intense focused eyes, hair and clothing whipping sideways in a strong wind, swirling energy, light streaks and sparks around them, strong rim light, high contrast, cinematic, the complete head and hands in frame, isolated on a plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "assets/npcs/tang_xiaoman/full_body.webp",
+          "assets/npcs/tang_xiaoman/battle.webp"
         ],
         "status": "generated"
       }
@@ -1367,6 +1405,23 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of Zhao Lie in combat stance, same design as the reference, sword drawn, dynamic ready pose in a three-quarter front view, body turned toward the viewer, head and eyes looking straight at the viewer as if facing an opponent standing right in front of it, complete figure head to feet, any weapon held ready and clearly visible away from the body, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
+      },
+      "cutin": {
+        "file": "assets/npcs/zhao_lie/cutin.webp",
+        "size": [
+          1024,
+          1280
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: Zhao Lie, a muscular young man with spiky red-brown hair and a headband, bare arms wrapped in bandages, orange and black martial robes, fists wreathed in flame, the same character, outfit and weapon as the references, unleashing their strongest technique, the weapon or bare hands blazing with spiritual energy, intense focused eyes, hair and clothing whipping sideways in a strong wind, swirling energy, light streaks and sparks around them, strong rim light, high contrast, cinematic, the complete head and hands in frame, isolated on a plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "assets/npcs/zhao_lie/full_body.webp",
+          "assets/npcs/zhao_lie/battle.webp"
+        ],
         "status": "generated"
       }
     },
@@ -1467,6 +1522,23 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of Shen Qingxue in combat stance, same design as the reference, sword drawn, dynamic ready pose in a three-quarter front view, body turned toward the viewer, head and eyes looking straight at the viewer as if facing an opponent standing right in front of it, complete figure head to feet, any weapon held ready and clearly visible away from the body, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid"
+      },
+      "cutin": {
+        "file": "assets/npcs/shen_qingxue/cutin.webp",
+        "size": [
+          1024,
+          1280
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: Shen Qingxue, a slender young woman with blue-black hair in twin loops, pale blue eyes, light blue and white robes, holding a long ice-crystal spear, the same character, outfit and weapon as the references, unleashing their strongest technique, the weapon or bare hands blazing with spiritual energy, intense focused eyes, hair and clothing whipping sideways in a strong wind, swirling energy, light streaks and sparks around them, strong rim light, high contrast, cinematic, the complete head and hands in frame, isolated on a plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "assets/npcs/shen_qingxue/full_body.webp",
+          "assets/npcs/shen_qingxue/battle.webp"
+        ],
         "status": "generated"
       }
     },
@@ -1568,6 +1640,23 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of Tie Shanhe in combat stance, same design as the reference, sword drawn, dynamic ready pose in a three-quarter front view, body turned toward the viewer, head and eyes looking straight at the viewer as if facing an opponent standing right in front of it, complete figure head to feet, any weapon held ready and clearly visible away from the body, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
+      },
+      "cutin": {
+        "file": "assets/npcs/tie_shanhe/cutin.webp",
+        "size": [
+          1024,
+          1280
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: Tie Shanhe, a bald broad-shouldered monk with prayer beads, grey and saffron robes, stone-like skin glowing with earthy runes, the same character, outfit and weapon as the references, unleashing their strongest technique, the weapon or bare hands blazing with spiritual energy, intense focused eyes, hair and clothing whipping sideways in a strong wind, swirling energy, light streaks and sparks around them, strong rim light, high contrast, cinematic, the complete head and hands in frame, isolated on a plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "assets/npcs/tie_shanhe/full_body.webp",
+          "assets/npcs/tie_shanhe/battle.webp"
+        ],
         "status": "generated"
       }
     },
@@ -1682,6 +1771,23 @@
         "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Full-body combat illustration of Mo Lianjue in combat stance, same design as the reference, sword drawn, dynamic ready pose in a three-quarter front view, body turned toward the viewer, head and eyes looking straight at the viewer as if facing an opponent standing right in front of it, complete figure head to feet, any weapon held ready and clearly visible away from the body, isolated on plain background, no text.",
         "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
         "references": [],
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
+      },
+      "cutin": {
+        "file": "assets/npcs/mo_lianjue/cutin.webp",
+        "size": [
+          1024,
+          1280
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: Mo Lianjue, a handsome young man with long black hair tied with a silver ribbon, dark eyes, black and silver robes, a sleek black sword floating behind him, the same character, outfit and weapon as the references, unleashing their strongest technique, the weapon or bare hands blazing with spiritual energy, intense focused eyes, hair and clothing whipping sideways in a strong wind, swirling energy, light streaks and sparks around them, strong rim light, high contrast, cinematic, the complete head and hands in frame, isolated on a plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "assets/npcs/mo_lianjue/full_body.webp",
+          "assets/npcs/mo_lianjue/battle.webp"
+        ],
         "status": "generated"
       }
     },

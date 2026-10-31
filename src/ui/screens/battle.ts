@@ -13,7 +13,7 @@ import { icon } from "../core/icons.ts";
 import { AnimStage } from "../anim/stage.ts";
 import { layout, strikeBox, focusOf, type Box } from "../battle/field.ts";
 import { beats as toBeats, plan as planShot, cameraFor, type ActionBeat, type Vfx } from "../battle/choreo.ts";
-import { play as playVfx, dashTrail, dust, embers, gather, castArray, type VfxCtx, type Sprite } from "../battle/vfx.ts";
+import { play as playVfx, dashTrail, dust, embers, gather, castArray, bolt, type VfxCtx, type Sprite } from "../battle/vfx.ts";
 import type { RigDef } from "../anim/rig.ts";
 import { RARITY_LABEL } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
@@ -172,7 +172,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const looks = ({ left: -1, right: 1, front: 0 } as const)[c.facingOf(u.art)];
     if (!block) {
       // the arena paints every figure on the canvas (one depth order, shared clips); rigless ones as still puppets
-      if (arena) puppets.addStill(u.uid, u.art, art, sprite, z, glowRgb(u.element), u.side, toward, u.kind === "beast" ? "quadruped" : u.kind === "boss" ? "large" : "humanoid_unarmed", looks, face)
+      if (arena) puppets.addStill(u.uid, u.art, art, sprite, z, glowRgb(u.element), u.side, toward, (c.bodyOf(u.art) as any) ?? (u.kind === "beast" ? "quadruped" : u.kind === "boss" ? "large" : "humanoid_unarmed"), looks, face)
         .then(() => { if (puppets.has(u.uid) && u.alive) puppets.play(u.uid, "enter", speed); }).catch(() => { /* the still sprite stays */ });
       return;
     }
@@ -194,7 +194,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     if (u.side === "enemy") {
       const mini = hpBar("mini", false);
       const sprite = h("div", { class: ["bt-foe-u", u.kind, u.elite && "elite"], dataset: { uid: String(u.uid) }, onClick: () => { if (u.alive) { selectedTarget = u.uid; renderUnits(); } } },
-        h("div", { class: "ground" }), h("div", { class: "aura" }), art, h("div", { class: "fu-mini" }, h("b", null, u.name), mini.el), h("div", { class: "fu-mark" }), h("div", { class: "fu-warn" }, "!"));
+        h("div", { class: "ground" }), h("div", { class: "aura" }), art, h("div", { class: "fu-mini" }, h("b", null, u.name), mini.el, h("div", { class: "fu-st" })), h("div", { class: "fu-mark" }), h("div", { class: "fu-warn" }, "!"));
       sprite.classList.add("enter"); setTimeout(() => sprite.classList.remove("enter"), 900);
       foes.appendChild(sprite);
       attachRig(u, art, sprite, 5);
@@ -216,6 +216,28 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         cardBar.el, u.maxSp > 0 && spBar, status));
     cards.appendChild(card);
     return { uid: u.uid, sprite, spriteArt: art, mini, card, cardBar, spBar, status };
+  }
+
+  /**
+   * Statuses shown on the figure itself on the arena (they used to be icons only): ice crystals at the feet of a frozen
+   * unit, flames licking a burning one, miasma around the poisoned, circling stars over the stunned, a bubble while
+   * shielded, rising motes while regenerating. Rebuilt only when the set changes, so the loops never restart.
+   */
+  const STATUS_FX: Record<string, string> = { "status.freeze": "frost", "status.burning": "flame", "status.poison": "miasma", "status.stun": "stun", "status.regen": "regen", "status.bleeding": "bleed" };
+  function statusFx(v: View, u: Combatant) {
+    if (!arena) return;
+    let box = v.sprite.querySelector<HTMLElement>(":scope > .st-fx");
+    if (!box) { box = h("div", { class: "st-fx", "aria-hidden": "true" }); v.sprite.appendChild(box); }
+    const want = u.alive ? [...new Set(u.statuses.map((x) => STATUS_FX[x.id]).filter((x): x is string => !!x))] : [];
+    if (u.alive && u.shield > 0) want.push("shield");
+    const key = want.sort().join(",");
+    if (box.dataset.k === key) return;
+    box.dataset.k = key;
+    replaceChildren(box, ...want.map((k) => {
+      const art = k === "frost" || k === "flame" || k === "miasma" ? vctx.sprite(k as Sprite) : undefined;
+      return h("i", { class: `sf-${k}`, style: art ? { "--img": art } as any : undefined },
+        k === "flame" && h("i"), k === "stun" && [h("b"), h("b"), h("b")], k === "regen" && [h("b"), h("b"), h("b"), h("b")]);
+    }));
   }
 
   /** Focused enemy for the top panel: the chosen target, else the boss, else the first one standing. */
@@ -245,6 +267,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       v.sprite.classList.toggle("winding", !!u.telegraph || (!!u.boss?.charging && u.boss.charging.turnsLeft <= 1));
       v.sprite.classList.toggle("dead", !u.alive);
       v.mini!.set(u.hp, u.maxHp, u.shield);
+      if (arena) { const st = v.sprite.querySelector<HTMLElement>(".fu-st"); if (st) replaceChildren(st, statusIcons(u)); statusFx(v, u); }
     });
 
     // party
@@ -264,6 +287,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       (v.spBar!.firstChild as HTMLElement).style.width = `${(u.sp / Math.max(1, u.maxSp) * 100).toFixed(1)}%`;
       v.spBar!.setAttribute("aria-valuenow", String(Math.round(u.sp))); v.spBar!.setAttribute("aria-valuemax", String(u.maxSp)); v.spBar!.title = `Spiritual energy ${Math.round(u.sp)} / ${u.maxSp}`;
       replaceChildren(v.status!, statusIcons(u));
+      statusFx(v, u);
       const t = threats.has(u.uid) && u.alive;
       v.card!.classList.toggle("threat", t); v.sprite.classList.toggle("threat", t);
       v.card!.classList.toggle("dead", !u.alive); v.sprite.classList.toggle("dead", !u.alive);
@@ -475,6 +499,13 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   }
   /** Heavenly lightning: jagged bolts from the top of the sky onto the party. */
   function lightning() {
+    // the arena strikes the party with painted bolts where they stand; the classic stage keeps its drawn ones
+    if (arena && vfxArt("lightning")) {
+      const targets = battle.units.filter((u) => u.side === "ally" && u.alive);
+      targets.forEach((u, i) => setTimeout(() => { const ft = feetOf(u.uid); if (ft) bolt(vctx, { x: ft.x + (Math.random() - 0.5) * 20, y: ft.y }, "#c9a0ff", heightOf(u.uid) * 0.55); }, dur(i * 90)));
+      punch(0.03);
+      return;
+    }
     const el = h("div", { class: "bt-lightning" }, Array.from({ length: 3 }, (_, i) => h("svg", { viewBox: "0 0 100 400", preserveAspectRatio: "none", style: { left: `${18 + i * 30 + Math.random() * 12}%`, animationDelay: `${i * 70}ms` } }, (() => { const pl = document.createElementNS("http://www.w3.org/2000/svg", "polyline"); let x = 50, d = ""; for (let y = 0; y <= 400; y += 40) { d += `${x},${y} `; x = Math.max(10, Math.min(90, x + (Math.random() * 50 - 25))); } pl.setAttribute("points", d.trim()); return pl; })())));
     fx.appendChild(el); setTimeout(() => el.remove(), 600);
   }
@@ -564,13 +595,30 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
           if (selectedTarget === e.target) selectedTarget = undefined;
           renderUnits(); break;
         }
-        case "phase": phaseBanner = { text: `${name(e.actor)} · ${e.name}`, until: Date.now() + 2200 }; screenFlash("white"); renderUnits(); await wait(800); break;
-        case "summon": renderUnits(); caption = `${name(e.actor)} calls reinforcements`; renderTop(); await wait(500); break;
+        case "phase": {
+          phaseBanner = { text: `${name(e.actor)} · ${e.name}`, until: Date.now() + 2200 }; screenFlash("white"); renderUnits();
+          if (arena) {
+            // the arena turns to the boss as it changes: a zoom, a burst of its element, a shock ring at its feet, a roar
+            const b = unit(e.actor); const hb = home.get(e.actor); const ch = centerOf(e.actor); const ft = feetOf(e.actor);
+            if (hb) camera("zoom", focusOf([hb]), 360);
+            if (rigged(e.actor)) puppets.play(e.actor, "charge", speed);
+            if (b) puppets.setGlow(e.actor, glowRgb(b.element));
+            const col = ELEMENT_COLOR[b?.element ?? ""] ?? "#ffd27a";
+            if (ch && ft) { gather(vctx, ch, ft.y, heightOf(e.actor), col, 600); setTimeout(() => { playVfx(vctx, { shape: "burst", color: col, impact: "heavy", from: ch, to: [ch], size: heightOf(e.actor), ground: ft.y, element: b?.element }); shake(true); }, dur(620)); }
+            await wait(1300); camera("none"); if (rigged(e.actor)) puppets.play(e.actor, "idle", speed);
+          } else await wait(800);
+          break;
+        }
+        case "summon": {
+          renderUnits(); caption = `${name(e.actor)} calls reinforcements`; renderTop();
+          if (arena) for (const id of e.spawned) { const ft = feetOf(id); const ch = centerOf(id); if (ft && ch) { castArray(vctx, ft, heightOf(id), "#c79bff", 900); ring_(ft, "#c79bff", heightOf(id) * 0.6); } }
+          await wait(arena ? 700 : 500); break;
+        }
         case "charge": renderUnits(); float(e.actor, "Gathering power", "warnf"); await wait(500); break;
         case "telegraph": renderUnits(); float(e.actor, "!", "warnf big"); await wait(520); break;
         case "interrupt": float(e.actor, "Interrupted!", "interrupt"); renderUnits(); await wait(380); break;
         case "skip": float(e.actor, e.reason === "frozen" ? "Frozen" : "Stunned", "miss"); await wait(250); break;
-        case "hazard": lightning(); showSkillName(`${e.name} · wave ${e.wave}/${e.waves}`, "heavy"); screenFlash("white"); shake(true); await wait(420); break;
+        case "hazard": lightning(); showSkillName(`${e.name} · wave ${e.wave}/${e.waves}`, "heavy"); screenFlash(arena ? "soft" : "white"); shake(true); await wait(arena ? 620 : 420); break;
         case "ult_ready": renderUnits(); break;
         default: break;
       }
@@ -686,6 +734,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   const infoOf = (uid: number) => { const u = unit(uid); return u ? { side: u.side, alive: u.alive } : undefined; };
   const vfxArt = (k: Sprite) => app.ui("ui.vfx", k);
   const vctx: VfxCtx = { layer: fx, dur, reduced: app.settings.reducedMotion, sprite: (k) => { const f = vfxArt(k); return f ? app.img(f) : undefined; } };
+  const ring_ = (at: { x: number; y: number }, color: string, r: number) => playVfx(vctx, { shape: "ring", color, impact: "medium", from: at, to: [{ x: at.x, y: at.y - r }], size: r * 1.6, ground: at.y });
   /** A unit's feet in the effect layer's pixels. */
   function feetOf(uid: number): { x: number; y: number } | null {
     const v = views.get(uid); if (!v) return null;
@@ -706,7 +755,8 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const e = beat.action; const a = unit(e.actor); if (!a) return;
     const v = views.get(a.uid);
     const sk = a.skills.find((x) => x.id === e.skill);
-    const isUlt = sk?.kind === "ultimate";
+    // an ultimate, or a boss's charged art (the one it telegraphs for turns), gets the full treatment: close-up and flurry
+    const isUlt = sk?.kind === "ultimate" || (!!e.charged && a.kind === "boss");
     const shot = planShot(beat, infoOf, vfxOf, isUlt);
     const element = sk?.element ?? a.element;
     // the basic strike and counters take the striker's element colour; techniques carry their own

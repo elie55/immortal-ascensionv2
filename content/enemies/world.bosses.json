@@ -92,7 +92,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/mortal_plains/plains_bandit_chief_intro.webp",
@@ -213,7 +215,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left",
+        "body": "serpent"
       },
       "intro": {
         "file": "assets/bosses/azure_bamboo_forest/thousand_node_bamboo_dragon_intro.webp",
@@ -318,7 +322,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "large"
       },
       "intro": {
         "file": "assets/bosses/special/guardian_of_the_origin_intro.webp",
@@ -441,7 +447,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "humanoid_unarmed"
       },
       "intro": {
         "file": "assets/bosses/special/tribulation_thunder_spirit_intro.webp",
@@ -568,7 +576,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front",
+        "body": "serpent"
       },
       "intro": {
         "file": "assets/bosses/special/nine_headed_abyss_serpent_intro.webp",
@@ -670,7 +680,9 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left",
+        "body": "humanoid"
       },
       "intro": {
         "file": "assets/bosses/special/tower_warden_intro.webp",

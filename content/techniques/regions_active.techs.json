@@ -50,7 +50,7 @@
     },
     "vfx": {
       "approach": "none",
-      "shape": "burst",
+      "shape": "rain",
       "impact": "medium",
       "camera": "none",
       "color": "#ff7b4a"
@@ -493,7 +493,7 @@
       "shape": "wave",
       "impact": "heavy",
       "camera": "push",
-      "color": "#f2f5ff"
+      "color": "#b98cff"
     }
   },
   {
@@ -653,10 +653,10 @@
     },
     "vfx": {
       "approach": "none",
-      "shape": "burst",
+      "shape": "bolt",
       "impact": "medium",
       "camera": "none",
-      "color": "#f2f5ff"
+      "color": "#b98cff"
     }
   },
   {
@@ -713,7 +713,7 @@
       "shape": "pierce",
       "impact": "heavy",
       "camera": "push",
-      "color": "#f2f5ff"
+      "color": "#b98cff"
     }
   },
   {
@@ -763,10 +763,10 @@
     },
     "vfx": {
       "approach": "none",
-      "shape": "burst",
+      "shape": "bolt",
       "impact": "medium",
       "camera": "none",
-      "color": "#f2f5ff"
+      "color": "#b98cff"
     }
   },
   {
@@ -1094,7 +1094,7 @@
     },
     "vfx": {
       "approach": "none",
-      "shape": "burst",
+      "shape": "pillar",
       "impact": "heavy",
       "camera": "push",
       "color": "#ff7b4a"
@@ -1261,7 +1261,7 @@
     },
     "vfx": {
       "approach": "none",
-      "shape": "rain",
+      "shape": "pillar",
       "impact": "heavy",
       "camera": "push",
       "color": "#f2f5ff"
