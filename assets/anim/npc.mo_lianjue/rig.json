@@ -1,0 +1,38 @@
+{
+ "id": "npc.mo_lianjue",
+ "art": "battle",
+ "body": "assets/anim/npc.mo_lianjue/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  181,
+  59,
+  675,
+  967
+ ],
+ "ground": [
+  428,
+  967
+ ],
+ "facing": 0,
+ "archetype": "humanoid_unarmed",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 531,
+ "chest": 344,
+ "neck": 235,
+ "blink": {
+  "file": "assets/anim/npc.mo_lianjue/blink.webp",
+  "rect": [
+   335,
+   151,
+   54,
+   20
+  ]
+ },
+ "weights": "assets/anim/npc.mo_lianjue/weights.png"
+}

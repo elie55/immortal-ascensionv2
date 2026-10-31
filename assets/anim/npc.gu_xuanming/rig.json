@@ -1,0 +1,38 @@
+{
+ "id": "npc.gu_xuanming",
+ "art": "battle",
+ "body": "assets/anim/npc.gu_xuanming/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  186,
+  106,
+  572,
+  963
+ ],
+ "ground": [
+  379,
+  963
+ ],
+ "facing": 0,
+ "archetype": "humanoid_unarmed",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 552,
+ "chest": 344,
+ "neck": 241,
+ "blink": {
+  "file": "assets/anim/npc.gu_xuanming/blink.webp",
+  "rect": [
+   333,
+   163,
+   52,
+   18
+  ]
+ },
+ "weights": "assets/anim/npc.gu_xuanming/weights.png"
+}

@@ -1,0 +1,38 @@
+{
+ "id": "npc.lu_feiyan",
+ "art": "battle",
+ "body": "assets/anim/npc.lu_feiyan/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  86,
+  128,
+  679,
+  951
+ ],
+ "ground": [
+  382,
+  951
+ ],
+ "facing": 0,
+ "archetype": "humanoid_unarmed",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 556,
+ "chest": 366,
+ "neck": 268,
+ "blink": {
+  "file": "assets/anim/npc.lu_feiyan/blink.webp",
+  "rect": [
+   329,
+   182,
+   68,
+   28
+  ]
+ },
+ "weights": "assets/anim/npc.lu_feiyan/weights.png"
+}

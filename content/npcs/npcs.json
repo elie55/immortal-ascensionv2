@@ -815,6 +815,13 @@
         "min_level": 4,
         "text": "You know what's worth more than a lucky coin? Nothing. Except, maybe, you. Don't make me say it twice."
       }
+    ],
+    "anim": [
+      {
+        "rig": "assets/anim/npc.tang_xiaoman/rig.json",
+        "art": "battle",
+        "archetype": "humanoid_unarmed"
+      }
     ]
   },
   {
@@ -1440,7 +1447,14 @@
         "mastery_xp": 15
       },
       "cooldown_min": 60
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/npc.zhao_lie/rig.json",
+        "art": "battle",
+        "archetype": "humanoid_unarmed"
+      }
+    ]
   },
   {
     "id": "npc.shen_qingxue",
@@ -1558,7 +1572,14 @@
         "mastery_xp": 15
       },
       "cooldown_min": 60
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/npc.shen_qingxue/rig.json",
+        "art": "battle",
+        "archetype": "humanoid"
+      }
+    ]
   },
   {
     "id": "npc.tie_shanhe",
@@ -1676,7 +1697,14 @@
         "mastery_xp": 15
       },
       "cooldown_min": 60
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/npc.tie_shanhe/rig.json",
+        "art": "battle",
+        "archetype": "humanoid_unarmed"
+      }
+    ]
   },
   {
     "id": "npc.mo_lianjue",
@@ -1808,6 +1836,13 @@
         "mastery_xp": 15
       },
       "cooldown_min": 60
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/npc.mo_lianjue/rig.json",
+        "art": "battle",
+        "archetype": "humanoid_unarmed"
+      }
+    ]
   }
 ]

@@ -1,0 +1,38 @@
+{
+ "id": "npc.tie_shanhe",
+ "art": "battle",
+ "body": "assets/anim/npc.tie_shanhe/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  178,
+  104,
+  616,
+  947
+ ],
+ "ground": [
+  397,
+  947
+ ],
+ "facing": 0,
+ "archetype": "humanoid_unarmed",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 542,
+ "chest": 336,
+ "neck": 235,
+ "blink": {
+  "file": "assets/anim/npc.tie_shanhe/blink.webp",
+  "rect": [
+   323,
+   147,
+   69,
+   29
+  ]
+ },
+ "weights": "assets/anim/npc.tie_shanhe/weights.png"
+}

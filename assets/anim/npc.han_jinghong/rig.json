@@ -1,0 +1,53 @@
+{
+ "id": "npc.han_jinghong",
+ "art": "battle",
+ "body": "assets/anim/npc.han_jinghong/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  86,
+  50,
+  677,
+  999
+ ],
+ "ground": [
+  382,
+  999
+ ],
+ "facing": 0,
+ "archetype": "humanoid",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 543,
+ "chest": 313,
+ "neck": 199,
+ "weapon": {
+  "file": "assets/anim/npc.han_jinghong/weapon.webp",
+  "size": [
+   403,
+   368
+  ],
+  "offset": [
+   87,
+   503
+  ],
+  "pivot": [
+   465.0,
+   532.7
+  ]
+ },
+ "blink": {
+  "file": "assets/anim/npc.han_jinghong/blink.webp",
+  "rect": [
+   336,
+   104,
+   71,
+   29
+  ]
+ },
+ "weights": "assets/anim/npc.han_jinghong/weights.png"
+}

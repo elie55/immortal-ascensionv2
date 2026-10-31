@@ -1333,7 +1333,14 @@
         ],
         "status": "generated"
       }
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/npc.lu_feiyan/rig.json",
+        "art": "battle",
+        "archetype": "humanoid_unarmed"
+      }
+    ]
   },
   {
     "id": "npc.han_jinghong",
@@ -1473,7 +1480,14 @@
         ],
         "status": "generated"
       }
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/npc.han_jinghong/rig.json",
+        "art": "battle",
+        "archetype": "humanoid"
+      }
+    ]
   },
   {
     "id": "npc.su_wanqing",
@@ -1613,7 +1627,14 @@
         ],
         "status": "generated"
       }
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/npc.su_wanqing/rig.json",
+        "art": "battle",
+        "archetype": "humanoid_unarmed"
+      }
+    ]
   },
   {
     "id": "npc.gu_xuanming",
@@ -1753,6 +1774,13 @@
         ],
         "status": "generated"
       }
-    }
+    },
+    "anim": [
+      {
+        "rig": "assets/anim/npc.gu_xuanming/rig.json",
+        "art": "battle",
+        "archetype": "humanoid_unarmed"
+      }
+    ]
   }
 ]

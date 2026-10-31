@@ -1,0 +1,38 @@
+{
+ "id": "npc.tang_xiaoman",
+ "art": "battle",
+ "body": "assets/anim/npc.tang_xiaoman/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  80,
+  72,
+  709,
+  989
+ ],
+ "ground": [
+  394,
+  989
+ ],
+ "facing": 1,
+ "archetype": "humanoid_unarmed",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 549,
+ "chest": 381,
+ "neck": 271,
+ "blink": {
+  "file": "assets/anim/npc.tang_xiaoman/blink.webp",
+  "rect": [
+   294,
+   168,
+   74,
+   39
+  ]
+ },
+ "weights": "assets/anim/npc.tang_xiaoman/weights.png"
+}

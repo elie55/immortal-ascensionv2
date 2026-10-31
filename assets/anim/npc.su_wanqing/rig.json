@@ -1,0 +1,38 @@
+{
+ "id": "npc.su_wanqing",
+ "art": "battle",
+ "body": "assets/anim/npc.su_wanqing/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  155,
+  57,
+  673,
+  976
+ ],
+ "ground": [
+  414,
+  976
+ ],
+ "facing": 0,
+ "archetype": "humanoid_unarmed",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 535,
+ "chest": 358,
+ "neck": 247,
+ "blink": {
+  "file": "assets/anim/npc.su_wanqing/blink.webp",
+  "rect": [
+   335,
+   152,
+   74,
+   31
+  ]
+ },
+ "weights": "assets/anim/npc.su_wanqing/weights.png"
+}

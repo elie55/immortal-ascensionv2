@@ -1,0 +1,53 @@
+{
+ "id": "npc.shen_qingxue",
+ "art": "battle",
+ "body": "assets/anim/npc.shen_qingxue/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  29,
+  55,
+  735,
+  1005
+ ],
+ "ground": [
+  382,
+  1005
+ ],
+ "facing": 0,
+ "archetype": "humanoid",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 549,
+ "chest": 366,
+ "neck": 252,
+ "weapon": {
+  "file": "assets/anim/npc.shen_qingxue/weapon.webp",
+  "size": [
+   583,
+   766
+  ],
+  "offset": [
+   27,
+   54
+  ],
+  "pivot": [
+   261.4,
+   508.4
+  ]
+ },
+ "blink": {
+  "file": "assets/anim/npc.shen_qingxue/blink.webp",
+  "rect": [
+   334,
+   158,
+   65,
+   27
+  ]
+ },
+ "weights": "assets/anim/npc.shen_qingxue/weights.png"
+}

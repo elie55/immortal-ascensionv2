@@ -1,0 +1,38 @@
+{
+ "id": "npc.zhao_lie",
+ "art": "battle",
+ "body": "assets/anim/npc.zhao_lie/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  174,
+  64,
+  575,
+  973
+ ],
+ "ground": [
+  374,
+  973
+ ],
+ "facing": 0,
+ "archetype": "humanoid_unarmed",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 537,
+ "chest": 349,
+ "neck": 240,
+ "blink": {
+  "file": "assets/anim/npc.zhao_lie/blink.webp",
+  "rect": [
+   339,
+   155,
+   58,
+   21
+  ]
+ },
+ "weights": "assets/anim/npc.zhao_lie/weights.png"
+}

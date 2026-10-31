@@ -168,13 +168,27 @@ def build(root, eid, c, debug=False, key=None):
             # the grip is the end at the hands (tag_hands); without it, the end nearest the torso
             tagh = load_edit(root, name, "tag_hands", (W, H), src)
             hm = magenta_mask(tagh) if tagh is not None else None
+            hand = None
             if hm is not None and (hm > 127).sum() > 50:
-                hy, hx = np.where(hm > 127); hand = np.array([hx.mean(), hy.mean()])
+                # the gripping hand: of the painted hands, the one touching the weapon (the other may be free)
+                n, lab, st, cen = cv2.connectedComponentsWithStats((hm > 127).astype(np.uint8), 8)
+                wy_, wx_ = np.where(m > 127); wpts = np.column_stack([wx_, wy_]).astype(np.float32)[::7]
+                best = None
+                for k in range(1, n):
+                    if st[k, cv2.CC_STAT_AREA] < 50: continue
+                    d = float(np.min(np.linalg.norm(wpts - cen[k], axis=1)))
+                    if best is None or d < best[0]: best = (d, cen[k])
+                hand = np.array(best[1]) if best is not None else None
+                if hand is None: hy, hx = np.where(hm > 127); hand = np.array([hx.mean(), hy.mean()])
                 grip, tip = (p0, p1) if np.linalg.norm(p0 - hand) <= np.linalg.norm(p1 - hand) else (p1, p0)
             else:
                 torso = np.array([(bbox[0] + bbox[2]) / 2, bbox[1] + bh * 0.25])  # shoulder height: the arms start there
                 grip, tip = (p0, p1) if np.linalg.norm(p0 - torso) <= np.linalg.norm(p1 - torso) else (p1, p0)
             pivot = grip + (tip - grip) * 0.10
+            if hand is not None:
+                # the weapon turns where the hand holds it: a spear or staff is often held in the middle, not at its end
+                L = np.linalg.norm(tip - grip); u = (tip - grip) / max(L, 1e-6)
+                pivot = grip + u * float(np.clip((hand - grip) @ u, L * 0.05, L * 0.6))
             # the hand still holds the grip in the body layer: keep the weapon's hand region out of the weapon layer
             wm = soft(m, 1.2)
             wx, wy = np.where(wm > 8)
