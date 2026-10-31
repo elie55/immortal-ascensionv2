@@ -1937,7 +1937,10 @@ html, body { font-variant-numeric: tabular-nums; }
 .battle.arena .bt-foe-u .ground, .battle.arena .bt-ally-u .ground { left: 14%; right: 14%; }
 /* every unit carries its own small bar; the focused-foe panel is only kept for bosses (phases) */
 .battle.arena .bt-foe:not(.boss-panel) { display: none; }
-.battle.arena .fu-mini { display: block; bottom: auto; top: 100%; margin-top: 2px; width: min(96px, 86%); }
+/* bars: under the party's feet, above the enemies' heads; no wider than a figure's body so neighbours never collide */
+.battle.arena .fu-mini { display: block; width: 64%; }
+.battle.arena .bt-ally-u .fu-mini { bottom: auto; top: 100%; margin-top: 2px; }
+.battle.arena .bt-foe-u .fu-mini { top: auto; bottom: 100%; margin-bottom: 2px; }
 .battle.arena .bt-ally-u .fu-mini b { color: #c9fff0; }
 .battle.arena .fu-mini b { font-size: calc(10rem / 15); text-transform: uppercase; letter-spacing: .04em; }
 .battle.arena .fu-mini .bar { height: 5px; }
@@ -1999,7 +2002,8 @@ html, body { font-variant-numeric: tabular-nums; }
 /* arena: every figure is on the canvas, so the DOM boxes only carry bars and marks, drawn above it */
 .battle.arena .bt-puppets { z-index: 0; }
 .battle.arena .rigged .ground, .battle.arena .rigged .aura { display: none; }
-.battle.arena .bt-foe-u.focus .fu-mark { top: 8%; bottom: auto; }
+/* the target mark sits on the foe's bar, left of its name */
+.battle.arena .bt-foe-u.focus .fu-mark { top: auto; bottom: calc(100% + 5px); left: calc(18% - 15px); width: 10px; height: 10px; animation: none; }
 /* close-up: the caster's upper body, not the whole figure */
 .cu-art { background-size: auto 165%; background-position: 50% 3%; }
 /* flurry numbers of an ultimate or a heavy art: smaller, quicker */

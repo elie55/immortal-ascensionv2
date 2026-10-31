@@ -1,45 +1,72 @@
-/** The battle stage's pure parts (docs/BATTLE_STAGE.md): field projection, formations, beats and shot plans. */
+/** The battle stage's pure parts (docs/BATTLE_STAGE.md): arena line-up, beats and shot plans, the test fight. */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { PORTRAIT, project, slot, strikePoint, facing, centroid, FORMATIONS } from "../src/ui/battle/field.ts";
+import { layout, lineUp, strikeBox, focusOf, overlapShare, ARENA, type LayoutUnit, type Box } from "../src/ui/battle/field.ts";
 import { beats, plan, cameraFor, shotLength, type Vfx } from "../src/ui/battle/choreo.ts";
 import type { BattleEvent } from "../src/engine/combat/types.ts";
 
-test("the floor narrows and units shrink toward the back; front units draw over back ones", () => {
-  const front = project(PORTRAIT, { fx: 0.5, fy: 0 }), back = project(PORTRAIT, { fx: 0.5, fy: 1 });
-  assert.ok(front.y > back.y, "the front row stands lower on the screen");
-  assert.equal(front.scale, PORTRAIT.near); assert.equal(back.scale, PORTRAIT.far);
-  assert.ok(front.z > back.z);
-  const left0 = project(PORTRAIT, { fx: 0, fy: 0 }).x, left1 = project(PORTRAIT, { fx: 0, fy: 1 }).x;
-  assert.ok(left1 > left0, "the back edge is inset more than the front edge");
-  const out = project(PORTRAIT, { fx: 2, fy: -1 });
-  assert.ok(out.x <= 1 && out.y <= 1 && out.scale <= 1, "positions are clamped to the field");
-});
+/** Phone and tablet stage sizes (the area between the top bar and the dock), from small to wide. */
+const STAGES = [{ w: 360, h: 380 }, { w: 360, h: 470 }, { w: 390, h: 560 }, { w: 412, h: 620 }, { w: 480, h: 720 }, { w: 560, h: 700 }];
+const PARTIES: LayoutUnit["kind"][][] = [["player"], ["player", "companion"], ["player", "beast"], ["player", "companion", "beast"], ["player", "companion", "companion"], ["player", "companion", "companion", "beast"]];
+const FOES: LayoutUnit["kind"][][] = [["enemy"], ["enemy", "enemy"], ["enemy", "enemy", "enemy"], ["boss"], ["boss", "enemy", "enemy"], ["enemy", "enemy", "enemy", "enemy"], ["enemy", "enemy", "enemy", "enemy", "enemy"]];
+const group = (party: LayoutUnit["kind"][], foes: LayoutUnit["kind"][]) => [
+  ...party.map((kind, i) => ({ uid: 1 + i, kind, side: "ally" as const })),
+  ...foes.map((kind, i) => ({ uid: 20 + i, kind, side: "enemy" as const })),
+];
+/** The bar strips: under a party figure's feet, above a foe's head (text line + bar, px). */
+const bar = (b: Box, side: "ally" | "enemy") => side === "ally" ? { x0: b.x - b.w * 0.32, x1: b.x + b.w * 0.32, y0: b.feet + 2, y1: b.feet + 22 } : { x0: b.x - b.w * 0.32, x1: b.x + b.w * 0.32, y0: b.feet - b.h - 22, y1: b.feet - b.h - 2 };
+/** A figure's visible body (the art's margins excluded). */
+const body = (b: Box) => ({ x0: b.x - b.h * ARENA.visible / 2, x1: b.x + b.h * ARENA.visible / 2, y0: b.feet - b.h * 0.92, y1: b.feet });
+const hit = (a: { x0: number; x1: number; y0: number; y1: number }, b: typeof a) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0)) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0));
 
-test("formations keep the party front left and the enemies back right, every slot inside the field", () => {
-  for (const side of ["ally", "enemy"] as const) for (const [n, row] of Object.entries(FORMATIONS[side])) {
-    assert.equal(row.length, Number(n));
-    for (const p of row) {
-      assert.ok(p.fx >= 0 && p.fx <= 1 && p.fy >= 0 && p.fy <= 1, `${side} ${n}: slot inside the field`);
-      if (side === "ally") assert.ok(p.fy < 0.6 && p.fx < 0.5 && p.fx >= 0.16, `${side} ${n}: allies front left, clear of the left edge`); else assert.ok(p.fy > 0.4 && p.fx > 0.35, `${side} ${n}: enemies back right`);
+test("line-up: on every stage size and group, figures barely overlap and every HP bar is clear of the other figures", () => {
+  for (const st of STAGES) for (const party of PARTIES) for (const foes of FOES) {
+    const us = group(party, foes);
+    const boxes = layout(us, st);
+    const tag = `${st.w}×${st.h} · ${party.join("+")} vs ${foes.join("+")}`;
+    for (const u of us) {
+      const b = boxes.get(u.uid)!;
+      // inside the stage (a sliver of sleeve may leave it, never a body)
+      assert.ok(b.x - b.h * ARENA.visible / 2 >= -st.w * 0.03 && b.x + b.h * ARENA.visible / 2 <= st.w * 1.03, `${tag}: ${u.kind} ${u.uid} inside the width`);
+      const br = bar(b, u.side);
+      assert.ok(br.y0 >= 0 && br.y1 <= st.h + 4, `${tag}: ${u.kind} ${u.uid}'s bar inside the stage`);
+      for (const o of us) {
+        if (o === u) continue;
+        const ob = boxes.get(o.uid)!;
+        // same side: neighbours overlap a little (depth), never more than a third of the narrower figure
+        if (o.side === u.side) assert.ok(overlapShare(b, ob) <= 0.34, `${tag}: ${u.uid} and ${o.uid} overlap ${overlapShare(b, ob).toFixed(2)}`);
+        // a bar never lies on another figure's body or on another bar
+        const area = (br.x1 - br.x0) * (br.y1 - br.y0);
+        assert.ok(hit(br, body(ob)) <= area * 0.12, `${tag}: ${u.uid}'s bar covers ${o.uid}`);
+        assert.ok(hit(br, bar(ob, o.side)) <= area * 0.05, `${tag}: bars of ${u.uid} and ${o.uid} collide`);
+      }
+      // the party's bodies stay below the enemies' bodies (two bands, one field)
+      if (u.side === "ally") for (const o of us.filter((x) => x.side === "enemy")) { const ob = boxes.get(o.uid)!; assert.ok(hit(body(b), body(ob)) <= (body(b).x1 - body(b).x0) * (body(b).y1 - body(b).y0) * 0.06, `${tag}: ${u.uid} covers foe ${o.uid}`); }
     }
-    // no two units share a screen spot
-    const seen = new Set(row.map((p) => { const q = project(PORTRAIT, p); return `${q.x.toFixed(2)}|${q.y.toFixed(2)}`; }));
-    assert.equal(seen.size, row.length, `${side} ${n}: distinct placements`);
   }
-  assert.deepEqual(slot("enemy", 9, 7), FORMATIONS.enemy[5]![4], "extra units share the last slot of the largest template");
-  assert.deepEqual(slot("ally", 0, 0), FORMATIONS.ally[1]![0]);
 });
 
-test("a dash stops one reach short of the target, on the attacker's side, and faces it", () => {
-  const me = slot("ally", 0, 2), foe = slot("enemy", 0, 2);
-  const sp = strikePoint(me, foe);
-  const dBefore = Math.hypot(foe.fx - me.fx, foe.fy - me.fy), dAfter = Math.hypot(foe.fx - sp.fx, foe.fy - (sp.fy + 0.03));
-  assert.ok(dAfter < dBefore && Math.abs(dAfter - 0.16) < 1e-9, "stops at reach distance");
-  assert.ok(sp.fx > me.fx && sp.fx < foe.fx, "between the two");
-  assert.equal(facing(me, foe), 1); assert.equal(facing(foe, me), -1);
-  const c = centroid([me, foe]);
-  assert.ok(c.fx > me.fx && c.fx < foe.fx);
+test("line-up order: the player and the boss lead in the middle, a beast at the end, the lead in front", () => {
+  const order = lineUp([{ uid: 3, kind: "beast" }, { uid: 2, kind: "companion" }, { uid: 1, kind: "player" }, { uid: 4, kind: "companion" }]).map((u) => u.uid);
+  assert.deepEqual(order, [2, 1, 4, 3]);
+  assert.deepEqual(lineUp([{ uid: 9, kind: "enemy" }, { uid: 7, kind: "boss" }, { uid: 8, kind: "enemy" }]).map((u) => u.uid), [8, 7, 9]);
+  const boxes = layout(group(["player", "companion", "beast"], ["enemy", "boss", "enemy"]), { w: 390, h: 560 });
+  assert.ok(boxes.get(1)!.feet > boxes.get(2)!.feet, "the player stands in front of a companion");
+  assert.ok(boxes.get(21)!.h > boxes.get(20)!.h, "the boss is the biggest foe");
+  assert.ok(boxes.get(3)!.h < boxes.get(1)!.h, "a beast is smaller");
+});
+
+test("a dash ends beside the target on the attacker's side, inside the stage; the camera aims between them", () => {
+  const st = { w: 390, h: 560 };
+  const boxes = layout(group(["player", "companion"], ["enemy", "enemy"]), st);
+  const me = boxes.get(1)!, foe = boxes.get(21)!;
+  const sp = strikeBox(me, foe, "ally", st);
+  assert.ok(sp.x < foe.x && Math.abs(sp.feet - foe.feet) < st.h * 0.05, "left of the foe, at its depth");
+  assert.ok(sp.x - sp.w * 0.42 >= 0 && sp.x + sp.w * 0.42 <= st.w);
+  const back = strikeBox(foe, me, "enemy", st);
+  assert.ok(back.x > me.x, "a foe comes from the right of an ally");
+  const f = focusOf([sp, foe]);
+  assert.ok(f.x > Math.min(sp.x, foe.x) && f.x < Math.max(sp.x, foe.x));
 });
 
 const ev = {

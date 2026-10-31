@@ -32,28 +32,25 @@ the way figures move; new clips (dash, land, recover) are added to the same proc
 So nothing in balance, saves or content has to change for the new stage, and the old stage can stay selectable
 during the test (Settings → Battle stage: Classic / Arena) until the owner approves the new one.
 
-## 2. The field: one ground plane in portrait
+## 2. The field: two bands on one floor
 
-Both sides stand on the same floor, seen from a low three-quarter angle: the party at the front left, the
-enemies at the back right, facing each other along the diagonal. Each unit has a **field position** `(fx, fy)`,
-`fx` across the floor (0 left → 1 right) and `fy` into the depth (0 front → 1 back). The screen position,
-scale and z-order come from one projection (`field.ts: project`):
+The first version placed units on a perspective floor from formation templates; on the owner's phone the
+figures and their HP bars overlapped (a spirit beast stood on Lin's head, foe bars crossed other figures).
+It was replaced by a line-up solver (`field.ts: layout`) that works in px for the real stage size:
 
-```
-x = lerp(inset(fy), 1 - inset(fy), fx)     inset grows with depth → the floor narrows toward the back
-y = horizon + (1 - fy) · (floorBottom - horizon)   (fraction of the stage height, feet line)
-scale = far + (1 - fy) · (near - far)        near 1.0 at the front, far 0.62 at the back
-z = round((1 - fy) · 100)                    front units draw over back ones
-```
+- The enemies stand across the upper band (feet at 52% of the stage), the party across the lower band (93%).
+- Each side is packed from its figures' visible width (60% of the box height; neighbours may overlap 14%),
+  so the figure height is the tallest that lets the whole line fit (capped at 30% / 38% of the stage).
+- The lead (the player, a boss) stands in the middle and in front; its neighbours alternate a step back.
+  A beast stands at the end of the party, smaller; a boss is 1.22× and an elite 1.06× a normal foe.
+- Party bars sit under the feet, enemy bars above the heads, each as wide as the body (64% of the box), so
+  neighbours' bars never meet. The target mark sits beside the focused foe's bar.
+- A dash ends beside the target on the attacker's side, at the target's depth, at a size between the two
+  bands (`strikeBox`); the camera aims between the pair (`focusOf`).
 
-Formations are templates per side and head count (`FORMATIONS`): 1–4 allies in a slanted line front left,
-1–5 enemies in a slanted line back right, with the boss/focus deepest in the enemy line so it reads as the big
-one. The templates are data, not CSS, so the choreographer can compute travel paths and the puppet canvas can
-be transform-invariant (see §5).
-
-Field coordinates are also what effects aim at: a projectile goes from `project(actor)` to `project(target)`;
-a dash moves the actor to `strikePoint(actor, target)`, one unit width short of the target along the line
-between them, on the actor's side.
+`tests/battle-stage.test.ts` checks every party (1–4, with or without a beast) against every enemy group
+(1–5, with a boss) on six stage sizes from a 360×380 phone stage to a 560×700 tablet stage: figures inside
+the width, same-side overlap ≤ a third, no bar on another figure's body or bar, the party below the enemies.
 
 ## 3. Choreography: events → beats → shots
 

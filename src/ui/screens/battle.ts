@@ -11,7 +11,7 @@
 import { h, fmt, replaceChildren, keep, type Child } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
 import { AnimStage } from "../anim/stage.ts";
-import { PORTRAIT, project, slot, strikePoint, centroid, type FieldPos, type Placement } from "../battle/field.ts";
+import { layout, strikeBox, focusOf, type Box } from "../battle/field.ts";
 import { beats as toBeats, plan as planShot, cameraFor, type ActionBeat, type Vfx } from "../battle/choreo.ts";
 import { play as playVfx, dashTrail, type VfxCtx } from "../battle/vfx.ts";
 import type { RigDef } from "../anim/rig.ts";
@@ -573,51 +573,39 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   }
 
   // ---------- arena (docs/BATTLE_STAGE.md) ----------
-  /** Each unit's place in the formation; a dashing unit is away from it until it returns. */
-  const home = new Map<number, FieldPos>();
+  /** Each unit's box in the line-up (field.ts); a dashing unit is away from it until it returns. */
+  const home = new Map<number, Box>();
   const dashing = new Set<number>();
-  /** A unit's box at a field placement, in the camera layer's pixels: a front-row figure stands ~40% of the stage. */
-  function boxAt(u: Combatant, pl: Placement) {
-    const W = cam.offsetWidth || 360, H = cam.offsetHeight || 480;
-    // bigger groups stand a little smaller so a phone's width still holds them
-    const n = battle.units.filter((x) => x.side === u.side && (x.alive || !views.get(x.uid)?.gone)).length;
-    const k = (u.kind === "boss" ? 1.22 : u.kind === "beast" ? 0.62 : 1) * (n >= 4 ? 0.8 : n === 3 ? 0.88 : 1);
-    const hgt = Math.min(H * 0.44, W * 0.66) * pl.scale * k;
-    return { left: pl.x * W - hgt * 0.39, top: pl.y * H - hgt, w: hgt * 0.78, h: hgt };
-  }
-  function place(u: Combatant, p: FieldPos, ms = 0) {
+  const stageSize = () => ({ w: cam.offsetWidth || 360, h: cam.offsetHeight || 480 });
+  function place(u: Combatant, b: Box, ms = 0) {
     const v = views.get(u.uid); if (!v) return;
-    const pl = project(PORTRAIT, p); const b = boxAt(u, pl);
     const st = v.sprite.style;
     st.transition = ms ? ["left", "top", "width", "height"].map((k) => `${k} ${Math.round(ms)}ms cubic-bezier(.3,.75,.25,1)`).join(", ") + ", opacity .5s" : "opacity .5s";
-    st.left = `${b.left.toFixed(1)}px`; st.top = `${b.top.toFixed(1)}px`; st.width = `${b.w.toFixed(1)}px`; st.height = `${b.h.toFixed(1)}px`;
-    // DOM figures stay under the puppet canvas (z 6) like on the classic stage; depth orders them among themselves
-    st.zIndex = String(1 + Math.round(pl.z / 25)); puppets.setZ(u.uid, 10 + pl.z);
+    st.left = `${(b.x - b.w / 2).toFixed(1)}px`; st.top = `${(b.feet - b.h).toFixed(1)}px`; st.width = `${b.w.toFixed(1)}px`; st.height = `${b.h.toFixed(1)}px`;
+    // the figures are painted on the canvas in depth order; the DOM boxes only carry the bars and marks
+    st.zIndex = String(1 + Math.round(Math.min(100, b.z) / 25)); puppets.setZ(u.uid, 10 + b.z);
   }
-  /** Formation: the party front left, the enemies back right (the boss deepest); a changed slot slides there. */
+  /** Line-up: the enemies across the upper band, the party across the lower one; a changed place slides there. */
   function arenaLayout() {
-    const enemies = battle.units.filter((u) => u.side === "enemy" && (u.alive || !views.get(u.uid)?.gone))
-      .sort((a, b) => (b.kind === "boss" ? 1 : 0) - (a.kind === "boss" ? 1 : 0) || a.uid - b.uid);
-    const allies = battle.units.filter((u) => u.side === "ally")
-      .sort((a, b) => (a.kind === "player" ? -1 : b.kind === "player" ? 1 : 0) || (a.kind === "beast" ? 1 : b.kind === "beast" ? -1 : 0) || a.uid - b.uid);
-    const set = (u: Combatant, p: FieldPos) => {
-      const prev = home.get(u.uid); home.set(u.uid, p);
-      if (dashing.has(u.uid)) return;
-      place(u, p, prev && (prev.fx !== p.fx || prev.fy !== p.fy) ? dur(450) : 0);
-    };
-    enemies.forEach((u, i) => set(u, slot("enemy", i, enemies.length)));
-    allies.forEach((u, i) => set(u, slot("ally", i, allies.length)));
+    const present = battle.units.filter((u) => u.side === "ally" || u.alive || !views.get(u.uid)?.gone);
+    const boxes = layout(present.map((u) => ({ uid: u.uid, side: u.side, kind: u.side === "enemy" ? (u.kind === "boss" ? "boss" : "enemy") : u.kind === "player" ? "player" : u.kind === "beast" ? "beast" : "companion", elite: u.elite })), stageSize());
+    for (const u of present) {
+      const b = boxes.get(u.uid); if (!b) continue;
+      const prev = home.get(u.uid); home.set(u.uid, b);
+      if (dashing.has(u.uid)) continue;
+      const moved = prev && (Math.abs(prev.x - b.x) > 1 || Math.abs(prev.feet - b.feet) > 1 || Math.abs(prev.h - b.h) > 1);
+      if (!prev || moved) place(u, b, prev ? dur(450) : 0);
+    }
   }
-  new ResizeObserver(() => { if (arena) for (const u of battle.units) { const p = home.get(u.uid); if (p && !dashing.has(u.uid)) place(u, p); } }).observe(cam);
+  new ResizeObserver(() => { if (arena) { home.clear(); arenaLayout(); } }).observe(cam);
 
   /** Camera: push toward the striking pair, zoom on an ultimate's targets, relax after (CSS transform on the camera layer). */
-  function camera(kind: "none" | "push" | "zoom", at?: FieldPos, ms = 320) {
+  function camera(kind: "none" | "push" | "zoom", at?: { x: number; y: number }, ms = 320) {
     if (kind === "none" || !at || app.settings.reducedMotion) { cam.style.transition = `transform ${Math.round(dur(380))}ms cubic-bezier(.3,.7,.2,1)`; cam.style.transform = ""; return; }
-    const pl = project(PORTRAIT, at); const W = cam.offsetWidth, H = cam.offsetHeight;
-    const fx0 = pl.x * W, fy0 = (pl.y - 0.14) * H;
-    const sc = kind === "zoom" ? 1.16 : 1.07;
-    const tx = (W / 2 - fx0) * 0.35, ty = (H * 0.5 - fy0) * 0.25;
-    cam.style.transformOrigin = `${fx0.toFixed(0)}px ${fy0.toFixed(0)}px`;
+    const W = cam.offsetWidth, H = cam.offsetHeight;
+    const sc = kind === "zoom" ? 1.14 : 1.06;
+    const tx = (W / 2 - at.x) * 0.3, ty = (H * 0.5 - at.y) * 0.22;
+    cam.style.transformOrigin = `${at.x.toFixed(0)}px ${at.y.toFixed(0)}px`;
     cam.style.transition = `transform ${Math.round(dur(ms))}ms cubic-bezier(.3,.7,.2,1)`;
     cam.style.transform = `translate(${tx.toFixed(1)}px, ${ty.toFixed(1)}px) scale(${sc})`;
   }
@@ -682,15 +670,15 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     // 2. approach (and the camera)
     const homeP = home.get(a.uid);
     const firstT = shot.strikes[0] ? home.get(shot.strikes[0].target) : undefined;
-    const pts = [homeP, ...shot.strikes.map((x) => home.get(x.target))].filter((p): p is FieldPos => !!p);
-    camera(cameraFor(shot), centroid(isUlt ? pts.slice(1) : pts), isUlt ? 420 : 300);
-    if (shot.vfx.approach === "dash" && homeP && firstT) {
-      const sp = strikePoint(homeP, firstT, a.side === "ally" ? 0.17 : 0.15);
+    const pts = [homeP, ...shot.strikes.map((x) => home.get(x.target))].filter((p): p is Box => !!p);
+    const sp = shot.vfx.approach === "dash" && homeP && firstT ? strikeBox(homeP, firstT, a.side, stageSize()) : undefined;
+    camera(cameraFor(shot), focusOf(isUlt ? pts.slice(1) : sp && firstT ? [sp, firstT] : pts), isUlt ? 420 : 300);
+    if (sp && homeP) {
       const from = centerOf(a.uid);
       dashing.add(a.uid);
       place(a, sp, dur(shot.timing.approach));
       v?.sprite.classList.add("dashing");
-      if (from) { const pl = project(PORTRAIT, sp), b = boxAt(a, pl); dashTrail(vctx, { x: from.x, y: from.y + heightOf(a.uid) * 0.45 }, { x: pl.x * cam.offsetWidth, y: b.top + b.h * 0.95 }, color); }
+      if (from) dashTrail(vctx, { x: from.x, y: from.y + heightOf(a.uid) * 0.45 }, { x: sp.x, y: sp.feet - sp.h * 0.05 }, color);
       await wait(shot.timing.approach);
       v?.sprite.classList.remove("dashing");
     } else if (tech && !isUlt) castRing(e.actor, element);
