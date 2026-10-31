@@ -93,6 +93,20 @@ export const Targeting = z.enum([
   "single", "all_enemies", "self", "ally", "all_allies", "lowest_hp_enemy", "highest_cp_enemy", "random",
 ]);
 
+/**
+ * How a technique looks on the battle stage (docs/BATTLE_STAGE.md §4): the approach, the effect's shape and
+ * weight, the camera move and the colour. Generators derive it from weapon, targeting, power and element
+ * (tools/gen/common.py: vfx_block); a hand-written block wins. `sprite` points at a painted effect when one exists.
+ */
+export const Vfx = z.object({
+  approach: z.enum(["dash", "none"]),
+  shape: z.enum(["slash", "pierce", "burst", "beam", "wave", "pillar", "ring", "rain", "glow"]),
+  impact: z.enum(["light", "medium", "heavy"]),
+  camera: z.enum(["none", "push", "zoom"]),
+  color: z.string().regex(/^#[0-9a-f]{6}$/i),
+  sprite: z.string().regex(/^assets\/vfx\/[a-z0-9_/]+\.webp$/).optional(),
+});
+
 export const Technique = Named.extend({
   id: ref("tech"),
   kind: TechKind,
@@ -117,7 +131,12 @@ export const Technique = Named.extend({
   /** Used only by enemies/bosses; the player can never learn it (exempt from the source rule). */
   enemy_only: z.boolean().default(false),
   art: artBlock(["icon"]),
+  /** Passives have no stage effect; every active and ultimate needs one. */
+  vfx: Vfx.optional(),
 }).superRefine((t, ctx) => {
+  if (t.kind !== "passive" && !t.vfx) ctx.addIssue({ code: "custom", message: "active/ultimate technique needs a vfx block" });
+  if (t.kind === "passive" && t.vfx) ctx.addIssue({ code: "custom", message: "passive technique cannot have a vfx block" });
+  if (t.vfx && t.power === 0 && t.vfx.approach === "dash") ctx.addIssue({ code: "custom", message: "a non-damaging technique cannot dash" });
   const seg = t.id.split(".")[1];
   const expect = t.kind === "ultimate" ? "ult" : t.kind;
   if (seg !== expect) ctx.addIssue({ code: "custom", message: `technique id must be tech.${expect}.* for kind ${t.kind}` });
@@ -136,7 +155,9 @@ export const BeastAbility = Named.extend({
   passive_bonuses: Stats.default({}),
   cooldown: z.number().int().min(0).default(3),
   art: artBlock(["icon"]),
+  vfx: Vfx.optional(),
 }).superRefine((b, ctx) => {
+  if (b.kind === "active" && !b.vfx) ctx.addIssue({ code: "custom", message: "active beast ability needs a vfx block" });
   const beastSeg = b.id.split(".")[1];
   if (b.beast !== `beast.${beastSeg}`) ctx.addIssue({ code: "custom", message: "btech id must be btech.<beast>.<name>" });
 });

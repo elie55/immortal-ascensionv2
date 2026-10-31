@@ -126,9 +126,13 @@ export class AnimStage {
       const clipPose = p.player.tick(dt);
       const amb = ambient(this.wall, 1, this.opts.reducedMotion, p.blinkSeed);
       const pose: Pose = this.opts.reducedMotion ? { ...compose(clipPose, amb, 0), flash: 0, flutter: 0 } : compose(clipPose, amb, p.player.ambientStrength);
-      // box → texture mapping (background: bottom center / contain)
-      const [tw, th] = p.rig.size; const scale = Math.min(r.width / tw, r.height / th);
-      const offX = r.left - stageRect.left + (r.width - tw * scale) / 2, offY = r.top - stageRect.top + r.height - th * scale;
+      // box → texture mapping (background: bottom center / contain), in the stage's own layout pixels: the anchor
+      // rect is read as a fraction of the stage rect, so a camera transform on the stage (docs/BATTLE_STAGE.md §5)
+      // moves and scales the canvas and the anchors together and the puppets stay on their boxes
+      const kx = this.cssW / Math.max(1, stageRect.width), ky = this.cssH / Math.max(1, stageRect.height);
+      const bw = r.width * kx, bh = r.height * ky, bl = (r.left - stageRect.left) * kx, bt = (r.top - stageRect.top) * ky;
+      const [tw, th] = p.rig.size; const scale = Math.min(bw / tw, bh / th);
+      const offX = bl + (bw - tw * scale) / 2, offY = bt + bh - th * scale;
       const m = mapping(scale, offX, offY, this.cssW, this.cssH);
       const fx = { alpha: pose.alpha, flash: pose.flash, dissolve: pose.dissolve, glow: pose.glow, glowColor: p.glowColor, seed: p.seed };
       // weapon behind the body when swung back, in front when swung forward

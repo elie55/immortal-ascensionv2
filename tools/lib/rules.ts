@@ -578,6 +578,8 @@ export function runRules(db: Database): Issue[] {
   for (const e of all) {
     for (const [key, asset] of Object.entries<any>(e.data.art ?? {})) checkArt(ctx, `${e.id}.art.${key}`, asset, files);
     if (e.data.anim) checkAnim(ctx, e);
+    // a painted stage effect must exist (docs/BATTLE_STAGE.md §4); the procedural shapes need no file
+    if (e.data.vfx?.sprite && !existsSync(join(ctx.db.root, e.data.vfx.sprite))) ctx.err("vfx-missing", `${e.id}.vfx.sprite`, `${e.data.vfx.sprite} does not exist`);
     if (e.prefix === "gear") for (const [r, v] of Object.entries<any>(e.data.rarities)) for (const [key, asset] of Object.entries<any>(v.art)) checkArt(ctx, `${e.id}.${r}.art.${key}`, asset, files);
   }
 

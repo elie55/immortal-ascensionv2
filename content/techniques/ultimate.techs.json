@@ -44,7 +44,14 @@
         "status": "generated"
       }
     },
-    "ult_charge": 100
+    "ult_charge": 100,
+    "vfx": {
+      "approach": "none",
+      "shape": "rain",
+      "impact": "heavy",
+      "camera": "zoom",
+      "color": "#f2f5ff"
+    }
   },
   {
     "id": "tech.ult.soul_devouring_art",
@@ -96,7 +103,14 @@
         "status": "generated"
       }
     },
-    "ult_charge": 100
+    "ult_charge": 100,
+    "vfx": {
+      "approach": "none",
+      "shape": "pillar",
+      "impact": "heavy",
+      "camera": "zoom",
+      "color": "#6fd0ff"
+    }
   },
   {
     "id": "tech.ult.ten_thousand_gold_rain",
@@ -143,6 +157,13 @@
         "status": "generated"
       }
     },
-    "ult_charge": 100
+    "ult_charge": 100,
+    "vfx": {
+      "approach": "none",
+      "shape": "rain",
+      "impact": "heavy",
+      "camera": "zoom",
+      "color": "#f2f5ff"
+    }
   }
 ]

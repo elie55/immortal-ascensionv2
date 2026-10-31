@@ -47,6 +47,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "none",
+      "color": "#ff7b4a"
     }
   },
   {
@@ -93,6 +100,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "none",
+      "color": "#f0c060"
     }
   },
   {
@@ -143,6 +157,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "wave",
+      "impact": "medium",
+      "camera": "none",
+      "color": "#6fd0ff"
     }
   },
   {
@@ -189,6 +210,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "none",
+      "color": "#6fd0ff"
     }
   },
   {
@@ -239,6 +267,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "slash",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -285,6 +320,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "slash",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -335,6 +377,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "slash",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#ff7b4a"
     }
   },
   {
@@ -381,6 +430,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "none",
+      "color": "#ff7b4a"
     }
   },
   {
@@ -431,6 +487,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "wave",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -477,6 +540,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "pierce",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -527,6 +597,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "wave",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -573,6 +650,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "none",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -623,6 +707,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "pierce",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -669,6 +760,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "none",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -719,6 +817,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "wave",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#6fd0ff"
     }
   },
   {
@@ -765,6 +870,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#6fd0ff"
     }
   },
   {
@@ -815,6 +927,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "rain",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#f0c060"
     }
   },
   {
@@ -861,6 +980,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "none",
+      "color": "#f0c060"
     }
   },
   {
@@ -912,7 +1038,14 @@
         "status": "generated"
       }
     },
-    "heal_pct": 35
+    "heal_pct": 35,
+    "vfx": {
+      "approach": "none",
+      "shape": "glow",
+      "impact": "light",
+      "camera": "none",
+      "color": "#ff7b4a"
+    }
   },
   {
     "id": "tech.active.judgement_flame",
@@ -958,6 +1091,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "burst",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#ff7b4a"
     }
   },
   {
@@ -1008,6 +1148,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "slash",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#5fe39a"
     }
   },
   {
@@ -1054,6 +1201,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "burst",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#5fe39a"
     }
   },
   {
@@ -1104,6 +1258,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "rain",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -1150,6 +1311,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "burst",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -1200,6 +1368,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "rain",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#f0c060"
     }
   },
   {
@@ -1246,6 +1421,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "burst",
+      "impact": "heavy",
+      "camera": "push",
+      "color": "#6fd0ff"
     }
   }
 ]

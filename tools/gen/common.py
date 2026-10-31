@@ -66,6 +66,48 @@ def anim_block(entity):
     entity["anim"] = {"rig": f"assets/anim/{entity['id']}/rig.json", "art": key, "archetype": r["archetype"]}
     return entity
 
+ELEMENT_COLOR = {"elem.wood": "#5fe39a", "elem.fire": "#ff7b4a", "elem.earth": "#f0c060", "elem.metal": "#f2f5ff", "elem.water": "#6fd0ff", "elem.none": "#d6c9ff"}
+MELEE_WEAPONS = ("sword", "saber", "spear", "palm")
+
+def vfx_block(t):
+    """Derive how a technique / beast ability looks on the battle stage (docs/BATTLE_STAGE.md §4).
+    A block written by hand in a generator wins; passives get none."""
+    kind = t.get("kind")
+    if kind == "passive": t.pop("vfx", None); return t
+    if "vfx" in t: return t
+    power = t.get("power", 0) or 0
+    targeting = t.get("targeting", "single")
+    weapon = t.get("weapon_affinity", "any")
+    ult = kind == "ultimate"
+    damaging = power > 0
+    friendly = targeting in ("self", "ally", "all_allies")
+    many = targeting in ("all_enemies", "all_allies", "random")
+    heals = bool(t.get("heal_pct")); shields = bool(t.get("shield_pct_max_hp"))
+    beast = str(t.get("id", "")).startswith("btech.")
+    # techniques without a weapon affinity: the name says whether the blow is struck up close or sent across
+    name = str(t.get("name", "")).lower()
+    import re as _re
+    melee_words = _re.search(r"\b(strike|slash|cut|cleave|claw|bite|fang|palm|fist|kick|sword|blade|saber|spear|thrust|lunge|pounce|charge|maul|gore|tusk|stomp|crush|smash|hoof|horn|tail)", name)
+    pierce_words = _re.search(r"\b(spear|thrust|pierce|lance|fang|horn|tusk|needle|sting)", name)
+    if weapon == "any" and damaging and melee_words:
+        weapon = "spear" if pierce_words else "palm" if _re.search(r"\b(palm|fist|kick|stomp|crush|smash|hoof|maul|pounce|charge)", name) else "sword"
+    if not damaging or friendly:
+        shape = "glow" if heals else "ring"
+    elif ult:
+        shape = "rain" if many else "pillar"
+    elif many:
+        shape = "wave" if weapon in MELEE_WEAPONS else "rain"
+    elif weapon in ("sword", "saber"): shape = "slash"
+    elif weapon == "spear": shape = "pierce"
+    elif weapon == "palm" or beast: shape = "burst"
+    elif weapon in ("staff", "fan"): shape = "beam"
+    else: shape = "burst"
+    approach = "dash" if damaging and not many and not ult and (weapon in MELEE_WEAPONS or beast) else "none"
+    impact = "heavy" if ult or power >= 220 else "medium" if power >= 120 or shields else "light"
+    camera = "zoom" if ult else "push" if approach == "dash" or impact == "heavy" else "none"
+    t["vfx"] = {"approach": approach, "shape": shape, "impact": impact, "camera": camera, "color": ELEMENT_COLOR.get(t.get("element"), "#d6c9ff")}
+    return t
+
 def flavor(desc):
     """The sentences of a description that carry imagery (no numbers), for art prompts."""
     import re
@@ -197,6 +239,7 @@ def write(rel, data):
     if isinstance(data, list):  # combatants get their animation rig when one has been built
         for e in data:
             if isinstance(e, dict) and str(e.get("id", "")).split(".")[0] in ("enemy", "boss", "npc", "beast"): anim_block(e)
+            if isinstance(e, dict) and str(e.get("id", "")).split(".")[0] in ("tech", "btech"): vfx_block(e)  # stage effect (docs/BATTLE_STAGE.md)
     with open(p, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")

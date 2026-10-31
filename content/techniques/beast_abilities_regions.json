@@ -31,6 +31,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "light",
+      "camera": "push",
+      "color": "#ff7b4a"
     }
   },
   {
@@ -95,6 +102,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "light",
+      "camera": "push",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -159,6 +173,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "light",
+      "camera": "push",
+      "color": "#6fd0ff"
     }
   },
   {
@@ -223,6 +244,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "light",
+      "camera": "push",
+      "color": "#6fd0ff"
     }
   },
   {
@@ -287,6 +315,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "light",
+      "camera": "push",
+      "color": "#5fe39a"
     }
   },
   {
@@ -351,6 +386,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "light",
+      "camera": "push",
+      "color": "#ff7b4a"
     }
   },
   {
@@ -415,6 +457,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "light",
+      "camera": "push",
+      "color": "#ff7b4a"
     }
   },
   {
@@ -479,6 +528,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -543,6 +599,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "ring",
+      "impact": "light",
+      "camera": "none",
+      "color": "#f0c060"
     }
   },
   {
@@ -607,6 +670,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -671,6 +741,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#6fd0ff"
     }
   },
   {
@@ -735,6 +812,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#6fd0ff"
     }
   },
   {
@@ -799,6 +883,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "ring",
+      "impact": "light",
+      "camera": "none",
+      "color": "#f0c060"
     }
   },
   {
@@ -863,6 +954,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#5fe39a"
     }
   },
   {
@@ -927,6 +1025,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#ff7b4a"
     }
   },
   {
@@ -991,6 +1096,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#f2f5ff"
     }
   },
   {
@@ -1055,6 +1167,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "slash",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#ff7b4a"
     }
   },
   {
@@ -1119,6 +1238,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "medium",
+      "camera": "push",
+      "color": "#6fd0ff"
     }
   },
   {

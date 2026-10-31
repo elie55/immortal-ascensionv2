@@ -31,6 +31,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "ring",
+      "impact": "light",
+      "camera": "none",
+      "color": "#6fd0ff"
     }
   },
   {
@@ -95,6 +102,13 @@
         ],
         "status": "generated"
       }
+    },
+    "vfx": {
+      "approach": "dash",
+      "shape": "burst",
+      "impact": "light",
+      "camera": "push",
+      "color": "#ff7b4a"
     }
   },
   {
