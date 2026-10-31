@@ -18,7 +18,6 @@ import { shopScreen } from "./shop.ts";
 import { rewardsLine, worldSwitch } from "./adventure.ts";
 
 const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
-const cpChip = (app: App) => h("span", { class: "cp-chip" }, icon("cp", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(computeStats(app.game.state, app.content).cp))));
 
 // ---------- hub ----------
 
@@ -68,7 +67,7 @@ export function dungeonHubScreen(app: App): Screen {
       };
       return [
         header(app),
-        subbar({ help: { app, key: "dungeons" }, title: "Dungeons", cn: "秘境", sub: "Tower · resource · challenge · realms", end: cpChip(app) }),
+        subbar({ help: { app, key: "dungeons" }, title: "Dungeons", cn: "秘境", sub: "Tower · resource · challenge · realms" }),
         worldSwitch(app, "dungeons"),
         tower && towerHero(app, tower),
         section("Resource", "Farm materials and spirit stones", h("div", { class: "rows" }, group("resource").map(card))),
@@ -120,7 +119,7 @@ export function towerScreen(app: App, id: string): Screen {
       const can = canStart(s, c, { kind: "tower", id, floor: best + 1 }, app.now());
       return [
         header(app),
-        subbar({ help: { app, key: "tower" }, title: d.name, cn: d.name_cn, sub: `Best floor ${best} / ${d.tower!.floors}`, backTo: "Dungeons", onBack: () => app.router.back(), end: cpChip(app) }),
+        subbar({ help: { app, key: "tower" }, title: d.name, cn: d.name_cn, sub: `Best floor ${best} / ${d.tower!.floors}`, backTo: "Dungeons", onBack: () => app.router.back() }),
         // the climb as a spine of floor medallions, highest on top (review 55; mockups arena_bracket, secret_realm_map)
         h("div", { class: "tw-spine" }, floors.map((f) => {
           const tf = towerFloor(c, d, f);
@@ -175,7 +174,7 @@ export function realmScreen(app: App, id: string): Screen {
       const drawn = new Set<string>();
       return [
         header(app),
-        subbar({ help: { app, key: "realm" }, title: d.name, cn: d.name_cn, sub: `${run ? "Run in progress" : "Branching realm"} · replayable · first-clear rewards once`, backTo: "Dungeons", onBack: () => app.router.back(), end: cpChip(app) }),
+        subbar({ help: { app, key: "realm" }, title: d.name, cn: d.name_cn, sub: `${run ? "Run in progress" : "Branching realm"} · replayable · first-clear rewards once`, backTo: "Dungeons", onBack: () => app.router.back() }),
         h("div", { class: "glass realm-status" },
           h("span", null, icon("temple", 13), ` Trials ${sum.trialsDone} / ${sum.trials}`),
           sum.hidden > 0 && h("span", null, icon("info", 13), ` Hidden rooms ${sum.hiddenFound} / ${sum.hidden}`),

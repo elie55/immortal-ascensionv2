@@ -12,7 +12,8 @@
  *   contrast       text colour vs the actual pixels behind it (WCAG ratio)
  *   tap-size       buttons/controls smaller than 24 px (error) or 32 px (warning)
  *   tap-overlap    two controls overlapping
- *   covered        a control or text hidden under another element
+ *   covered        a control or text hidden under another element (content under the sticky header or the nav
+ *                  is skipped: it is reachable by scrolling)
  *   text-overlap   two texts drawn on top of each other
  *   nav-clearance  the bottom of a scrolled-to-the-end screen still sits under the nav bar
  *   placeholder    fallback icon shown where art should be (info while the art run is going)
@@ -48,6 +49,11 @@ function inPage(arg: { pageIdx: number }) {
   const dockEls = navRect ? [...document.querySelectorAll<HTMLElement>(`main.screen :is(${dockSel})`)].filter((d) => getComputedStyle(d).position === "sticky") : [];
   const dockTop = dockEls.length ? Math.min(...dockEls.map((d) => d.getBoundingClientRect().top)) : Infinity;
   const inDock = (el: Element) => !!el.closest(dockSel);
+  // The player header is fixed to the top (sticky): content scrolls under it like under the nav bar, so what sits
+  // under it is reachable by scrolling and is not measured there.
+  const hdrEl = navRect ? document.querySelector<HTMLElement>("main.screen .hdr") : null;
+  const hdrBottom = hdrEl && getComputedStyle(hdrEl).position === "sticky" ? hdrEl.getBoundingClientRect().bottom : -Infinity;
+  const inHdr = (el: Element) => !!el.closest(".hdr");
 
   const name = (el: Element): string => {
     const parts: string[] = [];
@@ -130,7 +136,7 @@ function inPage(arg: { pageIdx: number }) {
     const rects: DOMRect[] = [];
     for (const n of el.childNodes) if (n.nodeType === 3 && n.textContent!.trim()) { range.selectNodeContents(n); for (const rr of range.getClientRects()) if (rr.width > 2 && rr.height > 2) rects.push(rr); }
     const visRects = rects.map((rr) => ({ x: Math.max(rr.left, ci.vis.l), y: Math.max(rr.top, ci.vis.t), r: Math.min(rr.right, ci.vis.r), b: Math.min(rr.bottom, ci.vis.b) }))
-      .filter((v) => v.r - v.x > 2 && v.b - v.y > 2 && v.y >= 0 && v.b <= vh && (!navRect || v.b <= navRect.top || v.y >= navRect.bottom || roots.length === 1 || el.closest("nav")) && (inDock(el) || v.b <= dockTop + 1));
+      .filter((v) => v.r - v.x > 2 && v.b - v.y > 2 && v.y >= 0 && v.b <= vh && (!navRect || v.b <= navRect.top || v.y >= navRect.bottom || roots.length === 1 || el.closest("nav")) && (inDock(el) || v.b <= dockTop + 1) && (inHdr(el) || v.y >= hdrBottom - 1));
     // glyphs fill roughly the middle 70% of a line box; neighbours with tight line-height touch otherwise
     const vrect = (rr: DOMRect) => { const t = Math.max(rr.top + rr.height * 0.15, ci.vis.t), b = Math.min(rr.bottom - rr.height * 0.15, ci.vis.b); return new DOMRect(Math.max(rr.left, ci.vis.l), t, Math.min(rr.right, ci.vis.r) - Math.max(rr.left, ci.vis.l), b - t); };
     lineBoxes.push({ el, rects: rects.map(vrect).filter((v) => v.width > 1 && v.height > 1) });
@@ -152,6 +158,7 @@ function inPage(arg: { pageIdx: number }) {
     if (A.el.contains(B.el) || B.el.contains(A.el)) continue;
     if (!!A.el.closest("nav") !== !!B.el.closest("nav")) continue; // content scrolling under the nav bar
     if (inDock(A.el) !== inDock(B.el)) continue; // … or under a sticky dock
+    if (inHdr(A.el) !== inHdr(B.el)) continue; // … or under the header
     for (const a of A.rects) for (const b of B.rects) {
       const ov = inter(a, b);
       if (ov > 0.25 * Math.min(area(a), area(b)) && ov > 12) {
@@ -180,6 +187,7 @@ function inPage(arg: { pageIdx: number }) {
     if (cx < 0 || cy < 0 || cx > vw || cy > vh) continue;
     if (navRect && !el.closest("nav") && cy > navRect.top - 2) continue;
     if (!inDock(el) && cy > dockTop - 2) continue;
+    if (!inHdr(el) && cy < hdrBottom + 2) continue;
     if (Math.min(r.right, ci.vis.r) - Math.max(r.left, ci.vis.l) < 4 || Math.min(r.bottom, ci.vis.b) - Math.max(r.top, ci.vis.t) < 4) continue;
     const hit = document.elementFromPoint(cx, cy);
     if (hit && hit !== el && !el.contains(hit) && !hit.contains(el)) out.push({ check: "covered", severity: "error", where, text, detail: `under ${name(hit)}` });
@@ -189,6 +197,7 @@ function inPage(arg: { pageIdx: number }) {
     if (A.el.contains(B.el) || B.el.contains(A.el) || !inView(A.v) || !inView(B.v)) continue;
     if (!!A.el.closest("nav") !== !!B.el.closest("nav")) continue; // content scrolling under the nav bar
     if (inDock(A.el) !== inDock(B.el)) continue; // … or under a sticky dock
+    if (inHdr(A.el) !== inHdr(B.el)) continue; // … or under the header
     const ov = inter(A.v, B.v);
     if (ov > 16) out.push({ check: "tap-overlap", severity: "error", where: `${name(A.el)}  ×  ${name(B.el)}`, text: `${textOf(A.el)} × ${textOf(B.el)}`, detail: `${Math.round(ov)}px²` });
   }

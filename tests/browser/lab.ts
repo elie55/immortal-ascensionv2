@@ -528,6 +528,11 @@ const SCEN: Record<string, () => Promise<void>> = {
   auto2: () => autoFight("auto2", 2, { kind: "node", id: nodeOf(2, "battle") }),
   auto5: () => autoFight("auto5", 5, { kind: "node", id: nodeOf(5, "boss") }, ["npc.bai_lingshuang", "npc.tang_xiaoman"]),
   auto8: () => autoFight("auto8", 8, { kind: "node", id: nodeOf(8, "elite") }, ["npc.bai_lingshuang"]),
+  // the header stays at the top while a screen scrolls
+  hdrscroll: () => screen("hdrscroll-0", 3, "0", { tab: "inventory" }).then(async () => {
+    await page.evaluate(() => document.querySelector(".screen")!.scrollTo(0, 500)); await page.waitForTimeout(300); await shot("hdrscroll-1");
+    await page.locator(".nav button", { hasText: "Sect" }).click(); await page.waitForTimeout(700); await page.evaluate(() => document.querySelector(".screen")!.scrollTo(0, 400)); await page.waitForTimeout(300); await shot("hdrscroll-2");
+  }),
   multi: () => fight("multi", 4, { kind: "node", id: c.nodesOf(regions[3]!.id).filter((x) => x.kind === "battle" && x.waves?.length).sort((a, b) => b.waves![0]!.length - a.waves![0]!.length)[0]!.id }),
 };
 

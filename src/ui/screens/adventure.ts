@@ -54,7 +54,7 @@ export function adventureScreen(app: App) {
   const now = app.now();
   return [
     header(app),
-    subbar({ title: "World Regions", cn: "天下", sub: `${discovered} of ${regions.length} regions open`, end: energyChip(app, now) }),
+    subbar({ title: "World Regions", cn: "天下", sub: `${discovered} of ${regions.length} regions open` }),
     worldSwitch(app, "regions"),
     h("div", { class: "region-grid" }, regions.map((r) => {
       const open = !!s.progress.regions[r.id];
@@ -72,10 +72,6 @@ export function adventureScreen(app: App) {
   ];
 }
 
-function energyChip(app: App, now: number) {
-  const s = app.game.state, c = app.content;
-  return h("span", { class: "cp-chip" }, icon("bolt", 13), h("span", null, h("span", { class: "lbl" }, "Energy"), h("b", null, `${energyLeft(s, c, now)} / ${energyMax(s, c)}`)));
-}
 
 export function regionScreen(app: App, regionId: string, select?: string): Screen {
   let selected: string | null = select ?? null;
@@ -102,7 +98,7 @@ export function regionScreen(app: App, regionId: string, select?: string): Scree
       const number = (n: MapNode) => nodes.indexOf(n) + 1;
       return [
         header(app),
-        subbar({ help: { app, key: "region" }, title: r.name, cn: r.name_cn, sub: `${c.get<any>(r.realm_range.min).name} · ${prog.cleared} / ${prog.total} places · ${bossNode ? (s.progress.regions[regionId]?.nodes[bossNode.id]?.clears ? "boss defeated" : "boss awaits") : ""}`, backTo: "Regions", onBack: () => app.router.back(), end: h("span", { class: "cp-chip" }, icon("cp", 13), h("span", null, h("span", { class: "lbl" }, "Your CP"), h("b", null, fmt.int(cp)))) }),
+        subbar({ help: { app, key: "region" }, title: r.name, cn: r.name_cn, sub: `${c.get<any>(r.realm_range.min).name} · ${prog.cleared} / ${prog.total} places · ${bossNode ? (s.progress.regions[regionId]?.nodes[bossNode.id]?.clears ? "boss defeated" : "boss awaits") : ""}`, backTo: "Regions", onBack: () => app.router.back() }),
         h("div", { class: "chips glass legend" }, Object.entries(KIND).filter(([k]) => nodes.some((n) => n.kind === k)).map(([k, v]) => h("span", { class: "chip" }, h("i", { class: "lg-dot", style: { "--k": v.color } }), v.label))),
         regionMap(app, regionId, nodes, { selected: sel?.id ?? null, questHere, step, select: (id) => { selected = id; app.router.refresh(); } }),
         // the card docks above the nav (mockup region_node_map): the map scrolls under it

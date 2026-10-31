@@ -4,6 +4,8 @@ import { icon } from "./icons.ts";
 import type { App } from "../../app.ts";
 import { trackerChip } from "../navigate.ts";
 import { hintBar, helpButton } from "../help.ts";
+import { computeStats } from "../../engine/stats.ts";
+import { energyNow, energyMax } from "../../engine/cultivation.ts";
 
 /** Screens that show the tracked-quest strip: the tab roots and the region maps (where its marker is). Sub-screens
  *  keep just the player header and their own screen header (review: the chrome stack ate 35–50% of the screen).
@@ -11,18 +13,28 @@ import { hintBar, helpButton } from "../help.ts";
 const TRACKER_SCREENS = new Set(["cultivate", "adventure", "character", "inventory", "sect", "quests"]);
 const showsTracker = (app: App) => { const id = app.router.current().screen.id; return TRACKER_SCREENS.has(id) || id.startsWith("region:"); };
 
-/** Top bar: portrait, name, sect/rank line, spirit stones. */
+/**
+ * Top bar, fixed to the top of the screen and as wide as it (the footer's design, mirrored): portrait, name and
+ * sect/rank line, then the player's combat power, adventure energy and spirit stones. The screens' own bars carry
+ * no CP or energy chip any more: this is where they live.
+ */
 export function header(app: App, opts: { sub?: string } = {}) {
-  const s = app.game.state;
-  const rank = app.content.get<any>(s.character.rank);
+  const s = app.game.state, c = app.content;
+  const rank = c.get<any>(s.character.rank);
+  const cp = computeStats(s, c).cp;
+  const en = Math.floor(energyNow(s, c, app.now())), enMax = energyMax(s, c);
   return [h("header", { class: "hdr glass" },
-    h("div", { class: "avatar", style: { backgroundImage: app.img(app.content.artAny(s.character.npc, "portrait", "full_body")) } }),
-    h("div", { class: "who" }, h("div", { class: "name" }, s.character.name), h("div", { class: "sub" }, opts.sub ?? `Azure Cloud Sect · ${rank.name}`)),
-    stones(s.resources.spirit_stones)), showsTracker(app) && trackerChip(app)];
+    h("div", { class: "avatar", style: { backgroundImage: app.img(c.artAny(s.character.npc, "portrait", "full_body")) } }),
+    h("div", { class: "who" }, h("div", { class: "name" }, s.character.name), h("div", { class: "sub" }, opts.sub ?? `${rank.name} · Azure Cloud Sect`)),
+    h("div", { class: "hdr-stats" },
+      h("div", { class: "hs cp", title: `Combat power ${fmt.int(cp)}`, "aria-label": `Combat power ${fmt.int(cp)}` }, icon("cp", 15), h("span", { class: "val tnum" }, fmt.compact(cp))),
+      h("div", { class: "hs en", title: `Energy ${en} / ${enMax}`, "aria-label": `Energy ${en} of ${enMax}`, style: { "--f": Math.min(1, en / Math.max(1, enMax)).toFixed(3) } as any },
+        icon("bolt", 15), h("span", { class: "val tnum" }, String(en), h("small", null, `/${enMax}`))),
+      stones(s.resources.spirit_stones))), showsTracker(app) && trackerChip(app)];
 }
 
 export function stones(n: number) {
-  return h("div", { class: "stones" }, icon("gem", 22), h("div", null, h("span", { class: "lbl" }, "Spirit Stones"), h("span", { class: "val tnum" }, fmt.int(n))));
+  return h("div", { class: "hs stones", title: `Spirit stones ${fmt.int(n)}`, "aria-label": `Spirit stones ${fmt.int(n)}` }, icon("gem", 17), h("span", { class: "val tnum" }, n < 100_000 ? fmt.int(n) : fmt.compact(n)));
 }
 
 /** Sub-header with a back chip, title (+ Chinese), subtitle and optional trailing element. */

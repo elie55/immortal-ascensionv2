@@ -377,7 +377,8 @@ await need(".battle");
 await page.waitForTimeout(1500);
 await shot("battle");
 /** Finish a battle: click through wave dialogs until the result panel shows. */
-const untilResult = async () => { for (let i = 0; i < 12; i++) { const r = await Promise.race([page.waitForSelector(".modal.victory, .modal.defeat", { timeout: 60000 }).then(() => "end"), page.waitForSelector(".modal .btn:has-text('Next wave')", { timeout: 60000 }).then(() => "wave")]); if (r === "end") return; await page.locator(".modal .btn", { hasText: "Next wave" }).click(); await page.waitForTimeout(300); } };
+// (arena fights take longer than the classic stage: dashes, close-ups and the victory beat; four audit tours share a CPU)
+const untilResult = async () => { for (let i = 0; i < 12; i++) { const r = await Promise.race([page.waitForSelector(".modal.victory, .modal.defeat", { timeout: 150000 }).then(() => "end"), page.waitForSelector(".modal .btn:has-text('Next wave')", { timeout: 150000 }).then(() => "wave")]); if (r === "end") return; await page.locator(".modal .btn", { hasText: "Next wave" }).click(); await page.waitForTimeout(300); } };
 await untilResult();
 const won = (await page.locator(".modal.victory").count()) === 1;
 check(true, `battle finished (${won ? "victory" : "defeat"})`);

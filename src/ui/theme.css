@@ -2079,3 +2079,33 @@ html, body { font-variant-numeric: tabular-nums; }
 @keyframes sf-rise { 0% { transform: translateY(0) scale(.6); opacity: 0; } 25% { opacity: 1; } 100% { transform: translateY(-260%) scale(1); opacity: 0; } }
 .battle.arena .sf-stun { animation-name: sf-orbit; } @keyframes sf-orbit { to { transform: rotateY(360deg); } }
 @media (prefers-reduced-motion: reduce) { .st-fx i, .st-fx b { animation: none !important; } }
+
+/* ---------- header: the footer's frame mirrored (gold lower edge, rounded lower corners), fixed to the top of the
+   screen and as wide as it; the player's CP, energy and spirit stones on the right ---------- */
+.screen > .hdr, .screen > .stack > .hdr { position: sticky; top: calc(-1 * (var(--safe-top) + 10px)); z-index: 9; margin: calc(-1 * (var(--safe-top) + 10px)) -12px 0; animation: none; }
+.hdr .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* anything scrolled into view stops below the header, not under it */
+.screen:has(> .hdr, > .stack > .hdr) { scroll-padding-top: calc(var(--safe-top) + 62px); }
+.hdr, .hdr.glass { min-height: 0; gap: 8px; padding: calc(var(--safe-top) + 7px) 10px 9px 10px; border: 0; border-bottom: 1px solid rgba(255,214,140,.55); border-radius: 0 0 20px 20px;
+  background: linear-gradient(0deg, #1a2766 0%, #0d1540 55%, #080e30 100%); box-shadow: 0 8px 26px rgba(0,0,14,.55), inset 0 -1px 0 rgba(255,243,208,.18); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.hdr::after { content: ""; position: absolute; left: 50%; bottom: -1px; width: 46%; height: 1px; transform: translateX(-50%); background: linear-gradient(90deg, transparent, #fff1c4, transparent); pointer-events: none; }
+.hdr { position: relative; }
+.hdr .who { flex: 1 1 auto; }
+.hdr-stats { margin-left: auto; display: flex; align-items: center; gap: 5px; flex: none; }
+.hdr .hs { position: relative; display: inline-flex; align-items: center; gap: 4px; height: 28px; margin: 0; padding: 0 9px 0 6px; border-radius: 999px; background: rgba(4,8,30,.62); border: 1px solid rgba(255,214,140,.22); box-shadow: inset 0 1px 0 rgba(255,255,255,.05); }
+.hdr .hs .val { display: inline; font-weight: 800; font-size: calc(13rem / 15); line-height: 1; color: #fff; white-space: nowrap; }
+.hdr .hs .lbl { display: none; }
+.hdr .hs.cp .ico { color: var(--gold-hi); filter: drop-shadow(0 0 4px rgba(255,200,90,.6)); }
+.hdr .hs.cp .val { color: var(--gold-hi); }
+.hdr .hs.en .ico { color: #7fe3ff; filter: drop-shadow(0 0 4px rgba(127,227,255,.6)); }
+.hdr .hs.en small { font-size: calc(10rem / 15); color: var(--text-3); font-weight: 600; margin-left: 1px; }
+.hdr .hs.en::after { content: ""; position: absolute; left: 8px; bottom: 3px; height: 2px; width: calc((100% - 16px) * var(--f, 0)); border-radius: 2px; background: linear-gradient(90deg, #4fe0b0, #7fe3ff); box-shadow: 0 0 4px rgba(127,227,255,.7); }
+.hdr .hs.stones .ico { color: var(--jade); filter: drop-shadow(0 0 4px rgba(79,224,176,.7)); }
+@media (max-width: 420px) { .hdr .hs.en small { display: none; } .hdr .hs { padding: 0 7px 0 5px; } .hdr-stats { gap: 4px; } }
+@media (max-width: 350px) { .hdr .sub { display: none; } }
+
+/* ---------- screen bars (Inventory, World Regions, a region, dungeons…): flat bands across the whole width ---------- */
+.subbar, .subbar.glass { border-radius: 0; border: 0; border-top: 1px solid rgba(255,214,140,.16); border-bottom: 1px solid rgba(255,214,140,.16);
+  background: linear-gradient(180deg, rgba(22,32,88,.94), rgba(10,16,52,.94)); box-shadow: 0 6px 16px rgba(0,0,14,.32); backdrop-filter: none; -webkit-backdrop-filter: none; padding: 5px 12px 5px 8px; }
+.screen > .subbar { margin: 6px -12px 0; }
+.screen > .stack > .subbar { margin: 0 -12px; }
