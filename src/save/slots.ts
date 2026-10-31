@@ -18,11 +18,13 @@ export interface SlotSummary {
 export interface Settings {
   musicVolume: number; sfxVolume: number; battleSpeed: 1 | 2 | 3; autoBattle: boolean; damageNumbers: boolean;
   screenShake: boolean; animationQuality: "low" | "medium" | "high"; reducedMotion: boolean; textSize: "normal" | "large";
+  /** Battle presentation: the classic stage, or the arena under test (docs/BATTLE_STAGE.md). */
+  battleStage: "classic" | "arena";
   language: "en"; lastSlot: number | null;
 }
 export const DEFAULT_SETTINGS: Settings = {
   musicVolume: 0.7, sfxVolume: 0.8, battleSpeed: 1, autoBattle: true, damageNumbers: true, screenShake: true,
-  animationQuality: "high", reducedMotion: false, textSize: "normal", language: "en", lastSlot: null,
+  animationQuality: "high", reducedMotion: false, textSize: "normal", battleStage: "classic", language: "en", lastSlot: null,
 };
 
 export type LoadResult =

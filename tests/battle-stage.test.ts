@@ -21,7 +21,7 @@ test("formations keep the party front left and the enemies back right, every slo
     assert.equal(row.length, Number(n));
     for (const p of row) {
       assert.ok(p.fx >= 0 && p.fx <= 1 && p.fy >= 0 && p.fy <= 1, `${side} ${n}: slot inside the field`);
-      if (side === "ally") assert.ok(p.fy < 0.6 && p.fx < 0.5, `${side} ${n}: allies front left`); else assert.ok(p.fy > 0.4 && p.fx > 0.35, `${side} ${n}: enemies back right`);
+      if (side === "ally") assert.ok(p.fy < 0.6 && p.fx < 0.5 && p.fx >= 0.16, `${side} ${n}: allies front left, clear of the left edge`); else assert.ok(p.fy > 0.4 && p.fx > 0.35, `${side} ${n}: enemies back right`);
     }
     // no two units share a screen spot
     const seen = new Set(row.map((p) => { const q = project(PORTRAIT, p); return `${q.x.toFixed(2)}|${q.y.toFixed(2)}`; }));
@@ -91,4 +91,27 @@ test("basic strikes and counters have built-in looks; unknown techniques fall ba
   assert.equal(unknown.vfx.shape, "burst"); assert.equal(unknown.vfx.approach, "none"); assert.equal(unknown.clip, "cast");
   const heal = plan(beats([ev.action(1, "tech.active.azure_strike", [2])])[0] as any, unitOf, () => ({ ...SLASH, approach: "none", shape: "glow" }), false);
   assert.deepEqual(heal.friendly, [2]); assert.equal(heal.strikes.length, 0); assert.equal(heal.vfx.approach, "none", "nothing to run at");
+});
+
+test("the arena test fight: free to start, Lin and Bai against two bandits, an ultimate charged, nothing settled", async () => {
+  const { testContent } = await import("./helpers/content.ts");
+  const { newGameState } = await import("../src/engine/state.ts");
+  const { Encounter, canStart, SHOWCASE } = await import("../src/engine/encounter.ts");
+  const c = testContent();
+  for (const id of Object.values(SHOWCASE)) assert.ok(c.has(id), `${id} exists`);
+  const s = newGameState(c, 1_700_000_000_000, { seed: 3 });
+  const energy = s.resources.energy.value;
+  const can = canStart(s, c, { kind: "showcase" }, 1_700_000_000_000);
+  assert.ok(can.ok && can.energy === 0);
+  const r = Encounter.start(s, c, { kind: "showcase" }, 1_700_000_000_000);
+  assert.ok(r.ok);
+  const b = r.encounter.battle!;
+  assert.deepEqual(b.units.filter((u) => u.side === "enemy").map((u) => u.id), [SHOWCASE.enemy, SHOWCASE.enemy]);
+  assert.ok(b.units.some((u) => u.id === SHOWCASE.companion), "Bai joins even when not bonded");
+  const p = b.player;
+  assert.equal(p.ult, 100); assert.ok(p.skills.some((x) => x.kind === "ultimate"));
+  assert.equal(s.resources.energy.value, energy, "no energy spent");
+  assert.equal(s.techniques.ultimate ?? null, null, "the save's loadout is untouched");
+  // every technique the test fight can show has a stage effect
+  for (const u of b.units) for (const sk of u.skills) if (sk.id.startsWith("tech.") || sk.id.startsWith("btech.")) assert.ok(c.get<any>(sk.id).vfx, `${sk.id} has a vfx block`);
 });

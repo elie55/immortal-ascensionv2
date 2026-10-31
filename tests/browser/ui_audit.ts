@@ -18,6 +18,7 @@
  *   placeholder    fallback icon shown where art should be (info while the art run is going)
  */
 import type { Page } from "playwright";
+import { writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 // pngjs as bundled with Playwright (decodes the screenshots for the contrast pass)
 const { PNG } = createRequire(import.meta.url)("playwright-core/lib/utilsBundle") as { PNG: { sync: { read(b: Buffer): { width: number; height: number; data: Uint8Array } } } };
@@ -273,6 +274,8 @@ export async function auditScreen(page: Page, screen: string, opts: { pages?: nu
       const sev: Severity = c.ratio < (j.large ? 2 : 3) && !j.shadow ? "error" : c.ratio < (j.large ? 2 : 3) ? "warning" : j.shadow ? "info" : "warning";
       out.push({ check: "contrast", severity: sev, where: j.where, text: j.text, detail: `${c.ratio.toFixed(2)}:1 (needs ${need}) on ${c.bg}${j.shadow ? ", has text-shadow" : ""}, ${j.size}px` });
     }
+    // keep the exact frame a contrast error was measured on, to tell a transient overlay from a colour problem
+    if (opts.shotPath && out.some((f) => f.check === "contrast" && f.severity === "error")) writeFileSync(opts.shotPath(i).replace(/\.png$/, "-contrast.png"), shot);
     for (const f of out) { const k = `${f.check}|${f.where}|${f.text}`; if (!found.has(k)) found.set(k, { screen, ...f }); }
   }
   if (scroller) await page.evaluate(`(() => { const el = ${scrollEl}; if (el) el.scrollTop = ${scroller.top}; })()`);

@@ -1829,7 +1829,7 @@ html, body { font-variant-numeric: tabular-nums; }
 .vn-aff-pips { display: inline-flex; gap: 2px; } .vn-aff-pips i { width: 9px; height: 5px; border-radius: 1px; background: rgba(190,210,255,.35); } .vn-aff-pips i.on { background: #ff9ab8; }
 /* the affinity chip of a first meeting: on the nameplate where there is room, under the introduction on phones */
 .vn-intro .vn-aff { display: none; }
-@media (max-width: 430px) { .vn-plate .vn-aff { display: none; } .vn-intro .vn-aff { display: flex; width: fit-content; margin: 8px 0 0 6px; } .vn-plate-name { font-size: calc(17rem / 15); } .vn-plate-band { padding-right: 28px; } }
+@media (max-width: 430px) { .vn-plate .vn-aff { display: none; } .vn-intro .vn-aff { display: flex; width: fit-content; margin: 8px 0 0 6px; } .vn-plate-name { font-size: calc(17rem / 15); } .vn-plate-band { padding-right: 38px; } }   /* the text stays clear of the ribbon's arrow tip */
 .vn-ghost { visibility: hidden; }
 
 .vn-text { font-size: calc(16rem / 15); line-height: 1.65; color: #f4f2ff; }
@@ -1928,3 +1928,81 @@ html, body { font-variant-numeric: tabular-nums; }
 .bt-cards.n1 .bt-card .bar.hp { height: 17px; } .bt-cards.n2 .bt-card .bar.hp { height: 15px; }
 .bt-cards.n1 .bt-card .bar.se { height: 7px; margin-top: 4px; } .bt-cards.n2 .bt-card .bar.se { height: 6px; margin-top: 3px; }
 @media (max-height: 700px) { .bt-cards.n1 .bt-card .bar.hp { height: 15px; } .bt-cards.n2 .bt-card .bar.hp { height: 14px; } }
+
+/* ============ ARENA STAGE (docs/BATTLE_STAGE.md): one field, dash attacks, procedural effects, close-ups ============ */
+.bt-cam { position: absolute; inset: 0; will-change: transform; }
+/* both sides share the field; units are placed in px by battle.ts (field.ts projection) */
+.battle.arena .bt-foes, .battle.arena .bt-party { inset: 0; top: 0; bottom: 0; height: auto; }
+.battle.arena .bt-foe-u, .battle.arena .bt-ally-u { bottom: auto; transform: none; }
+.battle.arena .bt-foe-u .ground, .battle.arena .bt-ally-u .ground { left: 14%; right: 14%; }
+/* every unit carries its own small bar; the focused-foe panel is only kept for bosses (phases) */
+.battle.arena .bt-foe:not(.boss-panel) { display: none; }
+.battle.arena .fu-mini { display: block; bottom: auto; top: 100%; margin-top: 2px; width: min(96px, 86%); }
+.battle.arena .bt-ally-u .fu-mini b { color: #c9fff0; }
+.battle.arena .fu-mini b { font-size: calc(10rem / 15); text-transform: uppercase; letter-spacing: .04em; }
+.battle.arena .fu-mini .bar { height: 5px; }
+.bt-ally-u .fu-mini { display: none; }
+.battle.arena .bt-foe-u.focus .fu-mark { top: auto; bottom: 104%; }
+/* the party faces up-right, the enemies down-left: non-rigged figures lunge along the diagonal */
+.battle.arena .bt-ally-u.acting .spr { animation: lunge-ar-a .46s ease; } @keyframes lunge-ar-a { 40% { transform: translate(14px, -16px) scale(1.05); } }
+.battle.arena .bt-foe-u.acting .spr { animation: lunge-ar-e .46s ease; } @keyframes lunge-ar-e { 40% { transform: translate(-14px, 16px) scale(1.05); } }
+.battle.arena .dashing .spr { filter: drop-shadow(-10px 6px 0 rgba(255,255,255,.18)) drop-shadow(-20px 12px 0 rgba(255,255,255,.08)); }
+.battle.arena .bt-skillname { top: 34%; }
+/* the field reads as a floor: a soft ground glow under the line of battle */
+.battle.arena .bt-cam::before { content: ""; position: absolute; left: -10%; right: -10%; top: 40%; bottom: 4%; pointer-events: none;
+  background: radial-gradient(60% 50% at 52% 58%, rgba(255,240,210,.10), transparent 70%), linear-gradient(180deg, transparent, rgba(4,8,30,.28) 70%, rgba(4,8,30,.45)); }
+/* an ultimate darkens the world while it plays */
+.battle.arena.ult-dark .bt-bg { filter: brightness(.45) saturate(.8); transition: filter .25s; }
+.battle.arena .bt-bg { transition: filter .4s; }
+
+/* hit counter (top left, under the HUD) */
+.bt-combo { position: absolute; right: 16px; top: calc(var(--safe-top) + 110px); z-index: 30; display: flex; align-items: baseline; gap: 4px; pointer-events: none; opacity: 0; transform: translateX(-12px); transition: opacity .25s, transform .25s; }
+.bt-combo.on { opacity: 1; transform: none; }
+.bt-combo { transform: translateX(12px); }
+.bt-combo b { font-family: var(--f-title); font-weight: 900; font-style: italic; font-size: calc(34rem / 15); line-height: 1; background: linear-gradient(180deg, #fffbe8 10%, #ffd56a 50%, #ff8a1e 95%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 2px 0 #6a2a00) drop-shadow(0 0 10px rgba(255,150,40,.7)); }
+.bt-combo span { font-family: var(--f-title); font-weight: 900; font-style: italic; font-size: calc(16rem / 15); color: #ffe7a8; text-shadow: 0 2px 0 #6a2a00, 0 0 8px rgba(255,150,40,.7); }
+.bt-combo.pop b { animation: combopop .22s ease-out; } @keyframes combopop { 0% { transform: scale(1.45); } 100% { transform: scale(1); } }
+
+/* ultimate close-up: dark, speed lines in the art's colour, the caster large, the art's name */
+.bt-closeup { position: absolute; inset: 0; z-index: 40; pointer-events: none; overflow: hidden; visibility: hidden; }
+.bt-closeup.on { visibility: visible; animation: cu-life var(--d, 1150ms) linear forwards; }
+@keyframes cu-life { 0% { opacity: 0; } 8% { opacity: 1; } 86% { opacity: 1; } 100% { opacity: 0; } }
+.cu-lines { position: absolute; inset: -20%; background: repeating-conic-gradient(from 0deg at 62% 46%, color-mix(in srgb, var(--c, #fff) 55%, transparent) 0 1.2deg, transparent 1.2deg 7deg), radial-gradient(closest-side at 62% 46%, color-mix(in srgb, var(--c, #fff) 35%, #0a0f30) 0, #050819 85%); }
+.bt-closeup.on .cu-lines { animation: cu-spin var(--d, 1150ms) linear forwards; } @keyframes cu-spin { from { transform: rotate(0) scale(1.1); } to { transform: rotate(10deg) scale(1.25); } }
+.cu-art { position: absolute; right: -12%; top: 4%; width: 112%; height: 92%; background: no-repeat 50% 0 / cover; filter: drop-shadow(0 0 24px color-mix(in srgb, var(--c, #fff) 70%, transparent)); clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); }
+.bt-closeup.on .cu-art { animation: cu-art var(--d, 1150ms) cubic-bezier(.2,.8,.2,1) forwards; } @keyframes cu-art { 0% { transform: translateX(40%) scale(1.15); } 22% { transform: translateX(0) scale(1.05); } 100% { transform: translateX(-4%) scale(1.1); } }
+.cu-text { position: absolute; left: 0; right: 0; bottom: 16%; padding: 12px 18px; display: flex; flex-direction: column; gap: 2px; background: linear-gradient(90deg, rgba(5,8,25,.92), rgba(5,8,25,.6) 70%, transparent); border-top: 1px solid color-mix(in srgb, var(--c, #fff) 60%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--c, #fff) 60%, transparent); }
+.bt-closeup.on .cu-text { animation: cu-text var(--d, 1150ms) cubic-bezier(.2,.8,.2,1) forwards; } @keyframes cu-text { 0%, 12% { transform: translateX(-100%); } 30% { transform: none; } 100% { transform: none; } }
+.cu-pre { font-family: var(--f-label); font-size: calc(12rem / 15); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-hi); }
+.cu-text b { font-family: var(--f-title); font-weight: 900; font-size: min(calc(30rem / 15), 8vw); line-height: 1.1; color: #fff; text-shadow: 0 0 16px var(--c, #fff), 0 2px 4px #000; }
+.cu-who { font-size: calc(12rem / 15); color: #d9def5; }
+
+/* procedural effects (src/ui/battle/vfx.ts) */
+.vx { position: absolute; pointer-events: none; }
+.vx-sparks { width: 0; height: 0; }
+.vx-sparks i { position: absolute; left: -2px; top: -6px; border-radius: 4px; background: linear-gradient(180deg, #fff, var(--c)); box-shadow: 0 0 8px var(--c); transform-origin: 50% 100%; }
+.vx-flare { border-radius: 50%; background: radial-gradient(closest-side, #fff 0, color-mix(in srgb, var(--c) 85%, #fff) 30%, color-mix(in srgb, var(--c) 40%, transparent) 60%, transparent); mix-blend-mode: screen; }
+.vx-ring { border-radius: 50%; border: 3px solid var(--c); box-shadow: 0 0 14px var(--c), inset 0 0 14px var(--c); }
+.vx-slash svg { width: 100%; height: 100%; overflow: visible; }
+.vx-slash path { fill: none; stroke-linecap: round; stroke-dasharray: 100 100; }
+.vx-slash .vx-arc1 { stroke: #fff; stroke-width: 5; filter: drop-shadow(0 0 4px var(--c)) drop-shadow(0 0 10px var(--c)); }
+.vx-slash .vx-arc2 { stroke: color-mix(in srgb, var(--c) 70%, #fff); stroke-width: 3.5; filter: drop-shadow(0 0 6px var(--c)); }
+.vx-pierce { border-radius: 99px; transform-origin: 0 50%; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--c) 60%, transparent) 30%, #fff 92%, transparent); box-shadow: 0 0 12px var(--c); }
+.vx-beam { border-radius: 99px; transform-origin: 0 50%; background: linear-gradient(180deg, transparent, var(--c) 25%, #fff 50%, var(--c) 75%, transparent); box-shadow: 0 0 22px var(--c), 0 0 44px color-mix(in srgb, var(--c) 50%, transparent); mix-blend-mode: screen; }
+.vx-burst { border-radius: 50%; background: repeating-conic-gradient(color-mix(in srgb, var(--c) 80%, #fff) 0 4deg, transparent 4deg 22deg); -webkit-mask: radial-gradient(closest-side, transparent 18%, #000 30%, #000 60%, transparent 100%); mask: radial-gradient(closest-side, transparent 18%, #000 30%, #000 60%, transparent 100%); mix-blend-mode: screen; }
+.vx-wave { border-radius: 50%; border-top: 10px solid #fff; box-shadow: 0 -6px 18px var(--c), inset 0 10px 20px color-mix(in srgb, var(--c) 60%, transparent); filter: blur(.5px); }
+.vx-pillar { background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--c) 70%, transparent) 25%, #fff 50%, color-mix(in srgb, var(--c) 70%, transparent) 75%, transparent); box-shadow: 0 0 30px var(--c); transform-origin: 50% 100%; mix-blend-mode: screen; }
+.vx-drop { width: 7px; border-radius: 6px 6px 2px 2px; background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--c) 70%, #fff) 60%, #fff); box-shadow: 0 0 10px var(--c); transform-origin: 50% 100%; }
+.vx-mote { width: 8px; height: 8px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px var(--c), 0 0 18px var(--c); }
+.vx-streak { height: 14px; border-radius: 99px; transform-origin: 0 50%; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--c) 45%, transparent) 60%, rgba(255,255,255,.55)); filter: blur(1px); }
+.vx-dust { width: 70px; height: 26px; border-radius: 50%; background: radial-gradient(closest-side, rgba(230,220,200,.55), transparent); }
+/* arena: every figure is on the canvas, so the DOM boxes only carry bars and marks, drawn above it */
+.battle.arena .bt-puppets { z-index: 0; }
+.battle.arena .rigged .ground, .battle.arena .rigged .aura { display: none; }
+.battle.arena .bt-foe-u.focus .fu-mark { top: 8%; bottom: auto; }
+/* close-up: the caster's upper body, not the whole figure */
+.cu-art { background-size: auto 165%; background-position: 50% 3%; }
+/* flurry numbers of an ultimate or a heavy art: smaller, quicker */
+.bt-float.tick { font-size: calc(17rem / 15); animation-duration: .8s; }
+.bt-float.crit.tick { font-size: calc(22rem / 15); }
+.vx-drop { width: 5px; box-shadow: 0 0 8px var(--c), 0 0 18px color-mix(in srgb, var(--c) 60%, transparent); }

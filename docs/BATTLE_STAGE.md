@@ -4,10 +4,23 @@ Decision record for the second battle screen. The owner asked for fights that fe
 one shared battlefield, characters that dash to their target and strike, a turn-order strip, ultimates with a
 full-screen close-up and a burst of numbers, a hit counter and floating status words. Portrait for now.
 
-Status: **design + core modules (this document, `src/ui/battle/field.ts`, `src/ui/battle/choreo.ts`, the
-`vfx` block on techniques)**. The stage itself, the effect renderer, the ultimate close-up, the HUD and the
-test fight are the next build step (Opus 5.5 + High), then one test fight is judged on the owner's phone
-before the cast is converted.
+Status: **built, on trial.** Settings → Battle stage switches every fight between Classic and Arena;
+Settings → Arena test fight → Try it starts the test fight on any save (§7). The owner judges it on the phone
+before the cast is converted. What was built:
+
+| Part | Where |
+|---|---|
+| Field, formations, strike points | `src/ui/battle/field.ts` |
+| Beats and shot plans | `src/ui/battle/choreo.ts` |
+| Procedural effects (slash, pierce, burst, beam, wave, pillar, rain, ring, glow; dash trail) | `src/ui/battle/vfx.ts` |
+| Arena layout, dash and return, camera, hit counter, close-up, flurry numbers | `src/ui/screens/battle.ts` (`arena`, `playShot`) |
+| Figures without a rig drawn on the puppet canvas as still puppets (one depth order, shared clips) | `src/ui/anim/stage.ts: addStill` |
+| The test fight source (`kind: "showcase"`): free, Lin and Bai against two Field Bandits, Heavenly Sword Rain charged, nothing settled | `src/engine/encounter.ts: SHOWCASE` |
+| Checks | `tests/battle-stage.test.ts`, the tour's arena step, `node tests/browser/lab.ts arena` (`IA_REGION=2` adds a spirit beast) |
+
+Presentation choices made while building: the acting unit is drawn in front of everyone during its action;
+an ultimate's damage is shown as six numbers (a heavy art's as three) that add up to the real hit, and the
+hit counter counts them; the focused-foe panel is only kept for bosses.
 
 ## 1. What stays
 

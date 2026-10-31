@@ -5,7 +5,7 @@
  * projectiles, damage numbers and shake with the frame that connects.
  */
 import { GL, mapping, QUAD_UV, type Tex } from "./gl.ts";
-import { ambient, buildMesh, clips, compose, deform, weaponPlacement, Player, type Mesh, type Pose, type RigDef } from "./rig.ts";
+import { ambient, buildMesh, clips, compose, deform, weaponPlacement, Player, type Archetype, type Mesh, type Pose, type RigDef } from "./rig.ts";
 
 export type Quality = "low" | "medium" | "high";
 const MESH: Record<Quality, [number, number]> = { low: [1, 1], medium: [8, 12], high: [14, 22] };
@@ -74,13 +74,14 @@ export class AnimStage {
   }
 
   /** Attach a rig to a unit; resolves once its textures are on the GPU. Safe to call when `ok` is false (no-op). */
-  async add(uid: number, rig: RigDef, anchor: HTMLElement, unit: HTMLElement, z: number, glowColor: [number, number, number] = [1, 0.9, 0.6], side: "ally" | "enemy" = "enemy"): Promise<void> {
+  async add(uid: number, rig: RigDef, anchor: HTMLElement, unit: HTMLElement, z: number, glowColor: [number, number, number] = [1, 0.9, 0.6], side: "ally" | "enemy" = "enemy", towardOverride?: [number, number]): Promise<void> {
     if (!this.ok || !this.gl) return;
     const [body, weapon, blink] = await Promise.all([this.loadTex(rig.body), rig.weapon ? this.loadTex(rig.weapon.file) : undefined, rig.blink ? this.loadTex(rig.blink.file) : undefined]);
     const weightAt = rig.weights && this.opts.quality === "high" ? await this.weights(rig.weights, rig).catch(() => undefined) : undefined;
     if (this.puppets.has(uid)) return;
     // the foe is up the screen for the party and down the screen for enemies, with a little sideways in the facing direction
-    const toward: [number, number] = side === "ally" ? [0.3 * rig.facing, -1] : [0.3 * rig.facing, 1];
+    // (the arena stage passes its own diagonal: the party advances up and right, the enemies down and left)
+    const toward: [number, number] = towardOverride ?? (side === "ally" ? [0.3 * rig.facing, -1] : [0.3 * rig.facing, 1]);
     const def: RigDef = { ...rig, mesh: MESH[this.opts.quality], toward };
     const mesh = buildMesh(def, weightAt);
     const p: Puppet = { uid, rig: def, anchor, unit, z, player: new Player(clips(rig.archetype)), mesh, pos: new Float32Array(mesh.base.length), body, weapon, blink,
@@ -88,6 +89,18 @@ export class AnimStage {
     this.puppets.set(uid, p);
     anchor.classList.add("rigged"); unit.classList.add("rigged");
     this.start();
+  }
+
+  /**
+   * A figure with no rig yet, as a puppet: its whole picture is the body, so it shares the depth order and the
+   * clips (lunge, hit, defeat) with the rigged ones (the arena stage; docs/BATTLE_STAGE.md).
+   */
+  async addStill(uid: number, file: string, anchor: HTMLElement, unit: HTMLElement, z: number, glowColor: [number, number, number], side: "ally" | "enemy", toward: [number, number] | undefined, archetype: Archetype = "humanoid_unarmed"): Promise<void> {
+    if (!this.ok || !this.gl) return;
+    const body = await this.loadTex(file);
+    const w = body.w, h = body.h;
+    const rig: RigDef = { id: `still:${file}`, body: file, size: [w, h], bbox: [w * 0.08, h * 0.04, w * 0.92, h * 0.97], ground: [w / 2, h * 0.97], facing: 0, archetype, mesh: [8, 12], hips: h * 0.58, chest: h * 0.4, neck: h * 0.24 };
+    return this.add(uid, rig, anchor, unit, z, glowColor, side, toward);
   }
 
   has(uid: number): boolean { return this.puppets.has(uid); }

@@ -11,6 +11,9 @@
 import { h, fmt, replaceChildren, keep, type Child } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
 import { AnimStage } from "../anim/stage.ts";
+import { PORTRAIT, project, slot, strikePoint, centroid, type FieldPos, type Placement } from "../battle/field.ts";
+import { beats as toBeats, plan as planShot, cameraFor, type ActionBeat, type Vfx } from "../battle/choreo.ts";
+import { play as playVfx, dashTrail, type VfxCtx } from "../battle/vfx.ts";
 import type { RigDef } from "../anim/rig.ts";
 import { RARITY_LABEL } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
@@ -89,7 +92,9 @@ function hpBar(cls: string, text = true): HpBar {
 
 export function battleScreen(app: App, enc: Encounter, onExit: () => void): Screen {
   const c = app.content;
-  const root = keep(h("div", { class: ["battle", enc.src.kind === "tribulation" && "trib"] }));
+  // the arena stage (docs/BATTLE_STAGE.md): Settings → Battle stage, and always for the arena test fight
+  const arena = app.settings.battleStage === "arena" || enc.src.kind === "showcase";
+  const root = keep(h("div", { class: ["battle", enc.src.kind === "tribulation" && "trib", arena && "arena"] }));
   let battle: Battle = enc.battle!;
   let speed = app.game.state.combat.speed || app.settings.battleSpeed || 1;
   let timer: number | undefined;
@@ -115,9 +120,11 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   const order = h("div", { class: "bt-order", "aria-label": "Turn order" });
   const banner = h("div", { class: "bt-banner" });
   const fx = h("div", { class: "bt-fx", "aria-hidden": "true" });
-  const stage = h("div", { class: "bt-stage" }, foes, party, order, banner, fx);
+  // the camera moves this layer (arena push/zoom); the turn strip and banners stay put, the stage itself shakes
+  const cam = h("div", { class: "bt-cam" }, foes, party, fx);
+  const stage = h("div", { class: "bt-stage" }, cam, order, banner);
   // rigged figures are painted on a canvas over the stage (docs/ANIMATION.md); the .spr boxes keep layout and taps
-  const puppets = new AnimStage(stage, { quality: app.settings.animationQuality, reducedMotion: app.settings.reducedMotion, img: (f) => `./${f}` });
+  const puppets = new AnimStage(cam, { quality: app.settings.animationQuality, reducedMotion: app.settings.reducedMotion, img: (f) => `./${f}` });
   const prompt = h("div", { class: "bt-prompt-slot" });
   const cards = h("div", { class: "bt-cards" });
   const actions = h("div", { class: "bt-actions" });
@@ -125,6 +132,8 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   const danger = h("div", { class: "bt-danger", "aria-hidden": "true" });
   const flash = h("div", { class: "bt-flash", "aria-hidden": "true" });
   const intro = h("div", { class: "bt-intro", "aria-hidden": "true" });
+  const combo = h("div", { class: "bt-combo", "aria-hidden": "true" });
+  const closeup = h("div", { class: "bt-closeup", "aria-hidden": "true" });
   const mainFoe = enc.waves.flat().map((id) => c.find<any>(id)).filter(Boolean).sort((a, b) => b.cp - a.cp)[0];
   const tone = ELEMENT_COLOR[mainFoe?.element ?? "elem.none"] ?? "#c9cfe3";
   root.style.setProperty("--tone", tone);
@@ -133,7 +142,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     h("div", { class: "bt-light", "aria-hidden": "true" }),
     h("div", { class: "bt-fog", "aria-hidden": "true" }, h("i"), h("i"), h("i")),
     h("div", { class: "bt-motes", "aria-hidden": "true" }, Array.from({ length: 18 }, (_, i) => h("i", { style: { "--i": String(i), left: `${(i * 37 + 11) % 100}%`, "--d": `${7 + (i * 1.7) % 6}s`, "--s": `${3 + (i * 5) % 5}px`, "--dl": `${-(i * 1.3) % 9}s` } }))),
-    h("div", { class: "bt-vignette" }), danger, hud, stage, dock, intro, flash);
+    h("div", { class: "bt-vignette" }), danger, hud, stage, dock, intro, combo, closeup, flash);
 
   // ---------- per-unit views (created once, updated in place) ----------
   interface View { uid: number; sprite: HTMLElement; spriteArt: HTMLElement; mini?: HpBar; card?: HTMLElement; cardBar?: HpBar; spBar?: HTMLElement; status?: HTMLElement; gone?: boolean }
@@ -152,8 +161,15 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   /** Puppet for a unit whose art has a rig: loaded once per rig, attached when the textures are ready. */
   function attachRig(u: Combatant, art: HTMLElement, sprite: HTMLElement, z: number) {
     if (!puppets.ok || !u.art) return;
-    const block = c.animFor(u.art); if (!block) return;
-    loadRig(block.rig).then((def) => { if (def && views.get(u.uid)?.spriteArt === art) return puppets.add(u.uid, def, art, sprite, z, glowRgb(u.element), u.side); })
+    const block = c.animFor(u.art);
+    const toward: [number, number] | undefined = arena ? (u.side === "ally" ? [0.78, -0.62] : [-0.78, 0.62]) : undefined;
+    if (!block) {
+      // the arena paints every figure on the canvas (one depth order, shared clips); rigless ones as still puppets
+      if (arena) puppets.addStill(u.uid, u.art, art, sprite, z, glowRgb(u.element), u.side, toward, u.kind === "beast" ? "quadruped" : u.kind === "boss" ? "large" : "humanoid_unarmed")
+        .then(() => { if (puppets.has(u.uid) && u.alive) puppets.play(u.uid, "enter", speed); }).catch(() => { /* the still sprite stays */ });
+      return;
+    }
+    loadRig(block.rig).then((def) => { if (def && views.get(u.uid)?.spriteArt === art) return puppets.add(u.uid, def, art, sprite, z, glowRgb(u.element), u.side, toward); })
       .then(() => { if (puppets.has(u.uid) && u.alive) puppets.play(u.uid, "enter", speed); })
       .catch(() => { /* no rig: the still sprite stays */ });
   }
@@ -177,7 +193,8 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       attachRig(u, art, sprite, 5);
       return { uid: u.uid, sprite, spriteArt: art, mini };
     }
-    const sprite = h("div", { class: ["bt-ally-u", u.kind], dataset: { uid: String(u.uid) } }, h("div", { class: "ground" }), h("div", { class: "aura" }), art, h("div", { class: "fu-warn" }, "!"));
+    const mini = hpBar("mini", false);
+    const sprite = h("div", { class: ["bt-ally-u", u.kind], dataset: { uid: String(u.uid) } }, h("div", { class: "ground" }), h("div", { class: "aura" }), art, h("div", { class: "fu-mini" }, h("b", null, u.kind === "player" ? "You" : u.name.split(" ")[0]), mini.el), h("div", { class: "fu-warn" }, "!"));
     sprite.classList.add("enter"); setTimeout(() => sprite.classList.remove("enter"), 900);
     party.appendChild(sprite);
     attachRig(u, art, sprite, u.kind === "player" ? 14 : 13);
@@ -191,7 +208,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         h("div", { class: "bc-top" }, h("b", { class: "bc-name" }, u.name), h("span", { class: "bc-role" }, role)),
         cardBar.el, u.maxSp > 0 && spBar, status));
     cards.appendChild(card);
-    return { uid: u.uid, sprite, spriteArt: art, card, cardBar, spBar, status };
+    return { uid: u.uid, sprite, spriteArt: art, mini, card, cardBar, spBar, status };
   }
 
   /** Focused enemy for the top panel: the chosen target, else the boss, else the first one standing. */
@@ -236,7 +253,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     for (const u of order) cards.appendChild(views.get(u.uid)!.card!); // keep card order
     for (const u of allies) {
       const v = views.get(u.uid)!;
-      v.cardBar!.set(u.hp, u.maxHp, u.shield);
+      v.cardBar!.set(u.hp, u.maxHp, u.shield); v.mini?.set(u.hp, u.maxHp, u.shield);
       (v.spBar!.firstChild as HTMLElement).style.width = `${(u.sp / Math.max(1, u.maxSp) * 100).toFixed(1)}%`;
       v.spBar!.setAttribute("aria-valuenow", String(Math.round(u.sp))); v.spBar!.setAttribute("aria-valuemax", String(u.maxSp)); v.spBar!.title = `Spiritual energy ${Math.round(u.sp)} / ${u.maxSp}`;
       replaceChildren(v.status!, statusIcons(u));
@@ -245,6 +262,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       v.card!.classList.toggle("dead", !u.alive); v.sprite.classList.toggle("dead", !u.alive);
     }
     danger.classList.toggle("on", threats.has(battle.player.uid));
+    if (arena) arenaLayout();
 
     renderFoePanel(focus);
     renderWarn();
@@ -256,6 +274,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const enemies = battle.units.filter((u) => u.side === "enemy" && u.alive);
     if (!f) { foePanel.classList.add("cleared"); replaceChildren(foePanel, h("div", { class: "ff-name" }, "Wave cleared")); return; }
     foePanel.classList.remove("cleared");
+    foePanel.classList.toggle("boss-panel", f.kind === "boss");   // the arena keeps this panel only for bosses
     foeBar.set(f.hp, f.maxHp, f.shield);
     const b = f.boss;
     const el = c.find<any>(f.element);
@@ -318,6 +337,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         trib && hz
           ? h("div", { class: "bt-sub row", style: { gap: "6px" } }, h("span", null, `Wave ${hzWave} / ${hz.waves.length}`), h("span", { class: "trib-pips" }, hz.waves.map((_, i) => h("i", { class: i < hzWave - 1 ? "done" : i === hzWave - 1 ? "cur" : "" }))), h("span", null, `· survive ${Math.max(0, (battle.opts.surviveRounds ?? 0) - battle.round + 1)} more`))
           : practice ? h("div", { class: "bt-sub" }, `${c.get<any>(practice.tech).name} casts ${Math.min(practiceCasts, practice.count)} / ${practice.count} · Practice restores HP; no loot`)
+          : enc.src.kind === "showcase" ? h("div", { class: "bt-sub" }, `Arena test · Round ${battle.round} · nothing is spent or won`)
           : h("div", { class: "bt-sub" }, `Wave ${enc.wave + 1}/${enc.waves.length} · Round ${battle.round}${battle.opts.surviveRounds ? ` / ${battle.opts.surviveRounds}` : ""}${caption ? ` · ${caption}` : ""}`)),
       modes,
       h("button", { class: "icon-btn bt-pause", "aria-label": playing ? "Pause" : "Resume", onClick: () => { playing = !playing; renderTop(); root.classList.toggle("paused", !playing); if (playing) loop(); } }, icon(playing ? "pause" : "play", 16)));
@@ -381,10 +401,17 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   }
 
   // ---------- effects ----------
+  /** A unit's chest in the effect layer's own pixels (the camera layer may be scaled: undo it). */
   function centerOf(uid: number): { x: number; y: number } | null {
     const v = views.get(uid); if (!v) return null;
-    const r = v.spriteArt.getBoundingClientRect(), s = stage.getBoundingClientRect();
-    return { x: r.left - s.left + r.width / 2, y: r.top - s.top + r.height * (unit(uid)?.side === "enemy" ? 0.45 : 0.4) };
+    const r = v.spriteArt.getBoundingClientRect(), s = cam.getBoundingClientRect();
+    const k = cam.offsetWidth / Math.max(1, s.width);
+    return { x: (r.left - s.left + r.width / 2) * k, y: (r.top - s.top + r.height * (unit(uid)?.side === "enemy" ? 0.45 : 0.4)) * k };
+  }
+  /** Height of a unit's figure in the effect layer's pixels. */
+  function heightOf(uid: number): number {
+    const v = views.get(uid); if (!v) return 120;
+    return v.spriteArt.getBoundingClientRect().height * cam.offsetWidth / Math.max(1, cam.getBoundingClientRect().width);
   }
   function float(uid: number, text: string, cls: string, pre?: string) {
     const p = centerOf(uid); if (!p) return;
@@ -465,8 +492,9 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     return new Promise((r) => setTimeout(() => { intro.classList.remove("on"); setTimeout(() => replaceChildren(intro), 400); r(); }, dur(ms)));
   }
 
-  async function animate(events: BattleEvent[]) {
-    for (const e of events) {
+  /** One engine event on screen (the classic stage plays every event this way; the arena plays lone events). */
+  async function playEvent(e: BattleEvent) {
+    {
       switch (e.t) {
         case "turn": renderTop(); renderOrder(); break;
         case "action": {
@@ -536,7 +564,178 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         default: break;
       }
     }
+  }
+
+  async function animate(events: BattleEvent[]) {
+    if (!arena) for (const e of events) await playEvent(e);
+    else for (const b of toBeats(events)) { if (b.kind === "lone") await playEvent(b.event); else await playShot(b); }
     renderSkills();
+  }
+
+  // ---------- arena (docs/BATTLE_STAGE.md) ----------
+  /** Each unit's place in the formation; a dashing unit is away from it until it returns. */
+  const home = new Map<number, FieldPos>();
+  const dashing = new Set<number>();
+  /** A unit's box at a field placement, in the camera layer's pixels: a front-row figure stands ~40% of the stage. */
+  function boxAt(u: Combatant, pl: Placement) {
+    const W = cam.offsetWidth || 360, H = cam.offsetHeight || 480;
+    // bigger groups stand a little smaller so a phone's width still holds them
+    const n = battle.units.filter((x) => x.side === u.side && (x.alive || !views.get(x.uid)?.gone)).length;
+    const k = (u.kind === "boss" ? 1.22 : u.kind === "beast" ? 0.62 : 1) * (n >= 4 ? 0.8 : n === 3 ? 0.88 : 1);
+    const hgt = Math.min(H * 0.44, W * 0.66) * pl.scale * k;
+    return { left: pl.x * W - hgt * 0.39, top: pl.y * H - hgt, w: hgt * 0.78, h: hgt };
+  }
+  function place(u: Combatant, p: FieldPos, ms = 0) {
+    const v = views.get(u.uid); if (!v) return;
+    const pl = project(PORTRAIT, p); const b = boxAt(u, pl);
+    const st = v.sprite.style;
+    st.transition = ms ? ["left", "top", "width", "height"].map((k) => `${k} ${Math.round(ms)}ms cubic-bezier(.3,.75,.25,1)`).join(", ") + ", opacity .5s" : "opacity .5s";
+    st.left = `${b.left.toFixed(1)}px`; st.top = `${b.top.toFixed(1)}px`; st.width = `${b.w.toFixed(1)}px`; st.height = `${b.h.toFixed(1)}px`;
+    // DOM figures stay under the puppet canvas (z 6) like on the classic stage; depth orders them among themselves
+    st.zIndex = String(1 + Math.round(pl.z / 25)); puppets.setZ(u.uid, 10 + pl.z);
+  }
+  /** Formation: the party front left, the enemies back right (the boss deepest); a changed slot slides there. */
+  function arenaLayout() {
+    const enemies = battle.units.filter((u) => u.side === "enemy" && (u.alive || !views.get(u.uid)?.gone))
+      .sort((a, b) => (b.kind === "boss" ? 1 : 0) - (a.kind === "boss" ? 1 : 0) || a.uid - b.uid);
+    const allies = battle.units.filter((u) => u.side === "ally")
+      .sort((a, b) => (a.kind === "player" ? -1 : b.kind === "player" ? 1 : 0) || (a.kind === "beast" ? 1 : b.kind === "beast" ? -1 : 0) || a.uid - b.uid);
+    const set = (u: Combatant, p: FieldPos) => {
+      const prev = home.get(u.uid); home.set(u.uid, p);
+      if (dashing.has(u.uid)) return;
+      place(u, p, prev && (prev.fx !== p.fx || prev.fy !== p.fy) ? dur(450) : 0);
+    };
+    enemies.forEach((u, i) => set(u, slot("enemy", i, enemies.length)));
+    allies.forEach((u, i) => set(u, slot("ally", i, allies.length)));
+  }
+  new ResizeObserver(() => { if (arena) for (const u of battle.units) { const p = home.get(u.uid); if (p && !dashing.has(u.uid)) place(u, p); } }).observe(cam);
+
+  /** Camera: push toward the striking pair, zoom on an ultimate's targets, relax after (CSS transform on the camera layer). */
+  function camera(kind: "none" | "push" | "zoom", at?: FieldPos, ms = 320) {
+    if (kind === "none" || !at || app.settings.reducedMotion) { cam.style.transition = `transform ${Math.round(dur(380))}ms cubic-bezier(.3,.7,.2,1)`; cam.style.transform = ""; return; }
+    const pl = project(PORTRAIT, at); const W = cam.offsetWidth, H = cam.offsetHeight;
+    const fx0 = pl.x * W, fy0 = (pl.y - 0.14) * H;
+    const sc = kind === "zoom" ? 1.16 : 1.07;
+    const tx = (W / 2 - fx0) * 0.35, ty = (H * 0.5 - fy0) * 0.25;
+    cam.style.transformOrigin = `${fx0.toFixed(0)}px ${fy0.toFixed(0)}px`;
+    cam.style.transition = `transform ${Math.round(dur(ms))}ms cubic-bezier(.3,.7,.2,1)`;
+    cam.style.transform = `translate(${tx.toFixed(1)}px, ${ty.toFixed(1)}px) scale(${sc})`;
+  }
+
+  /** Hit counter: grows with every landed hit of a beat ("12 Hits!"), fades after. */
+  let comboN = 0, comboT: number | undefined;
+  function comboStep() {
+    comboN++; if (comboN < 2) return;
+    replaceChildren(combo, h("b", null, String(comboN)), h("span", null, "Hits!"));
+    combo.classList.remove("pop"); void combo.offsetWidth; combo.classList.add("on", "pop");
+  }
+  function comboEnd() { clearTimeout(comboT); comboT = window.setTimeout(() => { combo.classList.remove("on"); comboN = 0; }, dur(900)); }
+
+  /** Ultimate close-up (mockup: Epic Seven reference): the screen darkens, the caster fills it, the art's name. */
+  function showCloseup(u: Combatant, skillName: string, color: string): Promise<void> {
+    const art = u.side === "ally" ? c.artAny(u.id, "expression_stern", "full_body", "battle", "portrait") : c.artAny(u.id, "intro", "battle") ?? u.art;
+    replaceChildren(closeup,
+      h("div", { class: "cu-lines" }),
+      h("div", { class: "cu-art", style: { backgroundImage: app.img(art) } }),
+      h("div", { class: "cu-text" }, h("span", { class: "cu-pre" }, u.side === "ally" ? "Ultimate" : "Devastating art"), h("b", null, skillName), h("span", { class: "cu-who" }, u.name)));
+    closeup.style.setProperty("--c", color); closeup.style.setProperty("--d", `${Math.round(dur(1150))}ms`);
+    closeup.classList.remove("on"); void closeup.offsetWidth; closeup.classList.add("on");
+    try { navigator.vibrate?.(20); } catch { /* not supported */ }
+    return new Promise((r) => setTimeout(() => { closeup.classList.remove("on"); r(); }, dur(1150)));
+  }
+
+  /** A landed or dodged hit inside a shot (the effect already played; numbers, flash, shake). */
+  function arenaHit(e: Extract<BattleEvent, { t: "hit" }>, tick = false) {
+    if (e.dodged) { float(e.target, "Miss", "miss"); if (rigged(e.target)) puppets.play(e.target, "dodge", speed); return; }
+    if (tick) { float(e.target, fmt.int(e.amount), e.crit ? "dmg crit tick" : "dmg tick"); hitFlash(e.target, false); return; }
+    const big = e.amount >= (unit(e.target)?.maxHp ?? 1) * 0.25;
+    float(e.target, fmt.int(e.amount), e.crit ? "dmg crit" : e.kind === "dot" ? "dmg dot" : unit(e.target)?.side === "ally" ? "dmg taken" : "dmg", e.crit ? "CRITICAL!" : undefined);
+    if (e.absorbed) float(e.target, `${fmt.int(e.absorbed)} blocked`, "shield");
+    hitFlash(e.target, e.crit || big);
+    if (e.crit || big) shake(big && unit(e.target)?.side === "ally");
+    renderUnits();
+  }
+
+  const vfxOf = (id: string): Vfx | undefined => c.find<any>(id)?.vfx;
+  const infoOf = (uid: number) => { const u = unit(uid); return u ? { side: u.side, alive: u.alive } : undefined; };
+  const vctx: VfxCtx = { layer: fx, dur, reduced: app.settings.reducedMotion };
+
+  /** One action on the arena: approach, strike with its effect, numbers and hit counter, aftermath, return. */
+  async function playShot(beat: ActionBeat) {
+    const e = beat.action; const a = unit(e.actor); if (!a) return;
+    const v = views.get(a.uid);
+    const sk = a.skills.find((x) => x.id === e.skill);
+    const isUlt = sk?.kind === "ultimate";
+    const shot = planShot(beat, infoOf, vfxOf, isUlt);
+    const element = sk?.element ?? a.element;
+    // the basic strike and counters take the striker's element colour; techniques carry their own
+    const color = e.skill === "basic" || e.skill === "counter" ? ELEMENT_COLOR[element] ?? "#f2f5ff" : shot.vfx.color;
+    const tech = e.skill !== "basic" && e.skill !== "counter";
+    if (tech) { caption = `${a.name}: ${e.name}`; renderTop(); }
+    comboN = 0;
+    // the actor is drawn in front of everyone while it acts (a dash can end behind another figure's depth)
+    puppets.setZ(a.uid, 999); if (v) v.sprite.style.zIndex = "60";
+    // 1. announce
+    if (isUlt) { root.classList.add("ult-dark"); await showCloseup(a, e.name, color); }
+    else if (e.heavy || e.charged) { showSkillName(e.name, "heavy"); screenFlash("red"); }
+    else if (tech) showSkillName(e.name, a.side === "enemy" ? "foe" : "");
+    // 2. approach (and the camera)
+    const homeP = home.get(a.uid);
+    const firstT = shot.strikes[0] ? home.get(shot.strikes[0].target) : undefined;
+    const pts = [homeP, ...shot.strikes.map((x) => home.get(x.target))].filter((p): p is FieldPos => !!p);
+    camera(cameraFor(shot), centroid(isUlt ? pts.slice(1) : pts), isUlt ? 420 : 300);
+    if (shot.vfx.approach === "dash" && homeP && firstT) {
+      const sp = strikePoint(homeP, firstT, a.side === "ally" ? 0.17 : 0.15);
+      const from = centerOf(a.uid);
+      dashing.add(a.uid);
+      place(a, sp, dur(shot.timing.approach));
+      v?.sprite.classList.add("dashing");
+      if (from) { const pl = project(PORTRAIT, sp), b = boxAt(a, pl); dashTrail(vctx, { x: from.x, y: from.y + heightOf(a.uid) * 0.45 }, { x: pl.x * cam.offsetWidth, y: b.top + b.h * 0.95 }, color); }
+      await wait(shot.timing.approach);
+      v?.sprite.classList.remove("dashing");
+    } else if (tech && !isUlt) castRing(e.actor, element);
+    // 3. strike: the rig's swing or cast, the effect leaves at contact
+    if (rigged(a.uid)) { puppets.setGlow(a.uid, glowRgb(element)); await puppets.play(a.uid, shot.clip, speed).contact; }
+    else if (v) { v.sprite.classList.remove("acting"); void v.sprite.offsetWidth; v.sprite.classList.add("acting"); setTimeout(() => v.sprite.classList.remove("acting"), dur(460)); await wait(isUlt ? 260 : 170); }
+    const targets = shot.strikes.length ? shot.strikes.map((x) => x.target) : shot.friendly;
+    const at = targets.map((t) => centerOf(t)).filter((p): p is { x: number; y: number } => !!p);
+    const from = centerOf(a.uid) ?? at[0];
+    if (at.length && from) {
+      const ground = Math.max(...targets.map((t) => { const vv = views.get(t); if (!vv) return 0; const r = vv.spriteArt.getBoundingClientRect(), s0 = cam.getBoundingClientRect(); return (r.bottom - s0.top) * cam.offsetWidth / Math.max(1, s0.width); }));
+      await playVfx(vctx, { shape: shot.vfx.shape, color, impact: shot.vfx.impact, from, to: at, size: heightOf(targets[0]!), ground });
+    }
+    // numbers: every hit of the actor in order, the counter climbing
+    const mine = beat.effects.filter((x): x is Extract<BattleEvent, { t: "hit" }> => x.t === "hit" && x.actor === a.uid);
+    // an ultimate or a heavy art lands as a flurry: its damage is shown in several numbers that add up to the real
+    // total (presentation only; the engine's hits are unchanged), and the hit counter counts them
+    const ticks = isUlt ? 6 : shot.vfx.impact === "heavy" ? 3 : 1;
+    for (const [i, x] of mine.entries()) {
+      if (x.dodged || ticks === 1 || x.amount < ticks * 4) { arenaHit(x); if (!x.dodged) comboStep(); }
+      else {
+        const w = Array.from({ length: ticks }, () => 0.75 + Math.random() * 0.5); const sum = w.reduce((p, q) => p + q, 0);
+        let left = x.amount;
+        for (let k = 0; k < ticks; k++) {
+          const amt = k === ticks - 1 ? left : Math.max(1, Math.round(x.amount * w[k]! / sum)); left -= amt;
+          arenaHit({ ...x, amount: amt, absorbed: k === ticks - 1 ? x.absorbed : 0 }, k < ticks - 1);
+          comboStep();
+          if (k < ticks - 1) await wait(isUlt ? 85 : 110);
+        }
+      }
+      if (i < mine.length - 1) await wait(isUlt ? 120 : 95);
+    }
+    if (mine.length) await wait(isUlt ? 260 : 170);
+    // 4. aftermath: heals, shields, statuses, energy, phases (and reflected or countered blows), then the fallen
+    for (const x of beat.effects) if (x.t !== "death" && !(x.t === "hit" && x.actor === a.uid)) await playEvent(x);
+    for (const x of beat.effects) if (x.t === "death") await playEvent(x);
+    // 5. return
+    if (dashing.has(a.uid)) {
+      dashing.delete(a.uid);
+      if (homeP && a.alive) { place(a, home.get(a.uid) ?? homeP, dur(shot.timing.back)); await wait(shot.timing.back); }
+    }
+    camera("none");
+    root.classList.remove("ult-dark");
+    comboEnd();
+    const hp = home.get(a.uid); if (hp && a.alive) place(a, hp);   // back in its depth order
   }
   const wait = (ms: number) => new Promise((r) => setTimeout(r, dur(ms)));
 
@@ -547,8 +746,12 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   /** A lesson (story practice): the casts of its technique so far; it ends at `count` (no settling: no loot, HP untouched). */
   const practice = enc.src.kind === "practice" ? enc.src : null;
   let practiceCasts = 0;
+  // A call while the loop runs (Auto pressed, a manual move) is remembered and replayed when it ends: the running
+  // loop may already have decided to stop for manual input, and dropping the call left the fight frozen.
+  let loopAgain = false;
   async function loop() {
-    if (busy) return; busy = true;
+    if (busy) { loopAgain = true; return; }
+    busy = true; loopAgain = false;
     try {
       // Show whatever the engine already produced (a manual action may have ended the battle by itself), then
       // keep stepping; a turn waiting for manual input only stops the loop in Manual (Auto plays it).
@@ -563,12 +766,16 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       }
       if (battle.manual && battle.needsInput) { renderOrder(); renderSkills(); }
       if (battle.result) await finishWave();
-    } finally { busy = false; }
+    } finally {
+      busy = false;
+      if (loopAgain && playing && !battle.result) { loopAgain = false; queueMicrotask(() => loop()); }
+    }
   }
 
   async function finishWave() {
     await wait(500);
     if (practice) { showPracticeDone(); return; }
+    if (enc.src.kind === "showcase") { showShowcaseDone(); return; }
     const wr = enc.settleWave(app.now());
     app.game.dirtyImportant = true;
     app.game.run("battle", app.now(), () => ({ ok: true, events: enc.drainEvents() }));
@@ -742,6 +949,18 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       h("div", { class: "cn m-cn" }, "习 成"), h("div", { class: "m-title" }, "Lesson learned"),
       h("div", { class: "m-sub" }, `${tech.name} cast ${Math.min(practiceCasts, practice.count)} / ${practice.count} · practice restores HP; no loot`),
       h("button", { class: "btn gold cta block", onClick: () => { close(); onExit(); } }, "Back to the lesson ›")) });
+  }
+
+  /** End of the arena test fight: nothing was settled; fight it again or go back. */
+  function showShowcaseDone() {
+    const won = battle.result === "victory";
+    if (won) { root.classList.add("won"); cheer(); }
+    app.router.open({ id: "result", kind: "modal", dismissible: false, cls: "practice-done showcase-done", render: (close) => h("div", { class: "center" },
+      h("div", { class: "cn m-cn" }, won ? "试 阵 · 胜" : "试 阵 · 负"), h("div", { class: "m-title" }, won ? "Arena test won" : "Arena test lost"),
+      h("div", { class: "m-sub" }, "Nothing was spent or won. Tell Claude what to change, or switch the stage in Settings → Battle stage."),
+      h("div", { class: "grid-2", style: { marginTop: "12px" } },
+        h("button", { class: "btn", onClick: () => { close(); onExit(); } }, icon("back", 14), "Back"),
+        h("button", { class: "btn gold", onClick: () => { close(); onExit(); startEncounter(app, { kind: "showcase" }); } }, "Again"))) });
   }
 
   /** The tracked quest's progress, so a fight that advanced it says so on the result screen. */

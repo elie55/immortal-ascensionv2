@@ -39,10 +39,12 @@ export function project(g: FieldGeometry, p: FieldPos): Placement {
  */
 export const FORMATIONS: Record<Side, Record<number, FieldPos[]>> = {
   ally: {
-    1: [{ fx: 0.3, fy: 0.12 }],
-    2: [{ fx: 0.36, fy: 0.1 }, { fx: 0.16, fy: 0.3 }],
-    3: [{ fx: 0.38, fy: 0.08 }, { fx: 0.18, fy: 0.26 }, { fx: 0.06, fy: 0.46 }],
-    4: [{ fx: 0.4, fy: 0.06 }, { fx: 0.24, fy: 0.2 }, { fx: 0.1, fy: 0.36 }, { fx: 0.02, fy: 0.54 }],
+    // nobody stands nearer the left edge than ~0.16: a phone is narrow and the figures are wide
+    1: [{ fx: 0.32, fy: 0.1 }],
+    2: [{ fx: 0.44, fy: 0.06 }, { fx: 0.18, fy: 0.3 }],
+    // the back row stands between the front row and the enemies, where nobody hides it
+    3: [{ fx: 0.46, fy: 0.04 }, { fx: 0.18, fy: 0.26 }, { fx: 0.4, fy: 0.44 }],
+    4: [{ fx: 0.48, fy: 0.03 }, { fx: 0.18, fy: 0.22 }, { fx: 0.42, fy: 0.42 }, { fx: 0.2, fy: 0.56 }],
   },
   enemy: {
     1: [{ fx: 0.7, fy: 0.8 }],

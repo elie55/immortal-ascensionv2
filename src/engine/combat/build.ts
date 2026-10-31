@@ -8,7 +8,7 @@ import { companionCombatant } from "../companions.ts";
 
 export const BASIC: Omit<Skill, "element" | "power" | "masteryMult"> = { id: "basic", name: "Attack", kind: "basic", hits: 1, spCost: 0, cooldown: 0, targeting: "single", applies: [] };
 
-function techSkill(c: ContentIndex, id: string, masteryXp: number, slot?: string): Skill {
+export function techSkill(c: ContentIndex, id: string, masteryXp: number, slot?: string): Skill {
   const t = c.get<Technique>(id);
   return {
     id, name: t.name, kind: t.kind === "ultimate" ? "ultimate" : "active", element: t.element, power: t.power, hits: t.hits, healPct: t.heal_pct, shieldPct: t.shield_pct_max_hp,

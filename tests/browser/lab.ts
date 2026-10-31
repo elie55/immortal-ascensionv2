@@ -414,6 +414,33 @@ async function defeat() {
   await page.evaluate(() => document.querySelector(".modal")!.scrollTo(0, 9999)); await page.waitForTimeout(300); await shot("defeat-2");
 }
 
+/** The arena test fight (docs/BATTLE_STAGE.md §7): a burst of frames around a dash strike and around the ultimate. */
+async function arenaTest(name: string) {
+  await boot(labState(Number(process.env.IA_REGION ?? 1), "fitted"));   // IA_REGION=2: a spirit beast joins (three allies)
+  await dismiss();
+  await page.evaluate(() => { const st = (window as any).__ia.game.state; st.combat.speed = 1; st.combat.manual = true; });
+  await page.evaluate(() => (window as any).__ia.dev.fight({ kind: "showcase" }));
+  await page.waitForSelector(".battle.arena");
+  await page.waitForTimeout(700); await shot(`${name}-0-intro`);
+  const burst = async (tag: string, n: number, every: number) => { for (let i = 0; i < n; i++) { await shot(`${name}-${tag}-${String(i).padStart(2, "0")}`); await page.waitForTimeout(every); } };
+  // first player turn: Azure Strike (a dash and a slash); the ultimate waits for the next turn
+  await page.waitForSelector(".bt-skill.ready", { timeout: 30_000 }); await page.waitForTimeout(300);
+  await shot(`${name}-1-ready`);
+  const strike = page.locator(".bt-skill.ready", { hasText: "Azure Strike" });
+  if (await strike.count()) await strike.first().click(); else await page.locator(".bt-skill.ready").first().click();
+  const log: string[] = []; const poll = setInterval(() => { page.evaluate(() => { const el = document.querySelector(".bt-combo"); return el ? `${el.className}|${el.textContent}|${getComputedStyle(el).opacity}` : "none"; }).then((x) => log.push(x)).catch(() => {}); }, 60);
+  await burst("2-strike", 14, 90);
+  clearInterval(poll); if (process.env.IA_DEBUG) console.log([...new Set(log)].join("\n"));
+  await page.waitForSelector(".bt-ultbtn.ready", { timeout: 40_000 });
+  await page.waitForTimeout(300);
+  await page.locator(".bt-ultbtn.ready").click();
+  await burst("3-ult", 26, 110);
+  // let the fight finish on Auto
+  if (!(await page.locator(".modal.showcase-done").count())) await page.locator(".bt-controls .seg button", { hasText: "Auto" }).click().catch(() => {});
+  await page.waitForSelector(".modal.showcase-done", { timeout: 120_000 });
+  await page.waitForTimeout(600); await shot(`${name}-9-end`);
+}
+
 const SCEN: Record<string, () => Promise<void>> = {
   defeat,
   tribulation,
@@ -425,7 +452,8 @@ const SCEN: Record<string, () => Promise<void>> = {
     await page.locator(".nav button", { hasText: "Cultivate" }).click(); await page.waitForTimeout(700); await shot("waterfall-cultivate-pill");
   }),
   solo: () => fight("solo", 2, { kind: "node", id: nodeOf(2, "battle") }),
-  alone: () => fight("alone", 1, { kind: "node", id: nodeOf(1, "battle") }),   // region 1: no beast yet, the player's card alone
+  alone: () => fight("alone", 1, { kind: "node", id: nodeOf(1, "battle") }),
+  arena: () => arenaTest("arena"),   // region 1: no beast yet, the player's card alone
   idle: () => idle("idle"),
   firstwin: () => firstVictory("firstwin"),
   gearwin: () => gearVictory("gearwin"),

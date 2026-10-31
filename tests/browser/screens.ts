@@ -455,6 +455,20 @@ await page.locator(".cult-tile", { hasText: "Settings" }).click();
 await shot("settings");
 await page.locator(".seg button", { hasText: "3×" }).click();
 check(await page.evaluate(() => (window as any).__ia.app.settings.battleSpeed) === 3, "settings change persists in memory");
+// the arena test fight (docs/BATTLE_STAGE.md §7): free, Lin and Bai against two bandits, its own end modal
+{
+  const energyBefore = await ia<number>("window.__ia.game.state.resources.energy.value");
+  await page.locator(".btn", { hasText: "Try it" }).click();
+  await need(".battle.arena");
+  await page.waitForTimeout(1600);
+  await shot("arena-test");
+  await page.locator(".bt-controls .seg button", { hasText: "Auto" }).click().catch(() => {});
+  await need(".modal.showcase-done", { timeout: 120000 });
+  await shot("arena-test-done");
+  check(await ia<number>("window.__ia.game.state.resources.energy.value") >= energyBefore, "the arena test fight costs nothing (energy only refills meanwhile)");
+  await page.locator(".modal.showcase-done .btn", { hasText: "Back" }).click();
+  await need('[data-screen="settings"]');
+}
 await page.locator(".btn", { hasText: "Save slots" }).click();
 await shot("save-slots");
 

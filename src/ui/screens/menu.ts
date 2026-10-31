@@ -150,7 +150,11 @@ export function settingsScreen(app: App, backTo: string): Screen {
             setrow("auto", "Start in Auto mode", "Techniques follow your priority list", toggle(st.autoBattle, (v) => set({ autoBattle: v }), "Auto battle")),
             setrow("numbers", "Damage numbers", null, toggle(st.damageNumbers, (v) => set({ damageNumbers: v }), "Damage numbers")),
             setrow("shake", "Screen shake on big hits", "With a short vibration on phones", toggle(st.screenShake, (v) => set({ screenShake: v }), "Screen shake")),
-            setrow("sparkle", "Animation quality", "Lower saves battery", seg(st.animationQuality, [{ value: "low", label: "Low" }, { value: "medium", label: "Med" }, { value: "high", label: "High" }], (v) => set({ animationQuality: v as any }))))),
+            setrow("sparkle", "Animation quality", "Lower saves battery", seg(st.animationQuality, [{ value: "low", label: "Low" }, { value: "medium", label: "Med" }, { value: "high", label: "High" }], (v) => set({ animationQuality: v as any }))),
+            // the arena stage is on trial (docs/BATTLE_STAGE.md): the owner compares it with the classic one
+            setrow("sword", "Battle stage", "Arena: both sides on one field, dash attacks · test", seg(st.battleStage, [{ value: "classic", label: "Classic" }, { value: "arena", label: "Arena" }], (v) => set({ battleStage: v as any }))),
+            app.inGame && setrow("play", "Arena test fight", "Lin and Bai against two bandits · nothing is spent or won",
+              h("button", { class: "btn sm gold", onClick: () => app.startShowcase() }, "Try it")))),
         section("Display & Accessibility", null,
           h("div", { class: "rows" },
             setrow("text", "Text size", null, seg(st.textSize, [{ value: "normal", label: "M" }, { value: "large", label: "L" }], (v) => set({ textSize: v as any }))),

@@ -15,7 +15,7 @@ import { addMasteryXp, grantRewards } from "./actions.ts";
 import { rollTable, grantDrops, mergeDrops, type Drops } from "./loot.ts";
 import { Battle } from "./combat/battle.ts";
 import { revealHidden, discoverRegions, finishEventBattle } from "./nodes.ts";
-import { buildPlayer, buildBeast, buildEnemy, buildEnemyFrom, buildCompanion, resetUids } from "./combat/build.ts";
+import { buildPlayer, buildBeast, buildEnemy, buildEnemyFrom, buildCompanion, resetUids, techSkill } from "./combat/build.ts";
 import { companionSlots } from "./companions.ts";
 import { beastsAfterVictory } from "./beasts.ts";
 import { canClimb, towerFloor, towerFloorCleared, realmRun, realmNodeState, realmBattleDone, trackRealmLoot } from "./delves.ts";
@@ -32,7 +32,13 @@ export type EncounterSource =
   | { kind: "event"; node: string; enemies: string[] }
   /** A lesson (story line `practice`): cast `tech` `count` times against `enemy`. No energy, no loot, HP untouched;
    *  the battle screen ends it once the casts are done (or the fight ends) and the story goes on. */
-  | { kind: "practice"; enemy: string; tech: string; count: number };
+  | { kind: "practice"; enemy: string; tech: string; count: number }
+  /** The arena test fight (docs/BATTLE_STAGE.md §7): Lin and Bai against two Field Bandits, with an ultimate ready.
+   *  No energy, no loot, no rewards, HP untouched; the battle screen ends it with its own modal. */
+  | { kind: "showcase" };
+
+/** What the arena test fight puts on the stage (all ids exist in content; checked by tests/battle-stage.test.ts). */
+export const SHOWCASE = { enemy: "enemy.field_bandit", companion: "npc.bai_lingshuang", ultimate: "tech.ult.heavenly_sword_rain", node: "node.mortal_plains.village_road", region: "region.mortal_plains" };
 
 export interface WaveResult { summary: BattleSummary; drops: Drops; gearUids: number[] }
 export interface EncounterResult {
@@ -84,7 +90,7 @@ export function canStart(s: GameState, c: ContentIndex, src: EncounterSource, no
     if (p?.nextTryAt && p.nextTryAt > now) return { ok: false, reason: `Steady your Qi first: ${Math.ceil((p.nextTryAt - now) / 60000)} min` };
     return { ok: true, energy: 0 };
   }
-  if (src.kind === "event" || src.kind === "practice") return { ok: true, energy: 0 };
+  if (src.kind === "event" || src.kind === "practice" || src.kind === "showcase") return { ok: true, energy: 0 };
   if (src.kind === "tournament") return canEnterTournament(s, c, src.id, now);
   if (src.kind === "tower") { const r = canClimb(s, c, src.id, src.floor); return r.ok ? { ok: true, energy: 0 } : r; }
   if (src.kind === "realm") {
@@ -143,6 +149,7 @@ export class Encounter {
       this.waves = src.enemies?.length ? [src.enemies] : n.waves!; this.name = `${d.name} · ${n.name}`; this.bg = c.art(d.id, "battle_bg"); opts.isBossFight = n.kind === "boss";
       const hp = realmRun(s, src.id)?.hp; if (hp !== undefined) this.carry = { hp };
     }
+    else if (src.kind === "showcase") { this.waves = [[SHOWCASE.enemy, SHOWCASE.enemy]]; this.name = `${c.find<any>(SHOWCASE.node)?.name ?? "Village Road"} · Arena test`; this.bg = c.art(SHOWCASE.region, "battle_bg"); }
     else if (src.kind === "practice") { this.waves = [[src.enemy]]; this.name = `${c.find<any>("sectloc.sword_grounds")?.name ?? "Sword Grounds"} · Practice`; this.bg = c.art("sectloc.sword_grounds", "background"); }
     else if (src.kind === "tournament") { const t = c.get<Tournament>(src.id); const r = s.progress.tournaments[t.id]?.round ?? 0; this.waves = [[t.rounds[r]!.opponent]]; this.name = `${t.name} · ${r + 1 === t.rounds.length ? "Final" : `Round ${r + 1}`}`; this.bg = c.art("sectloc.proving_arena", "background") ?? c.art("sectloc.sword_grounds", "background"); }
     else { const n = c.get<Npc>(src.npc); this.waves = [[src.npc]]; this.name = `Spar: ${n.name}`; this.bg = c.art("sectloc.sword_grounds", "background"); }
@@ -170,7 +177,14 @@ export class Encounter {
     const units: Combatant[] = [buildPlayer(this.s, this.c, this.carry)];
     const beast = buildBeast(this.s, this.c);
     if (beast) units.push(beast);
-    for (const npc of this.s.companions.active.slice(0, companionSlots(this.c, this.src))) units.push(buildCompanion(this.s, this.c, npc));
+    const party = this.src.kind === "showcase" ? [SHOWCASE.companion] : this.s.companions.active.slice(0, companionSlots(this.c, this.src));
+    for (const npc of party) units.push(buildCompanion(this.s, this.c, npc));
+    if (this.src.kind === "showcase") {
+      // the test shows an ultimate's close-up: the player carries one, charged (for this fight only; nothing is saved)
+      const p = units[0]!;
+      if (!p.skills.some((x) => x.kind === "ultimate")) p.skills.push(techSkill(this.c, SHOWCASE.ultimate, 0, "ultimate"));
+      p.ult = 100;
+    }
     for (const id of this.waves[this.wave]!) {
       if (id.startsWith("npc.")) units.push(buildDuelist(this.c, id, this.src.kind === "tournament" ? this.c.get<Tournament>(this.src.id).rounds[this.s.progress.tournaments[this.src.id]?.round ?? 0]!.cp : (this.src as any).cp));
       else units.push(buildEnemy(this.c, id, { hpMult: this.opts.enemyHpMult, statMult: this.statMult }));
@@ -321,7 +335,7 @@ export class Encounter {
   drainEvents(): DomainEvent[] { const e = this.events; this.events = []; return e; }
 }
 
-const srcId = (src: EncounterSource) => src.kind === "duel" ? src.npc : src.kind === "event" ? src.node : src.kind === "practice" ? src.enemy : src.id;
+const srcId = (src: EncounterSource) => src.kind === "duel" ? src.npc : src.kind === "event" ? src.node : src.kind === "practice" ? src.enemy : src.kind === "showcase" ? "showcase" : src.id;
 
 /**
  * Tournaments are fought one round per entry; the bracket position is saved. Losing a round resets the run

@@ -51,6 +51,8 @@ export class App {
   img(file?: string): string { return file ? `url("./${file}")` : "none"; }
   ui(id: string, key: string): string | undefined { return this.content.art(id, key); }
   get inGame(): boolean { return !!this.game && !!this.autosave; }
+  /** The arena test fight (Settings): always on the arena stage, nothing spent or won (docs/BATTLE_STAGE.md §7). */
+  startShowcase(): void { startEncounter(this, { kind: "showcase" }); }
 
   async boot(root: HTMLElement): Promise<void> {
     this.content = await loadContent();
