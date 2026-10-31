@@ -86,3 +86,19 @@ test("sect map plaques: one per height band, so no two overlap on a phone", () =
   for (let i = 1; i < ys.length; i++) assert.ok(ys[i]![1] - ys[i - 1]![1] >= 0.075, `${ys[i - 1]![0]} and ${ys[i]![0]} are ${(ys[i]![1] - ys[i - 1]![1]).toFixed(3)} apart`);
   for (const l of c.byPrefix<any>("sectloc")) assert.ok(l.map_position[1] >= 0.04 && l.map_position[1] <= 0.94, `${l.id} plaque inside the map`);
 });
+
+test("a region opens as soon as its last requirement is met, without clearing a place again", async () => {
+  const { Game } = await import("../src/engine/game.ts");
+  const s = newGameState(c, T0, { seed: 1 });
+  s.progress.regions["region.azure_bamboo_forest"] = { discoveredAt: T0, nodes: {} };
+  s.progress.quests.completed["quest.main.bamboo_sovereign"] = 1;   // the forest's sovereign is beaten…
+  const g = new Game(c, s);
+  g.settle(T0 + 1000);
+  assert.ok(!s.progress.regions["region.blazing_mountain"], "…but the realm is still too low: the mountain stays shut");
+  const seen: string[] = [];
+  g.onChange((ev) => { for (const e of ev) if (e.type === "unlock") seen.push((e as any).id); });
+  s.character.realm = "realm.foundation_establishment"; s.character.stage = 1;   // the breakthrough
+  g.settle(T0 + 2000);
+  assert.ok(s.progress.regions["region.blazing_mountain"], "the mountain opens with the breakthrough");
+  assert.ok(seen.includes("region.blazing_mountain"), "and the player is told");
+});

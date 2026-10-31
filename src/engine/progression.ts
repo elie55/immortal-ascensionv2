@@ -14,6 +14,7 @@ import { grantRewards } from "./actions.ts";
 import { checkUnlock, realmAtLeast, affinityLevel } from "./unlock.ts";
 import { itemCount, removeItems, gearPlace, addItem } from "./inventory.ts";
 import { applyUnlock } from "./story.ts";
+import { discoverRegions } from "./nodes.ts";
 
 type Objective = Quest["objectives"][number];
 export interface ObjProgress { label: string; have: number; need: number; done: boolean }
@@ -261,6 +262,10 @@ export function sweep(s: GameState, c: ContentIndex, now: number, announced: Set
     if (achievementProgress(s, c, a).done) { s.progress.achievements[a.id] = now; grantRewards(s, c, a.rewards, events); events.push({ type: "achievement", id: a.id }); }
   }
   while (promote(s, c, events)) { /* multiple ranks in a row are possible after a long absence */ }
+  // A region opens the moment its last requirement is met (a breakthrough, a quest, a rank), not only when a fight
+  // is won: clearing a region's last place before reaching the next realm used to leave the next region shut until
+  // that place was cleared again. Running here also opens it for saves already stuck that way.
+  discoverRegions(s, c, now, events);
   // Places gated by Sect Fame or realm (sect locations, secret realms) announce themselves once when they open.
   for (const p of [...c.byPrefix<any>("sectloc"), ...c.byPrefix<any>("dungeon").filter((d) => d.kind === "secret_realm")]) {
     const u = p.unlock ?? p.entry;
