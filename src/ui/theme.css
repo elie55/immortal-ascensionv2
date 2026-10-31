@@ -482,7 +482,9 @@ button.setrow { width: 100%; color: inherit; }
 .bt-flash.red { animation: flashred .5s ease-out; } .bt-flash.gold { animation: flashgold .6s ease-out; } .bt-flash.white { animation: flashwhite .45s ease-out; }
 @keyframes flashred { 0% { opacity: 1; background: radial-gradient(circle at 50% 60%, rgba(255,60,80,.45), rgba(120,0,20,.6)); } 100% { opacity: 0; } }
 @keyframes flashgold { 0% { opacity: 1; background: radial-gradient(circle at 50% 70%, rgba(255,240,190,.75), rgba(255,190,80,.25) 60%, transparent); } 100% { opacity: 0; } }
-@keyframes flashwhite { 0% { opacity: .85; background: #fff; } 100% { opacity: 0; } }
+@keyframes flashwhite { 0% { opacity: .7; background: #fff; } 100% { opacity: 0; } }
+.bt-flash.soft { animation: flashsoft .4s ease-out; }
+@keyframes flashsoft { 0% { opacity: .35; background: radial-gradient(circle at 50% 40%, #fff, rgba(255,255,255,.4) 70%); } 100% { opacity: 0; } }
 
 /* hud */
 .bt-hud { position: relative; z-index: 6; display: flex; flex-direction: column; gap: 6px; padding: calc(var(--safe-top) + 8px) 10px 0; }
@@ -2001,7 +2003,7 @@ html, body { font-variant-numeric: tabular-nums; }
 .vx-dust { width: 70px; height: 26px; border-radius: 50%; background: radial-gradient(closest-side, rgba(230,220,200,.55), transparent); }
 /* arena: every figure is on the canvas, so the DOM boxes only carry bars and marks, drawn above it */
 .battle.arena .bt-puppets { z-index: 0; }
-.battle.arena .rigged .ground, .battle.arena .rigged .aura { display: none; }
+.battle.arena .rigged .ground, .battle.arena .rigged .aura, .battle.arena.gl .ground, .battle.arena.gl .aura { display: none; }
 /* the target mark sits on the foe's bar, left of its name */
 .battle.arena .bt-foe-u.focus .fu-mark { top: auto; bottom: calc(100% + 5px); left: calc(18% - 15px); width: 10px; height: 10px; animation: none; }
 /* close-up: the caster's upper body, not the whole figure */
@@ -2010,3 +2012,43 @@ html, body { font-variant-numeric: tabular-nums; }
 .bt-float.tick { font-size: calc(17rem / 15); animation-duration: .8s; }
 .bt-float.crit.tick { font-size: calc(22rem / 15); }
 .vx-drop { width: 5px; box-shadow: 0 0 8px var(--c), 0 0 18px color-mix(in srgb, var(--c) 60%, transparent); }
+/* painted effects (ui.vfx): a colour tint masked by the painting under its bright core, both added to the scene */
+/* the painting carries alpha (light on black → alpha by brightness), so it reads on bright and dark scenes alike:
+   a colour body masked by the painting, its bright core added on top, a glow in the colour around both */
+.vx-p { position: absolute; pointer-events: none; filter: drop-shadow(0 0 5px var(--c)) drop-shadow(0 0 14px color-mix(in srgb, var(--c) 70%, transparent)); }
+.vx-p > i, .vx-p > b { position: absolute; inset: 0; }
+.vx-p .vx-tint { inset: -3%; background: var(--c); -webkit-mask: var(--img) center / 100% 100% no-repeat; mask: var(--img) center / 100% 100% no-repeat; }
+.vx-p .vx-core { background: var(--img) center / 100% 100% no-repeat; mix-blend-mode: plus-lighter; filter: grayscale(.4) brightness(1.15); }
+.vx-p.normal { filter: none; } .vx-p.normal .vx-core { filter: none; mix-blend-mode: normal; }
+/* arena: the party's bars are in the cards below; figures carry a ground shadow drawn on the canvas */
+.battle.arena .bt-ally-u .fu-mini { display: none; }
+.battle.arena .bt-puppets { filter: drop-shadow(0 3px 4px rgba(0,0,0,.28)); }
+/* close-up, round 2: letterbox, the painted cut-in, the art's name in brush calligraphy, a white cut back */
+.cu-bar { position: absolute; left: 0; right: 0; height: 13%; background: #000; z-index: 3; }
+.cu-bar.top { top: 0; } .cu-bar.bottom { bottom: 0; }
+.bt-closeup.on .cu-bar.top { animation: cu-bar-t var(--d, 1500ms) cubic-bezier(.2,.8,.2,1) forwards; } @keyframes cu-bar-t { 0% { transform: translateY(-100%); } 10%, 88% { transform: none; } 100% { transform: translateY(-100%); } }
+.bt-closeup.on .cu-bar.bottom { animation: cu-bar-b var(--d, 1500ms) cubic-bezier(.2,.8,.2,1) forwards; } @keyframes cu-bar-b { 0% { transform: translateY(100%); } 10%, 88% { transform: none; } 100% { transform: translateY(100%); } }
+.cu-art.cutin { right: -6%; top: 8%; width: 100%; height: 86%; background-size: contain; background-position: 70% 50%; clip-path: none; filter: drop-shadow(0 0 18px color-mix(in srgb, var(--c, #fff) 80%, transparent)) drop-shadow(0 0 2px #fff); }
+.bt-closeup.on .cu-art.cutin { animation: cu-cut var(--d, 1500ms) cubic-bezier(.2,.8,.2,1) forwards; } @keyframes cu-cut { 0% { transform: translateX(55%) scale(1.25) rotate(4deg); opacity: 0; } 14% { opacity: 1; } 24% { transform: translateX(0) scale(1.08) rotate(0); } 100% { transform: translateX(-5%) scale(1.14) rotate(-1deg); } }
+.cu-cn { position: absolute; left: 6%; top: 15%; z-index: 4; writing-mode: vertical-rl; font-family: var(--f-brush), serif; font-size: min(calc(56rem / 15), 15vw); line-height: 1; letter-spacing: .06em; color: #fff; text-shadow: 0 0 18px var(--c, #fff), 0 0 4px var(--c, #fff), 0 3px 6px #000; }
+.bt-closeup.on .cu-cn { animation: cu-cn var(--d, 1500ms) ease-out forwards; } @keyframes cu-cn { 0%, 18% { opacity: 0; transform: translateY(-14px) scale(1.15); filter: blur(4px); } 34% { opacity: 1; transform: none; filter: none; } 88% { opacity: 1; } 100% { opacity: 0; } }
+.cu-text { z-index: 4; bottom: 15%; }
+.cu-flash { position: absolute; inset: 0; z-index: 5; background: #fff; opacity: 0; pointer-events: none; }
+.bt-closeup.on .cu-flash { animation: cu-flash var(--d, 1500ms) linear forwards; } @keyframes cu-flash { 0% { opacity: .9; } 6% { opacity: 0; } 90% { opacity: 0; } 100% { opacity: .85; } }
+.battle.arena.ult-dark .bt-bg { filter: brightness(.35) saturate(.7) hue-rotate(-8deg); }
+
+/* arena victory beat: a gold 胜 stamped where the foes stood, the word on a dark ribbon under it, rays turning behind */
+.bt-victory { position: absolute; left: 0; right: 0; top: calc(var(--safe-top, 0px) + 17%); z-index: 45; display: flex; flex-direction: column; align-items: center; pointer-events: none; animation: bv-in .5s cubic-bezier(.2,.9,.3,1.2) both; }
+.bt-victory.out { animation: bv-out .35s ease-in forwards; }
+.bt-victory .bv-rays { position: absolute; top: -70px; width: 300px; height: 300px; border-radius: 50%; background: repeating-conic-gradient(from 0deg, rgba(255,224,140,.38) 0 6deg, transparent 6deg 18deg); -webkit-mask: radial-gradient(circle, #000 18%, transparent 66%); mask: radial-gradient(circle, #000 18%, transparent 66%); animation: bv-spin 6s linear infinite; }
+.bt-victory .bv-cn { position: relative; font-family: var(--f-brush), serif; font-size: min(calc(96rem / 15), 25vw); line-height: .95; color: #ffe39a; -webkit-text-stroke: 2px #5a3208; paint-order: stroke fill; text-shadow: 0 0 14px rgba(255,200,90,.95), 0 0 40px rgba(255,160,50,.7), 0 4px 10px rgba(0,0,0,.6); animation: bv-stamp .55s cubic-bezier(.2,.9,.3,1.3) both; }
+.bt-victory b { position: relative; z-index: 1; margin-top: -6px; width: 100%; padding: 8px 0 8px .5em; text-align: center; background: linear-gradient(90deg, transparent, rgba(8,14,40,.88) 22%, rgba(8,14,40,.88) 78%, transparent); border-top: 1px solid var(--gold-line); border-bottom: 1px solid var(--gold-line);
+  font-family: var(--f-title); font-weight: 900; font-size: calc(22rem / 15); letter-spacing: .5em; text-transform: uppercase; color: #ffeec0; text-shadow: 0 0 10px rgba(255,190,80,.95), 0 2px 0 rgba(60,30,0,.9); animation: bv-word .6s .15s ease-out both; }
+.bt-victory .bv-rule { display: none; }
+.battle.won .bt-combo { opacity: 0; }
+@keyframes bv-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bv-out { to { opacity: 0; transform: translateY(-14px) scale(1.04); } }
+@keyframes bv-spin { to { transform: rotate(360deg); } }
+@keyframes bv-stamp { 0% { transform: scale(2.4); opacity: 0; filter: blur(6px); } 60% { transform: scale(.94); opacity: 1; filter: blur(0); } 100% { transform: scale(1); } }
+@keyframes bv-word { from { opacity: 0; letter-spacing: 1em; clip-path: inset(0 50%); } to { opacity: 1; letter-spacing: .5em; clip-path: inset(0 0); } }
+@media (prefers-reduced-motion: reduce) { .bt-victory, .bt-victory * { animation: none !important; } }

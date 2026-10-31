@@ -47,6 +47,18 @@ def fit(im, w, h):
     return im.resize((w, h), Image.LANCZOS)
 
 
+def light_to_alpha(im):
+    """Painted light on black (battle effects) → the same light with alpha: alpha follows brightness and the colour is
+    un-premultiplied, so the arena can tint it with a mask and add it over the scene (docs/BATTLE_STAGE.md §4)."""
+    import numpy as np
+    a = np.asarray(im.convert("RGB")).astype(np.float32) / 255.0
+    lum = a.max(axis=2)
+    alpha = np.clip((lum - 0.04) / 0.96, 0, 1) ** 0.9            # the black floor goes fully clear
+    rgb = np.clip(a / np.maximum(alpha[..., None], 1e-3), 0, 1)
+    out = np.dstack([rgb, alpha]) * 255.0
+    return Image.fromarray(out.astype(np.uint8), "RGBA")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("root", nargs="?", default=""); ap.add_argument("--variant", default="IA"); ap.add_argument("--sheet"); ap.add_argument("--dry", action="store_true")
@@ -79,6 +91,7 @@ def main():
         im = im.convert("RGBA" if j.get("transparent") else "RGB")
         if rel.startswith(TRIM_PREFIXES): im = trim_square(im)
         im = fit(im, *j["size"])
+        if rel.startswith("vfx/") and not j.get("transparent"): im = light_to_alpha(im)
         if not a.dry:
             dst = os.path.join(a.out, j["file"]); os.makedirs(os.path.dirname(dst), exist_ok=True)
             im.save(dst, "WEBP", quality=90, method=4)

@@ -152,7 +152,8 @@
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left"
       },
       "battle_juvenile": {
         "file": "assets/beasts/yunyun_juvenile.webp",
@@ -166,7 +167,8 @@
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left"
       },
       "battle_adult": {
         "file": "assets/beasts/yunyun_adult.webp",
@@ -180,7 +182,8 @@
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left"
       },
       "battle_sovereign": {
         "file": "assets/beasts/yunyun_sovereign.webp",
@@ -194,8 +197,14 @@
         "references": [
           "refs/mockups/spirit_beasts.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left"
       }
+    },
+    "anim": {
+      "rig": "assets/anim/beast.yunyun/rig.json",
+      "art": "battle_juvenile",
+      "archetype": "quadruped"
     }
   },
   {

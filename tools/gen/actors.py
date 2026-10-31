@@ -235,6 +235,14 @@ def finalize_npcs(lst):
             # the protagonist and Dao companions fight on the player's side (facing right); duel-only opponents face the player
             ally = n["role"] == "protagonist" or n.get("dao_companion", {}).get("eligible")
             n["art"]["battle"] = battle(f"npcs/{n['id'].split('.')[1]}/battle", f"{n['name']} in combat stance, same design as the reference, sword drawn", refs=n["art"]["full_body"]["references"], facing="right" if ally else "front")
+        if n["id"] == "npc.lin_xueyao":
+            # the ultimate's full-screen close-up on the arena stage (docs/BATTLE_STAGE.md: the test fight)
+            n["art"]["cutin"] = art("assets/npcs/lin_xueyao/cutin.png", f"{STYLE}. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: "
+                                    "Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, wearing a white hanfu with pale jade-green layered robes and translucent flowing sleeves, "
+                                    "raising her long sword diagonally before her face with both hands, the blade glowing white-blue, intense focused determined eyes glowing faint jade, "
+                                    "hair and sleeves whipping sideways in a strong wind, swirling sword light, wind streaks and a few cherry blossom petals around her, "
+                                    "strong rim light, high contrast, cinematic, the complete head, both hands and the sword in frame, isolated on a plain background, no text.",
+                                    (1024, 1280), True, ["assets/npcs/lin_xueyao/full_body.webp", "assets/npcs/lin_xueyao/battle.webp"])
     return lst
 
 if __name__ == "__main__":

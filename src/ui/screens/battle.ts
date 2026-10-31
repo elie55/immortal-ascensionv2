@@ -13,7 +13,7 @@ import { icon } from "../core/icons.ts";
 import { AnimStage } from "../anim/stage.ts";
 import { layout, strikeBox, focusOf, type Box } from "../battle/field.ts";
 import { beats as toBeats, plan as planShot, cameraFor, type ActionBeat, type Vfx } from "../battle/choreo.ts";
-import { play as playVfx, dashTrail, type VfxCtx } from "../battle/vfx.ts";
+import { play as playVfx, dashTrail, dust, embers, gather, castArray, type VfxCtx, type Sprite } from "../battle/vfx.ts";
 import type { RigDef } from "../anim/rig.ts";
 import { RARITY_LABEL } from "../core/kit.ts";
 import type { Screen } from "../core/router.ts";
@@ -105,7 +105,9 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
 
   const name = (uid: number) => battle.units.find((u) => u.uid === uid)?.name ?? "?";
   const unit = (uid: number) => battle.units.find((u) => u.uid === uid);
-  const dur = (ms: number) => ms / speed;
+  /** Slow motion (a finishing blow): the screen's clock runs at this rate, the figures' clock too (AnimStage.timeScale). */
+  let timeK = 1;
+  const dur = (ms: number) => ms / speed / timeK;
   const portrait = (u: Combatant) => u.side === "enemy" ? c.art(u.id, "icon") : u.kind === "beast" ? c.art(u.id, "icon") : c.artAny(u.id, "portrait", "battle");
 
   // ---------- static layout ----------
@@ -124,7 +126,9 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   const cam = h("div", { class: "bt-cam" }, foes, party, fx);
   const stage = h("div", { class: "bt-stage" }, cam, order, banner);
   // rigged figures are painted on a canvas over the stage (docs/ANIMATION.md); the .spr boxes keep layout and taps
-  const puppets = new AnimStage(cam, { quality: app.settings.animationQuality, reducedMotion: app.settings.reducedMotion, img: (f) => `./${f}` });
+  const puppets = new AnimStage(cam, { quality: app.settings.animationQuality, reducedMotion: app.settings.reducedMotion, img: (f) => `./${f}`, shadows: arena });
+  // the canvas draws every figure with its own contact shadow: the DOM ground marks would show while textures load
+  if (arena && puppets.ok) root.classList.add("gl");
   const prompt = h("div", { class: "bt-prompt-slot" });
   const cards = h("div", { class: "bt-cards" });
   const actions = h("div", { class: "bt-actions" });
@@ -163,13 +167,16 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     if (!puppets.ok || !u.art) return;
     const block = c.animFor(u.art);
     const toward: [number, number] | undefined = arena ? (u.side === "ally" ? [0.78, -0.62] : [-0.78, 0.62]) : undefined;
+    // the arena turns everyone toward their foes: the party looks right, the enemies left (mirrored when drawn the other way)
+    const face: 1 | -1 | undefined = arena ? (u.side === "ally" ? 1 : -1) : undefined;
+    const looks = ({ left: -1, right: 1, front: 0 } as const)[c.facingOf(u.art)];
     if (!block) {
       // the arena paints every figure on the canvas (one depth order, shared clips); rigless ones as still puppets
-      if (arena) puppets.addStill(u.uid, u.art, art, sprite, z, glowRgb(u.element), u.side, toward, u.kind === "beast" ? "quadruped" : u.kind === "boss" ? "large" : "humanoid_unarmed")
+      if (arena) puppets.addStill(u.uid, u.art, art, sprite, z, glowRgb(u.element), u.side, toward, u.kind === "beast" ? "quadruped" : u.kind === "boss" ? "large" : "humanoid_unarmed", looks, face)
         .then(() => { if (puppets.has(u.uid) && u.alive) puppets.play(u.uid, "enter", speed); }).catch(() => { /* the still sprite stays */ });
       return;
     }
-    loadRig(block.rig).then((def) => { if (def && views.get(u.uid)?.spriteArt === art) return puppets.add(u.uid, def, art, sprite, z, glowRgb(u.element), u.side, toward); })
+    loadRig(block.rig).then((def) => { if (def && views.get(u.uid)?.spriteArt === art) return puppets.add(u.uid, def, art, sprite, z, glowRgb(u.element), u.side, toward, face); })
       .then(() => { if (puppets.has(u.uid) && u.alive) puppets.play(u.uid, "enter", speed); })
       .catch(() => { /* no rig: the still sprite stays */ });
   }
@@ -413,9 +420,12 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const v = views.get(uid); if (!v) return 120;
     return v.spriteArt.getBoundingClientRect().height * cam.offsetWidth / Math.max(1, cam.getBoundingClientRect().width);
   }
-  function float(uid: number, text: string, cls: string, pre?: string) {
+  function float(uid: number, text: string, cls: string, pre?: string, stack?: number) {
     const p = centerOf(uid); if (!p) return;
-    const f = h("div", { class: ["bt-float", cls], style: { left: `${p.x + (Math.random() * 36 - 18)}px`, top: `${p.y - 10}px` } }, pre && h("small", null, pre), text);
+    // a flurry's numbers climb in a zigzag so none covers the one before it
+    const dx = stack !== undefined ? (stack % 2 ? 22 : -22) + (Math.random() * 8 - 4) : Math.random() * 36 - 18;
+    const dy = stack !== undefined ? -stack * 15 : 0;
+    const f = h("div", { class: ["bt-float", cls], style: { left: `${p.x + dx}px`, top: `${p.y - 10 + dy}px` } }, pre && h("small", null, pre), text);
     fx.appendChild(f); setTimeout(() => f.remove(), dur(1300) + 200);
   }
   function slash(uid: number, element: string, big = false) {
@@ -431,7 +441,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     // the flash is a one-shot: drop the class once it has played so nothing can replay it later
     clearTimeout(hitTimers.get(uid)); hitTimers.set(uid, window.setTimeout(() => v.spriteArt.classList.remove("hit", "hit-big"), 520));
   }
-  function screenFlash(kind: "red" | "gold" | "white") { flash.className = "bt-flash"; void flash.offsetWidth; flash.className = `bt-flash ${kind}`; }
+  function screenFlash(kind: "red" | "gold" | "white" | "soft") { flash.className = "bt-flash"; void flash.offsetWidth; flash.className = `bt-flash ${kind}`; }
   function shake(big = false) {
     if (app.settings.reducedMotion || !app.settings.screenShake) return;
     stage.classList.remove("shake", "shake-big"); void stage.offsetWidth; stage.classList.add(big ? "shake-big" : "shake");
@@ -547,6 +557,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
           const v = views.get(e.target);
           v?.card?.classList.add("dead");
           caption = `${name(e.target)} is defeated`; renderTop();
+          if (arena) { const p = centerOf(e.target); if (p) embers(vctx, p, heightOf(e.target)); puppets.setDecal(e.target, null); }
           if (rigged(e.target)) await puppets.play(e.target, "defeat", speed).done;
           else { v?.sprite.classList.add("dying"); await wait(500); }
           if (v && unit(e.target)?.side === "enemy") v.gone = true;
@@ -619,34 +630,76 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   }
   function comboEnd() { clearTimeout(comboT); comboT = window.setTimeout(() => { combo.classList.remove("on"); comboN = 0; }, dur(900)); }
 
-  /** Ultimate close-up (mockup: Epic Seven reference): the screen darkens, the caster fills it, the art's name. */
-  function showCloseup(u: Combatant, skillName: string, color: string): Promise<void> {
-    const art = u.side === "ally" ? c.artAny(u.id, "expression_stern", "full_body", "battle", "portrait") : c.artAny(u.id, "intro", "battle") ?? u.art;
+  /**
+   * Ultimate close-up (Epic Seven reference): letterbox bars close in, the world goes dark behind speed lines in the
+   * art's colour, the caster's painted cut-in sweeps across (her full-body art when no cut-in is painted), the art's
+   * name in gold and in brush calligraphy; a white flash cuts back to the field.
+   */
+  function showCloseup(u: Combatant, skillName: string, skillCn: string | undefined, color: string): Promise<void> {
+    const cut = u.side === "ally" ? c.art(u.id, "cutin") : undefined;
+    const art = cut ?? (u.side === "ally" ? c.artAny(u.id, "expression_stern", "full_body", "battle", "portrait") : c.artAny(u.id, "intro", "battle") ?? u.art);
+    const ms = 1500;
     replaceChildren(closeup,
       h("div", { class: "cu-lines" }),
-      h("div", { class: "cu-art", style: { backgroundImage: app.img(art) } }),
-      h("div", { class: "cu-text" }, h("span", { class: "cu-pre" }, u.side === "ally" ? "Ultimate" : "Devastating art"), h("b", null, skillName), h("span", { class: "cu-who" }, u.name)));
-    closeup.style.setProperty("--c", color); closeup.style.setProperty("--d", `${Math.round(dur(1150))}ms`);
+      h("div", { class: "cu-bar top" }), h("div", { class: "cu-bar bottom" }),
+      h("div", { class: ["cu-art", cut && "cutin"], style: { backgroundImage: app.img(art) } }),
+      skillCn && h("div", { class: "cu-cn" }, skillCn),
+      h("div", { class: "cu-text" }, h("span", { class: "cu-pre" }, u.side === "ally" ? "Ultimate" : "Devastating art"), h("b", null, skillName), h("span", { class: "cu-who" }, u.name)),
+      h("div", { class: "cu-flash" }));
+    closeup.style.setProperty("--c", color); closeup.style.setProperty("--d", `${Math.round(dur(ms))}ms`);
     closeup.classList.remove("on"); void closeup.offsetWidth; closeup.classList.add("on");
     try { navigator.vibrate?.(20); } catch { /* not supported */ }
-    return new Promise((r) => setTimeout(() => { closeup.classList.remove("on"); r(); }, dur(1150)));
+    return new Promise((r) => setTimeout(() => { closeup.classList.remove("on"); r(); }, dur(ms)));
   }
 
-  /** A landed or dodged hit inside a shot (the effect already played; numbers, flash, shake). */
-  function arenaHit(e: Extract<BattleEvent, { t: "hit" }>, tick = false) {
+  /** A landed or dodged hit inside a shot (the effect already played): numbers, flash, hit-stop, knockback, shake. */
+  function arenaHit(e: Extract<BattleEvent, { t: "hit" }>, o: { tick?: number; dir?: 1 | -1; heavy?: boolean } = {}) {
     if (e.dodged) { float(e.target, "Miss", "miss"); if (rigged(e.target)) puppets.play(e.target, "dodge", speed); return; }
-    if (tick) { float(e.target, fmt.int(e.amount), e.crit ? "dmg crit tick" : "dmg tick"); hitFlash(e.target, false); return; }
     const big = e.amount >= (unit(e.target)?.maxHp ?? 1) * 0.25;
-    float(e.target, fmt.int(e.amount), e.crit ? "dmg crit" : e.kind === "dot" ? "dmg dot" : unit(e.target)?.side === "ally" ? "dmg taken" : "dmg", e.crit ? "CRITICAL!" : undefined);
+    const strong = e.crit || big || !!o.heavy;
+    if (o.tick !== undefined) float(e.target, fmt.int(e.amount), e.crit ? "dmg crit tick" : "dmg tick", undefined, o.tick);
+    else float(e.target, fmt.int(e.amount), e.crit ? "dmg crit" : e.kind === "dot" ? "dmg dot" : unit(e.target)?.side === "ally" ? "dmg taken" : "dmg", e.crit ? "CRITICAL!" : undefined);
     if (e.absorbed) float(e.target, `${fmt.int(e.absorbed)} blocked`, "shield");
-    hitFlash(e.target, e.crit || big);
+    hitFlash(e.target, strong);
+    // the blow lands: every figure holds for a beat while the struck one trembles, then it is pushed back
+    puppets.hitStop(e.crit ? 120 : strong ? 90 : 60, e.target, e.crit ? 7 : strong ? 5 : 3);
+    knock(e.target, o.dir ?? (unit(e.target)?.side === "enemy" ? 1 : -1), e.crit ? 16 : strong ? 12 : 7);
+    punch(e.crit ? 0.03 : strong ? 0.02 : 0.01);
     if (e.crit || big) shake(big && unit(e.target)?.side === "ally");
     renderUnits();
+  }
+  /** Push a figure back along the blow (its box moves; the puppet follows), then it settles. */
+  function knock(uid: number, dir: 1 | -1, px: number) {
+    const v = views.get(uid); if (!v || app.settings.reducedMotion) return;
+    v.sprite.animate([{ translate: "0 0" }, { translate: `${dir * px}px ${-dir * px * 0.35}px`, offset: 0.22 }, { translate: "0 0" }], { duration: dur(360), easing: "cubic-bezier(.2,.8,.3,1)" });
+  }
+  /** A small camera punch on impact. */
+  function punch(k: number) { if (app.settings.reducedMotion) return; cam.animate([{ scale: "1" }, { scale: String(1 + k), offset: 0.3 }, { scale: "1" }], { duration: dur(180), easing: "ease-out" }); }
+  /** Slow motion for a finishing blow (wall-clock length). */
+  function slowMo(k: number, ms: number) {
+    if (app.settings.reducedMotion) return;
+    timeK = k; puppets.timeScale = k;
+    setTimeout(() => { timeK = 1; puppets.timeScale = 1; }, ms);
   }
 
   const vfxOf = (id: string): Vfx | undefined => c.find<any>(id)?.vfx;
   const infoOf = (uid: number) => { const u = unit(uid); return u ? { side: u.side, alive: u.alive } : undefined; };
-  const vctx: VfxCtx = { layer: fx, dur, reduced: app.settings.reducedMotion };
+  const vfxArt = (k: Sprite) => app.ui("ui.vfx", k);
+  const vctx: VfxCtx = { layer: fx, dur, reduced: app.settings.reducedMotion, sprite: (k) => { const f = vfxArt(k); return f ? app.img(f) : undefined; } };
+  /** A unit's feet in the effect layer's pixels. */
+  function feetOf(uid: number): { x: number; y: number } | null {
+    const v = views.get(uid); if (!v) return null;
+    const r = v.spriteArt.getBoundingClientRect(), s0 = cam.getBoundingClientRect(); const k = cam.offsetWidth / Math.max(1, s0.width);
+    return { x: (r.left - s0.left + r.width / 2) * k, y: (r.bottom - s0.top) * k - r.height * k * 0.03 };
+  }
+  /** The ring under the unit whose turn it is (gold for the party, red for foes, jade while it waits for you). */
+  const TURN_RGB: Record<string, [number, number, number]> = { ally: [1, 0.82, 0.45], enemy: [1, 0.35, 0.4], wait: [0.45, 1, 0.8] };
+  function turnRing(uid: number | null, kind: "ally" | "enemy" | "wait" = "ally") {
+    if (!arena) return;
+    for (const u of battle.units) if (u.uid !== uid) puppets.setDecal(u.uid, null);
+    const f = vfxArt("array");
+    if (uid !== null && f) puppets.setDecal(uid, f, TURN_RGB[kind], kind === "wait" ? 0.95 : 0.85);
+  }
 
   /** One action on the arena: approach, strike with its effect, numbers and hit counter, aftermath, return. */
   async function playShot(beat: ActionBeat) {
@@ -659,70 +712,103 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     // the basic strike and counters take the striker's element colour; techniques carry their own
     const color = e.skill === "basic" || e.skill === "counter" ? ELEMENT_COLOR[element] ?? "#f2f5ff" : shot.vfx.color;
     const tech = e.skill !== "basic" && e.skill !== "counter";
+    const dir: 1 | -1 = a.side === "ally" ? 1 : -1;
     if (tech) { caption = `${a.name}: ${e.name}`; renderTop(); }
     comboN = 0;
+    turnRing(a.uid, a.side);
     // the actor is drawn in front of everyone while it acts (a dash can end behind another figure's depth)
     puppets.setZ(a.uid, 999); if (v) v.sprite.style.zIndex = "60";
-    // 1. announce
-    if (isUlt) { root.classList.add("ult-dark"); await showCloseup(a, e.name, color); }
-    else if (e.heavy || e.charged) { showSkillName(e.name, "heavy"); screenFlash("red"); }
-    else if (tech) showSkillName(e.name, a.side === "enemy" ? "foe" : "");
-    // 2. approach (and the camera)
     const homeP = home.get(a.uid);
     const firstT = shot.strikes[0] ? home.get(shot.strikes[0].target) : undefined;
-    const pts = [homeP, ...shot.strikes.map((x) => home.get(x.target))].filter((p): p is Box => !!p);
+    const tgtBoxes = shot.strikes.map((x) => home.get(x.target)).filter((p): p is Box => !!p);
     const sp = shot.vfx.approach === "dash" && homeP && firstT ? strikeBox(homeP, firstT, a.side, stageSize()) : undefined;
-    camera(cameraFor(shot), focusOf(isUlt ? pts.slice(1) : sp && firstT ? [sp, firstT] : pts), isUlt ? 420 : 300);
+
+    // 1. announce: an ultimate gathers its power, then the close-up; heavy arts flash red; techniques show their name
+    if (isUlt && homeP) {
+      root.classList.add("ult-dark");
+      camera("zoom", focusOf([homeP]), 420);
+      puppets.setGlow(a.uid, glowRgb(element));
+      if (rigged(a.uid)) puppets.play(a.uid, "charge", speed);
+      const ch = centerOf(a.uid), ft = feetOf(a.uid);
+      if (ch && ft) gather(vctx, ch, ft.y, heightOf(a.uid) * 0.9, color, 720);
+      await wait(760);
+      await showCloseup(a, e.name, c.find<any>(e.skill)?.name_cn, color);
+      screenFlash("white");
+    } else if (e.heavy || e.charged) { showSkillName(e.name, "heavy"); screenFlash("red"); }
+    else if (tech) showSkillName(e.name, a.side === "enemy" ? "foe" : "");
+
+    // 2. approach: a crouch, then the dash with afterimages and dust; the camera pushes in on the pair
+    camera(cameraFor(shot), focusOf(isUlt ? tgtBoxes : sp && firstT ? [sp, firstT] : homeP ? [homeP, ...tgtBoxes] : tgtBoxes), isUlt ? 420 : 300);
     if (sp && homeP) {
-      const from = centerOf(a.uid);
+      if (rigged(a.uid)) puppets.play(a.uid, "dash", speed);
+      await wait(90);
+      const from = feetOf(a.uid);
       dashing.add(a.uid);
+      puppets.setTrail(a.uid, 1);
       place(a, sp, dur(shot.timing.approach));
-      v?.sprite.classList.add("dashing");
-      if (from) dashTrail(vctx, { x: from.x, y: from.y + heightOf(a.uid) * 0.45 }, { x: sp.x, y: sp.feet - sp.h * 0.05 }, color);
+      if (from) dashTrail(vctx, from, { x: sp.x, y: sp.feet }, color);
       await wait(shot.timing.approach);
-      v?.sprite.classList.remove("dashing");
-    } else if (tech && !isUlt) castRing(e.actor, element);
-    // 3. strike: the rig's swing or cast, the effect leaves at contact
+      puppets.setTrail(a.uid, 0);
+      const land = feetOf(a.uid); if (land) dust(vctx, land, heightOf(a.uid) * 0.5, -dir);
+    } else if (tech && !isUlt) {
+      castRing(e.actor, element);
+      const ft = feetOf(a.uid); if (ft) castArray(vctx, ft, heightOf(a.uid) * 0.9, color, 900);
+    }
+
+    // 3. strike: the rig's swing or cast; the effect leaves at contact
     if (rigged(a.uid)) { puppets.setGlow(a.uid, glowRgb(element)); await puppets.play(a.uid, shot.clip, speed).contact; }
     else if (v) { v.sprite.classList.remove("acting"); void v.sprite.offsetWidth; v.sprite.classList.add("acting"); setTimeout(() => v.sprite.classList.remove("acting"), dur(460)); await wait(isUlt ? 260 : 170); }
     const targets = shot.strikes.length ? shot.strikes.map((x) => x.target) : shot.friendly;
     const at = targets.map((t) => centerOf(t)).filter((p): p is { x: number; y: number } => !!p);
     const from = centerOf(a.uid) ?? at[0];
-    if (at.length && from) {
-      const ground = Math.max(...targets.map((t) => { const vv = views.get(t); if (!vv) return 0; const r = vv.spriteArt.getBoundingClientRect(), s0 = cam.getBoundingClientRect(); return (r.bottom - s0.top) * cam.offsetWidth / Math.max(1, s0.width); }));
-      await playVfx(vctx, { shape: shot.vfx.shape, color, impact: shot.vfx.impact, from, to: at, size: heightOf(targets[0]!), ground });
-    }
-    // numbers: every hit of the actor in order, the counter climbing
+    // the numbers: every hit of the actor; an ultimate or a heavy art lands as a flurry whose numbers add up to the
+    // real hit (presentation only; the engine's hits are unchanged), and the hit counter counts every one
     const mine = beat.effects.filter((x): x is Extract<BattleEvent, { t: "hit" }> => x.t === "hit" && x.actor === a.uid);
-    // an ultimate or a heavy art lands as a flurry: its damage is shown in several numbers that add up to the real
-    // total (presentation only; the engine's hits are unchanged), and the hit counter counts them
     const ticks = isUlt ? 6 : shot.vfx.impact === "heavy" ? 3 : 1;
-    for (const [i, x] of mine.entries()) {
-      if (x.dodged || ticks === 1 || x.amount < ticks * 4) { arenaHit(x); if (!x.dodged) comboStep(); }
-      else {
-        const w = Array.from({ length: ticks }, () => 0.75 + Math.random() * 0.5); const sum = w.reduce((p, q) => p + q, 0);
-        let left = x.amount;
-        for (let k = 0; k < ticks; k++) {
-          const amt = k === ticks - 1 ? left : Math.max(1, Math.round(x.amount * w[k]! / sum)); left -= amt;
-          arenaHit({ ...x, amount: amt, absorbed: k === ticks - 1 ? x.absorbed : 0 }, k < ticks - 1);
-          comboStep();
-          if (k < ticks - 1) await wait(isUlt ? 85 : 110);
-        }
+    const queue: { e: Extract<BattleEvent, { t: "hit" }>; tick?: number }[] = [];
+    for (const x of mine) {
+      if (x.dodged || ticks === 1 || x.amount < ticks * 4) { queue.push({ e: x }); continue; }
+      const w = Array.from({ length: ticks }, () => 0.75 + Math.random() * 0.5); const sum = w.reduce((p, q) => p + q, 0);
+      let left = x.amount;
+      for (let k = 0; k < ticks; k++) {
+        const amt = k === ticks - 1 ? left : Math.max(1, Math.round(x.amount * w[k]! / sum)); left -= amt;
+        queue.push({ e: { ...x, amount: amt, absorbed: k === ticks - 1 ? x.absorbed : 0 }, tick: k === ticks - 1 ? undefined : k });
       }
-      if (i < mine.length - 1) await wait(isUlt ? 120 : 95);
     }
-    if (mine.length) await wait(isUlt ? 260 : 170);
-    // 4. aftermath: heals, shields, statuses, energy, phases (and reflected or countered blows), then the fallen
+    const next = () => { const q = queue.shift(); if (!q) return; arenaHit(q.e, { tick: q.tick, dir, heavy: isUlt || shot.vfx.impact === "heavy" }); if (!q.e.dodged) comboStep(); };
+    if (at.length && from) {
+      const ground = Math.max(...targets.map((t) => feetOf(t)?.y ?? 0));
+      // a rain lands its numbers with its blades; other shapes land them all at contact
+      const onLand = shot.vfx.shape === "rain" ? () => { next(); if (!app.settings.reducedMotion) cam.animate([{ translate: "0 0" }, { translate: `${(Math.random() * 2 - 1) * 3}px 3px` }, { translate: "0 0" }], { duration: 120 }); } : undefined;
+      await playVfx(vctx, { shape: shot.vfx.shape, color, impact: shot.vfx.impact, from, to: at, size: heightOf(targets[0]!), ground, element, onLand });
+    }
+    while (queue.length) { next(); if (queue.length) await wait(isUlt ? 80 : 100); }
+    if (isUlt) { shake(true); puppets.hitStop(150, targets[0], 8); punch(0.04); }
+    if (mine.length) await wait(isUlt ? 300 : 180);
+
+    // 4. aftermath: heals, shields, statuses, energy, phases (and reflected or countered blows), then the fallen in slow motion
     for (const x of beat.effects) if (x.t !== "death" && !(x.t === "hit" && x.actor === a.uid)) await playEvent(x);
-    for (const x of beat.effects) if (x.t === "death") await playEvent(x);
-    // 5. return
+    const deaths = beat.effects.filter((x) => x.t === "death");
+    if (deaths.length) { slowMo(0.35, 650); screenFlash("soft"); }
+    for (const x of deaths) await playEvent(x);
+
+    // 5. return: a hop home with afterimages, a landing
     if (dashing.has(a.uid)) {
       dashing.delete(a.uid);
-      if (homeP && a.alive) { place(a, home.get(a.uid) ?? homeP, dur(shot.timing.back)); await wait(shot.timing.back); }
+      if (homeP && a.alive) {
+        if (rigged(a.uid)) puppets.play(a.uid, "hop", speed);
+        puppets.setTrail(a.uid, 0.6);
+        place(a, home.get(a.uid) ?? homeP, dur(shot.timing.back + 60));
+        await wait(shot.timing.back + 60);
+        puppets.setTrail(a.uid, 0);
+        if (rigged(a.uid)) puppets.play(a.uid, "land", speed);
+        const ft = feetOf(a.uid); if (ft) dust(vctx, ft, heightOf(a.uid) * 0.45, dir);
+      }
     }
     camera("none");
     root.classList.remove("ult-dark");
     comboEnd();
+    turnRing(null);
     const hp = home.get(a.uid); if (hp && a.alive) place(a, hp);   // back in its depth order
   }
   const wait = (ms: number) => new Promise((r) => setTimeout(r, dur(ms)));
@@ -752,7 +838,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         if (!playing || battle.result || (battle.manual && battle.needsInput)) break;
         battle.step();
       }
-      if (battle.manual && battle.needsInput) { renderOrder(); renderSkills(); }
+      if (battle.manual && battle.needsInput) { renderOrder(); renderSkills(); if (battle.pending) turnRing(battle.pending.uid, "wait"); }
       if (battle.result) await finishWave();
     } finally {
       busy = false;
@@ -760,8 +846,25 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     }
   }
 
+  /** The arena's last blow is followed by a victory beat on the field: the party cheers, gold motes rise, a 胜 banner. */
+  async function arenaVictory() {
+    if (!arena || battle.result !== "victory") return;
+    const allies = battle.units.filter((u) => u.side === "ally" && u.alive);
+    root.classList.add("won"); combo.classList.remove("on");
+    cheer();
+    camera("push", focusOf(allies.map((u) => home.get(u.uid)).filter((b): b is Box => !!b)), 700);
+    for (const u of allies) { const ch = centerOf(u.uid); if (ch) embers(vctx, ch, heightOf(u.uid), "#ffe08a"); }
+    const el = h("div", { class: "bt-victory" }, h("i", { class: "bv-rays" }), h("div", { class: "bv-cn" }, "胜"), h("b", null, "Victory"), h("i", { class: "bv-rule" }));
+    root.appendChild(el);
+    try { navigator.vibrate?.([15, 60, 25]); } catch { /* not supported */ }
+    await wait(1700);
+    el.classList.add("out"); camera("none");
+    setTimeout(() => el.remove(), 400);
+  }
+
   async function finishWave() {
     await wait(500);
+    if (enc.wave + 1 >= enc.waves.length) await arenaVictory();   // the last wave only; between waves the panel follows at once
     if (practice) { showPracticeDone(); return; }
     if (enc.src.kind === "showcase") { showShowcaseDone(); return; }
     const wr = enc.settleWave(app.now());

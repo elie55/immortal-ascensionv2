@@ -63,9 +63,9 @@ export function buildPlayer(s: GameState, c: ContentIndex, carry?: { hp?: number
 }
 
 /** The active spirit beast as an ally. Stats scale with level; its active ability is its only skill. */
-export function buildBeast(s: GameState, c: ContentIndex): Combatant | null {
-  if (s.beasts.active === null) return null;
-  const bi = s.beasts.owned[s.beasts.active];
+export function buildBeast(s: GameState, c: ContentIndex, stand?: { beast: string; stage: string; level: number; name: string }): Combatant | null {
+  // `stand`: a beast lent for one fight (the arena test), not taken from the save
+  const bi = stand ?? (s.beasts.active === null ? undefined : s.beasts.owned[s.beasts.active]);
   if (!bi) return null;
   const beast = c.get<Beast>(bi.beast);
   const stage = beast.stages.find((x) => x.key === bi.stage) ?? beast.stages[0]!;

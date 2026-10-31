@@ -3,6 +3,8 @@ from common import *
 LIN = "Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, calm gentle face, wearing a white hanfu with pale jade-green layered robes, translucent flowing sleeves and a pink sash, a long sword at her side"
 
 LIN_REF = "assets/npcs/lin_xueyao/full_body.webp"
+FX = "Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. "
+FX_STYLE = "Anime game visual effect, bright clean glowing light. "
 
 def U(key, name, desc, screen, art_block):
     return {"id": f"ui.{key}", **named(name, desc), "screen": screen, "art": art_block}
@@ -81,6 +83,21 @@ def ui():
                            "dragon handles, a glowing emerald jade medallion on its belly, gold filigree, soft jade-green and pink spirit smoke rising from the open top, "
                            "warm rim light, the complete cauldron and smoke in frame, isolated on a plain background, no shelves, no room, no text.",
                            (1024, 1024), True, ["refs/style/alchemy_cauldron.png"])}),
+        # painted battle effects for the arena stage (docs/BATTLE_STAGE.md): light on black, drawn with screen blending
+        U("vfx", "Battle effects", "Painted light effects used by the arena stage: slashes, impacts, blades, rings, pillars, arrays.", "battle", {
+            "slash_arc": art("assets/vfx/slash_arc.png", f"{FX_STYLE}{FX}A single wide crescent sword slash arc sweeping from lower left to upper right, a razor-thin brilliant white core with soft pale cyan glow, tapering to sharp points at both ends, fine motion streaks and a few tiny sparks along its edge, anime action effect.", (1024, 512), False),
+            "slash_cross": art("assets/vfx/slash_cross.png", f"{FX_STYLE}{FX}Two crossing crescent sword slashes forming an X, brilliant white cores with pale cyan glow, sharp tapered ends, a bright flash where they cross, tiny sparks, anime action effect.", (768, 768), False),
+            "impact": art("assets/vfx/impact.png", f"{FX_STYLE}{FX}A radial hit impact burst: an intense white star flash at the exact centre, long sharp light rays shooting outward in every direction, a thin expanding shockwave ring, scattered tiny sparks, anime hit effect.", (768, 768), False),
+            "blade": art("assets/vfx/blade.png", f"{FX_STYLE}{FX}A single ethereal spirit sword made entirely of white and pale blue light, pointing straight down, a slender glowing translucent blade with a simple guard, a long fading light trail above it, centred, vertical, on a completely flat pure black background with no pattern, no checkerboard, no grid.", (384, 1024), False),
+            "shard": art("assets/vfx/shard.png", f"{FX_STYLE}{FX}A single sharp glowing ice crystal shard pointing straight down, translucent cyan and white facets, cold mist trailing above it, centred, vertical.", (384, 768), False),
+            "ring": art("assets/vfx/ring.png", f"{FX_STYLE}{FX}A wide flat elliptical shockwave ring of light seen from a low angle as if lying on the ground, a thin brilliant rim, faint inner glow, a few sparks flying off the rim, centred.", (1024, 512), False),
+            "pillar": art("assets/vfx/pillar.png", f"{FX_STYLE}{FX}A vertical column of heavenly light descending from the top edge to the bottom edge, a blinding white core, soft gold and white glow around it, light motes rising, centred.", (512, 1024), False),
+            "array": art("assets/vfx/array.png", f"{FX_STYLE}{FX}A glowing golden Taoist bagua array seen from straight above: concentric circles, an octagon of eight trigram symbols made of short broken and unbroken bars, a small yin-yang disc at the centre, thin bright gold lines on black, centred, symmetrical, no stars, no pentagrams, no hexagrams, no letters.", (1024, 1024), False),
+            "flare": art("assets/vfx/flare.png", f"{FX_STYLE}{FX}A bright four-pointed star lens flare: a white core with long thin horizontal and vertical spikes and a soft round halo, centred.", (512, 512), False),
+            "swirl": art("assets/vfx/swirl.png", f"{FX_STYLE}{FX}A spiralling vortex of spiritual energy: thin glowing white and pale jade ribbons of light swirling inward to a bright centre, small sparkles, centred.", (768, 768), False),
+            "wind": art("assets/vfx/wind.png", f"{FX_STYLE}{FX}A horizontal gust of wind made only of long thin white and pale cyan streaks of light flowing from left to right, with curling wisps at the ends, centred; no sword, no blade, no weapon, no object, only streaks of light.", (1024, 384), False),
+            "dust": art("assets/vfx/dust.png", f"{STYLE}. A soft low cloud of light brown dust and a few small pebbles kicked up from the ground, seen from the side, wide and flat, only dust and pebbles, nobody in the picture: no person, no girl, no figure, no character, isolated on a plain background, no ground line, no text.", (768, 384), True),
+        }),
         U("backdrop", "App backdrop", "Soft painted sky used behind the tab screens.", "shell",
           {"sky": art("assets/ui/backdrop_sky.png", f"{STYLE}. Full-screen vertical background: dreamy sky above a sea of clouds, distant floating mountains and pagodas in soft blue haze, pale pink cherry blossoms drifting at the edges, "
                       "calm and low-contrast so interface panels stay readable, no characters, no text.", (1080, 1920), False, ["refs/mockups/character_screen.png"]),

@@ -130,6 +130,8 @@ export const ArtAsset = z.object({
   references: z.array(z.string()).default([]),
   status: z.enum(ART_STATUS).default("planned"),
   notes: z.string().optional(),
+  /** Which way the figure looks (battle sprites; tools/art/facing.json). The arena stage mirrors figures to face their foes. */
+  facing: z.enum(["left", "right", "front"]).optional(),
 });
 export type ArtAsset = z.infer<typeof ArtAsset>;
 

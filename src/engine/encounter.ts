@@ -38,7 +38,7 @@ export type EncounterSource =
   | { kind: "showcase" };
 
 /** What the arena test fight puts on the stage (all ids exist in content; checked by tests/battle-stage.test.ts). */
-export const SHOWCASE = { enemy: "enemy.field_bandit", companion: "npc.bai_lingshuang", ultimate: "tech.ult.heavenly_sword_rain", node: "node.mortal_plains.village_road", region: "region.mortal_plains" };
+export const SHOWCASE = { enemy: "enemy.field_bandit", companion: "npc.bai_lingshuang", beast: "beast.yunyun", beastStage: "juvenile", ultimate: "tech.ult.heavenly_sword_rain", node: "node.mortal_plains.village_road", region: "region.mortal_plains" };
 
 export interface WaveResult { summary: BattleSummary; drops: Drops; gearUids: number[] }
 export interface EncounterResult {
@@ -175,7 +175,8 @@ export class Encounter {
   nextWave(): Battle {
     resetUids();
     const units: Combatant[] = [buildPlayer(this.s, this.c, this.carry)];
-    const beast = buildBeast(this.s, this.c);
+    // the arena test always shows the same cast: Lin, Bai and YunYun (juvenile), whatever the save holds
+    const beast = this.src.kind === "showcase" ? buildBeast(this.s, this.c, { beast: SHOWCASE.beast, stage: SHOWCASE.beastStage, level: 10, name: this.c.get<any>(SHOWCASE.beast).name }) : buildBeast(this.s, this.c);
     if (beast) units.push(beast);
     const party = this.src.kind === "showcase" ? [SHOWCASE.companion] : this.s.companions.active.slice(0, companionSlots(this.c, this.src));
     for (const npc of party) units.push(buildCompanion(this.s, this.c, npc));

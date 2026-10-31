@@ -571,6 +571,158 @@
     }
   },
   {
+    "id": "ui.vfx",
+    "name": "Battle effects",
+    "description": "Painted light effects used by the arena stage: slashes, impacts, blades, rings, pillars, arrays.",
+    "screen": "battle",
+    "art": {
+      "slash_arc": {
+        "file": "assets/vfx/slash_arc.webp",
+        "size": [
+          1024,
+          512
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A single wide crescent sword slash arc sweeping from lower left to upper right, a razor-thin brilliant white core with soft pale cyan glow, tapering to sharp points at both ends, fine motion streaks and a few tiny sparks along its edge, anime action effect.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "slash_cross": {
+        "file": "assets/vfx/slash_cross.webp",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. Two crossing crescent sword slashes forming an X, brilliant white cores with pale cyan glow, sharp tapered ends, a bright flash where they cross, tiny sparks, anime action effect.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "impact": {
+        "file": "assets/vfx/impact.webp",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A radial hit impact burst: an intense white star flash at the exact centre, long sharp light rays shooting outward in every direction, a thin expanding shockwave ring, scattered tiny sparks, anime hit effect.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "blade": {
+        "file": "assets/vfx/blade.webp",
+        "size": [
+          384,
+          1024
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A single ethereal spirit sword made entirely of white and pale blue light, pointing straight down, a slender glowing translucent blade with a simple guard, a long fading light trail above it, centred, vertical, on a completely flat pure black background with no pattern, no checkerboard, no grid.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "shard": {
+        "file": "assets/vfx/shard.webp",
+        "size": [
+          384,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A single sharp glowing ice crystal shard pointing straight down, translucent cyan and white facets, cold mist trailing above it, centred, vertical.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "ring": {
+        "file": "assets/vfx/ring.webp",
+        "size": [
+          1024,
+          512
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A wide flat elliptical shockwave ring of light seen from a low angle as if lying on the ground, a thin brilliant rim, faint inner glow, a few sparks flying off the rim, centred.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "pillar": {
+        "file": "assets/vfx/pillar.webp",
+        "size": [
+          512,
+          1024
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A vertical column of heavenly light descending from the top edge to the bottom edge, a blinding white core, soft gold and white glow around it, light motes rising, centred.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "array": {
+        "file": "assets/vfx/array.webp",
+        "size": [
+          1024,
+          1024
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A glowing golden Taoist bagua array seen from straight above: concentric circles, an octagon of eight trigram symbols made of short broken and unbroken bars, a small yin-yang disc at the centre, thin bright gold lines on black, centred, symmetrical, no stars, no pentagrams, no hexagrams, no letters.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "flare": {
+        "file": "assets/vfx/flare.webp",
+        "size": [
+          512,
+          512
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A bright four-pointed star lens flare: a white core with long thin horizontal and vertical spikes and a soft round halo, centred.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "swirl": {
+        "file": "assets/vfx/swirl.webp",
+        "size": [
+          768,
+          768
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A spiralling vortex of spiritual energy: thin glowing white and pale jade ribbons of light swirling inward to a bright centre, small sparkles, centred.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "wind": {
+        "file": "assets/vfx/wind.webp",
+        "size": [
+          1024,
+          384
+        ],
+        "transparent": false,
+        "prompt": "Anime game visual effect, bright clean glowing light. Isolated visual effect on a pure solid black background (#000000), glowing light only, no characters, no people, no creatures, no objects, no ground, no scenery, no text, no letters, no frame. A horizontal gust of wind made only of long thin white and pale cyan streaks of light flowing from left to right, with curling wisps at the ends, centred; no sword, no blade, no weapon, no object, only streaks of light.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      },
+      "dust": {
+        "file": "assets/vfx/dust.webp",
+        "size": [
+          768,
+          384
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. A soft low cloud of light brown dust and a few small pebbles kicked up from the ground, seen from the side, wide and flat, only dust and pebbles, nobody in the picture: no person, no girl, no figure, no character, isolated on a plain background, no ground line, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [],
+        "status": "generated"
+      }
+    }
+  },
+  {
     "id": "ui.backdrop",
     "name": "App backdrop",
     "description": "Soft painted sky used behind the tab screens.",

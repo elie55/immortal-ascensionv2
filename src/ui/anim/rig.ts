@@ -138,7 +138,7 @@ export function clips(arch: Archetype): Record<string, Clip> {
         x: T([[0, 0], [720, lunge * 0.6], [1150, 0]]),
         flutter: T([[0, 1], [500, 4.5], [720, 5], [1150, 1]]),
         glow: T([[0, 0], [400, 1], [720, 1], [1000, 0]]),
-        flash: T([[0, 0], [700, 0], [730, 0.9], [900, 0]], "linear"),
+        flash: T([[0, 0], [700, 0], [725, 0.5], [820, 0]], "linear"),
         weapon: armed ? T([[0, 0], [560, deg(-120)], [720, deg(110)], [860, deg(120)], [1150, 0]]) : T([[0, 0]]),
         trail: T([[0, 0], [560, 0], [561, 1], [820, 1], [950, 0]], "linear"),
       },
@@ -162,7 +162,7 @@ export function clips(arch: Archetype): Record<string, Clip> {
         x: T([[0, 0], [70, -0.14], [300, -0.02], [560, 0]]),
         squash: T([[0, 0], [70, 0.14], [240, -0.05], [560, 0]]),
         head: T([[0, 0], [70, -0.35], [560, 0]]),
-        flash: T([[0, 1], [200, 0]], "linear"),
+        flash: T([[0, 0.85], [200, 0]], "linear"),
         flutter: T([[0, 3.5], [560, 1]]),
       },
     },
@@ -174,6 +174,45 @@ export function clips(arch: Archetype): Record<string, Clip> {
         lean: T([[0, 0], [140, -0.2], [440, 0]]),
         alpha: T([[0, 1], [120, 0.55], [330, 1]]),
         flutter: T([[0, 2.5], [440, 1]]),
+      },
+    },
+    // arena travel (docs/BATTLE_STAGE.md): a crouch that springs into a forward-leaning run held until the strike,
+    // a hop back home, and the landing that settles it; a charge before an ultimate
+    dash: {
+      name: "dash", dur: 300, hold: true, ambient: 0.1,
+      tracks: {
+        squash: T([[0, 0], [70, 0.12], [130, -0.1], [300, -0.05]]),
+        lean: T([[0, 0], [70, -0.1], [150, beast ? 0.45 : 0.36], [300, beast ? 0.4 : 0.3]]),
+        y: T([[0, 0], [70, 3], [150, -6], [300, -4]]),
+        head: T([[0, 0], [150, 0.06], [300, 0.04]]),
+        flutter: T([[0, 1], [150, 4.2], [300, 4.6]]),
+        weapon: armed ? T([[0, 0], [150, deg(-40)], [300, deg(-50)]]) : T([[0, 0]]),
+      },
+    },
+    hop: {
+      name: "hop", dur: 320, hold: true, ambient: 0.2,
+      tracks: {
+        y: T([[0, 0], [60, 4], [170, -34], [300, -4], [320, 0]]),
+        lean: T([[0, 0.2], [80, -0.16], [320, -0.04]]),
+        squash: T([[0, 0.08], [60, 0.1], [130, -0.1], [280, 0], [320, 0.06]]),
+        flutter: T([[0, 3], [320, 2]]),
+        rot: T([[0, 0], [170, -0.05], [320, 0]]),
+      },
+    },
+    land: {
+      name: "land", dur: 260, ambient: 0.4,
+      tracks: { squash: T([[0, 0.1], [90, -0.04], [180, 0.02], [260, 0]]), lean: T([[0, -0.04], [260, 0]]), flutter: T([[0, 2.4], [260, 1]]) },
+    },
+    charge: {
+      name: "charge", dur: 700, hold: true, ambient: 0.3,
+      tracks: {
+        y: T([[0, 0], [400, -12], [700, -10]]),
+        squash: T([[0, 0], [200, 0.06], [700, -0.04]]),
+        lean: T([[0, 0], [300, -0.12], [700, -0.1]]),
+        breath: T([[0, 0], [700, 1]]),
+        flutter: T([[0, 1], [400, 4.5], [700, 5]]),
+        glow: T([[0, 0], [500, 1], [700, 1]]),
+        weapon: armed ? T([[0, 0], [500, deg(-100)], [700, deg(-110)]]) : T([[0, 0]]),
       },
     },
     victory: {
@@ -308,7 +347,7 @@ export function weaponPlacement(rig: RigDef, p: Pose): { px: number; py: number;
 // ---------- state machine ----------
 
 export type Channel = "idle" | "act" | "react" | "end";
-const CHANNEL: Record<string, Channel> = { idle: "idle", victory: "idle", enter: "act", attack: "act", cast: "act", ult: "act", hit: "react", hitBig: "react", dodge: "react", defeat: "end" };
+const CHANNEL: Record<string, Channel> = { idle: "idle", victory: "idle", enter: "act", attack: "act", cast: "act", ult: "act", dash: "act", hop: "act", land: "act", charge: "act", hit: "react", hitBig: "react", dodge: "react", defeat: "end" };
 
 export interface Playing { clip: Clip; t: number; speed: number; contactFired: boolean; resolveContact: () => void; resolveDone: () => void }
 

@@ -46,15 +46,21 @@ PARTS = {
 }
 
 
-def art_file(c, eid):
+def art_key(c, eid, key=None):
+    """The art a rig animates: the given key (a beast's stage, e.g. battle_juvenile), else battle, else full_body."""
+    a = (c.get(eid) or {}).get("art", {})
+    return key or ("battle" if "battle" in a else "full_body")
+
+
+def art_file(c, eid, key=None):
     e = c.get(eid)
     if not e: raise SystemExit(f"unknown entity {eid}")
     a = e.get("art", {})
-    key = "battle" if "battle" in a else "full_body"
+    key = art_key(c, eid, key)
     f = a[key]["file"]
     f = f if os.path.exists(os.path.join(ROOT, f)) else f.rsplit(".", 1)[0] + ".webp"
     if not os.path.exists(os.path.join(ROOT, f)): raise SystemExit(f"{eid}: no rendered {key} art yet ({f})")
-    return f, bool(a[key].get("creature")) or e.get("kind") == "beast"
+    return f, bool(a[key].get("creature")) or e.get("kind") == "beast" or eid.startswith("beast.")
 
 
 def load_content():
@@ -75,12 +81,13 @@ def main():
     ap.add_argument("--parts", default=",".join(PARTS))
     ap.add_argument("--reroll", type=int, default=0)
     ap.add_argument("--ver", default="", help="suffix for the uploaded source name (new art → new name, so no stale copy is used)")
+    ap.add_argument("--art", default=None, help="art key to rig (a beast stage: battle_juvenile); default battle / full_body")
     a = ap.parse_args()
     c = load_content()
     parts = [p for p in a.parts.split(",") if p]
     q, sources = [], []
     for eid in filter(None, a.ids.split(",")):
-        f, creature = art_file(c, eid)
+        f, creature = art_file(c, eid, a.art)
         im = Image.open(os.path.join(ROOT, f)).convert("RGBA")
         flat = Image.new("RGB", im.size, GREY); flat.paste(im, mask=im.getchannel("A"))
         d = os.path.join(ROOT, ".tmp", "anim", eid); os.makedirs(d, exist_ok=True)

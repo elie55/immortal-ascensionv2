@@ -62,7 +62,7 @@ def anim_block(entity):
     rig = os.path.join(ROOT, "assets", "anim", entity["id"], "rig.json")
     if not os.path.exists(rig): entity.pop("anim", None); return entity
     r = json.load(open(rig))
-    key = "battle" if "battle" in entity.get("art", {}) else "full_body"
+    key = r.get("art") or ("battle" if "battle" in entity.get("art", {}) else "full_body")
     entity["anim"] = {"rig": f"assets/anim/{entity['id']}/rig.json", "art": key, "archetype": r["archetype"]}
     return entity
 
@@ -233,6 +233,15 @@ def chain_links(nodes):
             if d["kind"] in COMBAT_KINDS: prev_fight = d
     return nodes
 
+# Which way battle sprites look, read from contact sheets (the arena test cast for now: docs/BATTLE_STAGE.md)
+LOOKS = json.load(open(os.path.join(ROOT, "tools", "art", "facing.json"))) if os.path.exists(os.path.join(ROOT, "tools", "art", "facing.json")) else {}
+
+def facing_block(entity):
+    """Record which way battle sprites look (tools/art/facing.json, read from contact sheets): the arena mirrors figures to face their foes."""
+    for a in (entity.get("art") or {}).values():
+        if isinstance(a, dict) and a.get("file") in LOOKS: a["facing"] = LOOKS[a["file"]]
+    return entity
+
 def write(rel, data):
     p = os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(p), exist_ok=True)
@@ -240,6 +249,7 @@ def write(rel, data):
         for e in data:
             if isinstance(e, dict) and str(e.get("id", "")).split(".")[0] in ("enemy", "boss", "npc", "beast"): anim_block(e)
             if isinstance(e, dict) and str(e.get("id", "")).split(".")[0] in ("tech", "btech"): vfx_block(e)  # stage effect (docs/BATTLE_STAGE.md)
+            if isinstance(e, dict) and str(e.get("id", "")).split(".")[0] in ("enemy", "boss", "npc", "beast"): facing_block(e)
     with open(p, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")

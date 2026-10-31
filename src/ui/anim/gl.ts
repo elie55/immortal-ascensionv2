@@ -10,10 +10,12 @@ void main() { vec3 p = u_m * vec3(a_pos, 1.0); v_uv = a_uv; gl_Position = vec4(p
 const FS = `#version 300 es
 precision mediump float;
 in vec2 v_uv; out vec4 o;
-uniform sampler2D u_tex; uniform float u_alpha, u_flash, u_dissolve, u_glow, u_seed; uniform vec3 u_glowColor;
+uniform sampler2D u_tex; uniform float u_alpha, u_flash, u_dissolve, u_glow, u_seed, u_add; uniform vec3 u_glowColor, u_tint;
 float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7)) + u_seed) * 43758.5453); }
 void main() {
   vec4 c = texture(u_tex, v_uv);           // premultiplied
+  // additive light (painted effects on black): colour adds, nothing is covered
+  if (u_add > 0.5) { o = vec4(c.rgb * u_tint * u_alpha, 0.0); return; }
   if (c.a < 0.003) discard;
   if (u_dissolve > 0.0) {
     float n = hash(floor(v_uv * 96.0)) * 0.85 + hash(floor(v_uv * 13.0)) * 0.15;
@@ -49,7 +51,7 @@ export class GL {
     const p = gl.createProgram()!; gl.attachShader(p, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(p, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(p);
     if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p) ?? "link");
     this.prog = p; gl.useProgram(p);
-    for (const u of ["u_m", "u_tex", "u_alpha", "u_flash", "u_dissolve", "u_glow", "u_seed", "u_glowColor"]) this.loc[u] = gl.getUniformLocation(p, u);
+    for (const u of ["u_m", "u_tex", "u_alpha", "u_flash", "u_dissolve", "u_glow", "u_seed", "u_glowColor", "u_add", "u_tint"]) this.loc[u] = gl.getUniformLocation(p, u);
     this.aPos = gl.getAttribLocation(p, "a_pos"); this.aUv = gl.getAttribLocation(p, "a_uv");
     this.vboPos = gl.createBuffer()!; this.vboUv = gl.createBuffer()!; this.ibo = gl.createBuffer()!;
     gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
@@ -79,12 +81,13 @@ export class GL {
   /**
    * Draw triangles. `m` maps texture px → clip space (column-major 3×3). Positions and uvs are per vertex.
    */
-  draw(tex: Tex, pos: Float32Array, uv: Float32Array, index: Uint16Array, m: Float32Array, fx: { alpha: number; flash: number; dissolve: number; glow: number; glowColor: [number, number, number]; seed: number }): void {
+  draw(tex: Tex, pos: Float32Array, uv: Float32Array, index: Uint16Array, m: Float32Array, fx: { alpha: number; flash: number; dissolve: number; glow: number; glowColor: [number, number, number]; seed: number; add?: boolean; tint?: [number, number, number] }): void {
     const gl = this.gl;
     gl.bindTexture(gl.TEXTURE_2D, tex.tex);
     gl.uniformMatrix3fv(this.loc.u_m!, false, m);
     gl.uniform1f(this.loc.u_alpha!, fx.alpha); gl.uniform1f(this.loc.u_flash!, fx.flash); gl.uniform1f(this.loc.u_dissolve!, fx.dissolve);
     gl.uniform1f(this.loc.u_glow!, fx.glow); gl.uniform1f(this.loc.u_seed!, fx.seed); gl.uniform3f(this.loc.u_glowColor!, fx.glowColor[0], fx.glowColor[1], fx.glowColor[2]);
+    gl.uniform1f(this.loc.u_add!, fx.add ? 1 : 0); const t = fx.tint ?? [1, 1, 1]; gl.uniform3f(this.loc.u_tint!, t[0], t[1], t[2]);
     gl.bindBuffer(gl.ARRAY_BUFFER, this.vboPos); gl.bufferData(gl.ARRAY_BUFFER, pos, gl.DYNAMIC_DRAW);
     gl.enableVertexAttribArray(this.aPos); gl.vertexAttribPointer(this.aPos, 2, gl.FLOAT, false, 0, 0);
     gl.bindBuffer(gl.ARRAY_BUFFER, this.vboUv); gl.bufferData(gl.ARRAY_BUFFER, uv, gl.DYNAMIC_DRAW);

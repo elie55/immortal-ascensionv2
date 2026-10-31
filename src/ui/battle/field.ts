@@ -81,7 +81,7 @@ export function layout(units: (LayoutUnit & { side: Side })[], st: StageSize): M
 export function strikeBox(actor: Box, target: Box, side: Side, st: StageSize): Box {
   const h = (actor.h + target.h) / 2 * (actor.h > target.h ? 0.92 : 1);
   const w = h * ARENA.aspect;
-  const gap = (target.w + w) * 0.36;
+  const gap = (target.w + w) * 0.3;     // close enough that the blade reaches the target, not the figure beside it
   const dir = side === "ally" ? -1 : 1;          // the party comes from the left of a foe, foes from the right of an ally
   let x = target.x + dir * gap;
   x = Math.max(w * 0.42, Math.min(st.w - w * 0.42, x));

@@ -15,7 +15,8 @@ from PIL import Image
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(ROOT, "tools", "anim"))
-from edits import load_content, art_file, GREY  # noqa: E402
+from edits import load_content, art_file, art_key, GREY  # noqa: E402
+LOOKS = json.load(open(os.path.join(ROOT, "tools", "art", "facing.json"))) if os.path.exists(os.path.join(ROOT, "tools", "art", "facing.json")) else {}
 
 MESH = [8, 12]
 
@@ -40,29 +41,59 @@ def load_edit(root, eid, part, size, src=None):
     return im
 
 
+def silhouette(im):
+    """Foreground of a render on a flat background (the edit model paints one): everything not connected to the border
+    in the background's colour."""
+    a = np.asarray(im.convert("RGB")).astype(np.int16)
+    bg = np.median(np.concatenate([a[0], a[-1], a[:, 0], a[:, -1]]), axis=0)
+    fg = (np.abs(a - bg).max(axis=2) > 14).astype(np.uint8)
+    n, lab = cv2.connectedComponents(1 - fg)
+    border = np.unique(np.concatenate([lab[0], lab[-1], lab[:, 0], lab[:, -1]]))
+    return (~(np.isin(lab, border) & (fg == 0))).astype(np.uint8) * 255
+
+
 def align(edit, src):
-    """Register an edit render onto the source sprite (renders drift by a few px / a little scale).
-    ORB features + RANSAC similarity, refined by ECC; the edit is warped into the source's frame."""
+    """Register an edit render onto the source sprite (renders drift by a few px and a little scale; a creature on a
+    pale background can drift by 10+ px). Candidates: identity, ORB features + RANSAC similarity, the silhouettes'
+    boxes, each refined by ECC; the one that matches the source best over its body wins. M maps edit → source px."""
+    W, H = src.size
     g0 = cv2.cvtColor(flat(src).astype(np.uint8), cv2.COLOR_RGB2GRAY); g1 = cv2.cvtColor(flat(edit).astype(np.uint8), cv2.COLOR_RGB2GRAY)
+    body = np.asarray(src.getchannel("A")) > 128
+    a0 = flat(src).astype(np.float32)
+    arr = np.asarray(edit)
+    def warp(M, fill=True):
+        return cv2.warpAffine(arr, M.astype(np.float32), (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(GREY[0], GREY[1], GREY[2], 0))
+    def err(M):
+        b = flat(Image.fromarray(warp(M), "RGBA")).astype(np.float32)
+        return float(np.abs(a0 - b).mean(axis=2)[body].mean())
+    cands = [np.eye(2, 3, dtype=np.float32)]
     orb = cv2.ORB_create(3000)
     k0, d0 = orb.detectAndCompute(g0, None); k1, d1 = orb.detectAndCompute(g1, None)
-    M = None
     if d0 is not None and d1 is not None and len(k0) > 20 and len(k1) > 20:
         matches = sorted(cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True).match(d1, d0), key=lambda m: m.distance)[:600]
         if len(matches) >= 12:
             p1 = np.float32([k1[m.queryIdx].pt for m in matches]); p0 = np.float32([k0[m.trainIdx].pt for m in matches])
             M, _ = cv2.estimateAffinePartial2D(p1, p0, method=cv2.RANSAC, ransacReprojThreshold=3.0)
-    if M is None: M = np.eye(2, 3, dtype=np.float32)
+            if M is not None: cands.append(M.astype(np.float32))
     try:
-        small = 0.5; A = cv2.resize(g0, None, fx=small, fy=small); B = cv2.resize(g1, None, fx=small, fy=small)
-        Ms = M.copy().astype(np.float32); Ms[:, 2] *= small
-        _, Ms = cv2.findTransformECC(A, B, Ms, cv2.MOTION_AFFINE, (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 60, 1e-5), None, 5)
-        M = Ms; M[:, 2] /= small
-    except cv2.error:
+        s0 = body.astype(np.uint8) * 255; s1 = silhouette(edit)
+        ys0, xs0 = np.where(s0 > 0); ys1, xs1 = np.where(s1 > 0)
+        sc = ((ys0.max() - ys0.min()) / max(1, ys1.max() - ys1.min()) + (xs0.max() - xs0.min()) / max(1, xs1.max() - xs1.min())) / 2
+        if 0.8 < sc < 1.25: cands.append(np.float32([[sc, 0, xs0.min() - xs1.min() * sc], [0, sc, ys0.min() - ys1.min() * sc]]))
+    except ValueError:
         pass
-    arr = np.asarray(edit)
-    warped = cv2.warpAffine(arr, M.astype(np.float32), (src.size[0], src.size[1]), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(GREY[0], GREY[1], GREY[2], 0))
-    return Image.fromarray(warped, "RGBA"), M
+    # ECC finds W with edit(W·x) ≈ src(x), i.e. source → edit; seed it with the inverse of each candidate
+    small = 0.5; A = cv2.resize(g0, None, fx=small, fy=small); B = cv2.resize(g1, None, fx=small, fy=small)
+    for M in list(cands):
+        try:
+            Wi = cv2.invertAffineTransform(M).astype(np.float32); Wi[:, 2] *= small
+            _, Wi = cv2.findTransformECC(A, B, Wi, cv2.MOTION_AFFINE, (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 60, 1e-5), None, 5)
+            Wi[:, 2] /= small; cands.append(cv2.invertAffineTransform(Wi).astype(np.float32))
+        except cv2.error:
+            pass
+    scored = sorted(((err(M), i, M) for i, M in enumerate(cands)), key=lambda t: (t[0], t[1]))
+    M = scored[0][2]
+    return Image.fromarray(warp(M), "RGBA"), M
 
 
 def defringe(im):
@@ -98,9 +129,9 @@ def soft(m, feather=2):
     return cv2.GaussianBlur(m, (0, 0), feather) if feather else m
 
 
-def build(root, eid, c, debug=False):
+def build(root, eid, c, debug=False, key=None):
     e = c[eid]
-    f, creature = art_file(c, eid)
+    f, creature = art_file(c, eid, key)
     src = Image.open(os.path.join(ROOT, f)).convert("RGBA"); W, H = src.size
     alpha = np.asarray(src.getchannel("A"))
     ys, xs = np.where(alpha > 24); bbox = [int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1]
@@ -160,7 +191,8 @@ def build(root, eid, c, debug=False):
     eyes = load_edit(root, eid, "eyesclosed", (W, H), src)
     tage = load_edit(root, eid, "tag_eyes", (W, H), src)
     if eyes is not None:
-        head_band = np.zeros_like(alpha); head_band[bbox[1]:bbox[1] + int(bh * 0.34), bbox[0]:bbox[2]] = 255
+        # where the eyes may be: the top third of a standing figure; a creature's ears and tail reach higher, so half of it
+        head_band = np.zeros_like(alpha); head_band[bbox[1]:bbox[1] + int(bh * (0.55 if creature else 0.34)), bbox[0]:bbox[2]] = 255
         if tage is not None:
             m = np.minimum(magenta_mask(tage), head_band)
         else:
@@ -173,15 +205,21 @@ def build(root, eid, c, debug=False):
             # eyes: the largest blob plus any blob of similar size near it (two eyes)
             order = np.argsort(-stats[1:, cv2.CC_STAT_AREA]) + 1
             main = order[0]; sx, sy = stats[main, cv2.CC_STAT_LEFT] + stats[main, cv2.CC_STAT_WIDTH] / 2, stats[main, cv2.CC_STAT_TOP] + stats[main, cv2.CC_STAT_HEIGHT] / 2
-            keep = [main] + [i for i in order[1:4] if stats[i, cv2.CC_STAT_AREA] > stats[main, cv2.CC_STAT_AREA] * 0.2 and abs(stats[i, cv2.CC_STAT_TOP] + stats[i, cv2.CC_STAT_HEIGHT] / 2 - sy) < bh * 0.03 and abs(stats[i, cv2.CC_STAT_LEFT] - sx) < bw * 0.2]
+            keep = [main] + [i for i in order[1:4] if stats[i, cv2.CC_STAT_AREA] > stats[main, cv2.CC_STAT_AREA] * 0.06 and abs(stats[i, cv2.CC_STAT_TOP] + stats[i, cv2.CC_STAT_HEIGHT] / 2 - sy) < bh * 0.03 and abs(stats[i, cv2.CC_STAT_LEFT] - sx) < bw * 0.2]
             em = np.isin(lab, keep)
             ys2, xs2 = np.where(em); pad = max(4, int(bh * 0.008))
             x0, y0, x1, y1 = max(0, xs2.min() - pad), max(0, ys2.min() - pad), min(W, xs2.max() + 1 + pad), min(H, ys2.max() + 1 + pad)
-            if (x1 - x0) < bw * 0.5 and (y1 - y0) < bh * 0.12:
+            if (x1 - x0) < bw * 0.5 and (y1 - y0) < bh * (0.16 if creature else 0.12):
                 patch = np.asarray(eyes).copy(); patch[..., 3] = alpha  # the sprite's own alpha, so the patch never leaks outside
                 # feathered edges so the patch blends with the open-eyed face
-                fm = np.zeros((y1 - y0, x1 - x0), np.float32); fm[2:-2, 2:-2] = 1; fm = cv2.GaussianBlur(fm, (0, 0), 1.5)
+                fm = np.zeros((y1 - y0, x1 - x0), np.float32); fm[2:-2, 2:-2] = 1; fm = cv2.GaussianBlur(fm, (0, 0), 1.5 if not creature else 3)
                 crop = patch[y0:y1, x0:x1].copy(); crop[..., 3] = (crop[..., 3] * fm).astype(np.uint8)
+                # the render's colours drift a little (a paler fur, a warmer skin): match the patch to the sprite along its rim
+                ring = np.zeros(fm.shape, bool); ring[:4] = ring[-4:] = True; ring[:, :4] = ring[:, -4:] = True
+                ring &= alpha[y0:y1, x0:x1] > 128
+                if ring.sum() > 20:
+                    sv = np.asarray(src)[y0:y1, x0:x1, :3].astype(np.float32); pv = crop[..., :3].astype(np.float32)
+                    crop[..., :3] = np.clip(pv + (sv[ring].mean(axis=0) - pv[ring].mean(axis=0)), 0, 255).astype(np.uint8)
                 Image.fromarray(crop).save(os.path.join(out_dir, "blink.webp"), quality=92, method=6)
                 blink = {"file": rel("blink.webp"), "rect": [int(x0), int(y0), int(x1 - x0), int(y1 - y0)]}
                 cv2.rectangle(dbg, (int(x0), int(y0)), (int(x1), int(y1)), (255, 255, 0), 2)
@@ -208,6 +246,8 @@ def build(root, eid, c, debug=False):
     ally = eid.startswith("npc.") and (e.get("role") == "protagonist" or e.get("dao_companion", {}).get("eligible"))
     prompt = (e.get("art", {}).get("battle") or {}).get("prompt", "")
     facing = 1 if ally else 0 if "toward the viewer" in prompt or "front view" in prompt else -1
+    look = LOOKS.get(f) or LOOKS.get(f.rsplit(".", 1)[0] + ".webp")   # recorded from the sprite itself (tools/art/facing.json) wins
+    if look: facing = {"left": -1, "right": 1, "front": 0}[look]
     kind = e.get("kind"); arch = "humanoid" if weapon else ("humanoid_unarmed" if not creature else "quadruped")
     if e.get("phases") or kind == "boss": arch = "large" if not weapon else "humanoid"
     if "flying" in (e.get("tags") or []) or re.search(r"bird|crane|roc|moth|eagle|phoenix|bat", eid): arch = "flying" if creature else arch
@@ -215,7 +255,7 @@ def build(root, eid, c, debug=False):
     top = bbox[1]
     neck = top + bh * 0.15; chest = top + bh * 0.27; hips = top + bh * 0.52
     if blink: neck = blink["rect"][1] + blink["rect"][3] + bh * 0.07; chest = neck + bh * 0.12
-    rig = {"id": eid, "body": rel("body.webp"), "size": [W, H], "bbox": bbox, "ground": [round((bbox[0] + bbox[2]) / 2), bbox[3]], "facing": facing,
+    rig = {"id": eid, "art": art_key(c, eid, key), "body": rel("body.webp"), "size": [W, H], "bbox": bbox, "ground": [round((bbox[0] + bbox[2]) / 2), bbox[3]], "facing": facing,
            "archetype": arch, "mesh": MESH, "hips": round(hips), "chest": round(chest), "neck": round(neck),
            **({"weapon": weapon} if weapon else {}), **({"blink": blink} if blink else {}), **({"weights": weights_file} if weights_file else {})}
     json.dump(rig, open(os.path.join(out_dir, "rig.json"), "w"), indent=1)
@@ -227,9 +267,9 @@ def build(root, eid, c, debug=False):
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("root"); ap.add_argument("--ids", required=True); ap.add_argument("--debug", action="store_true")
+    ap = argparse.ArgumentParser(); ap.add_argument("root"); ap.add_argument("--ids", required=True); ap.add_argument("--debug", action="store_true"); ap.add_argument("--art", default=None)
     a = ap.parse_args(); c = load_content()
-    for eid in filter(None, a.ids.split(",")): build(a.root, eid, c, a.debug)
+    for eid in filter(None, a.ids.split(",")): build(a.root, eid, c, a.debug, a.art)
 
 
 if __name__ == "__main__":

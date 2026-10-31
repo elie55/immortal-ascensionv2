@@ -60,7 +60,8 @@
         "references": [
           "refs/mockups/battle_screen.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "front"
       }
     },
     "anim": {

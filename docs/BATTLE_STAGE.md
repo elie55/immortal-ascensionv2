@@ -12,15 +12,39 @@ before the cast is converted. What was built:
 |---|---|
 | Field, formations, strike points | `src/ui/battle/field.ts` |
 | Beats and shot plans | `src/ui/battle/choreo.ts` |
-| Procedural effects (slash, pierce, burst, beam, wave, pillar, rain, ring, glow; dash trail) | `src/ui/battle/vfx.ts` |
+| Effects (slash, pierce, burst, beam, wave, pillar, rain, ring, glow; dash trail): painted sprites with procedural sparks, CSS fallbacks | `src/ui/battle/vfx.ts` |
 | Arena layout, dash and return, camera, hit counter, close-up, flurry numbers | `src/ui/screens/battle.ts` (`arena`, `playShot`) |
 | Figures without a rig drawn on the puppet canvas as still puppets (one depth order, shared clips) | `src/ui/anim/stage.ts: addStill` |
-| The test fight source (`kind: "showcase"`): free, Lin and Bai against two Field Bandits, Heavenly Sword Rain charged, nothing settled | `src/engine/encounter.ts: SHOWCASE` |
+| The test fight source (`kind: "showcase"`): free, Lin, Bai and YunYun (juvenile) against two Field Bandits, Heavenly Sword Rain charged, nothing settled | `src/engine/encounter.ts: SHOWCASE` |
 | Checks | `tests/battle-stage.test.ts`, the tour's arena step, `node tests/browser/lab.ts arena` (`IA_REGION=2` adds a spirit beast) |
 
 Presentation choices made while building: the acting unit is drawn in front of everyone during its action;
 an ultimate's damage is shown as six numbers (a heavy art's as three) that add up to the real hit, and the
 hit counter counts them; the focused-foe panel is only kept for bosses.
+
+### Polish round 2 (test fight only)
+
+The owner asked for: no small HP bars under the party (the cards below carry them), everyone facing their foes,
+figures standing on the ground, and much richer motion. Done for the test cast only (Lin, Bai, YunYun, Field
+Bandit); the rest of the cast waits for the owner's verdict.
+
+| Part | Where |
+|---|---|
+| Which way a sprite looks, recorded per art file (`facing: left/right/front`), test cast only | `tools/art/facing.json` → art blocks; `content.facingOf` |
+| Mirroring on the canvas so the party looks right and the foes left | `stage.ts: add/addStill` (`face`), `mappingMirrored` |
+| Contact shadows under every figure (shrinking with a jump) and the acting unit's spinning array (gold party, red foe, jade while it waits for you) | `stage.ts: draw` ground pass, `setDecal`; `battle.ts: turnRing` |
+| Hit-stop, knock-back, camera punch, afterimages and weapon trails, crouch → dash → hop → land clips, dust | `stage.ts: hitStop/setTrail`, `rig.ts` clips `dash/hop/land/charge`, `battle.ts: arenaHit/playShot` |
+| Painted effects (`ui.vfx`, 12 paintings on black, alpha from light): slash arc and cross, impact, spirit blade, ice shard, ring, pillar, bagua array, flare, swirl, wind, dust | `tools/gen/ui.py` (`FX`), `src/ui/battle/vfx.ts` (`painted`) |
+| Ultimate: charge (zoom, swirl, array), Lin's painted cut-in with letterbox and 天剑雨, white cut, blades raining with a number per blade, slow-motion finisher, embers | `battle.ts: showCloseup`, `vfx.ts: gather/rain`, `npc.lin_xueyao` art `cutin` |
+| Victory beat on the field before the panel: the party cheers, gold motes, 胜 / VICTORY ribbon | `battle.ts: arenaVictory` |
+| Bai and YunYun rigs (sword, blink, cloth and hair) | `assets/anim/{npc.bai_lingshuang,beast.yunyun}` |
+
+Rig builder fixes found on the way (`tools/anim/build.py`): edits were registered with the inverse transform (the
+shift was applied backwards; harmless at 1–2 px, broke YunYun at 12 px), so `align` now tries identity, ORB,
+silhouette boxes and their ECC refinements and keeps the best match; a creature's eyes are searched in the top
+half of its box (ears and tails reach higher); blink patches are colour-matched to the sprite along their rim.
+`IA_LONG=1 IA_VIDEO=1 node tests/browser/lab.ts arena` records a showreel where every unit acts (lab-only: the
+bandits get triple HP and the party's speed).
 
 ## 1. What stays
 

@@ -94,6 +94,15 @@ export class ContentIndex {
     return this._anim.get(artFile);
   }
   private _anim?: Map<string, { rig: string; art: string; archetype: string }>;
+  /** Which way a picture's figure looks (art block `facing`; front when unrecorded). The arena mirrors figures to face their foes. */
+  facingOf(artFile: string): "left" | "right" | "front" {
+    if (!this._facing) {
+      this._facing = new Map();
+      for (const e of Object.values(this.entities) as any[]) for (const a of Object.values<any>(e.art ?? {})) if (a?.facing) this._facing.set(a.file, a.facing);
+    }
+    return this._facing.get(artFile) ?? "front";
+  }
+  private _facing?: Map<string, "left" | "right" | "front">;
   /** First generated art among several keys (e.g. portrait, then full_body). */
   artAny(id: string, ...keys: string[]): string | undefined {
     for (const k of keys) { const f = this.art(id, k); if (f) return f; }

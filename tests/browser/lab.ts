@@ -44,7 +44,8 @@ const server = createServer((req, res) => {
 await new Promise<void>((r) => server.listen(0, r));
 const url = `http://127.0.0.1:${(server.address() as any).port}/`;
 const browser = await chromium.launch();
-const ctx = await browser.newContext({ viewport: { width: VW, height: VH }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+// IA_VIDEO=1 records the run (a .webm in the output folder) to judge motion frame by frame
+const ctx = await browser.newContext({ viewport: { width: VW, height: VH }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, ...(process.env.IA_VIDEO ? { recordVideo: { dir: OUT, size: { width: VW, height: VH } } } : {}) });
 const page = await ctx.newPage();
 const errors: string[] = [];
 page.on("pageerror", (e) => errors.push(e.message));
@@ -56,7 +57,7 @@ async function boot(state: GameState, tab = "cultivate") {
   await page.evaluate(([text, t]) => (window as any).__ia.dev.load(text, t), [encode(state, 0, T0), tab] as const);
   await page.waitForTimeout(400);
 }
-const shot = (name: string) => page.screenshot({ path: join(OUT, `${name}.png`) });
+const shot = async (name: string) => { if (process.env.IA_VIDEO) { await page.waitForTimeout(90); return; } await page.screenshot({ path: join(OUT, `${name}.png`) }); };   // a video run takes no stills (they stall the page)
 const pause = () => page.evaluate(() => (document.querySelector(".bt-pause") as HTMLElement | null)?.click());
 
 /** Close celebration screens and other modals left by loading a mid-game save. */
@@ -421,6 +422,10 @@ async function arenaTest(name: string) {
   await page.evaluate(() => { const st = (window as any).__ia.game.state; st.combat.speed = 1; st.combat.manual = true; });
   await page.evaluate(() => (window as any).__ia.dev.fight({ kind: "showcase" }));
   await page.waitForSelector(".battle.arena");
+  // IA_LONG=1 (for a showreel): the bandits get triple HP and the party's speed in this lab run only, so every unit acts — the bandits'
+  // dashes onto the party, YunYun's pounce, Bai's arts — before the ultimate
+  const long = !!process.env.IA_LONG;
+  if (long) await page.evaluate(() => { for (const u of (window as any).__ia.enc.battle.units) if (u.side === "enemy") { u.maxHp *= 3; u.hp = u.maxHp; u.base.spd = Math.max(u.base.spd ?? 0, 1.1 * Math.max(...(window as any).__ia.enc.battle.units.filter((a: any) => a.side === "ally").map((a: any) => a.base.spd ?? 0))); } });
   await page.waitForTimeout(700); await shot(`${name}-0-intro`);
   const burst = async (tag: string, n: number, every: number) => { for (let i = 0; i < n; i++) { await shot(`${name}-${tag}-${String(i).padStart(2, "0")}`); await page.waitForTimeout(every); } };
   // first player turn: Azure Strike (a dash and a slash); the ultimate waits for the next turn
@@ -428,9 +433,16 @@ async function arenaTest(name: string) {
   await shot(`${name}-1-ready`);
   const strike = page.locator(".bt-skill.ready", { hasText: "Azure Strike" });
   if (await strike.count()) await strike.first().click(); else await page.locator(".bt-skill.ready").first().click();
-  const log: string[] = []; const poll = setInterval(() => { page.evaluate(() => { const el = document.querySelector(".bt-combo"); return el ? `${el.className}|${el.textContent}|${getComputedStyle(el).opacity}` : "none"; }).then((x) => log.push(x)).catch(() => {}); }, 60);
+  const log: string[] = []; const poll = setInterval(() => { page.evaluate(() => { const ps = [...document.querySelectorAll(".vx-p")]; return `vx-p ${ps.length} ${ps.slice(0, 2).map((p) => `${(p as HTMLElement).style.getPropertyValue("--img").slice(0, 40)} ${getComputedStyle(p).opacity} ${getComputedStyle(p.querySelector(".vx-core")!).backgroundImage.slice(0, 50)}`).join(" | ")}`; }).then((x) => log.push(x)).catch(() => {}); }, 40);
   await burst("2-strike", 14, 90);
   clearInterval(poll); if (process.env.IA_DEBUG) console.log([...new Set(log)].join("\n"));
+  if (long) for (const tech of ["Flame Palm", "Ripple Mending"]) {
+    // Lin's next turns: a technique, then the basic strike; everyone else acts in between
+    await page.waitForSelector(".bt-skill.ready", { timeout: 60_000 }); await page.waitForTimeout(300);
+    const b = page.locator(".bt-skill.ready", { hasText: tech });
+    if (await b.count()) await b.first().click(); else await page.locator(".bt-skill.ready").first().click();
+    await page.waitForTimeout(1500);
+  }
   await page.waitForSelector(".bt-ultbtn.ready", { timeout: 40_000 });
   await page.waitForTimeout(300);
   await page.locator(".bt-ultbtn.ready").click();
@@ -503,4 +515,4 @@ for (const k of want.length ? want : Object.keys(SCEN)) {
   try { await SCEN[k]!(); console.log("ok  ", k); } catch (e) { console.error("FAIL", k, (e as Error).message); await shot(`${k}-FAILED`).catch(() => {}); process.exitCode = 1; }
 }
 if (errors.length) { console.error("page errors:", errors.slice(0, 5)); process.exitCode = 1; }
-await browser.close(); server.close();
+await ctx.close(); await browser.close(); server.close();

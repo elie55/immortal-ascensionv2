@@ -125,7 +125,8 @@ test("the arena test fight: free to start, Lin and Bai against two bandits, an u
   const { newGameState } = await import("../src/engine/state.ts");
   const { Encounter, canStart, SHOWCASE } = await import("../src/engine/encounter.ts");
   const c = testContent();
-  for (const id of Object.values(SHOWCASE)) assert.ok(c.has(id), `${id} exists`);
+  for (const [k, id] of Object.entries(SHOWCASE)) if (k !== "beastStage") assert.ok(c.has(id), `${id} exists`);
+  assert.ok(c.get<any>(SHOWCASE.beast).stages.some((x: any) => x.key === SHOWCASE.beastStage), "the beast has that stage");
   const s = newGameState(c, 1_700_000_000_000, { seed: 3 });
   const energy = s.resources.energy.value;
   const can = canStart(s, c, { kind: "showcase" }, 1_700_000_000_000);
@@ -135,6 +136,7 @@ test("the arena test fight: free to start, Lin and Bai against two bandits, an u
   const b = r.encounter.battle!;
   assert.deepEqual(b.units.filter((u) => u.side === "enemy").map((u) => u.id), [SHOWCASE.enemy, SHOWCASE.enemy]);
   assert.ok(b.units.some((u) => u.id === SHOWCASE.companion), "Bai joins even when not bonded");
+  assert.ok(b.units.some((u) => u.id === SHOWCASE.beast && u.kind === "beast"), "YunYun joins even without a beast in the save");
   const p = b.player;
   assert.equal(p.ult, 100); assert.ok(p.skills.some((x) => x.kind === "ultimate"));
   assert.equal(s.resources.energy.value, energy, "no energy spent");

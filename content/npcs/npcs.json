@@ -142,6 +142,22 @@
           "refs/mockups/character_screen.png",
           "refs/mockups/cultivation_screen.png"
         ],
+        "status": "generated",
+        "facing": "right"
+      },
+      "cutin": {
+        "file": "assets/npcs/lin_xueyao/cutin.webp",
+        "size": [
+          1024,
+          1280
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Dramatic anime action cut-in illustration, upper body and face filling the frame from a low dynamic angle: Lin Xueyao, a young woman with long black hair in a loose half updo with a jade hairpin, light green eyes, wearing a white hanfu with pale jade-green layered robes and translucent flowing sleeves, raising her long sword diagonally before her face with both hands, the blade glowing white-blue, intense focused determined eyes glowing faint jade, hair and sleeves whipping sideways in a strong wind, swirling sword light, wind streaks and a few cherry blossom petals around her, strong rim light, high contrast, cinematic, the complete head, both hands and the sword in frame, isolated on a plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "assets/npcs/lin_xueyao/full_body.webp",
+          "assets/npcs/lin_xueyao/battle.webp"
+        ],
         "status": "generated"
       }
     },
@@ -276,7 +292,8 @@
         "references": [
           "refs/mockups/prologue_bai.png"
         ],
-        "status": "generated"
+        "status": "generated",
+        "facing": "left"
       }
     },
     "gifts": {
@@ -420,7 +437,12 @@
         "min_level": 4,
         "text": "The frost in my sword is quieter when you are near. I do not know what that means yet."
       }
-    ]
+    ],
+    "anim": {
+      "rig": "assets/anim/npc.bai_lingshuang/rig.json",
+      "art": "battle",
+      "archetype": "humanoid"
+    }
   },
   {
     "id": "npc.tang_xiaoman",

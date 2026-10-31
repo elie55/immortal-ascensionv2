@@ -1,0 +1,53 @@
+{
+ "id": "npc.bai_lingshuang",
+ "art": "battle",
+ "body": "assets/anim/npc.bai_lingshuang/body.webp",
+ "size": [
+  768,
+  1024
+ ],
+ "bbox": [
+  46,
+  89,
+  747,
+  988
+ ],
+ "ground": [
+  396,
+  988
+ ],
+ "facing": -1,
+ "archetype": "humanoid",
+ "mesh": [
+  8,
+  12
+ ],
+ "hips": 556,
+ "chest": 395,
+ "neck": 287,
+ "weapon": {
+  "file": "assets/anim/npc.bai_lingshuang/weapon.webp",
+  "size": [
+   500,
+   262
+  ],
+  "offset": [
+   210,
+   233
+  ],
+  "pivot": [
+   262.2,
+   278.1
+  ]
+ },
+ "blink": {
+  "file": "assets/anim/npc.bai_lingshuang/blink.webp",
+  "rect": [
+   272,
+   197,
+   61,
+   27
+  ]
+ },
+ "weights": "assets/anim/npc.bai_lingshuang/weights.png"
+}
