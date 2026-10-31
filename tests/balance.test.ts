@@ -85,7 +85,7 @@ test("economy: enhancing a full set to +10 costs 1–10 days of the region's far
   const loot = (n: number) => { const reg = regions[n - 1]!; const nodes = c.nodesOf(reg.id).filter((x) => x.kind === "battle" && x.waves?.length); let st = 0, k = 0, en = 0; for (const nd of nodes) { for (const e of nd.waves!.flat()) { const l = c.find<any>(c.get<any>(e).loot); if (l) st += (l.spirit_stones[0] + l.spirit_stones[1]) / 2; } k++; en += nd.energy_cost; } return { perClear: st / k, energy: en / k }; };
   for (const n of [1, 4, 8, 12, 15]) {
     const { perClear, energy } = loot(n);
-    const perDay = perClear * (100 + 24 * 60 / c.rules.energy.regen_minutes) / energy;
+    const perDay = perClear * (c.rules.energy.max + 24 * 60 / c.rules.energy.regen_minutes) / energy;   // a full bar plus a day of regeneration
     const s = makePlayer(c, n, "fitted", 1);
     const uid = s.equipped.weapon!; const g = s.inventory.gear[uid]!; g.enhance = 0;
     let cost = 0; for (let l = 0; l < 10; l++) { cost += enhanceCost(c, g)!.stones; g.enhance++; }

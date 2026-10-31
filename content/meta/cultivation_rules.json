@@ -27,8 +27,8 @@
     "pill_bonus_cap": 0.4
   },
   "energy": {
-    "max": 100,
-    "regen_minutes": 6,
+    "max": 500,
+    "regen_minutes": 1.2,
     "max_per_rank_order": 10
   },
   "autosave_seconds": 30,
