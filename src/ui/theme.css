@@ -2116,3 +2116,10 @@ html, body { font-variant-numeric: tabular-nums; }
 .tp-line { display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: calc(11.5rem / 15); color: #ffd27a; }
 .tp-line .ico { flex: none; } .tp-line.heal { color: #8ff0bf; } .tp-line.shield { color: #9fd8ff; }
 .tp-line .muted { font-weight: 400; }
+
+/* ---------- Adventure tabs: Regions · Dungeons · Challenge · Secret Realms · Mega Dungeons ---------- */
+.world-switch { gap: 2px; }
+.world-switch .chip { flex: 1 1 auto; justify-content: center; padding-left: 8px; padding-right: 8px; white-space: nowrap; }
+.world-switch .wl-short { display: none; }
+@media (max-width: 560px) { .world-switch .chip:has(.wl-short) .wl-full { display: none; } .world-switch .wl-short { display: inline; } }
+@media (max-width: 380px) { .world-switch .chip { padding-left: 6px; padding-right: 6px; font-size: calc(12rem / 15); } }

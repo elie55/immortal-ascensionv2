@@ -378,7 +378,7 @@ async function sweep() {
   await page.locator(".region-card").nth(5).click(); await page.waitForTimeout(700); await shot("sw-region6");
   await page.locator(".mp-node").nth(3).dispatchEvent("click"); await page.waitForTimeout(500); await shot("sw-node-card");
   await page.locator(".back").click(); await page.waitForTimeout(400);
-  await page.locator(".chips .chip", { hasText: "Dungeons" }).click(); await page.waitForTimeout(600); await shot("sw-dungeons");
+  await page.locator(".chips .chip", { hasText: /^Dungeons$/ }).click(); await page.waitForTimeout(600); await shot("sw-dungeons");
   await page.locator(".nav button", { hasText: "Character" }).click(); await page.waitForTimeout(300);
   await page.locator(".btn", { hasText: "Techniques" }).click(); await page.waitForTimeout(500); await shot("sw-techniques");
   await page.locator(".nav button", { hasText: "Cultivate" }).click(); await page.waitForTimeout(300);
@@ -490,7 +490,9 @@ const SCEN: Record<string, () => Promise<void>> = {
   questmap: () => questMap("questmap"),
   sectmap: () => screen("sectmap", 1, "0", { tab: "sect" }),
   regions: () => screen("regions", 4, "0", { tab: "adventure" }),
-  dungeons: () => screen("dungeons", 4, `window.__ia.dev.open("dungeons")`, { tab: "adventure" }),
+  dungeons: () => screen("dungeons", 4, `window.__ia.dev.open("dungeons")`, { tab: "adventure" }).then(async () => {
+    for (const t of ["Challenge", "Secret Realms", "Mega Dungeons"]) { await page.locator(`.world-switch .chip[aria-label='${t}']`).click(); await page.waitForTimeout(500); await shot(`dungeons-${t.split(" ")[0]!.toLowerCase()}`); }
+  }),
   // a bag with more than one page (24 slots a page): page 1, then the pager's page 2
   bagfull: () => screen("bagfull-1", 3, "0", { tab: "inventory", mutate: (s) => { for (const m of [...c.byPrefix<any>("mat"), ...c.byPrefix<any>("cons")].slice(0, 40)) s.inventory.stacks[m.id] = 3; } }).then(async () => {
     await page.locator(".pager .pg", { hasText: "2" }).click(); await page.waitForTimeout(400); await shot("bagfull-2");

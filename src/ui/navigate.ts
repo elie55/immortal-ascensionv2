@@ -14,7 +14,7 @@ import { nextStepTo } from "../engine/nodes.ts";
 import { openLocation } from "./screens/sect.ts";
 import { npcScreen } from "./screens/npc.ts";
 import { regionScreen } from "./screens/adventure.ts";
-import { dungeonHubScreen, realmScreen } from "./screens/delves.ts";
+import { dungeonHubScreen, hubTabOf, realmScreen } from "./screens/delves.ts";
 import { shopScreen } from "./screens/shop.ts";
 import { questLogScreen } from "./screens/quests.ts";
 
@@ -56,7 +56,7 @@ const goNode = (app: App, n: MapNode): Destination => {
 const goRegion = (app: App, region: string): Destination => ({ where: app.content.get<any>(region).name, tab: "adventure", go: () => { toTab(app, "adventure"); app.router.push(regionScreen(app, region)); } });
 const goDungeon = (app: App, id: string): Destination => {
   const d = app.content.get<any>(id);
-  return { where: `Dungeons · ${d.name}`, tab: "adventure", go: () => { toTab(app, "adventure"); app.router.push(dungeonHubScreen(app)); if (d.kind === "secret_realm") app.router.push(realmScreen(app, id)); else focusLater(`[data-dungeon="${id}"]`); } };
+  return { where: `Dungeons · ${d.name}`, tab: "adventure", go: () => { toTab(app, "adventure"); app.router.push(dungeonHubScreen(app, hubTabOf(d.kind))); if (d.kind === "secret_realm") app.router.push(realmScreen(app, id)); else focusLater(`[data-dungeon="${id}"]`); } };
 };
 const goCultivate = (app: App, where: string): Destination => ({ where, tab: "cultivate", go: () => toTab(app, "cultivate") });
 const goFeature = (app: App, feature: string, label: string): Destination => {

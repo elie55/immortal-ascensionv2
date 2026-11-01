@@ -90,7 +90,7 @@ export function celebrateEvent(app: App, e: DomainEvent): boolean {
       const d = c.get<any>(e.dungeon); const f = towerFloor(c, d, e.floor);
       if (!f.milestone) return false;
       celebrate(app, { pre: "Tower milestone", title: `Floor ${e.floor}`, cn: d.name_cn, sub: `${d.name} · ${f.boss ? "Warden defeated" : "a new height"}`, art: c.art(d.id, "card"), icon: "temple", rewards: f.milestone.rewards,
-        cta: { label: `Climb on · floor ${e.floor + 1}`, go: () => { tab("adventure"); app.router.push(dungeonHubScreen(app)); app.router.push(towerScreen(app, d.id)); } } });
+        cta: { label: `Climb on · floor ${e.floor + 1}`, go: () => { tab("adventure"); app.router.push(dungeonHubScreen(app, "dungeons")); app.router.push(towerScreen(app, d.id)); } } });
       return true;
     }
     case "place_opened": {
@@ -100,7 +100,7 @@ export function celebrateEvent(app: App, e: DomainEvent): boolean {
       const pre = e.by === "fame" ? `Fame milestone · ${(u.sect_fame as number).toLocaleString("en-US")} Sect Fame` : e.by === "rank" ? "New rank, new doors" : "Your realm opens the way";
       celebrate(app, { pre, title: p.name, cn: p.name_cn, sub: p.description, art: c.artAny(e.id, "card", "background"), icon: isRealm ? "map" : "temple",
         body: isRealm && h("div", { class: "row", style: { justifyContent: "center", gap: "6px", flexWrap: "wrap", margin: "6px 0" } }, h("span", { class: "tag" }, `Rec. CP ${p.rec_cp.toLocaleString("en-US")}`), h("span", { class: "tag" }, `${(p.realm_nodes ?? []).filter((n: any) => n.waves?.length).length} trials`)),
-        cta: { label: isRealm ? "Go to Adventure" : `Visit ${p.name}`, go: () => { if (isRealm) { tab("adventure"); app.router.push(dungeonHubScreen(app)); app.router.push(realmScreen(app, e.id)); } else { tab("sect"); openLocation(app, e.id); } } } });
+        cta: { label: isRealm ? "Go to Adventure" : `Visit ${p.name}`, go: () => { if (isRealm) { tab("adventure"); app.router.push(dungeonHubScreen(app, "secret_realm")); app.router.push(realmScreen(app, e.id)); } else { tab("sect"); openLocation(app, e.id); } } } });
       return true;
     }
     case "root_awakened": {

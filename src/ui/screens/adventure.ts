@@ -19,7 +19,7 @@ import { canStart, Encounter, type EncounterSource } from "../../engine/encounte
 import { computeStats } from "../../engine/stats.ts";
 import { battleScreen } from "./battle.ts";
 import { gearName } from "./items.ts";
-import { dungeonHubScreen, realmScreen } from "./delves.ts";
+import { dungeonHubScreen, setHubTab, type HubTab, realmScreen } from "./delves.ts";
 import { canEnterRealm, realmRun } from "../../engine/delves.ts";
 
 const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV"];
@@ -41,10 +41,24 @@ export function nodeArt(app: App, n: MapNode): string | undefined {
 }
 
 /** Regions / Dungeons switch, shown on both pages (Dungeons sits one level above the Adventure root). */
-export function worldSwitch(app: App, on: "regions" | "dungeons") {
+/**
+ * Adventure tabs: the world's regions, then one tab per kind of dungeon (tower and resource dungeons; challenge;
+ * secret realms; mega dungeons). Regions is the tab root; the dungeon tabs share one screen that switches in place.
+ */
+const WORLD_TABS: { key: "regions" | HubTab; full: string; short: string }[] = [
+  { key: "regions", full: "Regions", short: "Regions" }, { key: "dungeons", full: "Dungeons", short: "Dungeons" },
+  { key: "challenge", full: "Challenge", short: "Challenge" }, { key: "secret_realm", full: "Secret Realms", short: "Realms" }, { key: "mega", full: "Mega Dungeons", short: "Mega" },
+];
+export function worldSwitch(app: App, on: "regions" | HubTab) {
+  const pick = (k: "regions" | HubTab) => {
+    if (k === on) return;
+    if (k === "regions") { app.router.back(); return; }
+    if (on === "regions") { app.router.push(dungeonHubScreen(app, k)); return; }
+    setHubTab(k); app.router.refresh();
+  };
   return h("div", { class: "chips glass world-switch", role: "tablist" },
-    h("button", { class: ["chip", on === "regions" && "on"], role: "tab", "aria-selected": String(on === "regions"), onClick: () => { if (on !== "regions") app.router.back(); } }, "Regions"),
-    h("button", { class: ["chip", on === "dungeons" && "on"], role: "tab", "aria-selected": String(on === "dungeons"), onClick: () => { if (on !== "dungeons") app.router.push(dungeonHubScreen(app)); } }, "Dungeons"));
+    WORLD_TABS.map((t) => h("button", { class: ["chip", on === t.key && "on"], role: "tab", "aria-selected": String(on === t.key), "aria-label": t.full, onClick: () => pick(t.key) },
+      h("span", { class: "wl-full" }, t.full), t.short !== t.full && h("span", { class: "wl-short" }, t.short))));
 }
 
 export function adventureScreen(app: App) {

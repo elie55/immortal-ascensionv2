@@ -24,7 +24,21 @@ const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
 /** Selected tier per resource dungeon (UI only). */
 const tierPick = new Map<string, number>();
 
-export function dungeonHubScreen(app: App): Screen {
+/** The dungeon tabs of Adventure (adventure.ts worldSwitch): tower and resource, challenge, secret realms, mega. */
+export type HubTab = "dungeons" | "challenge" | "secret_realm" | "mega";
+let hubTab: HubTab = "dungeons";
+export const setHubTab = (t: HubTab) => { hubTab = t; };
+/** The tab a dungeon is listed under. */
+export const hubTabOf = (kind: string): HubTab => kind === "challenge" ? "challenge" : kind === "secret_realm" ? "secret_realm" : kind === "mega" ? "mega" : "dungeons";
+const HUB: Record<HubTab, { title: string; cn: string; sub: string; help: string }> = {
+  dungeons: { title: "Dungeons", cn: "秘境", sub: "The endless tower and resource dungeons", help: "dungeons" },
+  challenge: { title: "Challenge", cn: "试炼", sub: "Multi-wave fights, HP carries over", help: "dungeons" },
+  secret_realm: { title: "Secret Realms", cn: "秘境", sub: "Branching rooms · first-clear rewards once", help: "dungeons" },
+  mega: { title: "Mega Dungeons", cn: "大秘境", sub: "Party with Dao companions · Divine gear", help: "dungeons" },
+};
+
+export function dungeonHubScreen(app: App, tab?: HubTab): Screen {
+  if (tab) hubTab = tab;
   return {
     id: "dungeons",
     render: () => {
@@ -65,15 +79,16 @@ export function dungeonHubScreen(app: App): Screen {
               h("span", { class: "muted" }, can.ok ? (!firstDone && Object.keys(fc ?? {}).length ? "First-clear bonus" : "") : can.reason),
               h("button", { class: ["btn sm", can.ok && "gold"], disabled: !can.ok, onClick: go }, run ? "Resume" : tier && tier.tier > 1 ? `Enter ${tier.name}` : "Enter"))));
       };
+      const hb = HUB[hubTab];
+      const list = (k: string, title: string, hint: string) => { const g = group(k); return section(title, hint, g.length ? h("div", { class: "rows" }, g.map(card)) : h("div", { class: "muted center" }, "None yet.")); };
+      // a tab that is one kind of dungeon: the bar above already names it, so the cards stand on their own
+      const bare = (k: string) => { const g = group(k); return g.length ? h("div", { class: "rows hub-list" }, g.map(card)) : h("div", { class: "glass panel muted center" }, "None yet."); };
       return [
         header(app),
-        subbar({ help: { app, key: "dungeons" }, title: "Dungeons", cn: "秘境", sub: "Tower · resource · challenge · realms" }),
-        worldSwitch(app, "dungeons"),
-        tower && towerHero(app, tower),
-        section("Resource", "Farm materials and spirit stones", h("div", { class: "rows" }, group("resource").map(card))),
-        section("Challenge", "Multi-wave, HP carries over", h("div", { class: "rows" }, group("challenge").map(card))),
-        section("Secret Realms", "Branching rooms · first-clear rewards once", h("div", { class: "rows" }, group("secret_realm").map(card))),
-        section("Mega Dungeons", "Party with Dao companions · Divine gear", h("div", { class: "rows" }, group("mega").map(card))),
+        subbar({ help: { app, key: hb.help }, title: hb.title, cn: hb.cn, sub: hb.sub }),
+        worldSwitch(app, hubTab),
+        ...(hubTab === "dungeons" ? [tower && towerHero(app, tower), list("resource", "Resource", "Farm materials and spirit stones")]
+          : [bare(hubTab)]),
       ];
     },
   };
