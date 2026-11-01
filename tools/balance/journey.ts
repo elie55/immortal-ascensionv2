@@ -25,17 +25,17 @@ import { Encounter, canEnterTournament, canStart, type EncounterSource } from ".
 import { computeStats } from "../../src/engine/stats.ts";
 import { energyNow, energyMax, tick as cultTick, applyOffline, minorBreakthrough, canMinorBreakthrough, majorRequirements, canAttemptMajor, majorBreakthrough, isFinalStage } from "../../src/engine/cultivation.ts";
 import { enhanceCost, enhance, alchemyStatus, refinePills, upgradeFurnace, readBook, furnaces } from "../../src/engine/crafting.ts";
-import { equipBest } from "../../src/engine/actions.ts";
+import { equipBest, sellItem } from "../../src/engine/actions.ts";
 import { checkUnlock } from "../../src/engine/unlock.ts";
 import { nodeState, gather, openChest, meditateAt, resolveEvent } from "../../src/engine/nodes.ts";
 import { regionsOf, availableAt, T0 } from "./sim_lib.ts";
-import { EQUIP_SLOTS } from "../../src/engine/inventory.ts";
+import { EQUIP_SLOTS, bagGearUids, bagUsed, bagCapacity, claimPouch, pouchCount } from "../../src/engine/inventory.ts";
 import { seedRng } from "../../src/engine/rng.ts";
 import { Game } from "../../src/engine/game.ts";
 import { questStatus, acceptQuest, turnInQuest, questProgress } from "../../src/engine/progression.ts";
 import { completeScene, firstScene } from "../../src/engine/story.ts";
 import { chat, askTopic, giveGift } from "../../src/engine/social.ts";
-import { shopRows, buy } from "../../src/engine/shop.ts";
+import { shopRows, buy, sellGear } from "../../src/engine/shop.ts";
 import { canEnterRealm, enterRealm, realmNodeState, realmInteract, realmRun } from "../../src/engine/delves.ts";
 
 const args = process.argv.slice(2);
@@ -214,6 +214,28 @@ function wanted(s: GameState): Map<string, number> {
 }
 
 /**
+ * Bag keeping, as a player does when the bag fills: sell the gear not worn, sell junk, trim material stacks nobody
+ * needs, then claim what waited in the overflow pouch. Without this the pouch swallows every new drop once the
+ * bag's slots are taken (the first journey runs stalled for weeks on a "missing" material that sat in the pouch).
+ */
+function tidy(g: Game, s: GameState, now: number): void {
+  const spare = bagGearUids(s).filter((u) => !EQUIP_SLOTS.some((sl) => s.equipped[sl] === u));
+  if (spare.length) g.run("sell", now, (x, cc) => sellGear(x, cc, spare));
+  const want = wanted(s);
+  for (const [id, qty] of Object.entries(s.inventory.stacks)) {
+    if (qty <= 0) continue;
+    if (id.startsWith("junk.")) { g.run("sell", now, (x, cc) => sellItem(x, cc, id, qty)); continue; }
+    if (id.startsWith("mat.") && !want.has(id) && qty > 300) g.run("sell", now, (x, cc) => sellItem(x, cc, id, qty - 150));
+  }
+  if (bagUsed(s) >= bagCapacity(s, c) - 2) {
+    // still tight: let go of the material stacks the recipes and breakthroughs do not ask for, smallest first
+    const idle = Object.entries(s.inventory.stacks).filter(([id, q]) => q > 0 && id.startsWith("mat.") && !want.has(id)).sort((a, b) => a[1] - b[1]);
+    for (const [id, q] of idle.slice(0, 6)) g.run("sell", now, (x, cc) => sellItem(x, cc, id, q));
+  }
+  if (pouchCount(s)) claimPouch(s, c);
+}
+
+/**
  * Shopping, through the real shops: what the player wants (breakthrough pills and their ingredients, the enhancement
  * materials the equipped set needs next, every technique and method on sale) when the stones are there. Keeps a
  * reserve of a day's income so enhancement is never starved by shopping.
@@ -224,11 +246,12 @@ function shop(g: Game, s: GameState, now: number): number {
   for (const sh of c.byPrefix<any>("shop")) {
     let rows; try { rows = shopRows(s, c, sh.id, now); } catch { continue; }
     for (const row of rows) {
-      if (row.locked || row.owned || row.currency !== "spirit_stones") continue;
+      if (row.locked || row.owned || row.currency === "sect_fame") continue;
       const learnable = row.id.startsWith("tech.") || row.id.startsWith("method.");
-      const n = learnable ? 1 : Math.min(want.get(row.id) ?? 0, row.left ?? 99);
+      let n = learnable ? 1 : Math.min(want.get(row.id) ?? 0, row.left ?? 99);
+      if (row.currency === "contribution") n = Math.min(n, Math.floor(s.resources.contribution / row.price));   // the exchange: spend what the missions earned
       if (n <= 0) continue;
-      if (s.resources.spirit_stones - row.price * n < 500) continue;
+      if (row.currency === "spirit_stones" && s.resources.spirit_stones - row.price * n < 500) continue;
       const before = s.resources.spirit_stones;
       const r = g.run("buy", now, (x, cc) => buy(x, cc, sh.id, row.index, n, now));
       if (r.ok) { spent += before - s.resources.spirit_stones; if (!learnable) want.set(row.id, (want.get(row.id) ?? 0) - n); }
@@ -310,7 +333,7 @@ function run(seed: number): Journey {
       // gear, alchemy and technique upkeep
       equipBest(s, c);
       cur.stonesSpent += enhanceAll(s, plusCap(region));
-      if (minutes % 15 === 0) { cur.stonesSpent += shop(g, s, now); cur.stonesSpent += alchemy(g, s, now); cur.stonesSpent += enhanceAll(s, plusCap(region)); }
+      if (minutes % 15 === 0) { tidy(g, s, now); cur.stonesSpent += shop(g, s, now); cur.stonesSpent += alchemy(g, s, now); cur.stonesSpent += enhanceAll(s, plusCap(region)); }
       const reg = regions[region - 1]!;
       // tap every open place that is not a fight (gathering, chests, meditation spots, events): they open the map;
       // gathering spots in every discovered region are revisited when their cooldown is over (herbs for alchemy)

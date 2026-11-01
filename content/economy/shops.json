@@ -92,6 +92,30 @@
         }
       },
       {
+        "id": "mat.refining_stone",
+        "price": 400,
+        "currency": "spirit_stones",
+        "qty": 20,
+        "unlock": {
+          "sect_fame": 2000
+        },
+        "scale": {
+          "per_realm": 1.5
+        }
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "price": 2000,
+        "currency": "spirit_stones",
+        "qty": 1,
+        "unlock": {
+          "sect_fame": 1500
+        },
+        "scale": {
+          "per_realm": 1.7
+        }
+      },
+      {
         "id": "mat.reforging_sand",
         "price": 150,
         "currency": "spirit_stones",
@@ -280,6 +304,54 @@
         "answer": "Candied hawthorn, and an ancient spirit coin if you truly want my heart. And people who pay in full. You're doing great on one of those~",
         "unlock": {
           "affinity": 50
+        }
+      }
+    ]
+  },
+  {
+    "id": "shop.sect_exchange",
+    "name": "Contribution Exchange",
+    "description": "The sect repays service: Dao Insight Crystals, refining stones and awakening crystals for Contribution earned at the Mission Hall.",
+    "name_cn": "贡献阁",
+    "owner": "npc.elder_wen",
+    "restock": "weekly",
+    "buys_items": false,
+    "stock": [
+      {
+        "id": "mat.dao_insight_crystal",
+        "price": 120,
+        "currency": "contribution",
+        "qty": 3,
+        "unlock": {}
+      },
+      {
+        "id": "mat.refining_stone",
+        "price": 8,
+        "currency": "contribution",
+        "qty": 30,
+        "unlock": {}
+      },
+      {
+        "id": "mat.spirit_enhancing_stone",
+        "price": 6,
+        "currency": "contribution",
+        "qty": 40,
+        "unlock": {}
+      },
+      {
+        "id": "mat.reforging_sand",
+        "price": 3,
+        "currency": "contribution",
+        "qty": 30,
+        "unlock": {}
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "price": 300,
+        "currency": "contribution",
+        "qty": 1,
+        "unlock": {
+          "rank": "rank.inner_disciple"
         }
       }
     ]

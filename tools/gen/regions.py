@@ -175,7 +175,7 @@ def region(rd, prev):
     if key in SIGNATURES: entry["signature"] = SIGNATURES[key]
     out["bosses"].append(entry)
     out["loot"].append({"id": f"loot.boss.{bk}", "mode": "independent", "rolls": 1, "ilvl": [bhi - 3, bhi + 2],
-                        "entries": [{"id": M(cry), "chance": 0.8, "qty": [2, 3]}, {"id": f"book.{mk}", "chance": 0.3, "qty": [1, 1]}, {"id": "mat.dao_insight_crystal", "chance": 0.1 + 0.02 * n, "qty": [1, 1]},
+                        "entries": [{"id": M(cry), "chance": 0.8, "qty": [2, 3]}, {"id": f"book.{mk}", "chance": 0.3, "qty": [1, 1]}, {"id": "mat.dao_insight_crystal", "chance": 0.1 + 0.02 * n, "qty": [1, 1], "pity": 5},
                                     {"id": "mat.refining_stone", "chance": 0.6, "qty": [1, 3]}, {"id": "mat.awakening_crystal", "chance": 0.05 + 0.01 * n, "qty": [1, 1]},
                                     {"gear": {"pool": {"tags": [key]}}, "rarity_weights": weights(n, [(1, 55), (2, 35), (3, 10)]), "chance": 0.7}],
                         "guaranteed": [q2(M(mon), 3)], "spirit_stones": [60 * n * n, 100 * n * n], "sect_fame": 20 * n, "mastery_xp": 40 * n})
@@ -367,7 +367,7 @@ def region(rd, prev):
                                "grade": min(9, 2 + n // 2), "effects": {"qi": int(REALM_BASE_QI[REALMS.index(rmin)] * 0.6), "cultivation_boost": {"mult": round(1.2 + 0.02 * n, 2), "minutes": 30}},
                                "usable_in_battle": False, "cooldown_min": 0, "art": {"icon": icon(f"items/consumables/{pk2}", plook, rar[2])}})
     out["alchemy"].append({"id": f"alchemy.{pk2}", **named(pname2, pdesc2, pcn2), "output": {"id": f"cons.{pk2}", "qty": [1, 2]}, "ingredients": [q2(M(herb), 4), q2(M(mon), 2), q2(M(cry), 1)],
-                           "cost_stones": 100 * n * n, "grade": min(9, 2 + n // 2), "success_base": 0.5, "furnace_min": min(3, 1 + n // 5), "proficiency_min": 40 * n, "proficiency_xp": 30 * n,
+                           "cost_stones": 100 * n * n, "grade": min(9, 2 + n // 2), "success_base": 0.5, "furnace_min": 1 + (n >= 5) + (n >= 10) + (n >= 13) + (n >= 15), "proficiency_min": 40 * n, "proficiency_xp": 30 * n,
                            "unlock": {"type": "sect_fame", "fame": max(1, FAME[n - 1])}, "failure": {"return_pct": 0.3, "byproduct": "gift.bitter_medicine"}})
     fk = rd["gear"][0][0]
     out["forge"].append({"id": f"forge.{fk}", **named(rd["gear"][0][1], f"Forge a {rd['gear'][0][1]} from the materials of the {rd['name']}.", rd["gear"][0][2]),
@@ -388,10 +388,10 @@ def region(rd, prev):
          "difficulty": min(5, 2 + n // 4), "rec_cp": round(cb * 1.5), "hint": f"Adventure · {rd['name']} · Throne", "art": qicon("main", f"{key}_sovereign", rd["name"])},
         {"id": f"quest.mission.{key}_{mon}", **named(f"{rd['mats'][2][1]} Requisition", f"The Mission Hall needs five {rd['mats'][2][1]} from the {rd['name']}.", None), "type": "mission",
          "giver": "sectloc.mission_hall", "turn_in": "sectloc.mission_hall", "prereqs": {"regions": [f"region.{key}"]}, "objectives": [{"type": "deliver", "item": M(mon), "count": 5, "to": "sectloc.mission_hall"}],
-         "rewards": {"spirit_stones": 60 * n * n, "sect_fame": 15 * n}, "repeatable": {"cooldown_min": 1440}, "difficulty": min(5, 1 + n // 4), "rec_cp": cb, "hint": f"{rd['name']} · enemies drop it", "art": qicon("mission", f"{key}_{mon}", rd["name"])},
+         "rewards": {"spirit_stones": 60 * n * n, "sect_fame": 15 * n, "contribution": 10 + 5 * n}, "repeatable": {"cooldown_min": 1440}, "difficulty": min(5, 1 + n // 4), "rec_cp": cb, "hint": f"{rd['name']} · enemies drop it", "art": qicon("mission", f"{key}_{mon}", rd["name"])},
         {"id": f"quest.combat.{key}_elite_hunt", **named(f"Hunt: {ens[3][1]}", f"Defeat three {ens[3][1]}s in the {rd['name']}.", None), "type": "combat",
          "giver": "sectloc.mission_hall", "turn_in": "sectloc.mission_hall", "prereqs": {"regions": [f"region.{key}"]}, "objectives": [{"type": "defeat", "target": eids[3], "count": 3}],
-         "rewards": {"spirit_stones": 80 * n * n, "sect_fame": 20 * n, "items": [q2("mat.spirit_enhancing_stone", 2)]}, "repeatable": {"cooldown_min": 1440}, "difficulty": min(5, 2 + n // 4), "rec_cp": round(cb * 1.6),
+         "rewards": {"spirit_stones": 80 * n * n, "sect_fame": 20 * n, "contribution": 10 + 5 * n, "items": [q2("mat.spirit_enhancing_stone", 2)]}, "repeatable": {"cooldown_min": 1440}, "difficulty": min(5, 2 + n // 4), "rec_cp": round(cb * 1.6),
          "hint": f"{rd['name']} · Lair / Den", "art": qicon("combat", f"{key}_elite_hunt", rd["name"])},
         {"id": f"quest.dungeon.{key}_{dk}", **named(f"Trial: {dname}", f"Elder Feng wants proof you can clear the {dname}.", None), "type": "dungeon",
          "giver": "npc.elder_feng", "turn_in": "npc.elder_feng", "prereqs": {"regions": [f"region.{key}"], "realm": {"id": realm_id(rmin), "stage": 3}}, "objectives": [{"type": "clear", "target": f"dungeon.{dk}", "count": 1}],

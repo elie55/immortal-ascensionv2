@@ -37,6 +37,7 @@ function activity(app: AppT, f: string, loc: any): { go?: () => void; tag: strin
     case "missions": return { go: () => app.router.push(missionHallScreen(app, loc.id)), tag: "Open" };
     case "pavilion": return { go: () => app.router.push(shopScreen(app, loc.shop ?? "shop.scripture_pavilion", back)), tag: "Browse" };
     case "merchant": return { go: () => app.router.push(shopScreen(app, loc.shop ?? "shop.merchant_pavilion", back)), tag: "Shop" };
+    case "exchange": return { go: () => app.router.push(shopScreen(app, loc.shop ?? "shop.sect_exchange", back)), tag: "Exchange", note: `Contribution ${fmt.int(app.game.state.resources.contribution)} · earned from Mission Hall requests` };
     case "alchemy": return { go: () => app.router.push(alchemyScreen(app, back)), tag: "Refine" };
     case "forge": return { go: () => app.router.push(forgeScreen(app, back)), tag: "Forge" };
     case "tournament": return { go: () => app.router.push(arenaScreen(app, back)), tag: "Enter" };
@@ -56,6 +57,7 @@ const FEATURE: Record<string, { label: string; icon: string; note: string }> = {
   forge: { label: "Spirit forge", icon: "sword", note: "Forge, enhance and refine gear" }, beasts: { label: "Beast garden", icon: "paw", note: "Hatch and raise spirit beasts" },
   quarters: { label: "Journal", icon: "scroll", note: "Quests, achievements and the story so far" }, storage: { label: "Storage chest", icon: "pouch", note: "Personal storage" }, rest: { label: "Rest", icon: "clock", note: "Recover HP" },
   tournament: { label: "Tournaments", icon: "fame", note: "Climb the sect rankings" },
+  exchange: { label: "Contribution exchange", icon: "gem", note: "Dao Insight Crystals and refining stones for Contribution" },
 };
 
 /** Plaque colour per location (first feature), as in the mockup: each place has its own coloured medallion. */

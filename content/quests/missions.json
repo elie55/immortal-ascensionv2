@@ -23,6 +23,7 @@
     "rewards": {
       "spirit_stones": 120,
       "sect_fame": 40,
+      "contribution": 15,
       "affinity": [
         {
           "npc": "npc.bai_lingshuang",
@@ -77,6 +78,7 @@
     "rewards": {
       "spirit_stones": 80,
       "sect_fame": 20,
+      "contribution": 15,
       "affinity": [
         {
           "npc": "npc.tang_xiaoman",
@@ -130,6 +132,7 @@
     "rewards": {
       "spirit_stones": 200,
       "sect_fame": 60,
+      "contribution": 15,
       "affinity": [
         {
           "npc": "npc.master_gu",
@@ -183,6 +186,7 @@
     "rewards": {
       "spirit_stones": 450,
       "sect_fame": 120,
+      "contribution": 15,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",

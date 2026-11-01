@@ -298,6 +298,7 @@ export function rewardsLine(app: App, r: any) {
   const parts: any[] = [];
   if (r.spirit_stones) parts.push(h("span", { class: "tag gold" }, icon("gem", 10), ` ${fmt.int(r.spirit_stones)}`));
   if (r.sect_fame) parts.push(h("span", { class: "tag" }, icon("fame", 10), ` ${fmt.int(r.sect_fame)} Fame`));
+  if (r.contribution) parts.push(h("span", { class: "tag jade" }, icon("scroll", 10), ` ${fmt.int(r.contribution)} Contribution`));
   for (const it of r.items ?? []) parts.push(h("span", { class: "tag" }, `${it.qty}× ${c.get<any>(it.id).name}`));
   for (const g of r.gear ?? []) parts.push(h("span", { class: `tag rt-${g.rarity}` }, c.get<any>(g.base).name));
   for (const t of r.techniques ?? []) parts.push(h("span", { class: "tag jade" }, c.get<any>(t).name));

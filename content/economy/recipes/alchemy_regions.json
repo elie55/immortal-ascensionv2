@@ -438,7 +438,7 @@
     "cost_stones": 16900,
     "grade": 8,
     "success_base": 0.5,
-    "furnace_min": 3,
+    "furnace_min": 4,
     "proficiency_min": 520,
     "proficiency_xp": 390,
     "unlock": {
@@ -479,7 +479,7 @@
     "cost_stones": 19600,
     "grade": 9,
     "success_base": 0.5,
-    "furnace_min": 3,
+    "furnace_min": 4,
     "proficiency_min": 560,
     "proficiency_xp": 420,
     "unlock": {
@@ -520,7 +520,7 @@
     "cost_stones": 22500,
     "grade": 9,
     "success_base": 0.5,
-    "furnace_min": 3,
+    "furnace_min": 5,
     "proficiency_min": 600,
     "proficiency_xp": 450,
     "unlock": {

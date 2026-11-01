@@ -50,7 +50,8 @@ by the enemies' region, tournaments by rank, tower milestones by floor power).
 | Combat Power | fitted CP within 0.75–2× of the region's normal cp | CP informative, not a guarantee |
 | full set +10 | 1–5 days of that region's stone income (under two in region 1); +15 one to three weeks | upgrades need choices, not endless farming; +11…+15 is the long-term sink |
 | refinement step | scales with item level like enhancement (`refineCost`); the refining-stone supply (5/day at the Pavilion) is the real gate | a rarity step is a decision, not noise |
-| alchemy proficiency | the breakthrough pill of realm N needs the proficiency a player at region N has (foundation 150, core 200); the regional pills climb 120 → 600 by region 3 → 15 | proficiency is a ladder, never a wall |
+| alchemy proficiency | the breakthrough pill of realm N needs the proficiency a player at region N has (foundation 150, core 200); the regional pills climb 120 → 600 by region 3 → 15 and realm N (4–15) consumes region N's pill | proficiency is a ladder, never a wall; alchemy matters in every realm |
+| Dao Insight Crystals | three sources per realm: region bosses (16–40 %, pity after 5 misses), the Contribution Exchange (3 a week for mission Contribution), the Pavilion (1 a day for stones, price ×1.7 per realm) | a loop with a floor, not a lottery |
 | cultivation | realm 1 ≈ 3 h idle, realm 15 ≈ 100 h idle; ≈ 540 h total idle, ≈ 170 h optimised | long-term pacing (provisional, owner's call) |
 
 ## Levers, in order of preference

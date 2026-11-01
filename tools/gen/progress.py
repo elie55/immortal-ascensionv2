@@ -9,7 +9,8 @@ def shops():
         {"id": "shop.merchant_pavilion", **named("Merchant Pavilion", "Tang Xiaoman's stock. Better goods with higher Sect Fame.", "百宝阁"), "owner": "npc.tang_xiaoman", "restock": "daily",
          "affinity_discount": {"npc": "npc.tang_xiaoman", "pct_per_level": 3}, "fame_discount_pct_per_500": 5, "buys_items": True,
          "stock": [S("cons.qi_gathering_pill", 38), S("cons.blossom_healing_pill", 55), S("cons.spirit_condensing_pill", 114, unlock={"sect_fame": 500}), S("cons.spirit_tea", 25),
-                   S("mat.spirit_grass", 5, qty=20), S("mat.peach_blossom", 12, qty=10), S("mat.crane_feather", 18, qty=10), S("mat.spirit_iron_ore", 57, qty=10), S("mat.lesser_enhancement_stone", 30), S("mat.spirit_enhancing_stone", 400, qty=10, unlock={"sect_fame": 800}), S("mat.refining_stone", 200, qty=5, unlock={"sect_fame": 500}), S("mat.reforging_sand", 150, qty=10, unlock={"sect_fame": 500}),
+                   S("mat.spirit_grass", 5, qty=20), S("mat.peach_blossom", 12, qty=10), S("mat.crane_feather", 18, qty=10), S("mat.spirit_iron_ore", 57, qty=10), S("mat.lesser_enhancement_stone", 30), S("mat.spirit_enhancing_stone", 400, qty=10, unlock={"sect_fame": 800}), S("mat.refining_stone", 200, qty=5, unlock={"sect_fame": 500}), {"id": "mat.refining_stone", "price": 400, "currency": "spirit_stones", "qty": 20, "unlock": {"sect_fame": 2000}, "scale": {"per_realm": 1.5}},
+                   {"id": "mat.dao_insight_crystal", "price": 2000, "currency": "spirit_stones", "qty": 1, "unlock": {"sect_fame": 1500}, "scale": {"per_realm": 1.7}}, S("mat.reforging_sand", 150, qty=10, unlock={"sect_fame": 500}),
                    G("bamboo_sword", "common", 3, 60), G("bamboo_robe", "common", 3, 80), G("reed_hat", "common", 3, 50), G("cloudstep_boots", "common", 3, 143), G("jade_pendant", "common", 3, 90), G("azure_iron_war_ring", "common", 3, 70), G("cloud_talisman", "common", 3, 65),
                    G("azure_iron_sword", "uncommon", 6, 171, unlock={"sect_fame": 300}), G("azure_cloud_robe", "uncommon", 6, 190, unlock={"sect_fame": 300}),
                    S("gift.candied_hawthorn", 15), S("gift.osmanthus_cake", 20), S("gift.sword_polish_cloth", 40), S("gift.fine_ledger_book", 120, unlock={"sect_fame": 500})],
@@ -20,6 +21,9 @@ def shops():
              {"id": "qin_beasts", "about": "npc.qin", "price": 25, "question": "What does Qin at the garden care for?", "answer": "Beast bells and anything his beasts can eat. Feed the beasts first, talk to him after."},
              {"id": "feng_books", "about": "npc.elder_feng", "price": 60, "question": "Is Elder Feng bribable?", "answer": "Not with stones. A fine ledger book, though… he pretends not to notice, then reads it all night.", "unlock": {"sect_fame": 500}},
              {"id": "tang_self", "about": "npc.tang_xiaoman", "price": 10, "question": "And what do you like, Tang?", "answer": "Candied hawthorn, and an ancient spirit coin if you truly want my heart. And people who pay in full. You're doing great on one of those~", "unlock": {"affinity": 50}}]},
+        {"id": "shop.sect_exchange", **named("Contribution Exchange", "The sect repays service: Dao Insight Crystals, refining stones and awakening crystals for Contribution earned at the Mission Hall.", "贡献阁"), "owner": "npc.elder_wen", "restock": "weekly", "buys_items": False,
+         "stock": [S("mat.dao_insight_crystal", 120, "contribution", qty=3), S("mat.refining_stone", 8, "contribution", qty=30), S("mat.spirit_enhancing_stone", 6, "contribution", qty=40),
+                   S("mat.reforging_sand", 3, "contribution", qty=30), S("mat.awakening_crystal", 300, "contribution", qty=1, unlock={"rank": "rank.inner_disciple"})]},
         {"id": "shop.scripture_pavilion", **named("Scripture Pavilion", "Techniques and methods, floor by floor. Higher floors need Fame and rank.", "藏经阁"), "owner": "npc.elder_feng", "restock": "none", "buys_items": False,
          "stock": [S("tech.active.flame_palm", 260), S("tech.active.earth_guardian", 380), S("tech.passive.sword_mastery", 300), S("tech.passive.iron_body", 300), S("tech.passive.spiritual_regeneration", 300),
                    S("tech.active.frozen_lotus", 700, unlock={"sect_fame": 1000}), S("tech.active.thunder_palm", 900, unlock={"sect_fame": 1000}),
@@ -37,11 +41,11 @@ def shops():
 # ---------------- Loot ----------------
 def loot():
     def L(id, entries, stones=(0, 0), guaranteed=None, fame=0, xp=0, mode="independent", rolls=1, ilvl=None, gear=None):
-        ents = [{"id": i, "chance": c, "qty": list(qt)} for i, c, qt in entries] + (gear or [])
+        ents = [{"id": i, "chance": c, "qty": list(qt), **({"pity": p} if p else {})} for i, c, qt, *rest in entries for p in [rest[0] if rest else None]] + (gear or [])
         d = {"id": id, "mode": mode, "rolls": rolls, "entries": ents, "guaranteed": guaranteed or [], "spirit_stones": list(stones), "sect_fame": fame, "mastery_xp": xp}
         if ilvl: d["ilvl"] = list(ilvl)
         return d
-    E = lambda i, c, a=1, b=1: (i, c, (a, b))
+    E = lambda i, c, a=1, b=1, pity=None: (i, c, (a, b), pity)
     GB = lambda base, chance, **w: {"gear": {"base": f"gear.{base}"}, "rarity_weights": w, "chance": chance}
     GP = lambda chance, tags=None, slot=None, **w: {"gear": {"pool": {**({"tags": tags} if tags else {}), **({"slot": slot} if slot else {})}}, "rarity_weights": w, "chance": chance}
     enemies = [
@@ -63,7 +67,7 @@ def loot():
     bosses = [
         L("loot.boss.plains_bandit_chief", [E("gift.ancient_spirit_coin", 0.3), E("gift.spirit_stone_pouch", 0.4), E("mat.lesser_enhancement_stone", 0.8, 2, 4)], (120, 200), fame=20, xp=40, ilvl=(8, 12),
           gear=[GP(0.5, ["plains"], uncommon=70, rare=30), GB("azure_iron_sword", 0.15, uncommon=60, rare=40)]),
-        L("loot.boss.thousand_node_bamboo_dragon", [E("mat.bamboo_dragon_scale", 0.6), E("blueprint.rimeglass_spear", 0.2), E("book.verdant_vine_bind_manual", 0.15), E("mat.spirit_enhancing_stone", 0.8, 2, 3), E("mat.dao_insight_crystal", 0.03)], (400, 700), fame=50, xp=120, ilvl=(18, 22),
+        L("loot.boss.thousand_node_bamboo_dragon", [E("mat.bamboo_dragon_scale", 0.6), E("blueprint.rimeglass_spear", 0.2), E("book.verdant_vine_bind_manual", 0.15), E("mat.spirit_enhancing_stone", 0.8, 2, 3), E("mat.dao_insight_crystal", 0.03, pity=12)], (400, 700), fame=50, xp=120, ilvl=(18, 22),
           gear=[GB("cloud_veil_crown", 0.25, rare=65, epic=30, legendary=5), GP(0.6, ["forest"], rare=55, epic=40, legendary=5)]),
         L("loot.boss.guardian_of_the_origin", [E("mat.frost_wyrm_heart_core", 0.5), E("mat.awakening_crystal", 0.1), E("gift.rare_treasure_map", 0.4), E("mat.glacier_iron_ore", 0.9, 3, 6)], (900, 1400), fame=80, xp=200, ilvl=(24, 30), gear=[GP(0.7, ["forest"], epic=70, legendary=30)]),
         L("loot.boss.tribulation_thunder_spirit", [E("mat.dao_insight_crystal", 0.5), E("mat.spirit_enhancing_stone", 1.0, 5, 8)], (2000, 3000), fame=200, xp=400),
@@ -145,13 +149,13 @@ def quests():
           [{"type": "defeat", "target": "boss.thousand_node_bamboo_dragon", "count": 1}], {"spirit_stones": 800, "sect_fame": 200, "items": [q("cons.foundation_pill", 1)]}, "Adventure · Azure Bamboo Forest · Ancient Bamboo Sovereign", {"quests": ["quest.main.into_the_bamboo"], "realm": {"id": "realm.qi_condensation", "stage": 7}}, None, 4, 1100),
         # missions
         Q("frost_beast_cores", "mission", "Frost Beast Cores", "寒兽核", "Senior Sister Bai needs three Frost Beast Cores from the Azure Bamboo Forest.", MH, MH,
-          [{"type": "deliver", "item": "mat.frost_beast_core", "count": 3, "to": MH}], {"spirit_stones": 120, "sect_fame": 40, "affinity": [{"npc": BAI, "delta": 3}]}, "Azure Bamboo Forest · Frost Lynx Den", {"regions": ["region.azure_bamboo_forest"]}, None, 2, 400, 1440),
+          [{"type": "deliver", "item": "mat.frost_beast_core", "count": 3, "to": MH}], {"spirit_stones": 120, "sect_fame": 40, "contribution": 15, "affinity": [{"npc": BAI, "delta": 3}]}, "Azure Bamboo Forest · Frost Lynx Den", {"regions": ["region.azure_bamboo_forest"]}, None, 2, 400, 1440),
         Q("goods_for_the_caravan", "mission", "Goods for the Caravan", "商队货物", "Tang Xiaoman wants spirit grass and wolf fangs from the Mortal Plains.", MH, MH,
-          [{"type": "collect", "item": "mat.spirit_grass", "count": 6}, {"type": "collect", "item": "mat.wolf_fang", "count": 4}], {"spirit_stones": 80, "sect_fame": 20, "affinity": [{"npc": TANG, "delta": 2}]}, "Mortal Plains · Herb Meadow / Wolf Den", {}, None, 1, 250, 1440),
+          [{"type": "collect", "item": "mat.spirit_grass", "count": 6}, {"type": "collect", "item": "mat.wolf_fang", "count": 4}], {"spirit_stones": 80, "sect_fame": 20, "contribution": 15, "affinity": [{"npc": TANG, "delta": 2}]}, "Mortal Plains · Herb Meadow / Wolf Den", {}, None, 1, 250, 1440),
         Q("ore_for_the_armory", "mission", "Ore for the Armory", "军械矿石", "Master Gu needs five Spirit Iron Ore.", MH, MH,
-          [{"type": "collect", "item": "mat.spirit_iron_ore", "count": 5}], {"spirit_stones": 200, "sect_fame": 60, "affinity": [{"npc": "npc.master_gu", "delta": 3}]}, "Azure Bamboo Forest · Spirit Iron Vein", {"regions": ["region.azure_bamboo_forest"]}, None, 1, 650, 1440),
+          [{"type": "collect", "item": "mat.spirit_iron_ore", "count": 5}], {"spirit_stones": 200, "sect_fame": 60, "contribution": 15, "affinity": [{"npc": "npc.master_gu", "delta": 3}]}, "Azure Bamboo Forest · Spirit Iron Vein", {"regions": ["region.azure_bamboo_forest"]}, None, 1, 650, 1440),
         Q("lotus_of_living_flame", "mission", "A Lotus of Living Flame", "焰莲", "The Alchemy Hall elder seeks a Flame Lotus from the Origin Secret Realm.", MH, MH,
-          [{"type": "collect", "item": "mat.flame_lotus", "count": 1}], {"spirit_stones": 450, "sect_fame": 120, "items": [q("mat.spirit_enhancing_stone", 2)]}, "Origin Secret Realm · Origin Vault", {"quests": ["quest.main.bamboo_sovereign"]}, None, 4, 1200),
+          [{"type": "collect", "item": "mat.flame_lotus", "count": 1}], {"spirit_stones": 450, "sect_fame": 120, "contribution": 15, "items": [q("mat.spirit_enhancing_stone", 2)]}, "Origin Secret Realm · Origin Vault", {"quests": ["quest.main.bamboo_sovereign"]}, None, 4, 1200),
         # npc
         Q("tangs_ledger", "npc", "Tang's Missing Ledger", "唐家失账", "Tang's caravan manifest went missing in the forest. Find it in the Hollow Shrine and bring it back.", TANG, TANG,
           [{"type": "deliver", "item": "qitem.caravan_manifest", "count": 1, "to": TANG}], {"spirit_stones": 100, "techniques": ["tech.active.golden_coin_barrage"], "affinity": [{"npc": TANG, "delta": 40}]}, "Azure Bamboo Forest · Hollow Shrine → Merchant Pavilion", {"affinity": [{"npc": TANG, "level": 1}], "regions": ["region.azure_bamboo_forest"]}, None, 2),
@@ -171,7 +175,7 @@ def quests():
         Q("green_labyrinth_trial", "dungeon", "Trial of the Green Labyrinth", "青翠试炼", "Elder Feng challenges you to clear the Green Labyrinth.", "npc.elder_feng", "npc.elder_feng",
           [{"type": "clear", "target": "dungeon.green_labyrinth", "count": 1}], {"sect_fame": 150, "spirit_stones": 500, "affinity": [{"npc": "npc.elder_feng", "delta": 20}]}, "Adventure · Dungeons · The Green Labyrinth", {"realm": {"id": "realm.qi_condensation", "stage": 6}}, None, 3, 480),
         Q("tower_five", "combat", "Five Floors", "五层", "Climb to floor 5 of the Heaven-Piercing Tower.", "sectloc.proving_arena", "auto",
-          [{"type": "tower_floor", "dungeon": "dungeon.heaven_piercing_tower", "floor": 5}], {"spirit_stones": 200, "sect_fame": 30}, "Adventure · Dungeons · Heaven-Piercing Tower", {"realm": {"id": "realm.qi_condensation", "stage": 5}}, None, 2, 400),
+          [{"type": "tower_floor", "dungeon": "dungeon.heaven_piercing_tower", "floor": 5}], {"spirit_stones": 200, "sect_fame": 30, "contribution": 20}, "Adventure · Dungeons · Heaven-Piercing Tower", {"realm": {"id": "realm.qi_condensation", "stage": 5}}, None, 2, 400),
         Q("heart_of_the_grove", "hidden", "Heart of the Grove", "林心", "Find the hidden clearing and face the Frost Hermit's trial.", "system", "auto",
           [{"type": "clear", "target": "node.azure_bamboo_forest.heart_of_the_grove", "count": 1}], {"items": [q("gift.rare_treasure_map", 1)], "sect_fame": 40}, "Azure Bamboo Forest · ???", {"regions": ["region.azure_bamboo_forest"]}, None, 3, 520),
     ]

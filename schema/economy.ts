@@ -4,6 +4,8 @@ import { Named, Quantity, ref, ItemRef, Unlock, Currency, Range2, Rarity, GearGr
 const ShopCommon = {
   price: z.number().int().positive(),
   currency: Currency.default("spirit_stones"),
+  /** Price grows with the buyer's realm: price × per_realm^(realm order − 1). A late-game sink that stays relevant. */
+  scale: z.object({ per_realm: z.number().min(1) }).optional(),
   /** Limited stock per restock; omit for unlimited. */
   qty: z.number().int().positive().optional(),
   unlock: Unlock.default({}),
@@ -30,6 +32,8 @@ export const LootItemEntry = z.object({
   id: ref("mat", "cons", "gift", "book", "blueprint", "qitem", "egg", "bfood", "junk", "tech", "method"),
   chance: z.number().gt(0).max(1),
   qty: Range2.default([1, 1]),
+  /** Bad-luck protection: after this many misses in a row on this table the item drops for sure (counter per save). */
+  pity: z.number().int().min(1).optional(),
 });
 
 /** A specific base, or a pool resolved against every droppable base matching the filters. */

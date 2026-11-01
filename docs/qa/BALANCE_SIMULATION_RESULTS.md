@@ -58,29 +58,34 @@ tower speed scaling, then the enemy curve was re-derived from the measured playe
 
 ## Journey (whole-game simulation, 2026-11-01)
 
-`node tools/balance/journey.ts --seeds 1 --days 14` (tools/balance/out/journey.md): a bot that plays every minute of
-the day with the real engine — cultivation, breakthroughs, quests, shops, alchemy, enhancement, dungeons, tournaments,
-secret realms, material farming for whatever the next step needs — after the economy and mechanics passes:
+`node tools/balance/journey.ts --seeds 1 --days 30` (tools/balance/out/journey.md): a bot that plays two hours a day
+with the real engine — cultivation (offline between sessions), breakthroughs, quests, shops and the Contribution
+Exchange, alchemy and furnace upgrades, enhancement, dungeons, tournaments, secret realms, bag keeping, and material
+farming for whatever the next step needs — after the economy, mechanics and crystal/alchemy passes:
 
 | region | arrive day | boss day | realm · stage on leaving | CP | waited for |
 |---|---|---|---|---|---|
 | 1 mortal_plains | 0 | 0 | Qi Condensation 9 | 528 | herbs |
-| 2 azure_bamboo_forest | 0 | 1 | Qi Condensation 9 | 803 | materials, energy |
-| 3 blazing_mountain | 1 | 1 | Foundation 5 | 2812 | — |
-| 4 frozen_lotus_valley | 1 | 2 | Foundation 9 | 4529 | realm (Qi) 198′, energy |
-| 5 ancient_sword_tomb | 4 | 4 | Core Formation 9 | 7653 | — |
-| 6 demon_territory | 5 | 6 | Nascent Soul 9 | 12283 | tribulation, crystals |
-| 7 celestial_mountains | 6 | 7 | Soul Transformation 9 | 19142 | — |
-| 8 nine_heavens | 7 | 9 | Spirit Severing 9 | 31289 | crystals 159′, realm 166′ |
-| 9 thunderclap_wastes | 9 | 10 | Tribulation Transcendence 2 | 53423 | — |
-| 10 sunken_dragon_sea | 10 | 11 | Mahayana 2 | 73296 | — |
-| 11 starfall_desert | 11 | 13 | Mahayana 9 | 85781 | tribulation 249′, crystals 174′ |
+| 2 azure_bamboo_forest | 0 | 1 | Qi Condensation 9 | 799 | materials, energy |
+| 3 blazing_mountain | 1 | 1 | Foundation 6 | 2025 | — |
+| 4 frozen_lotus_valley | 1 | 1 | Foundation 9 | 3168 | — |
+| 5 ancient_sword_tomb | 2 | 2 | Core Formation 9 | 7777 | realm 50′ |
+| 6 demon_territory | 2 | 3 | Nascent Soul 9 | 15333 | tribulation 595′, realm 273′, energy |
+| 7 celestial_mountains | 8 | 8 | Soul Transformation 9 | 23444 | — |
+| 8 nine_heavens | 9 | 9 | Dao Integration 3 | 40207 | — |
+| 9 thunderclap_wastes | 9 | 10 | Dao Integration 9 | 56670 | — |
+| 10 sunken_dragon_sea | 10 | 10 | Tribulation Transcendence 9 | 76192 | — |
+| 11 starfall_desert | 11 | 11 | Mahayana 9 | 108989 | — |
+| 12 gate_of_ascension | 12 | 12 | Immortal Ascension 9 | 153492 | — |
+| 13 jade_immortal_realm | 13 | 13 | Earth Immortal 9 | 195033 | — |
+| 14 golden_palace_of_laws | 14 | 14 | Golden Immortal 9 | 289671 | realm 55′ |
+| 15 throne_of_the_immortal_emperor | 16 | 16 | Immortal King 3 | 317823 | — |
 
-Realms are reached a day or two after the region that needs them (Nascent Soul day 5, Dao Integration day 9,
-Mahayana day 11): the Qi clock and the region clock run together, with the Dao Insight Crystal hunt and the
-tribulations as the visible pauses. An always-on optimal bot would finish the 15 regions in about three weeks; a
-person who plays an hour or two a day and farms less efficiently should expect two to three months (the realm pacing
-"realm 15 ≈ 100 h idle" stays the owner's call).
+The Qi clock is the pacing from region 7 on: each realm takes about a day of (mostly offline) cultivation and the
+bot leaves every region at stage 9 of the realm it needs next. The Soul Transformation tribulation is the one hard
+gate (five days at region 6 until the probe said it was winnable). A perfect player on two hours a day finishes the
+15 regions in **16 days**; the realm pacing ("realm 15 ≈ 100 h idle") remains the owner's lever (`REALM_DEFS` qi
+base/growth in tools/gen/world.py) if the game should run longer.
 
 What the journey found and what was changed:
 - **Core Formation wall** — Core Condensing Pill asked for alchemy proficiency 600 with no recipe ladder below it
@@ -89,8 +94,9 @@ What the journey found and what was changed:
   kill and counted only kills after acceptance, so the main quest (and the next region) could stall until the player
   re-fought the boss → boss defeats now count from zero (`progression.ts`, test in sect.test.ts).
 - **Enhancement glut** — see Economy below (+10 in half a day, 866k stones banked by day 20) → cost curve retuned.
-- Bot-side policies the journey needed (map exploration, proficiency grinding, re-fighting a boss a quest asks for)
-  are now in journey.ts; `--verbose` dumps needs, wanted items, recipe status, main-quest statuses every 10 days and
+- Bot-side policies the journey needed (map exploration, proficiency grinding, re-fighting a boss a quest asks for,
+  bag keeping — a full bag sends new drops to the overflow pouch, which stalled early runs for weeks on a material
+  that was sitting there) are now in journey.ts; `--verbose` dumps needs, wanted items, recipe status, main-quest statuses every 10 days and
   `IA_WATCH=<item id>` logs every change of that item's count with what caused it.
 
 ## Combat mechanics pass (2026-11-01)

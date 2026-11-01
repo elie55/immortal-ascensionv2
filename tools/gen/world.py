@@ -36,6 +36,12 @@ REALM_SCENE = {
     15: "an emperor of light at the apex of heaven, all five elements orbiting as rings",
 }
 
+# region order → its pill key (tools/gen/region_data.py rd["pill"][0]); realm N consumes region N's pill
+import sys as _sys, os as _os
+_sys.path.insert(0, _os.path.dirname(__file__))
+from region_data import REGIONS as _REGIONS
+REGION_PILL = {rd["order"] if "order" in rd else i + 3: rd["pill"][0] for i, rd in enumerate(_REGIONS)}
+
 def realms():
     out = []
     for key, name, cn, order, base, growth in REALM_DEFS:
@@ -49,7 +55,9 @@ def realms():
             mb["tribulation"] = "tribulation.core_formation"
             mb["success_base"] = 0.9
         elif order >= 4:
-            mb["requirements"] = [q("mat.dao_insight_crystal", order - 2)]
+            # the region of the same number brews the pill this realm needs (regions.py: rd["pill"]), so the Alchemy
+            # Hall matters in every realm and the region's herbs, beast parts and crystals keep a use
+            mb["requirements"] = [q("mat.dao_insight_crystal", order - 2), q(f"cons.{REGION_PILL[order]}", 1)]
             mb["success_base"] = 0.85
             if key in ("soul_transformation", "tribulation_transcendence", "immortal_ascension", "golden_immortal", "immortal_emperor"):
                 mb["tribulation"] = f"tribulation.{key}"

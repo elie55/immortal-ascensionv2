@@ -35,13 +35,15 @@
   {
     "id": "sectloc.mission_hall",
     "name": "Mission Hall",
-    "description": "Request board of masters and seniors. Deliver materials, earn Sect Fame.",
+    "description": "Request board of masters and seniors. Deliver materials, earn Sect Fame and Contribution; trade Contribution at the Exchange.",
     "name_cn": "任务堂",
     "unlock": {},
     "features": [
-      "missions"
+      "missions",
+      "exchange"
     ],
     "npcs": [],
+    "shop": "shop.sect_exchange",
     "map_position": [
       0.55,
       0.285

@@ -287,7 +287,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",
@@ -945,7 +946,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",
@@ -1441,7 +1443,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",
@@ -1929,7 +1932,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",
@@ -2703,7 +2707,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",
@@ -3353,7 +3358,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",
@@ -3841,7 +3847,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",
@@ -4499,7 +4506,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",
@@ -4987,7 +4995,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",
@@ -5759,7 +5768,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",
@@ -6245,7 +6255,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",
@@ -6894,7 +6905,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",
@@ -7380,7 +7392,8 @@
         "qty": [
           1,
           1
-        ]
+        ],
+        "pity": 5
       },
       {
         "id": "mat.refining_stone",

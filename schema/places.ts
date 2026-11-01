@@ -154,7 +154,7 @@ export const Tribulation = Named.extend({
 // ---------- Sect ----------
 
 export const SectFeature = z.enum([
-  "missions", "pavilion", "meditation", "merchant", "alchemy", "forge", "beasts", "quarters", "duels", "tournament", "storage", "rest",
+  "missions", "pavilion", "meditation", "merchant", "alchemy", "forge", "beasts", "quarters", "duels", "tournament", "storage", "rest", "exchange",
 ]);
 
 export const SectLocation = Named.extend({

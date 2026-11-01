@@ -249,7 +249,11 @@ def furnaces():
     return [
         {**named("Bronze Furnace", "The Alchemy Hall's starter furnace.", "青铜炉"), "grade": 1, "success_bonus": 0.05, "upgrade": {"materials": [q("mat.spirit_iron_ore", 20)], "stones": 2000}},
         {**named("Iron Furnace", "Holds heat evenly; fewer wasted herbs.", "铁炉"), "grade": 2, "success_bonus": 0.10, "yield_bonus": 0.05, "upgrade": {"materials": [q("mat.rime_crystal", 5), q("mat.glacier_iron_ore", 10)], "stones": 12000}},
-        {**named("Jade Furnace", "A furnace of spirit jade used by inner-sect alchemists.", "玉炉"), "grade": 3, "success_bonus": 0.18, "yield_bonus": 0.10},
+        {**named("Jade Furnace", "A furnace of spirit jade used by inner-sect alchemists.", "玉炉"), "grade": 3, "success_bonus": 0.18, "yield_bonus": 0.10,
+         "upgrade": {"materials": [q("mat.dragonbone_ore", 12), q("mat.dragon_pearl", 2)], "stones": 400000}},
+        {**named("Spirit Furnace", "Forged from dragonbone; the pills of the sea and the desert need its heat.", "灵炉"), "grade": 4, "success_bonus": 0.24, "yield_bonus": 0.15,
+         "upgrade": {"materials": [q("mat.immortal_jade", 10), q("mat.realm_heart_jade", 2)], "stones": 4000000}},
+        {**named("Immortal Furnace", "Immortal jade and a realm's heart: the furnace of the Immortal Realm's pills.", "仙炉"), "grade": 5, "success_bonus": 0.30, "yield_bonus": 0.20},
     ]
 
 if __name__ == "__main__":

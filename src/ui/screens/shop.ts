@@ -21,6 +21,7 @@ const GREETING: Record<string, string> = {
   "shop.beast_garden": "Food for the little ones. Take what they need, not what you want.",
   "shop.tang_caravan": "The caravan stops for a few hours only! Buy now, regret never.",
   "shop.origin_realm_merchant": "Few find this stall. Fewer leave empty-handed.",
+  "shop.sect_exchange": "Contribution is the sect's memory of your service. Spend it on what the sect alone can give.",
 };
 const CUR_ICON: Record<string, string> = { spirit_stones: "gem", sect_fame: "fame", contribution: "scroll" };
 
@@ -94,7 +95,8 @@ function goodsCard(app: App, shopId: string, r: ShopRow) {
   const a = rowArt(app, r);
   const name = "gear" in r.entry ? c.get<any>(r.entry.gear.base).name : c.get<any>(r.id).name;
   const soldOut = r.left === 0;
-  const orig = r.entry.price;
+  // the struck-through price is the fame/affinity discount only; a realm-scaled row's base is its price at this realm
+  const orig = r.entry.scale ? Math.round(r.entry.price * Math.pow(r.entry.scale.per_realm, Math.max(0, c.get<any>(app.game.state.character.realm).order - 1))) : r.entry.price;
   return h("button", { class: ["glass goods", (r.locked || soldOut || r.owned) && "dim-card"], onClick: () => buySheet(app, shopId, r.index) },
     h("div", { class: "row between" }, h("span", { class: `g-cat rt-${a.rarity}` }, a.label), r.left !== null ? h("span", { class: "g-left" }, soldOut ? "Sold out" : `×${r.left}`) : null),
     h("div", { class: "g-art" }, tile({ rarity: a.rarity, art: a.art, fallbackIcon: a.icon, img: (f) => app.img(f) })),

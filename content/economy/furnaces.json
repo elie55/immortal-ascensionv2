@@ -42,6 +42,48 @@
     "name_cn": "玉炉",
     "grade": 3,
     "success_bonus": 0.18,
-    "yield_bonus": 0.1
+    "yield_bonus": 0.1,
+    "upgrade": {
+      "materials": [
+        {
+          "id": "mat.dragonbone_ore",
+          "qty": 12
+        },
+        {
+          "id": "mat.dragon_pearl",
+          "qty": 2
+        }
+      ],
+      "stones": 400000
+    }
+  },
+  {
+    "name": "Spirit Furnace",
+    "description": "Forged from dragonbone; the pills of the sea and the desert need its heat.",
+    "name_cn": "灵炉",
+    "grade": 4,
+    "success_bonus": 0.24,
+    "yield_bonus": 0.15,
+    "upgrade": {
+      "materials": [
+        {
+          "id": "mat.immortal_jade",
+          "qty": 10
+        },
+        {
+          "id": "mat.realm_heart_jade",
+          "qty": 2
+        }
+      ],
+      "stones": 4000000
+    }
+  },
+  {
+    "name": "Immortal Furnace",
+    "description": "Immortal jade and a realm's heart: the furnace of the Immortal Realm's pills.",
+    "name_cn": "仙炉",
+    "grade": 5,
+    "success_bonus": 0.3,
+    "yield_bonus": 0.2
   }
 ]

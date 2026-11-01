@@ -35,6 +35,14 @@ and waterfall_active (timer ring, Qi gained, rate, End early, Back to Sect).
 Entries are unlock-gated. Discounts: affinity level × `pct_per_level` with the owner, plus
 `fame_discount_pct_per_500`, capped at 30 %. Limited stock resets per period: daily (UTC day), weekly,
 per_visit (6 h), none. Techniques and methods are learned on purchase (once). Gear sells for 40 % of its CP.
+A row with `scale.per_realm` costs `price × per_realm^(realm order − 1)`: the Pavilion's Dao Insight Crystal
+(1 a day, ×1.7) and bulk refining stones (×1.5) stay a real sink in every realm.
+
+**Contribution** (`resources.contribution`) is earned from Mission Hall requests and hunts (`rewards.contribution`,
+10 + 5 × region, repeatable daily) and spent at the **Contribution Exchange** (`shop.sect_exchange`, Mission Hall,
+weekly stock): Dao Insight Crystals ×3, refining stones, spirit-enhancing stones, reforging sand, one awakening
+crystal (Inner Disciple). Region bosses also carry bad-luck protection on crystals (`pity: 5` on the loot entry: a miss
+streak of five ends in a guaranteed drop; the counter lives in `progress.counters` per table and item).
 
 ## Spirit Forge and Alchemy (`crafting.ts`)
 
@@ -45,7 +53,8 @@ per_visit (6 h), none. Techniques and methods are learned on purchase (once). Ge
 | Reforge | rerolls unlocked secondary stats at the same rarity/level; each lock costs `lock_cost_per_stat`; at least one stat must reroll |
 | Awaken | bases with `awakening`: pay materials + stones once, the effect joins the specials |
 | Craft | recipe unlock (known, blueprint, rank, quest, fame, NPC affinity) + `fame_required`; blueprints are studied from the bag |
-| Alchemy | per-load roll: `success_base` + furnace bonus + up to +10 % from proficiency above the recipe minimum; failures return `return_pct` of herbs and a byproduct; batches up to 10; furnaces upgrade with materials |
+| Alchemy | per-load roll: `success_base` + furnace bonus + up to +10 % from proficiency above the recipe minimum; failures return `return_pct` of herbs and a byproduct; batches up to 10; five furnace grades (Bronze → Iron → Jade → Spirit → Immortal) upgrade with materials and stones (2k, 12k, 400k, 4M) |
+| Breakthrough pills | Foundation needs the Foundation Pill, Core Formation the Core Condensing Pill, and every realm from Nascent Soul on consumes the pill of the region with its number (brewed from that region's herb, beast part and crystal; regions 13–15 need the Spirit/Immortal furnaces) |
 
 Manuals (`book.*`) are read from the bag to learn their technique or method.
 

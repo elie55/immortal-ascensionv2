@@ -187,6 +187,10 @@
         {
           "id": "mat.dao_insight_crystal",
           "qty": 2
+        },
+        {
+          "id": "cons.frost_lotus_pill",
+          "qty": 1
         }
       ],
       "success_base": 0.85,
@@ -239,6 +243,10 @@
         {
           "id": "mat.dao_insight_crystal",
           "qty": 3
+        },
+        {
+          "id": "cons.sword_marrow_pill",
+          "qty": 1
         }
       ],
       "success_base": 0.8,
@@ -292,6 +300,10 @@
         {
           "id": "mat.dao_insight_crystal",
           "qty": 4
+        },
+        {
+          "id": "cons.demon_purge_pill",
+          "qty": 1
         }
       ],
       "success_base": 0.85,
@@ -344,6 +356,10 @@
         {
           "id": "mat.dao_insight_crystal",
           "qty": 5
+        },
+        {
+          "id": "cons.celestial_peach_pill",
+          "qty": 1
         }
       ],
       "success_base": 0.85,
@@ -396,6 +412,10 @@
         {
           "id": "mat.dao_insight_crystal",
           "qty": 6
+        },
+        {
+          "id": "cons.star_dew_pill",
+          "qty": 1
         }
       ],
       "success_base": 0.8,
@@ -449,6 +469,10 @@
         {
           "id": "mat.dao_insight_crystal",
           "qty": 7
+        },
+        {
+          "id": "cons.thunder_tempering_pill",
+          "qty": 1
         }
       ],
       "success_base": 0.85,
@@ -501,6 +525,10 @@
         {
           "id": "mat.dao_insight_crystal",
           "qty": 8
+        },
+        {
+          "id": "cons.dragon_marrow_pill",
+          "qty": 1
         }
       ],
       "success_base": 0.8,
@@ -554,6 +582,10 @@
         {
           "id": "mat.dao_insight_crystal",
           "qty": 9
+        },
+        {
+          "id": "cons.meteor_core_pill",
+          "qty": 1
         }
       ],
       "success_base": 0.85,
@@ -606,6 +638,10 @@
         {
           "id": "mat.dao_insight_crystal",
           "qty": 10
+        },
+        {
+          "id": "cons.phoenix_rebirth_pill",
+          "qty": 1
         }
       ],
       "success_base": 0.85,
@@ -658,6 +694,10 @@
         {
           "id": "mat.dao_insight_crystal",
           "qty": 11
+        },
+        {
+          "id": "cons.immortal_peach_pill",
+          "qty": 1
         }
       ],
       "success_base": 0.8,
@@ -711,6 +751,10 @@
         {
           "id": "mat.dao_insight_crystal",
           "qty": 12
+        },
+        {
+          "id": "cons.golden_law_pill",
+          "qty": 1
         }
       ],
       "success_base": 0.85,
@@ -763,6 +807,10 @@
         {
           "id": "mat.dao_insight_crystal",
           "qty": 13
+        },
+        {
+          "id": "cons.emperor_ascension_pill",
+          "qty": 1
         }
       ],
       "success_base": 0.8,

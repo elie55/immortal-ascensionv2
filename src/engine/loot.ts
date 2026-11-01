@@ -39,9 +39,18 @@ export function rollTable(s: GameState, c: ContentIndex, tableId: string): Drops
       out.gear.push({ base: base.id, rarity: rarity as Rarity, ilvl });
     } else add(e.id, nextInt(s.rng, e.qty[0], e.qty[1]));
   };
+  // bad-luck protection: a pity entry that missed `pity` times in a row drops for sure
+  const pityKey = (e: any) => `pity:${tableId}:${e.id}`;
+  const hit = (e: any): boolean => {
+    if (chance(s.rng, e.chance)) { if (e.pity) s.progress.counters[pityKey(e)] = 0; return true; }
+    if (!e.pity) return false;
+    const misses = (s.progress.counters[pityKey(e)] ?? 0) + 1;
+    if (misses >= e.pity) { s.progress.counters[pityKey(e)] = 0; return true; }
+    s.progress.counters[pityKey(e)] = misses; return false;
+  };
   if (t.mode === "pick") {
     for (let r = 0; r < t.rolls; r++) { const i = weightedIndex(s.rng, t.entries.map((e) => e.chance)); if (i >= 0) rollEntry(t.entries[i]); }
-  } else for (let r = 0; r < t.rolls; r++) for (const e of t.entries) if (chance(s.rng, e.chance)) rollEntry(e);
+  } else for (let r = 0; r < t.rolls; r++) for (const e of t.entries) if ("gear" in e ? chance(s.rng, e.chance) : hit(e)) rollEntry(e);
   for (const g of t.guaranteed) add(g.id, g.qty);
   for (const g of t.guaranteed_gear) out.gear.push(g);
   out.spirit_stones = nextInt(s.rng, t.spirit_stones[0], t.spirit_stones[1]);

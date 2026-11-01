@@ -209,7 +209,8 @@
     ],
     "rewards": {
       "spirit_stones": 200,
-      "sect_fame": 30
+      "sect_fame": 30,
+      "contribution": 20
     },
     "difficulty": 2,
     "hint": "Adventure · Dungeons · Heaven-Piercing Tower",

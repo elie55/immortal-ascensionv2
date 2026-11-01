@@ -126,7 +126,8 @@
     ],
     "rewards": {
       "spirit_stones": 540,
-      "sect_fame": 45
+      "sect_fame": 45,
+      "contribution": 25
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -173,6 +174,7 @@
     "rewards": {
       "spirit_stones": 720,
       "sect_fame": 60,
+      "contribution": 25,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",
@@ -441,7 +443,8 @@
     ],
     "rewards": {
       "spirit_stones": 960,
-      "sect_fame": 60
+      "sect_fame": 60,
+      "contribution": 30
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -488,6 +491,7 @@
     "rewards": {
       "spirit_stones": 1280,
       "sect_fame": 80,
+      "contribution": 30,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",
@@ -756,7 +760,8 @@
     ],
     "rewards": {
       "spirit_stones": 1500,
-      "sect_fame": 75
+      "sect_fame": 75,
+      "contribution": 35
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -803,6 +808,7 @@
     "rewards": {
       "spirit_stones": 2000,
       "sect_fame": 100,
+      "contribution": 35,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",
@@ -1071,7 +1077,8 @@
     ],
     "rewards": {
       "spirit_stones": 2160,
-      "sect_fame": 90
+      "sect_fame": 90,
+      "contribution": 40
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -1118,6 +1125,7 @@
     "rewards": {
       "spirit_stones": 2880,
       "sect_fame": 120,
+      "contribution": 40,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",
@@ -1386,7 +1394,8 @@
     ],
     "rewards": {
       "spirit_stones": 2940,
-      "sect_fame": 105
+      "sect_fame": 105,
+      "contribution": 45
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -1433,6 +1442,7 @@
     "rewards": {
       "spirit_stones": 3920,
       "sect_fame": 140,
+      "contribution": 45,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",
@@ -1701,7 +1711,8 @@
     ],
     "rewards": {
       "spirit_stones": 3840,
-      "sect_fame": 120
+      "sect_fame": 120,
+      "contribution": 50
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -1748,6 +1759,7 @@
     "rewards": {
       "spirit_stones": 5120,
       "sect_fame": 160,
+      "contribution": 50,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",
@@ -2016,7 +2028,8 @@
     ],
     "rewards": {
       "spirit_stones": 4860,
-      "sect_fame": 135
+      "sect_fame": 135,
+      "contribution": 55
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -2063,6 +2076,7 @@
     "rewards": {
       "spirit_stones": 6480,
       "sect_fame": 180,
+      "contribution": 55,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",
@@ -2331,7 +2345,8 @@
     ],
     "rewards": {
       "spirit_stones": 6000,
-      "sect_fame": 150
+      "sect_fame": 150,
+      "contribution": 60
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -2378,6 +2393,7 @@
     "rewards": {
       "spirit_stones": 8000,
       "sect_fame": 200,
+      "contribution": 60,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",
@@ -2646,7 +2662,8 @@
     ],
     "rewards": {
       "spirit_stones": 7260,
-      "sect_fame": 165
+      "sect_fame": 165,
+      "contribution": 65
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -2693,6 +2710,7 @@
     "rewards": {
       "spirit_stones": 9680,
       "sect_fame": 220,
+      "contribution": 65,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",
@@ -2961,7 +2979,8 @@
     ],
     "rewards": {
       "spirit_stones": 8640,
-      "sect_fame": 180
+      "sect_fame": 180,
+      "contribution": 70
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -3008,6 +3027,7 @@
     "rewards": {
       "spirit_stones": 11520,
       "sect_fame": 240,
+      "contribution": 70,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",
@@ -3276,7 +3296,8 @@
     ],
     "rewards": {
       "spirit_stones": 10140,
-      "sect_fame": 195
+      "sect_fame": 195,
+      "contribution": 75
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -3323,6 +3344,7 @@
     "rewards": {
       "spirit_stones": 13520,
       "sect_fame": 260,
+      "contribution": 75,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",
@@ -3591,7 +3613,8 @@
     ],
     "rewards": {
       "spirit_stones": 11760,
-      "sect_fame": 210
+      "sect_fame": 210,
+      "contribution": 80
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -3638,6 +3661,7 @@
     "rewards": {
       "spirit_stones": 15680,
       "sect_fame": 280,
+      "contribution": 80,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",
@@ -3905,7 +3929,8 @@
     ],
     "rewards": {
       "spirit_stones": 13500,
-      "sect_fame": 225
+      "sect_fame": 225,
+      "contribution": 85
     },
     "repeatable": {
       "cooldown_min": 1440
@@ -3952,6 +3977,7 @@
     "rewards": {
       "spirit_stones": 18000,
       "sect_fame": 300,
+      "contribution": 85,
       "items": [
         {
           "id": "mat.spirit_enhancing_stone",

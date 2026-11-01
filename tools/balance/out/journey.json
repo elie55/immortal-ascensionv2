@@ -1,8 +1,8 @@
 [
  {
   "seed": 1,
-  "days": 14,
-  "finishedDay": null,
+  "days": 30,
+  "finishedDay": 16,
   "regions": [
    {
     "region": "region.mortal_plains",
@@ -28,18 +28,18 @@
     "order": 2,
     "arrivedDay": 0,
     "bossDay": 1,
-    "cp": 803,
+    "cp": 799,
     "realm": "realm.qi_condensation",
     "stage": 9,
-    "stonesEarned": 9638,
-    "stonesSpent": 12808,
-    "energySpent": 482,
-    "fights": 92,
+    "stonesEarned": 9364,
+    "stonesSpent": 12148,
+    "energySpent": 447,
+    "fights": 85,
     "losses": 0,
     "plus": 4,
     "waitedFor": {
      "farm:green_viper_venom": 17,
-     "farm:jade_bamboo_segment": 32,
+     "farm:jade_bamboo_segment": 25,
      "farm:spirit_grass": 22,
      "farm:frost_beast_core": 22,
      "energy": 25,
@@ -51,179 +51,244 @@
     "order": 3,
     "arrivedDay": 1,
     "bossDay": 1,
-    "cp": 2812,
+    "cp": 2025,
     "realm": "realm.foundation_establishment",
-    "stage": 5,
-    "stonesEarned": 16641,
-    "stonesSpent": 11359,
-    "energySpent": 156,
-    "fights": 34,
-    "losses": 13,
-    "plus": 3,
+    "stage": 6,
+    "stonesEarned": 15255,
+    "stonesSpent": 13785,
+    "energySpent": 198,
+    "fights": 41,
+    "losses": 22,
+    "plus": 5,
     "waitedFor": {}
    },
    {
     "region": "region.frozen_lotus_valley",
     "order": 4,
     "arrivedDay": 1,
-    "bossDay": 2,
-    "cp": 4529,
+    "bossDay": 1,
+    "cp": 3168,
     "realm": "realm.foundation_establishment",
     "stage": 9,
-    "stonesEarned": 143052,
-    "stonesSpent": 208450,
-    "energySpent": 1475,
-    "fights": 241,
-    "losses": 4,
-    "plus": 8,
+    "stonesEarned": 39969,
+    "stonesSpent": 91022,
+    "energySpent": 222,
+    "fights": 39,
+    "losses": 2,
+    "plus": 5,
     "waitedFor": {
-     "realm": 198,
-     "energy": 151,
-     "farm:dao_insight_crystal": 19,
-     "farm:green_viper_venom": 9
+     "realm": 10,
+     "energy": 51,
+     "farm:bamboo_dragon_scale": 3,
+     "farm:dao_insight_crystal": 4
     }
    },
    {
     "region": "region.ancient_sword_tomb",
     "order": 5,
-    "arrivedDay": 4,
-    "bossDay": 4,
-    "cp": 7653,
+    "arrivedDay": 2,
+    "bossDay": 2,
+    "cp": 7777,
     "realm": "realm.core_formation",
     "stage": 9,
-    "stonesEarned": 34970,
-    "stonesSpent": 70226,
-    "energySpent": 146,
-    "fights": 26,
+    "stonesEarned": 77876,
+    "stonesSpent": 133003,
+    "energySpent": 440,
+    "fights": 71,
     "losses": 0,
     "plus": 7,
     "waitedFor": {
-     "realm": 5,
-     "energy": 57
+     "realm": 50,
+     "energy": 22
     }
    },
    {
     "region": "region.demon_territory",
     "order": 6,
-    "arrivedDay": 5,
-    "bossDay": 6,
-    "cp": 12283,
+    "arrivedDay": 2,
+    "bossDay": 3,
+    "cp": 15333,
     "realm": "realm.nascent_soul",
     "stage": 9,
-    "stonesEarned": 115113,
-    "stonesSpent": 54898,
-    "energySpent": 494,
-    "fights": 81,
-    "losses": 12,
-    "plus": 8,
+    "stonesEarned": 454603,
+    "stonesSpent": 391083,
+    "energySpent": 2494,
+    "fights": 380,
+    "losses": 27,
+    "plus": 10,
     "waitedFor": {
-     "realm": 42,
-     "energy": 61,
-     "farm:dao_insight_crystal": 18,
-     "tribulation": 48
+     "energy": 330,
+     "farm:blood_lotus": 23,
+     "tribulation": 595,
+     "farm:crimson_moon_shard": 1,
+     "realm": 273
     }
    },
    {
     "region": "region.celestial_mountains",
     "order": 7,
-    "arrivedDay": 6,
-    "bossDay": 7,
-    "cp": 19142,
+    "arrivedDay": 8,
+    "bossDay": 8,
+    "cp": 23444,
     "realm": "realm.soul_transformation",
     "stage": 9,
-    "stonesEarned": 130739,
-    "stonesSpent": 66504,
-    "energySpent": 463,
+    "stonesEarned": 152167,
+    "stonesSpent": 339820,
+    "energySpent": 480,
     "fights": 75,
-    "losses": 18,
-    "plus": 9,
+    "losses": 9,
+    "plus": 11,
     "waitedFor": {
-     "realm": 22,
-     "energy": 63,
-     "farm:dao_insight_crystal": 4
+     "realm": 44,
+     "energy": 62
     }
    },
    {
     "region": "region.nine_heavens",
     "order": 8,
-    "arrivedDay": 7,
+    "arrivedDay": 9,
     "bossDay": 9,
-    "cp": 31289,
-    "realm": "realm.spirit_severing",
-    "stage": 9,
-    "stonesEarned": 285131,
-    "stonesSpent": 594892,
-    "energySpent": 1174,
-    "fights": 235,
-    "losses": 8,
-    "plus": 12,
-    "waitedFor": {
-     "realm": 166,
-     "energy": 106,
-     "farm:dao_insight_crystal": 159
-    }
+    "cp": 40207,
+    "realm": "realm.dao_integration",
+    "stage": 3,
+    "stonesEarned": 95556,
+    "stonesSpent": 29710,
+    "energySpent": 99,
+    "fights": 11,
+    "losses": 0,
+    "plus": 10,
+    "waitedFor": {}
    },
    {
     "region": "region.thunderclap_wastes",
     "order": 9,
     "arrivedDay": 9,
     "bossDay": 10,
-    "cp": 53423,
-    "realm": "realm.tribulation_transcendence",
-    "stage": 2,
-    "stonesEarned": 129664,
-    "stonesSpent": 139938,
-    "energySpent": 172,
-    "fights": 21,
-    "losses": 4,
-    "plus": 13,
+    "cp": 56670,
+    "realm": "realm.dao_integration",
+    "stage": 9,
+    "stonesEarned": 224660,
+    "stonesSpent": 518363,
+    "energySpent": 377,
+    "fights": 49,
+    "losses": 5,
+    "plus": 8,
     "waitedFor": {
-     "energy": 48,
-     "tribulation": 2,
-     "farm:dao_insight_crystal": 2,
-     "realm": 8
+     "energy": 77,
+     "realm": 11,
+     "farm:dao_insight_crystal": 7
     }
    },
    {
     "region": "region.sunken_dragon_sea",
     "order": 10,
     "arrivedDay": 10,
-    "bossDay": 11,
-    "cp": 73296,
-    "realm": "realm.mahayana",
-    "stage": 2,
-    "stonesEarned": 240236,
-    "stonesSpent": 216976,
-    "energySpent": 533,
-    "fights": 64,
-    "losses": 11,
-    "plus": 14,
+    "bossDay": 10,
+    "cp": 76192,
+    "realm": "realm.tribulation_transcendence",
+    "stage": 9,
+    "stonesEarned": 258503,
+    "stonesSpent": 607127,
+    "energySpent": 410,
+    "fights": 42,
+    "losses": 3,
+    "plus": 10,
     "waitedFor": {
-     "energy": 71,
-     "farm:dao_insight_crystal": 14,
-     "realm": 17
+     "realm": 19,
+     "energy": 79
     }
    },
    {
     "region": "region.starfall_desert",
     "order": 11,
     "arrivedDay": 11,
-    "bossDay": 13,
-    "cp": 85781,
+    "bossDay": 11,
+    "cp": 108989,
     "realm": "realm.mahayana",
     "stage": 9,
-    "stonesEarned": 380854,
-    "stonesSpent": 496944,
-    "energySpent": 1107,
-    "fights": 231,
-    "losses": 17,
-    "plus": 15,
+    "stonesEarned": 324822,
+    "stonesSpent": 658728,
+    "energySpent": 402,
+    "fights": 52,
+    "losses": 2,
+    "plus": 8,
     "waitedFor": {
-     "energy": 167,
-     "realm": 158,
-     "tribulation": 249,
-     "farm:dao_insight_crystal": 174
+     "realm": 26,
+     "energy": 83
     }
+   },
+   {
+    "region": "region.gate_of_ascension",
+    "order": 12,
+    "arrivedDay": 12,
+    "bossDay": 12,
+    "cp": 153492,
+    "realm": "realm.immortal_ascension",
+    "stage": 9,
+    "stonesEarned": 371886,
+    "stonesSpent": 1327843,
+    "energySpent": 419,
+    "fights": 47,
+    "losses": 2,
+    "plus": 8,
+    "waitedFor": {
+     "realm": 23,
+     "energy": 85
+    }
+   },
+   {
+    "region": "region.jade_immortal_realm",
+    "order": 13,
+    "arrivedDay": 13,
+    "bossDay": 13,
+    "cp": 195033,
+    "realm": "realm.earth_immortal",
+    "stage": 9,
+    "stonesEarned": 351815,
+    "stonesSpent": 637173,
+    "energySpent": 385,
+    "fights": 47,
+    "losses": 0,
+    "plus": 8,
+    "waitedFor": {
+     "realm": 21,
+     "energy": 85
+    }
+   },
+   {
+    "region": "region.golden_palace_of_laws",
+    "order": 14,
+    "arrivedDay": 14,
+    "bossDay": 14,
+    "cp": 289671,
+    "realm": "realm.golden_immortal",
+    "stage": 9,
+    "stonesEarned": 885096,
+    "stonesSpent": 1583516,
+    "energySpent": 878,
+    "fights": 87,
+    "losses": 0,
+    "plus": 10,
+    "waitedFor": {
+     "realm": 55,
+     "energy": 173
+    }
+   },
+   {
+    "region": "region.throne_of_the_immortal_emperor",
+    "order": 15,
+    "arrivedDay": 16,
+    "bossDay": 16,
+    "cp": 317823,
+    "realm": "realm.immortal_king",
+    "stage": 3,
+    "stonesEarned": 272877,
+    "stonesSpent": 250023,
+    "energySpent": 180,
+    "fights": 15,
+    "losses": 1,
+    "plus": 10,
+    "waitedFor": {}
    }
   ],
   "realms": [
@@ -237,19 +302,19 @@
    },
    {
     "realm": "realm.core_formation",
-    "day": 4
+    "day": 2
    },
    {
     "realm": "realm.nascent_soul",
-    "day": 5
+    "day": 2
    },
    {
     "realm": "realm.soul_transformation",
-    "day": 6
+    "day": 8
    },
    {
     "realm": "realm.spirit_severing",
-    "day": 7
+    "day": 8
    },
    {
     "realm": "realm.dao_integration",
@@ -262,6 +327,26 @@
    {
     "realm": "realm.mahayana",
     "day": 11
+   },
+   {
+    "realm": "realm.immortal_ascension",
+    "day": 12
+   },
+   {
+    "realm": "realm.earth_immortal",
+    "day": 13
+   },
+   {
+    "realm": "realm.heavenly_immortal",
+    "day": 14
+   },
+   {
+    "realm": "realm.golden_immortal",
+    "day": 15
+   },
+   {
+    "realm": "realm.immortal_king",
+    "day": 16
    }
   ]
  }

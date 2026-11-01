@@ -86,7 +86,8 @@ export function shopRows(s: GameState, c: ContentIndex, shopId: string, now: num
     const id = entryId(e);
     const u = checkUnlock(s, c, e.unlock as any);
     const owned = "id" in e && (id.startsWith("tech.") ? s.techniques.known[id] !== undefined : id.startsWith("method.") ? s.character.methodMastery[id] !== undefined : false);
-    const price = e.currency === "spirit_stones" ? Math.max(1, Math.round(e.price * (1 - disc / 100))) : e.price;
+    const scaled = e.scale ? e.price * Math.pow(e.scale.per_realm, Math.max(0, c.get<any>(s.character.realm).order - 1)) : e.price;
+    const price = e.currency === "spirit_stones" ? Math.max(1, Math.round(scaled * (1 - disc / 100))) : Math.max(1, Math.round(scaled));
     return { index, entry: e, id, price, currency: e.currency, left: e.qty === undefined ? null : Math.max(0, e.qty - (bought[index] ?? 0)), locked: u.ok ? undefined : u.reasons[0], owned };
   });
 }
