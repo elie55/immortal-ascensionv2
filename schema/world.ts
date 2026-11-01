@@ -126,6 +126,9 @@ export const Technique = Named.extend({
   passive_bonuses: Stats.default({}),
   /** Ultimate-only: energy gauge required. */
   ult_charge: z.number().int().positive().optional(),
+  /** Turn tempo, as % of a turn: enemies this technique hits are delayed by it, allies (or the caster) it targets are
+   *  hastened by it. 100 = a whole turn. */
+  turn_shift: z.number().min(0).max(100).default(0),
   requirements: LearnRequirements.default({}),
   mastery: MasteryCurve.default({}),
   /** Used only by enemies/bosses; the player can never learn it (exempt from the source rule). */
@@ -142,6 +145,7 @@ export const Technique = Named.extend({
   if (seg !== expect) ctx.addIssue({ code: "custom", message: `technique id must be tech.${expect}.* for kind ${t.kind}` });
   if (t.kind === "ultimate" && !t.ult_charge) ctx.addIssue({ code: "custom", message: "ultimate needs ult_charge" });
   if (t.kind === "passive" && (t.power > 0 || t.sp_cost > 0)) ctx.addIssue({ code: "custom", message: "passive cannot have power/sp_cost" });
+  if (t.kind === "passive" && t.turn_shift > 0) ctx.addIssue({ code: "custom", message: "passive cannot shift turns" });
 });
 
 export const BeastAbility = Named.extend({

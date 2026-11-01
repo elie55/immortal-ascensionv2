@@ -11,18 +11,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 5152,
-      "atk": 451,
-      "def": 209,
+      "hp": 4838,
+      "atk": 423,
+      "def": 197,
       "spd": 41,
       "crit": 13,
       "crit_dmg": 165,
       "acc": 93,
       "eva": 6,
-      "sp_power": 322,
+      "sp_power": 302,
       "sp_energy": 130
     },
-    "cp": 1610,
+    "cp": 1512,
     "techniques": [
       "tech.active.magma_slam",
       "tech.active.blazing_comet"
@@ -33,7 +33,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.molten_ape_king",
-    "mastery_xp": 80,
+    "mastery_xp": 77,
     "phases": [
       {
         "name": "Awakening",
@@ -122,6 +122,14 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "fury",
+      "name": "Rising Fury",
+      "name_cn": "怒焰渐炽",
+      "description": "From the ninth round on, the Ape King's attack grows 6% every round. Finish him before the mountain boils.",
+      "after_round": 8,
+      "atk_pct_per_round": 6
     }
   },
   {
@@ -355,6 +363,15 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "break",
+      "name": "Lotus Ice Armor",
+      "name_cn": "莲冰铠",
+      "description": "Each phase begins behind ice worth 30% of her HP. Shatter it and she is staggered a full turn and takes 30% more damage for two.",
+      "shield_pct": 30,
+      "delay_pct": 100,
+      "vuln_turns": 2
     }
   },
   {
@@ -588,6 +605,14 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "riposte",
+      "name": "Sword Intent Riposte",
+      "name_cn": "剑意反击",
+      "description": "Every third blow that lands on the Remnant is answered by a sword at 120% ATK. Few heavy strikes beat many light ones.",
+      "every": 3,
+      "pct": 120
     }
   },
   {
@@ -821,6 +846,13 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "drain",
+      "name": "Blood Moon Feast",
+      "name_cn": "血月盛宴",
+      "description": "The Matriarch heals 35% of the damage she deals. Shields starve her.",
+      "pct": 35
     }
   },
   {
@@ -1164,6 +1196,13 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "ward",
+      "name": "Mirror Stair",
+      "name_cn": "镜阶",
+      "description": "The Guardian attunes to one element at a time, changing every third turn; attacks of that element heal it. Switch arts.",
+      "cycle": 3
     }
   },
   {
@@ -1397,6 +1436,14 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "quake",
+      "name": "Gate Tremor",
+      "name_cn": "天门震",
+      "description": "Every third turn the Keeper opens with an unavoidable tremor on the whole party at 90% ATK. Keep shields up for it.",
+      "every": 3,
+      "pct": 90
     }
   },
   {
@@ -1519,18 +1566,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 198400,
-      "atk": 17360,
-      "def": 8060,
+      "hp": 148800,
+      "atk": 13020,
+      "def": 6045,
       "spd": 172,
       "crit": 19,
       "crit_dmg": 195,
       "acc": 99,
       "eva": 9,
-      "sp_power": 12400,
+      "sp_power": 9300,
       "sp_energy": 190
     },
-    "cp": 62000,
+    "cp": 46500,
     "techniques": [
       "tech.active.chain_lightning",
       "tech.active.violet_thunder_spear"
@@ -1541,7 +1588,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.nine_bolt_thunder_emperor",
-    "mastery_xp": 1590,
+    "mastery_xp": 1202,
     "phases": [
       {
         "name": "Awakening",
@@ -1630,6 +1677,14 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "mark",
+      "name": "Thunder Brand",
+      "name_cn": "雷印",
+      "description": "The Emperor brands one of you; three of his turns later it detonates at 120% ATK unless a shield takes it.",
+      "turns": 3,
+      "pct": 120
     }
   },
   {
@@ -1863,6 +1918,13 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "tide",
+      "name": "Tidal Rhythm",
+      "name_cn": "潮律",
+      "description": "High tide every third round: the Dragon Lord is faster and hits harder. At low tide his scales soften 30%.",
+      "cycle": 3
     }
   },
   {
@@ -2096,6 +2158,14 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "curse",
+      "name": "Pharaoh's Curse",
+      "name_cn": "法老之咒",
+      "description": "Every fifth turn the Pharaoh seals all healing on the party for two turns. Heal before it, shield through it.",
+      "every": 5,
+      "turns": 2
     }
   },
   {
@@ -2439,6 +2509,13 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "rebirth",
+      "name": "Vermilion Rebirth",
+      "name_cn": "朱雀涅槃",
+      "description": "Slain once, the Gatekeeper rises from its ashes at 30% HP.",
+      "hp_pct": 30
     }
   },
   {
@@ -2672,6 +2749,14 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "rend",
+      "name": "White Tiger Rend",
+      "name_cn": "白虎撕裂",
+      "description": "Each consecutive claw on the same ally tears deeper: +10% damage taken per stack, up to five. Make it switch.",
+      "per_stack": 10,
+      "max_stacks": 5
     }
   },
   {
@@ -2794,18 +2879,18 @@
       "stage": 9
     },
     "stats": {
-      "hp": 604800,
-      "atk": 52920,
-      "def": 24570,
+      "hp": 475200,
+      "atk": 41580,
+      "def": 19305,
       "spd": 402,
       "crit": 24,
       "crit_dmg": 220,
       "acc": 104,
       "eva": 12,
-      "sp_power": 37800,
+      "sp_power": 29700,
       "sp_energy": 240
     },
-    "cp": 189000,
+    "cp": 148500,
     "techniques": [
       "tech.active.law_chain",
       "tech.active.verdict_of_heaven"
@@ -2816,7 +2901,7 @@
     },
     "resistances": {},
     "loot": "loot.boss.arbiter_of_laws",
-    "mastery_xp": 4765,
+    "mastery_xp": 3752,
     "phases": [
       {
         "name": "Awakening",
@@ -2905,6 +2990,13 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "measure",
+      "name": "Law of Measure",
+      "name_cn": "度量之法",
+      "description": "No single blow may take more than 15% of the Arbiter's HP. Many strikes, not one.",
+      "pct": 15
     }
   },
   {
@@ -3138,6 +3230,13 @@
         ],
         "status": "generated"
       }
+    },
+    "signature": {
+      "kind": "answer",
+      "name": "Sovereign's Answer",
+      "name_cn": "帝君回应",
+      "description": "Whenever you unleash an ultimate, the Remnant answers at once with a turn of its own.",
+      "push_pct": 100
     }
   },
   {

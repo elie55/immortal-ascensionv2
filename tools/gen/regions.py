@@ -24,7 +24,7 @@ CP_BASE = {3: 1400, 4: 1300, 5: 2700, 6: 7900, 7: 12400, 8: 14900, 9: 31000, 10:
 def cp_base(n): return CP_BASE.get(n) or round(130 * 2.05 ** (n - 1))
 # Region boss stat multiplier on cp_base: calibrated so the fitted archetype wins the boss node ≈45 % on the first try
 # (tools/balance/calibrate.ts --kind boss --target 0.45). Bosses also summon, enrage and charge, which is why it is below 2.
-BOSS_MULT = {3: 1.15, 4: 1.35, 5: 1.5, 6: 1.25, 7: 0.8, 8: 1.4, 9: 2.0, 10: 1.55, 11: 1.5, 12: 1.9, 13: 1.65, 14: 1.4, 15: 1.7}
+BOSS_MULT = {3: 1.08, 4: 1.35, 5: 1.5, 6: 1.25, 7: 0.8, 8: 1.4, 9: 1.5, 10: 1.55, 11: 1.5, 12: 1.9, 13: 1.65, 14: 1.1, 15: 1.7}
 def boss_mult(n): return BOSS_MULT.get(n, 1.5)
 
 # Enemy speed per region: between an idle cultivator's (stage 9, no gear) and a fitted player's speed in that region
@@ -114,6 +114,7 @@ def region(rd, prev):
             "mastery": {"max_level": 10, "xp_per_level": 60 + 20 * n, "per_level_bonus": 0.03}, "enemy_only": False,
             "art": {"icon": icon(f"techniques/active/{tk}", f"{ICON_LOOK[tk]}, {NOTXT}" if tk in ICON_LOOK else f"a square technique icon depicting the {telem}-element art {tname} as a glowing martial-art symbol or action{(': ' + flavor(tdesc)) if flavor(tdesc) else ''}, {NOTXT}", trar, ["refs/mockups/battle_screen.png"])}}
     if tpow == 0: tech["heal_pct"] = 35
+    if tstat == "slow": tech["turn_shift"] = 30; tech["description"] += " Delays the target's next turn."
     out["techs_active"].append(tech)
     ek, ename, ecn, eelem, edesc, epow, estat, ech = rd["etech"]
     out["techs_active"].append({"id": f"tech.active.{ek}", **named(ename, edesc, ecn), "kind": "active", "rarity": "rare", "element": f"elem.{eelem}", "weapon_affinity": "any",
@@ -170,7 +171,9 @@ def region(rd, prev):
               {"name": "Wrath", "hp_threshold": 0.6, "techniques": [f"tech.active.{ek}", f"tech.active.{tk}"], "summons": [{"enemy": eids[0], "count": 2}]},
               {"name": "Last Stand", "hp_threshold": 0.25, "techniques": [f"tech.active.{tk}"], "summons": [], "enrage": {"atk_mult": 1.5, "spd_mult": 1.25},
                "charged_attack": {"tech": f"tech.active.{ek}", "turns_to_charge": 2}}]
-    out["bosses"].append(boss_entry(bk, bname, bcn, "region", bel, rmax, 9, bcp, n, [f"tech.active.{ek}", f"tech.active.{tk}"], phases, bdesc, blook, bweak, key))
+    entry = boss_entry(bk, bname, bcn, "region", bel, rmax, 9, bcp, n, [f"tech.active.{ek}", f"tech.active.{tk}"], phases, bdesc, blook, bweak, key)
+    if key in SIGNATURES: entry["signature"] = SIGNATURES[key]
+    out["bosses"].append(entry)
     out["loot"].append({"id": f"loot.boss.{bk}", "mode": "independent", "rolls": 1, "ilvl": [bhi - 3, bhi + 2],
                         "entries": [{"id": M(cry), "chance": 0.8, "qty": [2, 3]}, {"id": f"book.{mk}", "chance": 0.3, "qty": [1, 1]}, {"id": "mat.dao_insight_crystal", "chance": 0.1 + 0.02 * n, "qty": [1, 1]},
                                     {"id": "mat.refining_stone", "chance": 0.6, "qty": [1, 3]}, {"id": "mat.awakening_crystal", "chance": 0.05 + 0.01 * n, "qty": [1, 1]},
@@ -401,6 +404,24 @@ def region(rd, prev):
                                 "condition": {"type": "objective", "objective": {"type": "explore", "region": f"region.{key}", "nodes": len(NODE_TEMPLATE)}}, "rewards": {"spirit_stones": 200 * n * n, "items": [q2(M(cry), 2)]}, "hidden": False,
                                 "art": {"icon": icon(f"achievements/exploration_{key}_charted", f"an achievement medal showing a map of the {rd['name']}", "epic", ["refs/mockups/achievements.png"])}})
     return key, sovereign
+
+
+# One signature mechanic per region sovereign (schema/actors.ts BossSignature, docs/COMBAT.md). Regions 1-2 are in actors.py.
+SIGNATURES = {
+    "blazing_mountain": {"kind": "fury", "name": "Rising Fury", "name_cn": "怒焰渐炽", "description": "From the ninth round on, the Ape King's attack grows 6% every round. Finish him before the mountain boils.", "after_round": 8, "atk_pct_per_round": 6},
+    "frozen_lotus_valley": {"kind": "break", "name": "Lotus Ice Armor", "name_cn": "莲冰铠", "description": "Each phase begins behind ice worth 30% of her HP. Shatter it and she is staggered a full turn and takes 30% more damage for two.", "shield_pct": 30, "delay_pct": 100, "vuln_turns": 2},
+    "ancient_sword_tomb": {"kind": "riposte", "name": "Sword Intent Riposte", "name_cn": "剑意反击", "description": "Every third blow that lands on the Remnant is answered by a sword at 120% ATK. Few heavy strikes beat many light ones.", "every": 3, "pct": 120},
+    "demon_territory": {"kind": "drain", "name": "Blood Moon Feast", "name_cn": "血月盛宴", "description": "The Matriarch heals 35% of the damage she deals. Shields starve her.", "pct": 35},
+    "celestial_mountains": {"kind": "ward", "name": "Mirror Stair", "name_cn": "镜阶", "description": "The Guardian attunes to one element at a time, changing every third turn; attacks of that element heal it. Switch arts.", "cycle": 3},
+    "nine_heavens": {"kind": "quake", "name": "Gate Tremor", "name_cn": "天门震", "description": "Every third turn the Keeper opens with an unavoidable tremor on the whole party at 90% ATK. Keep shields up for it.", "every": 3, "pct": 90},
+    "thunderclap_wastes": {"kind": "mark", "name": "Thunder Brand", "name_cn": "雷印", "description": "The Emperor brands one of you; three of his turns later it detonates at 120% ATK unless a shield takes it.", "turns": 3, "pct": 120},
+    "sunken_dragon_sea": {"kind": "tide", "name": "Tidal Rhythm", "name_cn": "潮律", "description": "High tide every third round: the Dragon Lord is faster and hits harder. At low tide his scales soften 30%.", "cycle": 3},
+    "starfall_desert": {"kind": "curse", "name": "Pharaoh's Curse", "name_cn": "法老之咒", "description": "Every fifth turn the Pharaoh seals all healing on the party for two turns. Heal before it, shield through it.", "every": 5, "turns": 2},
+    "gate_of_ascension": {"kind": "rebirth", "name": "Vermilion Rebirth", "name_cn": "朱雀涅槃", "description": "Slain once, the Gatekeeper rises from its ashes at 30% HP.", "hp_pct": 30},
+    "jade_immortal_realm": {"kind": "rend", "name": "White Tiger Rend", "name_cn": "白虎撕裂", "description": "Each consecutive claw on the same ally tears deeper: +10% damage taken per stack, up to five. Make it switch.", "per_stack": 10, "max_stacks": 5},
+    "golden_palace_of_laws": {"kind": "measure", "name": "Law of Measure", "name_cn": "度量之法", "description": "No single blow may take more than 15% of the Arbiter's HP. Many strikes, not one.", "pct": 15},
+    "throne_of_the_immortal_emperor": {"kind": "answer", "name": "Sovereign's Answer", "name_cn": "帝君回应", "description": "Whenever you unleash an ultimate, the Remnant answers at once with a turn of its own.", "push_pct": 100},
+}
 
 
 def boss_entry(k, name, cn, kind, el, realm, stage, cp, n, techs, phases, desc, look, weak, region_key):

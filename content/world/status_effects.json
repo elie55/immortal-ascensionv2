@@ -358,5 +358,197 @@
         "status": "generated"
       }
     }
+  },
+  {
+    "id": "status.counter_stance",
+    "name": "Counter Stance",
+    "description": "Every hit taken is answered with a counter-blow.",
+    "kind": "buff",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 2,
+    "modifiers": {},
+    "art": {
+      "icon": {
+        "file": "assets/status/counter_stance.webp",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round game status-effect icon showing a single object and no person, no figure, no face: a jade sword held upright behind a round bronze mirror, a ripple of water turning back toward the viewer, centred inside a thin glowing round rim, a purely pictorial emblem with no letters, characters, numbers or writing anywhere.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.vulnerable",
+    "name": "Vulnerable",
+    "description": "Takes 30% more damage.",
+    "kind": "debuff",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 2,
+    "modifiers": {
+      "dmg_red": -30
+    },
+    "art": {
+      "icon": {
+        "file": "assets/status/vulnerable.webp",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round game status-effect icon showing a single object and no person, no figure, no face: a cracked pale-blue ice shell with a dark fissure glowing red inside, centred inside a thin glowing round rim, a purely pictorial emblem with no letters, characters, numbers or writing anywhere.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.marked",
+    "name": "Thunder Brand",
+    "description": "Branded: the brand detonates when the timer runs out. A shield absorbs it.",
+    "kind": "debuff",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 3,
+    "modifiers": {},
+    "art": {
+      "icon": {
+        "file": "assets/status/marked.webp",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round game status-effect icon showing a single object and no person, no figure, no face: a violet thunder sigil burning in the air like a brand, small lightning forks around it, centred inside a thin glowing round rim, a purely pictorial emblem with no letters, characters, numbers or writing anywhere.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.cursed",
+    "name": "Pharaoh's Curse",
+    "description": "Cannot be healed.",
+    "kind": "debuff",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 2,
+    "modifiers": {},
+    "art": {
+      "icon": {
+        "file": "assets/status/cursed.webp",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round game status-effect icon showing a single object and no person, no figure, no face: a dark amber scarab seal with a thin red line struck through a leaf, centred inside a thin glowing round rim, a purely pictorial emblem with no letters, characters, numbers or writing anywhere.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.rend",
+    "name": "Rend",
+    "description": "Torn open: takes 10% more damage per stack.",
+    "kind": "debuff",
+    "stacking": "stack",
+    "max_stacks": 5,
+    "default_turns": 3,
+    "modifiers": {
+      "dmg_red": -10
+    },
+    "art": {
+      "icon": {
+        "file": "assets/status/rend.webp",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round game status-effect icon showing a single object and no person, no figure, no face: three deep parallel claw gashes glowing white-gold on dark jade, centred inside a thin glowing round rim, a purely pictorial emblem with no letters, characters, numbers or writing anywhere.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.tide_high",
+    "name": "High Tide",
+    "description": "Borne by the tide: faster and harder-hitting.",
+    "kind": "buff",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 4,
+    "modifiers": {
+      "spd": 25,
+      "atk": 15
+    },
+    "art": {
+      "icon": {
+        "file": "assets/status/tide_high.webp",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round game status-effect icon showing a single object and no person, no figure, no face: a towering deep-blue wave crest curling over a full moon, centred inside a thin glowing round rim, a purely pictorial emblem with no letters, characters, numbers or writing anywhere.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
+  },
+  {
+    "id": "status.tide_low",
+    "name": "Low Tide",
+    "description": "Stranded by the tide: softer and slower.",
+    "kind": "debuff",
+    "stacking": "refresh",
+    "max_stacks": 1,
+    "default_turns": 4,
+    "modifiers": {
+      "def": -30,
+      "spd": -15
+    },
+    "art": {
+      "icon": {
+        "file": "assets/status/tide_low.webp",
+        "size": [
+          128,
+          128
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Small round game status-effect icon showing a single object and no person, no figure, no face: a thin calm ribbon of water over wet sand under a thin moon, centred inside a thin glowing round rim, a purely pictorial emblem with no letters, characters, numbers or writing anywhere.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    }
   }
 ]

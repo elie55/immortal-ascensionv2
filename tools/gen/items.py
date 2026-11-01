@@ -231,14 +231,16 @@ def enhancement():
         mats = [q("mat.lesser_enhancement_stone", lv)] if lv <= 5 else [q("mat.spirit_enhancing_stone", lv - 4)]
         levels.append({"level": lv, "stat_mult": round(1 + lv * 0.08, 2), "stones_base": 50 * lv * lv, "materials": mats, "success": 1.0 if lv <= 9 else round(1 - (lv - 9) * 0.1, 2)})
     rm = {"common": 1, "uncommon": 1.5, "rare": 2.25, "epic": 3.4, "legendary": 5.1, "mythic": 7.6, "immortal": 11.4, "divine": 17.1}
-    # Stone cost also scales with item level so that +10 on a full set costs about a week of that region's farming
-    # at every region (derived from tools/balance/sim.ts economy table; see docs/qa/BALANCE_MODEL.md).
-    return {"levels": levels, "rarity_cost_mult": rm, "ilvl_cost": {"ref": 103, "exp": 1.14}}
+    # Stone cost also scales with item level so that, at the 500-energy / 1.2-min regen economy, +10 on a full set
+    # costs 1-4 days of that region's farming (region 1 under a day) and +15 one to two weeks late on
+    # (derived from tools/balance/sim.ts economy table; see docs/qa/BALANCE_MODEL.md "Economy").
+    return {"levels": levels, "rarity_cost_mult": rm, "ilvl_cost": {"ref": 60, "exp": 1.5}}
 
 def refinement():
     ch = {"common": 0.8, "uncommon": 0.6, "rare": 0.4, "epic": 0.25, "legendary": 0.1}
     rm = {"common": 1, "uncommon": 1.5, "rare": 2.25, "epic": 3.4, "legendary": 5.1}
-    return {"steps": [{"from": r, "chance": c, "stones": int(200 * rm[r]), "materials": [q("mat.refining_stone", 2 * (i + 1))]} for i, (r, c) in enumerate(ch.items())]}
+    # Stones are a base per attempt; the engine scales them by the piece's item level like enhancement (refineCost).
+    return {"steps": [{"from": r, "chance": c, "stones": int(500 * rm[r]), "materials": [q("mat.refining_stone", 2 * (i + 1))]} for i, (r, c) in enumerate(ch.items())]}
 
 def reforge():
     return {"stones_base": 112, "materials": [q("mat.reforging_sand", 2)], "lock_cost_per_stat": [q("mat.reforging_sand", 1)], "max_secondary_stats": 3}

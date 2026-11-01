@@ -3,7 +3,7 @@
     {
       "from": "common",
       "chance": 0.8,
-      "stones": 200,
+      "stones": 500,
       "materials": [
         {
           "id": "mat.refining_stone",
@@ -14,7 +14,7 @@
     {
       "from": "uncommon",
       "chance": 0.6,
-      "stones": 300,
+      "stones": 750,
       "materials": [
         {
           "id": "mat.refining_stone",
@@ -25,7 +25,7 @@
     {
       "from": "rare",
       "chance": 0.4,
-      "stones": 450,
+      "stones": 1125,
       "materials": [
         {
           "id": "mat.refining_stone",
@@ -36,7 +36,7 @@
     {
       "from": "epic",
       "chance": 0.25,
-      "stones": 680,
+      "stones": 1700,
       "materials": [
         {
           "id": "mat.refining_stone",
@@ -47,7 +47,7 @@
     {
       "from": "legendary",
       "chance": 0.1,
-      "stones": 1019,
+      "stones": 2550,
       "materials": [
         {
           "id": "mat.refining_stone",

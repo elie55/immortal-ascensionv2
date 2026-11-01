@@ -272,7 +272,7 @@
   {
     "id": "tech.active.frozen_lotus",
     "name": "Frozen Lotus",
-    "description": "A lotus of frost blooms beneath the target. 150% ATK, Slows, 25% chance to Freeze.",
+    "description": "A lotus of frost blooms beneath the target. 150% ATK, Slows, delays its next turn by a third, 25% chance to Freeze.",
     "name_cn": "冰莲绽放",
     "kind": "active",
     "rarity": "epic",
@@ -324,10 +324,118 @@
         "status": "generated"
       }
     },
+    "turn_shift": 35,
     "vfx": {
       "approach": "none",
       "shape": "burst",
       "impact": "medium",
+      "camera": "none",
+      "color": "#6fd0ff"
+    }
+  },
+  {
+    "id": "tech.active.swift_cloud_step",
+    "name": "Swift Cloud Step",
+    "description": "A step on the wind: your next turn comes half a turn sooner.",
+    "name_cn": "踏云步",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.wood",
+    "weapon_affinity": "any",
+    "targeting": "self",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 14,
+    "cooldown": 3,
+    "applies": [],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/swift_cloud_step.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a square technique icon depicting the wood-element art Swift Cloud Step as a glowing martial-art symbol or action: A step on the wind: your next turn comes half a turn sooner, a purely pictorial emblem with no letters, characters, numbers or writing anywhere, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "turn_shift": 60,
+    "vfx": {
+      "approach": "none",
+      "shape": "ring",
+      "impact": "light",
+      "camera": "none",
+      "color": "#5fe39a"
+    }
+  },
+  {
+    "id": "tech.active.returning_tide_stance",
+    "name": "Returning Tide Stance",
+    "description": "Take the stance of the returning tide: for two turns every blow you take is answered with a counter at 90% ATK.",
+    "name_cn": "回潮式",
+    "kind": "active",
+    "rarity": "epic",
+    "element": "elem.water",
+    "weapon_affinity": "any",
+    "targeting": "self",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 20,
+    "cooldown": 4,
+    "applies": [
+      {
+        "status": "status.counter_stance",
+        "chance": 1,
+        "turns": 2,
+        "potency": 90
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 5
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/returning_tide_stance.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a square technique icon depicting the water-element art Returning Tide Stance as a glowing martial-art symbol or action, a purely pictorial emblem with no letters, characters, numbers or writing anywhere, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "ring",
+      "impact": "light",
       "camera": "none",
       "color": "#6fd0ff"
     }
@@ -1249,7 +1357,7 @@
   {
     "id": "tech.active.web_snare",
     "name": "Web Snare",
-    "description": "Sticky silk slows the prey.",
+    "description": "Sticky silk slows the prey and holds it back a step.",
     "name_cn": "丝缚",
     "kind": "active",
     "rarity": "uncommon",
@@ -1291,6 +1399,7 @@
         "status": "generated"
       }
     },
+    "turn_shift": 25,
     "vfx": {
       "approach": "none",
       "shape": "burst",

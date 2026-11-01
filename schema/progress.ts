@@ -267,11 +267,14 @@ export const UiArt = Named.extend({
 // ---------- Combat rules (singleton) ----------
 
 export const AutoRule = z.object({
-  /** A loadout slot (active index 0-3 as "a0".."a3", "ultimate", "beast") or a role ("heal", "shield", "damage", "basic"). */
+  /** A loadout slot (active index 0-3 as "a0".."a3", "ultimate", "beast", "surge") or a role ("heal", "shield", "damage", "debuff", "tempo", "basic"). */
   slot: z.string().min(1),
-  when: z.enum(["always", "hp_below", "sp_above", "boss_only", "no_shield", "enemies_at_least", "big_attack", "never"]).default("always"),
+  /** ally_hp_below: a companion or beast is under value %; can_finish: a damaging skill can kill an enemy this turn;
+   *  element_edge: a damaging skill has the element advantage on a living enemy; ult_above: ultimate charge over value. */
+  when: z.enum(["always", "hp_below", "sp_above", "boss_only", "no_shield", "enemies_at_least", "big_attack", "ally_hp_below", "can_finish", "element_edge", "ult_above", "never"]).default("always"),
   value: z.number().optional(),
-  target: z.enum(["default", "lowest_hp", "highest_cp", "weakest", "strongest"]).default("default"),
+  /** focus: the enemy the skill can kill, else the lowest HP; weak_to: the enemy the skill's element overcomes. */
+  target: z.enum(["default", "lowest_hp", "highest_cp", "weakest", "strongest", "focus", "weak_to"]).default("default"),
 });
 export type AutoRule = z.infer<typeof AutoRule>;
 
@@ -283,7 +286,11 @@ export const CombatRules = z.object({
     element_advantage: z.number().min(0), boss_weakness_bonus: z.number().min(0), charged_attack_mult: z.number().positive(),
   }),
   spirit_energy: z.object({ regen_pct_per_turn: z.number().min(0), basic_attack_restore: z.number().min(0) }),
-  ultimate: z.object({ gain_per_action: z.number().min(0), gain_per_damage_taken_pct: z.number().min(0), gain_per_kill: z.number().min(0) }),
+  ultimate: z.object({
+    gain_per_action: z.number().min(0), gain_per_damage_taken_pct: z.number().min(0), gain_per_kill: z.number().min(0),
+    /** Surge: the player spends surge_cost charge to act again at once (gauge + surge_push_pct % of a turn). */
+    surge_cost: z.number().positive().max(100).default(40), surge_push_pct: z.number().positive().max(200).default(100),
+  }),
   status: z.object({
     default_reflect_pct: z.number().min(0), shield_from_status_pct: z.number().min(0), control_resist_cap: z.number().min(0).max(1),
     /** After a control effect ends the unit is immune to control for this many of its own turns (bosses +1). */
@@ -295,7 +302,7 @@ export const CombatRules = z.object({
   defeat: z.object({ hp_pct_after_defeat: z.number().min(0).max(100), energy_refund_pct: z.number().min(0).max(100) }),
   tribulation: z.object({ turns_per_wave: z.number().int().positive(), bolt_power: z.number().positive() }),
   recovery: z.object({ hp_pct_per_min: z.number().min(0) }),
-  mastery: z.object({ method_share: z.number().min(0), active_share: z.number().min(0) }),
+  mastery: z.object({ method_share: z.number().min(0), active_share: z.number().min(0), passive_share: z.number().min(0).default(0.35), ultimate_share: z.number().min(0).default(0.5) }),
   /** Hard caps on percentage stats as used in combat (values in %). Keeps gear scaling from breaking the formulas. */
   caps: z.object({
     crit: z.number().min(0).max(100).default(75), crit_dmg: z.number().min(100).default(400), eva: z.number().min(0).max(95).default(60), acc: z.number().min(50).default(150),

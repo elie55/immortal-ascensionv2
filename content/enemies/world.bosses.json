@@ -188,6 +188,13 @@
     "weaknesses": [
       "elem.metal"
     ],
+    "signature": {
+      "kind": "guarded",
+      "name": "Thousand-Node Shell",
+      "name_cn": "千节护壳",
+      "description": "While a bamboo sprite stands, the dragon takes 70% less damage. Cut the sprites first.",
+      "dmg_red": 70
+    },
     "art": {
       "icon": {
         "file": "assets/bosses/azure_bamboo_forest/thousand_node_bamboo_dragon_icon.webp",
@@ -549,6 +556,13 @@
     "weaknesses": [
       "elem.wood"
     ],
+    "signature": {
+      "kind": "rebirth",
+      "name": "Ninth Head",
+      "name_cn": "第九首",
+      "description": "Slain, the serpent's last head rises at 25% HP. Keep something for the end.",
+      "hp_pct": 25
+    },
     "art": {
       "icon": {
         "file": "assets/bosses/special/nine_headed_abyss_serpent_icon.webp",

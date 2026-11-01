@@ -91,7 +91,8 @@ export function refineCost(c: ContentIndex, g: GearInstance): (Cost & { to: stri
   if (rIdx(g.rarity) >= rIdx(refineCap(c, g))) return { blocked: "This piece cannot hold a higher rarity" };
   const step = c.singletons.refinement.steps.find((x) => x.from === g.rarity);
   if (!step) return { blocked: "No refinement step for this rarity" };
-  return { stones: step.stones, items: step.materials, chance: step.chance, to: RARITIES[rIdx(g.rarity) + 1]! };
+  // stones scale with the piece's item level like enhancement does, so a rarity step is a real decision in every region
+  return { stones: Math.max(1, Math.round(step.stones * Math.max(0.25, ilvlCost(c, g.ilvl)))), items: step.materials, chance: step.chance, to: RARITIES[rIdx(g.rarity) + 1]! };
 }
 
 export function refine(s: GameState, c: ContentIndex, uid: number): ActionResult<{ success: boolean; rarity: string }> {

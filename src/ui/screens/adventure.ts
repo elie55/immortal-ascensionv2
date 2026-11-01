@@ -258,6 +258,9 @@ function nodeCard(app: App, n: MapNode, refresh: () => void, ctx?: CardCtx) {
   else if (n.waves?.length) {
     body.push(enemyChips(app, n.waves.flat()), h("div", { class: "muted", style: { margin: "6px 0" } }, `${n.waves.length} wave${n.waves.length > 1 ? "s" : ""} · ${n.energy_cost} energy${rec?.clears ? " · replayable, drops only" : " · first clear rewards"}`));
     if (!rec?.clears && n.first_clear && Object.keys(n.first_clear).length) body.push(rewardsLine(app, n.first_clear as any));
+    // the sovereign's signature mechanic, so the player can prepare for it (docs/COMBAT.md)
+    const sig = n.waves.flat().map((id) => c.find<any>(id)?.signature).find(Boolean);
+    if (sig) body.push(h("div", { class: "np-sig" }, h("b", null, icon("warning", 12), ` ${sig.name}`, sig.name_cn && h("span", { class: "cn" }, ` ${sig.name_cn}`)), h("div", { class: "dim", style: { fontSize: "calc(12rem / 15)" } }, sig.description)));
     // one clear action: Manual/Auto is chosen on the battle screen itself (and remembered), not here
     body.push(h("button", { class: "btn gold block node-fight", onClick: () => start({ kind: "node", id: n.id }) }, icon("sword", 15), n.kind === "boss" ? "Challenge" : "Fight"));
   } else if (n.kind === "gather") {

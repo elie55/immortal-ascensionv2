@@ -60,6 +60,17 @@ test("defeat objectives count only kills made after accepting; abandoning is ref
   assert.equal(questStatus(s, c, q, T0), "ready");
 });
 
+test("a region sovereign slain before its quest was taken still completes the quest", () => {
+  const { s } = game();
+  s.progress.quests.completed["quest.main.first_hunt"] = 1;
+  s.character.realm = "realm.qi_condensation"; s.character.stage = 3;
+  s.progress.counters["kills:boss.plains_bandit_chief"] = 1;     // killed on the map before reaching stage 3
+  assert.ok(acceptQuest(s, c, "quest.main.bandit_chief", T0).ok);
+  const q = c.get<any>("quest.main.bandit_chief");
+  assert.equal(questProgress(s, c, q)[0]!.have, 1);
+  assert.equal(questStatus(s, c, q, T0), "ready");
+});
+
 test("repeatable missions go on cooldown after turn-in and come back", () => {
   const s = fresh();
   const q = c.byPrefix<any>("quest").find((x) => x.repeatable && x.objectives[0].type === "deliver")!;

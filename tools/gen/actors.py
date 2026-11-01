@@ -44,10 +44,10 @@ def enemies():
               "A fragment of tribulation lightning given form.", "a crackling violet-white wisp of lightning shaped like a small floating spirit with a crown of sparks", "special"),
     ]
 
-def boss(key, name, cn, kind, elem, realm, stage, st, cp, techs, phases, strat, desc, look, weak, region):
+def boss(key, name, cn, kind, elem, realm, stage, st, cp, techs, phases, strat, desc, look, weak, region, signature=None):
     return {"id": f"boss.{key}", **named(name, desc, cn), "kind": kind, "element": f"elem.{elem}", "realm": {"id": f"realm.{realm}", "stage": stage},
             "stats": st, "cp": cp, "techniques": techs, "ai": {"strategy": strat, "rules": []}, "resistances": {}, "loot": f"loot.boss.{key}", "mastery_xp": 40 + cp // 40,
-            "phases": phases, "weaknesses": [f"elem.{w}" for w in weak],
+            "phases": phases, "weaknesses": [f"elem.{w}" for w in weak], **({"signature": signature} if signature else {}),
             "art": {"icon": icon(f"bosses/{region}/{key}_icon", f"the head of {look}", None, ["refs/mockups/battle_screen.png"], (256, 256)),
                     "battle": battle(f"bosses/{region}/{key}_battle", f"{look}", (1024, 1024), ["refs/mockups/battle_screen.png"]),
                     "intro": art(f"assets/bosses/{region}/{key}_intro.png", f"{STYLE}. Dramatic boss introduction splash of {look}, low angle, swirling elemental energy, dark vignette, no text.", (1080, 1350), False, ["refs/mockups/battle_screen.png"])}}
@@ -60,7 +60,8 @@ def bosses():
              "aggressive", "Leader of the plains bandits. Once a failed sect applicant.", "a burly scarred bandit chief in a fur-collared coat with two sabers, gold tooth, torn sect robe beneath", ["wood"], "mortal_plains"),
         boss("thousand_node_bamboo_dragon", "Thousand-Node Bamboo Dragon", "千节竹龙", "region", "wood", "qi_condensation", 9, stats(6000, 150, 70, 15), 1100, ["tech.active.bamboo_spike", "tech.active.verdant_vine_bind", "tech.active.stone_shell"],
              [ph("Rooted", 1.0, ["tech.active.bamboo_spike", "tech.active.stone_shell"]), ph("Grove Awakens", 0.6, ["tech.active.verdant_vine_bind", "tech.active.bamboo_spike"], [{"enemy": "enemy.bamboo_spirit_sprite", "count": 2}]), ph("Thousand Nodes", 0.25, ["tech.active.bamboo_spike"], None, {"atk_mult": 1.5, "spd_mult": 1.3})],
-             "guardian", "The ancient dragon-shaped bamboo at the heart of the forest. Its scales are living leaves; it is weak to Metal.", "an enormous serpentine dragon made of jade-green bamboo segments and leaves, with glowing amber eyes and moss antlers", ["metal"], "azure_bamboo_forest"),
+             "guardian", "The ancient dragon-shaped bamboo at the heart of the forest. Its scales are living leaves; it is weak to Metal.", "an enormous serpentine dragon made of jade-green bamboo segments and leaves, with glowing amber eyes and moss antlers", ["metal"], "azure_bamboo_forest",
+             {"kind": "guarded", "name": "Thousand-Node Shell", "name_cn": "千节护壳", "description": "While a bamboo sprite stands, the dragon takes 70% less damage. Cut the sprites first.", "dmg_red": 70}),
         boss("guardian_of_the_origin", "Guardian of the Origin", "本源守卫", "secret_realm", "earth", "foundation_establishment", 2, stats(9000, 210, 140, 12), 1900, ["tech.active.stone_shell", "tech.active.thunder_palm", "tech.active.mirror_scale"],
              [ph("Sentinel", 1.0, ["tech.active.stone_shell", "tech.active.thunder_palm"]), ph("Mirror Form", 0.5, ["tech.active.mirror_scale", "tech.active.thunder_palm"], None, None, 20)],
              "guardian", "A stone sentinel that has guarded the Origin Secret Realm since before the sect.", "a towering stone golem carved with ancient runes, moss and gold cracks glowing, mirror-like plates on its arms", ["wood"], "special"),
@@ -69,7 +70,8 @@ def bosses():
              "caster", "The will of heaven given a crackling violet form. Survive it to form your core.", "a colossal humanoid spirit of violet lightning with a crown of thunderclouds and eyes of white fire", ["earth"], "special"),
         boss("nine_headed_abyss_serpent", "Nine-Headed Abyss Serpent", "九首渊蛇", "mega", "water", "spirit_severing", 9, stats(569600, 49840, 23140, 26, crit=18, acc=98, eva=9, spp=35600, spe=180), 178000, ["tech.active.abyssal_torrent", "tech.active.frost_breath", "tech.active.venom_fang"],
              [ph("Rising Tide", 1.0, ["tech.active.frost_breath", "tech.active.venom_fang"]), ph("Nine Mouths", 0.66, ["tech.active.abyssal_torrent", "tech.active.venom_fang"], [{"enemy": "enemy.abyss_cultist", "count": 3}], None, 15), ph("Abyssal Fury", 0.33, ["tech.active.abyssal_torrent", "tech.active.frost_breath"], None, {"atk_mult": 1.6, "spd_mult": 1.3}, None, {"tech": "tech.active.abyssal_torrent", "turns_to_charge": 2})],
-             "berserker", "Lord of the Abyss of the Nine Heavens. Only Dao Companions standing together have ever returned.", "a gigantic nine-headed black-blue sea serpent rising from dark water, each head crowned with coral and lightning", ["wood"], "special"),
+             "berserker", "Lord of the Abyss of the Nine Heavens. Only Dao Companions standing together have ever returned.", "a gigantic nine-headed black-blue sea serpent rising from dark water, each head crowned with coral and lightning", ["wood"], "special",
+             {"kind": "rebirth", "name": "Ninth Head", "name_cn": "第九首", "description": "Slain, the serpent's last head rises at 25% HP. Keep something for the end.", "hp_pct": 25}),
         boss("tower_warden", "Warden of the Heaven-Piercing Tower", "通天塔守", "dungeon", "metal", "foundation_establishment", 5, stats(12000, 300, 160, 20), 3000, ["tech.active.swallow_return_sword", "tech.active.mirror_scale"],
              [ph("Vigil", 1.0, ["tech.active.swallow_return_sword"]), ph("Mirror Vigil", 0.5, ["tech.active.mirror_scale", "tech.active.swallow_return_sword"])],
              "defensive", "An armoured spirit bound to guard every tenth floor of the tower.", "a tall armoured spirit knight in silver-white plate with a mirrored visor and a floating sword, surrounded by rings of light", ["fire"], "special"),

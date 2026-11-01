@@ -47,6 +47,20 @@
         "unlock": {}
       },
       {
+        "id": "mat.peach_blossom",
+        "price": 12,
+        "currency": "spirit_stones",
+        "qty": 10,
+        "unlock": {}
+      },
+      {
+        "id": "mat.crane_feather",
+        "price": 18,
+        "currency": "spirit_stones",
+        "qty": 10,
+        "unlock": {}
+      },
+      {
         "id": "mat.spirit_iron_ore",
         "price": 57,
         "currency": "spirit_stones",
@@ -323,6 +337,22 @@
         "currency": "spirit_stones",
         "unlock": {
           "sect_fame": 1000
+        }
+      },
+      {
+        "id": "tech.active.swift_cloud_step",
+        "price": 450,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 300
+        }
+      },
+      {
+        "id": "tech.active.returning_tide_stance",
+        "price": 1100,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 1500
         }
       },
       {

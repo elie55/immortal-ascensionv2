@@ -11,6 +11,24 @@ threshold acts (ties → lower uid). Faster units therefore act first *and more 
 (Slow −30 %, Freeze −100 %) slow the gauge; a frozen or stunned unit skips its action when its turn
 comes. A "round" is one player turn; battles time out after `turn.max_rounds`.
 
+### Tempo (turn push and delay)
+
+A technique's `turn_shift` (% of a turn) moves the gauge: enemies it hits are **delayed** by that much
+(gauge −), allies or the caster it targets are **hastened** (gauge +); the gauge never goes below −1 turn.
+Slow techniques (Frozen Lotus, the regional Tidal Pulse arts) delay 30–35 %; Swift Cloud Step hastens the
+caster 60 %. `Battle.shiftTurn` emits `turn_shift` events and the turn-order strip re-sorts.
+
+**Surge**: the player always carries a `surge` skill (`combat_rules.ultimate.surge_cost`, 40 charge) that
+spends ultimate charge to act again at once (`surge_push_pct` 100 = a whole turn). It gives no charge
+back; the auto rules reach it through the `surge` slot (default: when a big attack is coming, so the next
+action can be the shield).
+
+### Counters
+
+A gear `counter` special answers a hit with chance `chance` at `value` % ATK. **Counter Stance**
+(`status.counter_stance`, applied by Returning Tide Stance with `potency` = %) answers *every* hit while it
+lasts. Counters use the defender's basic element and never trigger reactions themselves.
+
 ## Damage
 
 ```
@@ -63,6 +81,31 @@ a shield, `enrage` multiplies ATK/SPD, and `charged_attack` starts a telegraphed
 "X in N turns"; after N boss turns the technique lands at `charged_attack_mult` power. A stun or freeze
 cancels the charge. `weaknesses` add damage from those elements.
 
+### Signature mechanics (`boss.signature`, schema/actors.ts `BossSignature`)
+
+Every region sovereign (and the mega serpent) has one rule that changes how its fight is played; the arena
+announces it by `name` (`signature` events), the node card and the boss intro show it, and `description`
+tells the player the counter-play. Statuses a signature applies are forced (no resistance roll).
+
+| kind | boss | rule | counter-play |
+|---|---|---|---|
+| guarded | Thousand-Node Bamboo Dragon | −70 % damage taken while a summon lives | kill the sprites first |
+| fury | Molten Ape King | from round 8, +8 % ATK every player round | finish fast |
+| break | Lotus Frost Queen | 30 % HP ice shield each phase; shattering it delays her a turn and leaves her Vulnerable (+30 % dmg taken) 2 turns | burst the shield, then the body |
+| riposte | Sword Sovereign's Remnant | every 3rd hit taken answered at 120 % ATK | few heavy hits, not multi-hit flurries |
+| drain | Crimson Moon Matriarch | heals 35 % of damage dealt | shields starve her |
+| ward | Celestial Stair Guardian | attuned element rotates every 3 of its turns; that element heals it (50 % of the raw hit) | switch elements |
+| quake | Heavenly Gate Keeper | every 3rd turn opens with 90 % ATK on the whole party | keep shields up for the third turn |
+| mark | Nine-Bolt Thunder Emperor | brands one ally; 3 boss turns later it detonates at 120 % ATK (a shield absorbs it) | shield the branded (the auto rules treat a brand as a big attack) |
+| tide | Drowned Dragon Lord | High Tide (+25 SPD, +15 ATK) / Low Tide (−30 DEF, −15 SPD) alternate every 3 rounds | burst at low tide |
+| curse | Starfall Pharaoh | every 5th turn: no healing on the party for 2 turns | heal before, shield through |
+| rebirth | Vermilion Gatekeeper (and the Abyss Serpent, 25 %) | rises once at 30 % HP | keep an ultimate for the end |
+| rend | White Tiger Sovereign | consecutive hits on one ally stack Rend (+10 % dmg taken, ×5) | make it switch targets (shields, taunts) |
+| measure | Arbiter of Ten Thousand Laws | no hit takes more than 12 % of its max HP | many strikes beat one |
+| answer | Remnant of the First Emperor | an ally's ultimate gives it a turn at once (gauge +100 %) | ult when it is delayed or controlled |
+
+The validator knows which statuses each kind applies (`tools/lib/rules.ts` SIGNATURE_STATUSES).
+
 ## Big-attack warnings (telegraphs)
 
 Elites (enemy `kind: "elite"`) and bosses announce their big attacks one turn ahead, the "intent" way
@@ -85,17 +128,29 @@ default preset raises a shield then.
 ## AI
 
 - **Player and allies**: a priority list of rules (`combat.presets[active].rules`), each
-  `{slot, when, value, target}`. Slots are loadout positions (`a0`–`a3`, `ultimate`, `beast`) or roles
-  (`heal`, `shield`, `damage`, `debuff`, `basic`); conditions `always | hp_below | sp_above | boss_only |
-  no_shield | enemies_at_least | big_attack | never`; targets `default | lowest_hp | highest_cp | weakest | strongest`.
-  The first rule whose condition holds and whose slot has a usable technique acts. Default preset:
-  ultimate → heal under 50 % HP → shield when a big attack is coming → shield when unshielded → strongest damage technique on the lowest-HP
-  enemy → basic attack.
+  `{slot, when, value, target}`. Slots are loadout positions (`a0`–`a3`, `ultimate`, `beast`, `surge`) or roles
+  (`heal`, `shield`, `damage`, `debuff`, `tempo`, `basic`); conditions `always | hp_below | ally_hp_below | sp_above |
+  ult_above | boss_only | no_shield | enemies_at_least | big_attack | can_finish | element_edge | never`; targets
+  `default | lowest_hp | highest_cp | weakest | strongest | focus | weak_to`. `can_finish` holds when a damaging
+  technique can kill an enemy this turn (estimate ≥ HP + shield) and `focus` aims at that enemy; `element_edge`
+  holds when a technique has the element advantage on a living enemy and `weak_to` aims at it. The first rule whose
+  condition holds and whose slot has a usable technique acts. Default preset: surge when a big attack is coming →
+  heal under 45 % HP → heal a companion under 35 % → shield when a big attack is coming → finish a killable enemy →
+  ultimate on bosses or 3+ enemies (held otherwise, so it is there for the boss wave) → shield when unshielded →
+  element-advantaged technique on the enemy weak to it → strongest technique on the focus → basic attack.
 - **Manual mode**: the battle pauses on the player's turn (`Battle.pending`); the UI calls `act()`.
-- **Enemies** by strategy: aggressive (strongest technique on the lowest-HP target), berserker (highest
-  attack target), defensive (heal/shield under 50 %/70 %), support (heal hurt allies, shield bare ones),
-  trickster (debuffs targets lacking them, random targets), caster (highest-CP target), guardian (shield
-  self first). Enemies with ultimates use them when charged.
+- **Enemies** by strategy, with three shared habits: **focus fire** (the side keeps hitting the ally it started
+  on, the most fragile non-beast, until it falls: `Battle.focus`), **element-aware choice** (the technique with the
+  highest expected damage on the chosen target, AoE summed over the party), and **ultimate timing** (a boss holds its
+  ultimate until a later phase or an unshielded target under 70 % HP; others fire when a target is bare). Strategies:
+  aggressive (focus), berserker (highest attack target), defensive (heal/shield under 50 %/70 %), support (heal an
+  ally under 55 %, shield the most hurt bare ally), trickster (debuffs targets lacking them, random targets, but
+  finishes a killable one), caster/guardian (highest-CP target; guardian shields itself first). Every strategy takes a
+  kill when a technique can finish a non-beast target. `BattleOptions.legacyAi` keeps the previous behaviour for
+  `tools/balance/ai_eval.ts`, which measures both (tools/balance/out/ai_eval.md): on the fitted archetype the
+  new rules win ≈ the same share of fights overall (70 % vs 69 % on 45 nodes) with clear gains where finishing and
+  holding the ultimate matter (Sword Tomb boss 22 → 47 % on 32 seeds); the enemy pass changes no single-target fight
+  and only shows where enemies have several elements or allies to pick from.
 
 ## Encounters
 

@@ -5,11 +5,13 @@
  */
 import type { ContentIndex, StatusEffect, Element } from "../../content/index.ts";
 import { nextFloat, chance, type RngState } from "../rng.ts";
-import type { Combatant, Skill, BattleEvent, BattleOptions, BattleSummary, PlayerChoice, AutoRuleResolved, StatusInstance, HitKind } from "./types.ts";
+import type { Combatant, Skill, BattleEvent, BattleOptions, BattleSummary, PlayerChoice, AutoRuleResolved, StatusInstance, HitKind, BossSignature } from "./types.ts";
 import { BASIC, buildEnemy } from "./build.ts";
 import { chooseAuto, chooseEnemy, resolveTargets } from "./ai.ts";
 
 const CONTROL = new Set(["status.stun", "status.freeze", "status.silence"]);
+/** Stats that are already percentages: status modifiers add points to them (poison −30 heal bonus) instead of scaling them. */
+const POINT_STATS = new Set(["crit", "crit_dmg", "eva", "acc", "cdr", "dmg_red", "life_steal", "armor_pen", "heal_bonus", "shield_str", "status_res"]);
 
 export class Battle {
   readonly c: ContentIndex;
@@ -23,6 +25,8 @@ export class Battle {
   result: BattleSummary["result"] | null = null;
   pending: Combatant | null = null;   // player waiting for manual input
   killed: string[] = [];
+  /** Enemy focus fire: the ally every enemy keeps hitting until it falls (ai.ts). */
+  focus: number | null = null;
   private ticks = 0;
   private statusDefs = new Map<string, StatusEffect>();
   private elements = new Map<string, Element>();
@@ -46,8 +50,9 @@ export class Battle {
     let v = u.base[k] ?? 0;
     let pct = 0;
     for (const s of u.statuses) { const d = this.statusDefs.get(s.id); const m = d?.modifiers?.[k as keyof typeof d.modifiers]; if (m) pct += m * (d!.stacking === "stack" ? s.stacks : 1); }
-    v *= 1 + pct / 100;
+    if (POINT_STATS.has(k) || k.startsWith("elem_")) v += pct; else v *= 1 + pct / 100;
     if (u.boss?.phases[u.boss.phase]?.enrage) { const en = u.boss.phases[u.boss.phase]!.enrage!; if (k === "atk") v *= en.atk_mult; if (k === "spd") v *= en.spd_mult; }
+    if (k === "atk" && u.boss?.signature?.kind === "fury" && u.boss.sig.fury) v *= 1 + u.boss.sig.fury * (u.boss.signature.atk_pct_per_round as number) / 100;
     const caps = this.c.combat.caps as Record<string, number>;
     if (k === "spd") { const mn = this.c.combat.turn.min_speed; v = Math.max(mn, v); if (caps.spd_exp !== 1) v = mn + Math.pow(v - mn, caps.spd_exp) * Math.pow(10, 1 - caps.spd_exp); }
     else if (caps[k] !== undefined) v = Math.min(caps[k]!, v);
@@ -213,6 +218,7 @@ export class Battle {
       if (this.opts.surviveRounds && this.round > this.opts.surviveRounds) { this.finish("victory"); return; }
       if (this.round > this.c.combat.turn.max_rounds) { this.finish("timeout"); return; }
       this.hazardStrike(); if (this.result) return;
+      for (const b of this.alive("enemy")) if (b.boss?.signature) this.signatureRound(b);
     }
     this.emit({ t: "turn", actor: u.uid, round: this.round });
     for (const k of Object.keys(u.cooldowns)) if (u.cooldowns[k]! > 0) u.cooldowns[k]!--;
@@ -223,6 +229,7 @@ export class Battle {
       if (sp.kind === "heal_on_turn") this.heal(u, u, Math.round(u.maxHp * (sp.value ?? 0) / 100), "regen");
     }
     if (u.boss?.charging) u.boss.charging.turnsLeft--;
+    if (u.boss?.signature) this.signatureTurn(u);
   }
 
   private endTurn(u: Combatant): void {
@@ -254,6 +261,7 @@ export class Battle {
   canUse(u: Combatant, s: Skill): boolean {
     if (s.kind === "basic") return true;
     if ((u.cooldowns[s.id] ?? 0) > 0) return false;
+    if (s.ultCost) return u.ult >= s.ultCost;
     if (s.kind === "ultimate") return u.ult >= (s.ultCharge ?? 100);
     if (this.has(u, "status.silence")) return false;
     return u.sp >= s.spCost;
@@ -282,10 +290,12 @@ export class Battle {
     const targets = resolveTargets(this, actor, skill, choice.target);
     if (!targets.length) return;
     if (skill.kind !== "basic") { actor.sp = Math.max(0, actor.sp - skill.spCost); if (skill.cooldown > 0) actor.cooldowns[skill.id] = this.cooldownFor(actor, skill); }
-    if (skill.kind === "ultimate") actor.ult = 0;
+    if (skill.ultCost) actor.ult = Math.max(0, actor.ult - skill.ultCost);
+    else if (skill.kind === "ultimate") actor.ult = 0;
     else actor.ult = Math.min(100, actor.ult + this.c.combat.ultimate.gain_per_action);
     if (skill.kind === "basic") this.gainSp(actor, this.c.combat.spirit_energy.basic_attack_restore);
     this.emit({ t: "action", actor: actor.uid, skill: skill.id, name: skill.name, targets: targets.map((t) => t.uid), charged: choice.charged, ...(choice.heavy ? { heavy: true } : {}) });
+    if (skill.ultCost) this.emit({ t: "surge", actor: actor.uid, cost: skill.ultCost });
     const mult = choice.charged ? this.c.combat.damage.charged_attack_mult : 1;
     for (const tgt of targets) {
       if (skill.healPct) this.heal(actor, tgt, Math.round(actor.maxHp * skill.healPct / 100 * skill.masteryMult), "heal");
@@ -294,8 +304,19 @@ export class Battle {
         for (let h = 0; h < skill.hits && tgt.alive && actor.alive; h++) this.strike(actor, tgt, skill, mult);
       }
       for (const ap of skill.applies) if (tgt.alive && (skill.power === 0 || tgt.side === actor.side || this.lastHitLanded)) this.applyStatus(actor, tgt, ap.status, ap.chance, ap.turns, ap.potency);
+      // tempo: a hit delays the enemy, a boon hastens the ally (or the caster)
+      if (skill.turnShift && tgt.alive && (skill.power === 0 || tgt.side === actor.side || this.lastHitLanded)) this.shiftTurn(actor, tgt, tgt.side === actor.side ? skill.turnShift : -skill.turnShift);
     }
+    // a sovereign that answers ultimates acts at once
+    if (skill.kind === "ultimate" && actor.side === "ally") for (const b of this.alive("enemy")) if (b.boss?.signature?.kind === "answer") { this.emit({ t: "signature", actor: b.uid, kind: "answer", name: b.boss.signature.name, targets: [b.uid] }); this.shiftTurn(b, b, b.boss.signature.push_pct as number); }
     if (actor.ult >= 100 && actor.skills.some((s) => s.kind === "ultimate")) this.emit({ t: "ult_ready", actor: actor.uid });
+  }
+
+  /** Move a unit along the turn gauge by `pct` % of a turn (negative = delay). */
+  shiftTurn(by: Combatant, u: Combatant, pct: number): void {
+    const th = this.c.combat.turn.gauge_threshold;
+    u.gauge = Math.max(-th, u.gauge + th * pct / 100);
+    this.emit({ t: "turn_shift", actor: by.uid, target: u.uid, pct: Math.round(pct) });
   }
 
   private cooldownFor(u: Combatant, s: Skill): number {
@@ -312,6 +333,11 @@ export class Battle {
     const hitChance = Math.max(R.hit_floor, Math.min(1, (this.eff(a, "acc") - this.eff(d, "eva")) / 100));
     if (!chance(this.rng, hitChance)) { this.emit({ t: "hit", actor: a.uid, target: d.uid, amount: 0, crit: false, element: skill.element, absorbed: 0, dodged: true, kind: "attack" }); return; }
     let raw = (this.eff(a, "atk") + this.eff(a, "sp_power") * R.sp_power_weight) * (skill.power / 100) * skill.masteryMult * extraMult;
+    // a warded element feeds the boss instead of wounding it
+    if (d.boss?.signature?.kind === "ward" && d.boss.sig.ward === skill.element) {
+      this.emit({ t: "signature", actor: d.uid, kind: "ward", name: d.boss.signature.name, targets: [a.uid], detail: this.elements.get(skill.element)?.name });
+      this.heal(d, d, Math.round(raw * 0.5), "heal"); this.lastHitLanded = true; return;
+    }
     raw *= this.elementMult(a, d, skill.element);
     const crit = chance(this.rng, Math.max(0, Math.min(1, this.eff(a, "crit") / 100)));
     if (crit) raw *= Math.max(100, this.eff(a, "crit_dmg") || R.crit_dmg_default) / 100;
@@ -335,12 +361,25 @@ export class Battle {
       const reflPct = (refl ? (refl.potency ?? this.c.combat.status.default_reflect_pct) : 0) + (reflSpecial?.value ?? 0);
       if (reflPct > 0 && a.alive) this.applyDamage(d, a, Math.round(dealt * reflPct / 100), { element: "elem.none", kind: "reflect", ignoreDef: true, noReact: true });
       const counter = d.specials.find((s) => s.kind === "counter");
-      if (counter && d.alive && a.alive && chance(this.rng, counter.chance ?? 0.3)) {
-        const basic = d.skills.find((s) => s.kind === "basic") ?? { ...BASIC, element: d.element, power: 100, masteryMult: 1 };
-        this.emit({ t: "action", actor: d.uid, skill: "counter", name: "Counter", targets: [a.uid] });
-        this.applyDamage(d, a, Math.round(this.eff(d, "atk") * (counter.value ?? 50) / 100 * this.elementMult(d, a, basic.element) * (Math.max(1, this.eff(d, "atk")) / (Math.max(1, this.eff(d, "atk")) + this.eff(a, "def") * R.def_factor))), { element: basic.element, kind: "counter", noReact: true });
+      const stance = this.has(d, "status.counter_stance");
+      if (d.alive && a.alive && (stance || (counter && chance(this.rng, counter.chance ?? 0.3)))) this.counter(d, a, stance ? (stance.potency ?? 80) : (counter!.value ?? 50));
+      // signatures on the defender (riposte) and the attacker (rend)
+      const ds = d.boss?.signature;
+      if (ds?.kind === "riposte" && d.alive && a.alive && ++d.boss!.sig.hits % (ds.every as number) === 0) { this.emit({ t: "signature", actor: d.uid, kind: "riposte", name: ds.name, targets: [a.uid] }); this.counter(d, a, ds.pct as number); }
+      const as = a.boss?.signature;
+      if (as?.kind === "rend" && d.alive) {
+        if (a.boss!.sig.last === d.uid) { const before = this.has(d, "status.rend")?.stacks ?? 0; this.forceStatus(a, d, "status.rend", 3); const now = this.has(d, "status.rend")?.stacks ?? 0; if (now > before) this.emit({ t: "signature", actor: a.uid, kind: "rend", name: as.name, targets: [d.uid], detail: `×${now}` }); }
+        a.boss!.sig.last = d.uid;
       }
     }
+  }
+
+  /** A counter-blow at `pct` % of the defender's attack, with its basic element. */
+  private counter(d: Combatant, a: Combatant, pct: number): void {
+    const R = this.c.combat.damage;
+    const basic = d.skills.find((s) => s.kind === "basic") ?? { ...BASIC, element: d.element, power: 100, masteryMult: 1 };
+    this.emit({ t: "action", actor: d.uid, skill: "counter", name: "Counter", targets: [a.uid] });
+    this.applyDamage(d, a, Math.round(this.eff(d, "atk") * pct / 100 * this.elementMult(d, a, basic.element) * (Math.max(1, this.eff(d, "atk")) / (Math.max(1, this.eff(d, "atk")) + this.eff(a, "def") * R.def_factor))), { element: basic.element, kind: "counter", noReact: true });
   }
 
   elementMult(a: Combatant, d: Combatant, element: string): number {
@@ -360,13 +399,19 @@ export class Battle {
     if (!d.alive) return 0;
     const R = this.c.combat.damage;
     let amt = amount;
+    const sig = d.boss?.signature;
     if (this.has(d, "status.invuln")) amt = 0;
     else {
       if (!o.trueDamage) amt = Math.round(amt * (1 - this.eff(d, "dmg_red") / 100));
+      if (sig?.kind === "guarded" && amt > 0 && this.alive("enemy").some((u) => u.kind === "summon")) amt = Math.round(amt * (1 - (sig.dmg_red as number) / 100));
+      if (sig?.kind === "measure" && o.kind === "attack") amt = Math.min(amt, Math.max(1, Math.round(d.maxHp * (sig.pct as number) / 100)));
       if (amt > 0 && amt < R.min_damage) amt = R.min_damage;
     }
     let absorbed = 0;
+    const hadShield = d.shield > 0;
     if (d.shield > 0 && amt > 0) { absorbed = Math.min(d.shield, amt); d.shield -= absorbed; amt -= absorbed; if (d.shield <= 0) { d.shield = 0; d.statuses = d.statuses.filter((s) => s.id !== "status.shield"); } }
+    // a shattered ward staggers the boss and leaves it open
+    if (hadShield && d.shield <= 0 && sig?.kind === "break") { this.emit({ t: "signature", actor: d.uid, kind: "break", name: sig.name, targets: [d.uid] }); this.shiftTurn(a ?? d, d, -(sig.delay_pct as number)); this.forceStatus(a ?? d, d, "status.vulnerable", sig.vuln_turns as number); }
     d.hp = Math.max(0, d.hp - amt);
     d.stats.taken += amt;
     if (a) a.stats.dealt += amt + absorbed;
@@ -377,6 +422,12 @@ export class Battle {
   }
 
   private kill(d: Combatant, by: Combatant | null): void {
+    const sig = d.boss?.signature;
+    if (sig?.kind === "rebirth" && !d.boss!.sig.reborn) {
+      d.boss!.sig.reborn = true; d.hp = Math.max(1, Math.round(d.maxHp * (sig.hp_pct as number) / 100)); d.statuses = []; d.shield = 0; d.telegraph = null;
+      this.emit({ t: "signature", actor: d.uid, kind: "rebirth", name: sig.name, targets: [d.uid] });
+      this.checkPhase(d); return;
+    }
     d.alive = false; d.statuses = []; d.shield = 0; d.telegraph = null;
     if (d.side === "enemy") this.killed.push(d.id);
     this.emit({ t: "death", target: d.uid, by: by?.uid ?? 0 });
@@ -390,7 +441,8 @@ export class Battle {
 
   heal(a: Combatant, t: Combatant, amount: number, kind: "heal" | "regen" | "lifesteal" | "on_kill"): void {
     if (!t.alive || amount <= 0) return;
-    const bonus = 1 + this.eff(t, "heal_bonus") / 100 + (a !== t ? this.eff(a, "heal_bonus") / 100 : 0);
+    if (this.has(t, "status.cursed")) { this.emit({ t: "heal", actor: a.uid, target: t.uid, amount: 0, kind }); return; }
+    const bonus = Math.max(0, 1 + this.eff(t, "heal_bonus") / 100 + (a !== t ? this.eff(a, "heal_bonus") / 100 : 0));
     const amt = Math.min(t.maxHp - t.hp, Math.max(0, Math.round(amount * bonus)));
     if (amt <= 0) return;
     t.hp += amt; a.stats.healed += amt;
@@ -432,6 +484,18 @@ export class Battle {
     if (CONTROL.has(status)) this.interrupt(tgt);
   }
 
+  /** A status that is part of a mechanic, not a roll: no resistance, no control immunity; stacks where the status stacks. */
+  private forceStatus(src: Combatant, tgt: Combatant, status: string, turns: number): void {
+    const def = this.statusDefs.get(status);
+    if (!def || !tgt.alive) return;
+    const cur = this.has(tgt, status);
+    if (cur) {
+      cur.turns = Math.max(cur.turns, turns);
+      if (def.stacking === "stack" && cur.stacks < def.max_stacks) { cur.stacks++; this.emit({ t: "status", actor: src.uid, target: tgt.uid, status, result: "stacked" }); }
+      else this.emit({ t: "status", actor: src.uid, target: tgt.uid, status, result: "applied" });
+    } else { tgt.statuses.push({ id: status, turns, stacks: 1, sourceAtk: this.eff(src, "atk") }); this.emit({ t: "status", actor: src.uid, target: tgt.uid, status, result: "applied" }); }
+  }
+
   // ---------- bosses ----------
 
   private checkPhase(b: Combatant): void {
@@ -449,6 +513,7 @@ export class Battle {
     b.skills.sort((x, y) => (x.kind === "basic" ? -1 : y.kind === "basic" ? 1 : (ids.includes(y.id) ? 1 : 0) - (ids.includes(x.id) ? 1 : 0)));
     (b as any).phaseTechs = ids;
     if (ph.shield_pct) this.addShield(b, b, Math.round(b.maxHp * ph.shield_pct / 100));
+    if (prof.signature?.kind === "break") this.addShield(b, b, Math.round(b.maxHp * (prof.signature.shield_pct as number) / 100));
     if (ph.summons.length) {
       const spawned: number[] = [];
       for (const sm of ph.summons) for (let i = 0; i < sm.count; i++) {
@@ -460,6 +525,57 @@ export class Battle {
     }
     if (ph.charged_attack) { prof.charging = { tech: ph.charged_attack.tech, turnsLeft: ph.charged_attack.turns_to_charge }; (prof as any).chargeDelay = 0; if (!initial) this.emit({ t: "charge", actor: b.uid, skill: ph.charged_attack.tech, turns: ph.charged_attack.turns_to_charge }); }
     else prof.charging = null;
+  }
+
+  // ---------- signature mechanics (schema/actors.ts BossSignature) ----------
+
+  /** Hooks on the player's round: fury stacks and the tide. */
+  private signatureRound(b: Combatant): void {
+    const sig = b.boss!.signature as BossSignature;
+    if (sig.kind === "fury" && this.round > (sig.after_round as number)) { b.boss!.sig.fury++; this.emit({ t: "signature", actor: b.uid, kind: "fury", name: sig.name, targets: [b.uid], detail: `+${Math.round(b.boss!.sig.fury * (sig.atk_pct_per_round as number))}%` }); }
+    if (sig.kind === "tide" && (this.round - 1) % (sig.cycle as number) === 0) {
+      const high = b.boss!.sig.tide !== "high"; b.boss!.sig.tide = high ? "high" : "low";
+      b.statuses = b.statuses.filter((s) => s.id !== "status.tide_high" && s.id !== "status.tide_low");
+      this.forceStatus(b, b, high ? "status.tide_high" : "status.tide_low", (sig.cycle as number) + 1);
+      this.emit({ t: "signature", actor: b.uid, kind: "tide", name: sig.name, targets: [b.uid], detail: high ? "High tide" : "Low tide" });
+    }
+  }
+
+  /** Hooks on the boss's own turn: the ward rotates, the quake, the brand, the curse. */
+  private signatureTurn(b: Combatant): void {
+    const sig = b.boss!.signature as BossSignature; const st = b.boss!.sig;
+    const allies = () => this.alive("ally");
+    if (sig.kind === "ward" && (b.turns - 1) % (sig.cycle as number) === 0) {
+      const order = ["elem.metal", "elem.wood", "elem.water", "elem.fire", "elem.earth"].filter((e) => this.elements.has(e));
+      const i = order.indexOf(st.ward ?? b.element); st.ward = order[(i + 1) % order.length] ?? order[0];
+      this.emit({ t: "signature", actor: b.uid, kind: "ward", name: sig.name, targets: [b.uid], detail: this.elements.get(st.ward!)?.name });
+    }
+    if (sig.kind === "quake" && b.turns % (sig.every as number) === 0) {
+      const tg = allies(); this.emit({ t: "signature", actor: b.uid, kind: "quake", name: sig.name, targets: tg.map((u) => u.uid) });
+      for (const u of tg) { this.applyDamage(b, u, this.blow(b, u, sig.pct as number), { element: b.element, kind: "hazard" }); if (this.result) return; }
+    }
+    if (sig.kind === "mark") {
+      if (st.mark) {
+        if (--st.mark.left <= 0) {
+          const u = this.units.find((x) => x.uid === st.mark!.target); st.mark = undefined;
+          if (u?.alive) { u.statuses = u.statuses.filter((s) => s.id !== "status.marked"); this.emit({ t: "signature", actor: b.uid, kind: "mark", name: sig.name, targets: [u.uid], detail: "detonates" }); this.applyDamage(b, u, this.blow(b, u, sig.pct as number), { element: b.element, kind: "hazard" }); }
+        }
+      } else {
+        const pool = allies().filter((u) => u.kind !== "beast"); const list = pool.length ? pool : allies();
+        const u = list[Math.floor(nextFloat(this.rng) * list.length)];
+        if (u) { st.mark = { target: u.uid, left: sig.turns as number }; this.forceStatus(b, u, "status.marked", (sig.turns as number) + 1); this.emit({ t: "signature", actor: b.uid, kind: "mark", name: sig.name, targets: [u.uid], detail: `${sig.turns} turns` }); }
+      }
+    }
+    if (sig.kind === "curse" && b.turns % (sig.every as number) === 0) {
+      const tg = allies(); this.emit({ t: "signature", actor: b.uid, kind: "curse", name: sig.name, targets: tg.map((u) => u.uid) });
+      for (const u of tg) this.forceStatus(b, u, "status.cursed", sig.turns as number);
+    }
+  }
+
+  /** An unavoidable blow at `pct` % of the boss's attack against the target's defence (no crit, no dodge). */
+  private blow(b: Combatant, u: Combatant, pct: number): number {
+    const atk = Math.max(1, this.eff(b, "atk"));
+    return Math.round(atk * pct / 100 * this.elementMult(b, u, b.element) * (atk / (atk + this.eff(u, "def") * this.c.combat.damage.def_factor)) * (this.opts.enemyDmgMult ?? 1));
   }
 
   // ---------- hazards (tribulation lightning) ----------

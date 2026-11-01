@@ -48,7 +48,9 @@ by the enemies' region, tournaments by rank, tower milestones by floor power).
 | fitted stage 9 vs tribulation | 30–95 %; geared ≥ 70 % | failure costs 30 % Qi + cooldown, must stay beatable |
 | tower stall floor (fitted) | rises every region; floor 100 ≈ geared region 14–15 | long-term ladder |
 | Combat Power | fitted CP within 0.75–2× of the region's normal cp | CP informative, not a guarantee |
-| full set +10 | 1–10 days of that region's stone income | upgrades need choices, not endless farming |
+| full set +10 | 1–5 days of that region's stone income (under two in region 1); +15 one to three weeks | upgrades need choices, not endless farming; +11…+15 is the long-term sink |
+| refinement step | scales with item level like enhancement (`refineCost`); the refining-stone supply (5/day at the Pavilion) is the real gate | a rarity step is a decision, not noise |
+| alchemy proficiency | the breakthrough pill of realm N needs the proficiency a player at region N has (foundation 150, core 200); the regional pills climb 120 → 600 by region 3 → 15 | proficiency is a ladder, never a wall |
 | cultivation | realm 1 ≈ 3 h idle, realm 15 ≈ 100 h idle; ≈ 540 h total idle, ≈ 170 h optimised | long-term pacing (provisional, owner's call) |
 
 ## Levers, in order of preference
@@ -57,6 +59,19 @@ by the enemies' region, tournaments by rank, tower milestones by floor power).
 2. Role multipliers and wave compositions in `regions.py`.
 3. `combat_rules.json` caps / tribulation; `equipment/rules.json` scaling; `enhancement.json` `ilvl_cost`.
 4. `minutes_for_stage1` and realm `qi` in content.
+
+## Journey simulation (`node tools/balance/journey.ts`)
+
+`sim.ts` measures single fights for archetypes placed in a region; `journey.ts` plays the whole game minute by minute from a
+new save with the real engine: cultivation ticks and breakthroughs, non-combat nodes (gather, chests, events), story
+scenes and quests (talk, gift, deliver, turn in), shopping through the real shops, alchemy (furnace upgrades, breakthrough
+pills and their ingredient pills, proficiency grinding when a wanted recipe is locked), enhancement up to a per-region cap,
+tournaments, secret realms and dungeons every half hour, the region boss once a probe (4 cloned fights) wins ≥ 50 %, and
+material farming for whatever the next breakthrough, recipe, furnace or enhancement needs. It writes
+`tools/balance/out/journey.{json,md}` (arrival/boss day per region, realm·stage, CP, stones earned/spent, fights lost, what
+the player waited for). `--verbose` dumps needs, wanted items, bag, recipe status, fame and quests every 10 days, which is
+how the alchemy wall (Core Condensing Pill at proficiency 600 with no recipe ladder below it) and the ×5 energy
+enhancement glut were found. Use it after any change to realms, recipes, shops, loot or the energy rules.
 
 Re-derive tables with `node tools/balance/calibrate.ts [--kind boss --target 0.45]` after changing player power
 (gear rules, realms, techniques); re-run `node tools/balance/sim.ts` and the balance tests.

@@ -56,27 +56,105 @@ The baseline's 100 % everywhere for *fitted* came from four defects, not from ba
 Fixes: `bounded_stats` gear scaling, combat caps, speed compression and per-region enemy speed, control immunity,
 tower speed scaling, then the enemy curve was re-derived from the measured player curve (`CP_BASE`, `BOSS_MULT`).
 
-## Economy (after)
+## Journey (whole-game simulation, 2026-11-01)
 
-| region | stones/day (battle nodes) | weapon +10 | days for 8 slots +10 |
-|---|---|---|---|
-| mortal_plains | 1943 | 220 | 0.9 |
-| azure_bamboo_forest | 3603 | 2691 | 6 |
-| blazing_mountain | 15229 | 5555 | 2.9 |
-| frozen_lotus_valley | 23216 | 8622 | 3 |
-| ancient_sword_tomb | 36276 | 17880 | 3.9 |
-| demon_territory | 45707 | 22900 | 4 |
-| celestial_mountains | 62210 | 28061 | 3.6 |
-| nine_heavens | 72228 | 50010 | 5.5 |
-| thunderclap_wastes | 91415 | 58089 | 5.1 |
-| sunken_dragon_sea | 101574 | 66306 | 5.2 |
-| starfall_desert | 122903 | 111247 | 7.2 |
-| gate_of_ascension | 132968 | 123855 | 7.5 |
-| jade_immortal_realm | 156056 | 136625 | 7 |
-| golden_palace_of_laws | 165902 | 149543 | 7.2 |
-| throne_of_the_immortal_emperor | 190451 | 162598 | 6.8 |
+`node tools/balance/journey.ts --seeds 1 --days 14` (tools/balance/out/journey.md): a bot that plays every minute of
+the day with the real engine — cultivation, breakthroughs, quests, shops, alchemy, enhancement, dungeons, tournaments,
+secret realms, material farming for whatever the next step needs — after the economy and mechanics passes:
 
-Before: 178 days (region 1) → 6 days (region 15), because enhancement cost was flat per rarity while income grows ×100.
+| region | arrive day | boss day | realm · stage on leaving | CP | waited for |
+|---|---|---|---|---|---|
+| 1 mortal_plains | 0 | 0 | Qi Condensation 9 | 528 | herbs |
+| 2 azure_bamboo_forest | 0 | 1 | Qi Condensation 9 | 803 | materials, energy |
+| 3 blazing_mountain | 1 | 1 | Foundation 5 | 2812 | — |
+| 4 frozen_lotus_valley | 1 | 2 | Foundation 9 | 4529 | realm (Qi) 198′, energy |
+| 5 ancient_sword_tomb | 4 | 4 | Core Formation 9 | 7653 | — |
+| 6 demon_territory | 5 | 6 | Nascent Soul 9 | 12283 | tribulation, crystals |
+| 7 celestial_mountains | 6 | 7 | Soul Transformation 9 | 19142 | — |
+| 8 nine_heavens | 7 | 9 | Spirit Severing 9 | 31289 | crystals 159′, realm 166′ |
+| 9 thunderclap_wastes | 9 | 10 | Tribulation Transcendence 2 | 53423 | — |
+| 10 sunken_dragon_sea | 10 | 11 | Mahayana 2 | 73296 | — |
+| 11 starfall_desert | 11 | 13 | Mahayana 9 | 85781 | tribulation 249′, crystals 174′ |
+
+Realms are reached a day or two after the region that needs them (Nascent Soul day 5, Dao Integration day 9,
+Mahayana day 11): the Qi clock and the region clock run together, with the Dao Insight Crystal hunt and the
+tribulations as the visible pauses. An always-on optimal bot would finish the 15 regions in about three weeks; a
+person who plays an hour or two a day and farms less efficiently should expect two to three months (the realm pacing
+"realm 15 ≈ 100 h idle" stays the owner's call).
+
+What the journey found and what was changed:
+- **Core Formation wall** — Core Condensing Pill asked for alchemy proficiency 600 with no recipe ladder below it
+  (regional pills 300–600 use region 7–15 herbs) → 200; the Merchant Pavilion stocks Peach Blossom and Crane Feather.
+- **Boss slain before its quest** — the Sovereign quests open at a realm stage the player may reach after the first
+  kill and counted only kills after acceptance, so the main quest (and the next region) could stall until the player
+  re-fought the boss → boss defeats now count from zero (`progression.ts`, test in sect.test.ts).
+- **Enhancement glut** — see Economy below (+10 in half a day, 866k stones banked by day 20) → cost curve retuned.
+- Bot-side policies the journey needed (map exploration, proficiency grinding, re-fighting a boss a quest asks for)
+  are now in journey.ts; `--verbose` dumps needs, wanted items, recipe status, main-quest statuses every 10 days and
+  `IA_WATCH=<item id>` logs every change of that item's count with what caused it.
+
+## Combat mechanics pass (2026-11-01)
+
+Signature mechanics on every region sovereign, tempo (turn push/delay), Surge, counter stances and the smarter AI
+(docs/COMBAT.md) changed boss fights; bosses were re-calibrated with `BOSS_MULT` (9: 2.0 → 1.5, 14: 1.4 → 1.1,
+3: 1.15 → 1.08), Law Chain's stun 0.35 → 0.2, and the mark / curse / measure / tide signatures softened until the
+fitted archetype landed back in the 25–75 % first-try window. `node tools/balance/sim.ts --seeds 8`
+(tools/balance/out/after_mechanics.md), fitted normal / elite / boss, geared boss:
+
+| region | fitted normal | fitted elite | fitted boss | geared boss | signature |
+|---|---|---|---|---|---|
+| 3 blazing_mountain | 79 % | 94 % | 25 % | 100 % | Rising Fury |
+| 4 frozen_lotus_valley | 89 % | 100 % | 38 % | 100 % | Lotus Ice Armor |
+| 5 ancient_sword_tomb | 98 % | 88 % | 38 % | 100 % | Sword Intent Riposte |
+| 6 demon_territory | 91 % | 100 % | 63 % | 100 % | Blood Moon Feast |
+| 7 celestial_mountains | 73 % | 69 % | 50 % | 100 % | Mirror Stair |
+| 8 nine_heavens | 96 % | 100 % | 25 % | 100 % | Gate Tremor |
+| 9 thunderclap_wastes | 96 % | 94 % | 38 % | 88 % | Thunder Brand |
+| 10 sunken_dragon_sea | 80 % | 88 % | 38 % | 100 % | Tidal Rhythm |
+| 11 starfall_desert | 95 % | 94 % | 25 % | 100 % | Pharaoh's Curse |
+| 12 gate_of_ascension | 98 % | 100 % | 38 % | 88 % | Vermilion Rebirth |
+| 13 jade_immortal_realm | 96 % | 100 % | 63 % | 88 % | White Tiger Rend |
+| 14 golden_palace_of_laws | 89 % | 50 % | 38 % | 100 % | Law of Measure |
+| 15 throne_of_the_immortal_emperor | 93 % | 81 % | 50 % | 100 % | Sovereign's Answer |
+
+Regression: `tests/balance.test.ts` (16 seeds, regions 3/6/9/12/15: fitted boss 17/67/33/33/50 %, geared 83–100 %).
+
+### AI evaluation (`node tools/balance/ai_eval.ts --seeds 16`, tools/balance/out/ai_eval.md)
+
+Player rules × enemy AI, fitted archetype on 45 nodes (an elite, the boss and the hardest normal node per region):
+legacy × legacy 69 %, **new × legacy 70 %**, legacy × new 70 %, **new × new 70 %**. The new default preset wins
+the same share overall; its gains are where finishing blows and the held ultimate matter (Sword Tomb boss
+22 → 47 % at 32 seeds) and it loses nothing on farming nodes. The enemy pass (focus fire, element-aware technique
+choice, ultimate timing) does not change a fight against a lone cultivator with a beast — the legacy AI already hit
+the cultivator with its best art — and shows only where enemies have several elements or several real targets; a
+first version that spent turns killing the spirit beast lost 10 points and was corrected (enemies no longer count a
+beast as a kill worth a turn while the cultivator stands).
+
+## Economy (after the 500-energy / 1.2-min regen change, 2026-11-01)
+
+Income per day = a full bar plus a day of regeneration (1700 energy) spent on the region's battle nodes. Enhancement
+`ilvl_cost` retuned from (ref 103, exp 1.14) to (ref 60, exp 1.5); refinement stones ×2.5 and scaled by item level.
+
+| region | stones/day | set +10 (days) | set +15 (days) | refine one step (common, stones) |
+|---|---|---|---|---|
+| mortal_plains | 9.7k | 0.1 (fitted weapon: 1.5) | 0.4 | 281 |
+| azure_bamboo_forest | 18k | 1.1 | 5.8 | 281 |
+| blazing_mountain | 76k | 0.7 | 3.5 | 281 |
+| frozen_lotus_valley | 116k | 0.8 | 4.1 | 303 |
+| ancient_sword_tomb | 181k | 1.2 | 6.1 | 693 |
+| demon_territory | 229k | 1.3 | 6.7 | 960 |
+| celestial_mountains | 311k | 1.3 | 6.4 | 1255 |
+| nine_heavens | 361k | 2.1 | 10.4 | 2361 |
+| thunderclap_wastes | 457k | 2.0 | 10.0 | 2875 |
+| sunken_dragon_sea | 508k | 2.1 | 10.7 | 3422 |
+| starfall_desert | 615k | 3.1 | 15.4 | — |
+| gate_of_ascension | 665k | 3.3 | 16.4 | — |
+| jade_immortal_realm | 780k | 3.2 | 15.9 | — |
+| golden_palace_of_laws | 830k | 3.4 | 16.9 | — |
+| throne_of_the_immortal_emperor | 952k | 3.3 | 16.4 | — |
+
+With the old curve the ×5 energy made +10 a 0.2–1.5-day affair and +15 one week at most; the journey run banked
+866k unspent stones by day 20 in region 3. Regression: `tests/balance.test.ts` "economy".
 
 ## Cultivation (after; provisional pacing)
 
@@ -101,6 +179,12 @@ Before: 178 days (region 1) → 6 days (region 15), because enhancement cost was
 Before: 253 h idle in total (realm 15 = 34 h). After: ≈ 540 h idle, ≈ 170 h optimised. Marked provisional.
 
 ## Breakthrough materials
+
+Journey run (`tools/balance/journey.ts`, 1 seed, 120 days) found the Core Formation wall: the Core Condensing Pill needed
+alchemy proficiency 600 while every recipe between 300 and 600 uses region 7–15 herbs, so a region-3 player (proficiency
+≈ 300) could never form a core. Fixed: Core Condensing Pill proficiency 600 → 200 (foundation 150 → core 200 → regional
+pills 120…600 by region 3…15), and the Merchant Pavilion now stocks Peach Blossom (12) and Crane Feather (18), the two
+starter-pill herbs that only grew at region-1 gather spots on a 30–40 min cooldown.
 
 Every major breakthrough requirement has at least one farmable source (region boss 16–40 %/clear, mega dungeon
 guaranteed 3, tribulation rewards, tower milestones). Dao Insight Crystals needed per realm: 2 → 13; expected boss

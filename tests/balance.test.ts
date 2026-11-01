@@ -39,8 +39,11 @@ test("fitted players (stage 5, last band's gear) beat normal nodes in every samp
 });
 
 test("region bosses are a real first-try challenge for fitted players (10–85%) and beaten by geared ones (≥ 70%)", () => {
+  const report: string[] = [];
   for (const n of SAMPLE) {
     const f = winRate(n, "fitted", "boss"), g = winRate(n, "geared", "boss");
+    report.push(`${n}:${Math.round(f * 100)}/${Math.round(g * 100)}%`);
+    if (n === SAMPLE[SAMPLE.length - 1]) console.log("    bosses fitted/geared →", report.join(" "));
     assert.ok(f >= 0.1 && f <= 0.85, `region ${n} fitted boss ${f}`);
     assert.ok(g >= 0.7, `region ${n} geared boss ${g}`);
   }
@@ -81,15 +84,17 @@ test("tower: the floor a fitted player stalls on rises with the region and floor
   assert.ok(towerFloor(c, tower, 100).power > computeStats(makePlayer(c, 14, "geared", 1), c).cp, "floor 100 outpowers a geared region-14 player");
 });
 
-test("economy: enhancing a full set to +10 costs 1–10 days of the region's farming at every region", () => {
+test("economy: a full set to +10 costs 1–5 days of the region's farming (under two in region 1), +15 four days to three weeks", () => {
   const loot = (n: number) => { const reg = regions[n - 1]!; const nodes = c.nodesOf(reg.id).filter((x) => x.kind === "battle" && x.waves?.length); let st = 0, k = 0, en = 0; for (const nd of nodes) { for (const e of nd.waves!.flat()) { const l = c.find<any>(c.get<any>(e).loot); if (l) st += (l.spirit_stones[0] + l.spirit_stones[1]) / 2; } k++; en += nd.energy_cost; } return { perClear: st / k, energy: en / k }; };
-  for (const n of [1, 4, 8, 12, 15]) {
+  for (const n of [1, 2, 4, 8, 12, 15]) {
     const { perClear, energy } = loot(n);
     const perDay = perClear * (c.rules.energy.max + 24 * 60 / c.rules.energy.regen_minutes) / energy;   // a full bar plus a day of regeneration
     const s = makePlayer(c, n, "fitted", 1);
     const uid = s.equipped.weapon!; const g = s.inventory.gear[uid]!; g.enhance = 0;
-    let cost = 0; for (let l = 0; l < 10; l++) { cost += enhanceCost(c, g)!.stones; g.enhance++; }
-    const days = cost * 8 / perDay;
-    assert.ok(days >= 0.5 && days <= 10, `region ${n}: ${days.toFixed(1)} days (${cost} per slot, ${Math.round(perDay)}/day)`);
+    let cost10 = 0, cost15 = 0;
+    for (let l = 0; l < 15; l++) { const row = enhanceCost(c, g)!; const expected = row.stones / row.chance; if (l < 10) cost10 += expected; cost15 += expected; g.enhance++; }
+    const d10 = cost10 * 8 / perDay, d15 = cost15 * 8 / perDay; if (process.env.IA_PRINT) console.log(`region ${n}: +10 ${d10.toFixed(1)} d, +15 ${d15.toFixed(1)} d`);
+    if (n === 1) assert.ok(d10 < 2, `region 1: +10 ${d10.toFixed(1)} days`);
+    else { assert.ok(d10 >= 0.5 && d10 <= 5, `region ${n}: +10 ${d10.toFixed(1)} days (${Math.round(cost10)} per slot, ${Math.round(perDay)}/day)`); assert.ok(d15 >= 3 && d15 <= 21, `region ${n}: +15 ${d15.toFixed(1)} days`); }
   }
 });

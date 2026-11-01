@@ -29,7 +29,7 @@ export interface LoneBeat { kind: "lone"; event: BattleEvent }
 export type Beat = ActionBeat | LoneBeat;
 
 /** Events that an action causes; anything else closes the beat. */
-const CAUSED = new Set<BattleEvent["t"]>(["hit", "heal", "shield", "status", "death", "sp", "phase", "summon", "ult_ready", "interrupt"]);
+const CAUSED = new Set<BattleEvent["t"]>(["hit", "heal", "shield", "status", "death", "sp", "phase", "summon", "ult_ready", "interrupt", "turn_shift", "surge", "signature"]);
 
 export function beats(events: BattleEvent[]): Beat[] {
   const out: Beat[] = [];

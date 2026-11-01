@@ -40,6 +40,9 @@ function rewardIds(r: any): string[] {
   return out;
 }
 
+/** Status effects each boss signature kind applies (mirrors src/engine/combat/battle.ts). */
+const SIGNATURE_STATUSES: Record<string, string[]> = { break: ["status.vulnerable"], mark: ["status.marked"], curse: ["status.cursed"], rend: ["status.rend"], tide: ["status.tide_high", "status.tide_low"] };
+
 /** Collect "grants" (who can give what) and "uses" (who consumes/needs what) across the database. */
 export function buildGraph(db: Database) {
   const sources = new Map<string, Set<string>>();   // id → set of giver descriptions
@@ -205,6 +208,8 @@ export function buildGraph(db: Database) {
       case "boss":
         for (const p of d.phases) for (const s of p.summons) appear(s.enemy, `boss:${e.id}`);
         for (const t of d.techniques) use(t, `boss:${e.id}`);
+        // statuses a signature mechanic applies (combat/battle.ts signature*)
+        for (const st of SIGNATURE_STATUSES[d.signature?.kind as string] ?? []) use(st, `boss:${e.id}`);
         break;
       case "enemy":
         for (const t of d.techniques) use(t, `enemy:${e.id}`);

@@ -13,8 +13,13 @@ export function techSkill(c: ContentIndex, id: string, masteryXp: number, slot?:
   return {
     id, name: t.name, kind: t.kind === "ultimate" ? "ultimate" : "active", element: t.element, power: t.power, hits: t.hits, healPct: t.heal_pct, shieldPct: t.shield_pct_max_hp,
     spCost: t.sp_cost, cooldown: t.cooldown, targeting: t.targeting, applies: t.applies.map((a) => ({ status: a.status, chance: a.chance, turns: a.turns, potency: a.potency })),
-    masteryMult: masteryMult(masteryXp, t.mastery), ultCharge: t.ult_charge, slot,
+    masteryMult: masteryMult(masteryXp, t.mastery), ultCharge: t.ult_charge, slot, ...(t.turn_shift ? { turnShift: t.turn_shift } : {}),
   };
+}
+
+/** Surge: the player spends ultimate charge to act again at once (combat_rules.ultimate.surge_*). */
+export function surgeSkill(c: ContentIndex): Skill {
+  return { id: "surge", name: "Surge", kind: "active", element: "elem.none", power: 0, hits: 1, spCost: 0, cooldown: 0, targeting: "self", applies: [], masteryMult: 1, ultCost: c.combat.ultimate.surge_cost, turnShift: c.combat.ultimate.surge_push_pct, slot: "surge" };
 }
 
 let nextUid = 1;
@@ -51,6 +56,7 @@ export function buildPlayer(s: GameState, c: ContentIndex, carry?: { hp?: number
   const skills: Skill[] = [{ ...BASIC, element: c.get<any>(s.character.root).elements[0] ?? "elem.metal", power: c.combat.damage.basic_power, masteryMult: 1 }];
   s.techniques.actives.forEach((id, i) => { if (id) skills.push(techSkill(c, id, s.techniques.known[id] ?? 0, `a${i}`)); });
   if (s.techniques.ultimate) skills.push(techSkill(c, s.techniques.ultimate, s.techniques.known[s.techniques.ultimate] ?? 0, "ultimate"));
+  skills.push(surgeSkill(c));
   const maxHp = Math.max(1, Math.round(base.hp ?? 1)), maxSp = Math.max(0, Math.round(base.sp_energy ?? 0));
   const p = make({
     id: s.character.npc, name: s.character.name, side: "ally", kind: "player", element: c.get<any>(s.character.root).elements[0] ?? "elem.metal", base, maxHp, maxSp,
@@ -90,7 +96,7 @@ export function buildEnemy(c: ContentIndex, id: string, opts: { hpMult?: number;
   return buildEnemyFrom(c, id, c.get<any>(id), opts);
 }
 
-export interface EnemyDef { name: string; kind?: string; element: string; realm: { id: string }; stats: Record<string, number>; cp: number; techniques: string[]; ai: { strategy: string; rules: string[] }; resistances?: Record<string, number>; loot?: string; mastery_xp?: number; phases?: Boss["phases"]; weaknesses?: string[] }
+export interface EnemyDef { name: string; kind?: string; element: string; realm: { id: string }; stats: Record<string, number>; cp: number; techniques: string[]; ai: { strategy: string; rules: string[] }; resistances?: Record<string, number>; loot?: string; mastery_xp?: number; phases?: Boss["phases"]; weaknesses?: string[]; signature?: Boss["signature"] }
 
 /** Build from an explicit definition (content enemy/boss, or a synthetic one such as a duelling NPC). */
 export function buildEnemyFrom(c: ContentIndex, id: string, e: EnemyDef, opts: { hpMult?: number; statMult?: number; kind?: Combatant["kind"]; art?: string } = {}): Combatant {
@@ -110,6 +116,9 @@ export function buildEnemyFrom(c: ContentIndex, id: string, e: EnemyDef, opts: {
     resistances: { ...(e.resistances ?? {}) }, ai: { strategy: e.ai.strategy, rules: e.ai.rules }, art: opts.art ?? c.art(id, "battle"), cp: Math.round(e.cp * (opts.statMult ?? 1)), masteryXp: e.mastery_xp ?? 0, lootTable: e.loot, realmOrder: c.get<any>(e.realm.id).order,
   });
   if (!isBoss && e.kind === "elite") cmb.elite = true;
-  if (isBoss) cmb.boss = { phases: [...e.phases!].sort((a, b) => b.hp_threshold - a.hp_threshold), weaknesses: e.weaknesses ?? [], phase: 0, charging: null };
+  if (isBoss) {
+    cmb.boss = { phases: [...e.phases!].sort((a, b) => b.hp_threshold - a.hp_threshold), weaknesses: e.weaknesses ?? [], phase: 0, charging: null, signature: e.signature as any, sig: { hits: 0, fury: 0, reborn: false } };
+    if (e.signature?.kind === "drain") cmb.base.life_steal = (cmb.base.life_steal ?? 0) + (e.signature as any).pct;
+  }
   return cmb;
 }

@@ -125,9 +125,9 @@ export class Encounter {
   /** Tower floors scale their enemies to the floor's power. */
   private statMult = 1;
 
-  private constructor(s: GameState, c: ContentIndex, src: EncounterSource) {
+  private constructor(s: GameState, c: ContentIndex, src: EncounterSource, extra: Partial<BattleOptions> = {}) {
     this.s = s; this.c = c; this.src = src;
-    const opts: BattleOptions = {};
+    const opts: BattleOptions = { ...extra };
     if (src.kind === "node") { const n = c.get<MapNode>(src.id); this.waves = n.waves!; this.name = n.name; this.bg = c.art(n.region, "battle_bg"); opts.isBossFight = n.kind === "boss"; }
     else if (src.kind === "dungeon") {
       const d = c.get<Dungeon>(src.id); this.waves = d.waves!.map((w) => w.enemies); this.bg = c.art(d.id, "battle_bg");
@@ -157,14 +157,15 @@ export class Encounter {
   }
 
   /** Spend energy and open the first wave. */
-  static start(s: GameState, c: ContentIndex, src: EncounterSource, now: number): Result<{ encounter: Encounter }> {
+  /** `extra` battle options are for tooling (tools/balance/ai_eval.ts: `legacyAi`); the game never passes any. */
+  static start(s: GameState, c: ContentIndex, src: EncounterSource, now: number, extra: Partial<BattleOptions> = {}): Result<{ encounter: Encounter }> {
     const can = canStart(s, c, src, now);
     if (!can.ok) return can;
     if (can.energy) { const sp = spendEnergy(s, c, now, can.energy); if (!sp.ok) return sp; }
     if (src.kind === "dungeon") s.daily.counters[`dungeon:${src.id}`] = (s.daily.counters[`dungeon:${src.id}`] ?? 0) + 1;
     if (src.kind === "tribulation") { const p = (s.progress.tribulations[src.id] ??= { attempts: 0 }); p.attempts++; }
     if (src.kind === "tournament") { const p = (s.progress.tournaments[src.id] ??= { round: 0, wins: 0 }); p.lastAt = now; }
-    const e = new Encounter(s, c, src);
+    const e = new Encounter(s, c, src, extra);
     e.nextWave();
     return { ok: true, encounter: e };
   }
@@ -297,6 +298,9 @@ export class Encounter {
       if (masteryXp > 0) {
         addMasteryXp(s, c, s.character.method, Math.round(masteryXp * c.combat.mastery.method_share), this.events);
         for (const t of s.techniques.actives) if (t) addMasteryXp(s, c, t, Math.round(masteryXp * c.combat.mastery.active_share), this.events);
+        // passives and the ultimate grow too: they are part of the fight even when they never "act"
+        for (const t of s.techniques.passives) if (t) addMasteryXp(s, c, t, Math.round(masteryXp * c.combat.mastery.passive_share), this.events);
+        if (s.techniques.ultimate) addMasteryXp(s, c, s.techniques.ultimate, Math.round(masteryXp * c.combat.mastery.ultimate_share), this.events);
       }
       if (this.src.kind === "tower") towerFloorCleared(s, c, this.src.id, this.src.floor, now, this.events);
       if (this.src.kind === "realm") { const src = this.src; const n = c.get<Dungeon>(src.id).realm_nodes!.find((x) => x.key === src.node)!; realmBattleDone(s, src.id, n.key, n.kind, true, s.character.hp ?? 1, this.events); }

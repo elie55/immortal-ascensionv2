@@ -153,7 +153,7 @@ function economy() {
     const s = newGameState(c, T0, { seed: 99 });
     for (const nd of nodes) for (let i = 0; i < 40; i++) { for (const e of nd.waves!.flat()) { const loot = c.get<any>(e).loot; if (loot) stones += rollTable(s, c, loot).spirit_stones; } k++; energy += nd.energy_cost; }
     const perClear = stones / Math.max(1, k), energyPerClear = energy / Math.max(1, k);
-    const clearsPerDay = (100 + 24 * 60 / c.rules.energy.regen_minutes) / Math.max(1, energyPerClear);
+    const clearsPerDay = (c.rules.energy.max + 24 * 60 / c.rules.energy.regen_minutes) / Math.max(1, energyPerClear);   // a full bar plus a day of regeneration
     const [blo, bhi] = band(n); const [rlo, rhi] = rrange(n);
     const rarity = RARITIES[Math.min(rIdx(rlo) + 1, rIdx(rhi))]!;
     let enh10 = 0; { const g: any = { base: BASES.weapon, rarity, ilvl: blo, enhance: 0, main: { stat: "atk", roll: 1, value: 1 }, affixes: [], specials: [], awakened: false }; for (let l = 0; l < 10; l++) { const cst = enhanceCost(c, g)!; enh10 += cst.stones; g.enhance++; } }

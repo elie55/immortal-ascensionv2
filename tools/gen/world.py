@@ -108,6 +108,13 @@ STATUS_LOOK = {
     "regen": "a sprouting jade-green leaf surrounded by soft healing sparkles",
     "reflect": "a polished round bronze mirror bouncing back a beam of white light",
     "invuln": "a radiant golden temple bell glowing with protective light",
+    "counter_stance": "a jade sword held upright behind a round bronze mirror, a ripple of water turning back toward the viewer",
+    "vulnerable": "a cracked pale-blue ice shell with a dark fissure glowing red inside",
+    "marked": "a violet thunder sigil burning in the air like a brand, small lightning forks around it",
+    "cursed": "a dark amber scarab seal with a thin red line struck through a leaf",
+    "rend": "three deep parallel claw gashes glowing white-gold on dark jade",
+    "tide_high": "a towering deep-blue wave crest curling over a full moon",
+    "tide_low": "a thin calm ribbon of water over wet sand under a thin moon",
 }
 
 def statuses():
@@ -129,6 +136,14 @@ def statuses():
         S("regen", "Regeneration", "buff", 3, {}, {"pct_max_hp": -5}, "Restores HP each turn."),
         S("reflect", "Damage Reflection", "buff", 2, {}, None, "Returns part of the damage taken to the attacker."),
         S("invuln", "Invulnerable", "buff", 1, {}, None, "Immune to all damage this turn."),
+        # mechanics (docs/COMBAT.md): stances, signature marks
+        S("counter_stance", "Counter Stance", "buff", 2, {}, None, "Every hit taken is answered with a counter-blow."),
+        S("vulnerable", "Vulnerable", "debuff", 2, {"dmg_red": -30}, None, "Takes 30% more damage."),
+        S("marked", "Thunder Brand", "debuff", 3, {}, None, "Branded: the brand detonates when the timer runs out. A shield absorbs it."),
+        S("cursed", "Pharaoh's Curse", "debuff", 2, {}, None, "Cannot be healed."),
+        S("rend", "Rend", "debuff", 3, {"dmg_red": -10}, None, "Torn open: takes 10% more damage per stack.", "stack", 5),
+        S("tide_high", "High Tide", "buff", 4, {"spd": 25, "atk": 15}, None, "Borne by the tide: faster and harder-hitting."),
+        S("tide_low", "Low Tide", "debuff", 4, {"def": -30, "spd": -15}, None, "Stranded by the tide: softer and slower."),
     ]
 
 # ---------------- Methods ----------------
@@ -146,7 +161,7 @@ def methods():
 
 # ---------------- Techniques ----------------
 def techs():
-    def T(key, kind, name, cn, rarity, elem, desc, power=0, sp=0, cd=0, applies=None, weapon="any", targeting="single", heal=None, shield=None, passive=None, ult=None, req=None, enemy_only=False, hits=1):
+    def T(key, kind, name, cn, rarity, elem, desc, power=0, sp=0, cd=0, applies=None, weapon="any", targeting="single", heal=None, shield=None, passive=None, ult=None, req=None, enemy_only=False, hits=1, shift=0):
         pre = {"active": "active", "passive": "passive", "ultimate": "ult"}[kind]
         d = {"id": f"tech.{pre}.{key}", **named(name, desc, cn), "kind": kind, "rarity": rarity, "element": f"elem.{elem}", "weapon_affinity": weapon,
              "targeting": targeting, "power": power, "hits": hits, "sp_cost": sp, "cooldown": cd, "applies": applies or [], "passive_bonuses": passive or {},
@@ -155,6 +170,7 @@ def techs():
         if heal: d["heal_pct"] = heal
         if shield: d["shield_pct_max_hp"] = shield
         if ult: d["ult_charge"] = ult
+        if shift: d["turn_shift"] = shift
         return d
     A = lambda s, c=1.0, t=2, p=None: {"status": f"status.{s}", "chance": c, "turns": t, **({"potency": p} if p else {})}
     return [
@@ -164,7 +180,9 @@ def techs():
         T("earth_guardian", "active", "Earth Guardian", "厚土护体", "rare", "earth", "A stone shield rises to absorb 25% of max HP in damage.", 0, 18, 4, [A("shield", 1, 3)], targeting="self", shield=25),
         T("thunder_palm", "active", "Thunder Palm", "雷掌", "epic", "metal", "A crackling palm strike. 200% ATK with a 30% chance to Stun.", 200, 24, 3, [A("stun", 0.3, 1)], weapon="palm", req={"realm": {"id": "realm.qi_condensation", "stage": 6}}),
         T("crescent_wind_blade", "active", "Crescent Wind Blade", "新月风刃", "epic", "wood", "Two crescent blades of wind slash every enemy. 110% ATK ×2, may cause Bleeding.", 110, 26, 3, [A("bleeding", 0.4, 3)], targeting="all_enemies", hits=2),
-        T("frozen_lotus", "active", "Frozen Lotus", "冰莲绽放", "epic", "water", "A lotus of frost blooms beneath the target. 150% ATK, Slows, 25% chance to Freeze.", 150, 28, 4, [A("slow", 1, 2), A("freeze", 0.25, 1)], req={"realm": {"id": "realm.qi_condensation", "stage": 4}}),
+        T("frozen_lotus", "active", "Frozen Lotus", "冰莲绽放", "epic", "water", "A lotus of frost blooms beneath the target. 150% ATK, Slows, delays its next turn by a third, 25% chance to Freeze.", 150, 28, 4, [A("slow", 1, 2), A("freeze", 0.25, 1)], req={"realm": {"id": "realm.qi_condensation", "stage": 4}}, shift=35),
+        T("swift_cloud_step", "active", "Swift Cloud Step", "踏云步", "rare", "wood", "A step on the wind: your next turn comes half a turn sooner.", 0, 14, 3, targeting="self", shift=60),
+        T("returning_tide_stance", "active", "Returning Tide Stance", "回潮式", "epic", "water", "Take the stance of the returning tide: for two turns every blow you take is answered with a counter at 90% ATK.", 0, 20, 4, [A("counter_stance", 1, 2, 90)], targeting="self", req={"realm": {"id": "realm.qi_condensation", "stage": 5}}),
         T("ripple_mending", "active", "Ripple Mending", "涟漪回春", "rare", "water", "Soothing water ripples restore 25% max HP and grant Regeneration.", 0, 22, 4, [A("regen", 1, 3)], targeting="self", heal=25),
         T("verdant_vine_bind", "active", "Verdant Vine Bind", "青藤缚", "rare", "wood", "Vines erupt and bind the target. 90% ATK, Poison and Silence.", 90, 20, 4, [A("poison", 0.8, 3), A("silence", 0.5, 2)]),
         T("swallow_return_sword", "active", "Swallow-Return Sword", "燕返剑", "epic", "metal", "A returning sword arc strikes twice. 95% ATK ×2.", 95, 22, 2, weapon="sword", hits=2, req={"techniques": ["tech.active.azure_strike"]}),
@@ -193,7 +211,7 @@ def techs():
         T("savage_bite", "active", "Savage Bite", "撕咬", "common", "metal", "A tearing bite that leaves a bleeding wound.", 105, 6, 1, [A("bleeding", 0.4, 2)], enemy_only=True),
         T("stone_shell", "active", "Stone Shell", "石甲", "uncommon", "earth", "The creature hardens its hide.", 0, 10, 4, [A("shield", 1, 2)], targeting="self", shield=20, enemy_only=True),
         T("frost_breath", "active", "Frost Breath", "霜息", "rare", "water", "A cone of freezing breath.", 140, 12, 3, [A("freeze", 0.3, 1)], targeting="all_enemies", enemy_only=True),
-        T("web_snare", "active", "Web Snare", "丝缚", "uncommon", "wood", "Sticky silk slows the prey.", 80, 8, 2, [A("slow", 0.8, 2)], enemy_only=True),
+        T("web_snare", "active", "Web Snare", "丝缚", "uncommon", "wood", "Sticky silk slows the prey and holds it back a step.", 80, 8, 2, [A("slow", 0.8, 2)], enemy_only=True, shift=25),
         T("mirror_scale", "active", "Mirror Scale", "镜鳞", "epic", "metal", "Scales turn to mirrors, reflecting harm.", 0, 15, 5, [A("reflect", 1, 2)], targeting="self", enemy_only=True),
     ]
 

@@ -27,17 +27,27 @@ export interface Skill {
   applies: { status: string; chance: number; turns: number; potency?: number }[];
   masteryMult: number;
   ultCharge?: number;
-  /** Slot key in the player's loadout ("a0".."a3", "ultimate", "beast") for auto rules. */
+  /** Ultimate charge spent instead of spirit energy (the Surge action). */
+  ultCost?: number;
+  /** % of a turn: enemies hit are delayed, allies targeted are hastened. */
+  turnShift?: number;
+  /** Slot key in the player's loadout ("a0".."a3", "ultimate", "beast", "surge") for auto rules. */
   slot?: string;
 }
 
 export interface GearSpecial { kind: string; status?: string; attribute?: string; value?: number; chance?: number; description: string }
+
+/** A boss's signature mechanic (schema/actors.ts BossSignature); `kind` picks the rule, the rest are its numbers. */
+export interface BossSignature { kind: string; name: string; name_cn?: string; description: string; [k: string]: unknown }
 
 export interface BossProfile {
   phases: { name: string; hp_threshold: number; techniques: string[]; summons: { enemy: string; count: number }[]; shield_pct?: number; enrage?: { atk_mult: number; spd_mult: number }; charged_attack?: { tech: string; turns_to_charge: number } }[];
   weaknesses: string[];
   phase: number;                               // index of the current phase
   charging: { tech: string; turnsLeft: number } | null;
+  signature?: BossSignature;
+  /** Signature bookkeeping: hits taken (riposte), fury stacks, warded element, mark target and timer, rebirth spent, last target (rend). */
+  sig: { hits: number; fury: number; ward?: string; mark?: { target: number; left: number }; reborn: boolean; last?: number; tide?: "high" | "low" };
 }
 
 export interface Combatant {
@@ -98,6 +108,12 @@ export type BattleEvent =
   | { t: "interrupt"; actor: number }
   /** A big attack is coming on this unit's next turn: estimated damage as % of the main target's max HP. */
   | { t: "telegraph"; actor: number; skill: string; name: string; targets: number[]; pct: number }
+  /** Turn tempo: `pct` > 0 hastened, < 0 delayed, as % of a turn. */
+  | { t: "turn_shift"; actor: number; target: number; pct: number }
+  /** The actor spent ultimate charge to act again at once. */
+  | { t: "surge"; actor: number; cost: number }
+  /** A boss's signature mechanic fired: which, and whom it concerned. `detail` is a short caption (element name, stacks…). */
+  | { t: "signature"; actor: number; kind: string; name: string; targets: number[]; detail?: string }
   | { t: "hazard"; name: string; element: string; wave: number; waves: number }
   | { t: "end"; result: "victory" | "defeat" | "timeout" | "fled" };
 
@@ -111,6 +127,8 @@ export interface BattleOptions {
   /** Survive this many player turns to win even if enemies remain (tribulations). */
   surviveRounds?: number;
   isBossFight?: boolean;
+  /** Enemy AI before the focus-fire / element-aware / ultimate-timing pass (tools/balance/ai_eval.ts compares the two). */
+  legacyAi?: boolean;
 }
 
 export interface BattleSummary {

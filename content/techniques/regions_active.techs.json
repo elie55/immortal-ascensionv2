@@ -112,7 +112,7 @@
   {
     "id": "tech.active.glacial_spear_rain",
     "name": "Glacial Spear Rain",
-    "description": "Ice spears fall on all enemies. 130% ATK, Slows.",
+    "description": "Ice spears fall on all enemies. 130% ATK, Slows. Delays the target's next turn.",
     "name_cn": "冰枪雨",
     "kind": "active",
     "rarity": "epic",
@@ -158,6 +158,7 @@
         "status": "generated"
       }
     },
+    "turn_shift": 30,
     "vfx": {
       "approach": "none",
       "shape": "wave",
@@ -772,7 +773,7 @@
   {
     "id": "tech.active.tidal_dragon_fist",
     "name": "Tidal Dragon Fist",
-    "description": "A fist like a crashing wave. 270% ATK to all, Slows.",
+    "description": "A fist like a crashing wave. 270% ATK to all, Slows. Delays the target's next turn.",
     "name_cn": "潮龙拳",
     "kind": "active",
     "rarity": "legendary",
@@ -818,6 +819,7 @@
         "status": "generated"
       }
     },
+    "turn_shift": 30,
     "vfx": {
       "approach": "none",
       "shape": "wave",
@@ -1284,7 +1286,7 @@
     "applies": [
       {
         "status": "status.stun",
-        "chance": 0.35,
+        "chance": 0.2,
         "turns": 2
       }
     ],

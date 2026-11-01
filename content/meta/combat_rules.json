@@ -24,7 +24,9 @@
   "ultimate": {
     "gain_per_action": 12,
     "gain_per_damage_taken_pct": 40,
-    "gain_per_kill": 20
+    "gain_per_kill": 20,
+    "surge_cost": 40,
+    "surge_push_pct": 100
   },
   "status": {
     "default_reflect_pct": 20,
@@ -50,7 +52,9 @@
   },
   "mastery": {
     "method_share": 1.0,
-    "active_share": 0.5
+    "active_share": 0.5,
+    "passive_share": 0.35,
+    "ultimate_share": 0.5
   },
   "caps": {
     "crit": 75,
@@ -76,13 +80,18 @@
   },
   "auto_default": [
     {
-      "slot": "ultimate",
-      "when": "always"
+      "slot": "surge",
+      "when": "big_attack"
     },
     {
       "slot": "heal",
       "when": "hp_below",
-      "value": 50
+      "value": 45
+    },
+    {
+      "slot": "heal",
+      "when": "ally_hp_below",
+      "value": 35
     },
     {
       "slot": "shield",
@@ -90,13 +99,32 @@
       "target": "default"
     },
     {
+      "slot": "damage",
+      "when": "can_finish",
+      "target": "focus"
+    },
+    {
+      "slot": "ultimate",
+      "when": "boss_only"
+    },
+    {
+      "slot": "ultimate",
+      "when": "enemies_at_least",
+      "value": 3
+    },
+    {
       "slot": "shield",
       "when": "no_shield"
     },
     {
       "slot": "damage",
+      "when": "element_edge",
+      "target": "weak_to"
+    },
+    {
+      "slot": "damage",
       "when": "always",
-      "target": "lowest_hp"
+      "target": "focus"
     },
     {
       "slot": "basic",

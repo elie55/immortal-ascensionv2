@@ -9,7 +9,7 @@ def shops():
         {"id": "shop.merchant_pavilion", **named("Merchant Pavilion", "Tang Xiaoman's stock. Better goods with higher Sect Fame.", "百宝阁"), "owner": "npc.tang_xiaoman", "restock": "daily",
          "affinity_discount": {"npc": "npc.tang_xiaoman", "pct_per_level": 3}, "fame_discount_pct_per_500": 5, "buys_items": True,
          "stock": [S("cons.qi_gathering_pill", 38), S("cons.blossom_healing_pill", 55), S("cons.spirit_condensing_pill", 114, unlock={"sect_fame": 500}), S("cons.spirit_tea", 25),
-                   S("mat.spirit_grass", 5, qty=20), S("mat.spirit_iron_ore", 57, qty=10), S("mat.lesser_enhancement_stone", 30), S("mat.spirit_enhancing_stone", 400, qty=10, unlock={"sect_fame": 800}), S("mat.refining_stone", 200, qty=5, unlock={"sect_fame": 500}), S("mat.reforging_sand", 150, qty=10, unlock={"sect_fame": 500}),
+                   S("mat.spirit_grass", 5, qty=20), S("mat.peach_blossom", 12, qty=10), S("mat.crane_feather", 18, qty=10), S("mat.spirit_iron_ore", 57, qty=10), S("mat.lesser_enhancement_stone", 30), S("mat.spirit_enhancing_stone", 400, qty=10, unlock={"sect_fame": 800}), S("mat.refining_stone", 200, qty=5, unlock={"sect_fame": 500}), S("mat.reforging_sand", 150, qty=10, unlock={"sect_fame": 500}),
                    G("bamboo_sword", "common", 3, 60), G("bamboo_robe", "common", 3, 80), G("reed_hat", "common", 3, 50), G("cloudstep_boots", "common", 3, 143), G("jade_pendant", "common", 3, 90), G("azure_iron_war_ring", "common", 3, 70), G("cloud_talisman", "common", 3, 65),
                    G("azure_iron_sword", "uncommon", 6, 171, unlock={"sect_fame": 300}), G("azure_cloud_robe", "uncommon", 6, 190, unlock={"sect_fame": 300}),
                    S("gift.candied_hawthorn", 15), S("gift.osmanthus_cake", 20), S("gift.sword_polish_cloth", 40), S("gift.fine_ledger_book", 120, unlock={"sect_fame": 500})],
@@ -23,6 +23,7 @@ def shops():
         {"id": "shop.scripture_pavilion", **named("Scripture Pavilion", "Techniques and methods, floor by floor. Higher floors need Fame and rank.", "藏经阁"), "owner": "npc.elder_feng", "restock": "none", "buys_items": False,
          "stock": [S("tech.active.flame_palm", 260), S("tech.active.earth_guardian", 380), S("tech.passive.sword_mastery", 300), S("tech.passive.iron_body", 300), S("tech.passive.spiritual_regeneration", 300),
                    S("tech.active.frozen_lotus", 700, unlock={"sect_fame": 1000}), S("tech.active.thunder_palm", 900, unlock={"sect_fame": 1000}),
+                   S("tech.active.swift_cloud_step", 450, unlock={"sect_fame": 300}), S("tech.active.returning_tide_stance", 1100, unlock={"sect_fame": 1500}),
                    S("tech.active.swallow_return_sword", 1200, unlock={"sect_fame": 2000, "rank": "rank.inner_disciple"}), S("tech.passive.critical_insight", 1500, unlock={"sect_fame": 2000}), S("tech.passive.elemental_harmony", 1500, unlock={"sect_fame": 2000}),
                    S("method.heavenly_dragon_art", 3000, unlock={"rank": "rank.inner_disciple"}), S("method.primordial_chaos_scripture", 8000, unlock={"rank": "rank.core_disciple"})] + RG.pavilion_stock()},
         {"id": "shop.tang_caravan", **named("Tang's Caravan", "A smaller stock on the road, with a few forest specialities.", "唐家商队"), "owner": "npc.tang_xiaoman", "restock": "per_visit", "buys_items": True,
@@ -102,7 +103,7 @@ def alchemy():
         A("spirit_condensing_pill", "Spirit Condensing Pill", "凝神丹", "Grade II. Condenses spirit energy and quickens cultivation for an hour.", "cons.spirit_condensing_pill", (1, 1), [q("mat.bamboo_spirit_shoot", 3), q("mat.spirit_grass", 4), q("mat.frost_beast_core", 1)], 40, 2, 0.6, 50, 45, {"type": "sect_fame", "fame": 300}, 1),
         A("foundation_pill", "Foundation Pill", "筑基丹", "Grade III. Required to establish a Foundation. Unlocked at 500 Sect Fame.", "cons.foundation_pill", (1, 1), [q("mat.spirit_grass", 10), q("mat.jade_bamboo_segment", 4), q("mat.frost_beast_core", 2), q("mat.boar_tusk", 2)], 200, 3, 0.45, 150, 120, {"type": "sect_fame", "fame": 500}, 2),
         A("frost_heart_elixir", "Frost Heart Elixir", "冰心露", "Grade IV. Permanently raises water resistance and spiritual energy.", "cons.frost_heart_elixir", (1, 1), [q("mat.frost_beast_core", 3), q("mat.rime_crystal", 2), q("mat.peach_blossom", 5)], 350, 4, 0.5, 300, 200, {"type": "blueprint", "id": "blueprint.frost_heart_elixir"}, 2),
-        A("core_condensing_pill", "Core Condensing Pill", "结丹丹", "Grade V. Needed to form a Golden Core.", "cons.core_condensing_pill", (1, 1), [q("mat.flame_lotus", 1), q("mat.green_viper_venom", 5), q("mat.bamboo_dragon_scale", 1), q("mat.jade_bamboo_segment", 10)], 1500, 5, 0.4, 600, 500, {"type": "rank", "id": "rank.inner_disciple"}, 3),
+        A("core_condensing_pill", "Core Condensing Pill", "结丹丹", "Grade V. Needed to form a Golden Core.", "cons.core_condensing_pill", (1, 1), [q("mat.flame_lotus", 1), q("mat.green_viper_venom", 5), q("mat.bamboo_dragon_scale", 1), q("mat.jade_bamboo_segment", 10)], 1500, 5, 0.4, 200, 500, {"type": "rank", "id": "rank.inner_disciple"}, 3),
     ]
 
 def forge():

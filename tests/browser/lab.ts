@@ -433,6 +433,34 @@ async function autoFight(name: string, n: number, src: any, companions: string[]
   }
 }
 
+/** Mechanics (docs/COMBAT.md): a manual fight against a sovereign with a signature; the Surge button, a Surge, the banner. */
+async function mechanics(name: string, n: number, src: any) {
+  await boot(labState(n, "geared", ["npc.bai_lingshuang"]));
+  await dismiss();
+  await page.evaluate(() => { const st = (window as any).__ia.game.state; st.combat.speed = 1; st.combat.manual = true; });
+  await page.evaluate((s) => (window as any).__ia.dev.fight(s), src);
+  await page.waitForSelector(".battle");
+  await page.waitForTimeout(900); await shot(`${name}-0-intro`);
+  await page.waitForSelector(".bt-skill.ready", { timeout: 30_000 }); await page.waitForTimeout(400);
+  await page.evaluate(() => { const b = (window as any).__ia.enc.battle; b.player.ult = 60; });
+  await page.locator(".bt-skill.basic.ready").first().click(); await page.waitForTimeout(100);
+  await page.waitForSelector(".bt-skill.ready", { timeout: 30_000 }); await page.waitForTimeout(300);
+  await shot(`${name}-1-surge-ready`);
+  const surge = page.locator(".bt-surge.ready");
+  if (await surge.count()) { await surge.click(); await page.waitForTimeout(350); await shot(`${name}-2-surge`); }
+  let banner = false;
+  for (let t = 0; t < 16 && !banner; t++) {
+    const ready = await page.waitForSelector(".bt-skill.ready", { timeout: 30_000 }).then(() => true).catch(() => false);
+    if (!ready) break;
+    await page.waitForTimeout(250);
+    if (await page.locator(".bt-phase, .phase-banner").count()) { banner = true; await shot(`${name}-3-signature`); }
+    const tech = page.locator(".bt-skill.ready:not(.basic)").first();
+    if (await tech.count()) await tech.click(); else await page.locator(".bt-skill.basic.ready").first().click();
+    await page.waitForTimeout(700);
+    if (!banner && t % 3 === 2) await shot(`${name}-3-t${t}`);
+  }
+}
+
 /** The arena test fight (docs/BATTLE_STAGE.md §7): a burst of frames around a dash strike and around the ultimate. */
 async function arenaTest(name: string) {
   await boot(labState(Number(process.env.IA_REGION ?? 1), "fitted"));   // IA_REGION=2: a spirit beast joins (three allies)
@@ -528,6 +556,8 @@ const SCEN: Record<string, () => Promise<void>> = {
   party: () => fight("party", 5, { kind: "node", id: nodeOf(5, "boss") }, { companions: ["npc.bai_lingshuang", "npc.tang_xiaoman"] }),
   // whole fights on Auto (IA_VIDEO=1 to record): a region 2 battle with a beast, a region 5 boss with the full party, a late elite
   auto2: () => autoFight("auto2", 2, { kind: "node", id: nodeOf(2, "battle") }),
+  // combat mechanics: the Frost Queen's ice armor (break) and the Surge button
+  mech: () => mechanics("mech", 4, { kind: "node", id: nodeOf(4, "boss") }),
   auto5: () => autoFight("auto5", 5, { kind: "node", id: nodeOf(5, "boss") }, ["npc.bai_lingshuang", "npc.tang_xiaoman"]),
   auto8: () => autoFight("auto8", 8, { kind: "node", id: nodeOf(8, "elite") }, ["npc.bai_lingshuang"]),
   // the header stays at the top while a screen scrolls

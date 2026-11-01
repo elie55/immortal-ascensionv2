@@ -27,6 +27,43 @@ export const Enemy = CombatantBase.extend({
   anim: AnimBlocks.optional(),
 });
 
+/**
+ * A boss's signature mechanic (docs/COMBAT.md "Signature mechanics"): one rule that changes how the fight is played,
+ * announced in the arena by `name`. The engine implements each kind in combat/battle.ts (signature*).
+ */
+const Sig = (kind: string, extra: Record<string, z.ZodTypeAny>) => z.object({ kind: z.literal(kind), name: z.string().min(1), name_cn: z.string().optional(), description: z.string().min(1), ...extra });
+export const BossSignature = z.discriminatedUnion("kind", [
+  /** Takes dmg_red % less damage while any of its summons lives. */
+  Sig("guarded", { dmg_red: z.number().min(0).max(95) }),
+  /** From player round after_round on, +atk_pct_per_round % attack every player round. */
+  Sig("fury", { after_round: z.number().int().positive(), atk_pct_per_round: z.number().positive() }),
+  /** Starts every phase behind a shield of shield_pct % max HP; breaking it delays the boss delay_pct % of a turn and leaves it vulnerable for vuln_turns. */
+  Sig("break", { shield_pct: z.number().positive(), delay_pct: z.number().min(0).max(200), vuln_turns: z.number().int().positive() }),
+  /** Every `every`-th hit it takes is answered with a counter at pct % attack. */
+  Sig("riposte", { every: z.number().int().min(2), pct: z.number().positive() }),
+  /** Heals pct % of the damage it deals. */
+  Sig("drain", { pct: z.number().positive() }),
+  /** Attunes to an element, rotating every `cycle` of its turns; attacks of the warded element heal it instead. */
+  Sig("ward", { cycle: z.number().int().positive() }),
+  /** Every `every`-th of its turns opens with an unavoidable blow on the whole party at pct % attack. */
+  Sig("quake", { every: z.number().int().min(2), pct: z.number().positive() }),
+  /** Brands one ally; after `turns` of the boss's turns the brand detonates for pct % attack (a shield absorbs it). */
+  Sig("mark", { turns: z.number().int().positive(), pct: z.number().positive() }),
+  /** High tide / low tide every `cycle` player rounds: faster and harder-hitting, then soft. */
+  Sig("tide", { cycle: z.number().int().positive() }),
+  /** Every `every`-th of its turns curses the party: no healing for `turns` turns. */
+  Sig("curse", { every: z.number().int().min(2), turns: z.number().int().positive() }),
+  /** Once per battle, rises again at hp_pct % HP when slain. */
+  Sig("rebirth", { hp_pct: z.number().positive().max(100) }),
+  /** Each consecutive hit on the same ally stacks Rend (+per_stack % damage taken, up to max_stacks). */
+  Sig("rend", { per_stack: z.number().positive(), max_stacks: z.number().int().min(2) }),
+  /** No single hit can take more than pct % of its max HP. */
+  Sig("measure", { pct: z.number().positive().max(100) }),
+  /** When an ally uses an ultimate the boss answers at once: its gauge jumps push_pct % of a turn. */
+  Sig("answer", { push_pct: z.number().positive().max(200) }),
+]);
+export type BossSignature = z.infer<typeof BossSignature>;
+
 export const Boss = CombatantBase.extend({
   id: ref("boss"),
   kind: z.enum(["region", "dungeon", "secret_realm", "mega", "tribulation", "tournament", "story"]),
@@ -40,6 +77,7 @@ export const Boss = CombatantBase.extend({
     charged_attack: z.object({ tech: ref("tech"), turns_to_charge: z.number().int().positive() }).optional(),
   })).min(1),
   weaknesses: z.array(ref("elem")).default([]),
+  signature: BossSignature.optional(),
   art: artBlock(["icon", "battle", "intro"]),
   anim: AnimBlocks.optional(),
 });

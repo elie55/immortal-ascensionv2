@@ -44,10 +44,12 @@ export { affinityLevel };
 /** Evaluate one objective. `baseline` is the counter value at acceptance (0 for achievements). */
 export function evalObjective(s: GameState, c: ContentIndex, o: Objective, baseline = 0): ObjProgress {
   const key = counterKey(o);
-  const counted = (need: number, label: string): ObjProgress => { const have = Math.max(0, counter(s, key!) - baseline); return { label, have: Math.min(have, need), need, done: have >= need }; };
+  const counted = (need: number, label: string, base = baseline): ObjProgress => { const have = Math.max(0, counter(s, key!) - base); return { label, have: Math.min(have, need), need, done: have >= need }; };
   const flag = (ok: boolean, label: string): ObjProgress => ({ label, have: ok ? 1 : 0, need: 1, done: ok });
   switch (o.type) {
-    case "defeat": return counted(o.count, `Defeat ${name(c, o.target)}`);
+    // a region sovereign is a milestone: a boss slain before the quest was taken still counts (the quest opens at a
+    // realm stage the player may reach after the first kill, and no boss-defeat quest repeats)
+    case "defeat": return counted(o.count, `Defeat ${name(c, o.target)}`, o.target.startsWith("boss.") ? 0 : baseline);
     case "clear": return counted(o.count, `Clear ${name(c, o.target)}`);
     case "win_duel": return counted(o.count, `Win a duel against ${name(c, o.npc)}`);
     case "refine": return counted(o.count, `Refine ${name(c, o.recipe)}`);

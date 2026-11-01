@@ -682,6 +682,15 @@ button.setrow { width: 100%; color: inherit; }
 .bt-ultbtn.ready .ub-art { animation: glow 1.2s infinite; }
 .bt-ultbtn.empty { opacity: .55; } .bt-ultbtn.empty .ub-ring { background: rgba(255,255,255,.1); box-shadow: none; }
 .bt-ultbtn[disabled] { opacity: 1; filter: none; }
+.np-sig { margin: 6px 0 8px; padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255,140,120,.35); background: linear-gradient(180deg, rgba(120,30,40,.35), rgba(60,10,20,.25)); }
+.np-sig > b { display: flex; align-items: center; gap: 4px; color: #ffb3a0; font-size: calc(12.5rem / 15); }
+/* Surge: spend ultimate charge for an extra action (docs/COMBAT.md) */
+.bt-surge { display: inline-flex; align-items: center; gap: 4px; margin-top: 2px; padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(201,155,255,.45); background: rgba(60,30,110,.55); color: #e6d2ff; font-size: calc(10rem / 15); font-weight: 800; letter-spacing: .04em; opacity: .6; }
+.bt-surge b { font-family: var(--f-title); color: #fff; }
+.bt-surge.charged { opacity: 1; border-color: #e6d2ff; box-shadow: 0 0 12px rgba(201,155,255,.6); }
+.bt-surge.ready { animation: glow 1.2s infinite; }
+.bt-surge[disabled] { filter: none; }
+.bt-float.tempo.up { color: #9ff0c0; } .bt-float.tempo.down { color: #c7b3ff; } .bt-float.surge { color: #e6d2ff; font-weight: 900; text-shadow: 0 0 10px #c99bff, 0 1px 2px #000; }
 @media (max-height: 700px) {
   .bt-hud { gap: 4px; } .bt-topbar { padding: 3px 4px 3px 14px; } .bt-pause { width: 34px; height: 34px; } .bt-controls .seg button { height: 32px; }
   .bt-foe { padding: 5px 10px 5px; } .bt-foe .bar.big { height: 13px; margin: 4px 0 3px; } .ff-row2 { min-height: 18px; }

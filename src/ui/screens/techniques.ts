@@ -107,15 +107,17 @@ function pickSheet(app: App, kind: "actives" | "passives" | "ultimate", index: n
 const WHEN: { v: string; label: string; value?: [number, number, number] }[] = [
   { v: "always", label: "Always" }, { v: "hp_below", label: "My HP below", value: [10, 90, 50] }, { v: "sp_above", label: "SP above", value: [10, 90, 50] },
   { v: "no_shield", label: "No shield" }, { v: "boss_only", label: "Boss fights" }, { v: "enemies_at_least", label: "Enemies ≥", value: [2, 5, 2] },
-  { v: "big_attack", label: "Big attack coming" },
+  { v: "big_attack", label: "Big attack coming" }, { v: "ally_hp_below", label: "Companion HP below", value: [10, 90, 40] }, { v: "can_finish", label: "Can finish a foe" },
+  { v: "element_edge", label: "Element advantage" }, { v: "ult_above", label: "Ult charge above", value: [10, 90, 50] },
 ];
 const TARGET: { v: string; label: string }[] = [
-  { v: "default", label: "Default" }, { v: "lowest_hp", label: "Lowest HP" }, { v: "highest_cp", label: "Strongest CP" }, { v: "weakest", label: "Weakest" }, { v: "strongest", label: "Toughest" },
+  { v: "default", label: "Default" }, { v: "focus", label: "Finish / focus" }, { v: "weak_to", label: "Weak to element" }, { v: "lowest_hp", label: "Lowest HP" }, { v: "highest_cp", label: "Strongest CP" }, { v: "weakest", label: "Weakest" }, { v: "strongest", label: "Toughest" },
 ];
 const ROLE: Record<string, { label: string; icon: string; desc: string }> = {
   ultimate: { label: "Ultimate", icon: "bolt", desc: "Your ultimate when charged" }, heal: { label: "Best heal", icon: "lotus", desc: "Strongest healing technique ready" },
   shield: { label: "Shield", icon: "shield", desc: "Any shield technique ready" }, damage: { label: "Strongest attack", icon: "sword", desc: "Highest-damage technique ready" },
   debuff: { label: "Debuff", icon: "warning", desc: "A technique that weakens the target" }, basic: { label: "Basic attack", icon: "sword", desc: "Free, restores SP" }, beast: { label: "Beast ability", icon: "paw", desc: "Your companion's skill" },
+  surge: { label: "Surge", icon: "sparkle", desc: "Spend ultimate charge to act again at once" }, tempo: { label: "Tempo", icon: "bolt", desc: "A technique that hastens you" },
 };
 
 function ruleLabel(app: App, slot: string): { label: string; icon: string; desc: string; art?: string } {
@@ -201,7 +203,7 @@ export function autoBattleScreen(app: App, backTo: string): Screen {
 function addRuleSheet(app: App, add: (slot: string) => void) {
   app.router.open({ id: "add-rule", kind: "sheet", render: (close) => {
     const s = app.game.state;
-    const slots = [...s.techniques.actives.map((id, i) => (id ? `a${i}` : null)).filter((x): x is string => !!x), "ultimate", "heal", "shield", "damage", "debuff", "beast", "basic"];
+    const slots = [...s.techniques.actives.map((id, i) => (id ? `a${i}` : null)).filter((x): x is string => !!x), "ultimate", "surge", "heal", "shield", "damage", "debuff", "tempo", "beast", "basic"];
     return h("div", { class: "stack" }, h("div", { class: "sec-h" }, h("h3", null, "Add a rule"), h("span", { class: "hint" }, "A technique slot or a role")),
       h("div", { class: "rows" }, slots.map((sl) => { const L = ruleLabel(app, sl); return h("button", { class: "setrow", onClick: () => { add(sl); close(); } }, icon(L.icon, 16), h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, L.label), h("div", { class: "desc" }, L.desc))); })));
   } });

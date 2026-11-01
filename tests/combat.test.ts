@@ -175,7 +175,7 @@ test("ultimate charges from actions and damage taken, then fires through the aut
   s.techniques.known["tech.ult.heavenly_sword_rain"] = 0; s.techniques.ultimate = "tech.ult.heavenly_sword_rain";
   const p = buildPlayer(s, c); p.base.hp = 1e5; p.maxHp = 1e5; p.hp = 1e5;
   const e = buildEnemy(c, "enemy.grey_wolf"); e.base.hp = 1e5; e.maxHp = 1e5; e.hp = 1e5;
-  const b = new Battle(c, [p, e], seedRng(12), rules());
+  const b = new Battle(c, [p, e], seedRng(12), rules(), { isBossFight: true });   // the default rules hold the ultimate for bosses and crowds
   b.start();
   let fired = false;
   for (let i = 0; i < 60 && !fired; i++) { b.step(); fired = b.drain().some((x) => x.t === "action" && (x as any).skill === "tech.ult.heavenly_sword_rain"); }
@@ -389,4 +389,27 @@ test("normal enemies never telegraph, and the Big attack coming rule picks a shi
   assert.equal(chooseAuto(b4, p4, rl).skill.kind, "basic", "no warning: basic attack");
   e4.telegraph = { skill: "basic", name: "x", targets: [p4.uid], pct: 50 };
   assert.equal(chooseAuto(b4, p4, rl).skill.id, sh.id, "warning: shield up");
+});
+
+test("mastery from a won fight reaches the method, the actives, the passives and the ultimate (combat_rules.mastery shares)", () => {
+  const s = fresh(23);
+  s.character.permanent = { atk: 5000, hp: 50000, def: 2000 };   // a sure win
+  const passive = c.byPrefix<any>("tech").find((t) => t.kind === "passive" && !t.enemy_only)!;
+  const ult = c.byPrefix<any>("tech").find((t) => t.kind === "ultimate" && !t.enemy_only)!;
+  s.techniques.known[passive.id] = 0; s.techniques.passives[0] = passive.id;
+  s.techniques.known[ult.id] = 0; s.techniques.ultimate = ult.id;
+  const node = c.byPrefix<any>("node").find((n) => n.region === "region.mortal_plains" && n.kind === "battle" && n.waves.length)!;
+  const st = Encounter.start(s, c, { kind: "node", id: node.id }, T0);
+  assert.ok(st.ok);
+  const enc = st.encounter;
+  let guard = 0;
+  while (!enc.done && guard++ < 10) { enc.battle!.run(); const wr = enc.settleWave(T0); if (wr.summary.result !== "victory") break; if (enc.hasNextWave) enc.nextWave(); }
+  assert.ok(enc.done?.won, "the boosted player wins");
+  const xp = enc.done!.masteryXp;
+  assert.ok(xp > 0, "the fight paid mastery");
+  const sh = c.combat.mastery;
+  assert.equal(s.techniques.known[passive.id], Math.round(xp * sh.passive_share), "passive share");
+  assert.equal(s.techniques.known[ult.id], Math.round(xp * sh.ultimate_share), "ultimate share");
+  assert.equal(s.techniques.known[s.techniques.actives[0]!], Math.round(xp * sh.active_share), "active share");
+  assert.equal(s.character.methodMastery[s.character.method], Math.round(xp * sh.method_share), "method share");
 });

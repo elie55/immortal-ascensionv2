@@ -379,7 +379,7 @@ REGIONS = [
        event=("unwritten_law", "The Unwritten Law", "无字律", "A blank law-scroll floats in an empty hall, waiting for a law to be written.", "a blank golden scroll floating in an empty golden hall with a brush beside it",
               "Write a law.", "Leave it blank."),
        tech=("verdict_of_heaven", "Verdict of Heaven", "天律裁", "metal", "mythic", "Pass judgement on all enemies. 330% ATK, Silences.", 330, 52, 5, "silence", 0.6),
-       etech=("law_chain", "Law Chain", "律锁", "metal", "Chains of law bind the target.", 250, "stun", 0.35),
+       etech=("law_chain", "Law Chain", "律锁", "metal", "Chains of law bind the target.", 250, "stun", 0.2),
        passive=("law_insight", "Law Insight", "悟律", "metal", "mythic", "Cooldowns −1 every 3 turns; crit +6%.", {"cdr": 10, "crit": 6}),
        method=("ten_thousand_laws_canon", "Ten Thousand Laws Canon", "万律典", "metal", "mythic", "immortal", 6.0, {"atk": 3000, "cdr": 10}, "Understand the laws, and they bend around you."),
        gear=[("lawbound_robe", "Lawbound Robe", "律缚袍", "armor", "mystic", "golden and black robes inscribed with glowing law-characters", "dmg_red"),

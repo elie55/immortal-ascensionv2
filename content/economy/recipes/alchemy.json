@@ -236,7 +236,7 @@
     "grade": 5,
     "success_base": 0.4,
     "furnace_min": 3,
-    "proficiency_min": 600,
+    "proficiency_min": 200,
     "proficiency_xp": 500,
     "unlock": {
       "type": "rank",

@@ -385,8 +385,9 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const p = battle.player;
     const manual = battle.manual;
     const waiting = battle.needsInput;
-    const skills = p.skills.filter((s) => s.kind !== "basic");
+    const skills = p.skills.filter((s) => s.kind !== "basic" && !s.ultCost);
     const ult = skills.find((s) => s.kind === "ultimate");
+    const surge = p.skills.find((s) => !!s.ultCost);
     const tile = (s: Skill, cls = "") => {
       const cd = p.cooldowns[s.id] ?? 0;
       const usable = battle.canUse(p, s);
@@ -410,9 +411,15 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         h("span", { class: "ub-ring" }), h("span", { class: "ub-art", style: art ? { backgroundImage: app.img(art) } : undefined }, !art && icon("sparkle", 26)),
         h("span", { class: "ub-tag" }, "Ultimate"), h("span", { class: "ub-pct" }, pct >= 100 ? "READY" : `${Math.floor(pct)}%`));
     })() : null;
+    // Surge: spend ultimate charge to act again at once (docs/COMBAT.md "Tempo")
+    const surgeBtn = surge ? (() => {
+      const usable = battle.canUse(p, surge);
+      return h("button", { class: ["bt-surge", usable && "charged", usable && waiting && manual && "ready"], disabled: !(manual && waiting && usable), onClick: () => choose(surge), title: `Surge: spend ${surge.ultCost} ultimate charge to act again at once`, "aria-label": `Surge (${surge.ultCost} charge)` },
+        icon("sparkle", 12), h("span", null, "Surge"), h("b", null, `${surge.ultCost}`));
+    })() : null;
     replaceChildren(actions,
       h("div", { class: "bt-skillrow" }, tile(p.skills[0]!, "basic"), ...actives.map((s) => tile(s)), ...Array.from({ length: empty }, () => h("div", { class: "bt-skill empty", title: "Free technique slot: equip one in Techniques" }, h("span", { class: "sk-name" }, "Free slot"), h("span", { class: "sk-art" }, icon("plus", 14))))),
-      ultBtn && h("div", { class: "bt-ult" }, h("span", { class: "sk-name ult-name" }, ult!.name), ultBtn));
+      (ultBtn || surgeBtn) && h("div", { class: "bt-ult" }, ult && h("span", { class: "sk-name ult-name" }, ult.name), ultBtn, surgeBtn));
     const several = battle.units.filter((u) => u.side === "enemy" && u.alive).length > 1;
     replaceChildren(prompt, waiting && manual ? h("div", { class: "bt-prompt" }, icon("sword", 14), " Your move", h("span", null, several ? " · tap a foe, then a technique" : " · tap a technique")) : null);
   }
@@ -526,7 +533,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const names = [...new Map(foesNow.map((u) => [u.id, u])).values()].map((u) => `${u.name}${foesNow.filter((x) => x.id === u.id).length > 1 ? ` ×${foesNow.filter((x) => x.id === u.id).length}` : ""}`).join(" · ");
     replaceChildren(intro, boss
       ? h("div", { class: "bi-boss" }, h("div", { class: "bi-art", style: { backgroundImage: app.img(bossArt) } }), h("div", { class: "bi-veil" }),
-          h("div", { class: "bi-text" }, h("span", { class: "bi-pre" }, trib ? "Heavenly Tribulation" : enc.src.kind === "tower" ? "Tower warden" : enc.src.kind === "tournament" ? "Your opponent" : enc.wave + 1 < enc.waves.length ? "Guardian" : "Sovereign of this place"), h("b", null, boss.name), c.get<any>(boss.id).name_cn && h("span", { class: "cn bi-cn" }, c.get<any>(boss.id).name_cn), h("span", { class: "bi-sub" }, `${c.get<any>(boss.element).name} · ${boss.boss!.phases.length} phases`)))
+          h("div", { class: "bi-text" }, h("span", { class: "bi-pre" }, trib ? "Heavenly Tribulation" : enc.src.kind === "tower" ? "Tower warden" : enc.src.kind === "tournament" ? "Your opponent" : enc.wave + 1 < enc.waves.length ? "Guardian" : "Sovereign of this place"), h("b", null, boss.name), c.get<any>(boss.id).name_cn && h("span", { class: "cn bi-cn" }, c.get<any>(boss.id).name_cn), h("span", { class: "bi-sub" }, `${c.get<any>(boss.element).name} · ${boss.boss!.phases.length} phases${boss.boss!.signature ? ` · ${boss.boss!.signature.name}` : ""}`)))
       : h("div", { class: "bi-wave" }, h("span", { class: "bi-pre" }, `Wave ${enc.wave + 1} / ${enc.waves.length}`), h("b", null, names)));
     intro.classList.add("on");
     const ms = boss ? 2300 : 1250;
@@ -620,6 +627,28 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         case "skip": float(e.actor, e.reason === "frozen" ? "Frozen" : "Stunned", "miss"); await wait(250); break;
         case "hazard": lightning(); showSkillName(`${e.name} · wave ${e.wave}/${e.waves}`, "heavy"); screenFlash(arena ? "soft" : "white"); shake(true); await wait(arena ? 620 : 420); break;
         case "ult_ready": renderUnits(); break;
+        case "turn_shift": {
+          // tempo: the strip re-sorts; the unit shows whether it gained or lost ground
+          if (Math.abs(e.pct) < 10) break;
+          float(e.target, e.pct > 0 ? "Hastened" : "Delayed", e.pct > 0 ? "tempo up" : "tempo down");
+          renderOrder(); await wait(220); break;
+        }
+        case "surge": {
+          float(e.actor, "Surge!", "surge"); screenFlash(arena ? "soft" : "white");
+          if (arena) { const ch = centerOf(e.actor); const ft = feetOf(e.actor); if (ch && ft) { gather(vctx, ch, ft.y, heightOf(e.actor), "#c99bff", 420); ring_(ft, "#c99bff", heightOf(e.actor) * 0.5); } puppets.setGlow(e.actor, glowRgb("elem.none")); }
+          renderUnits(); renderOrder(); await wait(arena ? 520 : 360); break;
+        }
+        case "signature": {
+          const u = unit(e.actor);
+          const col = ELEMENT_COLOR[u?.element ?? ""] ?? "#ffd27a";
+          phaseBanner = { text: `${e.name}${e.detail ? ` · ${e.detail}` : ""}`, until: Date.now() + 1800 };
+          showSkillName(e.name, "foe"); caption = `${name(e.actor)}: ${e.name}${e.detail ? ` (${e.detail})` : ""}`; renderTop();
+          if (e.kind === "rebirth") { screenFlash("red"); shake(true); if (arena && rigged(e.actor)) puppets.play(e.actor, "enter", speed); }
+          else if (e.kind === "quake" || e.kind === "answer" || e.kind === "break") { shake(e.kind !== "answer"); }
+          else if (e.kind === "ward" || e.kind === "tide" || e.kind === "fury") { if (arena) { const ch = centerOf(e.actor); const ft = feetOf(e.actor); if (ch && ft) gather(vctx, ch, ft.y, heightOf(e.actor), col, 500); } }
+          for (const tgt of e.targets) if (tgt !== e.actor) float(tgt, e.name, "status");
+          renderUnits(); await wait(arena ? 700 : 500); break;
+        }
         default: break;
       }
     }
