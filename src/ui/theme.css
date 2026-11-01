@@ -2109,3 +2109,10 @@ html, body { font-variant-numeric: tabular-nums; }
   background: linear-gradient(180deg, rgba(22,32,88,.94), rgba(10,16,52,.94)); box-shadow: 0 6px 16px rgba(0,0,14,.32); backdrop-filter: none; -webkit-backdrop-filter: none; padding: 5px 12px 5px 8px; }
 .screen > .subbar { margin: 6px -12px 0; }
 .screen > .stack > .subbar { margin: 0 -12px; }
+
+/* ---------- Techniques: what each technique does now (damage / heal / shield with current stats and mastery) ---------- */
+.loadout .sk-dmg { font-size: calc(11rem / 15); font-weight: 800; white-space: nowrap; color: #ffd27a; line-height: 1.15; }
+.loadout .sk-dmg.heal { color: #8ff0bf; } .loadout .sk-dmg.shield { color: #9fd8ff; }
+.tp-line { display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: calc(11.5rem / 15); color: #ffd27a; }
+.tp-line .ico { flex: none; } .tp-line.heal { color: #8ff0bf; } .tp-line.shield { color: #9fd8ff; }
+.tp-line .muted { font-weight: 400; }

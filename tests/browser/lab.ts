@@ -533,6 +533,11 @@ const SCEN: Record<string, () => Promise<void>> = {
     await page.evaluate(() => document.querySelector(".screen")!.scrollTo(0, 500)); await page.waitForTimeout(300); await shot("hdrscroll-1");
     await page.locator(".nav button", { hasText: "Sect" }).click(); await page.waitForTimeout(700); await page.evaluate(() => document.querySelector(".screen")!.scrollTo(0, 400)); await page.waitForTimeout(300); await shot("hdrscroll-2");
   }),
+  // Techniques: each technique's current damage / heal / shield on the loadout and in the picker
+  techs: () => screen("techs-0", 5, "0", { tab: "character", mutate: (st) => { for (const k of Object.keys(st.techniques.known)) st.techniques.known[k] = 400; } }).then(async () => {
+    await page.locator(".btn", { hasText: "Techniques" }).click(); await page.waitForTimeout(600); await shot("techs-1");
+    await page.locator(".sk.actives").nth(1).click(); await page.waitForTimeout(600); await shot("techs-2");
+  }),
   multi: () => fight("multi", 4, { kind: "node", id: c.nodesOf(regions[3]!.id).filter((x) => x.kind === "battle" && x.waves?.length).sort((a, b) => b.waves![0]!.length - a.waves![0]!.length)[0]!.id }),
 };
 

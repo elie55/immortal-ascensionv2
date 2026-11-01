@@ -12,6 +12,17 @@ import { setLoadout, switchMethod } from "../../engine/actions.ts";
 import { masteryLevel } from "../../engine/stats.ts";
 import { defaultCombat } from "../../engine/state.ts";
 import { techLine } from "./shop.ts";
+import { techPreview, type TechPreview } from "../../engine/combat/preview.ts";
+
+/** "≈ 1,234 dmg" / "Heals 980" / "Shield 1,450" with the current stats and mastery. */
+function previewText(p: TechPreview, short = false): string | null {
+  if (p.kind === "none") return null;
+  const n = short ? fmt.compact(p.value) : fmt.int(p.value);
+  const each = p.each ? (short ? " each" : " to each") : "";
+  if (p.kind === "damage") return short ? `≈${n} dmg${each}` : `≈ ${n} damage${p.each ? " to each foe" : ""}${p.hits > 1 ? ` (${p.hits} hits)` : ""}`;
+  if (p.kind === "heal") return `Heals ${n}${each}`;
+  return `Shield ${n}${each}`;
+}
 
 const curve = (d: any) => d.mastery ?? { max_level: 10, xp_per_level: 100, per_level_bonus: 0.03 };
 
@@ -39,6 +50,7 @@ export function techniquesScreen(app: App, backTo: string): Screen {
             t && h("span", { class: "sk-lv" }, `M${lv}`),
             el && h("span", { class: "sk-el", style: { background: el.color }, title: el.name })),
           h("span", { class: "sk-name" }, t ? t.name : empty),
+          t && kind !== "passives" && (() => { const p = techPreview(s, c, id!); const pv = previewText(p, true); return pv && h("span", { class: ["sk-dmg", p.kind] }, pv); })(),
           t && kind !== "passives" && h("span", { class: "sk-sub" }, [t.sp_cost ? `${t.sp_cost} SP` : kind === "ultimate" ? "Charged" : "Free", t.cooldown ? `CD ${t.cooldown}` : ""].filter(Boolean).join(" · ")));
       };
       const used = s.techniques.actives.filter(Boolean).length + s.techniques.passives.filter(Boolean).length + (s.techniques.ultimate ? 1 : 0);
@@ -82,7 +94,8 @@ function pickSheet(app: App, kind: "actives" | "passives" | "ultimate", index: n
         const t = c.get<any>(id);
         const where = kind === "ultimate" ? -1 : s.techniques[kind].indexOf(id);
         return h("button", { class: ["setrow", id === cur && "on"], onClick: () => set(id) }, icon(want === "passive" ? "shield" : want === "ultimate" ? "bolt" : "sword", 16),
-          h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, t.name, " ", h("span", { class: "muted" }, `· Mastery ${masteryLevel(s.techniques.known[id] ?? 0, curve(t))}`)), h("div", { class: "desc" }, techLine(app, t))),
+          h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, t.name, " ", h("span", { class: "muted" }, `· Mastery ${masteryLevel(s.techniques.known[id] ?? 0, curve(t))}`)), h("div", { class: "desc" }, techLine(app, t)),
+            (() => { const pv = techPreview(s, c, id); const txt = previewText(pv); return txt && h("div", { class: ["tp-line", pv.kind] }, icon(pv.kind === "damage" ? "sword" : pv.kind === "heal" ? "lotus" : "shield", 12), h("b", { class: "tnum" }, txt), pv.level > 0 && h("span", { class: "muted" }, ` · mastery +${Math.round((pv.mult - 1) * 100)}%`)); })()),
           where >= 0 && where !== index ? h("span", { class: "tag" }, `Slot ${where + 1}`) : id === cur ? h("span", { class: "tag jade" }, "Equipped") : null);
       })) : h("div", { class: "muted center" }, "You know no techniques of this kind yet."),
       cur && h("button", { class: "btn ghost block", onClick: () => set(null) }, "Clear slot"));
