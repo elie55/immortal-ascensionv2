@@ -22,7 +22,7 @@ export interface Screen {
   /** Called when the screen is removed from a stack. */
   onLeave?: () => void;
 }
-export interface Overlay { id: string; kind: "modal" | "sheet"; render: (close: () => void) => Child; dismissible?: boolean; cls?: string }
+export interface Overlay { id: string; kind: "modal" | "sheet" | "peek"; render: (close: () => void) => Child; dismissible?: boolean; cls?: string; /** peek: the anchor's box (viewport px) the card is placed next to */ at?: { x: number; y: number; w: number; h: number } }
 
 export type ToastKind = "info" | "good" | "bad" | "gold";
 /** Toast texts that mark a milestone (gold toast). */
@@ -126,6 +126,17 @@ export class Router {
       const top = i === s.overlays.length - 1;
       const close = () => this.close(o.id);
       if (o.kind === "sheet") return [h("div", { class: "sheet-backdrop", dataset: { key: `bd:${o.id}` }, onClick: () => { if (top && o.dismissible !== false) close(); } }), h("div", { class: ["sheet glass", o.cls], dataset: { key: `ov:${o.id}` } }, h("div", { class: "grab" }), o.render(close))];
+      if (o.kind === "peek") {
+        // a card beside its anchor: above when the anchor sits in the lower half, below otherwise; any tap closes it
+        const vw = this.root.clientWidth || window.innerWidth, vh = this.root.clientHeight || window.innerHeight;
+        const a = o.at ?? { x: vw / 2, y: vh / 2, w: 0, h: 0 };
+        const w = Math.min(330, vw - 24);
+        const left = Math.max(12, Math.min(vw - w - 12, a.x + a.w / 2 - w / 2));
+        const above = a.y + a.h / 2 > vh * 0.5;
+        const style = above ? { left: `${left}px`, bottom: `${Math.max(12, vh - a.y + 10)}px`, width: `${w}px` } : { left: `${left}px`, top: `${Math.min(vh - 120, a.y + a.h + 10)}px`, width: `${w}px` };
+        return h("div", { class: "peek-backdrop", dataset: { key: `ov:${o.id}` }, onClick: () => close(), onContextMenu: (e: Event) => { e.preventDefault(); close(); } },
+          h("div", { class: ["peek glass gold", above ? "above" : "below", o.cls], style, onClick: (e: Event) => e.stopPropagation() }, o.render(close)));
+      }
       return h("div", { class: "modal-backdrop", dataset: { key: `ov:${o.id}` }, onClick: (e: MouseEvent) => { if (top && e.target === e.currentTarget && o.dismissible !== false) close(); } },
         h("div", { class: ["modal glass gold", o.cls] }, o.render(close)));
     });

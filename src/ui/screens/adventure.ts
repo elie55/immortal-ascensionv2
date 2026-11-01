@@ -2,7 +2,10 @@
  * Adventure tab: region cards (mockup "world_regions"), the region node map (mockup "region_node_map")
  * and node interaction sheets (mockup "node_interactions"). Battles open the battle screen.
  */
+import { sweepSheet } from "./sweep.ts";
 import { placeLabels } from "../core/mapLabels.ts";
+import { peekable } from "../core/peek.ts";
+import { enemyPeek, itemPeek, gearPeek, techPeek } from "../peeks.ts";
 import { h, fmt } from "../core/dom.ts";
 import { visit } from "../../engine/progression.ts";
 import { shopScreen } from "./shop.ts";
@@ -103,7 +106,8 @@ export function regionScreen(app: App, regionId: string, select?: string): Scree
       const playable = nodes.find((n) => !SIDE_KINDS.has(n.kind) && nodeState(s, c, n) === "reachable");
       const sel = (selected ? nodes.find((n) => n.id === selected) : undefined) ?? playable;
       // on arrival the selected place is centred above the docked card (the first places sit at the map's bottom)
-      if (!centred && sel) { centred = true; requestAnimationFrame(() => requestAnimationFrame(() => document.querySelector<HTMLElement>(".mp-node.sel")?.scrollIntoView({ block: "center" }))); }
+      // centre the selected place in the part of the screen the node card leaves free (the card is sticky at the bottom)
+      if (!centred && sel) { centred = true; requestAnimationFrame(() => requestAnimationFrame(() => { const node = document.querySelector<HTMLElement>(".mp-node.sel"); if (!node) return; node.scrollIntoView({ block: "center" }); const main = node.closest<HTMLElement>("main.screen"); const dock = document.querySelector<HTMLElement>(".node-dock"); if (main && dock) main.scrollTop += dock.offsetHeight / 2; })); }
       const pos = (n: MapNode) => ({ left: `${n.position[0] * 100}%`, top: `${n.position[1] * 100}%` });
       // the tracked quest marks its place; if that place is still locked, the place to play next pulses
       const quest = trackedNode(app);
@@ -208,7 +212,7 @@ function enemyChips(app: App, ids: string[]) {
   for (const id of ids) counts.set(id, (counts.get(id) ?? 0) + 1);
   return h("div", { class: "row", style: { flexWrap: "wrap", gap: "6px" } }, [...counts].map(([id, n]) => {
     const e = c.get<any>(id);
-    return h("span", { class: "enemy-chip" }, h("span", { class: "ec-ico", style: { backgroundImage: app.img(c.art(id, "icon")) } }), h("span", null, h("b", null, e.name), n > 1 ? ` ×${n}` : "", h("span", { class: "muted" }, ` · ${c.get<any>(e.element).name} · CP ${fmt.int(e.cp)}`)));
+    return peekable(h("span", { class: "enemy-chip" }, h("span", { class: "ec-ico", style: { backgroundImage: app.img(c.art(id, "icon")) } }), h("span", null, h("b", null, e.name), n > 1 ? ` ×${n}` : "", h("span", { class: "muted" }, ` · ${c.get<any>(e.element).name} · CP ${fmt.int(e.cp)}`))), app.router, () => enemyPeek(app, id));
   }));
 }
 
@@ -262,7 +266,10 @@ function nodeCard(app: App, n: MapNode, refresh: () => void, ctx?: CardCtx) {
     const sig = n.waves.flat().map((id) => c.find<any>(id)?.signature).find(Boolean);
     if (sig) body.push(h("div", { class: "np-sig" }, h("b", null, icon("warning", 12), ` ${sig.name}`, sig.name_cn && h("span", { class: "cn" }, ` ${sig.name_cn}`)), h("div", { class: "dim", style: { fontSize: "calc(12rem / 15)" } }, sig.description)));
     // one clear action: Manual/Auto is chosen on the battle screen itself (and remembered), not here
-    body.push(h("button", { class: "btn gold block node-fight", onClick: () => start({ kind: "node", id: n.id }) }, icon("sword", 15), n.kind === "boss" ? "Challenge" : "Fight"));
+    const sweepable = !!rec?.clears && n.replayable !== false && n.kind !== "boss";
+    body.push(sweepable
+      ? h("div", { class: "grid-2" }, h("button", { class: "btn ghost node-fight", onClick: () => sweepSheet(app, n.id) }, icon("fast", 14), "Sweep"), h("button", { class: "btn gold node-fight", onClick: () => start({ kind: "node", id: n.id }) }, icon("sword", 15), "Fight"))
+      : h("button", { class: "btn gold block node-fight", onClick: () => start({ kind: "node", id: n.id }) }, icon("sword", 15), n.kind === "boss" ? "Challenge" : "Fight"));
   } else if (n.kind === "gather") {
     const nextAt = (rec?.lastAt ?? 0) + n.gather!.cooldown_min * 60_000;
     body.push(rewardsLine(app, { items: n.gather!.items }), h("div", { class: "muted", style: { margin: "6px 0" } }, `${n.gather!.energy_cost} energy · regrows every ${n.gather!.cooldown_min} min`),
@@ -299,9 +306,9 @@ export function rewardsLine(app: App, r: any) {
   if (r.spirit_stones) parts.push(h("span", { class: "tag gold" }, icon("gem", 10), ` ${fmt.int(r.spirit_stones)}`));
   if (r.sect_fame) parts.push(h("span", { class: "tag" }, icon("fame", 10), ` ${fmt.int(r.sect_fame)} Fame`));
   if (r.contribution) parts.push(h("span", { class: "tag jade" }, icon("scroll", 10), ` ${fmt.int(r.contribution)} Contribution`));
-  for (const it of r.items ?? []) parts.push(h("span", { class: "tag" }, `${it.qty}× ${c.get<any>(it.id).name}`));
-  for (const g of r.gear ?? []) parts.push(h("span", { class: `tag rt-${g.rarity}` }, c.get<any>(g.base).name));
-  for (const t of r.techniques ?? []) parts.push(h("span", { class: "tag jade" }, c.get<any>(t).name));
+  for (const it of r.items ?? []) parts.push(peekable(h("span", { class: "tag" }, `${it.qty}× ${c.get<any>(it.id).name}`), app.router, () => itemPeek(app, it.id, it.qty)));
+  for (const g of r.gear ?? []) parts.push(peekable(h("span", { class: `tag rt-${g.rarity}` }, c.get<any>(g.base).name), app.router, () => gearPeek(app, g)));
+  for (const t of r.techniques ?? []) parts.push(peekable(h("span", { class: "tag jade" }, c.get<any>(t).name), app.router, () => techPeek(app, t)));
   return parts.length ? h("div", { class: "row", style: { flexWrap: "wrap", gap: "5px", margin: "4px 0" } }, parts) : null;
 }
 

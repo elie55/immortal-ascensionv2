@@ -140,8 +140,10 @@ test("resource dungeon tiers: gated by the tier below and its realm, stronger en
   assert.ok(s.resources.spirit_stones - stones >= d.tiers[1].rewards.first_clear.spirit_stones, "tier II first clear paid");
   assert.ok(tierCheck(s, c, d, 3).ok);
   assert.equal(s.daily.counters[`dungeon:${d.id}`], 1);
-  // loot tables of higher tiers are the tier-I table scaled, same item ids
+  // loot tables of higher tiers are the tier-I table scaled (same item ids), plus the tier bundle: an awakening-crystal
+  // chance from tier III and guaranteed refining stones from tier II
   const base = c.get<any>(d.rewards.clear), t3 = c.get<any>(d.tiers[2].rewards.clear);
-  assert.deepEqual(t3.entries.map((e: any) => e.id ?? "gear"), base.entries.map((e: any) => e.id ?? "gear"));
+  assert.deepEqual(t3.entries.map((e: any) => e.id ?? "gear").filter((id: string) => id !== "mat.awakening_crystal"), base.entries.map((e: any) => e.id ?? "gear"));
+  assert.ok(t3.guaranteed.some((q: any) => q.id === "mat.refining_stone"));
   assert.ok(t3.spirit_stones[1] > base.spirit_stones[1] * 2);
 });

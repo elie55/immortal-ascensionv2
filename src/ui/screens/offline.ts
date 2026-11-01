@@ -1,4 +1,7 @@
 /** "While you were away" and "Your clock moved back" dialogs (mockup board "systems"). */
+import { sweepSheet } from "./sweep.ts";
+import { sweepOptions } from "../../engine/sweep.ts";
+import { energyNow } from "../../engine/cultivation.ts";
 import { h, fmt } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
 import { bar } from "../core/kit.ts";
@@ -64,6 +67,8 @@ export function offlineModal(app: App, r: OfflineReport): Overlay {
           })),
         h("div", { class: "rows", style: { margin: "10px 0 12px" } },
           h("div", { class: "setrow" }, icon("clock", 18), h("div", { class: "grow" }, h("div", { class: "lbl" }, `Offline efficiency ${Math.round(c.rules.offline.efficiency * 100)}%`), h("div", { class: "desc" }, "Active play cultivates faster than time away")))),
+        energyNow(s, c, app.now()) >= 20 && sweepOptions(s, c, app.now(), 1).length > 0 && h("button", { class: "glass panel off-sweep", onClick: () => { close(); sweepSheet(app); } },
+          h("span", { class: "off-ico" }, icon("fast", 16)), h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, `${fmt.int(energyNow(s, c, app.now()))} energy banked · Sweep a cleared place`), h("div", { class: "desc" }, "Instant runs with your auto-battle rules: drops, mastery and quest progress, no watching")), icon("chevron", 14)),
         h("div", { class: "grid-2" },
           h("button", { class: "btn", onClick: close }, "Continue"),
           h("button", { class: "btn gold", disabled: r.stagesAvailable === 0, onClick: () => {

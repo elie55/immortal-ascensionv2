@@ -65,6 +65,21 @@ titles, chip). Lines keep their final size while they type (the rest is laid out
 down (Chinese name in a row → name only → tag only) when a short phone would put it under the dialogue, and toasts
 wait until the story ends.
 
+## Peeks and one-time tips (2026-11-01)
+
+- **Peeks** (`core/peek.ts`, `peeks.ts`): a long press (430 ms, or a right click) on a technique tile, the Ultimate or
+  Surge button, a status icon, a unit on the field or its card, a loot tile, an inventory/depot/shop tile, a reward
+  tag, an enemy chip on a node card, a recipe row or a technique row opens a card beside it (`Overlay.kind = "peek"`,
+  placed above or below the anchor) with what it is and its numbers — in battle the live estimate against the foes on
+  the field. The click that ends a long press is swallowed. Battle buttons use `aria-disabled` instead of `disabled`
+  so an unusable technique can still be pressed to read.
+- **Tips** (`app.tip(key)`, `app.tipToast`, battle `teach()`): one-time teaching on this device (`settings.tipsSeen`):
+  the first telegraph, Surge ready, the first tempo shift, each signature mechanic the first time it fires, the hold
+  gesture; outside battle the first Contribution, the first crystal, the first pouch overflow.
+- **Tribulation preparation** (`screens/tribulation.ts`): the breakthrough ceremony's "Face it ›" opens the set-piece
+  sheet (waves and bolt estimates, the spirit, five readiness checks, the failure cost) and starts the fight from there;
+  the Cultivate button announces the tribulation when it is the only thing left.
+
 ## Checking
 
 - `node tests/browser/screens.ts` (tour, 51 checks, including the whole prologue) and `npm run test:ui` (audit at four phone sizes, must report 0 errors).

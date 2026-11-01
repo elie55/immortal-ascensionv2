@@ -428,6 +428,46 @@
         }
       },
       {
+        "id": "tech.active.gale_spear_step",
+        "price": 480,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 300
+        }
+      },
+      {
+        "id": "tech.active.moon_sweep",
+        "price": 520,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 300
+        }
+      },
+      {
+        "id": "tech.active.saber_guard_stance",
+        "price": 600,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 500
+        }
+      },
+      {
+        "id": "tech.active.mirror_palm_stance",
+        "price": 600,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 500
+        }
+      },
+      {
+        "id": "tech.active.fan_of_returning_wind",
+        "price": 1300,
+        "currency": "spirit_stones",
+        "unlock": {
+          "sect_fame": 1500
+        }
+      },
+      {
         "id": "tech.active.swallow_return_sword",
         "price": 1200,
         "currency": "spirit_stones",

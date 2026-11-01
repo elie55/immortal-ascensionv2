@@ -2,6 +2,8 @@
  * Cultivate tab (mockup "cultivation_screen"): realm title with stage pips over the meditation art, the
  * Breakthrough button, the method panel with the Qi bar and rate, and shortcut tiles.
  */
+import { tribulationSheet } from "./tribulation.ts";
+import { dungeonHubScreen } from "./delves.ts";
 import { h, fmt } from "../core/dom.ts";
 import { alchemyScreen } from "./alchemy.ts";
 import { questLogScreen } from "./quests.ts";
@@ -16,6 +18,7 @@ import { breakThrough, breakThroughAll, useConsumable, switchMethod, type Action
 import { attrLabel, attrValue } from "../core/kit.ts";
 import { settingsScreen } from "./menu.ts";
 import { objectiveDestination } from "../navigate.ts";
+import { todayPanel } from "./today.ts";
 
 const CN_NUM = ["", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
 
@@ -39,7 +42,9 @@ export function cultivateScreen(app: App) {
 
   const pips = h("div", { class: "pips" }, [...Array(9).keys()].map((i) => h("i", { class: [i < s.character.stage - 1 && "done", i === s.character.stage - 1 && "cur"] })));
   const btSub = final
-    ? (ready ? `Success chance ${Math.round(chance!.total * 100)}%${chance!.parts.map((p) => ` · ${p.label} +${Math.round(p.bonus * 100)}%`).join("")}` : `Major breakthrough · ${reqs.filter((r) => !r.met).length} requirement${reqs.filter((r) => !r.met).length === 1 ? "" : "s"} missing`)
+    ? (ready ? `Success chance ${Math.round(chance!.total * 100)}%${chance!.parts.map((p) => ` · ${p.label} +${Math.round(p.bonus * 100)}%`).join("")}`
+      : reqs.filter((r) => !r.met).every((r) => r.kind === "tribulation") ? "⚡ The heavenly tribulation awaits — tap to prepare"
+      : `Major breakthrough · ${reqs.filter((r) => !r.met).length} requirement${reqs.filter((r) => !r.met).length === 1 ? "" : "s"} missing`)
     : (ready ? (affordable > 1 ? `${affordable} stages ready · Success 100%` : "Success 100%") : `Next stage in ${fmt.duration(etaToNextStage(s, c, now))}`);
 
   const lotus = c.art("ui.cultivate", "lotus");
@@ -68,6 +73,7 @@ export function cultivateScreen(app: App) {
       h("div", { class: "row between muted" },
         h("span", null, prog >= 1 ? (final && !ready ? "✦ Bottleneck: complete the requirements" : "✦ Bottleneck reached — Qi is full") : `${fmt.pct(prog * 100, 1)} of this stage`),
         h("span", null, final ? (next ? `Next: ${next.name}` : "Summit reached") : `Next: Stage ${s.character.stage + 1} · ${fmt.compact(c.get<any>(realm.id).qi.base * Math.pow(realm.qi.stage_growth, s.character.stage))} Qi`))),
+    todayPanel(app),
     h("div", { class: "grid-4 cult-tiles" },
       shortcut(app, "cauldron", "Alchemy", 0, () => app.router.push(alchemyScreen(app, "Cultivate"))),
       shortcut(app, "paw", "Spirit Beasts", s.beasts.incubating.filter((x) => x.wins >= x.need).length + (s.beasts.incubating.length < app.content.rules.beasts.incubators && Object.keys(s.inventory.stacks).some((k) => k.startsWith("egg.") && (s.inventory.stacks[k] ?? 0) > 0) ? 1 : 0), () => app.router.push(beastsScreen(app, "Cultivate"))),
@@ -130,7 +136,14 @@ function openMajorSheet(app: App) {
     const ready = reqs.every((r) => r.met);
     const gains = Object.entries(next.realm_bonus as Record<string, number>);
     const missing = reqs.filter((r) => !r.met);
-    const getIt = (r: any) => { if (r.kind !== "item" || r.met) return null; const d = objectiveDestination(app, { type: "collect", item: r.id, count: r.need }); return d && h("button", { class: "link-btn jade-t", onClick: () => { close(); d.go(); } }, "Get it ›"); };
+    const getIt = (r: any) => {
+      if (r.met) return null;
+      // the tribulation is faced from here: its preparation sheet, then the fight; a trial dungeon leads to the hub
+      if (r.kind === "tribulation") return h("button", { class: "link-btn jade-t", onClick: () => { close(); tribulationSheet(app, r.id); } }, "Face it ›");
+      if (r.kind === "trial") return h("button", { class: "link-btn jade-t", onClick: () => { close(); app.router.setTab("adventure"); app.router.push(dungeonHubScreen(app, "dungeons")); } }, "Go ›");
+      if (r.kind !== "item") return null;
+      const d = objectiveDestination(app, { type: "collect", item: r.id, count: r.need }); return d && h("button", { class: "link-btn jade-t", onClick: () => { close(); d.go(); } }, "Get it ›");
+    };
     const desc = String(next.description ?? "").replace(new RegExp(`^${next.name}[,:]?\\s*`), "");
     const attempt = () => { close(); const r = act(app, "major breakthrough", (st, ct) => breakThrough(st, ct, { now: app.now() })); if (r.ok) majorResult(app, r.success, r.chance ?? 0, realm.id); };
     return h("div", { class: "cer" },

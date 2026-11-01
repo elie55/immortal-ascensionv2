@@ -437,3 +437,12 @@ for (const [realm, days] of realmDays) lines.push(`| ${realm.split(".")[1]} | ${
 const md = lines.join("\n");
 writeFileSync(OUT.replace(/\.json$/, ".md"), md);
 console.log(md);
+// --smoke N: the CI check — every seed must have reached region N (default 4) within the run, else exit 1
+const smokeI = args.indexOf("--smoke");
+if (smokeI >= 0) {
+  const need = Number(args[smokeI + 1] ?? "4");
+  const reached = runs.map((r) => Math.max(...r.regions.map((x) => x.order)));
+  const ok = reached.every((n) => n >= need);
+  console.log(`smoke: regions reached ${reached.join(", ")} (need ${need}) → ${ok ? "OK" : "FAIL"}`);
+  if (!ok) process.exit(1);
+}

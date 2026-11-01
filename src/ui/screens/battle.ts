@@ -8,6 +8,8 @@
  * Units keep their DOM nodes for the whole battle (bars animate, idle loops never restart); the engine's event
  * stream drives the animation. Victory and defeat panels follow the "victory" / "defeat" mockups.
  */
+import { peekable } from "../core/peek.ts";
+import { skillPeek, statusPeek, unitPeek, itemPeek } from "../peeks.ts";
 import { h, fmt, replaceChildren, keep, type Child } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
 import { AnimStage } from "../anim/stage.ts";
@@ -130,9 +132,18 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   // the canvas draws every figure with its own contact shadow: the DOM ground marks would show while textures load
   if (arena && puppets.ok) root.classList.add("gl");
   const prompt = h("div", { class: "bt-prompt-slot" });
+  /** One-time teaching strip under the stage (app.tip): tapped or timed out, it goes away. */
+  const tipSlot = h("div", { class: "bt-tip-slot" });
+  let tipTimer: number | undefined;
+  function teach(key: string, text: string) {
+    if (!app.tip(key)) return;
+    clearTimeout(tipTimer);
+    replaceChildren(tipSlot, h("button", { class: "bt-tip", onClick: () => replaceChildren(tipSlot) }, icon("info", 13), h("span", null, text), h("i", null, "×")));
+    tipTimer = window.setTimeout(() => replaceChildren(tipSlot), 7000);
+  }
   const cards = h("div", { class: "bt-cards" });
   const actions = h("div", { class: "bt-actions" });
-  const dock = h("div", { class: "bt-dock" }, prompt, cards, actions);
+  const dock = h("div", { class: "bt-dock" }, tipSlot, prompt, cards, actions);
   const danger = h("div", { class: "bt-danger", "aria-hidden": "true" });
   const flash = h("div", { class: "bt-flash", "aria-hidden": "true" });
   const intro = h("div", { class: "bt-intro", "aria-hidden": "true" });
@@ -156,9 +167,9 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   function statusIcons(u: Combatant, big = false) {
     return u.statuses.map((s) => {
       const def = c.get<any>(s.id); const art = c.art(s.id, "icon");
-      return h("span", { class: ["bt-st", big && "big", def.kind === "buff" || def.kind === "shield" ? "good" : "bad"], title: `${def.name} · ${s.turns} turn${s.turns === 1 ? "" : "s"}` },
+      return peekable(h("span", { class: ["bt-st", big && "big", def.kind === "buff" || def.kind === "shield" ? "good" : "bad"], title: `${def.name} · ${s.turns} turn${s.turns === 1 ? "" : "s"}` },
         h("span", { class: "st-art", style: art ? { backgroundImage: app.img(art) } : undefined }, !art && def.name.slice(0, 1)),
-        s.stacks > 1 && h("i", { class: "stk" }, `×${s.stacks}`), h("i", { class: "trn" }, String(s.turns)));
+        s.stacks > 1 && h("i", { class: "stk" }, `×${s.stacks}`), h("i", { class: "trn" }, String(s.turns))), app.router, () => statusPeek(app, s.id, s));
     });
   }
 
@@ -196,6 +207,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       const sprite = h("div", { class: ["bt-foe-u", u.kind, u.elite && "elite"], dataset: { uid: String(u.uid) }, onClick: () => { if (u.alive) { selectedTarget = u.uid; renderUnits(); } } },
         h("div", { class: "ground" }), h("div", { class: "aura" }), art, h("div", { class: "fu-mini" }, h("b", null, u.name), mini.el, h("div", { class: "fu-st" })), h("div", { class: "fu-mark" }), h("div", { class: "fu-warn" }, "!"));
       sprite.classList.add("enter"); setTimeout(() => sprite.classList.remove("enter"), 900);
+      peekable(sprite, app.router, () => unitPeek(app, u, battle));
       foes.appendChild(sprite);
       attachRig(u, art, sprite, 5);
       return { uid: u.uid, sprite, spriteArt: art, mini };
@@ -203,6 +215,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const mini = hpBar("mini", false);
     const sprite = h("div", { class: ["bt-ally-u", u.kind], dataset: { uid: String(u.uid) } }, h("div", { class: "ground" }), h("div", { class: "aura" }), art, h("div", { class: "fu-mini" }, h("b", null, u.kind === "player" ? "You" : u.name.split(" ")[0]), mini.el), h("div", { class: "fu-warn" }, "!"));
     sprite.classList.add("enter"); setTimeout(() => sprite.classList.remove("enter"), 900);
+    peekable(sprite, app.router, () => unitPeek(app, u, battle));
     party.appendChild(sprite);
     attachRig(u, art, sprite, u.kind === "player" ? 14 : 13);
     const cardBar = hpBar("card");
@@ -214,6 +227,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       h("div", { class: "bc-body" },
         h("div", { class: "bc-top" }, h("b", { class: "bc-name" }, u.name), h("span", { class: "bc-role" }, role)),
         cardBar.el, u.maxSp > 0 && spBar, status));
+    peekable(card, app.router, () => unitPeek(app, u, battle));
     cards.appendChild(card);
     return { uid: u.uid, sprite, spriteArt: art, mini, card, cardBar, spBar, status };
   }
@@ -388,18 +402,20 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const skills = p.skills.filter((s) => s.kind !== "basic" && !s.ultCost);
     const ult = skills.find((s) => s.kind === "ultimate");
     const surge = p.skills.find((s) => !!s.ultCost);
+    if (surge && manual && waiting && battle.canUse(p, surge)) teach("battle.surge", `Surge is ready: spend ${surge.ultCost} ultimate charge to act again at once (the button under the Ultimate).`);
+    if (manual && waiting) teach("battle.hold", "Hold a technique, a foe or a status icon to see what it does and how much it will do.");
     const tile = (s: Skill, cls = "") => {
       const cd = p.cooldowns[s.id] ?? 0;
       const usable = battle.canUse(p, s);
       const art = s.id === "basic" ? undefined : c.art(s.id, "icon");
       const lacksSp = cd === 0 && s.kind !== "basic" && s.kind !== "ultimate" && p.sp < s.spCost;
-      return h("button", { class: ["bt-skill", cls, usable && waiting && manual && "ready", !usable && "off", cd > 0 && "cooling", lacksSp && "nosp"], style: { "--el": ELEMENT_COLOR[s.element] }, disabled: !(manual && waiting && usable), onClick: () => choose(s),
-        title: `${s.name}${s.spCost ? ` · ${s.spCost} SP` : ""}${s.cooldown ? ` · cooldown ${s.cooldown}` : ""}` },
+      return peekable(h("button", { class: ["bt-skill", cls, usable && waiting && manual && "ready", !usable && "off", cd > 0 && "cooling", lacksSp && "nosp"], style: { "--el": ELEMENT_COLOR[s.element] }, onClick: () => { if (manual && waiting && usable) choose(s); },
+        "aria-disabled": String(!(manual && waiting && usable)), title: `${s.name}${s.spCost ? ` · ${s.spCost} SP` : ""}${s.cooldown ? ` · cooldown ${s.cooldown}` : ""} · hold for details` },
         h("span", { class: "sk-name" }, s.name),
         h("span", { class: "sk-art", style: art ? { backgroundImage: app.img(art) } : undefined }, !art && icon("sword", 22)),
         cd > 0 && h("span", { class: "sk-sweep", "aria-hidden": "true", style: { "--cd": String(Math.min(1, cd / Math.max(1, s.cooldown))) } }),
         cd > 0 && h("span", { class: "sk-cd" }, String(cd)),
-        s.kind === "basic" ? h("span", { class: "sk-cost free" }, "+SE") : s.spCost > 0 && h("span", { class: "sk-cost" }, `${s.spCost} SE`));
+        s.kind === "basic" ? h("span", { class: "sk-cost free" }, "+SE") : s.spCost > 0 && h("span", { class: "sk-cost" }, `${s.spCost} SE`)), app.router, () => skillPeek(app, s, { battle, actor: p }));
     };
     const actives = skills.filter((s) => s.kind !== "ultimate");
     // unused slots are hidden in battle (UI review G5); the Techniques screen says what can be equipped
@@ -407,15 +423,15 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
     const ultBtn = ult ? (() => {
       const usable = battle.canUse(p, ult); const pct = Math.min(100, p.ult);
       const art = c.art(ult.id, "icon");
-      return h("button", { class: ["bt-ultbtn", pct >= 100 && "charged", usable && waiting && manual && "ready"], style: { "--ult": `${pct}%` }, disabled: !(manual && waiting && usable), onClick: () => choose(ult), title: ult.name, "aria-label": `Ultimate: ${ult.name}` },
+      return peekable(h("button", { class: ["bt-ultbtn", pct >= 100 && "charged", usable && waiting && manual && "ready"], style: { "--ult": `${pct}%` }, "aria-disabled": String(!(manual && waiting && usable)), onClick: () => { if (manual && waiting && usable) choose(ult); }, title: `${ult.name} · hold for details`, "aria-label": `Ultimate: ${ult.name}` },
         h("span", { class: "ub-ring" }), h("span", { class: "ub-art", style: art ? { backgroundImage: app.img(art) } : undefined }, !art && icon("sparkle", 26)),
-        h("span", { class: "ub-tag" }, "Ultimate"), h("span", { class: "ub-pct" }, pct >= 100 ? "READY" : `${Math.floor(pct)}%`));
+        h("span", { class: "ub-tag" }, "Ultimate"), h("span", { class: "ub-pct" }, pct >= 100 ? "READY" : `${Math.floor(pct)}%`)), app.router, () => skillPeek(app, ult, { battle, actor: p }));
     })() : null;
     // Surge: spend ultimate charge to act again at once (docs/COMBAT.md "Tempo")
     const surgeBtn = surge ? (() => {
       const usable = battle.canUse(p, surge);
-      return h("button", { class: ["bt-surge", usable && "charged", usable && waiting && manual && "ready"], disabled: !(manual && waiting && usable), onClick: () => choose(surge), title: `Surge: spend ${surge.ultCost} ultimate charge to act again at once`, "aria-label": `Surge (${surge.ultCost} charge)` },
-        icon("sparkle", 12), h("span", null, "Surge"), h("b", null, `${surge.ultCost}`));
+      return peekable(h("button", { class: ["bt-surge", usable && "charged", usable && waiting && manual && "ready"], "aria-disabled": String(!(manual && waiting && usable)), onClick: () => { if (manual && waiting && usable) choose(surge); }, title: `Surge: spend ${surge.ultCost} ultimate charge to act again at once`, "aria-label": `Surge (${surge.ultCost} charge)` },
+        icon("sparkle", 12), h("span", null, "Surge"), h("b", null, `${surge.ultCost}`)), app.router, () => skillPeek(app, surge, { battle, actor: p }));
     })() : null;
     replaceChildren(actions,
       h("div", { class: "bt-skillrow" }, tile(p.skills[0]!, "basic"), ...actives.map((s) => tile(s)), ...Array.from({ length: empty }, () => h("div", { class: "bt-skill empty", title: "Free technique slot: equip one in Techniques" }, h("span", { class: "sk-name" }, "Free slot"), h("span", { class: "sk-art" }, icon("plus", 14))))),
@@ -622,7 +638,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
           await wait(arena ? 700 : 500); break;
         }
         case "charge": renderUnits(); float(e.actor, "Gathering power", "warnf"); await wait(500); break;
-        case "telegraph": renderUnits(); float(e.actor, "!", "warnf big"); await wait(520); break;
+        case "telegraph": renderUnits(); float(e.actor, "!", "warnf big"); teach("battle.telegraph", `${name(e.actor)} is winding up a big attack: shield, Surge, or stun to interrupt it.`); await wait(520); break;
         case "interrupt": float(e.actor, "Interrupted!", "interrupt"); renderUnits(); await wait(380); break;
         case "skip": float(e.actor, e.reason === "frozen" ? "Frozen" : "Stunned", "miss"); await wait(250); break;
         case "hazard": lightning(); showSkillName(`${e.name} · wave ${e.wave}/${e.waves}`, "heavy"); screenFlash(arena ? "soft" : "white"); shake(true); await wait(arena ? 620 : 420); break;
@@ -630,6 +646,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         case "turn_shift": {
           // tempo: the strip re-sorts; the unit shows whether it gained or lost ground
           if (Math.abs(e.pct) < 10) break;
+          if (unit(e.actor)?.id !== "surge") teach("battle.tempo", e.pct > 0 ? "Hastened: that turn comes sooner — watch the turn strip." : "Delayed: that foe's next turn comes later — watch the turn strip.");
           float(e.target, e.pct > 0 ? "Hastened" : "Delayed", e.pct > 0 ? "tempo up" : "tempo down");
           renderOrder(); await wait(220); break;
         }
@@ -642,6 +659,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
           const u = unit(e.actor);
           const col = ELEMENT_COLOR[u?.element ?? ""] ?? "#ffd27a";
           phaseBanner = { text: `${e.name}${e.detail ? ` · ${e.detail}` : ""}`, until: Date.now() + 1800 };
+          if (u?.boss?.signature) teach(`sig:${e.kind}`, `${e.name}: ${u.boss.signature.description}`);
           showSkillName(e.name, "foe"); caption = `${name(e.actor)}: ${e.name}${e.detail ? ` (${e.detail})` : ""}`; renderTop();
           if (e.kind === "rebirth") { screenFlash("red"); shake(true); if (arena && rigged(e.actor)) puppets.play(e.actor, "enter", speed); }
           else if (e.kind === "quake" || e.kind === "answer" || e.kind === "break") { shake(e.kind !== "answer"); }
@@ -896,6 +914,22 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
   let busy = false;
   /** Biggest single blow of the encounter (all waves), for the victory stats. */
   let bestHit = { v: 0, crit: false };
+  /** What hurt the party, for the defeat screen's "what beat you": damage by source (actor id · art), signature
+   *  mechanics that fired, turns lost to control, damage over time. */
+  const post = { bySource: new Map<string, { actor: string; skill: string; dmg: number }>(), signatures: new Map<string, { name: string; actor: string; n: number }>(), controlled: 0, dot: 0, taken: 0 };
+  const lastAction = new Map<number, string>();
+  function tally(e: BattleEvent) {
+    if (e.t === "action") lastAction.set(e.actor, e.name);
+    else if (e.t === "hit" && !e.dodged && unit(e.target)?.side === "ally") {
+      const amt = e.amount + e.absorbed; post.taken += amt;
+      if (e.kind === "dot") { post.dot += amt; return; }
+      const a = unit(e.actor); if (!a) return;
+      const skill = e.kind === "hazard" ? (a.boss?.signature?.name ?? "the heavens") : e.kind === "counter" ? "Counter" : lastAction.get(e.actor) ?? "Attack";
+      const key = `${a.id}·${skill}`; const cur = post.bySource.get(key) ?? { actor: a.id, skill, dmg: 0 }; cur.dmg += amt; post.bySource.set(key, cur);
+    }
+    else if (e.t === "signature") { const cur = post.signatures.get(e.kind) ?? { name: e.name, actor: unit(e.actor)?.id ?? "", n: 0 }; cur.n++; post.signatures.set(e.kind, cur); }
+    else if (e.t === "skip" && unit(e.actor)?.side === "ally") post.controlled++;
+  }
   /** A lesson (story practice): the casts of its technique so far; it ends at `count` (no settling: no loot, HP untouched). */
   const practice = enc.src.kind === "practice" ? enc.src : null;
   let practiceCasts = 0;
@@ -910,7 +944,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       // keep stepping; a turn waiting for manual input only stops the loop in Manual (Auto plays it).
       for (;;) {
         const pending = battle.drain();
-        for (const e of pending) if (e.t === "hit" && !e.dodged && unit(e.actor)?.side === "ally" && e.amount + e.absorbed > bestHit.v) bestHit = { v: e.amount + e.absorbed, crit: e.crit };
+        for (const e of pending) { tally(e); if (e.t === "hit" && !e.dodged && unit(e.actor)?.side === "ally" && e.amount + e.absorbed > bestHit.v) bestHit = { v: e.amount + e.absorbed, crit: e.crit }; }
         if (practice) for (const e of pending) if (e.t === "action" && e.actor === battle.player.uid && e.skill === practice.tech) { practiceCasts++; renderTop(); }
         if (pending.length) { await animate(pending); renderUnits(); renderSkills(); }
         if (practice && practiceCasts >= practice.count) { playing = false; showPracticeDone(); return; }
@@ -970,7 +1004,7 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
       (d.items.length > 0 || gearUids.length > 0) && h("div", { class: "drop-grid" },
         ...gearUids.filter((u) => s.inventory.gear[u]).map((u) => h("div", { class: "drop", style: { "--i": String(k++) } as any }, gearTile(app, u), upgrade(u) && h("span", { class: "drop-up", title: "Better than what you wear" }, "▲"), h("div", { class: "tile-name" }, gearName(app, s.inventory.gear[u]!)))),
         ...d.items.map((it) => { const def = c.get<any>(it.id); const fresh = (s.inventory.stacks[it.id] ?? 0) <= it.qty;
-          return h("div", { class: "drop", style: { "--i": String(k++) } as any }, h("div", { class: `tile r-${def.rarity ?? "common"}` }, h("div", { class: "in" }, c.art(it.id, "icon") ? h("div", { class: "art", style: { backgroundImage: app.img(c.art(it.id, "icon")) } }) : icon("sparkle", 20)), h("span", { class: "qty" }, `×${it.qty}`), fresh && h("span", { class: "new" }, "NEW")), h("div", { class: "tile-name" }, def.name)); })));
+          return peekable(h("div", { class: "drop", style: { "--i": String(k++) } as any }, h("div", { class: `tile r-${def.rarity ?? "common"}` }, h("div", { class: "in" }, c.art(it.id, "icon") ? h("div", { class: "art", style: { backgroundImage: app.img(c.art(it.id, "icon")) } }) : icon("sparkle", 20)), h("span", { class: "qty" }, `×${it.qty}`), fresh && h("span", { class: "new" }, "NEW")), h("div", { class: "tile-name" }, def.name)), app.router, () => itemPeek(app, it.id, it.qty)); })));
   }
 
   /** The best gear of the run against what is worn in its slot, with a one-tap Equip (mockup victory: highlighted drop). */
@@ -1065,6 +1099,18 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
             h("button", { class: "btn gold", onClick: again }, "Fight again")))) }); }
     // Defeat (mockup defeat): the foe with HP left and the power check, no penalty, ways to get stronger
     const lastFoe = battle.units.filter((u) => u.side === "enemy").sort((a, b) => b.maxHp - a.maxHp)[0];
+    /** The run's lessons from `post`: the heaviest source, the signature that fired, control, damage over time, element. */
+    const lessons = (): { icon: string; title: string; detail?: string }[] => {
+      const out: { icon: string; title: string; detail?: string }[] = [];
+      const top = [...post.bySource.values()].sort((a, b) => b.dmg - a.dmg)[0];
+      if (top && post.taken > 0) { const share = Math.round(top.dmg / post.taken * 100); if (share >= 25) out.push({ icon: "sword", title: `${c.find<any>(top.actor)?.name ?? top.actor} · ${top.skill}: ${share}% of the damage you took`, detail: share >= 50 ? "Shield or Surge when it winds up; a Dodge or Defense roll on gear softens it" : undefined }); }
+      for (const sg of post.signatures.values()) { const def = c.find<any>(sg.actor)?.signature; if (def) out.push({ icon: "warning", title: `${sg.name} ×${sg.n}`, detail: def.description }); }
+      if (post.controlled >= 2) out.push({ icon: "bolt", title: `${post.controlled} turns lost to stun, freeze or silence`, detail: "Status Resistance on gear, or finish the caster first" });
+      if (post.taken > 0 && post.dot / post.taken >= 0.2) out.push({ icon: "warning", title: `${Math.round(post.dot / post.taken * 100)}% of your damage came from burning, poison or bleeding`, detail: "Heal through it or shield before the stacks build" });
+      const p = battle.player; const foeEl = lastFoe?.element; const pe = c.find<any>(p.element);
+      if (lastFoe && foeEl && pe && c.find<any>(foeEl)?.overcomes === p.element) out.push({ icon: "qi", title: `${c.get<any>(foeEl).name} overcomes your ${pe.name}`, detail: `Equip ${c.byPrefix<any>("elem").find((e) => e.overcomes === foeEl)?.name ?? "another"} element techniques for this fight` });
+      return out.slice(0, 4);
+    };
     const foeDef = lastFoe ? c.find<any>(lastFoe.id) ?? mainEnemy : mainEnemy;
     const dealtHere = battle.units.filter((u) => u.side === "ally").reduce((n, u) => n + u.stats.dealt, 0);
     const gap = r.playerCp - r.enemyCp;
@@ -1099,6 +1145,9 @@ export function battleScreen(app: App, enc: Encounter, onExit: () => void): Scre
         h("div", { class: "df-track" }, h("i", { style: { width: `${Math.min(100, r.playerCp / Math.max(1, Math.max(r.playerCp, r.enemyCp)) * 100)}%` } }), h("b", { style: { left: `${Math.min(100, r.enemyCp / Math.max(1, Math.max(r.playerCp, r.enemyCp)) * 100)}%` } }))),
       h("div", { class: "glass panel df-nopen" }, h("span", { class: "df-check" }, icon("check", 16)), h("div", { class: "grow" }, h("b", null, "No penalty"), h("div", { class: "muted" }, `Drops from this run are kept · HP restored to ${c.combat.defeat.hp_pct_after_defeat}% · retry for free`)),
         r.total.items.slice(0, 2).map((it) => h("span", { class: "tile-mini", style: { backgroundImage: app.img(c.art(it.id, "icon")) } }))),
+      lessons().length > 0 && h("div", { class: "glass panel df-lessons" },
+        h("div", { class: "sec-h" }, h("h3", null, "What beat you"), h("span", { class: "hint" }, "This run")),
+        h("div", { class: "rows" }, lessons().map((l) => h("div", { class: "setrow df-lesson" }, h("span", { class: "df-way-ico" }, icon(l.icon, 16)), h("div", { class: "grow" }, h("div", { class: "lbl" }, l.title), l.detail && h("div", { class: "desc" }, l.detail)))))),
       r.recommendations.length > 0 && h("div", { class: "glass panel df-ways" },
         h("div", { class: "sec-h" }, h("h3", null, "Ways to get stronger"), h("span", { class: "hint" }, "Tap to go there")),
         h("div", { class: "rows" }, r.recommendations.map((a) => h("button", { class: "setrow df-way", onClick: () => { close(); onExit(); goTo[a.go]?.(); } },

@@ -139,6 +139,12 @@ default preset raises a shield then.
   ultimate on bosses or 3+ enemies (held otherwise, so it is there for the boss wave) → shield when unshielded →
   element-advantaged technique on the enemy weak to it → strongest technique on the focus → basic attack.
 - **Manual mode**: the battle pauses on the player's turn (`Battle.pending`); the UI calls `act()`.
+- **Companion stances** (`companions.stance[npc]`, set from the Dao Companions list): guard plays the support
+  strategy, burst the caster strategy, balanced the companion's own role (`companions.ts` STANCE_AI).
+- **Elites** carry a third art — Guard Stance (counter stance) in odd regions, Wind Step (self haste) in even ones —
+  and every strategy braces when hurt and steps on its first turn when it has those arts (`ai.ts` attack()).
+- **Defeat lessons**: the battle screen tallies what hurt the party (source × art, signature firings, control turns,
+  damage over time, element) and the defeat panel says what beat you and the counter-play ("What beat you").
 - **Enemies** by strategy, with three shared habits: **focus fire** (the side keeps hitting the ally it started
   on, the most fragile non-beast, until it falls: `Battle.focus`), **element-aware choice** (the technique with the
   highest expected damage on the chosen target, AoE summed over the party), and **ultimate timing** (a boss holds its

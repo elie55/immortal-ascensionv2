@@ -17,7 +17,10 @@
     "test:browser": "node tools/build.ts && node tests/browser/screens.ts",
     "check": "npm run validate && npm test && npm run typecheck && npm run build",
     "test:ui": "node tools/build.ts && node tests/browser/audit.ts --no-build",
-    "lab": "node tools/build.ts && node tests/browser/lab.ts"
+    "lab": "node tools/build.ts && node tests/browser/lab.ts",
+    "balance:smoke": "node tools/balance/journey.ts --seeds 1 --days 6 --smoke 4 --out .tmp/journey-smoke.json",
+    "balance:journey": "node tools/balance/journey.ts --seeds 1 --days 30",
+    "balance:ai": "node tools/balance/ai_eval.ts --seeds 12"
   },
   "dependencies": {
     "zod": "^3.25.0"

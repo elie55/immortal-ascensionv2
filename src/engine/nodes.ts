@@ -1,4 +1,5 @@
 /** Adventure map rules: reachability, discovery of new regions, and the non-combat node kinds (gather, chest, event, cultivation). */
+import { bumpDaily } from "./daily.ts";
 import type { ContentIndex, MapNode, Region, GameEvent } from "../content/index.ts";
 import type { GameState } from "./state.ts";
 import type { DomainEvent } from "./events.ts";
@@ -103,7 +104,7 @@ export function gather(s: GameState, c: ContentIndex, now: number, id: string): 
   const events: DomainEvent[] = [{ type: "energy_spent", amount: n.gather.energy_cost }];
   grantRewards(s, c, { items: n.gather.items }, events);
   const first = rec.clears === 0;
-  rec.clears++; rec.lastAt = now;
+  rec.clears++; rec.lastAt = now; bumpDaily(s, "gathers");
   if (first) { rec.firstClearAt = now; grantRewards(s, c, n.first_clear as any, events); events.push({ type: "node_cleared", node: n.id, region: n.region, first: true }); }
   return { ok: true, events, items: n.gather.items, nextAt: now + n.gather.cooldown_min * 60_000 };
 }

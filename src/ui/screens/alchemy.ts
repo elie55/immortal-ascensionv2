@@ -3,6 +3,8 @@
  * proficiency), recipe list (known / locked with reason), selected recipe with ingredients, batch stepper,
  * fire fee and the Refine button; a result modal; furnace upgrade sheet.
  */
+import { peekable } from "../core/peek.ts";
+import { recipePeek } from "../peeks.ts";
 import { h, fmt } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
 import { header, subbar, needRow, stepper, cta, RARITY_LABEL } from "../core/kit.ts";
@@ -45,9 +47,9 @@ export function alchemyScreen(app: App, backTo: string): Screen {
           h("div", { class: "alch-cols" },
             h("div", { class: "alch-list" }, h("div", { class: "muted up" }, "Recipes"), recipes.map((x) => {
               const ia = c.art(x.r.output.id, "icon");
-              return h("button", { class: ["glass alch-rec", x.r.id === r.id && "on", !x.st.unlocked && "dim-card"], onClick: () => { sel = x.r.id; batch = 1; app.router.refresh(); } },
+              return peekable(h("button", { class: ["glass alch-rec", x.r.id === r.id && "on", !x.st.unlocked && "dim-card"], onClick: () => { sel = x.r.id; batch = 1; app.router.refresh(); } },
                 h("span", { class: `tile-mini r-${c.get<any>(x.r.output.id).rarity ?? "common"}`, style: { backgroundImage: ia ? app.img(ia) : undefined } }, !ia && icon(x.st.unlocked ? "cauldron" : "lock", 14)),
-                h("span", { class: "grow" }, h("span", { class: "lbl" }, c.get<any>(x.r.output.id).name), h("span", { class: "desc" }, x.st.unlocked ? `Grade ${fmt.roman(x.r.grade)} · Known` : x.st.reason)));
+                h("span", { class: "grow" }, h("span", { class: "lbl" }, c.get<any>(x.r.output.id).name), h("span", { class: "desc" }, x.st.unlocked ? `Grade ${fmt.roman(x.r.grade)} · Known` : x.st.reason))), app.router, () => recipePeek(app, x.r.id));
             })),
             h("div", { class: "alch-detail" },
               h("div", { class: "row", style: { alignItems: "flex-start" } },

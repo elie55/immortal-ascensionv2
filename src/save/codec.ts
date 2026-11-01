@@ -51,7 +51,7 @@ export const migrations: Record<number, (raw: any) => any> = {
   3: (st) => {
     const owned = st.beasts?.owned ?? {};
     const maxUid = Math.max(0, ...Object.values(owned).map((b: any) => b.uid ?? 0));
-    return { ...st, beasts: { owned, active: st.beasts?.active ?? null, incubating: st.beasts?.incubating ?? [], nextUid: st.beasts?.nextUid ?? maxUid + 1 }, companions: st.companions ?? { bonded: [], active: [] } };
+    return { ...st, beasts: { owned, active: st.beasts?.active ?? null, incubating: st.beasts?.incubating ?? [], nextUid: st.beasts?.nextUid ?? maxUid + 1 }, companions: st.companions ?? { bonded: [], active: [], stance: {} } };
   },
   // 4 → 5: saved secret realm runs
   4: (st) => ({ ...st, progress: { ...st.progress, realmRuns: st.progress?.realmRuns ?? {} } }),

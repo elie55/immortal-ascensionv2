@@ -212,6 +212,6 @@ test("v3 saves migrate: incubators, beast uids and companions are added", () => 
   const r = decode(JSON.stringify(raw));
   assert.ok(r.ok, (r as any).reason);
   assert.equal(r.state.beasts.nextUid, 8);
-  assert.deepEqual(r.state.companions, { bonded: [], active: [] });
+  assert.deepEqual(r.state.companions, { bonded: [], active: [], stance: {} });
   assert.deepEqual(r.state.beasts.incubating, []);
 });

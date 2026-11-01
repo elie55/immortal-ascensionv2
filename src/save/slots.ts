@@ -22,6 +22,8 @@ export interface Settings {
   battleStage: "classic" | "arena";
   /** 2 once the arena became the default stage: older settings are moved to it once, then the player's choice stands. */
   stageVersion?: number;
+  /** One-time tips already shown on this device (app.tip). */
+  tipsSeen?: string[];
   language: "en"; lastSlot: number | null;
 }
 export const DEFAULT_SETTINGS: Settings = {

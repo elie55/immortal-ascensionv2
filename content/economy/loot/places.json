@@ -640,6 +640,10 @@
       {
         "id": "mat.lesser_enhancement_stone",
         "qty": 3
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 2
       }
     ],
     "spirit_stones": [
@@ -669,11 +673,23 @@
           2,
           4
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
       {
         "id": "mat.lesser_enhancement_stone",
+        "qty": 4
+      },
+      {
+        "id": "mat.refining_stone",
         "qty": 4
       }
     ],
@@ -704,12 +720,24 @@
           2,
           5
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
       {
         "id": "mat.lesser_enhancement_stone",
         "qty": 5
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 6
       }
     ],
     "spirit_stones": [
@@ -739,12 +767,28 @@
           3,
           6
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
       {
         "id": "mat.lesser_enhancement_stone",
         "qty": 6
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 8
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "qty": 1
       }
     ],
     "spirit_stones": [
@@ -784,6 +828,10 @@
       {
         "id": "mat.spirit_iron_ore",
         "qty": 4
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 2
       }
     ],
     "spirit_stones": [
@@ -813,6 +861,14 @@
           2,
           2
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -823,6 +879,10 @@
       {
         "id": "mat.spirit_iron_ore",
         "qty": 6
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 4
       }
     ],
     "spirit_stones": [
@@ -852,6 +912,14 @@
           2,
           2
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -862,6 +930,10 @@
       {
         "id": "mat.spirit_iron_ore",
         "qty": 8
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 6
       }
     ],
     "spirit_stones": [
@@ -891,6 +963,14 @@
           3,
           3
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -901,6 +981,14 @@
       {
         "id": "mat.spirit_iron_ore",
         "qty": 9
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 8
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "qty": 1
       }
     ],
     "spirit_stones": [

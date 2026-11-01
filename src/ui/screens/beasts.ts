@@ -3,6 +3,9 @@
  * skill and passive, Feed · Play · Train · Evolve), the evolution track, the beast grid with incubating eggs
  * and silhouettes of beasts not found yet, and the Dao companions who may fight beside you.
  */
+import { setCompanionStance } from "../../engine/companions.ts";
+const STANCE_LABEL = { guard: "Guard", balanced: "Balanced", burst: "Burst" } as const;
+const STANCE_HELP = { guard: "Heals and shields the party first, then attacks", balanced: "Fights the way its role suggests", burst: "Strongest art on the strongest foe" } as const;
 import { h, fmt } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
 import { header, subbar, section, bar, tile, needRow, npcAvatar, toggle, RARITY_LABEL } from "../core/kit.ts";
@@ -243,7 +246,8 @@ function companionsPanel(app: App) {
       const can = canBond(s, c, n.id);
       return h("div", { class: ["setrow", bonded && "on"] }, npcAvatar(app, n.id, 38),
         h("div", { class: "grow" }, h("div", { class: "lbl" }, n.name, bonded && h("span", { class: "tag pink", style: { marginLeft: "6px" } }, "道侣")),
-          bonded ? h("div", { class: "desc" }, `${n.dao_companion.role ?? "dps"} · joins adventure battles and allowed dungeons`)
+          bonded ? [h("div", { class: "desc" }, `${n.dao_companion.role ?? "dps"} · joins adventure battles and allowed dungeons`),
+              s.companions.active.includes(n.id) && h("div", { class: "row", style: { gap: "4px", marginTop: "5px", flexWrap: "wrap" } }, (["guard", "balanced", "burst"] as const).map((st) => h("button", { class: ["chip", (s.companions.stance?.[n.id] ?? "balanced") === st && "on"], title: STANCE_HELP[st], onClick: () => { app.game.run("stance", app.now(), (x) => setCompanionStance(x, n.id, st)); app.router.refresh(); } }, STANCE_LABEL[st])))]
             : [h("div", { class: "desc" }, `${lv.name} · ${fmt.int(aff)} / ${fmt.int(target)}`), h("div", { style: { marginTop: "3px" } }, bar(aff / target, { cls: "thin pink" }))]),
         bonded ? toggle(s.companions.active.includes(n.id), (v) => { const r = app.game.run("companion", app.now(), (st) => setCompanionActive(st, n.id, v)); if (!r.ok) app.router.toast(r.reason, "bad"); }, `${n.name} fights beside you`)
           : h("button", { class: ["btn sm", can.ok && "gold"], onClick: () => app.router.push(npcScreen(app, n.id, "Spirit Beasts")) }, can.ok ? "Ask" : "Visit"));

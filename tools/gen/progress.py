@@ -28,6 +28,8 @@ def shops():
          "stock": [S("tech.active.flame_palm", 260), S("tech.active.earth_guardian", 380), S("tech.passive.sword_mastery", 300), S("tech.passive.iron_body", 300), S("tech.passive.spiritual_regeneration", 300),
                    S("tech.active.frozen_lotus", 700, unlock={"sect_fame": 1000}), S("tech.active.thunder_palm", 900, unlock={"sect_fame": 1000}),
                    S("tech.active.swift_cloud_step", 450, unlock={"sect_fame": 300}), S("tech.active.returning_tide_stance", 1100, unlock={"sect_fame": 1500}),
+                   S("tech.active.gale_spear_step", 480, unlock={"sect_fame": 300}), S("tech.active.moon_sweep", 520, unlock={"sect_fame": 300}), S("tech.active.saber_guard_stance", 600, unlock={"sect_fame": 500}),
+                   S("tech.active.mirror_palm_stance", 600, unlock={"sect_fame": 500}), S("tech.active.fan_of_returning_wind", 1300, unlock={"sect_fame": 1500}),
                    S("tech.active.swallow_return_sword", 1200, unlock={"sect_fame": 2000, "rank": "rank.inner_disciple"}), S("tech.passive.critical_insight", 1500, unlock={"sect_fame": 2000}), S("tech.passive.elemental_harmony", 1500, unlock={"sect_fame": 2000}),
                    S("method.heavenly_dragon_art", 3000, unlock={"rank": "rank.inner_disciple"}), S("method.primordial_chaos_scripture", 8000, unlock={"rank": "rank.core_disciple"})] + RG.pavilion_stock()},
         {"id": "shop.tang_caravan", **named("Tang's Caravan", "A smaller stock on the road, with a few forest specialities.", "唐家商队"), "owner": "npc.tang_xiaoman", "restock": "per_visit", "buys_items": True,

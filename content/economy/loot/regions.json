@@ -532,6 +532,10 @@
       {
         "id": "mat.fire_bud",
         "qty": 8
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 2
       }
     ],
     "spirit_stones": [
@@ -561,6 +565,14 @@
           2,
           6
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -571,6 +583,10 @@
       {
         "id": "mat.fire_bud",
         "qty": 10
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 4
       }
     ],
     "spirit_stones": [
@@ -600,6 +616,14 @@
           2,
           8
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -610,6 +634,10 @@
       {
         "id": "mat.fire_bud",
         "qty": 12
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 6
       }
     ],
     "spirit_stones": [
@@ -639,6 +667,14 @@
           3,
           9
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -649,6 +685,14 @@
       {
         "id": "mat.fire_bud",
         "qty": 15
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 8
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "qty": 1
       }
     ],
     "spirit_stones": [
@@ -2169,6 +2213,10 @@
       {
         "id": "mat.blood_lotus",
         "qty": 8
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 2
       }
     ],
     "spirit_stones": [
@@ -2198,6 +2246,14 @@
           2,
           6
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -2208,6 +2264,10 @@
       {
         "id": "mat.blood_lotus",
         "qty": 10
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 4
       }
     ],
     "spirit_stones": [
@@ -2237,6 +2297,14 @@
           2,
           8
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -2247,6 +2315,10 @@
       {
         "id": "mat.blood_lotus",
         "qty": 12
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 6
       }
     ],
     "spirit_stones": [
@@ -2276,6 +2348,14 @@
           3,
           9
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -2286,6 +2366,14 @@
       {
         "id": "mat.blood_lotus",
         "qty": 15
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 8
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "qty": 1
       }
     ],
     "spirit_stones": [
@@ -2944,6 +3032,10 @@
       {
         "id": "mat.celestial_peach",
         "qty": 8
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 2
       }
     ],
     "spirit_stones": [
@@ -2973,6 +3065,14 @@
           2,
           6
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -2983,6 +3083,10 @@
       {
         "id": "mat.celestial_peach",
         "qty": 10
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 4
       }
     ],
     "spirit_stones": [
@@ -3012,6 +3116,14 @@
           2,
           8
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -3022,6 +3134,10 @@
       {
         "id": "mat.celestial_peach",
         "qty": 12
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 6
       }
     ],
     "spirit_stones": [
@@ -3051,6 +3167,14 @@
           3,
           9
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -3061,6 +3185,14 @@
       {
         "id": "mat.celestial_peach",
         "qty": 15
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 8
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "qty": 1
       }
     ],
     "spirit_stones": [
@@ -4092,6 +4224,10 @@
       {
         "id": "mat.thunderroot",
         "qty": 8
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 2
       }
     ],
     "spirit_stones": [
@@ -4121,6 +4257,14 @@
           2,
           6
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -4131,6 +4275,10 @@
       {
         "id": "mat.thunderroot",
         "qty": 10
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 4
       }
     ],
     "spirit_stones": [
@@ -4160,6 +4308,14 @@
           2,
           8
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -4170,6 +4326,10 @@
       {
         "id": "mat.thunderroot",
         "qty": 12
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 6
       }
     ],
     "spirit_stones": [
@@ -4199,6 +4359,14 @@
           3,
           9
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -4209,6 +4377,14 @@
       {
         "id": "mat.thunderroot",
         "qty": 15
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 8
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "qty": 1
       }
     ],
     "spirit_stones": [
@@ -5231,6 +5407,10 @@
       {
         "id": "mat.desert_star_flower",
         "qty": 8
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 2
       }
     ],
     "spirit_stones": [
@@ -5260,6 +5440,14 @@
           2,
           6
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -5270,6 +5458,10 @@
       {
         "id": "mat.desert_star_flower",
         "qty": 10
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 4
       }
     ],
     "spirit_stones": [
@@ -5299,6 +5491,14 @@
           2,
           8
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -5309,6 +5509,10 @@
       {
         "id": "mat.desert_star_flower",
         "qty": 12
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 6
       }
     ],
     "spirit_stones": [
@@ -5338,6 +5542,14 @@
           3,
           9
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -5348,6 +5560,14 @@
       {
         "id": "mat.desert_star_flower",
         "qty": 15
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 8
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "qty": 1
       }
     ],
     "spirit_stones": [
@@ -6491,6 +6711,10 @@
       {
         "id": "mat.immortal_peach_blossom",
         "qty": 8
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 2
       }
     ],
     "spirit_stones": [
@@ -6520,6 +6744,14 @@
           2,
           6
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.1,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -6530,6 +6762,10 @@
       {
         "id": "mat.immortal_peach_blossom",
         "qty": 10
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 4
       }
     ],
     "spirit_stones": [
@@ -6559,6 +6795,14 @@
           2,
           8
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.2,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -6569,6 +6813,10 @@
       {
         "id": "mat.immortal_peach_blossom",
         "qty": 12
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 6
       }
     ],
     "spirit_stones": [
@@ -6598,6 +6846,14 @@
           3,
           9
         ]
+      },
+      {
+        "id": "mat.awakening_crystal",
+        "chance": 0.3,
+        "qty": [
+          1,
+          1
+        ]
       }
     ],
     "guaranteed": [
@@ -6608,6 +6864,14 @@
       {
         "id": "mat.immortal_peach_blossom",
         "qty": 15
+      },
+      {
+        "id": "mat.refining_stone",
+        "qty": 8
+      },
+      {
+        "id": "mat.dao_insight_crystal",
+        "qty": 1
       }
     ],
     "spirit_stones": [

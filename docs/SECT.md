@@ -19,6 +19,14 @@ Engine modules are pure and deterministic (state + content + injected `now`, RNG
   sweep every 5 s. The UI plays queued scenes when nothing is on top of a tab.
 - **Ranks.** Next rank needs its fame, its promotion quests and its trial (tournament or dungeon).
 
+## Today's board (`engine/daily.ts`, `screens/today.ts`)
+
+Five daily tasks counted from `daily.counters` (`d:*`, reset with the day): turn in 2 Mission Hall requests, win 8
+map battles, clear a dungeon, fight a tournament round, gather 3 times. Four of five claim the day's reward:
+`150·n²` stones, `20 + 5n` Contribution and 3 refining stones, n the furthest region opened. The systems bump the
+counters themselves (`bumpDaily` in progression.ts, encounter.ts, nodes.ts). The panel sits on the Cultivate page;
+its sheet has a Go per task.
+
 ## Meditation Waterfall sessions (`cultivation.ts`)
 
 `cultivation_rules.meditation_session`: spirit stones buy a timed Qi boost (`qi_bonus_pct`, 50 %) for 15 minutes

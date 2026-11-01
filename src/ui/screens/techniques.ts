@@ -3,6 +3,8 @@
  * you know (mastery shown). Auto-battle (mockup "auto_battle"): presets, the priority list of rules (move up
  * and down, enable, edit condition / threshold / target, delete, add), Auto toggle, reset to the default.
  */
+import { peekable } from "../core/peek.ts";
+import { techPeek } from "../peeks.ts";
 import { h, fmt } from "../core/dom.ts";
 import { icon } from "../core/icons.ts";
 import { header, subbar, section, seg, toggle, bar } from "../core/kit.ts";
@@ -44,7 +46,7 @@ export function techniquesScreen(app: App, backTo: string): Screen {
         const p = t && cv ? (lv >= cv.max_level ? 1 : (xp % cv.xp_per_level) / cv.xp_per_level) : 0;
         const el = t?.element ? c.find<any>(t.element) : null;
         const empty = kind === "ultimate" ? "Ultimate" : kind === "passives" ? `Passive ${i + 1}` : `Active ${i + 1}`;
-        return h("button", { class: ["sk", kind, !t && "empty"], "aria-label": t ? `${t.name}, mastery ${lv}: change` : `${empty}: choose a technique`, onClick: () => pickSheet(app, kind, i) },
+        const btn = h("button", { class: ["sk", kind, !t && "empty"], "aria-label": t ? `${t.name}, mastery ${lv}: change` : `${empty}: choose a technique`, onClick: () => pickSheet(app, kind, i) },
           h("span", { class: "sk-ring", style: { "--p": String(Math.round(p * 100)), "--el": el?.color ?? "#7fd0ff" } as any },
             h("span", { class: "sk-art", style: art ? { backgroundImage: app.img(art) } : undefined }, !art && icon(t ? (kind === "passives" ? "shield" : kind === "ultimate" ? "bolt" : "sword") : "plus", t ? 20 : 14)),
             t && h("span", { class: "sk-lv" }, `M${lv}`),
@@ -52,6 +54,7 @@ export function techniquesScreen(app: App, backTo: string): Screen {
           h("span", { class: "sk-name" }, t ? t.name : empty),
           t && kind !== "passives" && (() => { const p = techPreview(s, c, id!); const pv = previewText(p, true); return pv && h("span", { class: ["sk-dmg", p.kind] }, pv); })(),
           t && kind !== "passives" && h("span", { class: "sk-sub" }, [t.sp_cost ? `${t.sp_cost} SP` : kind === "ultimate" ? "Charged" : "Free", t.cooldown ? `CD ${t.cooldown}` : ""].filter(Boolean).join(" · ")));
+        return t && id ? peekable(btn, app.router, () => techPeek(app, id!)) : btn;
       };
       const used = s.techniques.actives.filter(Boolean).length + s.techniques.passives.filter(Boolean).length + (s.techniques.ultimate ? 1 : 0);
       return [
@@ -93,10 +96,10 @@ function pickSheet(app: App, kind: "actives" | "passives" | "ultimate", index: n
       known.length ? h("div", { class: "rows" }, known.map((id) => {
         const t = c.get<any>(id);
         const where = kind === "ultimate" ? -1 : s.techniques[kind].indexOf(id);
-        return h("button", { class: ["setrow", id === cur && "on"], onClick: () => set(id) }, icon(want === "passive" ? "shield" : want === "ultimate" ? "bolt" : "sword", 16),
+        return peekable(h("button", { class: ["setrow", id === cur && "on"], onClick: () => set(id) }, icon(want === "passive" ? "shield" : want === "ultimate" ? "bolt" : "sword", 16),
           h("div", { class: "grow", style: { textAlign: "left" } }, h("div", { class: "lbl" }, t.name, " ", h("span", { class: "muted" }, `· Mastery ${masteryLevel(s.techniques.known[id] ?? 0, curve(t))}`)), h("div", { class: "desc" }, techLine(app, t)),
             (() => { const pv = techPreview(s, c, id); const txt = previewText(pv); return txt && h("div", { class: ["tp-line", pv.kind] }, icon(pv.kind === "damage" ? "sword" : pv.kind === "heal" ? "lotus" : "shield", 12), h("b", { class: "tnum" }, txt), pv.level > 0 && h("span", { class: "muted" }, ` · mastery +${Math.round((pv.mult - 1) * 100)}%`)); })()),
-          where >= 0 && where !== index ? h("span", { class: "tag" }, `Slot ${where + 1}`) : id === cur ? h("span", { class: "tag jade" }, "Equipped") : null);
+          where >= 0 && where !== index ? h("span", { class: "tag" }, `Slot ${where + 1}`) : id === cur ? h("span", { class: "tag jade" }, "Equipped") : null), app.router, () => techPeek(app, id));
       })) : h("div", { class: "muted center" }, "You know no techniques of this kind yet."),
       cur && h("button", { class: "btn ghost block", onClick: () => set(null) }, "Clear slot"));
   } });

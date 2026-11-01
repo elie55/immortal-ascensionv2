@@ -165,7 +165,14 @@ export function chooseEnemy(b: Battle, actor: Combatant): Choice {
   }
   const low = ratio(actor);
   const finisher = atks.find((s) => killable(b, actor, s));
-  const attack = (): Choice => { const s = finisher ?? atks[0]; return s ? { skill: s, target: s === finisher ? killable(b, actor, s)!.uid : tgt.uid } : { skill: basic, target: tgt.uid }; };
+  // a stance when hurt and not already braced; a step on the first turn, before anyone has acted twice
+  const stance = avail.find((s) => s.applies.some((a) => a.status === "status.counter_stance"));
+  const step = avail.find(isTempo);
+  const attack = (): Choice => {
+    if (stance && low < 0.7 && !b.has(actor, "status.counter_stance") && !finisher) return { skill: stance, target: actor.uid };
+    if (step && actor.turns <= 1 && !finisher) return { skill: step, target: actor.uid };
+    const s = finisher ?? atks[0]; return s ? { skill: s, target: s === finisher ? killable(b, actor, s)!.uid : tgt.uid } : { skill: basic, target: tgt.uid };
+  };
   switch (strat) {
     case "defensive":
       if (low < 0.5 && heals[0]) return { skill: heals[0], target: actor.uid };

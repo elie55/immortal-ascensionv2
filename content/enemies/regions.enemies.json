@@ -236,7 +236,8 @@
     "cp": 2240,
     "techniques": [
       "tech.active.magma_slam",
-      "tech.active.blazing_comet"
+      "tech.active.blazing_comet",
+      "tech.active.guard_stance"
     ],
     "ai": {
       "strategy": "berserker",
@@ -576,7 +577,8 @@
     "cp": 2080,
     "techniques": [
       "tech.active.frost_lotus_bloom",
-      "tech.active.glacial_spear_rain"
+      "tech.active.glacial_spear_rain",
+      "tech.active.wind_step"
     ],
     "ai": {
       "strategy": "berserker",
@@ -916,7 +918,8 @@
     "cp": 4320,
     "techniques": [
       "tech.active.sword_tempest",
-      "tech.active.ten_thousand_sword_return"
+      "tech.active.ten_thousand_sword_return",
+      "tech.active.guard_stance"
     ],
     "ai": {
       "strategy": "berserker",
@@ -1256,7 +1259,8 @@
     "cp": 12640,
     "techniques": [
       "tech.active.blood_drain",
-      "tech.active.crimson_moon_slash"
+      "tech.active.crimson_moon_slash",
+      "tech.active.wind_step"
     ],
     "ai": {
       "strategy": "berserker",
@@ -1596,7 +1600,8 @@
     "cp": 19840,
     "techniques": [
       "tech.active.celestial_spear",
-      "tech.active.heavenly_thunder_palm"
+      "tech.active.heavenly_thunder_palm",
+      "tech.active.guard_stance"
     ],
     "ai": {
       "strategy": "berserker",
@@ -1936,7 +1941,8 @@
     "cp": 23840,
     "techniques": [
       "tech.active.cloud_lightning",
-      "tech.active.starfall_sword"
+      "tech.active.starfall_sword",
+      "tech.active.wind_step"
     ],
     "ai": {
       "strategy": "berserker",
@@ -2283,7 +2289,8 @@
     "cp": 49600,
     "techniques": [
       "tech.active.chain_lightning",
-      "tech.active.violet_thunder_spear"
+      "tech.active.violet_thunder_spear",
+      "tech.active.guard_stance"
     ],
     "ai": {
       "strategy": "berserker",
@@ -2630,7 +2637,8 @@
     "cp": 83200,
     "techniques": [
       "tech.active.whirlpool_crush",
-      "tech.active.tidal_dragon_fist"
+      "tech.active.tidal_dragon_fist",
+      "tech.active.wind_step"
     ],
     "ai": {
       "strategy": "berserker",
@@ -2970,7 +2978,8 @@
     "cp": 116800,
     "techniques": [
       "tech.active.sand_burial",
-      "tech.active.meteor_impact"
+      "tech.active.meteor_impact",
+      "tech.active.guard_stance"
     ],
     "ai": {
       "strategy": "berserker",
@@ -3310,7 +3319,8 @@
     "cp": 168000,
     "techniques": [
       "tech.active.judgement_flame",
-      "tech.active.vermilion_rebirth"
+      "tech.active.vermilion_rebirth",
+      "tech.active.wind_step"
     ],
     "ai": {
       "strategy": "berserker",
@@ -3657,7 +3667,8 @@
     "cp": 240000,
     "techniques": [
       "tech.active.immortal_prune",
-      "tech.active.jade_tiger_claw"
+      "tech.active.jade_tiger_claw",
+      "tech.active.guard_stance"
     ],
     "ai": {
       "strategy": "berserker",
@@ -3997,7 +4008,8 @@
     "cp": 216000,
     "techniques": [
       "tech.active.law_chain",
-      "tech.active.verdict_of_heaven"
+      "tech.active.verdict_of_heaven",
+      "tech.active.wind_step"
     ],
     "ai": {
       "strategy": "berserker",
@@ -4337,7 +4349,8 @@
     "cp": 416000,
     "techniques": [
       "tech.active.starlight_tide",
-      "tech.active.emperors_five_element_seal"
+      "tech.active.emperors_five_element_seal",
+      "tech.active.guard_stance"
     ],
     "ai": {
       "strategy": "berserker",

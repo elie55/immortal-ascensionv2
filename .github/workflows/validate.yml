@@ -13,3 +13,6 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run validate
       - run: npm test
+      - run: npm run typecheck
+      # whole-game smoke: a bot playing 6 days must reach region 4 (docs/qa/BALANCE_MODEL.md "Journey simulation")
+      - run: mkdir -p .tmp && npm run balance:smoke

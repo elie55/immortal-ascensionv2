@@ -441,6 +441,282 @@
     }
   },
   {
+    "id": "tech.active.gale_spear_step",
+    "name": "Gale Spear Step",
+    "description": "A spear-vault on the wind: your next turn comes half a turn sooner.",
+    "name_cn": "疾风枪步",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.wood",
+    "weapon_affinity": "spear",
+    "targeting": "self",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 14,
+    "cooldown": 3,
+    "applies": [],
+    "passive_bonuses": {},
+    "requirements": {
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 3
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/gale_spear_step.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a square technique icon depicting the wood-element art Gale Spear Step as a glowing martial-art symbol or action: A spear-vault on the wind: your next turn comes half a turn sooner, a purely pictorial emblem with no letters, characters, numbers or writing anywhere, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "turn_shift": 50,
+    "vfx": {
+      "approach": "none",
+      "shape": "ring",
+      "impact": "light",
+      "camera": "none",
+      "color": "#5fe39a"
+    }
+  },
+  {
+    "id": "tech.active.saber_guard_stance",
+    "name": "Saber Guard Stance",
+    "description": "The saber held across the body: for two turns every blow you take is answered at 80% ATK.",
+    "name_cn": "刀守式",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.earth",
+    "weapon_affinity": "saber",
+    "targeting": "self",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 18,
+    "cooldown": 4,
+    "applies": [
+      {
+        "status": "status.counter_stance",
+        "chance": 1,
+        "turns": 2,
+        "potency": 80
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 4
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/saber_guard_stance.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a square technique icon depicting the earth-element art Saber Guard Stance as a glowing martial-art symbol or action, a purely pictorial emblem with no letters, characters, numbers or writing anywhere, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "ring",
+      "impact": "light",
+      "camera": "none",
+      "color": "#f0c060"
+    }
+  },
+  {
+    "id": "tech.active.fan_of_returning_wind",
+    "name": "Fan of Returning Wind",
+    "description": "One sweep of the fan: 90% ATK to all enemies and each is pushed a quarter turn back.",
+    "name_cn": "回风扇",
+    "kind": "active",
+    "rarity": "epic",
+    "element": "elem.wood",
+    "weapon_affinity": "fan",
+    "targeting": "all_enemies",
+    "power": 90,
+    "hits": 1,
+    "sp_cost": 26,
+    "cooldown": 4,
+    "applies": [],
+    "passive_bonuses": {},
+    "requirements": {
+      "realm": {
+        "id": "realm.foundation_establishment"
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/fan_of_returning_wind.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a square technique icon depicting the wood-element art Fan of Returning Wind as a glowing martial-art symbol or action, a purely pictorial emblem with no letters, characters, numbers or writing anywhere, with a violet glow with drifting spirit mist. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "turn_shift": 25,
+    "vfx": {
+      "approach": "none",
+      "shape": "rain",
+      "impact": "light",
+      "camera": "none",
+      "color": "#5fe39a"
+    }
+  },
+  {
+    "id": "tech.active.moon_sweep",
+    "name": "Moon Sweep",
+    "description": "A low staff sweep at the legs: 120% ATK, and the target's next turn comes 40% later.",
+    "name_cn": "扫月",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.water",
+    "weapon_affinity": "staff",
+    "targeting": "single",
+    "power": 120,
+    "hits": 1,
+    "sp_cost": 20,
+    "cooldown": 3,
+    "applies": [],
+    "passive_bonuses": {},
+    "requirements": {
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 3
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/moon_sweep.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a square technique icon depicting the water-element art Moon Sweep as a glowing martial-art symbol or action, a purely pictorial emblem with no letters, characters, numbers or writing anywhere, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "turn_shift": 40,
+    "vfx": {
+      "approach": "none",
+      "shape": "beam",
+      "impact": "medium",
+      "camera": "none",
+      "color": "#6fd0ff"
+    }
+  },
+  {
+    "id": "tech.active.mirror_palm_stance",
+    "name": "Mirror Palm Stance",
+    "description": "Open palms, still breath: for one turn every blow you take is answered in full (100% ATK).",
+    "name_cn": "镜掌式",
+    "kind": "active",
+    "rarity": "rare",
+    "element": "elem.metal",
+    "weapon_affinity": "palm",
+    "targeting": "self",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 14,
+    "cooldown": 3,
+    "applies": [
+      {
+        "status": "status.counter_stance",
+        "chance": 1,
+        "turns": 1,
+        "potency": 100
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {
+      "realm": {
+        "id": "realm.qi_condensation",
+        "stage": 4
+      }
+    },
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": false,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/mirror_palm_stance.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a square technique icon depicting the metal-element art Mirror Palm Stance as a glowing martial-art symbol or action, a purely pictorial emblem with no letters, characters, numbers or writing anywhere, with a soft cyan glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "ring",
+      "impact": "light",
+      "camera": "none",
+      "color": "#f2f5ff"
+    }
+  },
+  {
     "id": "tech.active.ripple_mending",
     "name": "Ripple Mending",
     "description": "Soothing water ripples restore 25% max HP and grant Regeneration.",
@@ -1459,6 +1735,108 @@
       "impact": "light",
       "camera": "none",
       "color": "#f2f5ff"
+    }
+  },
+  {
+    "id": "tech.active.guard_stance",
+    "name": "Guard Stance",
+    "description": "The elite braces: for two turns every blow it takes is answered at 60% ATK.",
+    "name_cn": "守势",
+    "kind": "active",
+    "rarity": "uncommon",
+    "element": "elem.earth",
+    "weapon_affinity": "any",
+    "targeting": "self",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 10,
+    "cooldown": 4,
+    "applies": [
+      {
+        "status": "status.counter_stance",
+        "chance": 1,
+        "turns": 2,
+        "potency": 60
+      }
+    ],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/guard_stance.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a square technique icon depicting the earth-element art Guard Stance as a glowing martial-art symbol or action, a purely pictorial emblem with no letters, characters, numbers or writing anywhere, with a faint green glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "vfx": {
+      "approach": "none",
+      "shape": "ring",
+      "impact": "light",
+      "camera": "none",
+      "color": "#f0c060"
+    }
+  },
+  {
+    "id": "tech.active.wind_step",
+    "name": "Wind Step",
+    "description": "A burst of speed: the elite's next turn comes half a turn sooner.",
+    "name_cn": "风步",
+    "kind": "active",
+    "rarity": "uncommon",
+    "element": "elem.wood",
+    "weapon_affinity": "any",
+    "targeting": "self",
+    "power": 0,
+    "hits": 1,
+    "sp_cost": 8,
+    "cooldown": 3,
+    "applies": [],
+    "passive_bonuses": {},
+    "requirements": {},
+    "mastery": {
+      "max_level": 10,
+      "xp_per_level": 60,
+      "per_level_bonus": 0.03
+    },
+    "enemy_only": true,
+    "art": {
+      "icon": {
+        "file": "assets/techniques/active/wind_step.webp",
+        "size": [
+          256,
+          256
+        ],
+        "transparent": true,
+        "prompt": "Immortal Ascension game art: polished anime xianxia illustration in the style of a premium Chinese mobile RPG, soft cel shading with smooth painterly gradients, thin delicate lineart without thick outlines, luminous glowing highlights, atmospheric lighting, colours that suit the subject, highly detailed. Game inventory icon of a square technique icon depicting the wood-element art Wind Step as a glowing martial-art symbol or action: A burst of speed: the elite's next turn comes half a turn sooner, a purely pictorial emblem with no letters, characters, numbers or writing anywhere, with a faint green glow. Centered single object, three-quarter view, subtle glow, isolated on plain background, no text.",
+        "negative": "text, watermark, signature, logo, UI, frame, border, blurry, lowres, deformed, extra fingers, bad anatomy, cropped",
+        "references": [
+          "refs/mockups/battle_screen.png"
+        ],
+        "status": "planned"
+      }
+    },
+    "turn_shift": 50,
+    "vfx": {
+      "approach": "none",
+      "shape": "ring",
+      "impact": "light",
+      "camera": "none",
+      "color": "#5fe39a"
     }
   }
 ]

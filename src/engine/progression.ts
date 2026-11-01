@@ -6,6 +6,7 @@
  * when it was accepted, so progress = current − baseline. Achievements read the same counters from zero.
  * State-like objectives (realm, items in bag, rank, explored nodes…) are evaluated live.
  */
+import { bumpDaily } from "./daily.ts";
 import type { ContentIndex, Quest, Achievement, StoryScene, Rank } from "../content/index.ts";
 import type { GameState } from "./state.ts";
 import type { DomainEvent } from "./events.ts";
@@ -155,6 +156,7 @@ export function turnInQuest(s: GameState, c: ContentIndex, id: string, now: numb
   s.progress.quests.completed[id] = (s.progress.quests.completed[id] ?? 0) + 1;
   s.progress.quests.lastCompletedAt[id] = now;
   bump(s, "quests_completed");
+  if (q.type === "mission" || q.type === "combat" || q.type === "dungeon") bumpDaily(s, "missions");
   grantRewards(s, c, q.rewards, events);
   events.push({ type: "quest_completed", quest: id });
   if (q.next) { const r = acceptQuest(s, c, q.next, now); if (r.ok) events.push(...r.events); }

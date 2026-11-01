@@ -4,6 +4,7 @@
  * consequences, and the domain events that drive quests, achievements and story.
  * An Encounter is a session object (not saved); closing the app mid-fight forfeits that fight only.
  */
+import { bumpDaily } from "./daily.ts";
 import type { ContentIndex, MapNode, Dungeon, Tribulation, Npc, Tournament } from "../content/index.ts";
 import type { GameState } from "./state.ts";
 import type { DomainEvent } from "./events.ts";
@@ -232,6 +233,8 @@ export class Encounter {
 
   private finish(won: boolean, now: number): void {
     const s = this.s, c = this.c;
+    if (won && this.src.kind === "node") bumpDaily(s, "fights");
+    if (this.src.kind === "tournament") bumpDaily(s, "tournament");
     const total = this.results.reduce((a, r) => mergeDrops(a, r.drops), emptyDrops());
     let firstClear: Record<string, unknown> | undefined;
     let masteryXp = 0;

@@ -325,8 +325,14 @@ def tier_loot(base, k):
         if "qty" in e2: e2["qty"] = [max(1, round(e2["qty"][0] * q)), max(1, round(e2["qty"][1] * q))]
         if "rarity_weights" in e2: e2["rarity_weights"] = _shift_weights(e2["rarity_weights"], (k - 1) // 2)
         ents.append(e2)
+    # every tier above the first guarantees a bundle the region loot does not: refining stones from tier II, an
+    # awakening crystal chance from tier III, a Dao Insight Crystal at tier V (the daily limit is a reward, not a chore)
+    guaranteed = [{"id": g["id"], "qty": max(1, round(g["qty"] * q))} for g in base.get("guaranteed", [])]
+    guaranteed.append({"id": "mat.refining_stone", "qty": 2 * (k - 1)})
+    if k >= 5: guaranteed.append({"id": "mat.dao_insight_crystal", "qty": 1})
+    if k >= 3 and not any(e.get("id") == "mat.awakening_crystal" for e in ents): ents.append({"id": "mat.awakening_crystal", "chance": round(0.1 * (k - 2), 2), "qty": [1, 1]})
     d = {**base, "id": f"{base['id']}_t{k}", "entries": ents,
-         "guaranteed": [{"id": g["id"], "qty": max(1, round(g["qty"] * q))} for g in base.get("guaranteed", [])],
+         "guaranteed": guaranteed,
          "spirit_stones": [round(base["spirit_stones"][0] * f), round(base["spirit_stones"][1] * f)],
          "sect_fame": round(base.get("sect_fame", 0) * f), "mastery_xp": round(base.get("mastery_xp", 0) * f)}
     if "ilvl" in base: d["ilvl"] = [base["ilvl"][0] + 4 * (k - 1), base["ilvl"][1] + 4 * (k - 1)]

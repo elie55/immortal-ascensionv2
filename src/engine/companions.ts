@@ -18,6 +18,13 @@ import { computeStats } from "./stats.ts";
 const fail = (reason: string) => ({ ok: false as const, reason });
 export const MAX_ACTIVE = 2;
 const ROLE_AI: Record<string, string> = { dps: "aggressive", support: "support", tank: "guardian", control: "trickster" };
+/** The player's stance for a companion (state.companions.stance): guard plays support, burst plays caster; balanced keeps the role. */
+const STANCE_AI: Record<string, string | undefined> = { guard: "support", burst: "caster", balanced: undefined };
+
+export function setCompanionStance(s: GameState, npcId: string, stance: "guard" | "balanced" | "burst"): { ok: true; events: [] } {
+  (s.companions.stance ??= {})[npcId] = stance;
+  return { ok: true, events: [] };
+}
 
 export function canBond(s: GameState, c: ContentIndex, npcId: string): { ok: boolean; reason?: string } {
   const n = c.get<Npc>(npcId);
@@ -75,5 +82,5 @@ export function companionCombatant(s: GameState, c: ContentIndex, npcId: string,
   }
   const maxHp = Math.max(1, Math.round(base.hp ?? 1));
   return make({ id: npcId, name: n.name, side: "ally", kind: "companion", element: n.elements[0] ?? "elem.metal", base, maxHp, maxSp: Math.round(base.sp_energy!), skills, specials: [], resistances: {},
-    ai: { strategy: ROLE_AI[dc.role ?? "dps"] ?? "aggressive", rules: [] }, art: c.artAny(npcId, "battle", "full_body"), cp: 0, masteryXp: 0, realmOrder: 1 });
+    ai: { strategy: STANCE_AI[s.companions.stance?.[npcId] ?? "balanced"] ?? ROLE_AI[dc.role ?? "dps"] ?? "aggressive", rules: [] }, art: c.artAny(npcId, "battle", "full_body"), cp: 0, masteryXp: 0, realmOrder: 1 });
 }

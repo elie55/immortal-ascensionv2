@@ -43,6 +43,8 @@ export type DomainEvent =
   | { type: "purchase"; shop: string; id: string; qty: number }
   | { type: "tournament_round"; tournament: string; round: number; won: boolean }
   | { type: "tournament_won"; tournament: string }
+  | { type: "daily_claimed" }
+  | { type: "sweep"; node: string; runs: number; wins: number }
   | { type: "egg_incubated"; egg: string } | { type: "beast_hatched"; uid: number; beast: string } | { type: "beast_level"; uid: number; level: number }
   | { type: "beast_evolved"; uid: number; beast: string; stage: string } | { type: "beast_bond"; uid: number; level: number } | { type: "dao_bonded"; npc: string }
   | { type: "tower_floor"; dungeon: string; floor: number; best: boolean } | { type: "realm_entered"; dungeon: string } | { type: "realm_node"; dungeon: string; node: string; kind: string };

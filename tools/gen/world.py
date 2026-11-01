@@ -191,6 +191,12 @@ def techs():
         T("frozen_lotus", "active", "Frozen Lotus", "冰莲绽放", "epic", "water", "A lotus of frost blooms beneath the target. 150% ATK, Slows, delays its next turn by a third, 25% chance to Freeze.", 150, 28, 4, [A("slow", 1, 2), A("freeze", 0.25, 1)], req={"realm": {"id": "realm.qi_condensation", "stage": 4}}, shift=35),
         T("swift_cloud_step", "active", "Swift Cloud Step", "踏云步", "rare", "wood", "A step on the wind: your next turn comes half a turn sooner.", 0, 14, 3, targeting="self", shift=60),
         T("returning_tide_stance", "active", "Returning Tide Stance", "回潮式", "epic", "water", "Take the stance of the returning tide: for two turns every blow you take is answered with a counter at 90% ATK.", 0, 20, 4, [A("counter_stance", 1, 2, 90)], targeting="self", req={"realm": {"id": "realm.qi_condensation", "stage": 5}}),
+        # tempo and stance arts, one per weapon (docs/COMBAT.md "Tempo", "Counters")
+        T("gale_spear_step", "active", "Gale Spear Step", "疾风枪步", "rare", "wood", "A spear-vault on the wind: your next turn comes half a turn sooner.", 0, 14, 3, targeting="self", weapon="spear", shift=50, req={"realm": {"id": "realm.qi_condensation", "stage": 3}}),
+        T("saber_guard_stance", "active", "Saber Guard Stance", "刀守式", "rare", "earth", "The saber held across the body: for two turns every blow you take is answered at 80% ATK.", 0, 18, 4, [A("counter_stance", 1, 2, 80)], targeting="self", weapon="saber", req={"realm": {"id": "realm.qi_condensation", "stage": 4}}),
+        T("fan_of_returning_wind", "active", "Fan of Returning Wind", "回风扇", "epic", "wood", "One sweep of the fan: 90% ATK to all enemies and each is pushed a quarter turn back.", 90, 26, 4, targeting="all_enemies", weapon="fan", shift=25, req={"realm": {"id": "realm.foundation_establishment"}}),
+        T("moon_sweep", "active", "Moon Sweep", "扫月", "rare", "water", "A low staff sweep at the legs: 120% ATK, and the target's next turn comes 40% later.", 120, 20, 3, weapon="staff", shift=40, req={"realm": {"id": "realm.qi_condensation", "stage": 3}}),
+        T("mirror_palm_stance", "active", "Mirror Palm Stance", "镜掌式", "rare", "metal", "Open palms, still breath: for one turn every blow you take is answered in full (100% ATK).", 0, 14, 3, [A("counter_stance", 1, 1, 100)], targeting="self", weapon="palm", req={"realm": {"id": "realm.qi_condensation", "stage": 4}}),
         T("ripple_mending", "active", "Ripple Mending", "涟漪回春", "rare", "water", "Soothing water ripples restore 25% max HP and grant Regeneration.", 0, 22, 4, [A("regen", 1, 3)], targeting="self", heal=25),
         T("verdant_vine_bind", "active", "Verdant Vine Bind", "青藤缚", "rare", "wood", "Vines erupt and bind the target. 90% ATK, Poison and Silence.", 90, 20, 4, [A("poison", 0.8, 3), A("silence", 0.5, 2)]),
         T("swallow_return_sword", "active", "Swallow-Return Sword", "燕返剑", "epic", "metal", "A returning sword arc strikes twice. 95% ATK ×2.", 95, 22, 2, weapon="sword", hits=2, req={"techniques": ["tech.active.azure_strike"]}),
@@ -221,6 +227,8 @@ def techs():
         T("frost_breath", "active", "Frost Breath", "霜息", "rare", "water", "A cone of freezing breath.", 140, 12, 3, [A("freeze", 0.3, 1)], targeting="all_enemies", enemy_only=True),
         T("web_snare", "active", "Web Snare", "丝缚", "uncommon", "wood", "Sticky silk slows the prey and holds it back a step.", 80, 8, 2, [A("slow", 0.8, 2)], enemy_only=True, shift=25),
         T("mirror_scale", "active", "Mirror Scale", "镜鳞", "epic", "metal", "Scales turn to mirrors, reflecting harm.", 0, 15, 5, [A("reflect", 1, 2)], targeting="self", enemy_only=True),
+        T("guard_stance", "active", "Guard Stance", "守势", "uncommon", "earth", "The elite braces: for two turns every blow it takes is answered at 60% ATK.", 0, 10, 4, [A("counter_stance", 1, 2, 60)], targeting="self", enemy_only=True),
+        T("wind_step", "active", "Wind Step", "风步", "uncommon", "wood", "A burst of speed: the elite's next turn comes half a turn sooner.", 0, 8, 3, targeting="self", enemy_only=True, shift=50),
     ]
 
 def beast_abilities():

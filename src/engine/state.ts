@@ -99,7 +99,9 @@ export const GameStateSchema = z.object({
   buffs: z.array(BuffSchema),
   beasts: z.object({ owned: z.record(z.string(), BeastInstanceSchema), active: z.number().int().nullable(), incubating: z.array(IncubatorSchema), nextUid: z.number().int().min(1) }),
   /** Dao companions: NPCs bonded with the player, and those chosen to fight alongside. */
-  companions: z.object({ bonded: z.array(z.string()), active: z.array(z.string()) }),
+  companions: z.object({ bonded: z.array(z.string()), active: z.array(z.string()),
+    /** Battle stance per companion: guard (heal/shield first), balanced (the role's own strategy), burst (strongest art on the strongest foe). */
+    stance: z.record(z.string(), z.enum(["guard", "balanced", "burst"])).default({}) }),
   relations: z.record(z.string(), z.object({
     affinity: z.number().int(), giftsToday: z.number().int().min(0), lastGiftDay: z.string().optional(), topics: z.array(z.string()), lastDuelAt: z.number().optional(),
   })),
@@ -174,7 +176,7 @@ export function newGameState(content: ContentIndex, now: number, opts: { name?: 
     equipped: {},
     buffs: [],
     beasts: { owned: {}, active: null, incubating: [], nextUid: 1 },
-    companions: { bonded: [], active: [] },
+    companions: { bonded: [], active: [], stance: {} },
     relations: {},
     progress: {
       quests: { active: {}, completed: {}, lastCompletedAt: {}, tracked: null }, achievements: {}, storySeen: {}, storyChoices: {},

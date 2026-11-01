@@ -3,6 +3,8 @@
  * affinity, a Goods grid (tier/discount line, locked and sold-out states), a buy sheet with quantity, and a Sell
  * tab for materials, junk and gear.
  */
+import { peekable } from "../core/peek.ts";
+import { gearPeek, itemPeek, techPeek } from "../peeks.ts";
 import { h, fmt } from "../core/dom.ts";
 import { icon, SLOT_ICON } from "../core/icons.ts";
 import { header, subbar, seg, bar, tile, stepper, RARITY_LABEL, confirmModal } from "../core/kit.ts";
@@ -97,13 +99,14 @@ function goodsCard(app: App, shopId: string, r: ShopRow) {
   const soldOut = r.left === 0;
   // the struck-through price is the fame/affinity discount only; a realm-scaled row's base is its price at this realm
   const orig = r.entry.scale ? Math.round(r.entry.price * Math.pow(r.entry.scale.per_realm, Math.max(0, c.get<any>(app.game.state.character.realm).order - 1))) : r.entry.price;
-  return h("button", { class: ["glass goods", (r.locked || soldOut || r.owned) && "dim-card"], onClick: () => buySheet(app, shopId, r.index) },
+  return peekable(h("button", { class: ["glass goods", (r.locked || soldOut || r.owned) && "dim-card"], onClick: () => buySheet(app, shopId, r.index) },
     h("div", { class: "row between" }, h("span", { class: `g-cat rt-${a.rarity}` }, a.label), r.left !== null ? h("span", { class: "g-left" }, soldOut ? "Sold out" : `×${r.left}`) : null),
     h("div", { class: "g-art" }, tile({ rarity: a.rarity, art: a.art, fallbackIcon: a.icon, img: (f) => app.img(f) })),
     h("div", { class: "g-name" }, name, "gear" in r.entry && h("span", { class: "muted" }, ` Lv${r.entry.gear.ilvl}`)),
     r.owned ? h("div", { class: "g-price jade-t" }, "Learned")
       : r.locked ? h("div", { class: "g-price muted" }, icon("lock", 10), " ", r.locked)
-      : h("div", { class: "g-price" }, orig !== r.price && h("s", { class: "muted" }, fmt.int(orig)), icon(CUR_ICON[r.currency] ?? "gem", 11), h("b", null, fmt.int(r.price))));
+      : h("div", { class: "g-price" }, orig !== r.price && h("s", { class: "muted" }, fmt.int(orig)), icon(CUR_ICON[r.currency] ?? "gem", 11), h("b", null, fmt.int(r.price)))),
+    app.router, () => "gear" in r.entry ? gearPeek(app, r.entry.gear) : r.id.startsWith("tech.") ? techPeek(app, r.id) : r.id.startsWith("method.") ? null : itemPeek(app, r.id));
 }
 
 /** Rumours tab (mockup merchant_pavilion): gossip about who loves what, bought once. */

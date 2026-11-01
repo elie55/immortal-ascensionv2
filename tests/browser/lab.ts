@@ -461,6 +461,26 @@ async function mechanics(name: string, n: number, src: any) {
   }
 }
 
+/** Peeks (core/peek.ts): long presses on a technique, a foe, a loot tile and an inventory tile. */
+async function peeks(name: string) {
+  await boot(labState(5, "geared", ["npc.bai_lingshuang"]));
+  await dismiss();
+  const hold = async (sel: string, shot_: string) => {
+    const el = page.locator(sel).first(); const box = await el.boundingBox(); if (!box) throw new Error(`no box for ${sel}`);
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2); await page.mouse.down(); await page.waitForTimeout(650);
+    await shot(shot_); await page.mouse.up(); await page.waitForTimeout(120); await page.mouse.click(10, 300); await page.waitForTimeout(250);
+  };
+  await page.evaluate(() => { const st = (window as any).__ia.game.state; st.combat.speed = 1; st.combat.manual = true; });
+  await page.evaluate((s) => (window as any).__ia.dev.fight(s), { kind: "node", id: nodeOf(5, "boss") });
+  await page.waitForSelector(".bt-skill.ready", { timeout: 30_000 }); await page.waitForTimeout(400);
+  await hold(".bt-skill:not(.basic)", `${name}-1-skill`);
+  await hold(".bt-ultbtn", `${name}-2-ult`);
+  await hold(".bt-foe-u", `${name}-3-foe`);
+  await hold(".bt-card.player", `${name}-4-card`);
+  await screen(`${name}-5`, 5, "0", { arch: "geared", tab: "inventory" });
+  await hold(".inv-grid .tile", `${name}-6-item`);
+}
+
 /** The arena test fight (docs/BATTLE_STAGE.md §7): a burst of frames around a dash strike and around the ultimate. */
 async function arenaTest(name: string) {
   await boot(labState(Number(process.env.IA_REGION ?? 1), "fitted"));   // IA_REGION=2: a spirit beast joins (three allies)
@@ -558,6 +578,18 @@ const SCEN: Record<string, () => Promise<void>> = {
   auto2: () => autoFight("auto2", 2, { kind: "node", id: nodeOf(2, "battle") }),
   // combat mechanics: the Frost Queen's ice armor (break) and the Surge button
   mech: () => mechanics("mech", 4, { kind: "node", id: nodeOf(4, "boss") }),
+  peek: () => peeks("peek"),
+  // retention pass: today's board, the tribulation preparation, a sweep
+  loops: async () => {
+    await screen("loops-1-today", 5, "0", { arch: "geared" });
+    await page.locator(".today").click(); await page.waitForTimeout(500); await shot("loops-2-today-sheet"); await page.mouse.click(10, 200); await page.waitForTimeout(300);
+    await page.evaluate(() => { const st = (window as any).__ia.game.state; st.character.realm = "realm.nascent_soul"; st.character.stage = 9; st.character.qi = 1e18; (window as any).__ia.app.router.refresh(); });
+    await page.waitForTimeout(500); await page.locator(".cult-bt").click(); await page.waitForTimeout(600); await shot("loops-3-ceremony");
+    const face = page.locator(".link-btn", { hasText: "Face it" }); if (await face.count()) { await face.click(); await page.waitForTimeout(600); await shot("loops-4-tribulation"); await page.evaluate(() => (window as any).__ia.app.router.close()); await page.waitForTimeout(300); }
+    await page.evaluate(() => { const st = (window as any).__ia.game.state; (st.progress.regions["region.ancient_sword_tomb"] ??= { discoveredAt: Date.now(), nodes: {} }).nodes["node.ancient_sword_tomb.entry"] = { clears: 3 }; (window as any).__ia.dev.region("region.ancient_sword_tomb", "node.ancient_sword_tomb.entry"); });
+    await page.waitForTimeout(800); await shot("loops-5-node");
+    const sw = page.locator(".btn", { hasText: "Sweep" }); if (await sw.count()) { await sw.first().click(); await page.waitForTimeout(700); await shot("loops-6-sweep"); const go = page.locator(".btn.gold", { hasText: "Sweep ×" }); if (await go.count()) { await go.click(); await page.waitForTimeout(1500); await shot("loops-7-swept"); } }
+  },
   auto5: () => autoFight("auto5", 5, { kind: "node", id: nodeOf(5, "boss") }, ["npc.bai_lingshuang", "npc.tang_xiaoman"]),
   auto8: () => autoFight("auto8", 8, { kind: "node", id: nodeOf(8, "elite") }, ["npc.bai_lingshuang"]),
   // the header stays at the top while a screen scrolls

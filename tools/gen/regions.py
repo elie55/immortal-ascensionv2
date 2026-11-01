@@ -144,7 +144,9 @@ def region(rd, prev):
         cp = round(cb * mult)
         stage = {"normal": 2 + i, "elite": 6, "special": 5}[role]
         techs = [f"tech.active.{ek}", generic.get(kind, "tech.active.stone_shell")]
-        if role == "elite": techs = [f"tech.active.{ek}", f"tech.active.{tk}"]
+        # elites carry a third art: a counter stance in odd regions, a wind step in even ones, so the player meets the
+        # mechanics before the sovereign does (docs/COMBAT.md)
+        if role == "elite": techs = [f"tech.active.{ek}", f"tech.active.{tk}", "tech.active.guard_stance" if n % 2 else "tech.active.wind_step"]
         eid = f"enemy.{k}"; eids.append(eid)
         out["enemies"].append({"id": eid, **named(name, desc, cn), "kind": kind, "element": f"elem.{el}", "realm": {"id": realm_id(rmin), "stage": stage},
                                "stats": stats_for(cp, n, 5 if role == "elite" else 0), "cp": cp, "techniques": techs,

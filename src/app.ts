@@ -2,6 +2,7 @@
  * Composition root: content → settings → main menu → (new journey → prologue | continue → offline report) → game.
  * The only file that touches timers, the clock and the DOM lifecycle.
  */
+import { pouchCount } from "./engine/inventory.ts";
 import { loadContent, type ContentIndex } from "./content/index.ts";
 import { Game } from "./engine/game.ts";
 import { newGameState, type GameState } from "./engine/state.ts";
@@ -90,6 +91,20 @@ export class App {
     root.classList.toggle("reduce-motion", this.settings.reducedMotion);
     root.classList.toggle("anim-low", this.settings.animationQuality === "low");
   }
+  /**
+   * A one-time tip: true the first time `key` is asked for on this device (the caller shows it), false after.
+   * Keys are stable strings such as "battle.telegraph" or "sig:mark"; the list lives in the settings.
+   */
+  tip(key: string): boolean {
+    const seen = this.settings.tipsSeen ?? [];
+    if (seen.includes(key)) return false;
+    this.settings.tipsSeen = [...seen, key];
+    void this.saves.saveSettings(this.settings);
+    return true;
+  }
+  /** A one-time tip shown as a long toast (outside battles). */
+  tipToast(key: string, text: string): void { if (this.tip(key)) this.router.toast(text, "info", 5200); }
+
   async setSettings(patch: Partial<Settings>): Promise<void> {
     Object.assign(this.settings, patch);
     this.applySettings();
@@ -173,6 +188,10 @@ export class App {
       else if (e.type === "beast_level") this.router.toast(`${this.game.state.beasts.owned[e.uid]?.name ?? "Your beast"} reached level ${e.level}`, "good");
       else if (e.type === "beast_bond") this.router.toast(`Bond with ${this.game.state.beasts.owned[e.uid]?.name ?? "your beast"} deepened (${e.level})`, "good");
       else if (e.type === "dao_bonded") this.router.toast(`${c.get<any>(e.npc).name} is now your Dao companion`, "good", 4000);
+      // one-time teaching (app.tip): the first time a system shows up
+      else if (e.type === "currency" && e.currency === "contribution" && e.delta > 0) this.tipToast("contribution", "Contribution earned: spend it at the Mission Hall's Contribution Exchange for Dao Insight Crystals and refining stones.");
+      else if (e.type === "item_gained" && pouchCount(this.game.state) > 0) this.tipToast("pouch", "Your bag is full: new drops wait in the overflow pouch at the top of the Inventory. Free a slot and tap Claim.");
+      else if (e.type === "item_gained" && e.id === "mat.dao_insight_crystal") this.tipToast("crystal", "Dao Insight Crystals open the breakthroughs from Nascent Soul on. Bosses drop them (guaranteed after five misses), the Exchange and the Pavilion sell them.");
     }
   }
 
